@@ -204,7 +204,7 @@ package2/usr.local.etc.tar.bz2
 package2/yaffs2_1.img
 video_firmware.install.bin
 }}}
-  * you can clean up and just go and try your new image
+ * you can clean up and just go and try your new image
 {{{
 bash-3.2$ cd ..
 bash-3.2$ ls -l
