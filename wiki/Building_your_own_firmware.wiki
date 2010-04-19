@@ -1,0 +1,33 @@
+#summary Info on how to build your own Eboda HD for all 500/500+ firmware
+
+= Introduction =
+
+Original Firmware from E-boda is not always well configured by default. And part of this configuration cannot be "repaired" after firmware installation. For this a procedure to modify firmware is usefull.
+
+
+= Details =
+
+== Requirements ==
+
+You will need:
+  * A PC with linux (real PC or a VmWare player with Linux image is good)
+  * yaffs utils (from http://www.yaffs.net/)
+    * you will need to compile the utils directly from sources if package not present on your linux distro
+  * unyaffs util (from http://code.google.com/p/unyaffs/)
+  * you can get required binaries from here and put them somewhere in your path
+
+== Unpack ==
+  * tar zxfv
+  * dirtree
+  * usr_local unpack
+  * root unpack
+== Modify ==
+  * add root home
+  * create /opt directory
+  * whatever you like
+== Pack ==
+  * pack usr_local
+  * pack root
+  * pack tar
+
+
