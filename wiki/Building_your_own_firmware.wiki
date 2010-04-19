@@ -130,7 +130,7 @@ mkdir opt
 bash-3.2$ sed -ie '/^root/c\
 root::0:0:root:/usr/local/etc/root:/bin/sh' etc/passwd
 }}}
-  * pack
+  * package
 {{{
 bash-3.2$ cd ..
 bash-3.2$ rm yaffs2_1.img 
@@ -151,7 +151,7 @@ bash-3.2$ rm -rf unpacked_root/
 
 
 === Modify `/usr/local/etc` image ===
-* preparation
+  * preparation
 {{{
 bash-3.2$ mkdir unpacked_etc
 bash-3.2$ cd unpacked_etc/
@@ -164,10 +164,10 @@ rcS
 sata_mars.ko
 }}}
 
-* OPTIONAL: make your own modifications here
+  * OPTIONAL: make your own modifications here
 bash-3.2$ mkdir root
 
-* pack
+  * package
 {{{
 bash-3.2$ rm ../usr.local.etc.tar.bz2 
 bash-3.2$ tar jcvf ../usr.local.etc.tar.bz2 *
@@ -179,6 +179,38 @@ bash-3.2$ rm -rf unpacked_etc/
 }}}
 
 == Pack ==
-  * pack usr_local
-  * pack rootcd una
-  * pack tar
+ * now we can package everything back (we will keep and rename old image for reference)
+{{{
+bash-3.2$ cd ..
+bash-3.2$ mv ../install.img ../install.img.orig
+bash-3.2$ tar cvf ../install.img *
+FormatHDDAfterUpgrade_boiaoj230jtljaf9.txt
+FormatHDDOnly_boiaoj230jtljaf9.txt
+arial.ttf
+audio_firmware.install.bin
+busybox
+configuration.xml
+flash_erase
+install_a
+mkfs.jffs2
+mkntfs
+mkyaffs2image
+nandwrite
+package2/
+package2/bluecore.audio
+package2/video_firmware.bin
+package2/vmlinux.develop.avhdd.mars.nand.bin
+package2/usr.local.etc.tar.bz2
+package2/yaffs2_1.img
+video_firmware.install.bin
+}}}
+  * you can clean up and just go and try your new image
+{{{
+bash-3.2$ cd ..
+bash-3.2$ ls -l
+total 233936
+-rw-r--r-- 1 cipibad avahi-autoipd  34590651 Apr 19 13:30 HD_for_all_500_ver_v7.0.18.r3617.rar
+-rw-r--r-- 1 cipibad avahi-autoipd 102348800 Apr 19 14:07 install.img
+-rw-r--r-- 1 cipibad avahi-autoipd 102348816 Mar 30 11:08 install.img.orig
+drwxr-xr-x 3 cipibad avahi-autoipd      4096 Apr 19 13:35 unpacked_install
+}}}
