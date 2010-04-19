@@ -30,6 +30,32 @@ fi
 
 /tmp/hdd/root/opt/bin/ipkg-opt install transmission
 
+
+#prepare transmission directories
+if [ ! -d /tmp/hdd/volumes/HDD1/transmission ]
+then
+        echo Creating transmission directories
+        mkdir /tmp/hdd/volumes/HDD1/transmission
+        mkdir /tmp/hdd/volumes/HDD1/transmission/config
+        mkdir /tmp/hdd/volumes/HDD1/transmission/download
+else
+        if [ ! -d /tmp/hdd/volumes/HDD1/transmission/config ]
+        then
+                echo Creating transmission config directory
+                mkdir /tmp/hdd/volumes/HDD1/transmission/config
+        else
+                echo config directory found
+        fi
+        if [ ! -d /tmp/hdd/volumes/HDD1/transmission/download ]
+        then
+                echo Creating transmission download directory
+                mkdir /tmp/hdd/volumes/HDD1/transmission/download
+        else
+                echo download directory found
+        fi
+fi
+
+
 rm -f /opt/etc/init.d/S??transmission
 cat > /opt/etc/init.d/S91transmission <<EOF
 #!/bin/sh
@@ -68,30 +94,7 @@ esac
 EOF
 chmod +x /opt/etc/init.d/S91transmission
 echo transmission startup script prepared
-
-#prepare transmission directories
-if [ ! -d /tmp/hdd/volumes/HDD1/transmission ]
-then
-        echo Creating transmission directories
-        mkdir /tmp/hdd/volumes/HDD1/transmission
-        mkdir /tmp/hdd/volumes/HDD1/transmission/config
-        mkdir /tmp/hdd/volumes/HDD1/transmission/download
-else
-        if [ ! -d /tmp/hdd/volumes/HDD1/transmission/config ]
-        then
-                echo Creating transmission config directory
-                mkdir /tmp/hdd/volumes/HDD1/transmission/config
-        else
-                echo config directory found
-        fi
-        if [ ! -d /tmp/hdd/volumes/HDD1/transmission/download ]
-        then
-                echo Creating transmission download directory
-                mkdir /tmp/hdd/volumes/HDD1/transmission/download
-        else
-                echo download directory found
-        fi
-fi
+sh /opt/etc/init.d/S91transmission
 
 
 echo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
