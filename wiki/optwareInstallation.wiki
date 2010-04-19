@@ -1,0 +1,9 @@
+#summary Script to install optware on eboda media players
+
+= optware installation =
+Originally created for the Linksys NSLU2 Unslung firmware, Optware is the name of the additional software packages available for Linux running on MIPS architecture. Optware can be used on both, 500 and 500plus.
+
+This script can be used either to install optware either to recover optware after firmware upgrade. You will need a firmware modified (either the one from Downloads section http://code.google.com/p/eboda-hd-for-all-500/downloads/list either one with space on root partition like the one from vb6 http://forum.softpedia.com/index.php?showtopic=640751) 
+
+Usage of the script is simple, you need to open a telnet connection to your MP and then execute the following command:
+`wget http://eboda-hd-for-all-500.googlecode.com/files/optware-install.sh && sh optware-install.sh && rm optware-install.sh`
