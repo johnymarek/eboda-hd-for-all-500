@@ -62,7 +62,6 @@ cat > /opt/etc/init.d/S91transmission <<EOF
 PATH=/sbin:/bin:/usr/bin:/usr/sbin:/opt/bin:/opt/sbin
 
 start() {
-        fi
         echo "Starting transmission"
         /opt/bin/transmission-daemon --config-dir /tmp/hdd/volumes/HDD1/transmission/config --port 8080 --no-auth --download-dir /tmp/hdd/volumes/HDD1/transmission/download --dht --peerport 51413 -a "*" --encryption-tolerated --peerlimit-global 64 --peerlimit-torrent 32
 
@@ -94,7 +93,7 @@ esac
 EOF
 chmod +x /opt/etc/init.d/S91transmission
 echo transmission startup script prepared
-sh /opt/etc/init.d/S91transmission
+sh /opt/etc/init.d/S91transmission start
 
 
 echo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
