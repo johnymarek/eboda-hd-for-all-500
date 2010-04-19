@@ -121,7 +121,7 @@ bash-3.2$ tree -L 1
 
 12 directories, 3 files
 }}}
-  * OPTIONAL: create /opt directory
+  * OPTIONAL: create /opt directory (to be overmounted for optware)
 {{{
 mkdir opt
 }}}
@@ -164,7 +164,7 @@ rcS
 sata_mars.ko
 }}}
 
-  * OPTIONAL: make your own modifications here
+  * OPTIONAL: make your own modifications here (for example create home directory for root)
 {{{
 bash-3.2$ mkdir root
 }}}
