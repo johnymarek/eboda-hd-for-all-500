@@ -103,7 +103,7 @@ echo !  that you can find in setup menu, network section
 echo !
 echo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-echo We will reboot in 10 seconds(not required to run transmission, but good to be sure installation is ok
+echo We will reboot in 10 seconds-not required to run transmission, but good to be sure installation is ok
 echo You can press CTRL+C to stop
 sleep 5
 echo 5 seconds to go
