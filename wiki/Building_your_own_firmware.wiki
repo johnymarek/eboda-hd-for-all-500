@@ -165,7 +165,9 @@ sata_mars.ko
 }}}
 
   * OPTIONAL: make your own modifications here
+{{{
 bash-3.2$ mkdir root
+}}}
 
   * package
 {{{
