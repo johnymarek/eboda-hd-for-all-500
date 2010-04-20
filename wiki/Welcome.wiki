@@ -1,0 +1,4 @@
+#summary default welcome page
+#labels Featured
+
+Welcome to our project, chose your subject from sidebar.
