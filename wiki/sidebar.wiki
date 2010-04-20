@@ -2,4 +2,5 @@
 
 
   * [Building_your_own_firmware Building your own firmware] 
-  * [optwareInstallation Installing optware on MP]
+  * optware
+     * [optwareInstallation Installing optware on MP]
