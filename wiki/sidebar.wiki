@@ -1,4 +1,5 @@
 #summary This is our project sidebar
 
 
-  * [Building_your_own_firmware Building your own firmware]
+  * [Building_your_own_firmware Building your own firmware] 
+  * [optwareInstallation Installing optware on MP]
