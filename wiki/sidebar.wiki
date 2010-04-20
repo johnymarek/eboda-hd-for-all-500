@@ -2,5 +2,14 @@
 
 
   * [Building_your_own_firmware Building your own firmware] 
-  * optware
-     * [optwareInstallation Installing optware on MP]
+  * Optware
+    # [optwareInstallation Installing optware]
+    # [RtorrentInstallation Installing rtorrent]
+    # [TransmissionInstallationwithOptware Installing transmission]
+    # [LigHttpPhpInstallation Installing lighttpd with php support]
+  * Internet Feeds
+    * [SimpleMetafeeds Metafeeds - simpler version]
+    * [CompleteMetafeeds Metafeeds - complete version]
+    * [OtherFeeds PHP feeds from softpedia topic]
+  * Others
+    * [SwapOn Activation of swap partition]
