@@ -3,10 +3,10 @@
 
   * [Building_your_own_firmware Building your own firmware] 
   * Optware
-    # [optwareInstallation Installing optware]
-    # [RtorrentInstallation Installing rtorrent]
-    # [TransmissionInstallationwithOptware Installing transmission]
-    # [LigHttpPhpInstallation Installing lighttpd with php support]
+    * [optwareInstallation Installing optware]
+    * [RtorrentInstallation Installing rtorrent]
+    * [TransmissionInstallationwithOptware Installing transmission]
+    * [LigHttpPhpInstallation Installing lighttpd with php support]
   * Internet Feeds
     * [SimpleMetafeeds Metafeeds - simpler version]
     * [CompleteMetafeeds Metafeeds - complete version]
