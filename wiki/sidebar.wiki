@@ -1,0 +1,4 @@
+#summary This is our project sidebar
+
+
+* Making your own firmware
