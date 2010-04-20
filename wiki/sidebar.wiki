@@ -7,6 +7,7 @@
     * [RtorrentInstallation Installing rtorrent]
     * [TransmissionInstallationwithOptware Installing transmission]
     * [LigHttpPhpInstallation Installing lighttpd with php support]
+    * [WebControlPanel Web Control Panel installation]
   * Internet Feeds
     * [SimpleMetafeeds Metafeeds - simpler version]
     * [CompleteMetafeeds Metafeeds - complete version]
