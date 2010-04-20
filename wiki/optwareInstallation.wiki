@@ -13,6 +13,7 @@ $wget http://eboda-hd-for-all-500.googlecode.com/files/optware-install.sh && sh 
 Connecting to eboda-hd-for-all-500.googlecode.com[209.85.135.82]:80
 optware-install.sh   100% |*****************************|  4075       00:00 ETA
 Internal HDD found, continuing
+....
 Successfully terminated.
 Finished
 Optware is OK now. We will reboot in 10 seconds, press CTRL+C to stop
