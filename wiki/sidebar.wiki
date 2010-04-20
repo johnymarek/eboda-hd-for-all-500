@@ -1,4 +1,4 @@
 #summary This is our project sidebar
 
 
-* Making your own firmware
+  * [Building_your_own_firmware Building your own firmware]
