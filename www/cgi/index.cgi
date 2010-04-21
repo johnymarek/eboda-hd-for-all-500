@@ -65,7 +65,7 @@ EOT
 
 cat <<EOT
         <br />
-
+<hr>
         <br />
 		<span style="font-weight: bold;"><img border="0px" src="img/title_utilities.png" title="Utilities" alt="Utilities" /></span><br />
         <span style="font-size: 12pt;">
@@ -84,7 +84,7 @@ Metafeeds complete - <a href="install-mfc.cgi">Install</a> <br/>
 
         <br />
 
-
+<hr>
 
         <br />
         <span style="font-weight: bold;"><img border="0px" src="img/title_infologs.png" title="Information/Logs" alt="Information/Logs" /></span><br />
@@ -93,6 +93,7 @@ Metafeeds complete - <a href="install-mfc.cgi">Install</a> <br/>
         <br />
         <br />
 
+<hr>
 
         <span style="font-weight: bold;"> <img border="0px" alt="Links" title="Links" src="img/title_links.png" /></span><br />
 
@@ -103,7 +104,8 @@ Metafeeds complete - <a href="install-mfc.cgi">Install</a> <br/>
         <a href="http://code.google.com/p/eboda-hd-for-all-500/"> Related Google Code project</a><br />
 
         <br />
-		<br />
+<hr>
+<br />
 
 
 		<span style="font-weight: bold;"> <img border="0px" alt="Disk Stats" title="Disk Stats" src="img/title_diskstats.png" /></span> <br />
