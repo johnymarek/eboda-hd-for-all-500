@@ -69,7 +69,7 @@ cat <<EOT
         <br />
 		<span style="font-weight: bold;"><img border="0px" src="img/title_utilities.png" title="Utilities" alt="Utilities" /></span><br />
         <span style="font-size: 12pt;">
-Eboda Web Control Panel - <a href="update-webcontrol.cgi">Update this script</a>
+Eboda Web Control Panel - <a href="update-webcontrol.cgi">Update</a> / <a href="restore-webcontrol.cgi">Back to previous version</a>
 Transmission Torrent - <a href="install-transmission.cgi">Install</a> /<a href="uninstall-transmission.cgi">Uninstall</a> /<a href="util_transmission-start.cgi">Start</a> / <a href="util_transmission-stop.cgi">Stop</a><br />
 
 Lighttpd Web Server - <a href="install-lighttpd.cgi">Install</a> /<a href="uninstall-lighttpd.cgi">Uninstall</a> /<a href="util_lighttpd-stop.cgi">Stop</a><br />
