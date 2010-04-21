@@ -22,7 +22,7 @@ Content-type: text/html
 </head>
 
 <body bgcolor = #B6B5B3>
-<div style="text-align: center;"><span style="font-family: Tahoma; font-weight: bold; font-size: 18pt;">Welcome to $HOSTNAME. Web Control Panel version version $VERSION <br> </span><img border="0px" alt="Eboda Media Player Control Panel" title="Eboda Media Player Control Panel" src="img/eboda_banner.jpg" /><br style="font-family: Tahoma;" />
+<div style="text-align: center;"><span style="font-family: Tahoma; font-weight: bold; font-size: 18pt;">Welcome to $HOSTNAME. <BR> Eboda Web Control Panel version $VERSION <br> </span><img border="0px" alt="Eboda Media Player Control Panel" title="Eboda Media Player Control Panel" src="img/eboda_banner.jpg" /><br style="font-family: Tahoma;" />
   </div>
 <table width="" align="center" style="border: 1px solid black; width: 782px; font-family: Tahoma; height: 232px; border-collapse: collapse; background-color: rgb(255, 255, 255);">
   <tbody>
@@ -69,7 +69,7 @@ cat <<EOT
         <br />
 		<span style="font-weight: bold;"><img border="0px" src="img/title_utilities.png" title="Utilities" alt="Utilities" /></span><br />
         <span style="font-size: 12pt;">
-Eboda Web Control Panel - <a href="update-webcontrol.cgi">Update</a> / <a href="restore-webcontrol.cgi">Back to previous version</a>
+Eboda Web Control Panel - <a href="update-webcontrol.cgi">Update</a> / <a href="restore-webcontrol.cgi">Back to previous version</a> <br/>
 Transmission Torrent - <a href="install-transmission.cgi">Install</a> /<a href="uninstall-transmission.cgi">Uninstall</a> /<a href="util_transmission-start.cgi">Start</a> / <a href="util_transmission-stop.cgi">Stop</a><br />
 
 Lighttpd Web Server - <a href="install-lighttpd.cgi">Install</a> /<a href="uninstall-lighttpd.cgi">Uninstall</a> /<a href="util_lighttpd-stop.cgi">Stop</a><br />
@@ -119,5 +119,3 @@ cat <<EOT
   </tbody>
 </table>
 </body>
-
-EOT
