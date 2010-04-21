@@ -1,7 +1,4 @@
 #!/bin/sh
-# PlayOn!HD InfoSite
-# Author: mikka [mika.hellmann@gmail.com]
-# Version: 0.2
 
 DATA=`/bin/date`
 MASZYNA=`/bin/hostname`
@@ -9,7 +6,7 @@ OBCIAZENIE=`/bin/cat /proc/loadavg`
 
 echo "Content-type: text/html"
 echo
-echo "<html><head><title>PlayOn!HD InfoSite</title></head><body bgcolor="#000000" text="#FFFFFF"><center>[<a href="system.cgi"><b>SYSTEM</b></a>]&nbsp&nbsp|&nbsp&nbsp<a href="disk.cgi">Disk</a>&nbsp&nbsp|&nbsp&nbsp<a href="network.cgi">Network</a><br><h1>System</h1></center><hr>Welcome on <b>$MASZYNA</b> machine! Average load at this moment ($DATA) is: $OBCIAZENIE<br><br><br>"
+echo "<html><head><title>Eboda Web Control Panel</title></head><body bgcolor="#000000" text="#FFFFFF"><center>[<a href="system.cgi"><b>SYSTEM</b></a>]&nbsp&nbsp|&nbsp&nbsp<a href="disk.cgi">Disk</a>&nbsp&nbsp|&nbsp&nbsp<a href="network.cgi">Network</a><br><h1>System</h1></center><hr>Welcome on <b>$MASZYNA</b> machine! Average load at this moment ($DATA) is: $OBCIAZENIE<br><br><br>"
 echo "<b>Kernel:</b><pre>"
 /bin/cat /proc/version
 echo "</pre><br>"
@@ -30,5 +27,6 @@ echo "<b>Memory map:</b><pre>"
 /bin/cat /proc/iomem
 echo "</pre><br>"
 
-echo "<form action="reboot.cgi" method="post"><button style="background-color:lightgreen">Reboot</button></form>"
+echo '<form action="reboot.cgi" method="post"><button style="background-color:lightgreen">Reboot</button></form>'
+echo '<FORM><INPUT TYPE="button" VALUE="Back" onClick="history.go(-1);return true;"> </FORM> '
 echo "<br></body></html>"
