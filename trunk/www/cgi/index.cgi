@@ -69,20 +69,26 @@ cat <<EOT
 		<span style="font-weight: bold;"><img border="0px" src="img/title_utilities.png" title="Utilities" alt="Utilities" /></span><br />
         <span style="font-size: 12pt;">
 
-Transmission Torrent - <a href="util_transmission-start.cgi">Start</a> / <a href="util_transmission-stop.cgi">Stop</a><br />
+Transmission Torrent -  <a href="install-transmission.cgi">Install</a> /<a href="uninstall-transmission.cgi">Uninstall</a> /<a href="util_transmission-start.cgi">Start</a> / <a href="util_transmission-stop.cgi">Stop</a><br />
 
-Lighttpd Web Server - <a href="util_lighttpd-stop.cgi">Stop</a><br />
+Lighttpd Web Server - <a href="install-lighttpd.cgi">Install</a> /<a href="uninstall-lighttpd.cgi">Uninstall</a> /<a href="util_lighttpd-stop.cgi">Stop</a><br />
 
-rtorrent - <a href="util_rtorrent-start.cgi">Start</a> / <a href="util_rtorrent-stop.cgi">Stop</a><br />
+rtorrent - <a href="install-rtorrent.cgi">Install</a> /<a href="uninstall-rtorrent.cgi">Uninstall</a> /<a href="util_rtorrent-start.cgi">Start</a> / <a href="util_rtorrent-stop.cgi">Stop</a><br />
 
 DvdPlayer - <a href="util_dvdplayer-start.cgi">Start</a> / <a href="util_dvdplayer-stop.cgi">Stop</a><br />
-Optware - <a href="optware/">Change Configuration</a></span><br />
+Optware - <a href="install-optware.cgi">Install</a> /<a href="optware/">Change Configuration</a></span><br />
+vb6rocod_scripts - <a href="install-vb6scripts.cgi">Install</a> <br/>
+Metafeeds simple- <a href="install-mfs.cgi">Install</a> <br/> 
+Metafeeds complete- <a href="install-mfc.cgi">Install</a> <br/>
 
         <br />
+
+
+
         <br />
         <span style="font-weight: bold;"><img border="0px" src="img/title_infologs.png" title="Information/Logs" alt="Information/Logs" /></span><br />
         <a href="system_status.cgi">System Status</a><br />
-        <a href="info_ps.cgi">Lighttpd log</a><br />
+        <a href="lighttpd_status.cgi">Lighttpd log</a><br />
         <br />
         <br />
 
