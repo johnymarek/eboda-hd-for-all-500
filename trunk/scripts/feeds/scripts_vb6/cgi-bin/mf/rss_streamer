@@ -13,7 +13,7 @@
 URL=`echo "$QUERY_STRING" | sed -n 's/^.*url=\([^&]*\).*$/\1/p' | sed "s/%20/ /g"`
 FORMAT=`echo "$QUERY_STRING" | sed -n 's/^.*fmt=\([^&]*\).*$/\1/p' | sed "s/%20/ /g"`
 TITLE="$URL"
-TITLE=`echo "$TITLE" | /tmp/hdd/root/rss_scripts/bin/tr --complement --squeeze-repeats '[:alpha:]' '_'`
+TITLE=`echo "$TITLE" | /opt/bin/tr --complement --squeeze-repeats '[:alpha:]' '_'`
 FILENAME="/tmp/hdd/volumes/HDD1/RSS/$TITLE.$FORMAT"
 
 echo "Content-type: text/plain"
@@ -39,7 +39,7 @@ killall mplayer -9
 echo "#sleep 1"
 sleep 1
 echo "#mplayer -dumpstream \"$URL\" -dumpfile \"$FILENAME\""
-/tmp/hdd/root/rss_scripts/bin/nohup /tmp/hdd/root/rss_scripts/bin/mplayer -dumpstream "$URL" -dumpfile "$FILENAME" &> log.txt &
+/opt/bin/nohup /opt/bin/mplayer -dumpstream "$URL" -dumpfile "$FILENAME" &> log.txt &
 echo "-->"
 #The rest of the rss output
 echo "<channel><title>rss_streamer</title>"
