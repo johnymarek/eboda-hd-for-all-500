@@ -1,5 +1,39 @@
 #!/bin/sh
 
+if [ $# -ne 1 ]
+then
+	
+	echo SVN dir not found, please supply
+	exit 1
+fi
+echo SVN dir: $1
+if [ -d $1 ]
+then
+
+	echo SVN dir found
+else
+	echo SVN dir not found, please supply
+	exit 1
+fi
+
+if [ ! -d $1/src/Resource ]
+then
+  echo resources not found, repository incomplete
+  exit 1
+fi
+
+if [ ! -d $1/src/bin ]
+then
+  echo bin not found, repository incomplete
+  exit 1
+fi
+
+if [ ! -d $1/src/image ]
+then
+  echo mage not found, repository incomplete
+  exit 1
+fi
+
 echo Checking if tool are present ....
 which unyaffs >/dev/null
 if [ $? -eq 1 ]
@@ -28,15 +62,22 @@ mkdir unpacked_root
 
 cd unpacked_root/
 unyaffs ../yaffs2_1.img
-
 mkdir opt
+
 
 sed -ie '/^root/c\
 root::0:0:root:/usr/local/etc/root:/bin/sh' etc/passwd
 
+cp -r $1/src/Resource/* usr/local/bin/Resource 
+cp -r $1/src/bin/* usr/bin
+cp -r $1/src/image/* usr/local/bin/image 
+mkdir tmp_orig/www/cgi-bin/ewcp
+cp -r $1/www/cgi/* tmp_orig/www/cgi-bin/ewcp
+
 cd ..
 rm yaffs2_1.img
 mkyaffs2image unpacked_root/ yaffs2_1.img
+
 rm -rf unpacked_root/
 
 mkdir unpacked_etc

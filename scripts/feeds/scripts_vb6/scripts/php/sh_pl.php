@@ -43,7 +43,7 @@ foreach($videos as $video) {
     $title = $t2[0];
     echo '<item>';
     echo '<title>'.$title.'</title>';
-    echo '<link>http://127.0.0.1:82/scripts/php/magic.php?id='.$id.'</link>';
+    echo '<link>http://127.0.0.1:8081/scripts/php/magic.php?id='.$id.'</link>';
     echo '<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/rss1.jpg" />';	
     echo '</item>';
     $n = $n + 1;
