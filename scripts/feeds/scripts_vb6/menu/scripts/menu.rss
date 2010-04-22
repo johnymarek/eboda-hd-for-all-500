@@ -276,10 +276,10 @@
         {^M
         state=getDrawingItemState();^M
         if( state == "focus" ){^M
-        "image/mele/hdd_focus.jpg";^M
+        "./scripts/mele/hdd_focus.jpg";^M
         }^M
         else{^M
-        "image/mele/hdd_unfocus.jpg";^M
+        "./scripts/mele/hdd_unfocus.jpg";^M
         }^M
         }^M
       </script>^M
