@@ -5,7 +5,7 @@
 VERSION=`grep VERSION current_version.txt  | cut -d'=' -f 2`
 HOSTNAME=`/bin/hostname`
 LOAD=`/bin/cat /proc/loadavg`
-
+LOCALIP=`/sbin/ifconfig -a | grep -A 1 eth0 | grep inet | tr -s " " | cut -d " " -f 3 | cut -d ":" -f 2`
 cat <<EOT
 Content-type: text/html
 
@@ -41,7 +41,7 @@ EOT
 
     pidof lighttpd >/dev/null && echo -n "<img src=\"img/started_daemon.gif\" alt=\"Started: \">"  
     pidof lighttpd >/dev/null  || echo -n "<img src=\"img/stopped_daemon.gif\" alt=\"Stopped: \">"  
-    echo "HTTP: Lighttpd Web Server <br />"
+    echo "HTTP: Lighttpd Web Server and php <br />"
 
     pidof transmission-daemon >/dev/null  && echo -n "<img src=\"img/started_daemon.gif\" alt=\"Started: \">"  
     pidof transmission-daemon >/dev/null  || echo -n "<img src=\"img/stopped_daemon.gif\" alt=\"Stopped: \">"  
@@ -70,17 +70,18 @@ cat <<EOT
 		<span style="font-weight: bold;"><img border="0px" src="img/title_utilities.png" title="Utilities" alt="Utilities" /></span><br />
         <span style="font-size: 12pt;">
 Eboda Web Control Panel - <a href="update-webcontrol.cgi">Update</a> / <a href="restore-webcontrol.cgi">Back to previous version</a> <br/>
+
+Optware - <a href="install-optware.cgi">Install</a> /<a href="optware/">Change Configuration</a></span><br />
+Lighttpd Web Server - <a href="install-lighttpd.cgi">Install</a> /<a href="uninstall-lighttpd.cgi">Uninstall</a> /<a href="util_lighttpd-start.cgi">Start</a>/<a href="util_lighttpd-stop.cgi">Stop</a><br />
+vb6rocod_scripts - <a href="install-vb6scripts.cgi">Install</a> <br/>
+
+Metafeeds simple - <a href="install-mfs.cgi">Install</a> <br/> 
+Metafeeds complete - <a href="install-mfc.cgi">Install</a> <br/>
+
 Transmission Torrent - <a href="install-transmission.cgi">Install</a> /<a href="uninstall-transmission.cgi">Uninstall</a> /<a href="util_transmission-start.cgi">Start</a> / <a href="util_transmission-stop.cgi">Stop</a><br />
-
-Lighttpd Web Server - <a href="install-lighttpd.cgi">Install</a> /<a href="uninstall-lighttpd.cgi">Uninstall</a> /<a href="util_lighttpd-stop.cgi">Stop</a><br />
-
 rtorrent - <a href="install-rtorrent.cgi">Install</a> /<a href="uninstall-rtorrent.cgi">Uninstall</a> /<a href="util_rtorrent-start.cgi">Start</a> / <a href="util_rtorrent-stop.cgi">Stop</a><br />
 
 DvdPlayer - <a href="util_dvdplayer-start.cgi">Start</a> / <a href="util_dvdplayer-stop.cgi">Stop</a><br />
-Optware - <a href="install-optware.cgi">Install</a> /<a href="optware/">Change Configuration</a></span><br />
-vb6rocod_scripts - <a href="install-vb6scripts.cgi">Install</a> <br/>
-Metafeeds simple - <a href="install-mfs.cgi">Install</a> <br/> 
-Metafeeds complete - <a href="install-mfc.cgi">Install</a> <br/>
 
         <br />
 
