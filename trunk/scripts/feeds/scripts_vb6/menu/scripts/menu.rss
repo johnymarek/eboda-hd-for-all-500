@@ -1,0 +1,294 @@
+<?xml version='1.0' ?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <script>
+    showIdle();
+    YoutubeIndex =0;
+    PicasaIndex =3;
+    NewsIndex =4;
+    FlickrIndex =5;
+    PPSIndex =0;
+    YoukuIndex =0;
+    ThunderIndex =0;
+    WeatherIndex =2;
+    MetafeedsIndex =1;
+    HddIndex =0
+  </script>
+
+  <mediaDisplay name=photoView
+	        itemBackgroundColor=0:0:0
+                backgroundColor=0:0:0
+              
+                sideTopHeightPC=0
+                sideBottomHeightPC=0   
+              
+                rowCount=1 
+                columnCount=5
+                fontSize=16
+              
+                itemPerPage=5
+                itemBorderPC=0
+                itemOffsetXPC=11.80
+                itemGapXPC=0
+                itemGapYPC=0
+                itemWidthPC=15.6
+                itemHeightPC=41.7
+              
+                centerYPC=33.3
+                centerHeightPC=100 
+              
+                showHeader="no"  
+                showDefaultInfo="no"	
+	        >
+    <idleImage> image/POPUP_LOADING_01.png </idleImage>
+    <idleImage> image/POPUP_LOADING_02.png </idleImage>
+    <idleImage> image/POPUP_LOADING_03.png </idleImage>
+    <idleImage> image/POPUP_LOADING_04.png </idleImage>
+    <idleImage> image/POPUP_LOADING_05.png </idleImage>
+    <idleImage> image/POPUP_LOADING_06.png </idleImage>
+    <idleImage> image/POPUP_LOADING_07.png </idleImage>
+    <idleImage> image/POPUP_LOADING_08.png </idleImage>
+  
+    <backgroundDisplay>
+      <image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+        image/mele/backgd.jpg
+      </image>  
+    </backgroundDisplay> 
+    
+    <image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+      image/mele/rss_title.jpg
+    </image>
+  
+    <text  offsetXPC=19.2 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+      RSS
+    </text>
+  
+  </mediaDisplay>    	
+
+
+  <channel>
+    <title>RSS</title>
+    <link>./scripts/menu.rss</link>
+    <menu>main menu</menu>	
+  
+  
+  
+    <!--<item>
+       <title>YouTube</title>
+       <link>rss_file://./IMS_Modules/Youtube/youtube.rss</link>
+       <media:thumbnail  width="120" height="90" >
+         <script>
+           if (getQueryItemIndex() == YoutubeIndex) 
+           {
+           state=getDrawingItemState();
+           if( state == "focus" ){
+           "IMS_Modules/Youtube/youtube_focus.jpg";
+           }
+           else{
+           "IMS_Modules/Youtube/youtube_unfocus.jpg";
+           }
+           }
+         </script>
+       </media:thumbnail>
+    </item>-->
+  
+    <item>
+      <title>Picasa</title>
+      <link>picasa://</link>
+      <media:thumbnail  width="120" height="90" >
+        <script>
+          if (getQueryItemIndex() == PicasaIndex) 
+          {
+          state=getDrawingItemState();
+          if( state == "focus" ){
+          "IMS_Modules/Picasa/picasa_focus.jpg";
+          }
+          else{
+          "IMS_Modules/Picasa/picasa_unfocus.jpg";
+          }
+          }
+        </script>
+      </media:thumbnail>
+      <mediaDisplay name=photoView backgroundImage="image/E92_335iCoupe_3-4drvrFrnt.jpg"
+                    rowCount=3 columnCount=7 viewAreaXPC = 2 sideColorBottom=0:0:0 sideColorTop=0:0:0>
+        <idleImage> image/POPUP_LOADING_01.png </idleImage>
+        <idleImage> image/POPUP_LOADING_02.png </idleImage>
+        <idleImage> image/POPUP_LOADING_03.png </idleImage>
+        <idleImage> image/POPUP_LOADING_04.png </idleImage>
+        <idleImage> image/POPUP_LOADING_05.png </idleImage>
+        <idleImage> image/POPUP_LOADING_06.png </idleImage>
+        <idleImage> image/POPUP_LOADING_07.png </idleImage>
+        <idleImage> image/POPUP_LOADING_08.png </idleImage>
+      </mediaDisplay>
+      <submenu name="Search for Photo"  description="Search all the Photos using keyword">
+        <url>http://picasaweb.google.com/data/feed/api/all?q=%s&amp;max-results=48&amp;thumbsize=288</url>
+        <nextPageItemCount> 48 </nextPageItemCount>
+        <input name="keyword"> keyword </input>
+      </submenu>
+    
+      <submenu name="Login"  description="Login in Picasa using User Name">
+        <url>http://picasaweb.google.com/data/feed/api/user/%s?kind=album </url>
+        <input name="keyword"> keyword </input>
+      </submenu>
+    
+    </item>
+  
+  
+    <item>
+      <title>News</title>
+      <link>rss_file://./IMS_Modules/News/scripts/news.rss</link>
+      <media:thumbnail  width="120" height="90" >
+        <script>
+          if (getQueryItemIndex() == NewsIndex) 
+          {
+          state=getDrawingItemState();
+          if( state == "focus" ){
+          "IMS_Modules/News/image/news_focus_en.jpg";
+          }
+          else{
+          "IMS_Modules/News/image/news_unfocus_en.jpg";
+          }
+          }
+        </script>
+      </media:thumbnail>
+    
+    </item>
+  
+    <item>
+      <title>Flickr</title>
+      <link>rss_file://./IMS_Modules/Flickr/flickr.rss</link>
+      <media:thumbnail  width="120" height="90" >
+        <script>
+          if (getQueryItemIndex() == FlickrIndex) 
+          {
+          state=getDrawingItemState();
+          if( state == "focus" ){
+          "IMS_Modules/Flickr/flickr_focus.jpg";
+          }
+          else{
+          "IMS_Modules/Flickr/flickr_unfocus.jpg";
+          }
+          }
+        </script>
+      </media:thumbnail>
+    </item>
+  
+    <!--<!--<!--<item>
+               <title>PPS</title>
+               <link>rss_file://./IMS_Modules/PPS/scripts/pps.rss</link>
+               <media:thumbnail  width="120" height="90" >
+                 <script>
+                   if (getQueryItemIndex() == PPSIndex) 
+                   {
+                   state=getDrawingItemState();
+                   if( state == "focus" ){
+                   "IMS_Modules/PPS/image/pps_focus.jpg";
+                   }
+                   else{
+                   "IMS_Modules/PPS/image/pps_unfocus.jpg";
+                   }
+                   }
+                 </script>
+               </media:thumbnail>
+             
+    </item>-->-->-->
+  
+    <!--<item>
+       <title>Youku</title>
+       <link>rss_file://./IMS_Modules/Youku/youku.rss</link>
+       <media:thumbnail  width="120" height="90" >
+         <script>
+           if (getQueryItemIndex() == YoukuIndex) 
+           {
+           state=getDrawingItemState();
+           if( state == "focus" ){
+           "./IMS_Modules/Youku/youku_focus_ch.jpg";
+           }
+           else{
+           "./IMS_Modules/Youku/youku_unfocus_ch.jpg";
+           }
+           }
+         </script>
+       </media:thumbnail>
+    </item>-->
+  
+    <!--<!--<!--<item>
+               <title>Thunder</title>
+               <link>rss_file://./IMS_Modules/Thunder/scripts/thundervod_guide.rss</link>
+               <media:thumbnail  width="120" height="90" >
+                 <script>
+                   if (getQueryItemIndex() == ThunderIndex) 
+                   {
+                   state=getDrawingItemState();
+                   if( state == "focus" ){
+                   "./IMS_Modules/Thunder/image/thunderlib_focus.jpg";
+                   }
+                   else{
+                   "./IMS_Modules/Thunder/image/thunderlib_unfocus.jpg";
+                   }
+                   }
+                 </script>
+               </media:thumbnail>
+    </item>-->-->-->
+  
+    <item>
+      <title>Weather</title>
+      <link>rss_file://./IMS_Modules/Weather/scripts/map/myfavorites.rss</link>
+      <media:thumbnail  width="120" height="90" >
+        <script>
+          if (getQueryItemIndex() == WeatherIndex) 
+          {
+          state=getDrawingItemState();
+          if( state == "focus" ){
+          "./IMS_Modules/Weather/image/weather_focus_en.jpg";
+          }
+          else{
+          "./IMS_Modules/Weather/image/weather_unfocus_en.jpg";
+          }
+          }
+        </script>
+      </media:thumbnail>
+    </item>
+
+    <item>
+      <title>MetaFeeds</title>
+      <link>http://www.metafeeds.com/channel/hdforall5/rss</link>
+      <media:thumbnail  width="120" height="90" >
+        <script>
+          if (getQueryItemIndex() == MetafeedsIndex)
+          {
+          state=getDrawingItemState();
+          if( state == "focus" ){
+          "./scripts/image/metafeeds_focus.jpg";
+          }
+          else{
+          "./scripts/image/metafeeds_unfocus.jpg";
+          }
+          }
+        </script>
+      </media:thumbnail>
+    </item>
+
+    <title>HDD Links</title>^M
+    <link>/tmp/hdd/volumes/HDD1/scripts/menu.rss</link>^M
+    <media:thumbnail  width="120" height="90" >^M
+      <script>^M
+        if (getQueryItemIndex() == HddIndex) ^M
+        {^M
+        state=getDrawingItemState();^M
+        if( state == "focus" ){^M
+        "image/mele/hdd_focus.jpg";^M
+        }^M
+        else{^M
+        "image/mele/hdd_unfocus.jpg";^M
+        }^M
+        }^M
+      </script>^M
+    </media:thumbnail>^M
+  </item>^M
+
+
+
+
+</channel>
+</rss>
+
