@@ -65,8 +65,9 @@ unyaffs ../yaffs2_1.img
 mkdir opt
 
 
-sed -ie '/^root/c\
+sed -i -e '/^root/c\
 root::0:0:root:/usr/local/etc/root:/bin/sh' etc/passwd
+
 
 cp -r $1/src/Resource/* usr/local/bin/Resource 
 cp -r $1/src/bin/* usr/bin
@@ -76,19 +77,19 @@ cp -r $1/www/cgi/* tmp_orig/www/cgi-bin/ewcp
 
 cd ..
 rm yaffs2_1.img
-mkyaffs2image unpacked_root/ yaffs2_1.img
+mkyaffs2image unpacked_root/ yaffs2_1.img 
 
 rm -rf unpacked_root/
 
-mkdir unpacked_etc
-[ $? -eq 0 ] || exit cannot create dir please start from a clean directory
-
-cd unpacked_etc/
-mkdir root
-rm ../usr.local.etc.tar.bz2
-tar jcvf ../usr.local.etc.tar.bz2 *
-cd ..
-rm -rf unpacked_etc/
+#mkdir unpacked_etc
+#[ $? -eq 0 ] || exit cannot create dir please start from a clean directory
+#
+#cd unpacked_etc/
+#mkdir root
+##rm ../usr.local.etc.tar.bz2
+##tar jcvf ../usr.local.etc.tar.bz2 *
+#cd ..
+#rm -rf unpacked_etc/
 cd ..
 mv ../install.img ../install.img.orig
 tar cvf ../install.img *
