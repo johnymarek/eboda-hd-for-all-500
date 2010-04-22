@@ -11,6 +11,11 @@ tmpdir=/tmp
 
 cd $tmpdir && echo DIR changend to $tmpdir
 wget http://eboda-hd-for-all-500.googlecode.com/files/ewcp-latest.zip && echo Got latest package
+if [ $? -ne 0 ]
+then
+echo '<FORM><INPUT TYPE="button" VALUE="Back" onClick="history.go(-1);return true;"> </FORM> '
+exit
+fi
 mkdir dir_$$ && echo created new package dir
 cd dir_$$ && echo DIR changed to dir$$
 unzip ../ewcp-latest.zip && echo new package extracted
