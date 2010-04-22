@@ -11,7 +11,7 @@
     ThunderIndex =0;
     WeatherIndex =2;
     MetafeedsIndex =1;
-    HddIndex =0
+    HddIndex =0;
   </script>
 
   <mediaDisplay name=photoView
@@ -75,7 +75,6 @@
     <!--<item>
        <title>YouTube</title>
        <link>rss_file://./IMS_Modules/Youtube/youtube.rss</link>
-       <media:thumbnail  width="120" height="90" >
          <script>
            if (getQueryItemIndex() == YoutubeIndex) 
            {
@@ -90,7 +89,61 @@
          </script>
        </media:thumbnail>
     </item>-->
+    <item>
+    <title>HDD Links</title>^M
+      <media:thumbnail  width="120" height="90" >
+        <script>
+          if (getQueryItemIndex() == HddIndex)
+          {
+          state=getDrawingItemState();
+          if( state == "focus" ){
+          "./scripts/image/hdd_focus.jpg";
+          }
+          else{
+          "./scripts/image/hdd_unfocus.jpg";
+          }
+          }
+        </script>
+      </media:thumbnail>
+    <link>rss_file:///tmp/hdd/volumes/HDD1/scripts/menu.rss</link>^M
+  </item>^M
   
+    <item>
+      <title>MetaFeeds</title>
+      <link>http://www.metafeeds.com/channel/hdforall5/rss</link>
+      <media:thumbnail  width="120" height="90" >
+        <script>
+          if (getQueryItemIndex() == MetafeedsIndex)
+          {
+          state=getDrawingItemState();
+          if( state == "focus" ){
+          "./scripts/image/metafeeds_focus.jpg";
+          }
+          else{
+          "./scripts/image/metafeeds_unfocus.jpg";
+          }
+          }
+        </script>
+      </media:thumbnail>
+    </item>
+    <item>
+      <title>Weather</title>
+      <link>rss_file://./IMS_Modules/Weather/scripts/map/myfavorites.rss</link>
+      <media:thumbnail  width="120" height="90" >
+        <script>
+          if (getQueryItemIndex() == WeatherIndex) 
+          {
+          state=getDrawingItemState();
+          if( state == "focus" ){
+          "./IMS_Modules/Weather/image/weather_focus_en.jpg";
+          }
+          else{
+          "./IMS_Modules/Weather/image/weather_unfocus_en.jpg";
+          }
+          }
+        </script>
+      </media:thumbnail>
+    </item>
     <item>
       <title>Picasa</title>
       <link>picasa://</link>
@@ -230,61 +283,7 @@
                </media:thumbnail>
     </item>-->-->-->
   
-    <item>
-      <title>Weather</title>
-      <link>rss_file://./IMS_Modules/Weather/scripts/map/myfavorites.rss</link>
-      <media:thumbnail  width="120" height="90" >
-        <script>
-          if (getQueryItemIndex() == WeatherIndex) 
-          {
-          state=getDrawingItemState();
-          if( state == "focus" ){
-          "./IMS_Modules/Weather/image/weather_focus_en.jpg";
-          }
-          else{
-          "./IMS_Modules/Weather/image/weather_unfocus_en.jpg";
-          }
-          }
-        </script>
-      </media:thumbnail>
-    </item>
 
-    <item>
-      <title>MetaFeeds</title>
-      <link>http://www.metafeeds.com/channel/hdforall5/rss</link>
-      <media:thumbnail  width="120" height="90" >
-        <script>
-          if (getQueryItemIndex() == MetafeedsIndex)
-          {
-          state=getDrawingItemState();
-          if( state == "focus" ){
-          "./scripts/image/metafeeds_focus.jpg";
-          }
-          else{
-          "./scripts/image/metafeeds_unfocus.jpg";
-          }
-          }
-        </script>
-      </media:thumbnail>
-    </item>
-
-    <title>HDD Links</title>^M
-    <link>/tmp/hdd/volumes/HDD1/scripts/menu.rss</link>^M
-    <media:thumbnail  width="120" height="90" >^M
-      <script>^M
-        if (getQueryItemIndex() == HddIndex) ^M
-        {^M
-        state=getDrawingItemState();^M
-        if( state == "focus" ){^M
-        "./scripts/mele/hdd_focus.jpg";^M
-        }^M
-        else{^M
-        "./scripts/mele/hdd_unfocus.jpg";^M
-        }^M
-        }^M
-      </script>^M
-    </media:thumbnail>^M
-  </item>^M
 
 
 
