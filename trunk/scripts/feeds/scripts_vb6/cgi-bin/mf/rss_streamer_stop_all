@@ -1,4 +1,4 @@
-#!/tmp/hdd/root/opt/bin/bash
+#!/opt/bin/bash
 #(c)vonck 2010
 #LICENCE: GPL
 #Put this file in /tmp/hdd/root/unicgi/cgi-bin

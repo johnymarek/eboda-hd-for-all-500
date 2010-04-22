@@ -7,7 +7,7 @@
 
     <item>
       <title>Trailere filme noi</title>
-	      <link>http://127.0.0.1:82/scripts/php/cinemarx.php</link>
+	      <link>http://127.0.0.1:8081/scripts/php/cinemarx.php</link>
 	      <media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/cinemax1.jpg"/>
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
 		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>

@@ -6,7 +6,7 @@
     <title>VB6 test</title>
 <item>
 <title>Break.com</title>
-<link>http://127.0.0.1:82/scripts/php/break.php</link>
+<link>http://127.0.0.1:8081/scripts/php/break.php</link>
 <media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/break_logo.jpg" />
 <mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
 		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
@@ -31,7 +31,7 @@
 
 <item>
 <title>yikers</title>
-<link>http://127.0.0.1:82/scripts/php/yikers.php</link>
+<link>http://127.0.0.1:8081/scripts/php/yikers.php</link>
 <media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/yikers.jpg" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
 		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
@@ -106,7 +106,7 @@
 
 <item>
 <title>clickplay.tv</title>
-<link>http://127.0.0.1:82/scripts/php/c.php</link>
+<link>http://127.0.0.1:8081/scripts/php/c.php</link>
 	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/clickplay.jpg"/>
 	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
 	<idleImage>image/POPUP_LOADING_01.jpg</idleImage>
