@@ -1,24 +1,6 @@
 ﻿<?php echo "<?phpxml version='1.0' ?>"; ?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
-	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
-	<idleImage>image/POPUP_LOADING_01.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_02.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_03.jpg</idleImage>     
-	<idleImage>image/POPUP_LOADING_04.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_05.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_06.jpg</idleImage>
-		<backgroundDisplay>
-			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
-			image/mele/backgd.jpg
-			</image>  
-		</backgroundDisplay>
-		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
-		image/mele/rss_title.jpg
-		</image>
-		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
-		TnaFlix
-		</text>	
-	</mediaDisplay>
+
 <channel>
 	<title>TnaFlix</title>
 	<menu>main menu</menu>
@@ -86,7 +68,7 @@ foreach($videos as $video) {
     $title = $t2[0];
 
     $html = file_get_contents($link);
-    $t1 = explode('<span class="floatRight download">', $html);
+    $t1 = explode('<!-- download -->', $html);
     $t2 = explode('<a href="', $t1[1]);
     $t3 = explode('"',$t2[1]);
     $link = $t3[0];

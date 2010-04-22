@@ -84,7 +84,9 @@ $link = str_between($link,'"mediaURL":"','"');
 //$link = urldecode($link);
 //http:\/\/akvideos.metacafe.com\/ItemFiles\/[From www.metacafe.com] 4427778.13709542.11.flv
 $link= str_replace('\/','/',$link);
-
+$link = str_replace(' ','%20',$link);
+$link = str_replace('[','%5B',$link);
+$link = str_replace(']','%5D',$link);
     echo '<item>';
     echo '<title>'.$title.'</title>';
     echo '<link>'.$link.'</link>';

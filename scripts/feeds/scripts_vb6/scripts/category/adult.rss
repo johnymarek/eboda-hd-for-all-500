@@ -4,17 +4,31 @@
   <channel>
 
     <title>Adult Channel - XXX</title>
-
+    <item>
+      <title>XXX Surprise</title>
+	      <link>http://www.metafeeds.com/channel/xtreamer-porn-pipes/rss</link>
+	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/scripts9/image/xpp.jpg"/>
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		XXX Surprise
+		</text>	
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
   <item>
 	<title>French Maid TV</title>
 		<link>http://feeds.feedburner.com/FrenchMaidTV</link>
 	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
-	<idleImage>image/POPUP_LOADING_01.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_02.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_03.jpg</idleImage>     
-	<idleImage>image/POPUP_LOADING_04.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_05.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_06.jpg</idleImage>
 		<backgroundDisplay>
 			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
 			image/mele/backgd.jpg
@@ -26,6 +40,14 @@
 		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
 		French Maid TV
 		</text>	
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy8.png</idleImage>
 	</mediaDisplay>
 	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/feed_150.png"/>
   </item>
@@ -35,12 +57,7 @@
 	      <link>http://www.metafeeds.com/channel/xxxlivetv/rss</link>
 	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/XLiveTV.jpg"/>
 	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
-	<idleImage>image/POPUP_LOADING_01.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_02.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_03.jpg</idleImage>     
-	<idleImage>image/POPUP_LOADING_04.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_05.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_06.jpg</idleImage>
+
 		<backgroundDisplay>
 			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
 			image/mele/backgd.jpg
@@ -52,6 +69,14 @@
 		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
 		Live XXX TV
 		</text>	
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy8.png</idleImage>
 	</mediaDisplay>
   </item>
 
@@ -60,12 +85,26 @@
 	      <link>http://127.0.0.1:82/scripts/php/tube8.php</link>
 	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tube8.png"/>
 	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
-	<idleImage>image/POPUP_LOADING_01.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_02.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_03.jpg</idleImage>     
-	<idleImage>image/POPUP_LOADING_04.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_05.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_06.jpg</idleImage>
+
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		Tube8.com
+		</text>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy8.png</idleImage>	
 	</mediaDisplay>
   </item>
   
@@ -74,12 +113,26 @@
 	      <link>http://127.0.0.1:82/scripts/php/v1.php</link>
 	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/logo.png"/>
 	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
-	<idleImage>image/POPUP_LOADING_01.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_02.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_03.jpg</idleImage>     
-	<idleImage>image/POPUP_LOADING_04.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_05.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_06.jpg</idleImage>
+
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		KeezMovies.com
+		</text>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy8.png</idleImage>
 	</mediaDisplay>
   </item>
   
@@ -88,12 +141,26 @@
 	      <link>http://127.0.0.1:82/scripts/php/tna.php</link>
 	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/bg_021.png"/>
 	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
-	<idleImage>image/POPUP_LOADING_01.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_02.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_03.jpg</idleImage>     
-	<idleImage>image/POPUP_LOADING_04.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_05.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_06.jpg</idleImage>
+
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		TnaFlix
+		</text>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy8.png</idleImage>
 	</mediaDisplay>
   </item>
   
@@ -102,12 +169,26 @@
 	      <link>http://127.0.0.1:82/scripts/php/extremetube.php</link>
 	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/extremetube.jpg"/>
 	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
-	<idleImage>image/POPUP_LOADING_01.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_02.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_03.jpg</idleImage>     
-	<idleImage>image/POPUP_LOADING_04.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_05.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_06.jpg</idleImage>
+
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		extremetube
+		</text>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy8.png</idleImage>
 	</mediaDisplay>
   </item>
   
@@ -116,25 +197,90 @@
 	      <link>http://127.0.0.1:82/scripts/php/redtube.php</link>
 	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/redtube_260x52_black.png"/>
 	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
-	<idleImage>image/POPUP_LOADING_01.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_02.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_03.jpg</idleImage>     
-	<idleImage>image/POPUP_LOADING_04.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_05.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_06.jpg</idleImage>
+
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		RedTube
+		</text>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+          <item>
+      <title>friktube</title>
+	      <link>http://127.0.0.1:82/scripts/php/friktube.php</link>
+	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/friktube.gif"/>
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
+
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		friktube
+		</text>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy8.png</idleImage>
 	</mediaDisplay>
   </item>
   
+          <item>
+      <title>pornmehorny</title>
+	      <link>http://127.0.0.1:82/scripts/php/pornmehorny.php</link>
+	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/pornmehorny.png"/>
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
+
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		pornmehorny
+		</text>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
 <item>
 <title>XXX4PODS</title>
 <link>http://xxx4pods.com/podcasts/podcast.xml</link>
 	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
-	<idleImage>image/POPUP_LOADING_01.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_02.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_03.jpg</idleImage>     
-	<idleImage>image/POPUP_LOADING_04.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_05.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_06.jpg</idleImage>
+
 		<backgroundDisplay>
 			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
 			image/mele/backgd.jpg
@@ -146,6 +292,14 @@
 		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
 		XXX4PODS
 		</text>	
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy8.png</idleImage>
 	</mediaDisplay>
 <media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/XXX-Banner.png"/>
 </item>

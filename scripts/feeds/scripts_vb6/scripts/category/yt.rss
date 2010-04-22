@@ -36,5 +36,10 @@
 <link>http://127.0.0.1:82/scripts/php/yt_hd.php</link>
 </item>
 
+<item>
+<title>Movie</title>
+<link>http://127.0.0.1:82/scripts/php/yt_movie.php</link>
+</item>
+
 </channel>
 </rss>
