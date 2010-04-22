@@ -65,7 +65,7 @@ foreach($videos as $video) {
 
     $t1 = explode('title="', $video);
     $t2 = explode('"', $t1[1]);
-    $title = $t2[0];
+    $title = htmlspecialchars_decode($t2[0]);
 
     $t1 = explode('src="', $video);
     $t2 = explode('"', $t1[1]);
