@@ -60,7 +60,8 @@ EOF
 rm -f /opt/share/www/scripts
 ln -s /tmp/hdd/volumes/HDD1/scripts /opt/share/www/scripts
 
-sh /opt/etc/init.d/S80* start
+sh /opt/etc/init.d/S80lighttpd stop
+sh /opt/etc/init.d/S80lighttpd start
 
 echo '<form action="reboot.cgi" method="post"><button style="background-color:lightgreen">Reboot</button></form>'
 echo '<FORM><INPUT TYPE="button" VALUE="Back" onClick="history.go(-1);return true;"> </FORM> '
