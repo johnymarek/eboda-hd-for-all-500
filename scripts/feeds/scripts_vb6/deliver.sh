@@ -6,19 +6,19 @@
 #deliver menu
 
 cd menu
-zip ../menu.zip *
+zip -r ../menu.zip *
 cd ..
 
 cd cgi-bin/mf/
-zip ../../mf-cgi-bin.zip *
+zip -r ../../mf-cgi-bin.zip *
 cd ../..
 
 cd cgi-bin/vb6/
-zip ../../vb6-cgi-bin.zip *
+zip -r ../../vb6-cgi-bin.zip *
 cd ../..
 
 cd bin
-zip ../mf-binaries.zip *
+zip -r ../mf-binaries.zip *
 cd ..
 
-zip scripts.zip scripts
+zip -r hdd_scripts.zip scripts
