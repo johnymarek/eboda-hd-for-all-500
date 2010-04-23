@@ -1,0 +1,23 @@
+#500plus_r1245_modified_v1
+
+= !!!! NETESTAT !!!! =
+
+= Nou firmware disponibil =
+
+Modificari (am incercat sa include ce era in firmware-ul de la vb6):
+  * alt font system + subtitrare, TVSQ2, sper sa va placa.
+  * screensaver by pif_foto
+  * corectie traducere mesaje OSD by MTZ
+  * skin pack by mikka - stop, play, pause, etc
+  * suport pentru streaming (ShoutCast , mms, etc). Linkurile trebuie insa prelucrate (puteti folosi ca exemplu cele din pachetul script).
+  * *eboda web control interface http://ip_mp/ewcp.html unde in loc de ip_mp scrii IP-ul media-playerului tau*
+
+Acum instalarea scripturilor de la vb6 e mai usoara:  
+  # deschide pagina web: http://ip_mp/ewcp.html unde in loc de ip_mp scrii IP-ul media-playerului tau
+  # click pe Install pe linia cu Optware 
+  # click pe Back
+  # click pe Install pe linia cu Lighttpd Web Server 
+  # click pe Back
+  # click pe Install pe linia cu vb6rocod_scripts 
+
+*Nu am incercat daca e compatibil cu POD*
