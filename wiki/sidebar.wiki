@@ -2,9 +2,9 @@
 
 
   * [Building_your_own_firmware Building your own firmware] 
-  * Web Interface
+  * [Web Interface ] 
   * Firmware
-    * [HD_for_all_500_ver_v7.0.18.r3617_modified_v1 HD_for_all_500_ver_v7.0.18.r3617_modified_v1]
+    * [500_r3617_modified_v1 Firmware for 500 r3617 modified v1.0]
 <wiki:comment>
 
   * Optware
