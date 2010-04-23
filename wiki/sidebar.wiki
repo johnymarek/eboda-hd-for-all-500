@@ -5,6 +5,7 @@
   * [Web_Interface Web Interface ] 
   * Firmware
     * [500_r3617_modified_v1 Firmware for 500 r3617 modified v1.0]
+    * [500plus_r1245_modified_v1 Firmware for 500plus r1245 modified v1.0]
 <wiki:comment>
 
   * Optware
