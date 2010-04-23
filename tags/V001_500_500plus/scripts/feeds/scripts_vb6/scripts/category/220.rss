@@ -1,0 +1,33 @@
+<?xml version='1.0' ?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+<title>220.ro</title>
+<link>/220.rss</link>
+
+<item>
+<title>200.ro - selectii</title>
+<link>http://127.0.0.1:8081/scripts/php/220.php</link>
+</item>
+
+<item>
+<title>200.ro - filmele zilei</title>
+<link>http://127.0.0.1:8081/scripts/php/220_filmele_zilei.php</link>
+</item>
+
+<item>
+<title>200.ro - Cele mai recente</title>
+<link>http://127.0.0.1:8081/scripts/php/220_recente.php</link>
+</item>
+
+<item>
+<title>200.ro - Cele mai vizionate</title>
+<link>http://127.0.0.1:8081/scripts/php/220_cele_mai_vazute.php</link>
+</item>
+
+<item>
+<title>200.ro - Cele mai comentate</title>
+<link>http://127.0.0.1:8081/scripts/php/220_cele_mai_comentate.php</link>
+</item>
+
+</channel>
+</rss>

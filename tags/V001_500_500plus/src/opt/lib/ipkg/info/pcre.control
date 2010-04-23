@@ -1,0 +1,10 @@
+Package: pcre
+Architecture: mipsel
+Priority: optional
+Section: util
+Version: 8.02-1
+Maintainer: NSLU2 Linux <nslu2-linux@yahoogroups.com>
+Source: ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.02.tar.bz2
+Description: Perl-compatible regular expression library
+Depends: 
+Conflicts: 

@@ -1,0 +1,565 @@
+<?xml version="1.0"?>
+<!--Xtreamer Community 2010 - xMenu8 Cap-->
+<rss version="2.0" xmlns:media="http://purl.org/dc/elements/1.1/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<mediaDisplay name="photoView" 
+      fontSize="16" 
+      rowCount="3"
+      columnCount="4"
+      showHeader="yes"
+
+      itemGapXPC="2.5"
+      
+      rollItems="yes"
+      drawItemText="no" 
+      itemImageXPC="10"
+      itemImageYPC="0"
+
+      itemOffsetXPC="7"
+      itemOffsetYPC="20"   
+      itemBorderColor="0:255:180"
+     
+      forceFocusOnItem="yes"
+      itemCornerRounding="yes"
+      
+      sliding="yes"
+      idleImageXPC="45"
+      idleImageYPC="42"
+      idleImageWidthPC="7"
+      idleImageHeightPC="16"
+      > 
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		/tmp/hdd/volumes/HDD1/scripts/image/folder.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		HDD Links
+		</text>	       
+       <idleImage> image/POPUP_LOADING_01.jpg </idleImage>
+       <idleImage> image/POPUP_LOADING_02.jpg </idleImage>
+       <idleImage> image/POPUP_LOADING_03.jpg </idleImage>
+   
+       <idleImage> image/POPUP_LOADING_04.jpg </idleImage>
+
+       <idleImage> image/POPUP_LOADING_05.jpg </idleImage>
+       <idleImage> image/POPUP_LOADING_06.jpg </idleImage>
+                    
+      </mediaDisplay>
+
+
+  <channel>
+    <title>RSS List</title>
+<item>
+<title>LiveX9</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/scripts9/menu.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/Xtreamer.jpg"/>
+</item>
+
+<item>
+<title>ShoutCast - Main</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/sh.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/shoutcast.jpg"/>
+</item>
+
+<item>
+<title>YouTube</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/yt.rss</link>
+<mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
+		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_03.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_04.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_05.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_06.jpg </idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		/tmp/hdd/volumes/HDD1/scripts/image/youtube_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		YouTube
+		</text>			
+	    </mediaDisplay>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/sn-yt.png"/>
+</item>
+
+<!--<item>
+<title>TV and Radio</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/ltvandrt.rss</link>
+<mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
+		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_03.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_04.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_05.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_06.jpg </idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		TV and Radio
+		</text>			
+	    </mediaDisplay>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/LiveTV.jpg"/>
+</item>-->
+
+<!---<item>
+<title>News and Discussion</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/nandd.rss</link>
+<mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
+		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_03.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_04.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_05.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_06.jpg </idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		/tmp/hdd/volumes/HDD1/scripts/image/news_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		News and Discussion
+		</text>			
+	    </mediaDisplay>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/nandd.jpg"/>
+</item>
+
+<item>
+<title>TV Shows and Movies</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/mandg.rss</link>
+<mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
+		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_03.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_04.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_05.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_06.jpg </idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		TV Shows and Movies
+		</text>			
+	    </mediaDisplay>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tvandm.jpg"/>
+</item>
+
+<item>
+<title>Comedy and Entertainment</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/cande.rss</link>
+<mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
+		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_03.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_04.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_05.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_06.jpg </idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		Comedy and Entertainment
+		</text>			
+	    </mediaDisplay>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/cande.jpg"/>
+</item>
+
+<item>
+<title>Music and Live Radio</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/mandl.rss</link>
+<mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
+		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_03.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_04.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_05.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_06.jpg </idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		Music and Live Radio
+		</text>			
+	    </mediaDisplay>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/mandl.jpg"/>
+</item>
+
+<item>
+<title>Food and Drinks</title>
+<link>http://www.metafeeds.com/channel/food/rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/fandd.jpg"/>
+<mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
+		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_03.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_04.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_05.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_06.jpg </idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		Food and Drinks
+		</text>			
+	    </mediaDisplay>
+</item>
+
+<item>
+<title>Sports and Games</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/sandt.rss</link>
+<mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
+		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_03.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_04.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_05.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_06.jpg </idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		Sports and Games
+		</text>			
+	    </mediaDisplay>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/sandg.jpg"/>
+</item>
+
+<item>
+<title>Wildlife and Nature</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/wandn.rss</link>
+<mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
+		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_03.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_04.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_05.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_06.jpg </idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		Wildlife and Nature
+		</text>			
+	    </mediaDisplay>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/wandn.jpg"/>
+</item>
+
+<item>
+<title>Technology and Education</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/tande.rss</link>
+<mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
+		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_03.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_04.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_05.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_06.jpg </idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		Technology and Education
+		</text>			
+	    </mediaDisplay>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tande.jpg"/>
+</item>-->>
+
+    <!--<item>
+      <title>International</title>
+      <link>http://www.metafeeds.com/channel/regional/rss</link>
+      <media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/intl.jpg" />
+<mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
+		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_03.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_04.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_05.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_06.jpg </idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		International
+		</text>			
+	    </mediaDisplay>
+  </item>-->
+
+<item>
+<title>Adult Channel</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/adult.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/ADULT.png"/>
+	<mediaDisplay name="photoView" backgroundColor="0:0:0" sideColorBottom="220:0:0" sideColorTop="220:0:0" drawItemText="no" columnCount="5" rowCount="3" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
+	<idleImage>image/POPUP_LOADING_01.jpg</idleImage>
+	<idleImage>image/POPUP_LOADING_02.jpg</idleImage>
+	<idleImage>image/POPUP_LOADING_03.jpg</idleImage>     
+	<idleImage>image/POPUP_LOADING_04.jpg</idleImage>
+	<idleImage>image/POPUP_LOADING_05.jpg</idleImage>
+	<idleImage>image/POPUP_LOADING_06.jpg</idleImage>
+	</mediaDisplay>
+  </item>
+ 
+    <item>
+      <title>Trailere filme</title>
+	      <link>/tmp/hdd/volumes/HDD1/scripts/category/trailer.rss</link>
+	      <media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/trailer.jpg"/>
+<mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
+		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_03.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_04.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_05.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_06.jpg </idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		Trailere filme
+		</text>			
+	    </mediaDisplay>
+	</item> 
+<item>
+<title>Vimeo</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/vimeo.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/sn-vim.png"/>
+</item>	
+	
+<item>
+<title>Best of YouTube (iPod video)</title>
+<link>http://feeds.feedburner.com/boyt</link>
+<mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
+		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_03.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_04.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_05.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_06.jpg </idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		Best of YouTube (iPod video)
+		</text>			
+	    </mediaDisplay>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/18073_logo.jpg" />
+</item>
+<item>
+<title>dailymotion</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/dm.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/dailymotion.jpg" />
+<mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
+		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_03.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_04.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_05.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_06.jpg </idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		dailymotion
+		</text>			
+	    </mediaDisplay>
+</item>
+<item>
+<title>Metacafe</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/metacafe.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/metacafe.jpg" />
+<mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
+		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_03.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_04.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_05.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_06.jpg </idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		Metacafe
+		</text>			
+	    </mediaDisplay>
+</item>
+
+<item>
+<title>220.ro</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/220.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/220.jpg" />
+<mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
+		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_03.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_04.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_05.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_06.jpg </idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		220.ro
+		</text>			
+	    </mediaDisplay>
+</item>
+
+
+
+
+
+<!--<item>
+<title>LiveVideo</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/lv.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/livevideo.jpg" />
+<mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
+		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_03.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_04.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_05.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_06.jpg </idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		LiveVideo
+		</text>			
+	    </mediaDisplay>
+</item>-->
+
+<item>
+<title>TvBlog - Orarul serialelor</title>
+<link>http://127.0.0.1:8081/scripts/php/tvblog.php</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tvblog.jpg" />
+<mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
+		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_03.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_04.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_05.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_06.jpg </idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		TvBlog - Orarul serialelor
+		</text>			
+	    </mediaDisplay>
+</item>
+
+
+<item>
+<title>Users's Favorites</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/users.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/Users-256.png"/>
+<mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
+		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_03.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_04.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_05.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_06.jpg </idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		Users's Favorites
+		</text>			
+	    </mediaDisplay>
+</item>
+
+  </channel>
+</rss>

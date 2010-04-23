@@ -1,0 +1,54 @@
+﻿<?xml version='1.0' ?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+	<title>Demo of different Views</title>
+	<link>./scripts/demoView.rss</link>
+	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/microsoft.jpg" width="120" height="90" />
+
+
+<item>
+<title>Demo of single Column View</title>
+<link>sql://order by downloadDate</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/microsoft.jpg" width="120" height="90" />
+<mediaDisplay name=onePartView
+	sideLeftWidthPC=20 
+	itemImageXPC=25
+	itemXPC=40
+	capYPC=15
+	itemWidthPC=40 sideColorRight=28:21:51 backgroundColor=28:21:51/>
+</item>
+
+<item>
+<title>Demo of Three Parts View</title>
+<link>sql://order by downloadDate</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/microsoft.jpg" width="120" height="90" />
+<mediaDisplay name=threePartsView />
+
+
+<submenu name="Show All" sql_group="itemID" sql_order="ORDER BY downloadDate DESC"/>
+<submenu name="Group by Channel" sql_group="channelID" />
+<submenu name="Group by Author" sql_group="author" />
+<submenu name="Sort by Title" sql_order="ORDER BY title" />
+<submenu name="Sort by Channel" sql_order="ORDER BY channelID DESC" />
+<submenu name="Sort by Download date" sql_order="ORDER BY downloadDate DESC" />
+
+
+</item>
+
+<item>
+<title>Demo of Grid Photo View</title>
+<link>sql://order by downloadDate</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/microsoft.jpg" width="120" height="90" />
+<mediaDisplay name=photoView 
+	rowCount=3 columnCount=6
+/>
+
+<submenu name="Sort by Title" sql_order="ORDER BY title" />
+<submenu name="Sort by Channel" sql_order="ORDER BY channelID DESC" />
+<submenu name="By Download time" sql_order="ORDER BY downloadDate DESC" />
+
+</item>
+
+</channel>
+</rss>
+

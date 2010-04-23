@@ -1,0 +1,10 @@
+Package: libdb
+Architecture: mipsel
+Priority: optional
+Section: lib
+Version: 4.2.52-3
+Maintainer: ka6sox <ka6sox@gmail.com>
+Source: http://download.oracle.com/berkeley-db/db-4.2.52.tar.gz
+Description: Berkeley DB Libraries
+Depends: 
+Conflicts: 
