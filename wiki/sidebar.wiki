@@ -2,6 +2,11 @@
 
 
   * [Building_your_own_firmware Building your own firmware] 
+  * Web Interface
+  * Firmware
+    * [HD_for_all_500_ver_v7.0.18.r3617_modified_v1 HD_for_all_500_ver_v7.0.18.r3617_modified_v1]
+<wiki:comment>
+
   * Optware
     * [optwareInstallation Installing optware]
     * [RtorrentInstallation Installing rtorrent]
@@ -14,3 +19,5 @@
     * [OtherFeeds PHP feeds from softpedia topic]
   * Others
     * [SwapOn Activation of swap partition]
+
+</wiki:comment>
