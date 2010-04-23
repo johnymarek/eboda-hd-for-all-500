@@ -8,7 +8,7 @@ Modificari (am incercat sa include ce era in firmware-ul de la vb6):
   * corectie traducere mesaje OSD by MTZ
   * skin pack by mikka - stop, play, pause, etc
   * suport pentru streaming (ShoutCast , mms, etc). Linkurile trebuie insa prelucrate (puteti folosi ca exemplu cele din pachetul script).
-  * *eboda web control interface http://\<ip_mp\>/ewcp.html* unde in loc de \<ip_mp\> scrii IP-ul media-playerului tau
+  * *eboda web control interface http:// _ip_mp_ /ewcp.html* unde in loc de _ip_mp_ scrii IP-ul media-playerului tau
 
 Acum instalarea scripturilor de la vb6 e mai usoara:  
   # deschide pagina web: http://\<ip_mp\>/ewcp.html unde in loc de \<ip_mp\> scrii IP-ul media-playerului tau
