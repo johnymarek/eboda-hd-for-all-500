@@ -93,6 +93,8 @@ cp  $1/src/bin/* usr/bin
 # eboda web control panel
 mkdir tmp_orig/www/cgi-bin/ewcp
 cp  $1/www/cgi/* tmp_orig/www/cgi-bin/ewcp
+cp $1/www/ewcp.html tmp_orig/www/
+chmod +x tmp_orig/www/cgi-bin/ewcp/*
 
 cd ..
 rm yaffs2_1.img
@@ -106,7 +108,7 @@ mkdir unpacked_etc
 
 cd unpacked_etc/
 
-tar jxvf ../usr.local.etc.tar.bz2 *
+tar jxvf ../usr.local.etc.tar.bz2
 mkdir root
 rm ../usr.local.etc.tar.bz2
 tar jcvf ../usr.local.etc.tar.bz2 *
