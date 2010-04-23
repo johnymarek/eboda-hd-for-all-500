@@ -1,0 +1,2 @@
+#!/bin/sh
+/opt/bin/update-alternatives --install /opt/bin/bzip2 bzip2 /opt/bin/bzip2-bzip2 80

@@ -1,0 +1,10 @@
+Package: cyrus-sasl-libs
+Architecture: mipsel
+Priority: optional
+Section: util
+Version: 2.1.23-1
+Maintainer: Matthias Appel <private_tweety@gmx.net>
+Source: ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/cyrus-sasl-2.1.23.tar.gz
+Description: Provides client or server side authentication (see RFC 2222).
+Depends: 
+Conflicts: 
