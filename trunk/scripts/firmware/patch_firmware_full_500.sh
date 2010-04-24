@@ -138,28 +138,27 @@ mkdir root
 #
 
 
-# patch rcS to do some job
-
-# wait for HDD
+# creating our startup script to install opt stuff if not in
 echo '#!/bin/sh
 #BEGIN CBA_OPT_STARTUP
 # wait HDD to start (should be no issue if no internal HDD) and run rcS from opt if present
 
 #TODO find what to check instead root which exists even if not mounted?
 
-HDD=/tmp/hdd/root/.running
 n=1
-touch $HDD
-while [ ! -f $HDD ] ; do
+mount | grep HDD1
+while [ $? -ne 0 ] ; do
 sleep 3
 [ $n -gt 30 ] && break
 let n+=1
 echo "#waiting for hdd.."
-touch $HDD
+mount | grep HDD1
 done
-if [ -f $HDD ]
-then
 
+if [ $n -gt 30 ]
+then
+	echo HDD not mounted, probably not existing
+else
 #HDD online
 # check if .../opt installed from us, if not, unpack
 if [ ! -f /tmp/hdd/root/opt/.modified_full_firmware ]
@@ -180,6 +179,7 @@ then
         cd /tmp/hdd/volumes/HDD1/
         unzip -o /scripts.zip
 	tar xvf scripts.tar
+	rm scripts.tar
         touch /tmp/hdd/volumes/HDD1/scripts/.modified_full_firmware
 fi
 
@@ -189,11 +189,12 @@ opt_startup=/tmp/hdd/root/opt/etc/init.d/rcS
 [ -f $opt_startup ] && /bin/sh $opt_startup
 
 fi
-#END CBA_OPT_STARTUP' >> rcoptS
+#END CBA_OPT_STARTUP' > rcoptS
+
 chmod +x rcoptS
 
 echo '
-/bin/sh /usr/local/etc/rcoptS' >> rcS
+[ -f /usr/local/etc/rcoptS ] && sh /usr/local/etc/rcoptS' >> rcS
 
 
 rm ../usr.local.etc.tar.bz2
