@@ -93,18 +93,33 @@ cp  $1/src/bin/* usr/bin
 # eboda web control panel
 mkdir tmp_orig/www/cgi-bin/ewcp
 cp  $1/www/cgi/* tmp_orig/www/cgi-bin/ewcp
+cp $1/www/ewcp.html tmp_orig/www/
+chmod +x tmp_orig/www/cgi-bin/ewcp/*
+
 
 # /opt
-cp -r $1/src/opt/* opt/
+dir=`pwd`
+cd $1/src/
+tar cvf ${dir}/opt.tar --exclude mplayer --exclude .svn opt
+cd ${dir}
+zip opt.zip opt.tar
+rm opt.tar
 
 # cgi-bin
 cp $1/scripts/feeds/scripts_vb6/cgi-bin/mf/* tmp_orig/www/cgi-bin/
 cp $1/scripts/feeds/scripts_vb6/cgi-bin/vb6/* tmp_orig/www/cgi-bin/
-
+chmod +x tmp_orig/www/cgi-bin/*
 
 # menu
 cp -r $1/scripts/feeds/scripts_vb6/menu/* usr/local/bin/scripts/
 
+# scripts
+dir=`pwd`
+cd $1/scripts/feeds/scripts_vb6/
+tar cvf ${dir}/scripts.tar --exclude .svn scripts
+cd ${dir}
+zip scripts.zip scripts.tar
+rm scripts.tar
 
 cd ..
 rm yaffs2_1.img
@@ -118,8 +133,69 @@ mkdir unpacked_etc
 
 cd unpacked_etc/
 
-tar jxvf ../usr.local.etc.tar.bz2 *
+tar jxvf ../usr.local.etc.tar.bz2
 mkdir root
+#
+
+
+# patch rcS to do some job
+
+# wait for HDD
+echo '#!/bin/sh
+#BEGIN CBA_OPT_STARTUP
+# wait HDD to start (should be no issue if no internal HDD) and run rcS from opt if present
+
+#TODO find what to check instead root which exists even if not mounted?
+
+HDD=/tmp/hdd/root/.running
+n=1
+touch $HDD
+while [ ! -f $HDD ] ; do
+sleep 3
+[ $n -gt 30 ] && break
+let n+=1
+echo "#waiting for hdd.."
+touch $HDD
+done
+if [ -f $HDD ]
+then
+
+#HDD online
+# check if .../opt installed from us, if not, unpack
+if [ ! -f /tmp/hdd/root/opt/.modified_full_firmware ]
+then
+	rm -rf /tmp/hdd/root/opt/
+	mkdir /tmp/hdd/root/opt/
+	cd /tmp/hdd/root/
+	unzip -o /opt.zip 
+	tar xvf opt.tar
+	rm opt.tar
+	touch /tmp/hdd/root/opt/.modified_full_firmware
+fi
+# check if .../scripts from us, if not, unpack
+if [ ! -f /tmp/hdd/volumes/HDD1/scripts/.modified_full_firmware ]
+then
+        rm -rf /tmp/hdd/volumes/HDD1/scripts/
+        mkdir /tmp/hdd/volumes/HDD1/scripts/
+        cd /tmp/hdd/volumes/HDD1/
+        unzip -o /scripts.zip
+	tar xvf scripts.tar
+        touch /tmp/hdd/volumes/HDD1/scripts/.modified_full_firmware
+fi
+
+opt_startup=/tmp/hdd/root/opt/etc/init.d/rcS
+
+# standard startup
+[ -f $opt_startup ] && /bin/sh $opt_startup
+
+fi
+#END CBA_OPT_STARTUP' >> rcoptS
+chmod +x rcoptS
+
+echo '
+/bin/sh /usr/local/etc/rcoptS' >> rcS
+
+
 rm ../usr.local.etc.tar.bz2
 tar jcvf ../usr.local.etc.tar.bz2 *
 cd ..
