@@ -1,0 +1,108 @@
+<?xml version='1.0' ?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+<title>ABC News Feed</title>
+<link>/abc.rss</link>
+<media:thumbnail url="http://a.abcnews.com/images/Site/abc_default_image_mn.jpg" width="120" height="90" />
+
+
+
+<item>
+<title>Top Stories</title>
+<link>http://feeds.abcnews.com/abcnews/topstories</link>
+<canEnterItem>false</canEnterItem>
+</item>
+
+<item>
+<title>World Headlines</title>
+<link>http://feeds.abcnews.com/abcnews/internationalheadlines</link>
+<canEnterItem>false</canEnterItem>
+</item>
+
+
+<item>
+<title>US Headlines</title>
+<link>http://feeds.abcnews.com/abcnews/usheadlines</link>
+<canEnterItem>false</canEnterItem>
+</item>
+
+
+<item>
+<title>Politics Headlines</title>
+<link>http://feeds.abcnews.com/abcnews/politicsheadlines</link>
+<canEnterItem>false</canEnterItem>
+</item>
+
+<item>
+<title>Money & Business Headlines</title>
+<link>http://feeds.abcnews.com/abcnews/moneyheadlines</link>
+<canEnterItem>false</canEnterItem>
+</item>
+
+<item>
+<title>Technology & Science Headlines</title>
+<link>http://feeds.abcnews.com/abcnews/technologyheadlines</link>
+<canEnterItem>false</canEnterItem>
+</item>
+
+<item>
+<title>Health Headlines</title>
+<link>http://feeds.abcnews.com/abcnews/healthheadlines</link>
+<canEnterItem>false</canEnterItem>
+</item>
+
+
+<item>
+<title>Entertainment Headlines</title>
+<link>http://feeds.abcnews.com/abcnews/entertainmentheadlines</link>
+<canEnterItem>false</canEnterItem>
+</item>
+
+<item>
+<title>ESPN Sports</title>
+<link>http://feeds.abcnews.com/abcnews/sportsheadlines</link>
+<canEnterItem>false</canEnterItem>
+</item>
+
+<item>
+<title>World News Headlines</title>
+<link>http://feeds.abcnews.com/abcnews/internationalheadlines</link>
+<canEnterItem>false</canEnterItem>
+</item>
+
+<item>
+<title>20/20 Headlines</title>
+<link>http://feeds.abcnews.com/abcnews/2020headlines</link>
+<canEnterItem>false</canEnterItem>
+</item>
+
+
+<item>
+<title>Primetime Headlines</title>
+<link>http://feeds.abcnews.com/abcnews/primetimeheadlines</link>
+<canEnterItem>false</canEnterItem>
+</item>
+
+<item>
+<title>Nightline Headlines</title>
+<link>http://feeds.abcnews.com/abcnews/nightlineheadlines</link>
+<canEnterItem>false</canEnterItem>
+</item>
+
+
+
+<item>
+<title>Good Morning America Headlines</title>
+<link>http://feeds.abcnews.com/abcnews/gmaheadlines</link>
+<canEnterItem>false</canEnterItem>
+</item>
+
+<item>
+<title>This Week Headlines </title>
+<link>http://feeds.abcnews.com/abcnews/thisweekheadlines</link>
+<canEnterItem>false</canEnterItem>
+</item>
+
+
+</channel>
+</rss>

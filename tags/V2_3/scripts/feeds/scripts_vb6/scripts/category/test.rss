@@ -1,0 +1,11 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
+	<channel>
+		<title></title>
+		<link></link>
+		<item>
+			<title>Test</title>
+			<media:content url="http://127.0.0.1/cgi-bin/translate?stream,,http://www.youtube.com/get_video?video_id=zjwhBkDegA4&t=vjVQa1PpcFOnjPJVOG5bl_Iv1Dj-Pyb-UKeFY5mWTXw=" type="video/mp4" />
+			<media:thumbnail url="http://i.ytimg.com/vi/6l0Pz3K2H-Y/2.jpg" />
+		</item>
+	</channel>
+</rss>

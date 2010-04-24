@@ -1,0 +1,25 @@
+<?xml version='1.0' ?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+<title>FilmeOnline</title>
+<link>/yt.rss</link>
+
+<item>
+<title>Search</title>
+<link>rss_command://search</link>
+<search url="http://127.0.0.1:8081/scripts/php/filmeonline_search.php?query=1,%s" />
+<media:thumbnail url="http://www.veryicon.com/icon/png/System/Vista%20Elements/Search%20Magnifier.png" />
+</item>
+
+<item>
+<title>Filme noi</title>
+<link>http://127.0.0.1:8081/scripts/php/filmeonline.php</link>
+</item>
+
+<item>
+<title>Seriale noi</title>
+<link>http://127.0.0.1:8081/scripts/php/filmeonline_seriale.php</link>
+</item>
+
+</channel>
+</rss>

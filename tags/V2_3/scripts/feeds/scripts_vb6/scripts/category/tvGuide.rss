@@ -1,0 +1,24 @@
+<?xml version='1.0' ?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+	<title>TV Electric Program Guide</title>
+	<link>./scripts/tvGuide.rss</link>
+        <media:thumbnail url="image/logoTVGuide.gif" width="120" height="90" />
+
+<item>
+<title>ABC TV Guide</title>
+<link>http://www.abc.net.au/syndication/tv_epg.xml</link>
+<media:thumbnail url="image/abc.jpg" width="120" height="90" />
+</item>
+
+
+
+<item>
+<title>Sydnes TV</title>
+<link> http://www.enhancetv.com.au/tvguide/rss/sydneyrss.php</link>
+<media:thumbnail url="image/enhancetv.jpg" width="120" height="90" />
+</item>
+
+
+</channel>
+</rss>
