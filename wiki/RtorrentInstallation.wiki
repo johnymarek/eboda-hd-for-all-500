@@ -2,9 +2,14 @@
 
 = Rtorrent Installation =
 
-Rtorrent is a promising torrent client for embedded. It was not easy, but for the moment I got a stable configuration in *swap is activated* (see http://code.google.com/p/eboda-hd-for-all-500/wiki/SwapOn) and only one torrent is downloaded at a time.
+Rtorrent is a promising torrent client for embedded. 
 
-Telnet to your media player with optware package installed(this is already instaled if you have firmware from this page" and execute the following command:
+For the moment I got a stable configuration on 500 version only when *swap is activated* (see http://code.google.com/p/eboda-hd-for-all-500/wiki/SwapOn) and only one torrent is downloaded at a time.
+
+Telnet to your media player with optware package installed(this is already installed if you have firmware from this page) and execute the following command:
 {{{
 wget http://eboda-hd-for-all-500.googlecode.com/files/rtorrent-install.sh && sh rtorrent-install.sh && rm rtorrent-install.sh
 }}}
+
+You will be able to manage your torrents at addresses(replace MP_IP with your mplayer IP address):
+http://MP_IP:8081/rutorrent/ or http://MP_IP:8081/rtgui/
