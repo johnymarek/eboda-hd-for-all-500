@@ -89,12 +89,15 @@ chmod +x /opt/etc/init.d/S90rtorrent
 echo rtorrent startup script prepared
 [ -f /opt/etc/rtorrent.conf ] && cp /opt/etc/rtorrent.conf /opt/etc/rtorrent.conf.old
 echo '
-min_peers = 5
-max_peers = 10
-max_uploads = 5
+
+min_peers = 4
+max_peers = 16
+max_uploads = 4
 
 
-download_rate = 512
+#change 1
+#download_rate = 512
+download_rate = 1024
 upload_rate = 32
 
 dht = auto
@@ -111,11 +114,21 @@ scgi_local = /tmp/rpc.socket
 send_buffer_size = 4096
 receive_buffer_size = 4096
 
-max_memory_usage = 67108864
+#change 2
+#max_memory_usage = 64M
+max_memory_usage = 96M
 #max_memory_usage = 134217728
 max_open_files = 128
 
-safe_sync = yes
+#hash_read_ahead = 8
+#hash_max_tries = 5
+#hash_interval = 200
+
+max_open_files = 128
+
+#check_hash = no
+
+session_lock = no
 
 '> /opt/etc/rtorrent.conf
 
