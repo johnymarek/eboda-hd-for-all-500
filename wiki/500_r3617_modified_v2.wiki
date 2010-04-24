@@ -14,6 +14,6 @@ Modificari (am incercat sa includ ce era in firmware-ul de la vb6):
   * *extensiile sunt incluse, trebuie doar instalate/updatate*
   * *scripts de la vb6 functionale*
 
-*directoarele /tmp/hdd/root/opt si /tmp/hdd/volumes/HDD1/scripts vor fi suprascrise cu continutul firmware-ului*
+- *directoarele /tmp/hdd/root/opt si /tmp/hdd/volumes/HDD1/scripts vor fi suprascrise cu continutul firmware-ului*
 
-*Nu am incercat daca e compatibil cu POD*
+- *Nu am incercat daca e compatibil cu POD*
