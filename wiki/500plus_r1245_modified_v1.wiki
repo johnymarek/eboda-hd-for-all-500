@@ -21,5 +21,5 @@ Acum instalarea scripturilor de la vb6 e mai usoara:
   # click pe Install pe linia cu Lighttpd Web Server 
   # click pe Back
   # click pe Install pe linia cu vb6rocod_scripts 
-
+  # restul inca nu functioneaza din interfata web, momentan astept sa vad daca sunt utilizatori si merita facuta
 *Nu am incercat daca e compatibil cu POD*
