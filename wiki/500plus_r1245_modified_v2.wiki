@@ -15,4 +15,6 @@ Modificari (am incercat sa includ ce era in firmware-ul de la vb6):
   * *eboda web control interface http://ip_mp/ewcp.html unde in loc de ip_mp scrii IP-ul media-playerului tau*
   * *scripturile de la vb6 sunt instalate si configurate*
 
-*Nu am incercat daca e compatibil cu POD
+- *directoarele /tmp/hdd/root/opt si /tmp/hdd/volumes/HDD1/scripts vor fi suprascrise cu continutul firmware-ului*
+
+- *Nu am incercat daca e compatibil cu POD*
