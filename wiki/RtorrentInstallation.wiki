@@ -2,11 +2,9 @@
 
 = Rtorrent Installation =
 
-Rtorrent is a promising torrent client for embedded, but for the moment I still work to get a stable configuration. The default configuration is to fast and is using to much RAM memory.
+Rtorrent is a promising torrent client for embedded. It was not easy, but for the moment I got a stable configuration in swap is activated and only one torrent is downloaded at a time.
 
-If you want to experiment just go ahead, but it may freeze your MP.
-
-Telnet to your media player with optware package installed and execute the following command:
+Telnet to your media player with optware package installed(this is already instaled if you have firmware from this page" and execute the following command:
 {{{
 wget http://eboda-hd-for-all-500.googlecode.com/files/rtorrent-install.sh && sh rtorrent-install.sh && rm rtorrent-install.sh
 }}}
