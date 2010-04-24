@@ -2,7 +2,7 @@
 
 = Rtorrent Installation =
 
-Rtorrent is a promising torrent client for embedded. It was not easy, but for the moment I got a stable configuration in swap is activated and only one torrent is downloaded at a time.
+Rtorrent is a promising torrent client for embedded. It was not easy, but for the moment I got a stable configuration in *swap is activated* (see http://code.google.com/p/eboda-hd-for-all-500/wiki/SwapOn) and only one torrent is downloaded at a time.
 
 Telnet to your media player with optware package installed(this is already instaled if you have firmware from this page" and execute the following command:
 {{{
