@@ -9,7 +9,7 @@ Procedura de instalare este cea standard de aici: [fw_install Instalare firmware
 Modificari (am incercat sa includ ce era in firmware-ul de la vb6):
   * alt font system + subtitrare, TVSQ2, sper sa va placa.
   * suport pentru streaming (ShoutCast , mms, etc). Linkurile trebuie insa prelucrate (puteti folosi ca exemplu cele din pachetul script).
-  * *eboda web control interface http://ip_mp/ewcp.html unde in loc de ip_mp scrii IP-ul media-playerului tau*
+  * *eboda web control interface http://ip_mp/ewcp.html unde in loc de ip_mp scrii IP-ul media-playerului tau* (doar pentru teste si feedback, majoritatea functiilor nu sunt implementate)
   * *scripturile de la vb6 sunt instalate si configurate*
 
 - *directoarele /tmp/hdd/root/opt si /tmp/hdd/volumes/HDD1/scripts vor fi suprascrise cu continutul firmware-ului*
