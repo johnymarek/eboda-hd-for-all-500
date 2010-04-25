@@ -1,0 +1,15 @@
+#!/bin/sh
+#Waiting for HDD-plugin to finish...
+echo '#copy ewcp'
+n=1
+while [ ! -d /tmp/www/ ] ; do
+ sleep 3
+ [ $n -gt 30 ] && break
+ let n+=1
+ echo '#waiting for hdd..'
+ echo $n
+done
+#bind rss scripts directory:
+
+cp -r /tmp/hdd/root/ewcp/*	/tmp/www/
+chmod +x /tmp/www/cgi-bin/*

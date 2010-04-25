@@ -1,0 +1,132 @@
+<?xml version='1.0' ?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<mediaDisplay name=ThreePartsView
+	itemBackgroundColor=0:0:0
+	backgroundColor=0:0:0
+	sideLeftWidthPC=10
+	sideRightWidthPC=100
+	fontSize=16
+	showHeader="no"
+	headerXPC=101
+	headerYPC=101
+	headerImageXPC=101 
+	headerImageYPC=101
+	itemImageXPC="9" 
+	itemImageYPC="21"
+    itemImageHeightPC="12" 
+	itemImageWidthPC="14"           
+    itemXPC="23"
+    itemYPC="20.5"			
+	itemPerPage="5"			
+	popupXPC = 7
+	popupYPC = 21
+	popupFontSize = 17
+	popupWidthPC = 15
+	popupBorderColor = 0:0:0>
+		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_03.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_04.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_05.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_06.jpg </idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/zg_title.jpg
+		</image>
+		<text  offsetXPC=23 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		Ziggo TV Streams
+		</text>			
+		<text  offsetXPC=23 offsetYPC=12 widthPC=35 heightPC=10 fontSize=8 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		(Notice: Streams require a Ziggo internet connection!)
+		</text>			
+	    </mediaDisplay>
+
+
+
+<channel>
+        <title>Ziggo TV (Only for Ziggo Cable ISP)</title>
+        <link>./scripts/uzg.rss</link>
+        <media:thumbnail url="image/feed_default.png" width="120" height="90" />
+
+
+<item>
+<title>Nederland 1</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?http://83.80.17.52/casema%20wmstream-12</link>
+<enclosure type="video/ms-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?http://83.80.17.52/casema%20wmstream-12"/>
+</item>
+<item>
+<title>Nederland 2</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?http://83.80.17.52/casema%20wmstream-13</link>
+<enclosure type="video/ms-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?http://83.80.17.52/casema%20wmstream-13"/>
+</item>
+<item>
+<title>Nederland 3</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?http://83.80.17.52/casema%20wmstream-14</link>
+<enclosure type="video/ms-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?http://83.80.17.52/casema%20wmstream-14"/>
+</item>
+<item>
+<title>SBS6</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?http://83.80.17.52/casema%20wmstream-02</link>
+<enclosure type="video/ms-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?http://83.80.17.52/casema%20wmstream-02"/>
+</item>
+<item>
+<title>Veronica / Jetix</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?http://83.80.17.52/casema%20wmstream-04</link>
+<enclosure type="video/ms-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?http://83.80.17.52/casema%20wmstream-04"/>
+</item>
+<item>
+<title>RTL 8</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?http://83.80.17.52/casema%20wmstream-07</link>
+<enclosure type="video/ms-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?http://83.80.17.52/casema%20wmstream-07"/>
+</item>
+<item>
+<title>Net 5</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?http://83.80.17.52/casema%20wmstream-01</link>
+<enclosure type="video/ms-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?http://83.80.17.52/casema%20wmstream-0"/>
+</item>
+<item>
+<title>VRT één</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?http://83.80.17.52/casema%20wmstream-11</link>
+<enclosure type="video/ms-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?http://83.80.17.52/casema%20wmstream-11"/>
+</item>
+<item>
+<title>VRT Canvas/Ketnet</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?http://83.80.17.52/casema%20wmstream-10</link>
+<enclosure type="video/ms-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?http://83.80.17.52/casema%20wmstream-10"/>
+</item>
+<item>
+<title>Nick / Comedy Central</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?http://83.80.17.52/casema%20wmstream-15</link>
+<enclosure type="video/ms-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?http://83.80.17.52/casema%20wmstream-15"/>
+</item>
+<item>
+<title>Discovery</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?http://83.80.17.52/casema%20wmstream-06</link>
+<enclosure type="video/ms-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?http://83.80.17.52/casema%20wmstream-06"/>
+</item>
+<item>
+<title>Animal Planet</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?http://83.80.17.52/casema%20wmstream-05</link>
+<enclosure type="video/ms-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?http://83.80.17.52/casema%20wmstream-05"/>
+</item>
+<item>
+<title>TMF</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?http://83.80.17.52/casema%20wmstream-03</link>
+<enclosure type="video/ms-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?http://83.80.17.52/casema%20wmstream-03"/>
+</item>
+<item>
+<title>MTV NL</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?http://83.80.17.52/casema%20wmstream-08</link>
+<enclosure type="video/ms-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?http://83.80.17.52/casema wmstream-08"/>
+</item>
+<item>
+<title>Etalagekanaal / TEST</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?http://83.80.17.52/casema%20wmstream-17</link>
+<enclosure type="video/ms-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?http://83.80.17.52/casema wmstream-17"/>
+</item>
+</channel>
+</rss>
