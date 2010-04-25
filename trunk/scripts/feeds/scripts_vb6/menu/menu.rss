@@ -22,15 +22,15 @@
                 sideBottomHeightPC=0   
               
                 rowCount=1 
-                columnCount=5
+                columnCount=6
                 fontSize=16
               
-                itemPerPage=5
+                itemPerPage=6
                 itemBorderPC=0
-                itemOffsetXPC=11.80
+                itemOffsetXPC=5.80
                 itemGapXPC=0
                 itemGapYPC=0
-                itemWidthPC=15.6
+                itemWidthPC=14.6
                 itemHeightPC=41.7
               
                 centerYPC=33.3

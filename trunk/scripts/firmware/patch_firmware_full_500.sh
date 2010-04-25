@@ -91,10 +91,12 @@ cp  $1/src/image/* usr/local/bin/image
 cp  $1/src/bin/* usr/bin
 
 # eboda web control panel
-mkdir tmp_orig/www/cgi-bin/ewcp
-cp  $1/www/cgi/* tmp_orig/www/cgi-bin/ewcp
-cp $1/www/ewcp.html tmp_orig/www/
-chmod +x tmp_orig/www/cgi-bin/ewcp/*
+dir=`pwd`
+cd $1/www/cgi/
+tar cvf ${dir}/ewcp.tar ewcp
+cd ${dir}
+zip ewcp.zip ewcp.tar
+rm ewcp.tar
 
 
 # /opt
@@ -183,6 +185,18 @@ then
         touch /tmp/hdd/volumes/HDD1/scripts/.modified_full_firmware
 fi
 
+# check if .../opt installed from us, if not, unpack
+if [ ! -f /tmp/hdd/root/ewcp/.modified_full_firmware ]
+then
+        rm -rf /tmp/hdd/root/ewcp/
+        mkdir /tmp/hdd/root/ewcp/
+        cd /tmp/hdd/root/
+        unzip -o /ewcp.zip
+        tar xvf ewcp.tar
+        rm ewcp.tar
+        touch /tmp/hdd/root/ewcp/.modified_full_firmware
+fi
+
 opt_startup=/tmp/hdd/root/opt/etc/init.d/rcS
 
 # standard startup
@@ -190,7 +204,6 @@ opt_startup=/tmp/hdd/root/opt/etc/init.d/rcS
 
 fi
 #END CBA_OPT_STARTUP' > rcoptS
-
 chmod +x rcoptS
 
 echo '
