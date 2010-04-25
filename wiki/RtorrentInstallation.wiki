@@ -2,7 +2,7 @@
 
 = Rtorrent Installation =
 
-Rtorrent is a promising torrent client for embedded. 
+Rtorrent is a promising torrent client for embedded. Still not very stable ...
 
 For the moment I got a stable configuration on 500 version only when *swap is activated* (see http://code.google.com/p/eboda-hd-for-all-500/wiki/SwapOn) and only one torrent is downloaded at a time. For 500plu situation may be different.
 
