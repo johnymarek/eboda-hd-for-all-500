@@ -43,13 +43,13 @@ fi
 
 #vb6 scripts to HDD
 cd /tmp/hdd/volumes/HDD1
+wget http://eboda-hd-for-all-500.googlecode.com/files/hdd_scripts.zip
+[ $? == 0 ] || mexit 2
 if [ -d scripts ]
 then
         echo scripts already existing, removing it
         rm -rf scripts
 fi
-wget http://eboda-hd-for-all-500.googlecode.com/files/hdd_scripts.zip
-[ $? == 0 ] || mexit 2
 unzip -o hdd_scripts.zip
 rm hdd_scripts.zip
 
