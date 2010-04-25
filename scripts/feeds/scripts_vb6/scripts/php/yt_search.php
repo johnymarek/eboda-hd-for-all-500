@@ -85,7 +85,7 @@ $youtube_page = file_get_contents($link);
 $v_id = str_between($youtube_page, "&video_id=", "&");
 $t_id = str_between($youtube_page, "&t=", "&");
 //$flv_link = "http://www.youtube.com/get_video?video_id=$v_id&t=$t_id";
-$flv_link = "http://127.0.0.1:8081/scripts/php/yt.php?id=".$v_id ;
+$flv_link = "http://127.0.0.1:82/scripts/php/yt.php?id=".$v_id ;
     echo '<item>';
     echo '<title>'.$title.'</title>';
     echo '<link>'.$flv_link.'</link>';

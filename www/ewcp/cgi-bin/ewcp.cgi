@@ -2,7 +2,7 @@
 # CIPIBAD
 # adapted from internet ...
 #TODO fill LOCALIP
-VERSION=`grep VERSION current_version.txt  | cut -d'=' -f 2`
+VERSION=`grep VERSION /tmp/hdd/root/ewcp/current_version.txt  | cut -d'=' -f 2` 2>/dev/null
 HOSTNAME=`/bin/hostname`
 LOAD=`/bin/cat /proc/loadavg`
 LOCALIP=`/sbin/ifconfig -a | grep -A 1 eth0 | grep inet | tr -s " " | cut -d " " -f 3 | cut -d ":" -f 2`
