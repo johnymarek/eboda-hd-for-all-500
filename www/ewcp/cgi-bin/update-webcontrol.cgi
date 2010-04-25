@@ -8,15 +8,15 @@ echo Eboda Web Control Panel is updating.
 
 #ewcp
 cd /tmp/hdd/root
+wget http://eboda-hd-for-all-500.googlecode.com/files/ewcp-latest.zip
+[ $? == 0 ] || mexit 2
 if [ -d ewcp ]
 then
         echo ewcp already existing, removing it
         rm -rf ewcp
 fi
-wget http://eboda-hd-for-all-500.googlecode.com/files/ewcp-latest.zip
-[ $? == 0 ] || mexit 2
-unzip -o ewcp.zip
-rm ewcp.zip
+unzip -o ewcp-latest.zip
+rm ewcp-latest.zip
 
 echo '<FORM><INPUT TYPE="button" VALUE="Back" onClick="history.go(-1);return true;"> </FORM> '
 
