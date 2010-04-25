@@ -4,6 +4,8 @@
 
 http://eboda-hd-for-all-500.googlecode.com/files/HD_for_all_500_ver_v7.0.18.r3617_modified_v2.zip
 
+Procedura de instalare este cea standard de aici: [fw_install Instalare firmware]
+
 Modificari (am incercat sa includ ce era in firmware-ul de la vb6):
   * alt font system + subtitrare, TVSQ2, sper sa va placa.
   * screensaver by pif_foto
