@@ -1,5 +1,7 @@
 #summary 500_r3617_modified_v2
 
+=Firmware-ul e deja vechi, verifica versiunile mai noi=
+
 = Nou firmware disponibil =
 
 http://eboda-hd-for-all-500.googlecode.com/files/HD_for_all_500_ver_v7.0.18.r3617_modified_v2.zip
