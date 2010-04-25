@@ -36,6 +36,20 @@ fi
 /tmp/hdd/root/opt/bin/ipkg-opt install php-xmlrpc
 /tmp/hdd/root/opt/bin/ipkg-opt install php-mbstring
 
+
+#a little kernel  tunning
+
+cat > /opt/etc/init.d/S01kernel <<EOF
+#!/bin/sh
+
+echo 15 > /proc/sys/vm/swappiness
+echo 3 > /proc/sys/vm/dirty_background_ratio
+echo 40 > /proc/sys/vm/dirty_ratio
+echo 4096 > /proc/sys/vm/min_free_kbytes
+EOF
+chmod +x /opt/etc/init.d/S01kernel
+sh /opt/etc/init.d/S01kernel
+
 rm -f /opt/etc/init.d/S??rtorrent
 cat > /opt/etc/init.d/S90rtorrent <<EOF
 #!/bin/sh

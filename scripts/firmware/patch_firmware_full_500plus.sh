@@ -86,6 +86,8 @@ root::0:0:root:/usr/local/etc/root:/bin/sh' etc/passwd
 #doar font
 cp  $1/src/Resource/ARIALUNI.TTF usr/local/bin/Resource 
 
+
+
 # screensaver + skinpack
 #cp  $1/src/Resource/bmp/* usr/local/bin/Resource/bmp 
 #cp  $1/src/image/* usr/local/bin/image 
@@ -115,7 +117,9 @@ chmod +x tmp_orig/www/cgi-bin/*
 
 # menu
 cp -r $1/scripts/feeds/scripts_vb6/menu/* usr/local/bin/scripts/
-
+#rename weather menu pictures
+mv usr/local/bin/IMS_Modules/Weather/image/weather_focus.jpg usr/local/bin/IMS_Modules/Weather/image/weather_focus_en.jpg
+mv usr/local/bin/IMS_Modules/Weather/image/weather_unfocus.jpg usr/local/bin/IMS_Modules/Weather/image/weather_unfocus_en.jpg
 # scripts
 dir=`pwd`
 cd $1/scripts/feeds/scripts_vb6/
