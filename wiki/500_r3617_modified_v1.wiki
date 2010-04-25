@@ -1,5 +1,7 @@
 #summary 500_r3617_modified_v1
 
+Probabil nu mai trebuie acesta, vezi http://code.google.com/p/eboda-hd-for-all-500/wiki/500_r3617_modified_v2
+
 = Nou firmware disponibil =
 
 http://eboda-hd-for-all-500.googlecode.com/files/HD_for_all_500_ver_v7.0.18.r3617_modified_v1.zip
