@@ -15,7 +15,7 @@ $defaultposterfolder = 'http://xtreamer-web-sdk.googlecode.com/svn/trunk/rss/scr
 $defaultpostermovies = 'http://xtreamer-web-sdk.googlecode.com/svn/trunk/rss/scripts/image/defaultpostermovies.png';
 $defaultfanart       = 'http://xtreamer-web-sdk.googlecode.com/svn/trunk/rss/scripts/image/background.jpg';
 $defaultmenuposter   = 'http://xtreamer-web-sdk.googlecode.com/svn/trunk/rss/scripts/image/X.png';
-$scriptfile          = "http://127.0.0.1:8081/scripts/browse_movies.php";
+$scriptfile          = "http://127.0.0.1:82/scripts/browse_movies.php";
 $scanforfolderposter = "folder.jpg";
 
 //not all working extensions?!

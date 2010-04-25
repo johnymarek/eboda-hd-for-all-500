@@ -12,3 +12,4 @@ done
 #bind rss scripts directory:
 
 cp -r /tmp/hdd/root/ewcp/*	/tmp/www/
+chmod +x /tmp/www/cgi-bin/*

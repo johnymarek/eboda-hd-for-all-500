@@ -7,83 +7,83 @@
 <item>
 <title>Search</title>
 <link>rss_command://search</link>
-<search url="http://127.0.0.1:8081/scripts/php/dm_search.php?query=1,%s" />
+<search url="http://127.0.0.1:82/scripts/php/dm_search.php?query=1,%s" />
 <media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/search.png" />
 </item>
 
 <item>
 <title>Fun</title>
-<link>http://127.0.0.1:8081/scripts/php/dmf.php</link>
+<link>http://127.0.0.1:82/scripts/php/dmf.php</link>
 </item>
 
 <item>
 <title>News</title>
-<link>http://127.0.0.1:8081/scripts/php/dmn.php</link>
+<link>http://127.0.0.1:82/scripts/php/dmn.php</link>
 </item>
 
 <item>
 <title>ShortFilms</title>
-<link>http://127.0.0.1:8081/scripts/php/dmsf.php</link>
+<link>http://127.0.0.1:82/scripts/php/dmsf.php</link>
 </item>
 
 <item>
 <title>Music</title>
-<link>http://127.0.0.1:8081/scripts/php/dmm.php</link>
+<link>http://127.0.0.1:82/scripts/php/dmm.php</link>
 </item>
 
 <item>
 <title>Sport</title>
-<link>http://127.0.0.1:8081/scripts/php/dms.php</link>
+<link>http://127.0.0.1:82/scripts/php/dms.php</link>
 </item>
 
 <item>
 <title>Arts</title>
-<link>http://127.0.0.1:8081/scripts/php/dmc.php</link>
+<link>http://127.0.0.1:82/scripts/php/dmc.php</link>
 </item>
 
 <item>
 <title>VideoGames</title>
-<link>http://127.0.0.1:8081/scripts/php/dmvg.php</link>
+<link>http://127.0.0.1:82/scripts/php/dmvg.php</link>
 </item>
 
 <item>
 <title>Tech</title>
-<link>http://127.0.0.1:8081/scripts/php/dmt.php</link>
+<link>http://127.0.0.1:82/scripts/php/dmt.php</link>
 </item>
 
 <item>
 <title>Travel</title>
-<link>http://127.0.0.1:8081/scripts/php/dmtr.php</link>
+<link>http://127.0.0.1:82/scripts/php/dmtr.php</link>
 </item>
 
 <item>
 <title>Auto</title>
-<link>http://127.0.0.1:8081/scripts/php/dma.php</link>
+<link>http://127.0.0.1:82/scripts/php/dma.php</link>
 </item>
 
 <item>
 <title>Animals</title>
-<link>http://127.0.0.1:8081/scripts/php/dman.php</link>
+<link>http://127.0.0.1:82/scripts/php/dman.php</link>
 </item>
 
 <item>
 <title>Bollywood</title>
-<link>http://127.0.0.1:8081/scripts/php/dmb.php</link>
+<link>http://127.0.0.1:82/scripts/php/dmb.php</link>
 </item>
 
 <item>
 <title>Lifestyle</title>
-<link>http://127.0.0.1:8081/scripts/php/dml.php</link>
+<link>http://127.0.0.1:82/scripts/php/dml.php</link>
 </item>
 
 <item>
 <title>School</title>
-<link>http://127.0.0.1:8081/scripts/php/dmsc.php</link>
+<link>http://127.0.0.1:82/scripts/php/dmsc.php</link>
 </item>
 
 <item>
 <title>Featured Videos</title>
-<link>http://127.0.0.1:8081/scripts/php/dmfv.php</link>
+<link>http://127.0.0.1:82/scripts/php/dmfv.php</link>
 </item>
 
 </channel>

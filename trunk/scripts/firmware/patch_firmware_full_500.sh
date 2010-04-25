@@ -55,6 +55,8 @@ echo Checking OK
 mkdir unpacked_install
 [ $? -eq 0 ] || exit cannot create dir please start from a clean directory
 
+[ -f install.img ] || exit
+
 cd unpacked_install/
 tar xvf ../install.img
 
@@ -92,10 +94,10 @@ cp  $1/src/bin/* usr/bin
 
 # eboda web control panel
 dir=`pwd`
-cd $1/www/cgi/
-tar cvf ${dir}/ewcp.tar ewcp
+cd $1/www/
+tar cvf ${dir}/ewcp.tar --exclude .svn ewcp
 cd ${dir}
-zip ewcp.zip ewcp.tar
+zip -9 ewcp.zip ewcp.tar
 rm ewcp.tar
 
 
@@ -104,7 +106,7 @@ dir=`pwd`
 cd $1/src/
 tar cvf ${dir}/opt.tar --exclude mplayer --exclude .svn opt
 cd ${dir}
-zip opt.zip opt.tar
+zip -9 opt.zip opt.tar
 rm opt.tar
 
 # cgi-bin
@@ -120,7 +122,7 @@ dir=`pwd`
 cd $1/scripts/feeds/scripts_vb6/
 tar cvf ${dir}/scripts.tar --exclude .svn scripts
 cd ${dir}
-zip scripts.zip scripts.tar
+zip -9 scripts.zip scripts.tar
 rm scripts.tar
 
 cd ..
@@ -163,7 +165,7 @@ then
 else
 #HDD online
 # check if .../opt installed from us, if not, unpack
-if [ ! -f /tmp/hdd/root/opt/.modified_full_firmware ]
+if [ ! -f /tmp/hdd/root/opt/.modified_full_firmware1 ]
 then
 	rm -rf /tmp/hdd/root/opt/
 	mkdir /tmp/hdd/root/opt/
@@ -171,10 +173,10 @@ then
 	unzip -o /opt.zip 
 	tar xvf opt.tar
 	rm opt.tar
-	touch /tmp/hdd/root/opt/.modified_full_firmware
+	touch /tmp/hdd/root/opt/.modified_full_firmware1
 fi
 # check if .../scripts from us, if not, unpack
-if [ ! -f /tmp/hdd/volumes/HDD1/scripts/.modified_full_firmware ]
+if [ ! -f /tmp/hdd/volumes/HDD1/scripts/.modified_full_firmware1 ]
 then
         rm -rf /tmp/hdd/volumes/HDD1/scripts/
         mkdir /tmp/hdd/volumes/HDD1/scripts/
@@ -182,11 +184,11 @@ then
         unzip -o /scripts.zip
 	tar xvf scripts.tar
 	rm scripts.tar
-        touch /tmp/hdd/volumes/HDD1/scripts/.modified_full_firmware
+        touch /tmp/hdd/volumes/HDD1/scripts/.modified_full_firmware1
 fi
 
 # check if .../opt installed from us, if not, unpack
-if [ ! -f /tmp/hdd/root/ewcp/.modified_full_firmware ]
+if [ ! -f /tmp/hdd/root/ewcp/.modified_full_firmware1 ]
 then
         rm -rf /tmp/hdd/root/ewcp/
         mkdir /tmp/hdd/root/ewcp/
@@ -194,7 +196,9 @@ then
         unzip -o /ewcp.zip
         tar xvf ewcp.tar
         rm ewcp.tar
-        touch /tmp/hdd/root/ewcp/.modified_full_firmware
+        touch /tmp/hdd/root/ewcp/.modified_full_firmware1
+	[ -f /tmp/hdd/root/opt/etc/init.s/S99ewcp ] || cp /tmp/hdd/root/ewcp/S99ewcp /tmp/hdd/root/opt/etc/init.d
+	chmod +x /tmp/hdd/root/opt/etc/init.d/S99ewcp
 fi
 
 opt_startup=/tmp/hdd/root/opt/etc/init.d/rcS

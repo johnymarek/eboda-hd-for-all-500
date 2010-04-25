@@ -40,7 +40,7 @@ foreach($videos as $video) {
     $id = $t2[0];
     echo '<item>';
     echo '<title>'.$title.'</title>';
-    echo '<link>http://127.0.0.1:8081/scripts/php/sh_pl.php?id='.$id.'</link>';
+    echo '<link>http://127.0.0.1:82/scripts/php/sh_pl.php?id='.$id.'</link>';
     echo '<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/rss1.jpg" />';	
     echo '</item>';
   }
