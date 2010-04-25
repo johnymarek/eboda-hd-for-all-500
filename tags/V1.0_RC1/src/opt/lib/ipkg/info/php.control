@@ -1,0 +1,9 @@
+Package: php
+Architecture: mipsel
+Priority: optional
+Section: net
+Version: 5.2.12-1
+Maintainer: Josh Parsons <jbparsons@ucdavis.edu>
+Source: http://static.php.net/www.php.net/distributions//php-5.2.12.tar.bz2
+Description: The php scripting language
+Depends: bzip2, openssl, zlib, libxml2, libxslt, gdbm, libdb, pcre , cyrus-sasl-libs, openldap-libs

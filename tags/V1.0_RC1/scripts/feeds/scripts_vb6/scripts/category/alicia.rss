@@ -1,0 +1,157 @@
+<?xml version='1.0' ?>
+<!--mime-type=  text/plain because acryan feeds are not proper xml-->
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<mediaDisplay name=meleThreePartView
+   itemBackgroundColor=0:0:0
+   backgroundColor=0:0:0
+   sideLeftWidthPC= 5
+   sideRightWidthPC=80
+   showHeader="no"
+   imageParentFocus="image/mele/focus.bmp"
+   imageFocus="image/mele/focus.bmp"
+   imageUnFocus="image/mele/unfocus.bmp"
+   unFocusFontColor="110:110:110"
+   focusFontColor=255:130:30
+
+   suffixXPC=90
+   suffixYPC=15
+   suffixBgColor=-1:-1:-1
+   suffixTextColor=101:101:101
+   suffixClearImage="http://www.metafeeds.com/static/images/vfeeds_title.jpg"
+   suffixClearImageXPC=0
+   suffixClearImageYPC=2.8
+   suffixClearImageWPC=100
+   suffixClearImageHPC=15.6
+
+   headerColor=-1:-1:-1
+   headerXPC=26
+   headerYPC=8
+   headerFontSize=20
+   fontSize=14
+
+   itemXPC=18
+   itemYPC=15
+   itemWidthPC=80
+   itemHeightPC=10
+   itemGap=0
+   itemImageWidthPC=0
+   itemImageHeightPC=0
+   itemAlignt="left"
+
+	menuXPC = 4
+	popupXPC = 5
+	popupYPC = 24.5
+	popupFontSize = 14
+	popupWidthPC = 15
+	popupBorderColor = 255:255:255
+   >
+<idleImage> image/POPUP_LOADING_01.png </idleImage>
+<idleImage> image/POPUP_LOADING_02.png </idleImage>
+<idleImage> image/POPUP_LOADING_03.png </idleImage>
+<idleImage> image/POPUP_LOADING_04.png </idleImage>
+<idleImage> image/POPUP_LOADING_05.png </idleImage>
+<idleImage> image/POPUP_LOADING_06.png </idleImage>
+<idleImage> image/POPUP_LOADING_07.png </idleImage>
+<idleImage> image/POPUP_LOADING_08.png </idleImage>
+
+<backgroundDisplay>
+    <image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+      image/mele/backgd.jpg
+    </image>
+</backgroundDisplay>
+
+</mediaDisplay>
+
+<item_template>
+  <mediaDisplay name=meleThreePartView
+   itemBackgroundColor=0:0:0
+   backgroundColor=0:0:0
+   sideLeftWidthPC=0
+   sideRightWidthPC=90
+   showHeader="yes"
+   imageParentFocus="image/mele/forcus.bmp"
+   imageFocus="image/mele/forcus.bmp"
+   imageUnFocus="image/mele/unforcus.bmp"
+
+
+   suffixXPC=90
+   suffixYPC=18
+   suffixBgColor=-1:-1:-1
+   suffixTextColor=101:101:101
+   suffixClearImage="http://www.metafeeds.com/static/images/vfeeds_title.jpg"
+   suffixClearImageXPC=0
+   suffixClearImageYPC=2.8
+   suffixClearImageWPC=100
+   suffixClearImageHPC=15.6
+
+   headerColor=-1:-1:-1
+   headerXPC=26
+   headerYPC=8
+   headerWidthPC=66
+   headerFontSize=20
+   headerImageYPC=9
+   headerImageXPC=9
+   fontSize=16
+
+   itemXPC=25
+   itemYPC=20
+   itemWidthPC=53.13
+   itemHeightPC=10
+   itemGap=0
+   itemAlignt="left"
+   itemPerPage=6
+
+   itemImageXPC=10
+   itemImageYPC=20
+   itemImageWidthPC=10
+   itemImageHeightPC=8
+
+	menuXPC = 4
+	popupXPC = 5
+	popupYPC = 24.5
+	popupFontSize = 14
+	popupWidthPC = 15
+	popupBorderColor = 255:255:255
+   >
+
+  <backgroundDisplay>
+      <image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+        image/mele/backgd.jpg
+      </image>
+  </backgroundDisplay>
+
+  </mediaDisplay>
+</item_template>
+
+<channel>
+	<title>Alicia</title>
+	<link>./alicia.rss</link>
+
+<item>
+<title>test 1</title>
+<link>http://xxxx</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/youtube.jpg"/>
+</item>
+
+<item>
+<title>test 1</title>
+<link>http://xxxx</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/youtube.jpg"/>
+</item>
+
+<item>
+<title>test 1</title>
+<link>http://xxxx</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/youtube.jpg"/>
+</item>
+
+<item>
+<title>test 1</title>
+<link>http://xxxx</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/youtube.jpg"/>
+</item>
+
+</channel>
+</rss>
+	
+

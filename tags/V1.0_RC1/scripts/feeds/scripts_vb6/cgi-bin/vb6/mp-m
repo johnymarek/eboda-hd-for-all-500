@@ -1,0 +1,12 @@
+#!/bin/sh
+#example with mplayer & named pipe :) (same as MSDL), still needs debugging..
+PIPE="/tmp/mplayer-pipe"
+if [ -n "`ls /tmp/mplayer-pipe*`" ]; then
+rm $PIPE
+fi
+mknod $PIPE p
+cat <<EOF
+Content-type: video/x-ms-wmv
+
+EOF
+exec /opt/bin/mplayer $QUERY_STRING -really-quiet -quiet -shuffle -ao pcm -format 0x2000 -channels 1 -af resample=8000 -ao pcm:file=$PIPE | cat $PIPE
