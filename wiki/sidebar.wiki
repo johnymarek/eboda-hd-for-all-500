@@ -11,6 +11,7 @@
     * [500plus_r1245_modified_v4 Firmware for 500plus r1245 modified v4.0]
   * Optware
     * [RtorrentInstallation Installing rtorrent]
+    * [SambaInstallation Installing samba]
   * Others
     * [SwapOn Activation of swap partition]
 
