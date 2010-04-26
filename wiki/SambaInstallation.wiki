@@ -7,6 +7,6 @@ Also, the install script will scan for USB devices mounted and will export them 
 
 Install procedure in the standard one for scripts:
 
-{{
+{{{
 wget http://eboda-hd-for-all-500.googlecode.com/files/samba-install.sh && sh samba-install.sh && rm samba-install.sh
 }}}
