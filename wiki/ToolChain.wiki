@@ -1,0 +1,23 @@
+#summary Tool Chain installation
+
+= Introduction =
+
+This is the description of toolchain installation process
+
+
+= Details =
+
+  # Download vmwayer from vmware for free
+  # download a RPM based Linux disribution vmware image (from vmware appliances, I used the LinHost) - I used Fedora Core 12
+  # Download sources + read-me file from ftp://download.conceptronic.net/Conceptronic/GNU-GPL/CM3Gxx/ and follow the readme file:
+    # Toolchain (install rpm files and untar *inc_lib0808.tar.bz2* file to /usr/local/mipsel-linux/):
+      # mipsel-sdelinux-v6.05.00-4.i386.rpm
+      # sdelinux-5.03.06-1.i386.rpm
+      # inc_lib0808.tar.bz2
+    # you will also need to execute
+{{{
+cp /usr/local/lib/gcc-lib/mipsel-linux/2.96-sdelinuxmips-040127/*.o /usr/local/lib/gcc-lib/mipsel-linux/2.96-sdelinuxmips-040127/soft/
+}}}
+  # Now you should be able to compile cross-compile opensource application based on automake/autocong using `--host=mipsel-linux` extra argument.
+
+      
