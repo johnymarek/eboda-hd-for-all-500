@@ -1,0 +1,10 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+We propose to have a web interface for simple management of Media Player (ideea from astone, http://astone.googlecode.com/files/Screenshot.jpg).
+ 
+For the moment we are just in testing/proposal phase to get the right content for the page.
+
+If you have any idea, just create an issue.
+
