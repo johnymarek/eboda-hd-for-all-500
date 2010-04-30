@@ -1,4 +1,5 @@
 #summary 500_r3617_modified_v2
+#labels Deprecated
 
 =Firmware-ul e deja vechi, verifica versiunile mai noi=
 
