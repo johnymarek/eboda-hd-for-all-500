@@ -217,4 +217,4 @@ total 233936
 drwxr-xr-x 3 cipibad avahi-autoipd      4096 Apr 19 13:35 unpacked_install
 }}}
  * firmware for both mediaplayer versions can be found on download section http://code.google.com/p/eboda-hd-for-all-500/downloads/list
-  * scripts used to build firmware are here: http://code.google.com/p/eboda-hd-for-all-500/source/browse/#svn/trunk/scripts/firmware
+ * scripts used to build firmware are here: http://code.google.com/p/eboda-hd-for-all-500/source/browse/#svn/trunk/scripts/firmware
