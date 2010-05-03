@@ -18,3 +18,35 @@ CC='mipsel-linux-gcc' \
 '--without-sqlite' \
 "$@"
 
+export CC=mipsel-linux-gcc
+#! /bin/sh
+#
+# Created by configure
+## TAKE 2
+
+# replace first static wit extern in case of redefinition
+LDFLAGS='-L/usr/local/mipsel-linux/lib -ldl -lpthread' \
+CC='mipsel-linux-gcc' \
+'./configure' \
+'--enable-fastcgi' \
+'--with-xmlrpc' \
+'--with-libxml-dir=/opt' \
+'--host=mipsel-linux' \
+'--with-iconv=/opt' \
+'--without-apxs' \
+"$@"
+#! /bin/sh
+#
+# Created by configure
+
+LDFLAGS='-L/usr/local/mipsel-linux/lib -ldl -lpthread' \
+CC='mipsel-linux-gcc' \
+'./configure' \
+'--with-xmlrpc' \
+'--with-libxml-dir=/opt' \
+'--host=mipsel-linux' \
+'--with-iconv=/opt' \
+'--disable-cli' \
+'--prefix=/opt' \
+'--enable-static' \
+"$@"
