@@ -16,7 +16,7 @@ else
     exit 1
 fi
 
-if [ ! -d $1/src/Resource ]
+if [ ! -d $1/src/500/Resource ]
 then
     echo resources not found, repository incomplete
     exit 1
@@ -28,9 +28,9 @@ then
     exit 1
 fi
 
-if [ ! -d $1/src/image ]
+if [ ! -d $1/src/500/image ]
 then
-    echo mage not found, repository incomplete
+    echo image not found, repository incomplete
     exit 1
 fi
 
@@ -83,11 +83,11 @@ sed -i -e '/^root/c\
 root::0:0:root:/usr/local/etc/root:/bin/sh' etc/passwd
 
 # traducere + font + servicii
-cp  $1/src/Resource/* usr/local/bin/Resource 
+cp  $1/src/500/Resource/* usr/local/bin/Resource 
 
 # screensaver + skinpack
-cp  $1/src/Resource/bmp/* usr/local/bin/Resource/bmp 
-cp  $1/src/image/* usr/local/bin/image 
+cp  $1/src/500/Resource/bmp/* usr/local/bin/Resource/bmp 
+cp  $1/src/500/image/* usr/local/bin/image 
 
 # awk
 cp  $1/src/bin/* usr/bin

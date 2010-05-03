@@ -18,7 +18,7 @@ else
     exit 1
 fi
 
-if [ ! -d $1/src/Resource ]
+if [ ! -d $1/src/500plus/Resource ]
 then
     echo resources not found, repository incomplete
     exit 1
@@ -30,9 +30,9 @@ then
     exit 1
 fi
 
-if [ ! -d $1/src/image ]
+if [ ! -d $1/src/500plus/image ]
 then
-    echo mage not found, repository incomplete
+    echo image not found, repository incomplete
     exit 1
 fi
 
@@ -75,6 +75,9 @@ unyaffs ../yaffs2_1.img
 #
 #modify root
 
+# in last version e-boda makes /opt symlink to /usr/local/etc and mess-up my optware !!!
+rm opt
+
 # opt directory for optware
 mkdir opt
 
@@ -82,11 +85,11 @@ mkdir opt
 sed -i -e '/^root/c\
 root::0:0:root:/usr/local/etc/root:/bin/sh' etc/passwd
 
-## traducere + font + servicii
-#cp  $1/src/Resource/* usr/local/bin/Resource 
+## traducere + font
+cp  $1/src/500plus/Resource/* usr/local/bin/Resource 
 
 #doar font
-cp  $1/src/Resource/ARIALUNI.TTF usr/local/bin/Resource 
+cp  $1/src/500plus/Resource/ARIALUNI.TTF usr/local/bin/Resource 
 
 
 
