@@ -45,7 +45,7 @@ cat > /opt/etc/init.d/S01kernel <<EOF
 echo 15 > /proc/sys/vm/swappiness
 echo 3 > /proc/sys/vm/dirty_background_ratio
 echo 40 > /proc/sys/vm/dirty_ratio
-echo 4096 > /proc/sys/vm/min_free_kbytes
+echo 6144 > /proc/sys/vm/min_free_kbytes
 EOF
 chmod +x /opt/etc/init.d/S01kernel
 sh /opt/etc/init.d/S01kernel
@@ -65,7 +65,8 @@ start() {
                 exit 1
         fi
         echo "Starting rtorrent with dtach on \${RTORRENT_SOKET} ..."
-        /opt/bin/dtach -n \${RTORRENT_SOCKET} /opt/bin/rtorrent -n -o import=\${RTORRENT_CONF}
+				sleep 10
+        /opt/bin/dtach -n \${RTORRENT_SOCKET} nice -n 20 /opt/bin/rtorrent -n -o import=\${RTORRENT_CONF}
         echo "Configuration's setting are located in \${RTORRENT_CONF}"
         echo "done. Issue"
         echo "\$0 attach"
@@ -75,6 +76,8 @@ start() {
 stop() {
         echo -n "Shutting down rtorrent... "
         killall rtorrent
+        sleep 2
+        rm -f /tmp/rpc.socket
         echo "done"
 }
 
@@ -111,7 +114,7 @@ max_uploads = 4
 
 #change 1
 #download_rate = 512
-download_rate = 1024
+download_rate = 768
 upload_rate = 32
 
 dht = auto
@@ -249,6 +252,7 @@ cd ../..
 rm rutorrent-3.0.tar
 
 sh /opt/etc/init.d/S90rtorrent start
+sh /opt/etc/init.d/S80lighttpd restart
 
 echo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 echo !
