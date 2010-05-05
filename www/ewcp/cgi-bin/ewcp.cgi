@@ -1,125 +1,334 @@
 #!/bin/sh
-# CIPIBAD
+
+
+# CGI wrote by cipibad
 # adapted from internet ...
-#TODO fill LOCALIP
+#
 VERSION=`grep VERSION /tmp/hdd/root/ewcp/current_version.txt  | cut -d'=' -f 2` 2>/dev/null
 HOSTNAME=`/bin/hostname`
 LOAD=`/bin/cat /proc/loadavg`
 LOCALIP=`/sbin/ifconfig -a | grep -A 1 eth0 | grep inet | tr -s " " | cut -d " " -f 3 | cut -d ":" -f 2`
-cat <<EOT
+cat <<EOF
 Content-type: text/html
 
-
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-  <title>E-boda HD for all 500/500+ - Control Panel</title>
-  <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico">
-  <style type="text/css">
-    table {border:1px solid black}
-    .shaded {background-color:#c0c0c0}
-    .small {font-size:8pt}
-    .thead {font-weight:bold; background-color:black; color:yellow; text-align:center}
-  </style>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>E-Boda Web Control Panel</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="/cp_style.css">
 </head>
+<body>
+<table width="714" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td><img src="/eb_imgs/cp_header.jpg" width="714" height="244"></td>
+  </tr>
+  <tr>
+    <td id="content"><div class="pnlContainer">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="7"><img src="/eb_imgs/cp_TL.gif" width="7" height="36"></td>
+            <td width="100%" class="pnlHeader">Daemons Status (click to start/stop) </td>
+            <td width="7"><img src="/eb_imgs/cp_TR.gif" width="7" height="36"></td>
+          </tr>
+        <tr>
+          <td colspan="3" class="pnlContent"><div class="pnlContentDiv">
+            <table width="100%" border="0" cellspacing="0" cellpadding="2">
+EOF
 
-<body bgcolor = #B6B5B3>
-<div style="text-align: center;"><span style="font-family: Tahoma; font-weight: bold; font-size: 18pt;">Welcome to $HOSTNAME. <BR> Eboda Web Control Panel version $VERSION <br> </span><img border="0px" alt="Eboda Media Player Control Panel" title="Eboda Media Player Control Panel" src="img/eboda_banner.jpg" /><br style="font-family: Tahoma;" />
-  </div>
-<table width="" align="center" style="border: 1px solid black; width: 782px; font-family: Tahoma; height: 232px; border-collapse: collapse; background-color: rgb(255, 255, 255);">
-  <tbody>
+##############################
+# BEGIN OF STATUS SECTION
 
-    <tr>
-      <td style="border: 1px solid black; width: 260px; text-align: left; vertical-align: top; letter-spacing: 0pt; word-spacing: 0pt;"><span style="font-weight: bold;">
-		<img border="0px" src="img/title_daemons.png" title="Daemons Running" alt="Daemons Running" /></span><br />
-		<span style="font-size: 12pt;">
-EOT
+
+name_lighttpd="HTTP: Lighttpd webserver"
+name_apache="HTTP: Apache webserver"
+name_transmission="TORRENT: Transmission"
+name_rtorrent="TORRENT: rtorrent"
+name_btpd="TORRENT: btpd"
+name_smbd="NAS: Samba"
+name_bftpd="NAS: bftpd"
+name_DvdPlayer="CORE: DvdPlayer"
+
+for i in lighttpd apache transmission rtorrent btpd smbd bftpd DvdPlayer 
+do
+    pic=/eb_imgs/cp_on.gif
+    script=util_${i}-stop.cgi
+    state=Started
+    process=$i
+    [ $process == "transmission" ] && process=transmission-daemon
+    pidof ${process} >/dev/null
+    if [ $? -ne 0 ]
+    then
+    	pic=/eb_imgs/cp_off.gif 
+    	script=util_${i}-start.cgi
+    	state=Stopped
+    fi
+    
+    full_name=`eval echo \\$name_${i}`
+cat <<EOF
+  <tr>
+    <td width="11%"><a href="${script}"><img src="$pic" width="24" height="20" border="0"></a></td>
+    <td width="89%"><a href="${script}">$full_name ($state)</a></td>
+  </tr>
+EOF
+done
+
+
+# END OF STATUS SECTION
+##############################
+
+
+cat <<EOF
+</table>
+</div></td>
+          </tr>
+        <tr>
+          <td><img src="/eb_imgs/cp_BL.gif" width="7" height="6"></td>
+            <td class="pnlFooter"><img src="/eb_imgs/spacer.gif" width="6" height="6"></td>
+            <td><img src="/eb_imgs/cp_BR.gif" width="7" height="6"></td>
+          </tr>
+      </table>
+    </div>
+      <div class="pnlContainer">
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="7"><img src="/eb_imgs/cp_TL.gif" width="7" height="36"></td>
+            <td width="100%" class="pnlHeader">Utilities </td>
+            <td width="7"><img src="/eb_imgs/cp_TR.gif" width="7" height="36"></td>
+          </tr>
+          <tr>
+            <td colspan="3" class="pnlContent"><div class="pnlContentDiv">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+EOF
+
+##############################
+# BEGIN OF UTILITIES SECTION
+
+# name_lighttpd="HTTP: Lighttpd webserver"
+# name_apache="HTTP: Apache webserver"
+# name_transmission-daemon="TORRENT: Transmission"
+# name_rtorrent="TORRENT: rtorrent"
+# name_btpd="TORRENT: btpd"
+# name_smbd="NAS: Samba"
+# name_smbd="NAS: bftpd"
+# name_DvdPlayer="CORE: DvdPlayer"
+name_ewcp="WWW: Eboda Web Control Panel"
+name_vb6="RSS: vb6rocod php scripts"
+name_opt="APPS: optware apps"
+
+for i in ewcp vb6 opt 
+do
+    script=util_${i}-update.cgi
+    full_name=`eval echo \\$name_${i}`
+    cat <<EOF
+                <tr height="24">
+                  <td width="8%"><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>
+                  <td width="92%">${full_name} <a href="${script}">Update</a></td>
+                </tr>
+EOF
+done
+
+startfile_lighttpd="/opt/etc/init.d/S80lighttpd"
+startfile_apache="/opt/etc/init.d/S08apache"
+startfile_transmission="/opt/etc/init.d/S90transmission"
+startfile_rtorrent="/opt/etc/init.d/S90rtorrent"
+startfile_bftpd="/opt/etc/init.d/fake"
+
+for i in lighttpd apache transmission rtorrent bftpd
+do
+    full_name=`eval echo \\$name_${i}`
+    script="#"
+    state="Not installed"
+    action="N/A"
+    
+    startfile=`eval echo \\$startfile_${i}`
+    if [ -f $startfile ] 
+    then
+    	if [ -x $startfile ]
+    	then
+    		script=util_${i}-disable.cgi
+    		state="Enabled"
+    		action=Disable
+    	else
+    		script=util_${i}-enable.cgi
+    		state="Disabled"
+    		action=Enable
+    	fi
+    fi
+
+    cat <<EOF
+                <tr height="24">
+                  <td><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>
+                  <td>${full_name} ($state) <a href="${script}">${action}</a> </td>
+                </tr>
+EOF
+done
+# END OF UTILITIES SECTION
+##############################
+
+cat <<EOF
+              </table>
+            </div></td>
+          </tr>
+          <tr>
+            <td><img src="/eb_imgs/cp_BL.gif" width="7" height="6"></td>
+            <td class="pnlFooter"><img src="/eb_imgs/spacer.gif" width="6" height="6"></td>
+            <td><img src="/eb_imgs/cp_BR.gif" width="7" height="6"></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="pnlContainer">
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="7"><img src="/eb_imgs/cp_TL.gif" width="7" height="36"></td>
+            <td width="100%" class="pnlHeader">Information / Logs </td>
+            <td width="7"><img src="/eb_imgs/cp_TR.gif" width="7" height="36"></td>
+          </tr>
+          <tr>
+            <td colspan="3" class="pnlContent"><div class="pnlContentDiv">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+EOF
+
+##############################
+# BEGIN OF LOGS SECTION
+
+cat <<EOF
+
+
+                <tr>
+                  <td width="8%"><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>
+                  <td width="92%"><a href="status_system.cgi">System Status</a> </td>
+                </tr>
+                <tr>
+                  <td><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>
+                  <td><a href="log_system.cgi">System Logs</a> </td>
+                </tr>
+                <tr>
+                  <td><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>
+                  <td><a href="log_lighttpd_access.cgi">Lighttpd access log</a></td>
+                </tr>
+                <tr>
+                  <td><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>
+                  <td><a href="log_lighttpd_error.cgi">Lighttpd error log</a></td>
+                </tr>
+
+EOF
+
+# END OF LOGS SECTION
+##############################
+cat <<EOF
+              </table>
+            </div></td>
+          </tr>
+          <tr>
+            <td><img src="/eb_imgs/cp_BL.gif" width="7" height="6"></td>
+            <td class="pnlFooter"><img src="//eb_imgs/spacer.gif" width="6" height="6"></td>
+            <td><img src="/eb_imgs/cp_BR.gif" width="7" height="6"></td>
+          </tr>
+        </table>
+      </div>
+      <div class="pnlContainer">
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="7"><img src="/eb_imgs/cp_TL.gif" width="7" height="36"></td>
+            <td width="100%" class="pnlHeader">Links </td>
+            <td width="7"><img src="/eb_imgs/cp_TR.gif" width="7" height="36"></td>
+          </tr>
+          <tr>
+            <td colspan="3" class="pnlContent"><div class="pnlContentDiv">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+
+EOF
+##############################
+# BEGIN OF LINKS SECTION
+cat <<EOF
+                <tr>
+                  <td width="8%"><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>
+                  <td width="92%"><a href="#">Transmission Web Interface</a> </td>
+                </tr>
+                <tr>
+                  <td><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>
+                  <td><a href="#">rtorrent rtGui</a></td>
+                </tr>
+                <tr>
+                  <td><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>
+                  <td><a href="#">rutorrent </a></td>
+                </tr>
+                <tr>
+                  <td><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>
+                  <td><a href="#">Sofpedia forum dedicated topic (ro)</a></td>
+                </tr>
+                <tr>
+                  <td><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>
+                  <td><a href="#">Related Google Code project </a></td>
+                </tr>
+
+EOF
+
+# END OF LINKS SECTION
+##############################
+
+cat <<EOF
+
+
+              </table>
+            </div></td>
+          </tr>
+          <tr>
+            <td><img src="/eb_imgs/cp_BL.gif" width="7" height="6"></td>
+            <td class="pnlFooter"><img src="/eb_imgs/spacer.gif" width="6" height="6"></td>
+            <td><img src="/eb_imgs/cp_BR.gif" width="7" height="6"></td>
+          </tr>
+        </table>
+      </div>
+      <div class="pnlContainerBig">
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="pnlTableBig">
+          <tr>
+            <td width="7"><img src="/eb_imgs/cp_TL.gif" width="7" height="36"></td>
+            <td width="100%" class="pnlHeader">Disk Stats </td>
+            <td width="7"><img src="/eb_imgs/cp_TR.gif" width="7" height="36"></td>
+          </tr>
+
+EOF
+
+##############################
+# BEGIN OF DISK SECTION
+
+cat <<EOF
+          <tr>
+            <td colspan="3" class="pnlContent"><div class="pnlContentDiv2">
+EOF
+
    echo "<pre style=\"font-size: 8pt;\">"
-   uptime   
+	df -h |  tr -s ' ' | cut -d ' ' -f 2-6 | tr ' ' '\t' | sed -e 's/Available/Avail/'
    echo "</pre>"
+cat <<EOF
+           <td>
+          </tr>
+EOF
+# END OF DISK SECTION
+##############################
 
-#to add new applications just modify here
-   
-
-    pidof lighttpd >/dev/null && echo -n "<img src=\"img/started_daemon.gif\" alt=\"Started: \">"  
-    pidof lighttpd >/dev/null  || echo -n "<img src=\"img/stopped_daemon.gif\" alt=\"Stopped: \">"  
-    echo "HTTP: Lighttpd Web Server and php <br />"
-
-    pidof transmission-daemon >/dev/null  && echo -n "<img src=\"img/started_daemon.gif\" alt=\"Started: \">"  
-    pidof transmission-daemon >/dev/null  || echo -n "<img src=\"img/stopped_daemon.gif\" alt=\"Stopped: \">"  
-    echo "TORRENT: transmission <br />"
-
-    pidof rtorrent >/dev/null  && echo -n "<img src=\"img/started_daemon.gif\" alt=\"Started: \">"  
-    pidof rtorrent >/dev/null  || echo -n "<img src=\"img/stopped_daemon.gif\" alt=\"Stopped: \">"  
-    echo "TORRENT: rtorrent <br />"
-
-    pidof btpd >/dev/null  && echo -n "<img src=\"img/started_daemon.gif\" alt=\"Started: \">"  
-    pidof btpd >/dev/null  || echo -n "<img src=\"img/stopped_daemon.gif\" alt=\"Stopped: \">"  
-    echo "TORRENT: btpd <br />"
-
-    pidof smbd >/dev/null  && echo -n "<img src=\"img/started_daemon.gif\" alt=\"Started: \">"  
-    pidof smbd >/dev/null  || echo -n "<img src=\"img/stopped_daemon.gif\" alt=\"Stopped: \">"  
-    echo "NAS: samba <br />"
-
-    pidof DvdPlayer >/dev/null  && echo -n "<img src=\"img/started_daemon.gif\" alt=\"Started: \">"  
-    pidof DvdPlayer >/dev/null  || echo -n "<img src=\"img/stopped_daemon.gif\" alt=\"Stopped: \">"  
-    echo "CORE: DvdPlayer <br />"
-
-cat <<EOT
-        <br />
-<hr>
-        <br />
-		<span style="font-weight: bold;"><img border="0px" src="img/title_utilities.png" title="Utilities" alt="Utilities" /></span><br />
-        <span style="font-size: 12pt;">
-Eboda Web Control Panel - <a href="update-webcontrol.cgi">Update</a> / <a href="restore-webcontrol.cgi">Back to previous version</a> <br/>
-
-vb6rocod_scripts - <a href="update-vb6scripts.cgi">Update</a> <br/>
-<!--
-Optware - <a href="install-optware.cgi">Install</a> /<a href="optware/">Change Configuration</a></span><br />
-Lighttpd Web Server - <a href="install-lighttpd.cgi">Install</a> /<a href="uninstall-lighttpd.cgi">Uninstall</a> /<a href="util_lighttpd-start.cgi">Start</a>/<a href="util_lighttpd-stop.cgi">Stop</a><br />
-
-Metafeeds simple - <a href="install-mfs.cgi">Install</a> <br/> 
-Metafeeds complete - <a href="install-mfc.cgi">Install</a> <br/>
-
-Transmission Torrent - <a href="install-transmission.cgi">Install</a> /<a href="uninstall-transmission.cgi">Uninstall</a> /<a href="util_transmission-start.cgi">Start</a> / <a href="util_transmission-stop.cgi">Stop</a><br />
-rtorrent - <a href="install-rtorrent.cgi">Install</a> /<a href="uninstall-rtorrent.cgi">Uninstall</a> /<a href="util_rtorrent-start.cgi">Start</a> / <a href="util_rtorrent-stop.cgi">Stop</a><br />
-
-DvdPlayer - <a href="util_dvdplayer-start.cgi">Start</a> / <a href="util_dvdplayer-stop.cgi">Stop</a><br />
--->
-        <br />
-
-<hr>
-
-        <br />
-        <span style="font-weight: bold;"><img border="0px" src="img/title_infologs.png" title="Information/Logs" alt="Information/Logs" /></span><br />
-        <a href="system_status.cgi">System Status</a><br />
-<!--        <a href="lighttpd_status.cgi">Lighttpd log</a><br /> -->
-        <br />
-        <br />
-
-<hr>
-
-        <span style="font-weight: bold;"> <img border="0px" alt="Links" title="Links" src="img/title_links.png" /></span><br />
-
-        <a href="http://$LOCALIP:8080">Transmission Web Interface</a><br />
-        <a href="http://$LOCALIP:8081/rtgui">rtorrent rtGui</a><br />
-        <a href="http://$LOCALIP:8081/rutorrent">rutorrent</a><br />
-        <a href="http://forum.softpedia.com/index.php?showtopic=640751">Sofpedia forum dedicated topic(ro)</a><br />
-        <a href="http://code.google.com/p/eboda-hd-for-all-500/"> Related Google Code project</a><br />
-
-        <br />
-<hr>
-<br />
-
-
-		<span style="font-weight: bold;"> <img border="0px" alt="Disk Stats" title="Disk Stats" src="img/title_diskstats.png" /></span> <br />
-EOT
-   echo "<pre style=\"font-size: 8pt;\">"
-   df -h
-   echo "</pre>"
-cat <<EOT
-
-
-<br>        </td>
-    </tr>
-  </tbody>
+cat <<EOF
+          <tr>
+            <td><img src="/eb_imgs/cp_BL.gif" width="7" height="6"></td>
+            <td class="pnlFooter"><img src="/eb_imgs/spacer.gif" width="6" height="6"></td>
+            <td><img src="/eb_imgs/cp_BR.gif" width="7" height="6"></td>
+          </tr>
+        </table>
+      </div></td>
+  </tr>
+  <tr>
+    <td><img src="/eb_imgs/cp_footer.gif" width="714" height="65"></td>
+  </tr>
 </table>
 </body>
+</html>
+EOF
