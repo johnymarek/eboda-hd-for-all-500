@@ -11,7 +11,7 @@ a {color:#B7B7B7;}
 a:hover {color:#FFFFFF}
 
 #content {
-	background-image:url(images/cp_bg_tbl.gif);
+	background-image:url(eb_imgs/cp_bg_tbl.gif);
 	padding:0px 30px 0px 30px;
 }
 .pnlContainer {
@@ -24,14 +24,14 @@ a:hover {color:#FFFFFF}
 	margin:5px;
 }
 .pnlHeader {
-	background-image:url(images/cp_bgT.gif);
+	background-image:url(eb_imgs/cp_bgT.gif);
 	color:#29BEE3;
 	font-weight:bold;
 	font-size:14px;
 	padding:5px
 }
 .pnlFooter {
-	background-image:url(images/cp_bgB.gif);
+	background-image:url(eb_imgs/cp_bgB.gif);
 }
 .pnlContent {
 	border-left:2px solid #474747;
