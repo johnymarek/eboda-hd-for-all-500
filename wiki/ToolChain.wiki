@@ -1,5 +1,10 @@
 #summary Tool Chain installation
 
+= warning =
+
+The compiler is quite old one, I have currently some issues compiling some newer sources.
+I'll try to build another compiles based on uclibc http://www.uclibc.org/toolchains.html method and I will use that one if everything OK. You can watch the progress here [Toolchain2 Second MIPS toolchain]
+
 = Introduction =
 
 This is the description of toolchain installation process. More info can be found here: http://www.linux-mips.org/wiki/Toolchains
