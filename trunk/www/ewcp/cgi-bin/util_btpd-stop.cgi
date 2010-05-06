@@ -2,10 +2,10 @@
 
 . ./common.sh
 
-nice_start "Stopping apache"
+nice_start "Stopping btpd"
 
 echo "NOT IMPLEMENTED"
-#/opt/etc/init.d/S80apache stop
+#/opt/etc/init.d/S80btpd stop
 
 nice_exit 0 
 
