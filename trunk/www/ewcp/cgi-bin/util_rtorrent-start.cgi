@@ -1,8 +1,12 @@
 #!/bin/sh
 
-echo "Content-type: text/html"
-echo
-echo "<html><head><title>PlayOn!HD InfoSite</title></head><body bgcolor="#000000" text="#FFFFFF">Machine is being restarted..<br><br><br>"
-echo Sorry, not yet implemented
-echo "<br></body></html>"
+. ./common.sh
+
+nice_start "Starting rtorrent"
+
+/opt/etc/init.d/S90rtorrent stop
+/opt/etc/init.d/S90rtorrent start
+
+nice_exit 0 
+
 
