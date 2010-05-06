@@ -4,10 +4,13 @@
 # CGI wrote by cipibad
 # adapted from internet ...
 #
-VERSION=`grep VERSION /tmp/hdd/root/ewcp/current_version.txt  | cut -d'=' -f 2` 2>/dev/null
-HOSTNAME=`/bin/hostname`
-LOAD=`/bin/cat /proc/loadavg`
+
+#VERSION=`grep VERSION /tmp/hdd/root/ewcp/current_version.txt  | cut -d'=' -f 2` 2>/dev/null
+#HOSTNAME=`/bin/hostname`
+#LOAD=`/bin/cat /proc/loadavg`
+
 LOCALIP=`/sbin/ifconfig -a | grep -A 1 eth0 | grep inet | tr -s " " | cut -d " " -f 3 | cut -d ":" -f 2`
+
 cat <<EOF
 Content-type: text/html
 
@@ -34,7 +37,7 @@ Content-type: text/html
             <td width="100%" class="pnlHeader">Daemons Status (click to start/stop) </td>
             <td width="7"><img src="/eb_imgs/cp_TR.gif" width="7" height="36"></td>
           </tr>
-        <tr>
+        <tr height="212">
           <td colspan="3" class="pnlContent"><div class="pnlContentDiv">
             <table width="100%" border="0" cellspacing="0" cellpadding="2">
 EOF
@@ -99,7 +102,7 @@ cat <<EOF
             <td width="100%" class="pnlHeader">Utilities </td>
             <td width="7"><img src="/eb_imgs/cp_TR.gif" width="7" height="36"></td>
           </tr>
-          <tr>
+          <tr height="212">
             <td colspan="3" class="pnlContent"><div class="pnlContentDiv">
               <table width="100%" border="0" cellspacing="0" cellpadding="0">
 
@@ -125,7 +128,7 @@ do
     script=util_${i}-update.cgi
     full_name=`eval echo \\$name_${i}`
     cat <<EOF
-                <tr height="24">
+                <tr height="21">
                   <td width="8%"><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>
                   <td width="92%">${full_name} <a href="${script}">Update</a></td>
                 </tr>
@@ -136,9 +139,10 @@ startfile_lighttpd="/opt/etc/init.d/S80lighttpd"
 startfile_apache="/opt/etc/init.d/S08apache"
 startfile_transmission="/opt/etc/init.d/S90transmission"
 startfile_rtorrent="/opt/etc/init.d/S90rtorrent"
+startfile_smbd="/opt/etc/init.d/S08samba"
 startfile_bftpd="/opt/etc/init.d/fake"
 
-for i in lighttpd apache transmission rtorrent bftpd
+for i in lighttpd apache transmission rtorrent smbd bftpd
 do
     full_name=`eval echo \\$name_${i}`
     script="#"
@@ -161,7 +165,7 @@ do
     fi
 
     cat <<EOF
-                <tr height="24">
+                <tr height="21">
                   <td><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>
                   <td>${full_name} ($state) <a href="${script}">${action}</a> </td>
                 </tr>
@@ -203,7 +207,7 @@ cat <<EOF
 
                 <tr>
                   <td width="8%"><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>
-                  <td width="92%"><a href="status_system.cgi">System Status</a> </td>
+                  <td width="92%"><a href="system_status.cgi">System Status</a> </td>
                 </tr>
                 <tr>
                   <td><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>
@@ -251,23 +255,23 @@ EOF
 cat <<EOF
                 <tr>
                   <td width="8%"><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>
-                  <td width="92%"><a href="#">Transmission Web Interface</a> </td>
+                  <td width="92%"><a href="http://$LOCALIP:8082">Transmission Web Interface</a> </td>
                 </tr>
                 <tr>
                   <td><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>
-                  <td><a href="#">rtorrent rtGui</a></td>
+                  <td><a href="http://$LOCALIP:8081/rtgui">rtGui</a></td>
                 </tr>
                 <tr>
                   <td><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>
-                  <td><a href="#">rutorrent </a></td>
+                  <td><a href="http://$LOCALIP:8081/rutorrent">rutorrent </a></td>
                 </tr>
                 <tr>
                   <td><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>
-                  <td><a href="#">Sofpedia forum dedicated topic (ro)</a></td>
+                  <td><a href="http://forum.softpedia.com/index.php?showtopic=640751">Sofpedia forum dedicated topic (ro)</a></td>
                 </tr>
                 <tr>
                   <td><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>
-                  <td><a href="#">Related Google Code project </a></td>
+                  <td><a href="http://code.google.com/p/eboda-hd-for-all-500/">Google Code project page </a></td>
                 </tr>
 
 EOF

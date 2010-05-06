@@ -2,10 +2,10 @@
 
 . ./common.sh
 
-nice_start "Stopping apache"
+nice_start "Starting DvdPlayer"
 
 echo "NOT IMPLEMENTED"
-#/opt/etc/init.d/S80apache stop
+#RootApp DvdPlayer
 
 nice_exit 0 
 
