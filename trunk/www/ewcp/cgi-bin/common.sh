@@ -12,8 +12,8 @@ Content-type: text/html
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <title>E-Boda Web Control Panel</title>
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="/cp_style.css">
 </head>
 <body>

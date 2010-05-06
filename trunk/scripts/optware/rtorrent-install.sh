@@ -57,7 +57,7 @@ PATH=/sbin:/bin:/usr/bin:/usr/sbin:/opt/bin:/opt/sbin
 
 RTORRENT_SOCKET=/tmp/rtorrent
 RTORRENT_CONF=/opt/etc/rtorrent.conf
-
+export TERM=vt100
 
 start() {
         if [ -e \${RTORRENT_SOCKET} ]; then
