@@ -59,7 +59,7 @@ if($search) {
 }
 ?>
 <title>Previous Page</title>
-<link><?php echo $url;?></link><media:thumbnail url="http://all-free-download.com/images/graphiclarge/green_globe_left_arrow_558.jpg" />
+<link><?php echo $url;?></link><media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/left.jpg" />
 </item>
 
 
@@ -94,10 +94,10 @@ foreach($videos as $video) {
 $pos1 = stripos($link, 'source=');
 if ($pos1 === false) {
     $html = file_get_contents($link);
-    $link = str_between($html, 'flashvars.options = "', '"');
+    $link = str_between($html, "flashvars.videoUrl = '", "'");
 
-    $html = file_get_contents($link);
-    $link = str_between($html, '<flv_url>', '</flv_url>');
+    //$html = file_get_contents($link);
+    //$link = str_between($html, '<flv_url>', '</flv_url>');
 
     echo '<item>';
     echo '<title>'.$title.'</title>';
@@ -121,7 +121,7 @@ if($search) {
 ?>
 <title>Next Page</title>
 <link><?php echo $url;?></link>
-<media:thumbnail url="http://all-free-download.com/images/graphiclarge/green_globe_right_arrow_559.jpg" />
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/right.jpg" />
 </item>
 
 </channel>

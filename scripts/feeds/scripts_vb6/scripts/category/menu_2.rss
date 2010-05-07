@@ -1,0 +1,124 @@
+<?xml version='1.0' ?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<onEnter>
+    xmlurl = "http://127.0.0.1/cgi-bin/apache_start.cgi";
+    dlok = loadXMLFile(xmlurl);
+    if (dlok != null)
+    {
+    serv_status = getXMLText("info", "status", "server-status");
+        }
+</onEnter>
+	<mediaDisplay name=photoFocusView 
+	focusItem="3"
+	imageFocus=null 
+	imageParentFocus=null 
+	backgroundColor="0:0:0"
+	rowCount="1"
+	columnCount="5"
+	drawItemText="no"
+	fontSize="15"
+	sideTopHeightPC="20"
+	sideColorTop="0:0:0"
+	sideColorBottom="0:0:0"
+	itemOffsetXPC="0"
+	itemOffsetYPC="40"
+	itemWidthPC="15.5"
+	itemHeightPC="15.5"
+	itemBackgroundWidthPC="16.5"
+	itemBackgroundHeightPC="16.5"
+	itemGapXPC="1.5"
+	focusItemOffsetYPC="32"
+	focusItemWidthPC="20.43"
+	focusItemHeightPC="20.43"
+	itemBackgroundColor="0:0:0"
+	bottomYPC="85"
+	itemBorderColor="0:0:0"
+	showHeader="yes"
+	headerXPC="5"
+	showDefaultInfo="yes"
+	headerYPC="10"
+	idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		HD for all
+		</text>	
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy8.png</idleImage>
+</mediaDisplay> 
+
+<channel>
+<title>HD for all</title>
+
+<item>
+<title>HDD links</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/menu.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/HDD-256.png"/>
+</item>
+
+<item>
+<title>Metafeeds</title>
+<link>http://www.metafeeds.com/channel/hdforall5/rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/meta_icon.png"/>
+</item>
+
+<item>
+<title>Picasa</title>
+<link>picasa://</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/PicasaIcon.png"/>
+<mediaDisplay name=photoView backgroundImage="image/E92_335iCoupe_3-4drvrFrnt.jpg"
+rowCount=3 columnCount=7 viewAreaXPC = 2 sideColorBottom=0:0:0 sideColorTop=0:0:0>
+<idleImage> image/POPUP_LOADING_01.png </idleImage>
+<idleImage> image/POPUP_LOADING_02.png </idleImage>
+<idleImage> image/POPUP_LOADING_03.png </idleImage>
+<idleImage> image/POPUP_LOADING_04.png </idleImage>
+<idleImage> image/POPUP_LOADING_05.png </idleImage>
+<idleImage> image/POPUP_LOADING_06.png </idleImage>
+<idleImage> image/POPUP_LOADING_07.png </idleImage>
+<idleImage> image/POPUP_LOADING_08.png </idleImage>
+</mediaDisplay>
+<submenu name="Search for Photo"  description="Search all the Photos using keyword">
+<url>http://picasaweb.google.com/data/feed/api/all?q=%s&amp;max-results=48&amp;thumbsize=288</url>
+<nextPageItemCount> 48 </nextPageItemCount>
+<input name="keyword"> keyword </input>
+</submenu>
+
+<submenu name="Login"  description="Login in Picasa using User Name">
+<url>http://picasaweb.google.com/data/feed/api/user/%s?kind=album </url>
+<input name="keyword"> keyword </input>
+</submenu>
+</item>
+
+<item>
+<title>News</title>
+<link>rss_file://./IMS_Modules/News/scripts/news.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/Feed-Newspaper-256.png"/>
+</item>
+
+<item>
+<title>Flickr</title>
+<link>rss_file://./IMS_Modules/Flickr/flickr.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/Flickr-icon.png"/>
+</item>
+
+<item>
+<title>Weather</title>
+<link>rss_file://./IMS_Modules/Weather/scripts/map/myfavorites.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/30-Mostly Sunny.png"/>
+</item>
+
+<item>
+<title>Network tools</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/network.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/Network-tools-256.png"/>
+</item>
+
+</channel>
+</rss>
