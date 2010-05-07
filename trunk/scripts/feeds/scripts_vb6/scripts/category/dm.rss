@@ -12,6 +12,31 @@
 </item>
 
 <item>
+<title>Visited today</title>
+<link>http://127.0.0.1:82/scripts/php/dmvt.php</link>
+</item>
+
+<item>
+<title>Most recent videos</title>
+<link>http://127.0.0.1:82/scripts/php/dmmr.php</link>
+</item>
+
+<item>
+<title>Sports and Extreme</title>
+<link>http://127.0.0.1:82/scripts/php/dmse.php</link>
+</item>
+
+<item>
+<title>football</title>
+<link>http://127.0.0.1:82/scripts/php/dmfo.php</link>
+</item>
+
+<item>
+<title>FOX Sports Interactive</title>
+<link>http://127.0.0.1:82/scripts/php/dmfox.php</link>
+</item>
+
+<item>
 <title>Fun</title>
 <link>http://127.0.0.1:82/scripts/php/dmf.php</link>
 </item>

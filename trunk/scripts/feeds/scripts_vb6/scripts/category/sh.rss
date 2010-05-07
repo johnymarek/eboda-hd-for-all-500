@@ -14,8 +14,8 @@
 	headerImageYPC=101
 	itemImageXPC="9" 
 	itemImageYPC="21"
-    itemImageHeightPC="12" 
-	itemImageWidthPC="1"           
+    itemImageHeightPC="0" 
+	itemImageWidthPC="0"           
     itemXPC="28"
     itemYPC="20.5"
 	itemPerPage="5"			

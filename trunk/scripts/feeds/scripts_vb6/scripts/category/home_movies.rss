@@ -1,0 +1,61 @@
+<?xml version='1.0' ?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+<title>Home movies</title>
+
+<item>
+<title>Vimeo</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/vimeo.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/vimeo.jpg"/>
+</item>	
+
+<item>
+<title>Dailymotion</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/dm.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/dailymotion.png" />
+</item>
+
+<item>
+<title>Metacafe</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/metacafe.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/metacafe.png" />
+</item>
+
+<item>
+<title>220.ro</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/220.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/220.jpg" />
+</item>
+
+<item>
+<title>BlipTV</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/bliptv.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/blip_tv.jpg" />
+</item>
+
+<item>
+<title>Best of YouTube (iPod video)</title>
+<link>http://feeds.feedburner.com/boyt</link> />
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/bestofyoutube.jpg" />
+</item>
+
+<item>
+<title>LiveVideo</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/lv.rss</link> />
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/livevideo.jpg" />
+</item>
+
+<item>
+<title>Break.com</title>
+<link>http://127.0.0.1:82/scripts/php/break.php</link> />
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/break_logo.jpg" />
+</item>
+
+<item>
+<title>clickplay.tv</title>
+<link>http://127.0.0.1:82/scripts/php/c.php</link> />
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/clickplay.jpg" />
+</item>
+
+</channel>
+</rss>
