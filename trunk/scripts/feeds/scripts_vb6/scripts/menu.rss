@@ -21,6 +21,32 @@ idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26"
 <title>LiveX9</title>
 <link>/tmp/hdd/volumes/HDD1/scripts/scripts9/menu.rss</link>
 <media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/Xtreamer.jpg"/>
+<mediaDisplay name="photoView" 
+      fontSize="16" 
+      rowCount="3"
+      columnCount="4"
+      showHeader="yes"
+      itemGapXPC="2.5"      
+      rollItems="yes"
+      drawItemText="no" 
+      itemImageXPC="10"
+      itemImageYPC="0"
+      itemOffsetXPC="7"
+      itemOffsetYPC="20"        
+      forceFocusOnItem="yes"
+      itemCornerRounding="yes"
+      idleImageXPC="45"
+      idleImageYPC="42"
+      idleImageWidthPC="7"
+      idleImageHeightPC="16"
+      > 	       
+       <idleImage> image/POPUP_LOADING_01.jpg </idleImage>
+       <idleImage> image/POPUP_LOADING_02.jpg </idleImage>
+       <idleImage> image/POPUP_LOADING_03.jpg </idleImage>   
+       <idleImage> image/POPUP_LOADING_04.jpg </idleImage>
+       <idleImage> image/POPUP_LOADING_05.jpg </idleImage>
+       <idleImage> image/POPUP_LOADING_06.jpg </idleImage>                   
+      </mediaDisplay>
 </item>
 
 <item>

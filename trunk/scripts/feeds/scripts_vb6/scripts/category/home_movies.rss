@@ -57,5 +57,23 @@
 <media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/clickplay.jpg" />
 </item>
 
+<item>
+<title>evtv1</title>
+<link>http://127.0.0.1:82/scripts/php/evtv1.php</link> />
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/evtv1.gif" />
+</item>
+
+<item>
+<title>Onion News Network</title>
+<link>http://www.theonion.com/feeds/onn/</link> />
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/onion.png" />
+</item>
+
+<item>
+<title>wowtv</title>
+<link>http://127.0.0.1:82/scripts/php/wowtv_main.php</link> />
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/wowtv.gif" />
+</item>
+
 </channel>
 </rss>

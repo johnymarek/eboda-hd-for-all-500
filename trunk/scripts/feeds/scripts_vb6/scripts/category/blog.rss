@@ -49,5 +49,10 @@
 	    </mediaDisplay>
 </item>
 
+<item>
+<title>Curs Valutar</title>
+<link>http://127.0.0.1:82/scripts/php/curs.php</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/curs.png" />
+</item>
 </channel>
 </rss>

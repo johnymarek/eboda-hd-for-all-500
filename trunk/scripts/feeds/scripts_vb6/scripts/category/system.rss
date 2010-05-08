@@ -30,5 +30,11 @@
 <media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/system.png"/>
 </item>
 
+<item>
+<title>Actualizare HDD Links</title>
+<link>http://127.0.0.1:82/scripts/php/update.php</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/system.png"/>
+</item>
+
 </channel>
 </rss>
