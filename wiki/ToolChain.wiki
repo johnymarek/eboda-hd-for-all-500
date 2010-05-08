@@ -27,7 +27,7 @@ cp /usr/local/lib/gcc-lib/mipsel-linux/2.96-sdelinuxmips-040127/*.o /usr/local/l
 
 = Back .. =
 
-After few days playing with uclibc toolchain generation (nice stuff) I got the binary I wanted but .... they doesn't work.
+After few days playing with uclibc toolchain generation (nice stuff) I got the binaries I wanted but .... they are not working.
 
 What I got was: 
 1. static lighttpd, nice size, but SIGSEGV right after reading configuration file
