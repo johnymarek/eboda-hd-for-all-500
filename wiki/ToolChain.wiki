@@ -25,4 +25,20 @@ cp /usr/local/lib/gcc-lib/mipsel-linux/2.96-sdelinuxmips-040127/*.o /usr/local/l
 }}}
   # Now you should be able to compile cross-compile opensource application based on automake/autocong using `--host=mipsel-linux` extra argument.
 
+= Back .. =
+
+After few days playing with uclibc toolchain generation (nice stuff) I got the binary I wanted but .... they doesn't work.
+
+What I got was: 
+1. static lighttpd, nice size, but SIGSEGV right after reading configuration file
+2. shared lightppd was ok
+3. shared php-cgi running without ini file, but not usefull un-configured
+4. shared php-cgi with ini file SIGSEGV
+
+Probably the issue is the uclibc version I used that is different from what is on the board. I'll may take a look how could I handle this, bot is not looking right to have two versions anyhow (memory usage)
+
+So I'm back to original toolchain and I'll grab older versions of applications to be able to really compile (even I think the compiler is not configured especially for this chip ...)
+
+
+
       
