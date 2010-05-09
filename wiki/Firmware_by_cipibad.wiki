@@ -1,0 +1,24 @@
+#summary What is in a firmware by cipibad
+
+= Introduction =
+
+Here I'll try to describe the modification of E-Boda official firmware to gen a nice mix of features for users that wants to play with linux, but also to be able to run just after installation.
+
+
+= Details =
+
+The modification is done by a single bash script (http://code.google.com/p/eboda-hd-for-all-500/source/browse/trunk/scripts/firmware/patch_firmware_full_500.sh) and they are:
+  * /usr/local/etc/root directory is created to be used as home for root
+  * corrected Romanian and English languages by Mtz
+  * services ??
+  * screensaver + skinpack
+  * working awk
+  * eboda web control panel
+
+  * vb6 scripts
+  * XTreamer scripts
+  * lighttpd+php+rtorrent+transmission
+  * /cipibad directory is created to be mounted later from HDD
+
+  * /opt directory is created to be mounted later from HDD
+  * preparation for optware (empty installation)
