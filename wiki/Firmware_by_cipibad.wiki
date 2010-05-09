@@ -2,7 +2,7 @@
 
 = Introduction =
 
-Here I'll try to describe the modification of E-Boda official firmware to gen a nice mix of features for users that wants to play with linux, but also to be able to run just after installation.
+There are the modification of E-Boda official firmware to get a nice mix of features for users that wants to play with linux, but also to be able to run just after installation.
 
 
 = Details =
