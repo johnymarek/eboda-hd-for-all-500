@@ -8,6 +8,7 @@ echo the binaries cand be included in any custom firmware
 CLEAN=false
 
 rutorrent=false
+rtgui=true
 
 openssl=false
 iconv=false
@@ -29,7 +30,10 @@ libtorrent=false
 ncurses=false
 rtorrent=false
 #!!!!!! do not use transmission for now !!!!
-transmission=true
+transmission=false
+
+btpd=false
+smbd=false
 
 strip=false
 #
@@ -41,18 +45,18 @@ sudo mount -o bind /usr/local/toolchain_mipsel/ /mnt/toolchain_build/buildroot/b
 #TODO
 # here copy some toolchain libs to /.../lib
 
-cp /mnt/toolchain_build/buildroot/build_mipsel_nofpu/staging_dir/mipsel-linux-uclibc/lib/libstdc++.so.6 /cb3pp/lib
+ cp /mnt/toolchain_build/buildroot/build_mipsel_nofpu/staging_dir/mipsel-linux-uclibc/lib/libstdc++.so.6 /cb3pp/lib
 
-cp /mnt/toolchain_build/buildroot/build_mipsel_nofpu/staging_dir/mipsel-linux-uclibc/lib/libstdc++.so.6 target/cb3pp/lib
+# cp /mnt/toolchain_build/buildroot/build_mipsel_nofpu/staging_dir/mipsel-linux-uclibc/lib/libstdc++.so.6 target/cb3pp/lib
 
-cp /mnt/toolchain_build/buildroot/build_mipsel_nofpu/staging_dir/mipsel-linux-uclibc/lib/libm.so.0 /cb3pp/lib
+ cp /mnt/toolchain_build/buildroot/build_mipsel_nofpu/staging_dir/mipsel-linux-uclibc/lib/libm.so.0 /cb3pp/lib
 
-cp /mnt/toolchain_build/buildroot/build_mipsel_nofpu/staging_dir/mipsel-linux-uclibc/lib/libm.so.0 target/cb3pp/lib
+# cp /mnt/toolchain_build/buildroot/build_mipsel_nofpu/staging_dir/mipsel-linux-uclibc/lib/libm.so.0 target/cb3pp/lib
 
 
-cp /mnt/toolchain_build/buildroot/build_mipsel_nofpu/staging_dir/mipsel-linux-uclibc/lib/libgcc_s.so.1 /cb3pp/lib
+ cp /mnt/toolchain_build/buildroot/build_mipsel_nofpu/staging_dir/mipsel-linux-uclibc/lib/libgcc_s.so.1 /cb3pp/lib
 
-cp /mnt/toolchain_build/buildroot/build_mipsel_nofpu/staging_dir/mipsel-linux-uclibc/lib/libgcc_s.so.1 target/cb3pp/lib
+# cp /mnt/toolchain_build/buildroot/build_mipsel_nofpu/staging_dir/mipsel-linux-uclibc/lib/libgcc_s.so.1 target/cb3pp/lib
 
 
 # cp  /cb3pp/lib
@@ -103,7 +107,7 @@ $libxml2 && ( [ -f libxml2-2.6.20.tar.gz ] || $download_cmd http://xmlsoft.org/s
 
 
 # xmlrpc-1.06.27.tgz
-$xmlrpc && (  [ -f xmlrpc-1.06.27.tgz ] || $download_cmd http://sourceforge.net/projects/xmlrpc-c/files/Xmlrpc-c%20Super%20Stable/1.06.27/xmlrpc-1.06.27.tgz/download )
+$xmlrpc && (  [ -f xmlrpc-1.12.00.tgz ] || $download_cmd http://xmlrpc-c.svn.sourceforge.net/viewvc/xmlrpc-c/release_number/1.12.00.tar.gz?view=tar -O xmlrpc-1.12.00.tgz)
 
 
 # expat-2.0.0.tar.gz
@@ -131,8 +135,16 @@ $ncurses && (  [ -f ncurses-5.7.tar.gz ] || $download_cmd http://ftp.gnu.org/gnu
 $rtorrent && (  [ -f rtorrent-0.8.2.tar.gz ] || $download_cmd http://libtorrent.rakshasa.no/downloads/rtorrent-0.8.2.tar.gz )
 
 
+$btpd && ( [ -f btpd-0.15.tar.gz ] || $download_cmd http://www.murmeldjur.se/btpd/btpd-0.15.tar.gz )
+
+$smbd && ( [ -f samba-3.5.2.tar.gz ] || $download_cmd http://www.samba.org/samba/ftp/stable/samba-3.5.2.tar.gz )
+
+
+
 $rutorrent && ( [ -f rutorrent-3.0.tar.gz ] || $download_cmd http://rutorrent.googlecode.com/files/rutorrent-3.0.tar.gz )
 
+
+$rtgui && ( [ -f rtgui-0.2.7.tgz ] || $download_cmd http://rtgui.googlecode.com/files/rtgui-0.2.7.tgz )
 
 
 
@@ -218,8 +230,8 @@ fi
 if [ $xmlrpc == true ]
 then
     cd $compile
-    tar zxf $downloads/xmlrpc-1.06.27.tgz
-    cd xmlrpc-c-1.06.27
+    tar zxf $downloads/xmlrpc-1.12.00.tgz
+    cd 1.12.00
     ./configure --prefix=${cipibad} --host=mipsel-linux --enable-libxml2-backend
     $CLEAN && make clean
     make
@@ -284,7 +296,7 @@ then
 ac_cv_func_getaddrinfo=yes
 EOF
 
-    CC=mipsel-linux-gcc ./configure --prefix=${cipibad} --host=mipsel-linux --disable-all --disable-cli --enable-fastcgi --enable-mbstring --with-xmlrpc --with-libxml-dir=${cipibad} --enable-libxml --cache-file=`pwd`/config.cache --with-expat-dir=${cipibad}  --with-iconv-dir=${cipibad} --enable-discard-path --disable-ipv6 --with-pcre-regex=${cipibad} --enable-session --cache-file=`pwd`/config.cache
+    CC=mipsel-linux-gcc ./configure --prefix=${cipibad} --host=mipsel-linux --disable-all --disable-cli --enable-fastcgi --enable-mbstring --with-xmlrpc --with-libxml-dir=${cipibad} --enable-libxml --cache-file=`pwd`/config.cache --with-expat-dir=${cipibad}  --with-iconv-dir=${cipibad} --enable-discard-path --disable-ipv6 --with-pcre-regex=${cipibad} --enable-session --cache-file=`pwd`/config.cache --enable-xml
     $CLEAN && make clean
     make
     make install
@@ -332,8 +344,8 @@ then
 #
 # lighttpd target
 #
-
-cp ${cipibad}/bin/httpd $target/bin
+# !!! don't install apache now !!!
+#cp ${cipibad}/bin/httpd $target/bin
 
     
 fi
@@ -459,6 +471,42 @@ fi
 
 
 
+if [ $btpd == true ]
+then
+    cd $compile
+    tar zxf $downloads/btpd-0.15.tar.gz
+    cd btpd-0.15
+    CFLAGS="-I/cb3pp/include" LIBS="-L/cb3pp/lib" ./configure --prefix=${cipibad} --host=mipsel-linux 
+    $CLEAN && make clean
+    make
+    make install
+
+#
+# TODO ncurses target
+#
+
+
+fi
+
+
+if [ $smbd == true ]
+then
+    cd $compile
+    tar zxf $downloads/samba-3.5.2.tar.gz
+    cd samba-3.5.2
+    CFLAGS="-I/cb3pp/include" LIBS="-L/cb3pp/lib" ./configure --prefix=${cipibad} --host=mipsel-linux 
+    $CLEAN && make clean
+    make
+    make install
+
+#
+# TODO ncurses target
+#
+
+
+fi
+
+
 
 
 
@@ -472,6 +520,38 @@ fi
 
 #
 #web gui install
+
+if [ $rtgui == true ]
+then
+
+    [ -d ${target}/share/www ] || mkdir -p ${target}/share/www
+    
+    cd ${target}/share/www
+    
+    rm -rf rtgui*
+    tar zxf ${downloads}/rtgui-0.2.7.tgz
+    cd rtgui
+
+cat > config.php <<EOF
+<?php
+
+include "config.php.example";
+
+// Connect string for your local RPC/rTorrent connection:
+\$rpc_connect="http://localhost:8081/RPC2";
+
+?>
+EOF
+
+# // rtorrent 'watch' directory (used for upload torrent)
+# \$watchdir="/tmp/hdd/volumes/HDD1/rtorrent/watch";
+
+# // Path to report disk usage
+# \$downloaddir="/tmp/hdd/volumes/HDD1/rtorrent/download";
+
+fi
+
+
 
 # cd /cb3pp/share/www
 # rm -rf rtgui*
@@ -532,8 +612,8 @@ fi
 # install startup scripts and other configuration
 #
 
-cd ${source}
-cp -a . ${target}
+# cd ${source}
+# cp -a . ${target}
 
 
 #
