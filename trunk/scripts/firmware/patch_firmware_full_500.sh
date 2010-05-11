@@ -75,8 +75,14 @@ unyaffs ../yaffs2_1.img
 #
 #modify root
 
-# opt directory for optware
+# cb3pp directory for apps
+mkdir cb3pp
+
+# and opt for other people to play
 mkdir opt
+
+# and opt for other people to play
+mkdir scripts
 
 #home dir for root part 1
 sed -i -e '/^root/c\
@@ -95,19 +101,14 @@ cp  $1/src/bin/* usr/bin
 # eboda web control panel
 dir=`pwd`
 cd $1/www/
-tar cvf ${dir}/ewcp.tar --exclude .svn ewcp
-cd ${dir}
-zip -9 ewcp.zip ewcp.tar
-rm ewcp.tar
+find ewcp | grep -v .svn | grep -v '~' | zip -9 ${dir}/ewcp.zip -@
+cd $dir
 
-
-# /opt
+# /cb3pp
 dir=`pwd`
 cd $1/src/
-tar cvf ${dir}/opt.tar --exclude mplayer --exclude .svn opt
-cd ${dir}
-zip -9 opt.zip opt.tar
-rm opt.tar
+find cb3pp | grep -v .svn | grep -v '~' | grep -v mplayer | zip -9 ${dir}/cb3pp.zip -@
+cd $dir
 
 # cgi-bin
 cp $1/scripts/feeds/scripts_vb6/cgi-bin/mf/* tmp_orig/www/cgi-bin/
@@ -120,10 +121,9 @@ cp -r $1/scripts/feeds/scripts_vb6/menu/* usr/local/bin/scripts/
 # scripts
 dir=`pwd`
 cd $1/scripts/feeds/scripts_vb6/
-tar cvf ${dir}/scripts.tar --exclude .svn scripts
+find scripts | grep -v .svn | grep -v '~' | zip -9 ${dir}/scripts.zip -@
 cd ${dir}
-zip -9 scripts.zip scripts.tar
-rm scripts.tar
+
 
 cd ..
 rm yaffs2_1.img
@@ -142,76 +142,93 @@ mkdir root
 #
 
 
-# creating our startup script to install opt stuff if not in
+# creating our startup script to install cb3pp stuff if not in
 echo '#!/bin/sh
-#BEGIN CBA_OPT_STARTUP
-# wait HDD to start (should be no issue if no internal HDD) and run rcS from opt if present
+#BEGIN CBA_CB3PP_STARTUP
+# wait storage to be mounted
 
 #TODO find what to check instead root which exists even if not mounted?
 
 n=1
-mount | grep HDD1
+mount | grep scsi
 while [ $? -ne 0 ] ; do
 sleep 3
 [ $n -gt 30 ] && break
 let n+=1
 echo "#waiting for hdd.."
-mount | grep HDD1
+mount | grep scsi
 done
 
 if [ $n -gt 30 ]
 then
-	echo HDD not mounted, probably not existing
+	echo no storage found, nothing to do ...
 else
-#HDD online
-# check if .../opt installed from us, if not, unpack
-if [ ! -f /tmp/hdd/root/opt/.modified_full_firmware1 ]
-then
-	rm -rf /tmp/hdd/root/opt/
-	mkdir /tmp/hdd/root/opt/
-	cd /tmp/hdd/root/
-	unzip -o /opt.zip 
-	tar xvf opt.tar
-	rm opt.tar
-	touch /tmp/hdd/root/opt/.modified_full_firmware1
+#storage online !! go go go
+
+storage=`mount | grep scsi | tr -s " " | cut -d " " -f 3 | head -n 1`
+echo "storage=$storage" > /usr/local/etc/storage
+
+#check if overmount dirs present 
+[ -d ${storage}/cb3pp ] || mkdir ${storage}/cb3pp
+[ -d ${storage}/scripts ] || mkdir ${storage}/scripts
+
+if [ ! -f /cb3pp/.overmounted ];then
+    echo overmount start
+    mount -o bind ${storage}/cb3pp /cb3pp
+    touch /cb3pp/.overmounted
+    echo overmount end
 fi
+
+
+if [ ! -f /scripts/.overmounted ];then
+    echo overmount start
+    mount -o bind ${storage}/scripts /scripts
+    touch /scripts/.overmounted
+    echo overmount end
+fi
+
+
+# check if .../cb3pp installed from us, if not, unpack
+if [ ! -f  ${storage}/cb3pp/.modified_full_firmware2 ]
+then
+	rm -rf  ${storage}/cb3pp/*
+	cd ${storage}
+	unzip -o /cb3pp.zip 
+	touch  ${storage}/cb3pp/.modified_full_firmware2
+fi
+
+
 # check if .../scripts from us, if not, unpack
-if [ ! -f /tmp/hdd/volumes/HDD1/scripts/.modified_full_firmware1 ]
+if [ ! -f ${storage}/scripts/.modified_full_firmware2 ]
 then
-        rm -rf /tmp/hdd/volumes/HDD1/scripts/
-        mkdir /tmp/hdd/volumes/HDD1/scripts/
-        cd /tmp/hdd/volumes/HDD1/
+        rm -rf ${storage}/scripts/*
+        cd ${storage}
         unzip -o /scripts.zip
-	tar xvf scripts.tar
-	rm scripts.tar
-        touch /tmp/hdd/volumes/HDD1/scripts/.modified_full_firmware1
+        touch  ${storage}/scripts/.modified_full_firmware2
 fi
 
-# check if .../opt installed from us, if not, unpack
-if [ ! -f /tmp/hdd/root/ewcp/.modified_full_firmware1 ]
+# check if .../cb3pp installed from us, if not, unpack
+if [ ! -f ${storage}/ewcp/.modified_full_firmware2 ]
 then
-        rm -rf /tmp/hdd/root/ewcp/
-        mkdir /tmp/hdd/root/ewcp/
-        cd /tmp/hdd/root/
+        rm -rf ${storage}/ewcp/*
+        cd  ${storage}
         unzip -o /ewcp.zip
-        tar xvf ewcp.tar
-        rm ewcp.tar
-        touch /tmp/hdd/root/ewcp/.modified_full_firmware1
-	[ -f /tmp/hdd/root/opt/etc/init.s/S99ewcp ] || cp /tmp/hdd/root/ewcp/S99ewcp /tmp/hdd/root/opt/etc/init.d
-	chmod +x /tmp/hdd/root/opt/etc/init.d/S99ewcp
+        touch  ${storage}/ewcp/.modified_full_firmware2
+	[ -f  ${storage}/cb3pp/etc/init.s/S99ewcp ] || cp  ${storage}/ewcp/S99ewcp  ${storage}/cb3pp/etc/init.d
+	chmod +x /tmp/hdd/root/cb3pp/etc/init.d/S99ewcp
 fi
 
-opt_startup=/tmp/hdd/root/opt/etc/init.d/rcS
+cb3pp_startup=/cb3pp/etc/init.d/rcS
 
 # standard startup
-[ -f $opt_startup ] && /bin/sh $opt_startup
+[ -f $cb3pp_startup ] && /bin/sh $cb3pp_startup
 
 fi
-#END CBA_OPT_STARTUP' > rcoptS
-chmod +x rcoptS
+#END CBA_CB3PP_STARTUP' > rccb3ppS
+chmod +x rccb3ppS
 
 echo '
-[ -f /usr/local/etc/rcoptS ] && sh /usr/local/etc/rcoptS' >> rcS
+[ -f /usr/local/etc/rccb3ppS ] && sh /usr/local/etc/rccb3ppS &' >> rcS
 
 
 rm ../usr.local.etc.tar.bz2
