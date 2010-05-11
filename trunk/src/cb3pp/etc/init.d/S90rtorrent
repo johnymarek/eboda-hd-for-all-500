@@ -1,0 +1,66 @@
+#!/bin/sh -x
+PATH=/sbin:/bin:/usr/bin:/usr/sbin:/cb3pp/bin:/cb3pp/sbin
+
+RTORRENT_SOCKET=/tmp/rtorrent
+RTORRENT_CONF=/cb3pp/etc/rtorrent.conf
+export TERM=vt320
+
+start() {
+        if [ -e ${RTORRENT_SOCKET} ]; then
+                echo "Socket ${RTORRENT_SOCKET} exist. rtorrent not started."
+                exit 1
+        fi
+
+	#preparing configuration file
+	#check if storage
+	. /usr/local/etc/storage
+
+	#move out of root, since for sure is to small ...
+	if [ $storage == /tmp/hdd/root ]
+	    then
+	    storage=/tmp/hdd/volumes/HDD1
+	fi
+
+	[ -d $storage/rtorrent ]		|| mkdir $storage/rtorrent
+	[ -d $storage/rtorrent/download ]	|| mkdir $storage/rtorrent/download
+	[ -d $storage/rtorrent/config ]		|| mkdir $storage/rtorrent/config
+	[ -d $storage/rtorrent/watch ]		|| mkdir $storage/rtorrent/watch
+
+	sed -e "s#__STORAGE__#$storage#" /cb3pp/etc/rtorrent.conf.orig > ${RTORRENT_CONF}
+
+        echo "Starting rtorrent with dtach on ${RTORRENT_SOKET} ..."
+        /cb3pp/bin/dtach -n ${RTORRENT_SOCKET} nice -n 30 /cb3pp/bin/rtorrent -n -o import=${RTORRENT_CONF}
+        echo "Configuration's setting are located in ${RTORRENT_CONF}"
+        echo "done. Issue"
+        echo "$0 attach"
+        echo "  to attach to terminal and ^\ to dtach."
+}
+
+stop() {
+        echo -n "Shutting down rtorrent... "
+        killall rtorrent
+        sleep 1
+        rm -f /tmp/rpc.socket
+        echo "done"
+}
+
+case "$1" in
+        start)
+                start
+                ;;
+        stop)
+                stop
+                ;;
+        restart)
+                stop
+                sleep 1
+                start
+                ;;
+        attach)
+                dtach -a ${RTORRENT_SOCKET}
+                ;;
+        *)
+                echo "Usage: $0 (start|stop|restart|attach)"
+                exit 1
+                ;;
+esac
