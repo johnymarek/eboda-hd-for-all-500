@@ -55,7 +55,8 @@ name_smbd="NAS: Samba"
 name_bftpd="NAS: bftpd"
 name_DvdPlayer="CORE: DvdPlayer"
 
-for i in lighttpd apache transmission rtorrent btpd smbd bftpd DvdPlayer 
+#apache transmission not in this scope
+for i in lighttpd rtorrent btpd smbd bftpd DvdPlayer 
 do
     pic=/eb_imgs/cp_on.gif
     script=util_${i}-stop.cgi
@@ -121,9 +122,9 @@ EOF
 # name_DvdPlayer="CORE: DvdPlayer"
 name_ewcp="WWW: Eboda Web Control Panel"
 name_vb6="RSS: vb6rocod php scripts"
-name_opt="APPS: optware apps"
+name_apps="APPS: extra apps"
 
-for i in ewcp vb6 opt 
+for i in ewcp vb6 apps 
 do
     script=util_${i}-update.cgi
     full_name=`eval echo \\$name_${i}`
@@ -135,14 +136,15 @@ do
 EOF
 done
 
-startfile_lighttpd="/opt/etc/init.d/S80lighttpd"
-startfile_apache="/opt/etc/init.d/S08apache"
-startfile_transmission="/opt/etc/init.d/S90transmission"
-startfile_rtorrent="/opt/etc/init.d/S90rtorrent"
-startfile_smbd="/opt/etc/init.d/S08samba"
-startfile_bftpd="/opt/etc/init.d/fake"
+startfile_lighttpd="/cb3pp/etc/init.d/S80lighttpd"
+startfile_apache="/cb3pp/etc/init.d/S08apache"
+startfile_transmission="/cb3pp/etc/init.d/S90transmission"
+startfile_rtorrent="/cb3pp/etc/init.d/S90rtorrent"
+startfile_smbd="/cb3pp/etc/init.d/S08samba"
+startfile_bftpd="/cb3pp/etc/init.d/fake"
 
-for i in lighttpd apache transmission rtorrent smbd bftpd
+#apache transmission not in this scope
+for i in lighttpd  rtorrent smbd bftpd
 do
     full_name=`eval echo \\$name_${i}`
     script="#"
@@ -252,11 +254,12 @@ cat <<EOF
 EOF
 ##############################
 # BEGIN OF LINKS SECTION
+                # <tr>
+                #   <td width="8%"><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>
+                #   <td width="92%"><a href="http://$LOCALIP:8082">Transmission Web Interface</a> </td>
+                # </tr>
+
 cat <<EOF
-                <tr>
-                  <td width="8%"><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>
-                  <td width="92%"><a href="http://$LOCALIP:8082">Transmission Web Interface</a> </td>
-                </tr>
                 <tr>
                   <td><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>
                   <td><a href="http://$LOCALIP:8081/rtgui">rtGui</a></td>

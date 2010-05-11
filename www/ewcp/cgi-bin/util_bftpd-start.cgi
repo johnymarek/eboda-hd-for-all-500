@@ -5,8 +5,8 @@
 nice_start "Starting bftpd"
 
 echo "NOT IMPLEMENTED"
-#/opt/etc/init.d/S80bftpd stop
-#/opt/etc/init.d/S80bftpd start
+#/cb3pp/etc/init.d/S80bftpd stop
+#/cb3pp/etc/init.d/S80bftpd start
 
 nice_exit 0 
 

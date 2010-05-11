@@ -72,12 +72,12 @@ else
 	fi
 fi
 
-mkdir -p /tmp/hdd/root/opt/etc/init.d
+mkdir -p /tmp/hdd/root/cb3pp/etc/init.d
 #creating and activating global /opt startup script
 echo '#!/bin/sh
 
 
-# Start all init scripts in /opt/etc/init.d
+# Start all init scripts in /cb3pp/etc/init.d
 # executing them in numerical order.
 #
 
@@ -85,7 +85,7 @@ echo '#!/bin/sh
 PATH=$PATH:/opt/bin:/opt/sbin
 export PATH
 
-for i in /tmp/hdd/root/opt/etc/init.d/S??* ;do
+for i in /tmp/hdd/root/cb3pp/etc/init.d/S??* ;do
      # Ignore dangling symlinks (if any).
      [ ! -f "$i" ] && continue
 
@@ -103,7 +103,7 @@ for i in /tmp/hdd/root/opt/etc/init.d/S??* ;do
             $i start
             ;;
     esac
-done' > /tmp/hdd/root/opt/etc/init.d/rcS
+done' > /tmp/hdd/root/cb3pp/etc/init.d/rcS
 
 echo /opt startup script prepared
 
@@ -114,7 +114,7 @@ if [ $? -eq 0 ]
 then
 	echo '#BEGIN CBA_OPT_STARTUP
 # wait HDD to start (should be no issue if no internal HDD) and run rcS from opt if present
-opt_startup=/tmp/hdd/root/opt/etc/init.d/rcS
+opt_startup=/tmp/hdd/root/cb3pp/etc/init.d/rcS
 n=1
 while [ ! -f $opt_startup ] ; do
 sleep 3
@@ -150,9 +150,9 @@ if [ ! -f /opt/.overmounted ];then
     touch /opt/.overmounted
     echo '#overmount end'
 fi
-" > /tmp/hdd/root/opt/etc/init.d/S00optovermount
-chmod +x /tmp/hdd/root/opt/etc/init.d/S00optovermount
-sh /tmp/hdd/root/opt/etc/init.d/S00optovermount
+" > /tmp/hdd/root/cb3pp/etc/init.d/S00optovermount
+chmod +x /tmp/hdd/root/cb3pp/etc/init.d/S00optovermount
+sh /tmp/hdd/root/cb3pp/etc/init.d/S00optovermount
 
 echo overmount created for /opt
 

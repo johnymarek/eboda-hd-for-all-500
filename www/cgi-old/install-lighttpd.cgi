@@ -49,19 +49,19 @@ fi
 #/tmp/hdd/root/opt/bin/ipkg-opt install php-xmlrpc
 #/tmp/hdd/root/opt/bin/ipkg-opt install php-mbstring
 
-cat >/opt/etc/lighttpd/conf.d/00.event-handler.conf <<EOF
+cat >/cb3pp/etc/lighttpd/conf.d/00.event-handler.conf <<EOF
 server.event-handler = "poll"
 EOF
 
-cat >/opt/etc/lighttpd/conf.d/02.follow-scripts.conf <<EOF
+cat >/cb3pp/etc/lighttpd/conf.d/02.follow-scripts.conf <<EOF
 server.follow-symlink="enable"
 EOF
 
 rm -f /opt/share/www/scripts
 ln -s /tmp/hdd/volumes/HDD1/scripts /opt/share/www/scripts
 
-sh /opt/etc/init.d/S80lighttpd stop
-sh /opt/etc/init.d/S80lighttpd start
+sh /cb3pp/etc/init.d/S80lighttpd stop
+sh /cb3pp/etc/init.d/S80lighttpd start
 
 echo '<form action="reboot.cgi" method="post"><button style="background-color:lightgreen">Reboot</button></form>'
 echo '<FORM><INPUT TYPE="button" VALUE="Back" onClick="history.go(-1);return true;"> </FORM> '

@@ -3,9 +3,10 @@
 
 . ./common.sh
 
-nice_start "Updating vb6 scripts"
+nice_start "Updating apps"
 
 
+#check if storage
 . /usr/local/etc/storage
 
 if [ ! -d $storage ]
@@ -18,14 +19,15 @@ else
 fi
 
 
-#vb6 scripts to HDD
 cd $storage
-wget http://eboda-hd-for-all-500.googlecode.com/files/hdd_scripts.zip
+wget http://eboda-hd-for-all-500.googlecode.com/files/cb3pp-latest.zip
 [ $? == 0 ] || nice_exit 2
 
-rm -rf scripts/*
+rm -rf cb3pp/*
 
-unzip -o hdd_scripts.zip
-rm hdd_scripts.zip
+unzip -o cb3pp-latest.zip
+rm cb3pp-latest.zip
+
+
 
 nice_exit 0 

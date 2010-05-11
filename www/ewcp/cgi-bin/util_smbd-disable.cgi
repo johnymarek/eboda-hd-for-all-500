@@ -4,7 +4,7 @@
 
 nice_start "Disabling samba"
 
-chmod -x /opt/etc/init.d/S08samba
+chmod -x /cb3pp/etc/init.d/S08samba
 if [ $? -eq 0 ]
 then
     echo "samba will no longer start automatically after reboot"

@@ -73,13 +73,13 @@ if [ ! -f /usr/local/bin/scripts/.overmounted ];then
     touch /usr/local/bin/scripts/.overmounted
     echo '#overmount end'
 fi
-" > /tmp/hdd/root/opt/etc/init.d/S01scriptsovermount
-chmod +x /tmp/hdd/root/opt/etc/init.d/S01scriptsovermount
+" > /tmp/hdd/root/cb3pp/etc/init.d/S01scriptsovermount
+chmod +x /tmp/hdd/root/cb3pp/etc/init.d/S01scriptsovermount
 
 [ -d /tmp/hdd/root/scripts_overmounted/ ] || mkdir /tmp/hdd/root/scripts_overmounted/
 cp -r /usr/local/bin/scripts/* /tmp/hdd/root/scripts_overmounted/
 
-sh /tmp/hdd/root/opt/etc/init.d/S01scriptsovermount
+sh /tmp/hdd/root/cb3pp/etc/init.d/S01scriptsovermount
 
 echo overmount created for /usr/local/bin/scripts
 
