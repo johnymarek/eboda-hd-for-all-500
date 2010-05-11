@@ -4,7 +4,7 @@
 
 nice_start "Enabling samba"
 
-chmod +x /opt/etc/init.d/S08samba
+chmod +x /cb3pp/etc/init.d/S08samba
 if [ $? -eq 0 ]
 then
     echo "samba will start automatically after reboot"
