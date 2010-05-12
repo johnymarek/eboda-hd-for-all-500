@@ -2,23 +2,24 @@
 
 = Introduction =
 
-There are the modification of E-Boda official firmware to get a nice mix of features for users that wants to play with linux, but also to be able to run just after installation.
+There are the modification of E-Boda official firmware to get a nice mix of features for users that wants to play with linux running on it, but also to be able to run just everything right after installation.
 
 
 = Details =
 
-The modification is done by a single bash script (http://code.google.com/p/eboda-hd-for-all-500/source/browse/trunk/scripts/firmware/patch_firmware_full_500.sh) and they are:
+The modifications are done by a single bash script (http://code.google.com/p/eboda-hd-for-all-500/source/browse/trunk/scripts/firmware/patch_firmware_full_500.sh) and they are:
+
   * /usr/local/etc/root directory is created to be used as home for root
   * corrected Romanian and English languages by Mtz
-  * services ??
+  * services (btpd/samba/unicgi)
   * screensaver + skinpack
   * working awk
-  * eboda web control panel
+  * eboda web control panel (web interface for management) 
 
-  * vb6 scripts
-  * XTreamer scripts
-  * lighttpd+php+rtorrent+transmission
-  * /cipibad directory is created to be mounted later from HDD
+  * vb6 + XTreamer scripts
+  * lighttpd+php+rtorrent
+  * in /cb3pp and a selection of application is installed there - lighttpd,php,rtorrent,web interfaces for rtorrent.
+  * /opt directory is created so it can be mounted later from HDD and used
 
-  * /opt directory is created to be mounted later from HDD
-  * preparation for optware (empty installation)
+  * it containes archived versions of applications+scripts+ewcp
+  * all of them will be extracted after power-on first storage device if not already there (so full functionality with SD card or USB storage)
