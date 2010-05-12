@@ -23,5 +23,5 @@ The modifications are done by a single bash script (http://code.google.com/p/ebo
   * in /cb3pp and a selection of application is installed there - lighttpd,php,rtorrent,web interfaces for rtorrent.
   * /opt directory is created so it can be mounted later from HDD and used
 
-  * it containes archived versions of applications+scripts+ewcp
+  * it contains archived versions of applications+scripts+ewcp
   * all of them will be extracted after power-on first storage device if not already there (so full functionality with SD card or USB storage)
