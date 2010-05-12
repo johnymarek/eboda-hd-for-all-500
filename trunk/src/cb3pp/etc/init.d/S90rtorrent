@@ -28,6 +28,24 @@ start() {
 
 	sed -e "s#__STORAGE__#$storage#" /cb3pp/etc/rtorrent.conf.orig > ${RTORRENT_CONF}
 
+	echo "<?php
+
+include \"config.php.example\";
+
+#// Connect string for your local RPC/rTorrent connection:
+\$rpc_connect=\"http://localhost:8081/RPC2\";
+
+
+# // rtorrent 'watch' directory (used for upload torrent)
+\$watchdir=\"${storage}/rtorrent/watch\";
+
+# // Path to report disk usage
+\$downloaddir=\"${storage}/rtorrent/download\";
+?>" > /cb3pp/share/www/rtgui/config.php
+
+
+
+
         echo "Starting rtorrent with dtach on ${RTORRENT_SOKET} ..."
         /cb3pp/bin/dtach -n ${RTORRENT_SOCKET} nice -n 30 /cb3pp/bin/rtorrent -n -o import=${RTORRENT_CONF}
         echo "Configuration's setting are located in ${RTORRENT_CONF}"

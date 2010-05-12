@@ -1,0 +1,96 @@
+#!/bin/sh
+#
+# this script handles the btpd daemon process
+
+btpd_start(){
+#define where bthome is. This is where btpd stores metadata information
+#such as how many torrents are being downloaded and their progress
+    bthome=/tmp/package
+
+#define where the btpd binary is
+    btpdbin=/tmp/package/btpd/bin/btpd
+
+    if [ ! -d $bthome ]; then
+	echo "btpd directory is invalid"
+	exit 1
+    fi
+
+    if [ ! -e $btpdbin ]; then
+	echo "btpd binary is missing"
+	exit 1
+    fi
+
+#start running btpd
+    HOME=$bthome
+    $btpdbin
+
+   # return 0;
+	exit 0;
+}
+
+btpd_stop(){
+    btpidf=/tmp/package/.info/pid
+
+    if [ ! -e $btpidf ]; then
+	exit 0
+    fi
+
+    btpid=`cat $btpidf`
+    pattern1=`ps | grep $btpid`
+    pattern2=`echo $pattern1 | grep btpd`
+
+    if test "$pattern2" == ""; then 
+	exit 0
+    fi
+
+#we have the btpd pid
+    kill -9 $btpid
+    echo "btpd kill signal sent, please wait..."
+    sleep 5
+
+#sometimes, btpd takes a while to stop
+    pattern1=`ps | grep $btpid`
+    if test "$pattern1" == ""; then 
+	exit 0
+    fi
+    kill -9 $btpid
+    sleep 3
+    exit 0
+}
+
+btpd_status(){
+    btpidf=/tmp/package/.info/pid
+
+    if [ ! -e $btpidf ]; then
+	echo "btpd stopped..."
+	exit 0
+    fi
+
+    btpid=`cat $btpidf`
+    pattern1=`ps | grep $btpid`
+    pattern2=`echo $pattern1 | grep btpd`
+
+    if test "$pattern2" == ""; then 
+	echo "btpd stopped"
+	exit 0
+    fi
+    echo "btpd running"
+    exit 0
+}
+
+case "$1" in
+	start)
+		btpd_start
+		;;
+	stop)
+		btpd_stop
+		;;
+	status)
+		btpd_status
+		;;
+	*)
+      	echo $"Usage: $0 {start|stop|status}"
+		exit 1
+esac
+
+exit 1
