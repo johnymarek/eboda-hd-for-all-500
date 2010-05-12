@@ -1,9 +1,11 @@
-#summary One-sentence summary of this page.
+#summary Web interface for MP
 
 = Introduction =
 
 We propose to have a web interface for simple management of Media Player (ideea from astone, http://astone.googlecode.com/).
- 
-For the moment we are just in testing/proposal phase to get the right content for the page.
 
-If you have any idea, just create an issue.
+Interface will be accessible on http://MP_IP/ewcp.html, where you replace MP_IP witht he IP address of your media player
+
+ 
+This is the snapshot of the interface:
+http://eboda-hd-for-all-500.googlecode.com/files/ewcp.png
