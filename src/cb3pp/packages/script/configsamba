@@ -1,0 +1,42 @@
+#!/bin/sh
+#
+# description: create the samba conf file
+
+# if smb.conf already exist,nothing need to be done
+if [ -e /tmp/package/samba/lib/smb.conf ]
+then
+   echo "smb conf already exist"
+   exit 0
+fi
+
+cp /tmp/package/samba/lib/smb_anonymous_head.conf /tmp/package/samba/lib/smb_anonymous.conf
+cp /tmp/package/samba/lib/smb_user_head.conf /tmp/package/samba/lib/smb_user.conf
+str=$(ls /usr/local/etc/hdd/volumes/)
+cd /usr/local/etc/hdd/volumes
+for i in $str
+do
+echo $i
+path=$(readlink -f $i)
+echo $path
+mountpoint=$(cat /proc/mounts|grep $path |cut -d" " -f 2)
+sharename=$(echo $i)
+echo "[$sharename]" >>/tmp/package/samba/lib/smb_anonymous.conf
+echo "[$sharename]" >>/tmp/package/samba/lib/smb_user.conf
+echo "path=$mountpoint" >>/tmp/package/samba/lib/smb_anonymous.conf
+echo "path=$mountpoint" >>/tmp/package/samba/lib/smb_user.conf
+echo "hide dot files=yes" >>/tmp/package/samba/lib/smb_anonymous.conf
+echo "hide dot files=yes" >>/tmp/package/samba/lib/smb_user.conf
+echo "hide files=/.*/lost+found/">>/tmp/package/samba/lib/smb_anonymous.conf
+echo "hide files=/.*/lost+found/">>/tmp/package/samba/lib/smb_user.conf
+echo "guest ok=yes" >>/tmp/package/samba/lib/smb_anonymous.conf
+echo "guest ok=no" >>/tmp/package/samba/lib/smb_user.conf
+echo "writable=yes " >>/tmp/package/samba/lib/smb_anonymous.conf
+echo "writable=yes " >>/tmp/package/samba/lib/smb_user.conf
+echo "force create mode=0775 " >>/tmp/package/samba/lib/smb_anonymous.conf
+echo "force create mode=0775 " >>/tmp/package/samba/lib/smb_user.conf
+echo "force directory mode=0775 " >>/tmp/package/samba/lib/smb_anonymous.conf
+echo "force directory mode=0775 " >>/tmp/package/samba/lib/smb_user.conf
+done
+/tmp/package/script/samba-security anonymous
+exit 0
+
