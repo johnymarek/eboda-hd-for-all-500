@@ -4,6 +4,8 @@
 
 There are the modification of E-Boda official firmware to get a nice mix of features for users that wants to play with linux running on it, but also to be able to run just everything right after installation.
 
+Below are the intentions, for a list of features inside of a specific firmware check thet firmware specific web page (that you find on Project Home)
+
 
 = Details =
 
