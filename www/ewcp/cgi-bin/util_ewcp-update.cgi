@@ -29,7 +29,7 @@ rm -rf ewcp/*
 unzip -o ewcp-latest.zip
 rm ewcp-latest.zip
 
-cp ewcp/S99ewcp /cb3pp/etc/init.d/S99ewcp
+cp $storage/ewcp/S99ewcp /cb3pp/etc/init.d/S99ewcp
 sh /cb3pp/etc/init.d/S99ewcp
 
 nice_exit 0 

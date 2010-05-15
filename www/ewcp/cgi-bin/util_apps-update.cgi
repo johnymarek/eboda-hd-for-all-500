@@ -28,6 +28,7 @@ rm -rf cb3pp/*
 unzip -o cb3pp-latest.zip
 rm cb3pp-latest.zip
 
+cp $storage/ewcp/S99ewcp /cb3pp/etc/init.d/S99ewcp
 
 
 nice_exit 0 

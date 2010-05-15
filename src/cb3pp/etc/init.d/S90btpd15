@@ -9,14 +9,15 @@ btpd_start(){
 #such as how many torrents are being downloaded and their progress
     . /usr/local/etc/storage
 
-    [ -d ${storage}/BT ] || mkdir ${storage}/BT
-
-    [ -d /tmp/btdownload ] || ln -s ${storage}/BT  /tmp/btdownload
-
-    [ -d /tmp/package ] || ln -s ${storage}/cb3pp/package /tmp
+    [ -d ${storage}/btpd-0.15 ] || mkdir ${storage}/btpd-0.15
 
 #define where the btpd binary is
-    btpdbin=/cb3pp/bin/btpd
+    btpdbin=/cb3pp/bin/btpd15
+#update download dir in web interface
+
+        sed -i -e "/\"download-dir\"     => _isset/c\\
+                \"download-dir\"     => _isset(\$arrTmp,\"DownloadDir\",\"${storage}/btpd-0.15\")," /cb3pp/share/www/webui/utils.php
+
 
     if [ ! -e $btpdbin ]; then
 	echo "btpd binary is missing"
@@ -61,7 +62,7 @@ btpd_stop(){
 }
 
 btpd_status(){
-    btpidf=/tmp/package/.info/pid
+    btpidf=/usr/local/etc/root/.btpd
 
     if [ ! -e $btpidf ]; then
 	echo "btpd stopped..."
