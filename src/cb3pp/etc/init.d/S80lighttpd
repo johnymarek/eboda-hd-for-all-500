@@ -24,7 +24,7 @@ fi
 case "$rc" in
     start)
 	echo "Starting web server: $NAME"
-	$DAEMON $DAEMON_OPTS
+	nice -n 30 $DAEMON $DAEMON_OPTS
         ;;
     stop)
         if [ -n "`pidof $NAME`" ]; then
