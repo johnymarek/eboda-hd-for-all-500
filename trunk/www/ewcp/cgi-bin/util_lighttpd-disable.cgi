@@ -10,6 +10,6 @@ then
     echo "lighttpd will no longer start automatically after reboot"
 else
     echo "error occured"
-
+fi
 
 nice_exit 0 
