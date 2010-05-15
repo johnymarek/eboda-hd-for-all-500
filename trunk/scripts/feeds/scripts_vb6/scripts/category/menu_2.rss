@@ -44,14 +44,14 @@
 		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
 		HD for all
 		</text>	
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy1.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy2.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy3.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy4.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy5.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy6.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy7.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy8.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
 </mediaDisplay> 
 
 <channel>
@@ -59,20 +59,20 @@
 
 <item>
 <title>HDD links</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/menu.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/HDD-256.png"/>
+<link>/scripts/menu.rss</link>
+<media:thumbnail url="/scripts/image/HDD-256.png"/>
 </item>
 
 <item>
 <title>Metafeeds</title>
 <link>http://www.metafeeds.com/channel/hdforall5/rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/meta_icon.png"/>
+<media:thumbnail url="/scripts/image/meta_icon.png"/>
 </item>
 
 <item>
 <title>Picasa</title>
 <link>picasa://</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/PicasaIcon.png"/>
+<media:thumbnail url="/scripts/image/PicasaIcon.png"/>
 <mediaDisplay name=photoView backgroundImage="image/E92_335iCoupe_3-4drvrFrnt.jpg"
 rowCount=3 columnCount=7 viewAreaXPC = 2 sideColorBottom=0:0:0 sideColorTop=0:0:0>
 <idleImage> image/POPUP_LOADING_01.png </idleImage>
@@ -99,25 +99,25 @@ rowCount=3 columnCount=7 viewAreaXPC = 2 sideColorBottom=0:0:0 sideColorTop=0:0:
 <item>
 <title>News</title>
 <link>rss_file://./IMS_Modules/News/scripts/news.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/Feed-Newspaper-256.png"/>
+<media:thumbnail url="/scripts/image/Feed-Newspaper-256.png"/>
 </item>
 
 <item>
 <title>Flickr</title>
 <link>rss_file://./IMS_Modules/Flickr/flickr.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/Flickr-icon.png"/>
+<media:thumbnail url="/scripts/image/Flickr-icon.png"/>
 </item>
 
 <item>
 <title>Weather</title>
 <link>rss_file://./IMS_Modules/Weather/scripts/map/myfavorites.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/30-Mostly Sunny.png"/>
+<media:thumbnail url="/scripts/image/30-Mostly Sunny.png"/>
 </item>
 
 <item>
 <title>Network tools</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/category/network.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/Network-tools-256.png"/>
+<link>/scripts/category/network.rss</link>
+<media:thumbnail url="/scripts/image/Network-tools-256.png"/>
 </item>
 
 </channel>

@@ -20,12 +20,12 @@ fi
 
 #vb6 scripts to HDD
 cd $storage
-wget http://eboda-hd-for-all-500.googlecode.com/files/hdd_scripts.zip
+wget http://eboda-hd-for-all-500.googlecode.com/files/scripts-latest.zip
 [ $? == 0 ] || nice_exit 2
 
 rm -rf scripts/*
 
-unzip -o hdd_scripts.zip
-rm hdd_scripts.zip
+unzip -o scripts-latest.zip
+rm scripts-latest.zip
 
 nice_exit 0 

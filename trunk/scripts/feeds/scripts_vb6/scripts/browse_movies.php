@@ -5,11 +5,11 @@
  */
 
 $roottitle           = "RSS MOVIE BROWSER";
-$root                = "/tmp/hdd/volumes/HDD1/";
+$root                = "//";
 
 $directorydepth      = 6;
-$moviedb             = "/tmp/hdd/volumes/HDD1/scripts/moviedb.txt";
-$moviefolderscfg     = "/tmp/hdd/volumes/HDD1/scripts/scan_folder_settings.txt";
+$moviedb             = "/scripts/moviedb.txt";
+$moviefolderscfg     = "/scripts/scan_folder_settings.txt";
 $fontsize            = 16;
 $defaultposterfolder = 'http://xtreamer-web-sdk.googlecode.com/svn/trunk/rss/scripts/image/defaultposterfolder.png';
 $defaultpostermovies = 'http://xtreamer-web-sdk.googlecode.com/svn/trunk/rss/scripts/image/defaultpostermovies.png';
@@ -419,7 +419,7 @@ function photoFocusView()
    $output=  '              
             <mediaDisplay name="photoFocusView" 
                imageTopSide="'.$defaultfanart.'" 
-               backgroundImage="/tmp/hdd/volumes/HDD1/scripts/image/background.jpg"
+               backgroundImage="/scripts/image/background.jpg"
                imageFocus="null" 
                imageParentFocus="null" 
                backgroundColor="0:0:0" 
@@ -574,8 +574,8 @@ function photoView27()
       centerYPC="35"
       centerHeightPC="90"
       itemBackgroundColor="0:0:0"
-      imageBottomSide="/tmp/hdd/volumes/HDD1/scripts/image/background.jpg"
-      backgroundImage="/tmp/hdd/volumes/HDD1/scripts/image/background.jpg"
+      imageBottomSide="/scripts/image/background.jpg"
+      backgroundImage="/scripts/image/background.jpg"
       canAddToFavorit="no"
       viewAreaXPC="2"
       menuOffsetYPC="6"
@@ -657,8 +657,8 @@ function photoView38()
       centerYPC="35"
       centerHeightPC="90"
       itemBackgroundColor="0:0:0"
-      imageBottomSide="/tmp/hdd/volumes/HDD1/scripts/image/background.jpg"
-      backgroundImage="/tmp/hdd/volumes/HDD1/scripts/image/background.jpg"
+      imageBottomSide="/scripts/image/background.jpg"
+      backgroundImage="/scripts/image/background.jpg"
       canAddToFavorit="no"
       viewAreaXPC="2"
       menuOffsetYPC="6"

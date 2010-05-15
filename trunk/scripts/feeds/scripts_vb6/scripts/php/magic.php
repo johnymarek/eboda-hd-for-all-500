@@ -211,7 +211,7 @@ ret;
                 </image>
         </backgroundDisplay>
             <image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
-            /tmp/hdd/volumes/HDD1/scripts/image/sc_title.jpg
+            /scripts/image/sc_title.jpg
             </image>
 
 
@@ -228,7 +228,7 @@ ret;
 <channel>
 	<title>Shoutcast</title>
 	<link></link>
-    <media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/rss1.png" width="120" height="90" />	
+    <media:thumbnail url="/scripts/image/rss1.png" width="120" height="90" />	
 
 </channel>
 

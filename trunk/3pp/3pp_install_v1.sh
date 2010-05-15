@@ -4,24 +4,35 @@
 echo this script will automagically download/compile and prepare 3pp selection by cipibad for realtek based players
 echo the binaries cand be included in any custom firmware
 
+PATH=/cb3pp/bin:$PATH
+export PATH
+
 # set clean to true to make clean for all packages
-CLEAN=false
+CLEAN=true
+
+
+#ssl for btpd
+openssl=false
+
+lighttpd=false
+pcre=false
+php=true
+
+
+btpd=false
+
+
+#!!!!!! do not use apache for now !!!!!
+apache=false
 
 rutorrent=false
-rtgui=true
+rtgui=false
 
-openssl=false
 iconv=false
 libxml2=false
 xmlrpc=false
 
 expat=false
-pcre=false
-php=false
-lighttpd=false
-#!!!!!! do not use apache for now !!!!!
-apache=false
-
 
 curl=false
 dtach=false
@@ -32,7 +43,6 @@ rtorrent=false
 #!!!!!! do not use transmission for now !!!!
 transmission=false
 
-btpd=false
 smbd=false
 
 strip=false
@@ -40,21 +50,21 @@ strip=false
 # !!!!! tricks
 #
 
-sudo mount -o bind /usr/local/toolchain_mipsel/ /mnt/toolchain_build/buildroot/build_mipsel_nofpu/staging_dir/mipsel-linux-uclibc/
+# sudo mount -o bind /usr/local/toolchain_mipsel/ /mnt/toolchain_build/buildroot/build_mipsel_nofpu/staging_dir/mipsel-linux-uclibc/
 
-#TODO
-# here copy some toolchain libs to /.../lib
+# #TODO
+# # here copy some toolchain libs to /.../lib
 
- cp /mnt/toolchain_build/buildroot/build_mipsel_nofpu/staging_dir/mipsel-linux-uclibc/lib/libstdc++.so.6 /cb3pp/lib
+#  cp /mnt/toolchain_build/buildroot/build_mipsel_nofpu/staging_dir/mipsel-linux-uclibc/lib/libstdc++.so.6 /cb3pp/lib
 
-# cp /mnt/toolchain_build/buildroot/build_mipsel_nofpu/staging_dir/mipsel-linux-uclibc/lib/libstdc++.so.6 target/cb3pp/lib
+# # cp /mnt/toolchain_build/buildroot/build_mipsel_nofpu/staging_dir/mipsel-linux-uclibc/lib/libstdc++.so.6 target/cb3pp/lib
 
- cp /mnt/toolchain_build/buildroot/build_mipsel_nofpu/staging_dir/mipsel-linux-uclibc/lib/libm.so.0 /cb3pp/lib
+#  cp /mnt/toolchain_build/buildroot/build_mipsel_nofpu/staging_dir/mipsel-linux-uclibc/lib/libm.so.0 /cb3pp/lib
 
-# cp /mnt/toolchain_build/buildroot/build_mipsel_nofpu/staging_dir/mipsel-linux-uclibc/lib/libm.so.0 target/cb3pp/lib
+# # cp /mnt/toolchain_build/buildroot/build_mipsel_nofpu/staging_dir/mipsel-linux-uclibc/lib/libm.so.0 target/cb3pp/lib
 
 
- cp /mnt/toolchain_build/buildroot/build_mipsel_nofpu/staging_dir/mipsel-linux-uclibc/lib/libgcc_s.so.1 /cb3pp/lib
+#  cp /mnt/toolchain_build/buildroot/build_mipsel_nofpu/staging_dir/mipsel-linux-uclibc/lib/libgcc_s.so.1 /cb3pp/lib
 
 # cp /mnt/toolchain_build/buildroot/build_mipsel_nofpu/staging_dir/mipsel-linux-uclibc/lib/libgcc_s.so.1 target/cb3pp/lib
 
@@ -128,11 +138,11 @@ $dtach && (  [ -f dtach-0.8.tar.gz ] || $download_cmd http://sourceforge.net/pro
 
 $libsigc && (  [ -f libsigc++-2.0.18.tar.gz ] || $download_cmd http://ftp.gnome.org/pub/GNOME/sources/libsigc++/2.0/libsigc++-2.0.18.tar.gz )
 
-$libtorrent && (  [ -f libtorrent-0.12.2.tar.gz ] || $download_cmd http://libtorrent.rakshasa.no/downloads/libtorrent-0.12.2.tar.gz )
+$libtorrent && (  [ -f libtorrent-0.12.5.tar.gz ] || $download_cmd http://libtorrent.rakshasa.no/downloads/libtorrent-0.12.5.tar.gz )
 
 $ncurses && (  [ -f ncurses-5.7.tar.gz ] || $download_cmd http://ftp.gnu.org/gnu/ncurses/ncurses-5.7.tar.gz )
 
-$rtorrent && (  [ -f rtorrent-0.8.2.tar.gz ] || $download_cmd http://libtorrent.rakshasa.no/downloads/rtorrent-0.8.2.tar.gz )
+$rtorrent && (  [ -f rtorrent-0.8.5.tar.gz ] || $download_cmd http://libtorrent.rakshasa.no/downloads/rtorrent-0.8.5.tar.gz )
 
 
 $btpd && ( [ -f btpd-0.15.tar.gz ] || $download_cmd http://www.murmeldjur.se/btpd/btpd-0.15.tar.gz )
@@ -232,9 +242,11 @@ then
     cd $compile
     tar zxf $downloads/xmlrpc-1.12.00.tgz
     cd 1.12.00
+    chmod +x ./configure
     ./configure --prefix=${cipibad} --host=mipsel-linux --enable-libxml2-backend
     $CLEAN && make clean
     make
+    chmod +x ./install.sh
     make install
 
 #
@@ -296,7 +308,7 @@ then
 ac_cv_func_getaddrinfo=yes
 EOF
 
-    CC=mipsel-linux-gcc ./configure --prefix=${cipibad} --host=mipsel-linux --disable-all --disable-cli --enable-fastcgi --enable-mbstring --with-xmlrpc --with-libxml-dir=${cipibad} --enable-libxml --cache-file=`pwd`/config.cache --with-expat-dir=${cipibad}  --with-iconv-dir=${cipibad} --enable-discard-path --disable-ipv6 --with-pcre-regex=${cipibad} --enable-session --cache-file=`pwd`/config.cache --enable-xml
+    CC=mipsel-linux-gcc ./configure --prefix=${cipibad} --host=mipsel-linux --disable-all --disable-cli --enable-fastcgi --enable-discard-path --disable-ipv6  --enable-session --cache-file=`pwd`/config.cache --enable-sockets --with-pcre-regex=/cb3pp/ --enable-shared=false --enable-static=true
     $CLEAN && make clean
     make
     make install
@@ -418,8 +430,8 @@ fi
 if [ $libtorrent == true ]
 then
     cd $compile
-    tar zxf $downloads/libtorrent-0.12.2.tar.gz
-    cd libtorrent-0.12.2
+    tar zxf $downloads/libtorrent-0.12.5.tar.gz
+    cd libtorrent-0.12.5
     STUFF_CFLAGS="-I/cb3pp/include -I/cb3pp/include/sigc++-2.0 -I/cb3pp/lib/sigc++-2.0/include" STUFF_LIBS="-L/cb3pp/lib -lsigc-2.0" OPENSSL_CFLAGS="-I/cb3pp/include" OPENSSL_LIBS="-L/cb3pp/lib -lssl -lcrypto" ./configure --prefix=${cipibad} --host=mipsel-linux --enable-aligned
     $CLEAN && make clean
     make
@@ -452,10 +464,10 @@ fi
 if [ $rtorrent == true ]
 then
     cd $compile
-    tar zxf $downloads/rtorrent-0.8.2.tar.gz
-    cd rtorrent-0.8.2
+    tar zxf $downloads/rtorrent-0.8.5.tar.gz
+    cd rtorrent-0.8.5
     patch -p0 < ${patches}/rtorrent-1.patch
-    PATH=$PATH:/cb3pp/bin/ LIBS="-L/cb3pp/lib" STUFF_CFLAGS="-I/cb3pp/include/ncurses/ -I/cb3pp/include -I/cb3pp/include/sigc++-2.0 -I/cb3pp/lib/sigc++-2.0/include" STUFF_LIBS="-L/cb3pp/lib -lsigc-2.0 -ltorrent -lcurl" OPENSSL_CFLAGS="-I/cb3pp/include" OPENSSL_LIBS="-L/cb3pp/lib -lssl -lcrypto" ./configure --prefix=${cipibad} --host=mipsel-linux --with-xmlrpc-c
+    PATH=$PATH:/cb3pp/bin/ LIBS="-L/cb3pp/lib" sigc_CFLAGS="-I/cb3pp/include/ncurses/ -I/cb3pp/include -I/cb3pp/include/sigc++-2.0 -I/cb3pp/lib/sigc++-2.0/include" sigc_LIBS="-L/cb3pp/lib -lsigc-2.0 -ltorrent" libcurl_CFLAGS="-I/cb3pp/lib" libcurl_LIBS="-L/cb3pp/lib -lcurl" OPENSSL_CFLAGS="-I/cb3pp/include" OPENSSL_LIBS="-L/cb3pp/lib -lssl -lcrypto" ./configure --prefix=${cipibad} --host=mipsel-linux --with-xmlrpc-c
     $CLEAN && make clean
     make
     make install
@@ -476,6 +488,7 @@ then
     cd $compile
     tar zxf $downloads/btpd-0.15.tar.gz
     cd btpd-0.15
+    patch -p1 < ${patches}/btpd-1.patch
     CFLAGS="-I/cb3pp/include" LIBS="-L/cb3pp/lib" ./configure --prefix=${cipibad} --host=mipsel-linux 
     $CLEAN && make clean
     make

@@ -26,14 +26,14 @@
 
 <item>
 <title>Network tools</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/category/network.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/system.png"/>
+<link>/scripts/category/network.rss</link>
+<media:thumbnail url="/scripts/image/system.png"/>
 </item>
 
 <item>
 <title>Actualizare HDD Links</title>
 <link>http://127.0.0.1:82/scripts/php/update.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/system.png"/>
+<media:thumbnail url="/scripts/image/system.png"/>
 </item>
 
 </channel>
