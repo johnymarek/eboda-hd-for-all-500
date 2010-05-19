@@ -125,7 +125,7 @@ $expat && (  [ -f expat-2.0.0.tar.gz ] || $download_cmd http://sourceforge.net/p
 # pcre-4.4.tar.gz
 $pcre && (  [ -f pcre-4.4.tar.gz ] || $download_cmd http://sourceforge.net/projects/pcre/files/pcre/4.4/pcre-4.4.tar.gz/download )
 # php-5.0.5.tar.gz
-$php && (  [ -f php-5.0.5.tar.gz ] || $download_cmd http://museum.php.net/php5/php-5.0.5.tar.gz )
+$php && (  [ -f php-5.1.6.tar.gz ] || $download_cmd http://museum.php.net/php5/php-5.1.6.tar.gz )
 # lighttpd-1.4.15.tar.gz
 $lighttpd && (  [ -f lighttpd-1.4.15.tar.gz ] || $download_cmd http://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-1.4.15.tar.gz )
 
@@ -302,8 +302,8 @@ fi
 if [ $php == true ]
 then
     cd $compile
-    tar zxf $downloads/php-5.0.5.tar.gz
-    cd php-5.0.5
+    tar zxf $downloads/php-5.1.6.tar.gz
+    cd php-5.1.6
     cat >config.cache <<EOF
 ac_cv_func_getaddrinfo=yes
 EOF
