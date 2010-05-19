@@ -20,18 +20,34 @@ fi
 
 #ewcp updating
 cd $storage
-wget http://eboda-hd-for-all-500.googlecode.com/files/ewcp-latest.zip
 
+SERIAL=0
+VERSION=v0.0
+
+
+wget http://eboda-hd-for-all-500.googlecode.com/files/ewcp-latest-version.txt
 [ $? == 0 ] || nice_exit 1  
+. ./ewcp-latest-version.txt
+. ./ewcp/ewcp-version.txt
 
-rm -rf ewcp/*
+if [ $LATEST_SERIAL -gt $SERIAL ]
+then
+    echo "Latest version available is ${LATEST_VERSION}, you have $VERSION, updating !!!"
 
-unzip -o ewcp-latest.zip
-rm ewcp-latest.zip
-
-cp $storage/ewcp/S99ewcp /cb3pp/etc/init.d/S99ewcp
-sh /cb3pp/etc/init.d/S99ewcp
-
+    wget http://eboda-hd-for-all-500.googlecode.com/files/ewcp-latest.zip
+    
+    [ $? == 0 ] || nice_exit 1  
+    
+    rm -rf ewcp/*
+    
+    unzip -o ewcp-latest.zip
+    rm ewcp-latest.zip
+    
+    cp $storage/ewcp/S99ewcp /cb3pp/etc/init.d/S99ewcp
+    sh /cb3pp/etc/init.d/S99ewcp
+else
+    echo "You are already running the latest version ($VERSION)"
+fi
 nice_exit 0 
 
 

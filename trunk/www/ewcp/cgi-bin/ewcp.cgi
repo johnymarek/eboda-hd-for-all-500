@@ -5,7 +5,8 @@
 # adapted from internet ...
 #
 
-#VERSION=`grep VERSION /tmp/hdd/root/ewcp/current_version.txt  | cut -d'=' -f 2` 2>/dev/null
+
+. ../ewcp-version.txt
 #HOSTNAME=`/bin/hostname`
 #LOAD=`/bin/cat /proc/loadavg`
 
@@ -19,7 +20,7 @@ Content-type: text/html
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<title>E-Boda Web Control Panel</title>
+<title>E-Boda Web Control Panel $VERSION</title>
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="/cp_style.css">
@@ -142,10 +143,10 @@ startfile_lighttpd="/cb3pp/etc/init.d/S80lighttpd"
 startfile_apache="/cb3pp/etc/init.d/S08apache"
 startfile_transmission="/cb3pp/etc/init.d/S90transmission"
 startfile_rtorrent="/cb3pp/etc/init.d/S90rtorrent"
-startfile_btpd15="/cb3pp/etc/init.d/S99btpd15"
-startfile_btpd="/cb3pp/etc/init.d/fake"
-startfile_smbd="/cb3pp/etc/init.d/S08samba"
-startfile_bftpd="/cb3pp/etc/init.d/fake"
+startfile_btpd15="/cb3pp/etc/init.d/S90btpd15"
+startfile_btpd="/tmp/package/script/btpd"
+startfile_smbd="/tmp/package/script/samba"
+startfile_bftpd="/cb3pp/etc/init.d/S70bftpd"
 
 #apache transmission not in this scope
 for i in lighttpd btpd15 btpd smbd bftpd
@@ -274,11 +275,11 @@ EOF
 cat <<EOF
                 <tr>
                   <td><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>
-                  <td><a href="$LOCALIP">Default web interface</a></td>
+                  <td><a href="http://$LOCALIP">Default web interface</a></td>
                 </tr>
                 <tr>
                   <td><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>
-                  <td><a href="$LOCALIP:8081/webui">btpd 0.15 web interface</a></td>
+                  <td><a href="http://$LOCALIP:8081/webui">btpd 0.15 web interface</a></td>
                 </tr>
                 <tr>
                   <td><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>

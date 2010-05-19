@@ -4,9 +4,8 @@
 
 nice_start "Starting btpd"
 
-echo "NOT IMPLEMENTED"
-#/cb3pp/etc/init.d/S80btpd stop
-#/cb3pp/etc/init.d/S80btpd start
+/tmp/package/script/btpd stop
+/tmp/package/script/btpd start
 
 nice_exit 0 
 
