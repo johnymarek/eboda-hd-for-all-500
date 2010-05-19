@@ -5,8 +5,8 @@
 nice_start "Starting btpd 0.15"
 
 
-/cb3pp/etc/init.d/S90btpd15 stop
-/cb3pp/etc/init.d/S90btpd15 start
+sh /cb3pp/etc/init.d/S90btpd15 stop
+sh /cb3pp/etc/init.d/S90btpd15 start
 
 nice_exit 0 
 

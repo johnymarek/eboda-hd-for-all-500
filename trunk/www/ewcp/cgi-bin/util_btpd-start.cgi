@@ -4,8 +4,8 @@
 
 nice_start "Starting btpd"
 
-/tmp/package/script/btpd stop
-/tmp/package/script/btpd start
+sh /tmp/package/script/btpd stop
+sh /tmp/package/script/btpd start
 
 nice_exit 0 
 
