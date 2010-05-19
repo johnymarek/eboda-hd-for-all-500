@@ -97,6 +97,7 @@ cp  $1/src/500/image/* usr/local/bin/image
 
 # awk
 cp  $1/src/bin/* usr/bin
+chmod +x usr/bin/*
 
 # eboda web control panel
 dir=`pwd`
@@ -107,7 +108,7 @@ cd $dir
 # /cb3pp
 dir=`pwd`
 cd $1/src/
-find cb3pp | grep -v .svn | grep -v '~' | grep -v mplayer | zip -9 ${dir}/cb3pp.zip -@
+find cb3pp | grep -v .svn | grep -v '~'  | zip -9 ${dir}/cb3pp.zip -@
 cd $dir
 
 # cgi-bin
@@ -146,17 +147,23 @@ mkdir root
 echo '#!/bin/sh
 #BEGIN CBA_CB3PP_STARTUP
 # wait storage to be mounted
+if [ -f /usr/local/etc/use_storage ]
+then
 
+	mount_pattern=`cat /usr/local/etc/use_storage`
+else
+	mount_pattern=scsi
+fi
 #TODO find what to check instead root which exists even if not mounted?
 
 n=1
-mount | grep scsi
+mount | grep ${mount_pattern}
 while [ $? -ne 0 ] ; do
 sleep 3
 [ $n -gt 30 ] && break
 let n+=1
 echo "#waiting for hdd.."
-mount | grep scsi
+mount | grep ${mount_pattern}
 done
 
 if [ $n -gt 30 ]
@@ -165,8 +172,13 @@ then
 else
 #storage online !! go go go
 
-storage=`mount | grep scsi | tr -s " " | cut -d " " -f 3 | head -n 1`
+storage=`mount | grep ${mount_pattern} | tr -s " " | cut -d " " -f 3 | head -n 1`
 echo "storage=$storage" > /usr/local/etc/storage
+
+#remount RW
+mount -o rw,remount $storage
+
+
 
 #check if overmount dirs present 
 [ -d ${storage}/cb3pp ] || mkdir ${storage}/cb3pp

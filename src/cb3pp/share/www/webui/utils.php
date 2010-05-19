@@ -95,7 +95,7 @@ function getStartupconfig()
     $globalinfo = array(
         'APP_NAME'      => 'BTPD',
         'APP_INI'       => '/usr/local/etc/root/btpd.ini',
-        'APP_RESTART'   => '/cb3pp/etc/init.d/S99btpd15 restart',
+        'APP_RESTART'   => '/cb3pp/etc/init.d/S90btpd15 restart',
         'APP_HOME'      => '/usr/local/etc/root/.btpd',
         'scriptName'    => basename($_SERVER["PHP_SELF"]),
         'scriptSetup'   => 'setup.php',
