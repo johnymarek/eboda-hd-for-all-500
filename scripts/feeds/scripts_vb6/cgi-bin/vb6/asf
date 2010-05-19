@@ -3,4 +3,4 @@ cat <<EOF
 Content-type: audio/mpeg icy-pub
 
 EOF
-exec /opt/bin/msdl -b 384000 -q -o - $QUERY_STRING
+exec /cb3pp/bin/msdl -b 384000 -q -o - $QUERY_STRING

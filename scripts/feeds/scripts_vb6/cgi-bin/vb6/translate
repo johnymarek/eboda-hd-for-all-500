@@ -2,7 +2,7 @@
 
 #QUERY_STRING=scan
 
-MSDL=/opt/bin/msdl
+MSDL=/cb3pp/bin/msdl
 WGET=/usr/bin/wget
 
 XSPFSCAN=/usr/local/etc/xspf.scan
