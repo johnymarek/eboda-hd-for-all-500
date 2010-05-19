@@ -11,6 +11,7 @@ btpd_start(){
     . /usr/local/etc/storage
 
     [ -d ${storage}/btpd-0.15 ] || mkdir ${storage}/btpd-0.15
+    [ -d /usr/local/etc/root/.btpd ] || mkdir /usr/local/etc/root/.btpd15
 
 #define where the btpd binary is
     btpdbin=/cb3pp/bin/btpd15
