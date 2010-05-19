@@ -7,6 +7,7 @@
 btpd_start(){
 #define where bthome is. This is where btpd stores metadata information
 #such as how many torrents are being downloaded and their progress
+    
     . /usr/local/etc/storage
 
     [ -d ${storage}/btpd-0.15 ] || mkdir ${storage}/btpd-0.15
@@ -25,6 +26,8 @@ btpd_start(){
     fi
 
 #start running btpd
+    echo "Starting Torrent client: btpd 0.15"
+
     $btpdbin --port 6992
 
    # return 0;
@@ -33,14 +36,15 @@ btpd_start(){
 
 btpd_stop(){
     btpidf=/usr/local/etc/root/.btpd/pid
+    echo "Stopping Torrent client: btpd 0.15"
 
     if [ ! -e $btpidf ]; then
 	exit 0
     fi
 
     btpid=`cat $btpidf`
-    pattern1=`ps | grep $btpid`
-    pattern2=`echo $pattern1 | grep btpd`
+    pattern1=`ps | grep $btpid | grep -v grep`
+    pattern2=`echo $pattern1 | grep btpd | grep -v grep`
 
     if test "$pattern2" == ""; then 
 	exit 0
@@ -52,7 +56,7 @@ btpd_stop(){
     sleep 5
 
 #sometimes, btpd takes a while to stop
-    pattern1=`ps | grep $btpid`
+    pattern1=`ps | grep $btpid | grep -v grep`
     if test "$pattern1" == ""; then 
 	exit 0
     fi
@@ -70,8 +74,8 @@ btpd_status(){
     fi
 
     btpid=`cat $btpidf`
-    pattern1=`ps | grep $btpid`
-    pattern2=`echo $pattern1 | grep btpd`
+    pattern1=`ps | grep $btpid | grep -v grep`
+    pattern2=`echo $pattern1 | grep btpd | grep -v grep`
 
     if test "$pattern2" == ""; then 
 	echo "btpd stopped"
