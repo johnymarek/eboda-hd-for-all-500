@@ -4,9 +4,7 @@
 
 nice_start "Stopping DvdPlayer"
 
-echo "NOT IMPLEMENTED"
-#stopall
+/usr/bin/stopall
 
 nice_exit 0 
-
 

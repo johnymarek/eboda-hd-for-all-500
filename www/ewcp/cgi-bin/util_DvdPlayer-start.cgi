@@ -4,9 +4,12 @@
 
 nice_start "Starting DvdPlayer"
 
-echo "NOT IMPLEMENTED"
-#RootApp DvdPlayer
+cd /usr/local/bin
+./RootApp DvdPlayer
+
 
 nice_exit 0 
+
+
 
 

@@ -4,9 +4,8 @@
 
 nice_start "Starting samba"
 
-echo "NOT IMPLEMENTED"
-#/cb3pp/etc/init.d/S80samba stop
-#/cb3pp/etc/init.d/S80samba start
+/tmp/package/script/samba stop
+/tmp/package/script/samba start
 
 nice_exit 0 
 
