@@ -12,7 +12,7 @@ Modificari:
 v5:
   * webserver+php support noi (cele din optware ocupau prea mult spatiu/memorie)
   * E-boda Web Control Panel http://IP_MP/ewcp.html 
-  * btpd 0.15 (merge iPlay, pentru alte trackere astept confirmari) http://IP_MP/webui
+  * new torrent client btpd 0.15 (merge iPlay, pentru alte trackere astept confirmari) http://IP_MP/webui
   * functionare aproape completa si cu HDD/storage extern (exceptie sunt pachetele extensie de la e-boda)
 
 
