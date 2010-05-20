@@ -16,6 +16,7 @@ v5:
   * E-boda Web Control Panel http://IP_MP/ewcp.html 
   * new torrent client btpd 0.15 (merge iPlay, pentru alte trackere astept confirmari) http://IP_MP/webui
   * functionare aproape completa si cu HDD/storage extern (exceptie sunt pachetele extensie de la e-boda)
+  * corectie traducere mesaje OSD by MTZ 
 
 
 v4:
