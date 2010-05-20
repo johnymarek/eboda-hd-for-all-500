@@ -7,6 +7,8 @@
     * [Firmware_by_cipibad What is in a firmware by cipibad]
     * [500_r3617_modified_v3 Firmware for 500 r3617 modified v3.0]
     * [500plus_r1245_modified_v4 Firmware for 500plus r1245 modified v4.0]
+    * [500_cipibad_v5 Firmware for 500 v5.0 by cipibad]
+    * [500plus_cipibad_v5 Firmware for 500plus v5.0 by cipibad]
   * Optware
     * [RtorrentInstallation Installing rtorrent]
     * [SambaInstallation Installing samba]
