@@ -11,7 +11,7 @@ Modificari:
 
 v5:
   * webserver+php support noi (cele din optware ocupau prea mult spatiu/memorie)
-  * E-boda Web Control Panel http://IP_MP/ewcp.html 
+  * E-boda Web Control Panel (design by eggie http://forum.softpedia.com/index.php?showuser=51317) http://IP_MP/ewcp.html 
   * new torrent client btpd 0.15 (merge iPlay, pentru alte trackere astept confirmari) http://IP_MP/webui
   * functionare aproape completa si cu HDD/storage extern (exceptie sunt pachetele extensie de la e-boda)
 
@@ -30,3 +30,5 @@ v3:
   * *directoarele /tmp/hdd/root/opt si /tmp/hdd/volumes/HDD1/scripts vor fi suprascrise cu continutul firmware-ului*
 
   * *Nu am incercat daca e compatibil cu POD*
+
+  * *Acest firmware a aparut cu ajutorul (ordine ASCII): Mtz, costidraghia, eqqie, vb6rocod*
