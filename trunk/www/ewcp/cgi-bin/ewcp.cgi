@@ -193,9 +193,9 @@ do
     startfile=`eval echo \\$startfile_${i}`
 
 
-    if [ -f $startfile ] 
+    if [ -f ${startfile_dir}/$startfile ] 
     then
-    	if [ -x $startfile ]
+    	if [ -x ${startfile_dir}/$startfile ]
     	then
     	    script=util_${i}-disable.cgi
     	    state="Enabled"
