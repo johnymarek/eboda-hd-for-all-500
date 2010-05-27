@@ -1,5 +1,7 @@
 #!/bin/sh
 
+[ -f install.img ] || exit
+
 if [ $# -ne 1 ]
 then
     
@@ -55,8 +57,6 @@ echo Checking OK
 mkdir unpacked_install
 [ $? -eq 0 ] || exit cannot create dir please start from a clean directory
 
-[ -f install.img ] || exit
-
 cd unpacked_install/
 tar xvf ../install.img
 
@@ -75,14 +75,24 @@ unyaffs ../yaffs2_1.img
 #
 #modify root
 
+# in last version e-boda makes /opt symlink to /usr/local/etc and mess-up my optware !!!
+rm -f opt
+
 # cb3pp directory for apps
 mkdir cb3pp
 
 # and opt for other people to play
 mkdir opt
 
-# and opt for other people to play
+# and scripts for me to play
 mkdir scripts
+
+# and xLive9 for me to play
+mkdir xLive9
+
+# and utilities for me to play
+mkdir utilities
+
 
 #home dir for root part 1
 sed -i -e '/^root/c\
@@ -124,7 +134,6 @@ dir=`pwd`
 cd $1/scripts/feeds/scripts_vb6/
 find scripts | grep -v .svn | grep -v '~' | zip -9 ${dir}/scripts.zip -@
 cd ${dir}
-
 
 cd ..
 rm yaffs2_1.img
