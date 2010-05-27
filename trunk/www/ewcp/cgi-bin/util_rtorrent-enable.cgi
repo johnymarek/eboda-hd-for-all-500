@@ -4,7 +4,7 @@
 
 nice_start "Enabling rtorrent"
 
-chmod +x /cb3pp/etc/init.d/S90rtorrent
+mv /cb3pp/etc/init.d/off.S90rtorrent /cb3pp/etc/init.d/S90rtorrent
 if [ $? -eq 0 ]
 then
     echo "rtorrent will start automatically after reboot"

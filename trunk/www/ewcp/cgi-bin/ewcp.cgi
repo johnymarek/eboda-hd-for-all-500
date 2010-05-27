@@ -58,7 +58,7 @@ name_bftpd="NAS: bftpd"
 name_DvdPlayer="CORE: DvdPlayer"
 
 #apache transmission not in this scope
-for i in lighttpd btpd15 btpd smbd bftpd DvdPlayer 
+for i in lighttpd btpd15  bftpd btpd smbd DvdPlayer 
 do
     pic=/eb_imgs/cp_on.gif
     script=util_${i}-stop.cgi
@@ -139,17 +139,19 @@ do
 EOF
 done
 
-startfile_lighttpd="/cb3pp/etc/init.d/S80lighttpd"
-startfile_apache="/cb3pp/etc/init.d/S08apache"
-startfile_transmission="/cb3pp/etc/init.d/S90transmission"
-startfile_rtorrent="/cb3pp/etc/init.d/S90rtorrent"
-startfile_btpd15="/cb3pp/etc/init.d/S90btpd15"
+startfile_dir="/cb3pp/etc/init.d/"
+startfile_lighttpd="S80lighttpd"
+startfile_apache="S08apache"
+startfile_transmission="S90transmission"
+startfile_rtorrent="S90rtorrent"
+startfile_btpd15="S90btpd15"
+startfile_bftpd="S70bftpd"
+
 startfile_btpd="/tmp/package/script/btpd"
 startfile_smbd="/tmp/package/script/samba"
-startfile_bftpd="/cb3pp/etc/init.d/S70bftpd"
 
 #apache transmission not in this scope
-for i in lighttpd btpd15 btpd smbd bftpd
+for i in lighttpd btpd15 bftpd
 do
     full_name=`eval echo \\$name_${i}`
     script="#"
@@ -157,20 +159,20 @@ do
     action="N/A"
     
     startfile=`eval echo \\$startfile_${i}`
-    if [ -f $startfile ] 
+    if [ -f ${startfile_dir}/$startfile ]
     then
-    	if [ -x $startfile ]
-    	then
-    		script=util_${i}-disable.cgi
-    		state="Enabled"
-    		action=Disable
-    	else
-    		script=util_${i}-enable.cgi
-    		state="Disabled"
-    		action=Enable
-    	fi
+    	script=util_${i}-disable.cgi
+    	state="Enabled"
+    	action=Disable
     fi
-
+    if [ -f ${startfile_dir}/off.$startfile ]
+    then
+    	script=util_${i}-enable.cgi
+    	state="Disabled"
+    	action=Enable
+	
+    fi
+    
     cat <<EOF
                 <tr height="21">
                   <td><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>
@@ -178,6 +180,41 @@ do
                 </tr>
 EOF
 done
+
+
+
+for i in btpd smbd
+do
+    full_name=`eval echo \\$name_${i}`
+    script="#"
+    state="Not installed"
+    action="N/A"
+
+    startfile=`eval echo \\$startfile_${i}`
+
+
+    if [ -f $startfile ] 
+    then
+    	if [ -x $startfile ]
+    	then
+    	    script=util_${i}-disable.cgi
+    	    state="Enabled"
+    	    action=Disable
+    	else
+    	    script=util_${i}-enable.cgi
+    	    state="Disabled"
+    	    action=Enable
+    	fi
+    fi
+    
+    cat <<EOF
+                <tr height="21">
+                  <td><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>
+                  <td>${full_name} ($state) <a href="${script}">${action}</a> </td>
+                </tr>
+EOF
+done
+
 # END OF UTILITIES SECTION
 ##############################
 

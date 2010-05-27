@@ -4,7 +4,7 @@
 
 nice_start "Enabling bftpd"
 
-chmod +x /cb3pp/etc/init.d/S70bftpd 
+mv /cb3pp/etc/init.d/off.S70bftpd /cb3pp/etc/init.d/S70bftpd 
 
 if [ $? -eq 0 ]
 then
