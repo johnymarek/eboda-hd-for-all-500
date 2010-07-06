@@ -15,8 +15,12 @@ CLEAN=true
 openssl=false
 
 lighttpd=false
-pcre=false
+
+#php
+pcre=true
 php=true
+thttpd=true
+#end php
 
 
 btpd=false
@@ -44,6 +48,8 @@ rtorrent=false
 transmission=false
 
 smbd=false
+
+nginx=false
 
 strip=false
 #
@@ -123,11 +129,14 @@ $xmlrpc && (  [ -f xmlrpc-1.12.00.tgz ] || $download_cmd http://xmlrpc-c.svn.sou
 # expat-2.0.0.tar.gz
 $expat && (  [ -f expat-2.0.0.tar.gz ] || $download_cmd http://sourceforge.net/projects/expat/files/expat/2.0.0/expat-2.0.0.tar.gz/download )
 # pcre-4.4.tar.gz
-$pcre && (  [ -f pcre-4.4.tar.gz ] || $download_cmd http://sourceforge.net/projects/pcre/files/pcre/4.4/pcre-4.4.tar.gz/download )
+$pcre && (  [ -f pcre-6.7.tar.gz ] || $download_cmd http://sourceforge.net/projects/pcre/files/pcre/6.7/pcre-6.7.tar.gz/download )
 # php-5.0.5.tar.gz
-$php && (  [ -f php-5.1.6.tar.gz ] || $download_cmd http://museum.php.net/php5/php-5.1.6.tar.gz )
+$php && (  [ -f php-5.2.13.tar.gz ] || $download_cmd http://www.php.net/distributions/php-5.2.13.tar.gz )
 # lighttpd-1.4.15.tar.gz
 $lighttpd && (  [ -f lighttpd-1.4.15.tar.gz ] || $download_cmd http://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-1.4.15.tar.gz )
+$thttpd && (  [ -f thttpd-2.25b.tar.gz ] || $download_cmd http://www.acme.com/software/thttpd/thttpd-2.25b.tar.gz )
+
+$nginx && (  [ -f nginx-0.8.44.tar.gz ] || $download_cmd http://www.nginx.org/download/nginx-0.8.44.tar.gz )
 
 $apache && (  [ -f apache_1.3.37.tar.gz ] || $download_cmd http://archive.apache.org/dist/httpd/apache_1.3.37.tar.gz )
 
@@ -281,8 +290,8 @@ fi
 if [ $pcre == true ]
 then
     cd $compile
-    tar zxf $downloads/pcre-4.4.tar.gz
-    cd pcre-4.4
+    tar zxf $downloads/pcre-6.7.tar.gz
+    cd pcre-6.7
     ./configure --prefix=${cipibad} --host=mipsel-linux 
     $CLEAN && make clean
     gcc -c -g -O2 -I. ./dftables.c
@@ -302,13 +311,14 @@ fi
 if [ $php == true ]
 then
     cd $compile
-    tar zxf $downloads/php-5.1.6.tar.gz
-    cd php-5.1.6
+    tar zxf $downloads/php-5.2.13.tar.gz
+    cd php-5.2.13
     cat >config.cache <<EOF
 ac_cv_func_getaddrinfo=yes
 EOF
+	patch < ../../patches/php/thttpd_2.25b.patch
+    CC=mipsel-linux-gcc ./configure --prefix=${cipibad} --host=mipsel-linux --disable-all --disable-cli --enable-fastcgi --enable-discard-path --disable-ipv6  --enable-session --cache-file=`pwd`/config.cache --enable-sockets --with-pcre-regex=/cb3pp/ --enable-shared=false --enable-static=true --with-thttpd=../thttpd-2.25b/
 
-    CC=mipsel-linux-gcc ./configure --prefix=${cipibad} --host=mipsel-linux --disable-all --disable-cli --enable-fastcgi --enable-discard-path --disable-ipv6  --enable-session --cache-file=`pwd`/config.cache --enable-sockets --with-pcre-regex=/cb3pp/ --enable-shared=false --enable-static=true
     $CLEAN && make clean
     make
     make install
@@ -340,6 +350,42 @@ cp ${cipibad}/sbin/lighttpds $target/sbin
     
 fi
 
+if [ $nginx == true ]
+then
+    cd $compile
+    tar zxf $downloads/nginx-0.8.44.tar.gz
+    cd nginx-0.8.44
+    ./configure --prefix=${cipibad} --host=mipsel-linux 
+    $CLEAN && make clean
+    make
+    make install
+
+#
+# lighttpd target
+#
+
+#cp ${cipibad}/sbin/lighttpds $target/sbin
+
+    
+fi
+if [ $thttpd == true ]
+then
+    cd $compile
+    tar zxf $downloads/thttpd-2.25b.tar.gz
+    cd thttpd-2.25b
+    ./configure --prefix=${cipibad} --host=mipsel-linux 
+    $CLEAN && make clean
+    make
+    make install
+
+#
+# lighttpd target
+#
+
+cp ${cipibad}/sbin/lighttpds $target/sbin
+
+    
+fi
 
 if [ $apache == true ]
 then
