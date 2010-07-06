@@ -3,9 +3,9 @@
 prefix="/cb3pp"
 
 PATH=${prefix}/bin:${prefix}/sbin:/sbin:/bin:/usr/sbin:/usr/bin
-NAME=lighttpd
+NAME=thttpd
 DAEMON=${prefix}/sbin/${NAME}
-DAEMON_OPTS="-f ${prefix}/etc/lighttpd/lighttpd.conf"
+DAEMON_OPTS="-d /cb3pp/share/www"
 
 
 
