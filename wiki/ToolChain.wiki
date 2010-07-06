@@ -2,43 +2,19 @@
 
 = warning =
 
-The compiler is quite old one, I have currently some issues compiling some newer sources.
-I'll try to build another compiles based on uclibc http://www.uclibc.org/toolchains.html method and I will use that one if everything OK. You can watch the progress here [Toolchain2 Second MIPS toolchain]
+
 
 = Introduction =
 
-This is the description of toolchain installation process. More info can be found here: http://www.linux-mips.org/wiki/Toolchains
+This is the description of a cross compiler installation process. More info about what what is a cross compiler and specific MIPS information can be found here: http://www.linux-mips.org/wiki/Toolchains
+
+Following description is based on the latest MIPSEL compiler that was available on mips.com ftp site.
 
 
 = Details =
 
-  # Download vmwayer from vmware for free
-  # download a RPM based Linux disribution vmware image (from vmware appliances, I used the LinHost) - I used Fedora Core 12
-  # Download sources + read-me file from ftp://download.conceptronic.net/Conceptronic/GNU-GPL/CM3Gxx/ and follow the readme file from last version (2.00.004):
-    # Toolchain (install rpm files and untar *inc_lib0808.tar.bz2* file to /usr/local/mipsel-linux/):
-      # mipsel-sdelinux-v6.05.00-4.i386.rpm
-      # sdelinux-5.03.06-1.i386.rpm
-      # inc_lib0808.tar.bz2
-    # you will also need to execute
-{{{
-cp /usr/local/lib/gcc-lib/mipsel-linux/2.96-sdelinuxmips-040127/*.o /usr/local/lib/gcc-lib/mipsel-linux/2.96-sdelinuxmips-040127/soft/
-}}}
-  # Now you should be able to compile cross-compile opensource application based on automake/autocong using `--host=mipsel-linux` extra argument.
-
-= Back .. =
-
-After few days playing with uclibc toolchain generation (nice stuff) I got the binaries I wanted but .... they are not working.
-
-What I got was: 
-1. static lighttpd, nice size, but SIGSEGV right after reading configuration file
-2. shared lightppd was ok
-3. shared php-cgi running without ini file, but not usefull un-configured
-4. shared php-cgi with ini file SIGSEGV
-
-Probably the issue is the uclibc version I used that is different from what is on the board. I'll may take a look how could I handle this, bot is not looking right to have two versions anyhow (memory usage)
-
-So I'm back to original toolchain and I'll grab older versions of applications to be able to really compile (even I think the compiler is not configured especially for this chip ...)
-
-
-
-      
+1. fedora installation
+2. packages installation (yum)
+3. packages installation (rpm)
+    
+=TBC=
