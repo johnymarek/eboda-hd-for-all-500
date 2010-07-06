@@ -1,0 +1,10 @@
+Package: bzip2
+Architecture: mipsel
+Priority: optional
+Section: compression
+Version: 1.0.5-2
+Maintainer: Christopher Blunck <christopher.blunck@gmail.com>
+Source: http://www.bzip.org/1.0.5/bzip2-1.0.5.tar.gz
+Description: Very high-quality data compression program
+Depends: 
+Conflicts: 

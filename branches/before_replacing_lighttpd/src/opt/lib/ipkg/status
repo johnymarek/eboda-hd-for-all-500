@@ -1,0 +1,96 @@
+Package: bzip2
+Version: 1.0.5-2
+Status: install ok installed
+Architecture: mipsel
+Installed-Time: 1271977117
+
+Package: cyrus-sasl-libs
+Version: 2.1.23-1
+Status: install ok installed
+Architecture: mipsel
+Installed-Time: 1271977141
+
+Package: gdbm
+Version: 1.8.3-2
+Status: install ok installed
+Architecture: mipsel
+Installed-Time: 1271977132
+
+Package: libdb
+Version: 4.2.52-3
+Status: install ok installed
+Architecture: mipsel
+Installed-Time: 1271977138
+
+Package: libuclibc++
+Version: 0.2.2-8
+Provides: libstdc++
+Status: install ok installed
+Architecture: mipsel
+
+Package: libxml2
+Version: 2.7.7-1
+Depends: zlib
+Status: install ok installed
+Architecture: mipsel
+Installed-Time: 1271977127
+
+Package: libxslt
+Version: 1.1.26-1
+Depends: libxml2
+Status: install ok installed
+Architecture: mipsel
+Installed-Time: 1271977131
+
+Package: lighttpd
+Version: 1.4.26-1
+Depends: pcre, zlib, libstdc++, openssl, spawn-fcgi
+Suggests: bzip2, e2fsprogs, libxml2, lua, sqlite, openldap-libs, mysql
+Status: install user installed
+Architecture: mipsel
+
+Package: openldap-libs
+Version: 2.3.43-1
+Depends: openssl, libdb, gdbm, cyrus-sasl-libs
+Status: install ok installed
+Architecture: mipsel
+Installed-Time: 1271977145
+
+Package: openssl
+Version: 0.9.7m-5
+Status: install ok installed
+Architecture: mipsel
+
+Package: pcre
+Version: 8.02-1
+Status: install ok installed
+Architecture: mipsel
+
+Package: php
+Version: 5.2.12-1
+Depends: bzip2, openssl, zlib, libxml2, libxslt, gdbm, libdb, pcre, cyrus-sasl-libs, openldap-libs
+Status: install ok installed
+Architecture: mipsel
+Conffiles:
+/opt/etc/php.ini 211ce782fa34ea1da50a564a63094fe3
+Installed-Time: 1271977114
+
+Package: php-fcgi
+Version: 5.2.12-1
+Depends: php (5.2.12), pcre
+Status: install user installed
+Architecture: mipsel
+Conffiles:
+/opt/etc/lighttpd/conf.d/10-php-fcgi.conf 87dcc46655017313c74b196b65eee91b
+Installed-Time: 1271977147
+
+Package: spawn-fcgi
+Version: 1.6.3-1
+Status: install ok installed
+Architecture: mipsel
+
+Package: zlib
+Version: 1.2.5-1
+Status: install ok installed
+Architecture: mipsel
+

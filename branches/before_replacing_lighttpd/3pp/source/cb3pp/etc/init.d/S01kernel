@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo 15 > /proc/sys/vm/swappiness
+echo 3 > /proc/sys/vm/dirty_background_ratio
+echo 40 > /proc/sys/vm/dirty_ratio
+echo 6144 > /proc/sys/vm/min_free_kbytes

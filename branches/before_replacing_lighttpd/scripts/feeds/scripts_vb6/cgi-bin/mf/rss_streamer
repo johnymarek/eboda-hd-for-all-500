@@ -1,0 +1,65 @@
+#!/cb3pp/bin/bash
+#(c)vonck 2010
+#LICENCE: GPL
+#Put this file in /tmp/hdd/root/unicgi/cgi-bin
+#depends on optware + mplayer binary from the xtreamer forum.
+#I would prefer to use python or another scripting language, but it should be easy to install.
+#Help needed!!!; I don't know what the f***k I'm doing, my bash scripting experience is minimal.
+#
+#Security Bugs:
+#URL and FORMAT are not validated against shell injection.
+
+#Extract Query string variables
+URL=`echo "$QUERY_STRING" | sed -n 's/^.*url=\([^&]*\).*$/\1/p' | sed "s/%20/ /g"`
+FORMAT=`echo "$QUERY_STRING" | sed -n 's/^.*fmt=\([^&]*\).*$/\1/p' | sed "s/%20/ /g"`
+TITLE="$URL"
+TITLE=`echo "$TITLE" | /cb3pp/bin/tr --complement --squeeze-repeats '[:alpha:]' '_'`
+[ -d "/tmp/hdd/volumes/HDD1/RSS/ ] || mkdir -p "/tmp/hdd/volumes/HDD1/RSS/
+
+FILENAME="/tmp/hdd/volumes/HDD1/RSS/$TITLE.$FORMAT"
+
+echo "Content-type: text/plain"
+echo ""
+
+
+echo "<rss>"
+#Commands+Logging
+echo "<!--Logging+Debug here:"
+echo "[r0.0.14]"
+echo "*Query vars:"
+echo "URL=$URL"
+echo "FORMAT=$FORMAT"
+echo "TITLE=$TITLE"
+echo "*Shell commands:"
+echo "#killall mplayer -9"
+if [ -d  /tmp/hdd/volumes/HDD1/RSS ]; then
+	echo "*Download Directory exists*"
+else
+    mkdir /tmp/hdd/volumes/HDD1/RSS
+fi
+killall mplayer -9
+echo "#sleep 1"
+sleep 1
+echo "#mplayer -dumpstream \"$URL\" -dumpfile \"$FILENAME\""
+/cb3pp/bin/nohup /cb3pp/bin/mplayer -dumpstream "$URL" -dumpfile "$FILENAME" &> log.txt &
+echo "-->"
+#The rest of the rss output
+echo "<channel><title>rss_streamer</title>"
+echo "<description>rss_streamer</description>"
+echo "<item><title>$TITLE</title>"
+echo "<description>RSS_STREAM.$FORMAT</description>"
+echo "<enclosure type=\"video/$FORMAT\" url=\"$FILENAME\"/>"
+echo "<link>/mnt/C/movie/RSS_STREAM.$FORMAT</link>"
+echo "</item>"
+echo "<item><title>- - -</title></item>"
+echo "<item><title>Download started , please wait a a few seconds.</title></item>"
+echo "<item><title>If streaming is too slow the movie will abort.</title></item>"
+echo "<item><title>FORMAT=$FORMAT</title></item>"
+echo "<item><title>You must click in the 1st link to vew  the movie, other items link nowhere.</title></item>"
+echo "<item><title>- - -</title></item>"
+echo "<item><title>[Stop download]</title><link>http://127.0.0.1/cgi-bin/rss_streamer_stop_all</link></item>"
+echo "</channel>"
+echo "</rss>"
+
+
+
