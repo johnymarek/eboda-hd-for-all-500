@@ -18,7 +18,7 @@ lighttpd=false
 
 #php
 pcre=true
-php=true
+php=false
 thttpd=true
 #end php
 
@@ -38,14 +38,14 @@ xmlrpc=false
 
 expat=false
 
-curl=false
+curl=true
 dtach=false
 libsigc=false
 libtorrent=false
 ncurses=false
 rtorrent=false
 #!!!!!! do not use transmission for now !!!!
-transmission=false
+transmission=true
 
 smbd=false
 
@@ -141,7 +141,7 @@ $nginx && (  [ -f nginx-0.8.44.tar.gz ] || $download_cmd http://www.nginx.org/do
 $apache && (  [ -f apache_1.3.37.tar.gz ] || $download_cmd http://archive.apache.org/dist/httpd/apache_1.3.37.tar.gz )
 
 
-$curl && (  [ -f curl-7.14.0.tar.gz ] || $download_cmd http://curl.haxx.se/download/curl-7.14.0.tar.gz )
+$curl && (  [ -f curl-7.16.4.tar.gz ] || $download_cmd http://curl.haxx.se/download/curl-7.16.4.tar.gz )
 
 $dtach && (  [ -f dtach-0.8.tar.gz ] || $download_cmd http://sourceforge.net/projects/dtach/files/dtach/0.8/dtach-0.8.tar.gz/download )
 
@@ -152,6 +152,8 @@ $libtorrent && (  [ -f libtorrent-0.12.5.tar.gz ] || $download_cmd http://libtor
 $ncurses && (  [ -f ncurses-5.7.tar.gz ] || $download_cmd http://ftp.gnu.org/gnu/ncurses/ncurses-5.7.tar.gz )
 
 $rtorrent && (  [ -f rtorrent-0.8.5.tar.gz ] || $download_cmd http://libtorrent.rakshasa.no/downloads/rtorrent-0.8.5.tar.gz )
+
+$transmission && (  [ -f transmission-1.76.tar.bz2 ] || $download_cmd http://download.m0k.org/transmission/files/transmission-1.76.tar.bz2 )
 
 
 $btpd && ( [ -f btpd-0.15.tar.gz ] || $download_cmd http://www.murmeldjur.se/btpd/btpd-0.15.tar.gz )
@@ -417,8 +419,8 @@ fi
 if [ $curl == true ]
 then
     cd $compile
-    tar zxf $downloads/curl-7.14.0.tar.gz
-    cd curl-7.14.0
+    tar zxf $downloads/curl-7.16.4.tar.gz
+    cd curl-7.16.4
     ./configure --prefix=${cipibad} --host=mipsel-linux
     $CLEAN && make clean
     make
@@ -523,6 +525,25 @@ then
 #
 
 cp ${cipibad}/bin/rtorrent $target/bin
+
+fi
+
+
+if [ $transmission == true ]
+then
+    cd $compile
+#    tar jxf $downloads/transmission-1.76.tar.bz2
+    cd transmission-1.76
+    PATH=$PATH:/cb3pp/bin/ LIBS="-L/cb3pp/lib" OPENSSL_CFLAGS="-I/cb3pp/include" OPENSSL_LIBS="-L/cb3pp/lib -lssl -lcrypto" LIBCURL_CFLAGS="-I/cb3pp/lib" LIBCURL_LIBS="-L/cb3pp/lib -lcurl" ./configure --prefix=${cipibad} --host=mipsel-linux --disable-nls
+    $CLEAN && make clean
+    make
+    make install
+
+#
+# transmission target
+#
+
+cp ${cipibad}/bin/transmission-daemon $target/bin
 
 fi
 
