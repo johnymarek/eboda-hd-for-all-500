@@ -208,7 +208,7 @@ ret;
                 </image>
         </backgroundDisplay>
             <image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
-            /scripts/image/sc_title.jpg
+            /tmp/hdd/volumes/HDD1/scripts/image/sc_title.jpg
             </image>
 
 
@@ -224,8 +224,8 @@ ret;
 
 <channel>
 	<title>Magic FM Romania</title>
-	<link>/scripts/buffer.rss</link>
-    <media:thumbnail url="/scripts/image/rss1.png" width="120" height="90" />	
+	<link>/tmp/hdd/volumes/HDD1/scripts/buffer.rss</link>
+    <media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/rss1.png" width="120" height="90" />	
 
 </channel>
 

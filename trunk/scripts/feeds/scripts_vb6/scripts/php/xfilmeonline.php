@@ -43,7 +43,7 @@ if($search) {
 }
 ?>
 <title>Previous Page</title>
-<link><?php echo $url;?></link><media:thumbnail url="/scripts/image/left.jpg" />
+<link><?php echo $url;?></link><media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/left.jpg" />
 </item>
 
 
@@ -71,7 +71,7 @@ foreach($videos as $video) {
     $t2 = explode('"', $t1[1]);
     $title = htmlspecialchars_decode($t2[0]);
 
-    $link = 'http://127.0.0.1:82/scripts/php/xfilmeonline_link.php?file='.$link;
+    $link = 'http://127.0.0.1:82/scripts/php/filme_link.php?file='.$link;
     echo '<item>';
     echo '<title>'.$title.'</title>';
     echo '<link>'.$link.'</link>';	
@@ -92,7 +92,7 @@ if($search) {
 ?>
 <title>Next Page</title>
 <link><?php echo $url;?></link>
-<media:thumbnail url="/scripts/image/right.jpg" />
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/right.jpg" />
 </item>
 
 </channel>

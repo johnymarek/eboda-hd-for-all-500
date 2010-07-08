@@ -1,7 +1,7 @@
 ﻿<?php
-exec('cd //  && wget http://hdforall.googlecode.com/files/scripts.zip -O scripts.zip && unzip -o scripts.zip && rm -f scripts.zip');
+exec('cd /tmp/hdd/volumes/HDD1/  && wget http://hdforall.googlecode.com/files/scripts.zip -O scripts.zip && unzip -o scripts.zip && rm -f scripts.zip');
+echo "<?xml version='1.0' ?>";
 ?>
-<?xml version='1.0' ?>
 <!--mime-type=  text/plain because acryan feeds are not proper xml-->
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
 
@@ -25,7 +25,7 @@ Click "Go Home" pentru a vedea rezultatul!
 <item>
 <title>Go Home</title>
 <link>scripts/menu.rss</link>
-<media:thumbnail url="/scripts/image/system.png"/>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/system.png"/>
 </item>
 
 </channel>

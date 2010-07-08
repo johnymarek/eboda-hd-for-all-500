@@ -41,7 +41,7 @@ if($search) {
 }
 ?>
 <title>Previous Page</title>
-<link><?php echo $url;?></link><media:thumbnail url="/scripts/image/left.jpg" />
+<link><?php echo $url;?></link><media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/left.jpg" />
 </item>
 
 
@@ -67,29 +67,14 @@ foreach($videos as $video) {
     $t2 = explode('"', $t1[1]);
     $title = htmlspecialchars_decode($t2[0]);
 
-    $html = file_get_contents($link);
-//    $t1 = explode('file=', $html);
-//    $t2 = explode('&amp', $t1[1]);
-//    $link = $t2[0];
-
-$cds = explode('<object id="jwplayer1"', $html);
-
-unset($cds[0]);
-$cds = array_values($cds);
-$n = 1;
-foreach($cds as $cd) {
-    $t1 = explode('file=', $cd);
-    $t2 = explode('&amp', $t1[1]);
-    $link = $t2[0];
+		$link = 'http://127.0.0.1:82/scripts/php/filme_link.php?file='.$link;
 
     echo '<item>';
-    echo '<title>'.$title.' ('.$n.')</title>';
+    echo '<title>'.$title.'</title>';
     echo '<link>'.$link.'</link>';
-    echo '<media:thumbnail url="'.$image.'" />';
-    echo '<enclosure type="video/flv" url="'.$link.'"/>';	
+    echo '<media:thumbnail url="'.$image.'" />';	
     echo '</item>';
-$n = $n+1;
-}
+
 }
 
 ?>
@@ -104,7 +89,7 @@ if($search) {
 ?>
 <title>Next Page</title>
 <link><?php echo $url;?></link>
-<media:thumbnail url="/scripts/image/right.jpg" />
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/right.jpg" />
 </item>
 
 </channel>

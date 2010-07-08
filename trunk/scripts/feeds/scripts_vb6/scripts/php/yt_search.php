@@ -1,4 +1,4 @@
-﻿<?php echo "<?phpxml version='1.0' ?>"; ?>
+﻿<?php echo "<?xml version='1.0' ?>"; ?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
 
 <channel>
@@ -13,7 +13,7 @@ if($query) {
    $page = $queryArr[0];
    $search = $queryArr[1];
 }
-//http://www.youtube.com/results?search_query=abba&aq=f&page=2
+$search = str_replace(' ','+',$search);
 if($page) {
     if($search) {
         $html = file_get_contents("http://www.youtube.com/results?search_query=".$search."&aq=f&page=".$page);
@@ -41,7 +41,7 @@ if($search) {
 }
 ?>
 <title>Previous Page</title>
-<link><?php echo $url;?></link><media:thumbnail url="/scripts/image/left.jpg" />
+<link><?php echo $url;?></link><media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/left.jpg" />
 </item>
 
 
@@ -53,7 +53,7 @@ function str_between($string, $start, $end){
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
 	return substr($string,$ini,$len); 
 }
-$videos = explode('<div class="video-entry yt-uix-hovercard">', $html);
+$videos = explode('<div class="video-entry', $html);
 
 unset($videos[0]);
 $videos = array_values($videos);
@@ -61,40 +61,30 @@ $videos = array_values($videos);
 foreach($videos as $video) {
     $t1 = explode(' href="', $video);
     $t2 = explode('"', $t1[1]);
-    $link = 'http://www.youtube.com'.$t2[0].'&hd=1';
+    $link = 'http://www.youtube.com'.$t2[0]."&hd=1";
+		$pos = strrpos($link, "watch"); 
+		if ($pos !== false) { 
+			$t1 = explode('title="', $video); 
+			$t2 = explode('"', $t1[1]); 
+			$title = htmlspecialchars_decode($t2[0]);
 
-    $t1 = explode('title="', $video);
-    $t2 = explode('"', $t1[1]);
-    $title = htmlspecialchars_decode($t2[0]);
-
-    $t1 = explode('src="', $video);
-    $t2 = explode('"', $t1[1]);
-    $image = $t2[0];
-$pos = strrpos($image, ".jpg");
-if ($pos === false) { // note: three equal signs
-    $t1 = explode('thumb="', $video);
-    $t2 = explode('"', $t1[1]);
-    $image = $t2[0];
-}    
-
-//    $html = file_get_contents($link);
-//    $t1 = explode(' videourl="', $html);
-//    $t2 = explode('"', $t1[1]);
-//    $link = $t2[0];
-$youtube_page = file_get_contents($link);
-$v_id = str_between($youtube_page, "&video_id=", "&");
-$t_id = str_between($youtube_page, "&t=", "&");
-//$flv_link = "http://www.youtube.com/get_video?video_id=$v_id&t=$t_id";
-$flv_link = "http://127.0.0.1:82/scripts/php/yt.php?id=".$v_id ;
-    echo '<item>';
-    echo '<title>'.$title.'</title>';
-    echo '<link>'.$flv_link.'</link>';
-    echo '<media:thumbnail url="'.$image.'" />';
-    echo '<enclosure type="video/mp4" url="'.$flv_link.'"/>';
-    echo '<media:player url="'.$flv_link.'"/>';	
-    echo '</item>';
+    	$t1 = explode('src="', $video);
+    	$t2 = explode('"', $t1[1]);
+    	$image = $t2[0];
+			$pos = strrpos($image, ".jpg");
+			if ($pos === false) {
+    		$t1 = explode('thumb="', $video);
+    		$t2 = explode('"', $t1[1]);
+    		$image = $t2[0];
+			}    
+			$link = "http://127.0.0.1:82/scripts/php/yt_link.php?file=".$link;    
+    	echo '<item>';
+    	echo '<title>'.$title.'</title>';
+    	echo '<link>'.$link.'</link>';
+    	echo '<media:thumbnail url="'.$image.'" />';	
+    	echo '</item>';
+		}
 }
-
 ?>
 <item>
 <?php
@@ -106,7 +96,7 @@ if($search) {
 ?>
 <title>Next Page</title>
 <link><?php echo $url;?></link>
-<media:thumbnail url="/scripts/image/right.jpg" />
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/right.jpg" />
 </item>
 
 </channel>

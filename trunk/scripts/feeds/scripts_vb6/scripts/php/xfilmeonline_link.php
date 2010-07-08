@@ -13,7 +13,7 @@ $link = $_GET["file"];
 $link = str_replace(' ','%20',$link);
 $link = str_replace('[','%5B',$link);
 $link = str_replace(']','%5D',$link);
-$image = "/scripts/image/movies.png";
+$image = "/tmp/hdd/volumes/HDD1/scripts/image/movies.png";
 
 $html = file_get_contents($link);
 $videos = explode('flashvars="', $html);

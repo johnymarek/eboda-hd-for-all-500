@@ -1,4 +1,4 @@
-﻿<?php echo "<?phpxml version='1.0' ?>"; ?>
+﻿<?php echo "<?xml version='1.0' ?>"; ?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
 
 <channel>
@@ -16,16 +16,16 @@ if($query) {
 
 if($page) {
     if($search) {
-        $html = file_get_contents("http://www.tube8.com/search.html?q=".$search."&page=".$page);
+        $html = file_get_contents($search.$page);
     } else {
-        $html = file_get_contents("http://www.friktube.com/page/".$page."");
+        $html = file_get_contents($search.$page);
     }
 } else {
     $page = 1;
     if($search) {
-        $html = file_get_contents("http://www.tube8.com/search.html?q=".$search);
+        $html = file_get_contents($search);
     } else {
-        $html = file_get_contents("http://www.friktube.com/");
+        $html = file_get_contents($search);
     }
 }
 
@@ -41,7 +41,7 @@ if($search) {
 }
 ?>
 <title>Previous Page</title>
-<link><?php echo $url;?></link><media:thumbnail url="/scripts/image/left.jpg" />
+<link><?php echo $url;?></link><media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/left.jpg" />
 </item>
 
 
@@ -67,17 +67,18 @@ foreach($videos as $video) {
     $t2 = explode('<', $t1[1]);
     $title = $t2[0];
 
-    $html = file_get_contents($link);
-    $t1 = explode("'file','", $html);
-    $t2 = explode("'", $t1[1]);
-    $link = $t2[0];
+		$link = "http://127.0.0.1:82/scripts/php/friktube_link.php?file=".$link;
+//    $html = file_get_contents($link);
+//    $t1 = explode("'file','", $html);
+//    $t2 = explode("'", $t1[1]);
+//    $link = $t2[0];
 
 
     echo '<item>';
     echo '<title>'.$title.'</title>';
     echo '<link>'.$link.'</link>';
     echo '<media:thumbnail url="'.$image.'" />';
-    echo '<enclosure type="video/flv" url="'.$link.'"/>';	
+//    echo '<enclosure type="video/flv" url="'.$link.'"/>';	
     echo '</item>';
 }
 
@@ -94,7 +95,7 @@ if($search) {
 ?>
 <title>Next Page</title>
 <link><?php echo $url;?></link>
-<media:thumbnail url="/scripts/image/right.jpg" />
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/right.jpg" />
 </item>
 
 </channel>

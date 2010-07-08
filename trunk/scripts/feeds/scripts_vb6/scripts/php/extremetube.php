@@ -34,16 +34,16 @@ if($query) {
 
 if($page) {
     if($search) {
-        $html = file_get_contents("http://www.tube8.com/search.html?q=".$search."&page=".$page);
+        $html = file_get_contents($search.$page);
     } else {
-        $html = file_get_contents("http://www.extremetube.com/videos?page=".$page."");
+        $html = file_get_contents($search.$page);
     }
 } else {
     $page = 1;
     if($search) {
-        $html = file_get_contents("http://www.tube8.com/search.html?q=".$search);
+        $html = file_get_contents($search);
     } else {
-        $html = file_get_contents("http://www.extremetube.com/videos?page=1");
+        $html = file_get_contents($search);
     }
 }
 
@@ -59,7 +59,7 @@ if($search) {
 }
 ?>
 <title>Previous Page</title>
-<link><?php echo $url;?></link><media:thumbnail url="/scripts/image/left.jpg" />
+<link><?php echo $url;?></link><media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/left.jpg" />
 </item>
 
 
@@ -93,17 +93,15 @@ foreach($videos as $video) {
 
 $pos1 = stripos($link, 'source=');
 if ($pos1 === false) {
-    $html = file_get_contents($link);
-    $link = str_between($html, "flashvars.videoUrl = '", "'");
 
     //$html = file_get_contents($link);
     //$link = str_between($html, '<flv_url>', '</flv_url>');
-
+$link = "http://127.0.0.1:82/scripts/php/extremetube_link.php?file=".$link;
     echo '<item>';
     echo '<title>'.$title.'</title>';
     echo '<link>'.$link.'</link>';
     echo '<media:thumbnail url="'.$image.'" />';
-    echo '<enclosure type="video/flv" url="'.$link.'"/>';	
+//    echo '<enclosure type="video/flv" url="'.$link.'"/>';	
     echo '</item>';
   }
 }
@@ -121,7 +119,7 @@ if($search) {
 ?>
 <title>Next Page</title>
 <link><?php echo $url;?></link>
-<media:thumbnail url="/scripts/image/right.jpg" />
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/right.jpg" />
 </item>
 
 </channel>

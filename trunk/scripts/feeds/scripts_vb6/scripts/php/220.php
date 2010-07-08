@@ -1,8 +1,8 @@
-﻿<?php echo "<?phpxml version='1.0' ?>"; ?>
+﻿<?php echo "<?xml version='1.0' ?>"; ?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
 
 <channel>
-	<title>220.ro - selectii</title>
+	<title>220.ro</title>
 	<menu>main menu</menu>
 
 
@@ -15,22 +15,27 @@ if($query) {
 }
 
 if($page) {
-    if($search) {
-        $html = file_get_contents("http://www.tube8.com/search.html?q=".$search."&page=".$page);
-    } else {
-        $html = file_get_contents("http://www.220.ro/".$page."");
-    }
+     $html = file_get_contents($search.$page);
 } else {
     $page = 1;
-    if($search) {
-        $html = file_get_contents("http://www.tube8.com/search.html?q=".$search);
-    } else {
-        $html = file_get_contents("http://www.220.ro/");
-    }
+    $html = file_get_contents($search);
 }
+if($page > 1) { ?>
 
-
-$videos = explode('<div class="container_film_h">', $html);
+<item>
+<?php
+$sThisFile = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['SCRIPT_NAME'];
+$url = $sThisFile."?query=".($page-1).",";
+if($search) { 
+  $url = $url.$search; 
+}
+?>
+<title>Previous Page</title>
+<link><?php echo $url;?></link><media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/left.jpg" />
+</item>
+<?php } ?>
+<?php
+$videos = explode('<div class="container_film', $html);
 
 unset($videos[0]);
 $videos = array_values($videos);
@@ -48,23 +53,31 @@ foreach($videos as $video) {
     $t2 = explode('"', $t1[1]);
     $title = $t2[0];
 
-    $html = file_get_contents($link);
-    $t1 = explode('videoURL=', $html);
-    $t2 = explode('&preview', $t1[1]);
-    $link = urldecode($t2[0]);
+    $link = "http://127.0.0.1:82/scripts/php/220_link.php?file=".$link;
 
 
     echo '<item>';
     echo '<title>'.$title.'</title>';
     echo '<link>'.$link.'</link>';
     echo '<media:thumbnail url="'.$image.'" />';
-    echo '<enclosure type="video/flv" url="'.$link.'"/>';	
     echo '</item>';
+    print "\n";
 }
 
 
 ?>
-
+<item>
+<?php
+$sThisFile = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['SCRIPT_NAME'];
+$url = $sThisFile."?query=".($page+1).",";
+if($search) { 
+  $url = $url.$search; 
+}
+?>
+<title>Next Page</title>
+<link><?php echo $url;?></link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/right.jpg" />
+</item>
 
 
 </channel>

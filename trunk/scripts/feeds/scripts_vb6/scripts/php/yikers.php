@@ -1,4 +1,4 @@
-﻿<?php echo "<?phpxml version='1.0' ?>"; ?>
+﻿<?php echo "<?xml version='1.0' ?>"; ?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
 
 <channel>
@@ -41,7 +41,7 @@ if($search) {
 }
 ?>
 <title>Previous Page</title>
-<link><?php echo $url;?></link><media:thumbnail url="/scripts/image/left.jpg" />
+<link><?php echo $url;?></link><media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/left.jpg" />
 </item>
 
 
@@ -94,7 +94,7 @@ if($search) {
 ?>
 <title>Next Page</title>
 <link><?php echo $url;?></link>
-<media:thumbnail url="/scripts/image/right.jpg" />
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/right.jpg" />
 </item>
 
 </channel>

@@ -24,36 +24,193 @@
 
     <title>TV si Radio</title>
 
+<item>
+<title>Emisiuni Antena 1</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/antena1_all.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/antena1_all.jpg" />
+</item>
+
+<item>
+<title>Emisiuni Antena2</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/antena2.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/antena2.jpg" />
+</item>
+
+<item>
+<title>Emisiuni Antena3</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/antena3.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/antena3.jpg" />
+</item>
+
+<item>
+<title>Emisiuni ProTV</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/protv.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/protv.jpg" />
+</item>
+
+<item>
+<title>Emisiuni AcasaTV</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/acasatv.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/acasatv.jpg" />
+</item>
+
+<item>
+<title>Emisiuni EuforiaTV</title>
+<link>http://127.0.0.1:82/scripts/php/euforiatv.php</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/euforiatv.gif" />
+</item>
+
+<item>
+<title>Emisiuni RealitateaTV</title>
+<link>http://127.0.0.1:82/scripts/php/realitateatv_main.php</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/realitateatv.gif" />
+</item>
+
+<item>
+<title>Emisiuni Money.ro WebTV</title>
+<link>http://127.0.0.1:82/scripts/php/money.php</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/money.gif" />
+</item>
+
+<!--<item>
+<title>Inregistrari TVR International</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/tvr.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tvr.jpg" />
+</item>-->
+
+<item>
+<title>Emisiuni InfoPescarTV</title>
+<link>http://www.infopescar.tv/videoz/playlist.xml</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/infopescar.png" />
+</item>
+
+<item>
+<title>Sport.ro - Inregistrari</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/sport_ro.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/sport_ro.gif" />
+</item>
+
+<item>
+<title>Emisiuni tvt89</title>
+<link>http://127.0.0.1:82/scripts/php/tvt89.php</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tvt89.jpg" />
+</item>
+
+<item>
+<title>Emisiuni PrahovaHD (direct)</title>
+<link>http://127.0.0.1:82/scripts/php/prahovahd.php</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/prahovahd.png" />
+</item>
+
+
+<item>
+<title>IQads</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/iqads.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/iqads.jpg" />
+</item>
+
+<item>
+<title>UEFA</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/uefa.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/uefa4.jpg" />
+</item>
+
+<item>
+<title>livesoccertv</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/livesoccertv.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/livesoccertv.gif" />
+</item>
+
+<item>
+<title>sportgioco.it</title>
+<link>http://127.0.0.1:82/scripts/php/sportgioco.php</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/sportgioco.jpg" />
+</item>
+
+<item>
+<title>sportitalia</title>
+<link>http://127.0.0.1:82/scripts/php/sportitalia.php</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/sportitalia.jpg" />
+</item>
+
+<item>
+<title>MySpace.com</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/myspace.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
+</item>
+
+<!--<item>
+<title>AutomobileTV</title>
+<link>http://127.0.0.1:82/scripts/php/automobiletv.php?query=0,</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/automobiletv.jpg" />
+</item>-->
+
+<!--<item>
+<title>Academia Catavencu</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/catavencu.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/catavencu.jpg" />
+</item>-->
+
+<item>
+<title>Revision3</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/rev3.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/revision3.gif"  />
+</item>
+
+<item>
+<title>Bing</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/bing.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/bing.jpg"  />
+</item>
+
+
+<item>
+<title>TV Live - posturi straine</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/tv_straine.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
+</item>
+
+<item>
+<title>TV Live - posturi romanesti</title>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/tv_rom.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
+</item>
 
 <item>
 <title>Program-Tv.ro :: Acum la televizor</title>
 <link>http://www.program-tv.ro/acum-la-tv.rss</link>
-<media:thumbnail url="/scripts/image/tv_radio.png" />
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
 </item>
 
 <item>
 <title>Program-Tv.ro :: Urmeaza la televizor</title>
 <link>http://www.program-tv.ro/urmeaza-la-tv.rss</link>
-<media:thumbnail url="/scripts/image/tv_radio.png" />
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
 </item>
 
 <item>
 <title>Posturi radio Romania</title>
 <link>http://www.metafeeds.com/channel/fav_Mondi/rss</link>
-<media:thumbnail url="/scripts/image/tv_radio.png" />
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
 </item>
 
 
 <item>
 <title>RFI Romania (Podcast)</title>
-<link>/scripts/category/rfi.rss</link>
-<media:thumbnail url="/scripts/image/tv_radio.png" />
+<link>/tmp/hdd/volumes/HDD1/scripts/category/rfi.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
+</item>
+
+<item>
+<title>Onion News Network</title>
+<link>http://www.theonion.com/feeds/onn/</link> />
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/onion.png" />
 </item>
 
 <item>
 <title>UZG</title>
-<link>/scripts/category/uzg.rss</link>
-<media:thumbnail url="/scripts/image/uzg.jpg" />
+<link>/tmp/hdd/volumes/HDD1/scripts/category/uzg.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/uzg.jpg" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
 		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
 		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
@@ -74,6 +231,7 @@
 		</text>			
 	    </mediaDisplay>
 </item>
+
 
 </channel>
 </rss>

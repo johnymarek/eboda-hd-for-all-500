@@ -43,7 +43,7 @@ if($search) {
 }
 ?>
 <title>Previous Page</title>
-<link><?php echo $url;?></link><media:thumbnail url="/scripts/image/left.jpg" />
+<link><?php echo $url;?></link><media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/left.jpg" />
 </item>
 
 
@@ -76,7 +76,7 @@ foreach($videos as $video) {
 
 $pos = strpos($image, '.jpg');
 if ($pos !== false) {
-    $link = 'http://127.0.0.1:82/scripts/php/filmeonline24_link.php?file='.$link;
+    $link = 'http://127.0.0.1:82/scripts/php/filme_link.php?file='.$link;
     echo '<item>';
     echo '<title>'.$title.'</title>';
     echo '<link>'.$link.'</link>';	
@@ -97,7 +97,7 @@ if($search) {
 ?>
 <title>Next Page</title>
 <link><?php echo $url;?></link>
-<media:thumbnail url="/scripts/image/right.jpg" />
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/right.jpg" />
 </item>
 
 </channel>
