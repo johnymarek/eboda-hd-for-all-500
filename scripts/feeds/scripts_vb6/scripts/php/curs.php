@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
 <mediaDisplay name="threePartsView" showDefaultInfo="no" bottomYPC="0" itemGap="0" itemPerPage="10" showHeader="no" sideLeftWidthPC="0" itemImageXPC="0" itemImageHeightPC="0" itemImageWidthPC="0" itemXPC="5" itemYPC="10" itemWidthPC="50" itemHeightPC="8" capWidthPC="55" unFocusFontColor="101:101:101" focusFontColor="255:255:255" 
 idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
-        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
-        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
-        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
-        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
-        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
-        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
-        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy8.png</idleImage>
 <backgroundDisplay>
-<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>/scripts/image/background_main.jpg</image>
+<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>/tmp/hdd/volumes/HDD1/scripts/image/background_main.jpg</image>
 </backgroundDisplay>
 </mediaDisplay>
 <channel>

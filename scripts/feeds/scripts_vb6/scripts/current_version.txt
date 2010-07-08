@@ -1,6 +1,0 @@
-VERSION=0.1
-SERIAL=1
-
-
-#end
-

@@ -1,4 +1,4 @@
-﻿<?php echo "<?phpxml version='1.0' ?>"; ?>
+﻿<?php echo "<?xml version='1.0' ?>"; ?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
 
 <channel>
@@ -13,22 +13,13 @@ if($query) {
    $page = $queryArr[0];
    $search = $queryArr[1];
 }
-//http://www.dailymotion.com/relevance/search/trailer/2
+$search = str_replace(' ','+',$search);
 if($page) {
-    if($search) {
-        $html = file_get_contents("http://www.dailymotion.com/relevance/search/".$search."/".$page."/");
-    } else {
-        $html = file_get_contents("http://www.youtube.com/videos?s=mp&t=t&cr=US&p=".$page."");
-    }
+	$html = file_get_contents("http://www.dailymotion.com/relevance/search/".$search."/".$page."/");
 } else {
-    $page = 1;
-    if($search) {
-        $html = file_get_contents("http://www.dailymotion.com/relevance/search/".$search."/");
-    } else {
-        $html = file_get_contents("http://www.youtube.com/videos?s=mp&t=t&cr=US&p=1");
-    }
+  $page = 1;
+  $html = file_get_contents("http://www.dailymotion.com/relevance/search/".$search."/");
 }
-
 
 if($page > 1) { ?>
 
@@ -41,7 +32,7 @@ if($search) {
 }
 ?>
 <title>Previous Page</title>
-<link><?php echo $url;?></link><media:thumbnail url="/scripts/image/left.jpg" />
+<link><?php echo $url;?></link><media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/left.jpg" />
 </item>
 
 
@@ -49,7 +40,7 @@ if($search) {
 
 <?php
 
-$videos = explode('<a class="dmco_simplelink preview_link white_border', $html);
+$videos = explode('<div class="dmpi_video_preview', $html);
 
 unset($videos[0]);
 $videos = array_values($videos);
@@ -58,7 +49,7 @@ foreach($videos as $video) {
     $t1 = explode('href="', $video);
     $t2 = explode('"', $t1[1]);
     $link = 'http://www.dailymotion.com'.$t2[0];
-//echo $link;
+
     $t1 = explode(' src="', $video);
     $t2 = explode('"', $t1[1]);
     $image = $t2[0];
@@ -67,20 +58,15 @@ foreach($videos as $video) {
     $t2 = explode('"', $t1[1]);
     $title = $t2[0];
 
-    $html = file_get_contents($link);
-    $t1 = explode('so.addVariable("video", "', $html);
-    $t2 = explode('"', $t1[1]);
-    $link = $t2[0];
-
+		$link="http://127.0.0.1:82/scripts/php/dm_link.php?file=".$link;
 
     echo '<item>';
     echo '<title>'.$title.'</title>';
     echo '<link>'.$link.'</link>';
     echo '<media:thumbnail url="'.$image.'" />';
-    echo '<enclosure type="video/flv" url="'.$link.'"/>';	
     echo '</item>';
+    print "\n";
 }
-
 
 ?>
 <item>
@@ -93,7 +79,7 @@ if($search) {
 ?>
 <title>Next Page</title>
 <link><?php echo $url;?></link>
-<media:thumbnail url="/scripts/image/right.jpg" />
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/right.jpg" />
 </item>
 
 </channel>

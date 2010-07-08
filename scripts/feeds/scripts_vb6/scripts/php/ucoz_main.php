@@ -7,14 +7,14 @@
 		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
 		filme online ucoz.com
 		</text>	
-        <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
-        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
-        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
-        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
-        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
-        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
-        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
-        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy8.png</idleImage>
 	</mediaDisplay>
 <channel>
 	<title>filmehd - main</title>
@@ -22,7 +22,7 @@
 	<item>
 		<title>Filme Noi</title>
 	<link>http://127.0.0.1:82/scripts/php/ucoz.php?query=,http://www.filme-online.ucoz.com/news</link>
-	<media:thumbnail url="/scripts/image/movies.png" />
+	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/movies.png" />
 	</item>
 <?php
 //<li class="cat-item
@@ -47,7 +47,7 @@ foreach($videos as $video) {
     echo '<item>';
     echo '<title>'.$title.'</title>';
     echo '<link>http://127.0.0.1:82/scripts/php/ucoz.php?query=,'.$link.'</link>';	
-    echo '<media:thumbnail url="/scripts/image/movies.png" />';
+    echo '<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/movies.png" />';
     echo '</item>';
 }
 ?>

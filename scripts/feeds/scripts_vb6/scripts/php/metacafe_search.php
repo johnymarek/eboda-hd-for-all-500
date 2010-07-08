@@ -1,4 +1,4 @@
-﻿<?php echo "<?phpxml version='1.0' ?>"; ?>
+﻿<?php echo "<?xml version='1.0' ?>"; ?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
 
 <channel>
@@ -13,7 +13,7 @@ if($query) {
    $page = $queryArr[0];
    $search = $queryArr[1];
 }
-//http://www.metacafe.com/tags/Movie_Trailers/page-2/
+$search = str_replace(' ','_',$search);
 if($page) {
     if($search) {
         $html = file_get_contents("http://www.metacafe.com/tags/".$search."/page-".$page."/");
@@ -71,22 +71,16 @@ foreach($videos as $video) {
     $t2 = explode('"', $t1[1]);
     $title = $t2[0];
 
-//    $html = file_get_contents($link);
-//    $t1 = explode(' videourl="', $html);
-//    $t2 = explode('"', $t1[1]);
-//    $link = $t2[0];
 $html = file_get_contents($link);
 $link = urldecode(str_between($html, '<object classid="', '</object>'));
-
-//"mediaURL":"http:\/\/akvideos.metacafe.com\/ItemFiles\/%5BFrom%20www.metacafe.com%5D%204427778.13709542.11.flv"}
-$link = str_between($link,'"mediaURL":"','"');
-//echo $mu;
-$link = urldecode($link);
-//http:\/\/akvideos.metacafe.com\/ItemFiles\/[From www.metacafe.com] 4427778.13709542.11.flv
-$link= str_replace('\/','/',$link);
-$link = str_replace(' ','%20',$link);
-$link = str_replace('[','%5B',$link);
-$link = str_replace(']','%5D',$link);
+$link1 = str_between($link,'"mediaURL":"','"');
+$key = str_between($link,'"key":"','"');
+$link1= str_replace('\/','/',$link1);
+$link1= str_replace('\/','/',$link1);
+$link1 = str_replace(' ','%20',$link1);
+$link1 = str_replace('[','%5B',$link1);
+$link1 = str_replace(']','%5D',$link1);
+$link = $link1."?__gda__=".$key;
 
     echo '<item>';
     echo '<title>'.$title.'</title>';

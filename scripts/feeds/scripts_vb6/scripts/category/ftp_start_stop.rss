@@ -33,14 +33,14 @@
 
 <item>
 <title>Start/Stop FTP Server</title>
-<link>/scripts/category/ftp_start_stop.rss</link>
-<media:thumbnail url="/scripts/image/network_tools.jpg"/>
+<link>/tmp/hdd/volumes/HDD1/scripts/category/ftp_start_stop.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/network_tools.jpg"/>
 </item>
 
 <item>
 <title>Go Home</title>
-<link>/scripts/menu.rss</link>
-<media:thumbnail url="/scripts/image/network_tools.jpg"/>
+<link>/tmp/hdd/volumes/HDD1/scripts/menu.rss</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/network_tools.jpg"/>
 </item>
 
 </channel>

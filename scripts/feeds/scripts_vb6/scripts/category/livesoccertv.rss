@@ -1,0 +1,23 @@
+<?xml version='1.0' ?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+
+<channel>
+	<title>livesoccertv</title>
+	<menu>main menu</menu>
+
+
+<item>
+<title>livesoccertv - World Cup</title>
+<link>http://127.0.0.1:82/scripts/php/livesoccertv_w.php</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/livesoccertv.gif" />
+</item>
+
+<item>
+<title>livesoccertv - All Video</title>
+<link>http://127.0.0.1:82/scripts/php/livesoccertv_a.php</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/livesoccertv.gif" />
+</item>
+
+</channel>
+</rss>
+

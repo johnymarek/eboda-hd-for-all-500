@@ -21,7 +21,7 @@ foreach($videos as $video) {
     $day = $t2[0];
     echo '<item>';
     echo '<title>================================'.$day.'================================</title>';	
-    echo '<media:thumbnail url="/scripts/image/tvblog.jpg" />';
+    echo '<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tvblog.jpg" />';
     echo '</item>';
     $days = explode('<div class="orar_item">',$video);
     unset($days[0]);

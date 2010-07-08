@@ -8,7 +8,7 @@
 <title>Search</title>
 <link>rss_command://search</link>
 <search url="http://127.0.0.1:82/scripts/php/yt_search.php?query=1,%s" />
-<media:thumbnail url="/scripts/image/search.png" />
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/search.png" />
 </item>
 
 <item>
@@ -39,6 +39,26 @@
 <item>
 <title>Movie</title>
 <link>http://127.0.0.1:82/scripts/php/yt_movie.php</link>
+</item>
+
+<item>
+<title>trailer Search</title>
+<link>http://127.0.0.1:82/scripts/php/yt_search.php?query=1,trailer</link>
+</item>
+
+<item>
+<title>game trailer Search</title>
+<link>http://127.0.0.1:82/scripts/php/yt_search.php?query=1,game+trailer</link>
+</item>
+
+<item>
+<title>UEFA Search</title>
+<link>http://127.0.0.1:82/scripts/php/yt_search.php?query=1,uefa</link>
+</item>
+
+<item>
+<title>world cup 2010 Search</title>
+<link>http://127.0.0.1:82/scripts/php/yt_search.php?query=1,world+cup+2010</link>
 </item>
 
 </channel>
