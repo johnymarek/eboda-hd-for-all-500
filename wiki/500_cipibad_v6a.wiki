@@ -1,6 +1,6 @@
 #summary 500_cipibad_v6a
 
-= Nou firmware v6a bazat pe Playon!HD PV73100 Firmware Version: r4318 =
+= Nou firmware v6a bazat pe Playon!HD PV73100 Firmware Version: r4318  - not ready yet=
 
 v6a:
   * webserver+php support noi (cele din optware ocupau prea mult spatiu/memorie)
