@@ -1,7 +1,7 @@
 #summary 500_cipibad_v6
 
 
-= Nou firmware disponibil v6 (bazat pe 3617) =
+= Nou firmware disponibil v6 (bazat pe 3617) - not reasy yet =
 
 http://eboda-hd-for-all-500.googlecode.com/files/HD_for_all_500_cipibad_v6.zip
 
