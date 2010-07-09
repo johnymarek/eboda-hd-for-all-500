@@ -2,7 +2,7 @@
 
 = Nou firmware v6a bazat pe Playon!HD PV73100 Firmware Version: r4318 =
 
-v5:
+v6a:
   * webserver+php support noi (cele din optware ocupau prea mult spatiu/memorie)
   * E-boda Web Control Panel (design by eqqie http://forum.softpedia.com/index.php?showuser=51317) http://IP_MP/ewcp.html 
   * new torrent client btpd 0.15 (merge iPlay, pentru alte trackere astept confirmari) http://IP_MP/webui
