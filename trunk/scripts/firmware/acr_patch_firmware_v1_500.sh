@@ -18,7 +18,7 @@ else
     exit 1
 fi
 
-if [ ! -d $1/src/500plus/Resource ]
+if [ ! -d $1/src/500/Resource ]
 then
     echo resources not found, repository incomplete
     exit 1
@@ -30,7 +30,7 @@ then
     exit 1
 fi
 
-if [ ! -d $1/src/500plus/image ]
+if [ ! -d $1/src/500/image ]
 then
     echo image not found, repository incomplete
     exit 1
@@ -78,11 +78,11 @@ unyaffs ../yaffs2_1.img
 # in last version e-boda makes /opt symlink to /usr/local/etc and mess-up my optware !!!
 rm -f opt
 
-# ewcp directory for apps
-mkdir ewcp
-
 # cb3pp directory for apps
 mkdir cb3pp
+
+# ewcp directory for apps
+mkdir ewcp
 
 # and opt for other people to play
 mkdir opt
@@ -101,14 +101,14 @@ mkdir utilities
 sed -i -e '/^root/c\
 root::0:0:root:/usr/local/etc/root:/bin/sh' etc/passwd
 
-## traducere + font
-cp  $1/src/500plus/Resource/* usr/local/bin/Resource 
+# traducere + font + servicii
+#cp  $1/src/500/Resource/*.str usr/local/bin/Resource 
+cp  $1/src/500/Resource/*.TTF usr/local/bin/Resource 
 
-
-
-# screensaver + skinpack NOPE
-#cp  $1/src/Resource/bmp/* usr/local/bin/Resource/bmp 
-#cp  $1/src/image/* usr/local/bin/image 
+# screensaver + skinpack
+# keep not the original from acryan
+#cp  $1/src/500/Resource/bmp/* usr/local/bin/Resource/bmp 
+#cp  $1/src/500/image/* usr/local/bin/image 
 
 # awk
 cp  $1/src/bin/* usr/bin
@@ -118,12 +118,14 @@ chmod +x usr/bin/*
 dir=`pwd`
 cd $1/www/
 find ewcp | grep -v .svn | grep -v '~' | zip -9 ${dir}/ewcp.zip -@
+cp ewcp-version.txt ${dir}/ewcp-version.txt
 cd $dir
 
 # /cb3pp
 dir=`pwd`
 cd $1/src/
 find cb3pp | grep -v .svn | grep -v '~'  | zip -9 ${dir}/cb3pp.zip -@
+cp cb3pp-version.txt ${dir}/cb3pp-version.txt
 cd $dir
 
 # cgi-bin
@@ -132,14 +134,13 @@ cp $1/scripts/feeds/scripts_vb6/cgi-bin/vb6/* tmp_orig/www/cgi-bin/
 chmod +x tmp_orig/www/cgi-bin/*
 
 # menu
-cp -r $1/src/500plus/menu/* usr/local/bin/scripts/
-#rename weather menu pictures
-mv usr/local/bin/IMS_Modules/Weather/image/weather_focus.jpg usr/local/bin/IMS_Modules/Weather/image/weather_focus_en.jpg
-mv usr/local/bin/IMS_Modules/Weather/image/weather_unfocus.jpg usr/local/bin/IMS_Modules/Weather/image/weather_unfocus_en.jpg
+cp -r $1/src/500/menu/* usr/local/bin/scripts/
+
 # scripts
 dir=`pwd`
 cd $1/scripts/feeds/scripts_vb6/
 find scripts | grep -v .svn | grep -v '~' | zip -9 ${dir}/scripts.zip -@
+cp scripts-version.txt ${dir}/scripts-version.txt
 cd ${dir}
 
 cd ..
@@ -189,16 +190,19 @@ else
 #storage online !! go go go
 
 storage=`mount | grep ${mount_pattern} | tr -s " " | cut -d " " -f 3 | head -n 1`
-echo "storage=$storage" > /usr/local/etc/storage
 
 #remount RW
 mount -o rw,remount $storage
 
 
+storage="$storage/zapps"
+echo "storage=$storage" > /usr/local/etc/storage
 
 #check if overmount dirs present 
+[ -d ${storage}] || mkdir ${storage}
 [ -d ${storage}/cb3pp ] || mkdir ${storage}/cb3pp
 [ -d ${storage}/scripts ] || mkdir ${storage}/scripts
+[ -d ${storage}/ewcp ] || mkdir ${storage}/ewcp
 
 if [ ! -f /cb3pp/.overmounted ];then
     echo overmount start
@@ -215,35 +219,59 @@ if [ ! -f /scripts/.overmounted ];then
     echo overmount end
 fi
 
+if [ ! -f /ewcp/.overmounted ];then
+    echo overmount start
+    mount -o bind ${storage}/ewcp /ewcp
+    touch /scripts/.overmounted
+    echo overmount end
+fi
+
 
 # check if .../cb3pp installed from us, if not, unpack
-if [ ! -f  ${storage}/cb3pp/.modified_full_firmware2 ]
+SERIAL=0
+ [ -f ${storage}/cb3pp-version.txt ] && . ${storage}/cb3pp-version.txt
+DISK_SERIAL=${SERIAL}
+. /cb3pp-version.txt
+
+if [ ${SERIAL} -gt ${DISK_SERIAL} ]
 then
 	rm -rf  ${storage}/cb3pp/*
 	cd ${storage}
 	unzip -o /cb3pp.zip 
-	touch  ${storage}/cb3pp/.modified_full_firmware2
+	cp /cb3pp-version.txt ${storage}/cb3pp-version.txt
+	
 fi
 
 
 # check if .../scripts from us, if not, unpack
-if [ ! -f ${storage}/scripts/.modified_full_firmware2 ]
+SERIAL=0
+ [ -f ${storage}/scripts-version.txt ] && . ${storage}/scripts-version.txt
+DISK_SERIAL=${SERIAL}
+. /scripts-version.txt
+
+if [ ${SERIAL} -gt ${DISK_SERIAL} ]
 then
         rm -rf ${storage}/scripts/*
         cd ${storage}
         unzip -o /scripts.zip
-        touch  ${storage}/scripts/.modified_full_firmware2
+	cp /scripts-version.txt ${storage}/scripts-version.txt
 fi
 
-# check if .../cb3pp installed from us, if not, unpack
-if [ ! -f ${storage}/ewcp/.modified_full_firmware2 ]
+# check if .../ewcp installed from us, if not, unpack
+SERIAL=0
+ [ -f ${storage}/ewcp-version.txt ] && . ${storage}/ewcp-version.txt
+DISK_SERIAL=${SERIAL}
+. /ewcp-version.txt
+
+if [ ${SERIAL} -gt ${DISK_SERIAL} ]
 then
         rm -rf ${storage}/ewcp/*
         cd  ${storage}
         unzip -o /ewcp.zip
-        touch  ${storage}/ewcp/.modified_full_firmware2
+	cp /ewcp-version.txt ${storage}/ewcp-version.txt
+
 	[ -f  ${storage}/cb3pp/etc/init.s/S99ewcp ] || cp  ${storage}/ewcp/S99ewcp  ${storage}/cb3pp/etc/init.d
-        chmod +x ${storage}/cb3pp/etc/init.d/S99ewcp
+	chmod +x ${storage}/cb3pp/etc/init.d/S99ewcp
 fi
 
 cb3pp_startup=/cb3pp/etc/init.d/rcS
@@ -265,6 +293,10 @@ cd ..
 rm -rf unpacked_etc/
 
 cd ..
+#copy eboda installer
+rm install_a
+cp $1/src/500/install/install_a .
+
 mv ../install.img ../install.img.orig
 tar cvf ../install.img *
 cd ..
