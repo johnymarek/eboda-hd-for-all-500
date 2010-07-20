@@ -1,94 +1,52 @@
 <?xml version="1.0"?>
 <!--Xtreamer Community 2010 - xMenu9 Cap-->
 <rss version="2.0" xmlns:media="http://purl.org/dc/elements/1.1/" xmlns:dc="http://purl.org/dc/elements/1.1/">
-<mediaDisplay name="photoView" 
-      fontSize="16" 
-      rowCount="3"
-      columnCount="4"
-      showHeader="yes"
-
-      itemGapXPC="2.5"
-      
-      drawItemText="no" 
-      itemImageXPC="10"
-      itemImageYPC="0"
-
-      itemOffsetXPC="7"
-      itemOffsetYPC="20"   
-
-
-      idleImageXPC="45"
-      idleImageYPC="42"
-      idleImageWidthPC="7"
-      idleImageHeightPC="16"
-      > 
-		<backgroundDisplay>
-			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
-			image/mele/backgd.jpg
-			</image>  
-		</backgroundDisplay>
-		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
-		/tmp/hdd/volumes/HDD1/scripts/image/folder.jpg
-		</image>
-		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
-		HDD Links
-		</text>	       
-       <idleImage> image/POPUP_LOADING_01.jpg </idleImage>
-       <idleImage> image/POPUP_LOADING_02.jpg </idleImage>
-       <idleImage> image/POPUP_LOADING_03.jpg </idleImage>
-   
-       <idleImage> image/POPUP_LOADING_04.jpg </idleImage>
-
-       <idleImage> image/POPUP_LOADING_05.jpg </idleImage>
-       <idleImage> image/POPUP_LOADING_06.jpg </idleImage>
-                    
-      </mediaDisplay>
 <channel>
 <title>Xtreamer Live! - #9</title>
 
 <item>
 <title>Live TV</title>
 <link>http://www.metafeeds.com/channel/livetv/rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/scripts9/image/livetv.jpg"/>
+<media:thumbnail url="/scripts/scripts9/image/livetv.jpg"/>
 <mediaDisplay name="threePartsView" showDefaultInfo="no" bottomYPC="0" itemGap="0" itemPerPage="10" showHeader="no" sideLeftWidthPC="0" itemImageXPC="0" itemImageHeightPC="0" itemImageWidthPC="0" itemXPC="5" itemYPC="10" itemWidthPC="50" itemHeightPC="8" capWidthPC="55" unFocusFontColor="101:101:101" focusFontColor="255:255:255" 
 idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy1.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy2.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy3.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy4.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy5.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy6.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy7.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy8.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
 <backgroundDisplay>
-<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>/tmp/hdd/volumes/HDD1/scripts/scripts9/backgrounds/bg_livetv.jpg</image>
+<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>/scripts/scripts9/backgrounds/bg_livetv.jpg</image>
 </backgroundDisplay>
 </mediaDisplay>
 </item>
 
-<!--<item>
+<item>
 <title>Community Tools - 'Xtensions'</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/scripts9/category/x.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/scripts9/image/x.jpg"/>
+<link>/scripts/scripts9/category/x.rss</link>
+<media:thumbnail url="/scripts/scripts9/image/x.jpg"/>
       <mediaDisplay name="photoView" showHeader="no" rowCount="2" columnCount="2" drawItemText="no" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="10" itemOffsetXPC="10" backgroundColor="0:0:0" sliding="yes" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy1.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy2.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy3.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy4.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy5.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy6.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy7.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy8.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
 <backgroundDisplay>
-<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>/tmp/hdd/volumes/HDD1/scripts/scripts9/backgrounds/bg_community.jpg</image>
+<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>/scripts/scripts9/backgrounds/bg_community.jpg</image>
 </backgroundDisplay>
       </mediaDisplay>
-    </item>-->>
+    </item>
 
 <item>
 <title>Social Networks</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/scripts9/category/sn.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/scripts9/image/sn.jpg"/>
+<link>/scripts/scripts9/category/sn.rss</link>
+<media:thumbnail url="/scripts/scripts9/image/sn.jpg"/>
 	<mediaDisplay name=photoFocusView 
 	focusItem="3"
 	imageFocus=null 
@@ -121,195 +79,175 @@ idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26"
 	showDefaultInfo="yes"
 	headerYPC="10"
 	idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy1.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy2.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy3.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy4.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy5.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy6.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy7.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy8.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
 </mediaDisplay> 
 </item> 
  
 
 <item>
 <title>News and Discussion</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/scripts9/category/nandd.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/scripts9/image/nandd.jpg"/>
+<link>/scripts/scripts9/category/nandd.rss</link>
+<media:thumbnail url="/scripts/scripts9/image/nandd.jpg"/>
       <mediaDisplay name="photoView" showHeader="no" rowCount="2" columnCount="4" drawItemText="no" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="10" itemOffsetXPC="10" backgroundColor="0:0:0" sliding="yes" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy1.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy2.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy3.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy4.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy5.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy6.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy7.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy8.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
       </mediaDisplay>
     </item>
 
 <item>
 <title>TV Shows and Movies</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/scripts9/category/tvandm.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/scripts9/image/tvandm.jpg"/>
+<link>/scripts/scripts9/category/tvandm.rss</link>
+<media:thumbnail url="/scripts/scripts9/image/tvandm.jpg"/>
       <mediaDisplay name="photoView" showHeader="no" rowCount="2" columnCount="4" drawItemText="no" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="10" itemOffsetXPC="10" backgroundColor="0:0:0" sliding="yes" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-                <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy1.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy2.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy3.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy4.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy5.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy6.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy7.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy8.png</idleImage>
+                <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
       </mediaDisplay>
     </item>
 
 <item>
 <title>Comedy and Entertainment</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/scripts9/category/cande.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/scripts9/image/cande.jpg"/>
+<link>/scripts/scripts9/category/cande.rss</link>
+<media:thumbnail url="/scripts/scripts9/image/cande.jpg"/>
       <mediaDisplay name="photoView" showHeader="no" rowCount="3" columnCount="4" drawItemText="no" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="10" itemOffsetXPC="10" backgroundColor="0:0:0" sliding="yes" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">        
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy1.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy2.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy3.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy4.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy5.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy6.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy7.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy8.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
       </mediaDisplay>
     </item>
 
 <item>
 <title>Music and Lifestyle</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/scripts9/category/mandl.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/scripts9/image/mandl.jpg"/>
+<link>/scripts/scripts9/category/mandl.rss</link>
+<media:thumbnail url="/scripts/scripts9/image/mandl.jpg"/>
       <mediaDisplay name="photoView" showHeader="no" rowCount="3" columnCount="4" drawItemText="no" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="10" itemOffsetXPC="10" backgroundColor="0:0:0" sliding="yes" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-                <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy1.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy2.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy3.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy4.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy5.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy6.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy7.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy8.png</idleImage>
+                <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
       </mediaDisplay>
     </item>
 
 <item>
 <title>Food and Drinks</title>
 <link>http://www.metafeeds.com/channel/food/rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/scripts9/image/fandd.jpg"/>
+<media:thumbnail url="/scripts/scripts9/image/fandd.jpg"/>
 <mediaDisplay name="threePartsView" sliding="yes" showDefaultInfo="no" bottomYPC="0" itemGap="0" itemPerPage="13" showHeader="no" sideLeftWidthPC="0" itemImageXPC="0" itemImageHeightPC="0" itemImageWidthPC="0" itemXPC="5" itemYPC="10" itemWidthPC="45" itemHeightPC="6.5" capWidthPC="50" unFocusFontColor="101:101:101" focusFontColor="255:255:255" 
 idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-                <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy1.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy2.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy3.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy4.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy5.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy6.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy7.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy8.png</idleImage>
+                <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
 <backgroundDisplay>
-<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>/tmp/hdd/volumes/HDD1/scripts/scripts9/backgrounds/bg_food.jpg</image>
+<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>/scripts/scripts9/backgrounds/bg_food.jpg</image>
 </backgroundDisplay>
 </mediaDisplay>
 		<item_template>
 		<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-                <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy1.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy2.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy3.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy4.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy5.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy6.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy7.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy8.png</idleImage>
+                <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
 	</mediaDisplay>
 		</item_template>
 </item>
 
 <item>
 <title>Sports and Games</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/scripts9/category/sandg.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/scripts9/image/sandg.jpg"/>
+<link>/scripts/scripts9/category/sandg.rss</link>
+<media:thumbnail url="/scripts/scripts9/image/sandg.jpg"/>
       <mediaDisplay name="photoView" showHeader="no" rowCount="3" columnCount="4" drawItemText="no" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="10" itemOffsetXPC="10" backgroundColor="0:0:0" sliding="yes" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-<idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy1.png</idleImage>
-<idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy2.png</idleImage>
-<idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy3.png</idleImage>
-<idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy4.png</idleImage>
-<idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy5.png</idleImage>
-<idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy6.png</idleImage>
-<idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy7.png</idleImage>
-<idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy8.png</idleImage>
+<idleImage>/scripts/scripts9/image/busy1.png</idleImage>
+<idleImage>/scripts/scripts9/image/busy2.png</idleImage>
+<idleImage>/scripts/scripts9/image/busy3.png</idleImage>
+<idleImage>/scripts/scripts9/image/busy4.png</idleImage>
+<idleImage>/scripts/scripts9/image/busy5.png</idleImage>
+<idleImage>/scripts/scripts9/image/busy6.png</idleImage>
+<idleImage>/scripts/scripts9/image/busy7.png</idleImage>
+<idleImage>/scripts/scripts9/image/busy8.png</idleImage>
       </mediaDisplay>
     </item>
 
 <item>
 <title>Wildlife and Nature</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/scripts9/category/wandn.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/scripts9/image/wandn.jpg"/>
+<link>/scripts/scripts9/category/wandn.rss</link>
+<media:thumbnail url="/scripts/scripts9/image/wandn.jpg"/>
       <mediaDisplay name="photoView" showHeader="no" rowCount="3" columnCount="4" drawItemText="no" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="10" itemOffsetXPC="10" backgroundColor="0:0:0" sliding="yes" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy1.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy2.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy3.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy4.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy5.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy6.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy7.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy8.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
       </mediaDisplay>
     </item>
 
 <item>
 <title>Technology and Education</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/scripts9/category/tande.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/scripts9/image/tande.jpg"/>
+<link>/scripts/scripts9/category/tande.rss</link>
+<media:thumbnail url="/scripts/scripts9/image/tande.jpg"/>
       <mediaDisplay name="photoView" showHeader="no" rowCount="4" columnCount="4" drawItemText="no" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="10" itemOffsetXPC="10" backgroundColor="0:0:0" sliding="yes" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy1.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy2.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy3.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy4.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy5.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy6.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy7.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy8.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
       </mediaDisplay>
     </item>
 
 <item>
 <title>Travel and International</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/scripts9/category/tandi.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/scripts9/image/tandi.jpg"/>
+<link>/scripts/scripts9/category/tandi.rss</link>
+<media:thumbnail url="/scripts/scripts9/image/tandi.jpg"/>
       <mediaDisplay name="photoView" showHeader="no" rowCount="2" columnCount="4" drawItemText="no" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="10" itemOffsetXPC="10" backgroundColor="0:0:0" sliding="yes" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy1.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy2.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy3.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy4.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy5.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy6.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy7.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy8.png</idleImage>
-      </mediaDisplay>
-    </item>
-
-<item>
-<title>Adult Channel - XXX</title>
-<link>rss_command://search</link>
-<search url="/tmp/hdd/volumes/HDD1/scripts/scripts9/category/adult%s.rss" />
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/scripts9/image/adult.jpg"/>
-      <mediaDisplay name="onePartView" showDefaultInfo="no" cornerRounding="no" itemXPC="18" itemWidthPC="22" capWidthPC="27" itemImageHeightPC="18" showHeader="no" itemOffsetXPC="5" itemOffsetYPC="5" itemGap="1" itemImageGap="1" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="5" itemHeightPC="18" backgroundColor="0:0:0" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy1.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy2.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy3.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy4.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy5.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy6.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy7.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy8.png</idleImage>
-<backgroundDisplay>
-<image offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>/tmp/hdd/volumes/HDD1/scripts/scripts9/backgrounds/bg_adult.jpg</image>
-</backgroundDisplay>
+        <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
       </mediaDisplay>
     </item>
 

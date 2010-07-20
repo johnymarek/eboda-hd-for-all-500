@@ -9,13 +9,13 @@
 <item>
 <title>livesoccertv - World Cup</title>
 <link>http://127.0.0.1:82/scripts/php/livesoccertv_w.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/livesoccertv.gif" />
+<media:thumbnail url="/scripts/image/livesoccertv.gif" />
 </item>
 
 <item>
 <title>livesoccertv - All Video</title>
 <link>http://127.0.0.1:82/scripts/php/livesoccertv_a.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/livesoccertv.gif" />
+<media:thumbnail url="/scripts/image/livesoccertv.gif" />
 </item>
 
 </channel>

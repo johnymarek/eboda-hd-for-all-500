@@ -22,28 +22,28 @@ dd=ziua din luna curenta, mmdd=luna,ziua, yyyymmdd=an,luna,zi
 <title>Bizbazar cu Moise Guran</title>
 <link>rss_command://search</link>
 <search url="http://127.0.0.1:82/scripts/php/antena3.php?query=%s,bizbazar" />
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/antena3.jpg" />
+<media:thumbnail url="/scripts/image/antena3.jpg" />
 </item>
 
 <item>
 <title>La ordinea zilei</title>
 <link>rss_command://search</link>
 <search url="http://127.0.0.1:82/scripts/php/antena3.php?query=%s,ordinea_zilei" />
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/antena3.jpg" />
+<media:thumbnail url="/scripts/image/antena3.jpg" />
 </item>
 
 <item>
 <title>Stirea zilei</title>
 <link>rss_command://search</link>
 <search url="http://127.0.0.1:82/scripts/php/antena3.php?query=%s,stirea_zilei" />
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/antena3.jpg" />
+<media:thumbnail url="/scripts/image/antena3.jpg" />
 </item>
 
 <item>
 <title>Sinteza zilei</title>
 <link>rss_command://search</link>
 <search url="http://127.0.0.1:82/scripts/php/antena3.php?query=%s,sinteza_zilei" />
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/antena3.jpg" />
+<media:thumbnail url="/scripts/image/antena3.jpg" />
 </item>
 
 </channel>

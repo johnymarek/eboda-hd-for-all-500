@@ -40,7 +40,7 @@ if($search) {
 }
 ?>
 <title>Previous Page</title>
-<link><?php echo $url;?></link><media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/left.jpg" />
+<link><?php echo $url;?></link><media:thumbnail url="/scripts/image/left.jpg" />
 </item>
 
 
@@ -54,7 +54,7 @@ function str_between($string, $start, $end){
 	return substr($string,$ini,$len); 
 }
 //$html = str_between($html,'<th width="15%">Stage</th>','</table>');
-$image = "/tmp/hdd/volumes/HDD1/scripts/image/livesoccertv.gif";
+$image = "/scripts/image/livesoccertv.gif";
 $videos = explode('<div id="videolink">', $html);
 
 unset($videos[0]);
@@ -114,7 +114,7 @@ if($search) {
 ?>
 <title>Next Page</title>
 <link><?php echo $url;?></link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/right.jpg" />
+<media:thumbnail url="/scripts/image/right.jpg" />
 </item>
 </channel>
 </rss>

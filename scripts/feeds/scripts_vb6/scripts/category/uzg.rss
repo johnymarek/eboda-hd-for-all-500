@@ -47,13 +47,13 @@
 <channel>
         <title>Uitzending Gemist</title>
         <link>./scripts/uzg.rss</link>
-        <media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/feed_default.png" width="120" height="90" />
+        <media:thumbnail url="/scripts/image/feed_default.png" width="120" height="90" />
 
 
 <item>
 <title>UZG: Populair vandaag</title>
 <link>http://www.eminent-online.com/amtest/uzg/index.php?page=populair1</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/uzg_logo.jpg" width="151" height="115" />
+<media:thumbnail url="/scripts/image/uzg_logo.jpg" width="151" height="115" />
 <mediaDisplay name=ThreePartsView
 	itemBackgroundColor=0:0:0
 	backgroundColor=0:0:0
@@ -89,7 +89,7 @@
 			</image>  
 		</backgroundDisplay>
 		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
-		/tmp/hdd/volumes/HDD1/scripts/image/uzg_title.jpg
+		/scripts/image/uzg_title.jpg
 		</image>	
 		<text  offsetXPC=20 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
 		Populair
@@ -103,7 +103,7 @@
 <item>
 <title>UZG: Eerdere tips</title>
 <link>http://www.eminent-online.com/amtest/uzg/index.php?page=tip1</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/uzg_logo.jpg" width="151" height="115" />
+<media:thumbnail url="/scripts/image/uzg_logo.jpg" width="151" height="115" />
 <mediaDisplay name=ThreePartsView
 	itemBackgroundColor=0:0:0
 	backgroundColor=0:0:0
@@ -139,7 +139,7 @@
 			</image>  
 		</backgroundDisplay>
 		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
-		/tmp/hdd/volumes/HDD1/scripts/image/uzg_title.jpg
+		/scripts/image/uzg_title.jpg
 		</image>	
 		<text  offsetXPC=20 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
 		Eerdere tips
@@ -150,7 +150,7 @@
 <item>
 <title>Zoek een uitzending</title>
 <link>rss_command://search</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/uzg_search_logo.jpg" width="151" height="115" />
+<media:thumbnail url="/scripts/image/uzg_search_logo.jpg" width="151" height="115" />
 <search url="http://www.eminent-online.com/amtest/uzg/index.php?find=%s" />
 <mediaDisplay name=ThreePartsView
 	itemBackgroundColor=0:0:0
@@ -187,7 +187,7 @@
 			</image>  
 		</backgroundDisplay>
 		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
-		/tmp/hdd/volumes/HDD1/scripts/image/uzg_title.jpg
+		/scripts/image/uzg_title.jpg
 		</image>	
 		<text  offsetXPC=20 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
 		Zoeken

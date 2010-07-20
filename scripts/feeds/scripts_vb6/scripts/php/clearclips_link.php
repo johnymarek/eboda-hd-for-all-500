@@ -17,7 +17,7 @@ $link = $_GET["file"];
 $link = str_replace(' ','%20',$link);
 $link = str_replace('[','%5B',$link);
 $link = str_replace(']','%5D',$link);
-$image = "/tmp/hdd/volumes/HDD1/scripts/image/clearclips.gif";
+$image = "/scripts/image/clearclips.gif";
 $title = "Link";
 //    $html = file_get_contents($link);
 //    $link = urldecode(str_between($html, "s1.addParam('flashvars','file=", "&"));

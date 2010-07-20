@@ -31,7 +31,7 @@ foreach($videos as $video) {
     $t2 = explode('<', $t1[1]);
     $title = trim($t2[0]);
 
-    $img = "/tmp/hdd/volumes/HDD1/scripts/image/serialepenet.png";
+    $img = "/scripts/image/serialepenet.png";
 		if ($link <> "") {
 		$link = "http://127.0.0.1:82/scripts/php/serialepe_link.php?file=".$link;
     echo '<item>';

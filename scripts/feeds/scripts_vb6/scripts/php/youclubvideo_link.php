@@ -17,7 +17,7 @@ $link = $_GET["file"];
 $link = str_replace(' ','%20',$link);
 $link = str_replace('[','%5B',$link);
 $link = str_replace(']','%5D',$link);
-$image = "/tmp/hdd/volumes/HDD1/scripts/image/youclubvideo.png";
+$image = "/scripts/image/youclubvideo.png";
 $title = "Link";
 
 $html = file_get_contents($link);

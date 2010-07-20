@@ -35,7 +35,7 @@
 			</image>  
 		</backgroundDisplay>
 		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
-		/tmp/hdd/volumes/HDD1/scripts/image/gt_title.jpg
+		/scripts/image/gt_title.jpg
 		</image>
 		<text  offsetXPC=23 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
 		GameTrailers
@@ -47,7 +47,7 @@
 <channel>
 	<title>Gametrailers</title>
 	<link>./scripts/gt.rss</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/logoTVGuide.gif" width="120" height="90" />
+	<media:thumbnail url="/scripts/image/logoTVGuide.gif" width="120" height="90" />
 
 
 <item>
@@ -89,7 +89,7 @@
 			</image>  
 		</backgroundDisplay>
 		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
-		/tmp/hdd/volumes/HDD1/scripts/image/gt_title.jpg
+		/scripts/image/gt_title.jpg
 		</image>	
 		<text  offsetXPC=23 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
 		Reviews
@@ -136,7 +136,7 @@
 			</image>  
 		</backgroundDisplay>
 		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
-		/tmp/hdd/volumes/HDD1/scripts/image/gt_title.jpg
+		/scripts/image/gt_title.jpg
 		</image>	
 		<text  offsetXPC=23 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
 		Wii spotlight
@@ -183,7 +183,7 @@
 			</image>  
 		</backgroundDisplay>
 		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
-		/tmp/hdd/volumes/HDD1/scripts/image/gt_title.jpg
+		/scripts/image/gt_title.jpg
 		</image>	
 		<text  offsetXPC=23 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
 		Xbox360 spotlight
@@ -230,7 +230,7 @@
 			</image>  
 		</backgroundDisplay>
 		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
-		/tmp/hdd/volumes/HDD1/scripts/image/gt_title.jpg
+		/scripts/image/gt_title.jpg
 		</image>	
 		<text  offsetXPC=23 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
 		Sony PS3 spotlight
@@ -277,7 +277,7 @@
 			</image>  
 		</backgroundDisplay>
 		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
-		/tmp/hdd/volumes/HDD1/scripts/image/gt_title.jpg
+		/scripts/image/gt_title.jpg
 		</image>	
 		<text  offsetXPC=23 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
 		Sony PSP spotlight
@@ -324,7 +324,7 @@
 			</image>  
 		</backgroundDisplay>
 		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
-		/tmp/hdd/volumes/HDD1/scripts/image/gt_title.jpg
+		/scripts/image/gt_title.jpg
 		</image>	
 		<text  offsetXPC=23 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
 		Nintendo DS spotlight

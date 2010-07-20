@@ -35,7 +35,7 @@
 			</image>  
 		</backgroundDisplay>
 		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
-		/tmp/hdd/volumes/HDD1/scripts/image/vimeo_title.jpg
+		/scripts/image/vimeo_title.jpg
 		</image>
 		<text  offsetXPC=20 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
 		Vimeo
@@ -46,7 +46,7 @@
 
 <channel>
 	<title>Vimeo</title>
-	<link>/tmp/hdd/volumes/HDD1/scripts/category/vimeo.rss</link>
+	<link>/scripts/category/vimeo.rss</link>
 	<media:thumbnail url="image/logoTVGuide.gif" width="120" height="90" />
 
 
@@ -89,7 +89,7 @@ itemBackgroundColor=0:0:0
 			</image>  
 		</backgroundDisplay>
 		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
-		/tmp/hdd/volumes/HDD1/scripts/image/vimeo_title.jpg
+		/scripts/image/vimeo_title.jpg
 		</image>
 		<text  offsetXPC=20 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
 		VimeoHD
@@ -136,7 +136,7 @@ itemBackgroundColor=0:0:0
 			</image>  
 		</backgroundDisplay>
 		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
-		/tmp/hdd/volumes/HDD1/scripts/image/vimeo_title.jpg
+		/scripts/image/vimeo_title.jpg
 		</image>
 		<text  offsetXPC=20 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
 		Staff picks
@@ -183,7 +183,7 @@ itemBackgroundColor=0:0:0
 			</image>  
 		</backgroundDisplay>
 		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
-		/tmp/hdd/volumes/HDD1/scripts/image/vimeo_title.jpg
+		/scripts/image/vimeo_title.jpg
 		</image>
 		<text  offsetXPC=20 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
 		Everything Animated
@@ -230,7 +230,7 @@ itemBackgroundColor=0:0:0
 			</image>  
 		</backgroundDisplay>
 		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
-		/tmp/hdd/volumes/HDD1/scripts/image/vimeo_title.jpg
+		/scripts/image/vimeo_title.jpg
 		</image>
 		<text  offsetXPC=20 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
 		Film School - Filmmaking
@@ -277,7 +277,7 @@ itemBackgroundColor=0:0:0
 			</image>  
 		</backgroundDisplay>
 		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
-		/tmp/hdd/volumes/HDD1/scripts/image/vimeo_title.jpg
+		/scripts/image/vimeo_title.jpg
 		</image>
 		<text  offsetXPC=20 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
 		Shoot for the Edit
@@ -324,7 +324,7 @@ itemBackgroundColor=0:0:0
 			</image>  
 		</backgroundDisplay>
 		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
-		/tmp/hdd/volumes/HDD1/scripts/image/vimeo_title.jpg
+		/scripts/image/vimeo_title.jpg
 		</image>
 		<text  offsetXPC=20 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
 		Music Videos
@@ -371,7 +371,7 @@ itemBackgroundColor=0:0:0
 			</image>  
 		</backgroundDisplay>
 		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
-		/tmp/hdd/volumes/HDD1/scripts/image/vimeo_title.jpg
+		/scripts/image/vimeo_title.jpg
 		</image>
 		<text  offsetXPC=20 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
 		Documentary Film
@@ -418,7 +418,7 @@ itemBackgroundColor=0:0:0
 			</image>  
 		</backgroundDisplay>
 		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
-		/tmp/hdd/volumes/HDD1/scripts/image/vimeo_title.jpg
+		/scripts/image/vimeo_title.jpg
 		</image>
 		<text  offsetXPC=20 offsetYPC=8 widthPC=45 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
 		Slowmotion and Timelapse Theater
@@ -465,7 +465,7 @@ itemBackgroundColor=0:0:0
 			</image>  
 		</backgroundDisplay>
 		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
-		/tmp/hdd/volumes/HDD1/scripts/image/vimeo_title.jpg
+		/scripts/image/vimeo_title.jpg
 		</image>
 		<text  offsetXPC=20 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
 		The Stereo 3D Channel
@@ -511,7 +511,7 @@ itemBackgroundColor=0:0:0
 			</image>  
 		</backgroundDisplay>
 		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
-		/tmp/hdd/volumes/HDD1/scripts/image/vimeo_title.jpg
+		/scripts/image/vimeo_title.jpg
 		</image>
 		<text  offsetXPC=20 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
 		The White House	
@@ -558,7 +558,7 @@ itemBackgroundColor=0:0:0
 			</image>  
 		</backgroundDisplay>
 		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
-		/tmp/hdd/volumes/HDD1/scripts/image/vimeo_title.jpg
+		/scripts/image/vimeo_title.jpg
 		</image>
 		<text  offsetXPC=20 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
 		Time Lapse in HD	
@@ -605,7 +605,7 @@ itemBackgroundColor=0:0:0
 			</image>  
 		</backgroundDisplay>
 		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
-		/tmp/hdd/volumes/HDD1/scripts/image/vimeo_title.jpg
+		/scripts/image/vimeo_title.jpg
 		</image>
 		<text  offsetXPC=20 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
 		01SHORTFILM	

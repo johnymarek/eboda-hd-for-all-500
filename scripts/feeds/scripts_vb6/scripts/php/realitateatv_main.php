@@ -17,7 +17,7 @@ $html = file_get_contents("http://webtv.realitatea.net/");
 
 $html = str_between($html,'<div id="ve_listing_categories">','</ul>');
 //$videos = explode('class="noborder" style="width: 50%;">', $html);
-$img = "/tmp/hdd/volumes/HDD1/scripts/image/realitateatv.gif";
+$img = "/scripts/image/realitateatv.gif";
 $videos = explode('<li', $html);
 unset($videos[0]);
 $videos = array_values($videos);

@@ -8,7 +8,7 @@
 <item>
 <title>filme online moca</title>
 <link>http://127.0.0.1:82/scripts/php/onlinemoca_start.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/movies.png" />
+<media:thumbnail url="/scripts/image/movies.png" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
 		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
 		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
@@ -33,7 +33,7 @@
 <item>
 <title>filmehdonline.net</title>
 <link>http://127.0.0.1:82/scripts/php/filmehdonline.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/movies.png" />
+<media:thumbnail url="/scripts/image/movies.png" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
 		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
 		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
@@ -58,7 +58,7 @@
 <item>
 <title>cinemaxx.ro</title>
 <link>http://127.0.0.1:82/scripts/php/cinemaxx_main.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/movies.png" />
+<media:thumbnail url="/scripts/image/movies.png" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
 		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
 		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
@@ -83,7 +83,7 @@
 <item>
 <title>filme online ucoz.com</title>
 <link>http://127.0.0.1:82/scripts/php/ucoz_main.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/movies.png" />
+<media:thumbnail url="/scripts/image/movies.png" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
 		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
 		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
@@ -107,8 +107,8 @@
 
 <item>
 <title>filmeonline24</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/category/filmeonline24.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/movies.png" />
+<link>/scripts/category/filmeonline24.rss</link>
+<media:thumbnail url="/scripts/image/movies.png" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
 		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
 		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
@@ -133,7 +133,7 @@
 <item>
 <title>filmeonlinegratis</title>
 <link>http://127.0.0.1:82/scripts/php/filmeonlinegratis.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/movies.png" />
+<media:thumbnail url="/scripts/image/movies.png" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
 		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
 		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
@@ -158,7 +158,7 @@
 <item>
 <title>www.filmeonlinegratis.me</title>
 <link>http://127.0.0.1:82/scripts/php/filmeonlinegratis_me.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/movies.png" />
+<media:thumbnail url="/scripts/image/movies.png" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
 		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
 		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
@@ -183,7 +183,7 @@
 <item>
 <title>la-cinema.net</title>
 <link>http://127.0.0.1:82/scripts/php/la-cinema.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/movies.png" />
+<media:thumbnail url="/scripts/image/movies.png" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
 		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
 		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
@@ -208,7 +208,7 @@
 <item>
 <title>www.filmeonlinefree.com</title>
 <link>http://127.0.0.1:82/scripts/php/filmeonlinefree.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/movies.png" />
+<media:thumbnail url="/scripts/image/movies.png" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
 		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
 		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
@@ -232,8 +232,8 @@
 
 <item>
 <title>FilmeOnline</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/category/filmeonline.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/movies.png" />
+<link>/scripts/category/filmeonline.rss</link>
+<media:thumbnail url="/scripts/image/movies.png" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
 		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
 		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
@@ -258,7 +258,7 @@
 <item>
 <title>xfilmeonline.ro</title>
 <link>http://127.0.0.1:82/scripts/php/xfilmeonline.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/movies.png" />
+<media:thumbnail url="/scripts/image/movies.png" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
 		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
 		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
@@ -283,7 +283,7 @@
 <!--<item>
 <title>filmehd.ro</title>
 <link>http://127.0.0.1:82/scripts/php/filmehd_ro.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/movies.png" />
+<media:thumbnail url="/scripts/image/movies.png" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
 		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
 		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
@@ -308,7 +308,7 @@
 <item>
 <title>filmeHD</title>
 <link>http://127.0.0.1:82/scripts/php/filmehd_main.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/movies.png" />
+<media:thumbnail url="/scripts/image/movies.png" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
 		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
 		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
@@ -332,8 +332,8 @@
 
 <item>
 <title>filme peteava.ro</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/category/peteava.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/movies.png" />
+<link>/scripts/category/peteava.rss</link>
+<media:thumbnail url="/scripts/image/movies.png" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
 		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
 		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
@@ -358,7 +358,7 @@
 <item>
 <title>filmecyps.com</title>
 <link>http://127.0.0.1:82/scripts/php/filmecyps.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/movies.png" />
+<media:thumbnail url="/scripts/image/movies.png" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
 		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
 		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
@@ -383,7 +383,7 @@
 <item>
 <title>filmelive.net</title>
 <link>http://127.0.0.1:82/scripts/php/filmelive.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/movies.png" />
+<media:thumbnail url="/scripts/image/movies.png" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
 		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
 		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
@@ -408,7 +408,7 @@
 <item>
 <title>filmeonlinehd.ro</title>
 <link>http://127.0.0.1:82/scripts/php/filmeonlinehd.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/movies.png" />
+<media:thumbnail url="/scripts/image/movies.png" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
 		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
 		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
@@ -433,7 +433,7 @@
 <item>
 <title>efilmeonline.ro</title>
 <link>http://127.0.0.1:82/scripts/php/efilmeonline.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/movies.png" />
+<media:thumbnail url="/scripts/image/movies.png" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
 		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
 		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
@@ -458,7 +458,7 @@
 <item>
 <title>filmeonlinenoi.com</title>
 <link>http://127.0.0.1:82/scripts/php/filmeonlinenoi.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/movies.png" />
+<media:thumbnail url="/scripts/image/movies.png" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
 		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
 		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
@@ -483,7 +483,7 @@
 <item>
 <title>filmeonlinesubtitrate.ro</title>
 <link>http://127.0.0.1:82/scripts/php/filmeonlinesubtitrate.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/movies.png" />
+<media:thumbnail url="/scripts/image/movies.png" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
 		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
 		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
@@ -508,7 +508,7 @@
 <item>
 <title>vezifilme.ro</title>
 <link>http://127.0.0.1:82/scripts/php/vezifilme_main.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/movies.png" />
+<media:thumbnail url="/scripts/image/movies.png" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
 		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
 		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
@@ -534,7 +534,7 @@
 <title>filme flvz.com (enter ID!)</title>
 <link>rss_command://search</link>
 <search url="http://127.0.0.1:82/scripts/php/flvz.php?id=%s" />
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/movies.png" />
+<media:thumbnail url="/scripts/image/movies.png" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
 		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
 		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
@@ -559,7 +559,7 @@
 <item>
 <title>filmesubtitrate.info - Seriale</title>
 <link>http://127.0.0.1:82/scripts/php/filmesubtitrate_main.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/movies.png" />
+<media:thumbnail url="/scripts/image/movies.png" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
 		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
 		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
@@ -584,7 +584,7 @@
 <item>
 <title>Serialepe.net</title>
 <link>http://127.0.0.1:82/scripts/php/serialepe_main.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/movies.png" />
+<media:thumbnail url="/scripts/image/movies.png" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
 		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
 		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
@@ -608,8 +608,8 @@
 
 <item>
 <title>Mediadirect</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/category/mediadirect.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/movies.png" />
+<link>/scripts/category/mediadirect.rss</link>
+<media:thumbnail url="/scripts/image/movies.png" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
 		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
 		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
@@ -634,7 +634,7 @@
 <item>
 <title>Seriale fara subtitrare - megavideo - experimental</title>
 <link>http://127.0.0.1:82/scripts/php/dstanley_main.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/movies.png" />
+<media:thumbnail url="/scripts/image/movies.png" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
 		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
 		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>

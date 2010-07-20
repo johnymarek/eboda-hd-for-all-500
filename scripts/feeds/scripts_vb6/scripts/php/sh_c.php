@@ -37,7 +37,7 @@
 			</image>  
 		</backgroundDisplay>
 		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
-		/tmp/hdd/volumes/HDD1/scripts/image/sc_title.jpg
+		/scripts/image/sc_title.jpg
 		</image>
 		<text  offsetXPC=60 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
 		ShoutCast - Category

@@ -7,13 +7,13 @@
 <item>
 <title>Agenda politicã</title>
 <link>http://127.0.0.1:82/scripts/php/tvr.php?id=4576</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tvr.jpg" />
+<media:thumbnail url="/scripts/image/tvr.jpg" />
 </item>
 
 <item>
 <title>Garantat 100%</title>
 <link>http://127.0.0.1:82/scripts/php/tvr.php?id=580</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tvr.jpg" />
+<media:thumbnail url="/scripts/image/tvr.jpg" />
 </item>
 
 </channel>

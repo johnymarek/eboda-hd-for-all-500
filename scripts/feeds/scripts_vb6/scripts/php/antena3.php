@@ -61,64 +61,64 @@ elseif ($l == 4) {
 if ($tip == "bizbazar") {
 echo '<item>';
 echo '<title>Bizbazar cu Moise Guran - '.$d.' (HQ)</title>';
-echo '<link>http://127.0.0.1/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:80/recantena3?id=1676684/mp4:Bizbazar_cu_Moise_Guran_L-J_'.$d.'_16-05-00.mp4</link>';
-echo '<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/antena3.jpg" />';
-echo '<enclosure type="video/mp4" url="http://127.0.0.1/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:80/recantena3?id=1676684/mp4:Bizbazar_cu_Moise_Guran_L-J_'.$d.'_16-05-00.mp4"/>';
+echo '<link>http://127.0.0.1:82/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:80/recantena3?id=1676684/mp4:Bizbazar_cu_Moise_Guran_L-J_'.$d.'_16-05-00.mp4</link>';
+echo '<media:thumbnail url="/scripts/image/antena3.jpg" />';
+echo '<enclosure type="video/mp4" url="http://127.0.0.1:82/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:80/recantena3?id=1676684/mp4:Bizbazar_cu_Moise_Guran_L-J_'.$d.'_16-05-00.mp4"/>';
 echo '</item>';
 
 echo '<item>';
 echo '<title>Bizbazar cu Moise Guran - '.$d.' (LQ)</title>';
-echo '<link>http://127.0.0.1/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:80/recantena3?id=1676684/mp4:Bizbazar_cu_Moise_Guran_L-J_'.$d.'_16-05-00_low.mp4</link>';
-echo '<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/antena3.jpg" />';
-echo '<enclosure type="video/mp4" url="http://127.0.0.1/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:80/recantena3?id=1676684/mp4:Bizbazar_cu_Moise_Guran_L-J_'.$d.'_16-05-00_low.mp4"/>';
+echo '<link>http://127.0.0.1:82/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:80/recantena3?id=1676684/mp4:Bizbazar_cu_Moise_Guran_L-J_'.$d.'_16-05-00_low.mp4</link>';
+echo '<media:thumbnail url="/scripts/image/antena3.jpg" />';
+echo '<enclosure type="video/mp4" url="http://127.0.0.1:82/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:80/recantena3?id=1676684/mp4:Bizbazar_cu_Moise_Guran_L-J_'.$d.'_16-05-00_low.mp4"/>';
 echo '</item>';
 } elseif ($tip == "ordinea_zilei") {
 	//La ordinea zilei
 	//rtmpe://fms8.mediadirect.ro:80/recantena3?id=1676684/mp4:La_ordinea_zilei_2010-06-18_18-45-00_low.mp4
 echo '<item>';
 echo '<title>La ordinea zilei - '.$d.' (HQ)</title>';
-echo '<link>http://127.0.0.1/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:80/recantena3?id=1676684/mp4:La_ordinea_zilei_'.$d.'_18-45-00.mp4</link>';
-echo '<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/antena3.jpg" />';
-echo '<enclosure type="video/mp4" url="http://127.0.0.1/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:80/recantena3?id=1676684/mp4:La_ordinea_zilei_'.$d.'_18-45-00.mp4"/>';
+echo '<link>http://127.0.0.1:82/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:80/recantena3?id=1676684/mp4:La_ordinea_zilei_'.$d.'_18-45-00.mp4</link>';
+echo '<media:thumbnail url="/scripts/image/antena3.jpg" />';
+echo '<enclosure type="video/mp4" url="http://127.0.0.1:82/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:80/recantena3?id=1676684/mp4:La_ordinea_zilei_'.$d.'_18-45-00.mp4"/>';
 echo '</item>';
 
 echo '<item>';
 echo '<title>La ordinea zilei - '.$d.' (LQ)</title>';
-echo '<link>http://127.0.0.1/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:80/recantena3?id=1676684/mp4:La_ordinea_zilei_'.$d.'_18-45-00_low.mp4</link>';
-echo '<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/antena3.jpg" />';
-echo '<enclosure type="video/mp4" url="http://127.0.0.1/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:80/recantena3?id=1676684/mp4:La_ordinea_zilei_'.$d.'_18-45-00_low.mp4"/>';
+echo '<link>http://127.0.0.1:82/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:80/recantena3?id=1676684/mp4:La_ordinea_zilei_'.$d.'_18-45-00_low.mp4</link>';
+echo '<media:thumbnail url="/scripts/image/antena3.jpg" />';
+echo '<enclosure type="video/mp4" url="http://127.0.0.1:82/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:80/recantena3?id=1676684/mp4:La_ordinea_zilei_'.$d.'_18-45-00_low.mp4"/>';
 echo '</item>';
 } elseif ($tip == "stirea_zilei") {
 	//Stirea zilei
 	//rtmpe://fms8.mediadirect.ro:1935/recantena3?id=1676684/mp4:Stirea_Zilei_2010-06-18_20-02-00_low.mp4
 echo '<item>';
 echo '<title>Stirea zilei - '.$d.' (HQ)</title>';
-echo '<link>http://127.0.0.1/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:1935/recantena3?id=1676684/mp4:Stirea_Zilei_'.$d.'_20-02-00.mp4</link>';
-echo '<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/antena3.jpg" />';
-echo '<enclosure type="video/mp4" url="http://127.0.0.1/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:1935/recantena3?id=1676684/mp4:Stirea_Zilei_'.$d.'_20-02-00.mp4"/>';
+echo '<link>http://127.0.0.1:82/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:1935/recantena3?id=1676684/mp4:Stirea_Zilei_'.$d.'_20-02-00.mp4</link>';
+echo '<media:thumbnail url="/scripts/image/antena3.jpg" />';
+echo '<enclosure type="video/mp4" url="http://127.0.0.1:82/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:1935/recantena3?id=1676684/mp4:Stirea_Zilei_'.$d.'_20-02-00.mp4"/>';
 echo '</item>';
 
 echo '<item>';
 echo '<title>Stirea zilei - '.$d.' (LQ)</title>';
-echo '<link>http://127.0.0.1/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:1935/recantena3?id=1676684/mp4:Stirea_Zilei_'.$d.'_20-02-00_low.mp4</link>';
-echo '<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/antena3.jpg" />';
-echo '<enclosure type="video/mp4" url="http://127.0.0.1/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:1935/recantena3?id=1676684/mp4:Stirea_Zilei_'.$d.'_20-02-00_low.mp4"/>';
+echo '<link>http://127.0.0.1:82/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:1935/recantena3?id=1676684/mp4:Stirea_Zilei_'.$d.'_20-02-00_low.mp4</link>';
+echo '<media:thumbnail url="/scripts/image/antena3.jpg" />';
+echo '<enclosure type="video/mp4" url="http://127.0.0.1:82/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:1935/recantena3?id=1676684/mp4:Stirea_Zilei_'.$d.'_20-02-00_low.mp4"/>';
 echo '</item>';	
 } elseif ($tip == "sinteza_zilei") {
 	//Sinteza zilei
 	//rtmpe://fms8.mediadirect.ro:80/recantena3?id=1676684/mp4:Sinteza_Zilei_cu_Mihai_Gadea_2010-06-17_21-30-00_low.mp4
 echo '<item>';
 echo '<title>Sinteza zilei - '.$d.' (HQ)</title>';
-echo '<link>http://127.0.0.1/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:80/recantena3?id=1676684/mp4:Sinteza_Zilei_cu_Mihai_Gadea_'.$d.'_21-30-00.mp4</link>';
-echo '<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/antena3.jpg" />';
-echo '<enclosure type="video/mp4" url="http://127.0.0.1/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:80/recantena3?id=1676684/mp4:Sinteza_Zilei_cu_Mihai_Gadea_'.$d.'_21-30-00.mp4"/>';
+echo '<link>http://127.0.0.1:82/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:80/recantena3?id=1676684/mp4:Sinteza_Zilei_cu_Mihai_Gadea_'.$d.'_21-30-00.mp4</link>';
+echo '<media:thumbnail url="/scripts/image/antena3.jpg" />';
+echo '<enclosure type="video/mp4" url="http://127.0.0.1:82/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:80/recantena3?id=1676684/mp4:Sinteza_Zilei_cu_Mihai_Gadea_'.$d.'_21-30-00.mp4"/>';
 echo '</item>';
 
 echo '<item>';
 echo '<title>Sinteza zilei - '.$d.' (LQ)</title>';
-echo '<link>http://127.0.0.1/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:80/recantena3?id=1676684/mp4:Sinteza_Zilei_cu_Mihai_Gadea_'.$d.'_21-30-00_low.mp4</link>';
-echo '<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/antena3.jpg" />';
-echo '<enclosure type="video/mp4" url="http://127.0.0.1/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:80/recantena3?id=1676684/mp4:Sinteza_Zilei_cu_Mihai_Gadea_'.$d.'_21-30-00_low.mp4"/>';
+echo '<link>http://127.0.0.1:82/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:80/recantena3?id=1676684/mp4:Sinteza_Zilei_cu_Mihai_Gadea_'.$d.'_21-30-00_low.mp4</link>';
+echo '<media:thumbnail url="/scripts/image/antena3.jpg" />';
+echo '<enclosure type="video/mp4" url="http://127.0.0.1:82/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:80/recantena3?id=1676684/mp4:Sinteza_Zilei_cu_Mihai_Gadea_'.$d.'_21-30-00_low.mp4"/>';
 echo '</item>';	
 }	
 ?>
