@@ -5,7 +5,7 @@ prefix="/cb3pp"
 PATH=${prefix}/bin:${prefix}/sbin:/sbin:/bin:/usr/sbin:/usr/bin
 NAME=thttpd
 DAEMON=${prefix}/sbin/${NAME}
-DAEMON_OPTS="-d /cb3pp/share/www"
+DAEMON_OPTS="-d /tmp/cbwww -p 82 -nos"
 
 
 
@@ -24,9 +24,14 @@ fi
 case "$rc" in
     start)
 	echo "Starting web server: $NAME"
+	mkdir /tmp/cbwww
+	ln -s ${prefix}/share/www /tmp/cbwww/
+	ln -s /scripts /tmp/cbwww/
 	nice -n 30 $DAEMON $DAEMON_OPTS
         ;;
     stop)
+    	rm /tmp/cbwww/*
+    	rmdir /tmp/cbwww
         if [ -n "`pidof $NAME`" ]; then
             echo "Stopping web server: $NAME"
             killall $NAME 2> /dev/null

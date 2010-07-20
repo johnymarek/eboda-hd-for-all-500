@@ -6,7 +6,6 @@
 #
 
 
-. ../ewcp-version.txt
 #HOSTNAME=`/bin/hostname`
 #LOAD=`/bin/cat /proc/loadavg`
 
@@ -48,6 +47,7 @@ EOF
 
 
 name_lighttpd="HTTP: Lighttpd webserver"
+name_thttpd="HTTP: thttpd webserver"
 name_apache="HTTP: Apache webserver"
 name_transmission="TORRENT: Transmission"
 name_rtorrent="TORRENT: rtorrent"
@@ -57,8 +57,8 @@ name_smbd="NAS: Samba"
 name_bftpd="NAS: bftpd"
 name_DvdPlayer="CORE: DvdPlayer"
 
-#apache transmission not in this scope
-for i in lighttpd btpd15  bftpd btpd smbd DvdPlayer 
+#apache transmission lighttpd not in this scope
+for i in thttpd btpd15  bftpd btpd smbd DvdPlayer 
 do
     pic=/eb_imgs/cp_on.gif
     script=util_${i}-stop.cgi
@@ -141,6 +141,7 @@ done
 
 startfile_dir="/cb3pp/etc/init.d/"
 startfile_lighttpd="S80lighttpd"
+startfile_thttpd="S80thttpd"
 startfile_apache="S08apache"
 startfile_transmission="S90transmission"
 startfile_rtorrent="S90rtorrent"
@@ -150,8 +151,8 @@ startfile_bftpd="S70bftpd"
 startfile_btpd="/tmp/package/script/btpd"
 startfile_smbd="/tmp/package/script/samba"
 
-#apache transmission not in this scope
-for i in lighttpd btpd15 bftpd
+#apache transmission lighttpd not in this scope
+for i in thttpd btpd15 bftpd
 do
     full_name=`eval echo \\$name_${i}`
     script="#"
