@@ -12,14 +12,13 @@ CLEAN=true
 
 
 #ssl for btpd
-openssl=false
 
 lighttpd=false
 
 #php
-pcre=true
+pcre=false
 php=false
-thttpd=true
+thttpd=false
 #end php
 
 
@@ -29,25 +28,35 @@ btpd=false
 #!!!!!! do not use apache for now !!!!!
 apache=false
 
+#begin rtorrent
 rutorrent=false
 rtgui=false
-
-iconv=false
-libxml2=false
-xmlrpc=false
-
-expat=false
-
-curl=true
+openssl=false
 dtach=false
 libsigc=false
 libtorrent=false
 ncurses=false
+xmlrpc=false
 rtorrent=false
-#!!!!!! do not use transmission for now !!!!
-transmission=true
 
-smbd=false
+#end rtorrent
+
+iconv=false
+libxml2=false
+
+expat=false
+
+#!!!!!! do not use transmission for now !!!!
+
+#begin transmission
+curl=false
+#openssl=false # also used for rtorrent
+transmission=false
+#end transmission
+
+#begin samba
+smbd=true
+#end samba
 
 nginx=false
 
@@ -56,7 +65,8 @@ strip=false
 # !!!!! tricks
 #
 
-# sudo mount -o bind /usr/local/toolchain_mipsel/ /mnt/toolchain_build/buildroot/build_mipsel_nofpu/staging_dir/mipsel-linux-uclibc/
+ sudo mount -o bind /usr/local/toolchain_mipsel/ /mnt/toolchain_build/buildroot/build_mipsel_nofpu/staging_dir/mipsel-linux-uclibc/
+# sudo mount -o bind /home/cbadescu/svn/eboda-hd-for-all-500/3pp/lib /mnt/toolchain_build/buildroot/build_mipsel_nofpu/staging_dir/mipsel-linux-uclibc/
 
 # #TODO
 # # here copy some toolchain libs to /.../lib
@@ -141,19 +151,19 @@ $nginx && (  [ -f nginx-0.8.44.tar.gz ] || $download_cmd http://www.nginx.org/do
 $apache && (  [ -f apache_1.3.37.tar.gz ] || $download_cmd http://archive.apache.org/dist/httpd/apache_1.3.37.tar.gz )
 
 
-$curl && (  [ -f curl-7.16.4.tar.gz ] || $download_cmd http://curl.haxx.se/download/curl-7.16.4.tar.gz )
+$curl && (  [ -f curl-7.21.0.tar.gz ] || $download_cmd http://curl.haxx.se/download/curl-7.21.0.tar.gz )
 
 $dtach && (  [ -f dtach-0.8.tar.gz ] || $download_cmd http://sourceforge.net/projects/dtach/files/dtach/0.8/dtach-0.8.tar.gz/download )
 
 $libsigc && (  [ -f libsigc++-2.0.18.tar.gz ] || $download_cmd http://ftp.gnome.org/pub/GNOME/sources/libsigc++/2.0/libsigc++-2.0.18.tar.gz )
 
-$libtorrent && (  [ -f libtorrent-0.12.5.tar.gz ] || $download_cmd http://libtorrent.rakshasa.no/downloads/libtorrent-0.12.5.tar.gz )
+$libtorrent && (  [ -f libtorrent-0.12.6.tar.gz ] || $download_cmd http://libtorrent.rakshasa.no/downloads/libtorrent-0.12.6.tar.gz )
 
 $ncurses && (  [ -f ncurses-5.7.tar.gz ] || $download_cmd http://ftp.gnu.org/gnu/ncurses/ncurses-5.7.tar.gz )
 
-$rtorrent && (  [ -f rtorrent-0.8.5.tar.gz ] || $download_cmd http://libtorrent.rakshasa.no/downloads/rtorrent-0.8.5.tar.gz )
+$rtorrent && (  [ -f rtorrent-0.8.6.tar.gz ] || $download_cmd http://libtorrent.rakshasa.no/downloads/rtorrent-0.8.6.tar.gz )
 
-$transmission && (  [ -f transmission-1.76.tar.bz2 ] || $download_cmd http://download.m0k.org/transmission/files/transmission-1.76.tar.bz2 )
+$transmission && (  [ -f transmission-2.01.tar.bz2 ] || $download_cmd http://mirrors.m0k.org/transmission/files/transmission-2.01.tar.bz2 )
 
 
 $btpd && ( [ -f btpd-0.15.tar.gz ] || $download_cmd http://www.murmeldjur.se/btpd/btpd-0.15.tar.gz )
@@ -166,7 +176,6 @@ $rutorrent && ( [ -f rutorrent-3.0.tar.gz ] || $download_cmd http://rutorrent.go
 
 
 $rtgui && ( [ -f rtgui-0.2.7.tgz ] || $download_cmd http://rtgui.googlecode.com/files/rtgui-0.2.7.tgz )
-
 
 
 #
@@ -190,6 +199,7 @@ then
 # nothing, statically linked
 
 fi
+
 
 #
 # iconv installation
@@ -254,7 +264,7 @@ then
     tar zxf $downloads/xmlrpc-1.12.00.tgz
     cd 1.12.00
     chmod +x ./configure
-    ./configure --prefix=${cipibad} --host=mipsel-linux --enable-libxml2-backend
+    ./configure --prefix=${cipibad} --host=mipsel-linux #--enable-libxml2-backend
     $CLEAN && make clean
     make
     chmod +x ./install.sh
@@ -419,8 +429,8 @@ fi
 if [ $curl == true ]
 then
     cd $compile
-    tar zxf $downloads/curl-7.16.4.tar.gz
-    cd curl-7.16.4
+    tar zxf $downloads/curl-7.21.0.tar.gz
+    cd curl-7.21.0
     ./configure --prefix=${cipibad} --host=mipsel-linux
     $CLEAN && make clean
     make
@@ -478,8 +488,8 @@ fi
 if [ $libtorrent == true ]
 then
     cd $compile
-    tar zxf $downloads/libtorrent-0.12.5.tar.gz
-    cd libtorrent-0.12.5
+    tar zxf $downloads/libtorrent-0.12.6.tar.gz
+    cd libtorrent-0.12.6
     STUFF_CFLAGS="-I/cb3pp/include -I/cb3pp/include/sigc++-2.0 -I/cb3pp/lib/sigc++-2.0/include" STUFF_LIBS="-L/cb3pp/lib -lsigc-2.0" OPENSSL_CFLAGS="-I/cb3pp/include" OPENSSL_LIBS="-L/cb3pp/lib -lssl -lcrypto" ./configure --prefix=${cipibad} --host=mipsel-linux --enable-aligned
     $CLEAN && make clean
     make
@@ -512,8 +522,8 @@ fi
 if [ $rtorrent == true ]
 then
     cd $compile
-    tar zxf $downloads/rtorrent-0.8.5.tar.gz
-    cd rtorrent-0.8.5
+    tar zxf $downloads/rtorrent-0.8.6.tar.gz
+    cd rtorrent-0.8.6
     patch -p0 < ${patches}/rtorrent-1.patch
     PATH=$PATH:/cb3pp/bin/ LIBS="-L/cb3pp/lib" sigc_CFLAGS="-I/cb3pp/include/ncurses/ -I/cb3pp/include -I/cb3pp/include/sigc++-2.0 -I/cb3pp/lib/sigc++-2.0/include" sigc_LIBS="-L/cb3pp/lib -lsigc-2.0 -ltorrent" libcurl_CFLAGS="-I/cb3pp/lib" libcurl_LIBS="-L/cb3pp/lib -lcurl" OPENSSL_CFLAGS="-I/cb3pp/include" OPENSSL_LIBS="-L/cb3pp/lib -lssl -lcrypto" ./configure --prefix=${cipibad} --host=mipsel-linux --with-xmlrpc-c
     $CLEAN && make clean
@@ -588,6 +598,22 @@ fi
 
 
 
+if [ $transmission == true ]
+then
+    cd $compile
+    tar jxf $downloads/transmission-2.01.tar.bz2
+    cd transmission-2.01
+    OPENSSL_CFLAGS="-I/cb3pp/include" OPENSSL_LIBS="-L/cb3pp/lib -lssl -lcrypto" CFLAGS="-I/cb3pp/include" LIBS="-L/cb3pp/lib" ./configure --prefix=${cipibad} --host=mipsel-linux --with-ssl=/cb3pp --with-curl=/cb3pp
+    $CLEAN && make clean
+    make
+    make install
+
+#
+# TODO ncurses target
+#
+
+
+fi
 
 
 
