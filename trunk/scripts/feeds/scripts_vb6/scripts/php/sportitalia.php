@@ -30,14 +30,14 @@ $sThisFile = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['SCRIPT_NAME'];
 $url = $sThisFile."?query=".($page+10);
 ?>
 <title>Previous Page</title>
-<link><?php echo $url;?></link><media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/left.jpg" />
+<link><?php echo $url;?></link><media:thumbnail url="/scripts/image/left.jpg" />
 </item>
 
 
 <?php } ?>
 
 <?php
-$image = "/tmp/hdd/volumes/HDD1/scripts/image/sportitalia.jpg";
+$image = "/scripts/image/sportitalia.jpg";
 for ($i = 1; $i <= 10; $i++) {		
     $html = file_get_contents("http://www.sportitalia.com/showvideo.aspx?id=".$page);
     $html = str_between($html,'<div id="ctl00_bodyContent_UPvideo">','</embed>');
@@ -68,7 +68,7 @@ $url = $sThisFile."?query=".($page);
 ?>
 <title>Next Page</title>
 <link><?php echo $url;?></link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/right.jpg" />
+<media:thumbnail url="/scripts/image/right.jpg" />
 </item>
 
 </channel>

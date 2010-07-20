@@ -26,87 +26,87 @@
 
 <item>
 <title>Antena 2</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://86.55.8.134/ant2</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://86.55.8.134/ant2"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://86.55.8.134/ant2</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://86.55.8.134/ant2"/>
 </item>
 
 <item>
 <title>1 TV Neamt</title>
 <link>http://1tv.ambra.ro</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
+<media:thumbnail url="/scripts/image/tv_radio.png" />
 <enclosure type="video/mp4" url="http://1tv.ambra.ro"/>
 </item>
 
 
 <item>
 <title>Alfa Omega Tv</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://ns.alfanet.ro/live</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://ns.alfanet.ro/live"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://ns.alfanet.ro/live</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://ns.alfanet.ro/live"/>
 </item>
 
 <item>
 <title>Alfa Omega CrestinTv</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://ns.alfanet.ro/CrestinTv</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://ns.alfanet.ro/CrestinTv"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://ns.alfanet.ro/CrestinTv</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://ns.alfanet.ro/CrestinTv"/>
 </item>
 
 <item>
 <title>Alfa Omega Movies</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://ns.alfanet.ro/AlfaOmegaMovies</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://ns.alfanet.ro/AlfaOmegaMovies"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://ns.alfanet.ro/AlfaOmegaMovies</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://ns.alfanet.ro/AlfaOmegaMovies"/>
 </item>
 
 <item>
 <title>Alfa Omega YouthTv</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://ns.alfanet.ro/YouthTv</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://ns.alfanet.ro/YouthTv"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://ns.alfanet.ro/YouthTv</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://ns.alfanet.ro/YouthTv"/>
 </item>
 
 <item>
 <title>Prima TV</title>
 <link>http://telem.ambra.ro</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
+<media:thumbnail url="/scripts/image/tv_radio.png" />
 <enclosure type="video/mp4" url="http://telem.ambra.ro"/>
 </item>
 
 <item>
 <title>TV M</title>
 <link>http://telem.ambra.ro</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
+<media:thumbnail url="/scripts/image/tv_radio.png" />
 <enclosure type="video/mp4" url="http://tvm.ambra.ro"/>
 </item>
 
 <item>
 <title>TV Samtel</title>
 <link>http://www.tv1samtel.ro:8080/stream.flv</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
+<media:thumbnail url="/scripts/image/tv_radio.png" />
 <enclosure type="video/mp4" url="http://www.tv1samtel.ro:8080/stream.flv"/>
 </item>
 
 <item>
 <title>Tele M</title>
 <link>http://telem.telem.ro:8780/telem_live.flv</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
+<media:thumbnail url="/scripts/image/tv_radio.png" />
 <enclosure type="video/mp4" url="http://telem.telem.ro:8780/telem_live.flv"/>
 </item>
 
 <item>
 <title>Prohova TV</title>
 <link>http://89.45.181.51:5000/test.flv</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
+<media:thumbnail url="/scripts/image/tv_radio.png" />
 <enclosure type="video/mp4" url="http://89.45.181.51:5000/test.flv"/>
 </item>
 
 <item>
 <title>Tele'M Botosani</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://195.64.178.23/telem</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://195.64.178.23/telem"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://195.64.178.23/telem</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://195.64.178.23/telem"/>
 </item>
 
 </channel>

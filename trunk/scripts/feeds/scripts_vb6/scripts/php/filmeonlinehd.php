@@ -41,7 +41,7 @@ if($search) {
 }
 ?>
 <title>Previous Page</title>
-<link><?php echo $url;?></link><media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/left.jpg" />
+<link><?php echo $url;?></link><media:thumbnail url="/scripts/image/left.jpg" />
 </item>
 
 
@@ -53,7 +53,7 @@ function str_between($string, $start, $end){
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
 	return substr($string,$ini,$len); 
 }
-$image = "/tmp/hdd/volumes/HDD1/scripts/image/movies.png";
+$image = "/scripts/image/movies.png";
 $videos = explode('<div class="entry-thumbnails">', $html);
 
 unset($videos[0]);
@@ -97,7 +97,7 @@ if($search) {
 ?>
 <title>Next Page</title>
 <link><?php echo $url;?></link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/right.jpg" />
+<media:thumbnail url="/scripts/image/right.jpg" />
 </item>
 
 </channel>

@@ -26,537 +26,537 @@
 
 <item>
 <title>James Bond TV</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://195.90.118.87/somethingmovies4_2</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://195.90.118.87/somethingmovies4_2"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://195.90.118.87/somethingmovies4_2</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://195.90.118.87/somethingmovies4_2"/>
 </item>
 
 <item>
 <title>ESPN, US</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://a3.v20473a.c20473.g.vc.akamaistream.net/7/3/20473/v0001/espn.download.akamai.com/20473/t_assets/20070217/4657511c3b57e3dc733def3701a3d94f38e6f132.wmv/</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://a3.v20473a.c20473.g.vc.akamaistream.net/7/3/20473/v0001/espn.download.akamai.com/20473/t_assets/20070217/4657511c3b57e3dc733def3701a3d94f38e6f132.wmv"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://a3.v20473a.c20473.g.vc.akamaistream.net/7/3/20473/v0001/espn.download.akamai.com/20473/t_assets/20070217/4657511c3b57e3dc733def3701a3d94f38e6f132.wmv/</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://a3.v20473a.c20473.g.vc.akamaistream.net/7/3/20473/v0001/espn.download.akamai.com/20473/t_assets/20070217/4657511c3b57e3dc733def3701a3d94f38e6f132.wmv"/>
 </item>
 
 
 <item>
 <title>SKY News, UK</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://live1.wm.skynews.servecast.net/skynews_wmlz_live300k</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://live1.wm.skynews.servecast.net/skynews_wmlz_live300k"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://live1.wm.skynews.servecast.net/skynews_wmlz_live300k</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://live1.wm.skynews.servecast.net/skynews_wmlz_live300k"/>
 </item>
 
 <item>
 <title>3ABN TV - English</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://endavo.total-stream.net/Endavo3abn</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://endavo.total-stream.net/Endavo3abn"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://endavo.total-stream.net/Endavo3abn</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://endavo.total-stream.net/Endavo3abn"/>
 </item>
 
 <item>
 <title>Orange Sport TV, France</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://livewm.orange.fr/live-multicanaux</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://livewm.orange.fr/live-multicanaux"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://livewm.orange.fr/live-multicanaux</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://livewm.orange.fr/live-multicanaux"/>
 </item>
 
 <item>
 <title>BFM TV, France</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://vipmms9.yacast.net/bfm_bfmtv</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://vipmms9.yacast.net/bfm_bfmtv"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://vipmms9.yacast.net/bfm_bfmtv</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://vipmms9.yacast.net/bfm_bfmtv"/>
 </item>
 
 <item>
 <title>Bundesligen TV, Germany</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://213.155.73.173/Speedup-TV_Fussball-TV_10</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://213.155.73.173/Speedup-TV_Fussball-TV_10"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://213.155.73.173/Speedup-TV_Fussball-TV_10</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://213.155.73.173/Speedup-TV_Fussball-TV_10"/>
 </item>
 
 <item>
 <title>Canale 7, Italy</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://www.superstreaming.it/canale7</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://www.superstreaming.it/canale7"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://www.superstreaming.it/canale7</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://www.superstreaming.it/canale7"/>
 </item>
 
 <item>
 <title>Primocanale, Italy</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://85.18.78.90/diretta</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://85.18.78.90/diretta"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://85.18.78.90/diretta</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://85.18.78.90/diretta"/>
 </item>
 
 <item>
 <title>3 Channel, Italy</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://iptv.telecard.it/3Channel</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://iptv.telecard.it/3Channel"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://iptv.telecard.it/3Channel</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://iptv.telecard.it/3Channel"/>
 </item>
 
 <item>
 <title>Cinquestelle TV, Italy</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://iptv.telecard.it/Cinquestelle</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://iptv.telecard.it/Cinquestelle"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://iptv.telecard.it/Cinquestelle</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://iptv.telecard.it/Cinquestelle"/>
 </item>
 
 <item>
 <title>Video Tolentino, Italy</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://streaming1.bsnewline.com/videotolentino</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://streaming1.bsnewline.com/videotolentino"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://streaming1.bsnewline.com/videotolentino</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://streaming1.bsnewline.com/videotolentino"/>
 </item>
 
 <item>
 <title>Studio 100, Italy</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://iptv.telecard.it/Studio100</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://iptv.telecard.it/Studio100"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://iptv.telecard.it/Studio100</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://iptv.telecard.it/Studio100"/>
 </item>
 
 <item>
 <title>TWiT Live</title>
 <link>http://bglive-a.bitgravity.com/twit/live/high</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
+<media:thumbnail url="/scripts/image/tv_radio.png" />
 <enclosure type="video/mp4" url="http://bglive-a.bitgravity.com/twit/live/high"/>
 </item>
 
 <item>
 <title>Inter Continental-Television</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://85.214.87.175/science-fiction-tv</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://85.214.87.175/science-fiction-tv"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://85.214.87.175/science-fiction-tv</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://85.214.87.175/science-fiction-tv"/>
 </item>
 
 <item>
 <title>Sky News</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://live1.wm.skynews.servecast.net/skynews_wmlz_live300k</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://live1.wm.skynews.servecast.net/skynews_wmlz_live300k"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://live1.wm.skynews.servecast.net/skynews_wmlz_live300k</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://live1.wm.skynews.servecast.net/skynews_wmlz_live300k"/>
 </item>
 
 <item>
 <title>smile (rus)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://mms.rrsat-internet.tv/smile</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://mms.rrsat-internet.tv/smile"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://mms.rrsat-internet.tv/smile</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://mms.rrsat-internet.tv/smile"/>
 </item>
 
 <item>
 <title>HBO (macedonia)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://62.162.99.150/HBO</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://62.162.99.150/HBO"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.162.99.150/HBO</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.162.99.150/HBO"/>
 </item>
 
 <item>
 <title>Jungle TV</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://62.162.58.41/Jungle_tv</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://62.162.58.41/Jungle_tv"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.162.58.41/Jungle_tv</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.162.58.41/Jungle_tv"/>
 </item>
 
 <item>
 <title>Tera</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://62.162.58.41/Tera</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://62.162.58.41/Tera"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.162.58.41/Tera</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.162.58.41/Tera"/>
 </item>
 
 <item>
 <title>MTV 1</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://62.162.58.41/MTV1</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://62.162.58.41/MTV1"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.162.58.41/MTV1</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.162.58.41/MTV1"/>
 </item>
 
 <item>
 <title>Nova TV</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://62.162.99.150/Nova_TV</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://62.162.99.150/Nova_TV"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.162.99.150/Nova_TV</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.162.99.150/Nova_TV"/>
 </item>
 
 <item>
 <title>OBN</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://62.162.99.150/OBN</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://62.162.99.150/OBN"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.162.99.150/OBN</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.162.99.150/OBN"/>
 </item>
 
 <item>
 <title>ARD</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://tagesschau-live2-webm-wmv.wm.llnwd.net/tagesschau_live2_webm_wmv</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://tagesschau-live2-webm-wmv.wm.llnwd.net/tagesschau_live2_webm_wmv"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://tagesschau-live2-webm-wmv.wm.llnwd.net/tagesschau_live2_webm_wmv</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://tagesschau-live2-webm-wmv.wm.llnwd.net/tagesschau_live2_webm_wmv"/>
 </item>
 
 <item>
 <title>NDR</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://ndr-fs-nds-hi-wmv.wm.llnwd.net/ndr_fs_nds_hi_wmv </link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://ndr-fs-nds-hi-wmv.wm.llnwd.net/ndr_fs_nds_hi_wmv "/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://ndr-fs-nds-hi-wmv.wm.llnwd.net/ndr_fs_nds_hi_wmv </link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://ndr-fs-nds-hi-wmv.wm.llnwd.net/ndr_fs_nds_hi_wmv "/>
 </item>
 
 <item>
 <title>NRJ DANCE</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_webtv02</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_webtv02"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_webtv02</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_webtv02"/>
 </item>
 
 <item>
 <title>NRJ HITS</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_tvhit</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_tvhit"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_tvhit</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_tvhit"/>
 </item>
 
 <item>
 <title>NRJ POP-ROCK</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_webtv03</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_webtv03"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_webtv03</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_webtv03"/>
 </item>
 
 <item>
 <title>Z1 (Croatia)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://217.14.208.58/index</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://217.14.208.58/index"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://217.14.208.58/index</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://217.14.208.58/index"/>
 </item>
 
 <item>
 <title>KAPITAL NETWORK TV</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://87.255.34.86/digitalidentity=zagabria</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://87.255.34.86/digitalidentity=zagabria"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://87.255.34.86/digitalidentity=zagabria</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://87.255.34.86/digitalidentity=zagabria"/>
 </item>
 
 <item>
 <title>OBN (Bosnia)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://62.162.99.150/OBN</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://62.162.99.150/OBN"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.162.99.150/OBN</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.162.99.150/OBN"/>
 </item>
 
 <item>
 <title>Nova TV</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://62.162.99.150/Nova_TV</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://62.162.99.150/Nova_TV"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.162.99.150/Nova_TV</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.162.99.150/Nova_TV"/>
 </item>
 
 <item>
 <title>Clap Tv France (Music)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://rr93.diffusepro.com/rr93</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://rr93.diffusepro.com/rr93"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://rr93.diffusepro.com/rr93</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://rr93.diffusepro.com/rr93"/>
 </item>
 
 <item>
 <title>VOF (Germany)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?http://members.inext.at/vof-tv/vof-tv/tv.wmv</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?http://members.inext.at/vof-tv/vof-tv/tv.wmv"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?http://members.inext.at/vof-tv/vof-tv/tv.wmv</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?http://members.inext.at/vof-tv/vof-tv/tv.wmv"/>
 </item>
 
 <item>
 <title>TRT</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.131/TV1</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.131/TV1"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://95.0.159.131/TV1</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://95.0.159.131/TV1"/>
 </item>
 
 <item>
 <title>TRT 2</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.131/TV2</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.131/TV2"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://95.0.159.131/TV2</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://95.0.159.131/TV2"/>
 </item>
 
 <item>
 <title>TRT 3</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.131/TV3</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.131/TV3"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://95.0.159.131/TV3</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://95.0.159.131/TV3"/>
 </item>
 
 <item>
 <title>TRT 4</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.131/TV4</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.131/TV4"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://95.0.159.131/TV4</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://95.0.159.131/TV4"/>
 </item>
 
 <item>
 <title>TRT 5</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.131/TV5</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.131/TV5"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://95.0.159.131/TV5</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://95.0.159.131/TV5"/>
 </item>
 
 <item>
 <title>TRT Belgesel</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.131/TRTBELGESEL</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.131/TRTBELGESEL"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://95.0.159.131/TRTBELGESEL</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://95.0.159.131/TRTBELGESEL"/>
 </item>
 
 <item>
 <title>TRT Music</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.130/TRTMUZIK</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.130/TRTMUZIK"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://95.0.159.130/TRTMUZIK</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://95.0.159.130/TRTMUZIK"/>
 </item>
 
 <item>
 <title>TRT Avaz</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.131/TRTAVAZ</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.131/TRTAVAZ"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://95.0.159.131/TRTAVAZ</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://95.0.159.131/TRTAVAZ"/>
 </item>
 
 <item>
 <title>TRT arabic</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.133/TRTARABIC</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.133/TRTARABIC"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://95.0.159.133/TRTARABIC</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://95.0.159.133/TRTARABIC"/>
 </item>
 
 <item>
 <title>TRT turk</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.131/TRTTURK</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.131/TRTTURK"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://95.0.159.131/TRTTURK</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://95.0.159.131/TRTTURK"/>
 </item>
 
 <item>
 <title>STV</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://canli.samanyolu.tv/stv</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://canli.samanyolu.tv/stv"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://canli.samanyolu.tv/stv</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://canli.samanyolu.tv/stv"/>
 </item>
 
 <item>
 <title>SRBT</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://94.75.240.158/sbrt</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://94.75.240.158/sbrt"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://94.75.240.158/sbrt</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://94.75.240.158/sbrt"/>
 </item>
 
 <item>
 <title>Piraziz</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://94.75.240.158/piraziztv</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://94.75.240.158/piraziztv"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://94.75.240.158/piraziztv</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://94.75.240.158/piraziztv"/>
 </item>
 
 <item>
 <title>Oncu rtv</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://yayin.canlitv.com/oncurtv</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://yayin.canlitv.com/oncurtv"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://yayin.canlitv.com/oncurtv</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://yayin.canlitv.com/oncurtv"/>
 </item>
 
 <item>
 <title>SKY</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://84.16.240.179/skytv</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://84.16.240.179/skytv"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://84.16.240.179/skytv</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://84.16.240.179/skytv"/>
 </item>
 
 <item>
 <title>TV5</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://94.75.240.130/tv5</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://94.75.240.130/tv5"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://94.75.240.130/tv5</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://94.75.240.130/tv5"/>
 </item>
 
 <item>
 <title>News tv</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://webtv.wtcankara.org.tr/NewsTV</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://webtv.wtcankara.org.tr/NewsTV"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://webtv.wtcankara.org.tr/NewsTV</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://webtv.wtcankara.org.tr/NewsTV"/>
 </item>
 
 <item>
 <title>YOL</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://85.214.55.224/yol</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://85.214.55.224/yol"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://85.214.55.224/yol</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://85.214.55.224/yol"/>
 </item>
 
 
 <item>
 <title>NRJ WEB TV</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_tvhit</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_tvhit"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_tvhit</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_tvhit"/>
 </item>
 
 
 <item>
 <title>SilverTV Live</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://live.silver-tv.com/silvertv</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://live.silver-tv.com/silvertv"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://live.silver-tv.com/silvertv</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://live.silver-tv.com/silvertv"/>
 </item>
 
 
 <item>
 <title>BFM TV</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://vipmms9.yacast.net/bfm_bfmtv</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://vipmms9.yacast.net/bfm_bfmtv"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://vipmms9.yacast.net/bfm_bfmtv</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://vipmms9.yacast.net/bfm_bfmtv"/>
 </item>
 
 <item>
 <title>Salaam TV Network</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://wms.salaamtv.com/S54</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://wms.salaamtv.com/S54"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://wms.salaamtv.com/S54</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://wms.salaamtv.com/S54"/>
 </item>
 
 <item>
 <title>tv7</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://live.tv7.fi/tv7_live</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://live.tv7.fi/tv7_live"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://live.tv7.fi/tv7_live</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://live.tv7.fi/tv7_live"/>
 </item>
 
 <item>
 <title>Bayrak TV-2</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://bms.brtk.net/brt2</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://bms.brtk.net/brt2"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://bms.brtk.net/brt2</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://bms.brtk.net/brt2"/>
 </item>
 
 <item>
 <title>www.TheFireTV.com</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://87.98.215.37/firetv</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://87.98.215.37/firetv"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://87.98.215.37/firetv</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://87.98.215.37/firetv"/>
 </item>
 
 <item>
 <title>AstroTV</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://wm.broadcast.tneg.de/AstroTV</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://wm.broadcast.tneg.de/AstroTV"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://wm.broadcast.tneg.de/AstroTV</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://wm.broadcast.tneg.de/AstroTV"/>
 </item>
 
 <item>
 <title>Radio Napoli Emme</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://65.19.129.26/radioemme</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://65.19.129.26/radioemme"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://65.19.129.26/radioemme</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://65.19.129.26/radioemme"/>
 </item>
 
 <item>
 <title>TV Oost live</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://media.rtvoost.nl/TVOost</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://media.rtvoost.nl/TVOost"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://media.rtvoost.nl/TVOost</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://media.rtvoost.nl/TVOost"/>
 </item>
 
 <item>
 <title>TV-L.RU</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://video.corbina.tv/live</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://video.corbina.tv/live"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://video.corbina.tv/live</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://video.corbina.tv/live"/>
 </item>
 
 <item>
 <title>Television de Galicia en directo</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://85.91.64.23/Television</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://85.91.64.23/Television"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://85.91.64.23/Television</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://85.91.64.23/Television"/>
 </item>
 
 <item>
 <title>Emision en directo de TVVi</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://hechicera.cap.gva.es/tvvi</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://hechicera.cap.gva.es/tvvi"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://hechicera.cap.gva.es/tvvi</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://hechicera.cap.gva.es/tvvi"/>
 </item>
 
 <item>
 <title>MD Media</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://83.142.83.22/bgld_n</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://83.142.83.22/bgld_n"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://83.142.83.22/bgld_n</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://83.142.83.22/bgld_n"/>
 </item>
 
 <item>
 <title>ANN News</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://wmt-od.stream.ne.jp/tv-asahi/tv-asahia/news/0703/wmt/20100517-200516027-52-300.wmv</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://wmt-od.stream.ne.jp/tv-asahi/tv-asahia/news/0703/wmt/20100517-200516027-52-300.wmv"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://wmt-od.stream.ne.jp/tv-asahi/tv-asahia/news/0703/wmt/20100517-200516027-52-300.wmv</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://wmt-od.stream.ne.jp/tv-asahi/tv-asahia/news/0703/wmt/20100517-200516027-52-300.wmv"/>
 </item>
 
 <item>
 <title>Parliament of Australia</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://DMZVIDEO1.aph.gov.au/HMS1V?WMContentBitrate=100000</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://DMZVIDEO1.aph.gov.au/HMS1V?WMContentBitrate=100000"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://DMZVIDEO1.aph.gov.au/HMS1V?WMContentBitrate=100000</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://DMZVIDEO1.aph.gov.au/HMS1V?WMContentBitrate=100000"/>
 </item>
 
 <item>
 <title>Centre Zahra France</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://live210.impek.com/zahra</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://live210.impek.com/zahra"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://live210.impek.com/zahra</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://live210.impek.com/zahra"/>
 </item>
 
 <item>
 <title>CAP 24</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://wm.live.tv-radio.com/cap24_360k</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://wm.live.tv-radio.com/cap24_360k"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://wm.live.tv-radio.com/cap24_360k</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://wm.live.tv-radio.com/cap24_360k"/>
 </item>
 
 <item>
 <title>PHOENIX</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://ondemand.msmedia.zdf.newmedia.nacamar.net/zdf/data/msmedia/phoenix/09/04/090403_phx_dialog_h.wmv</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://ondemand.msmedia.zdf.newmedia.nacamar.net/zdf/data/msmedia/phoenix/09/04/090403_phx_dialog_h.wmv"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://ondemand.msmedia.zdf.newmedia.nacamar.net/zdf/data/msmedia/phoenix/09/04/090403_phx_dialog_h.wmv</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://ondemand.msmedia.zdf.newmedia.nacamar.net/zdf/data/msmedia/phoenix/09/04/090403_phx_dialog_h.wmv"/>
 </item>
 
 <item>
 <title>sporttime_tv</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://globalserver.speednet.at/sporttime_tv</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://globalserver.speednet.at/sporttime_tv"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://globalserver.speednet.at/sporttime_tv</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://globalserver.speednet.at/sporttime_tv"/>
 </item>
 
 <item>
 <title>Video Stream Omroep Zeeland TV</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://stream1.zeelandnet.nl/omroepzeeland_tv</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://stream1.zeelandnet.nl/omroepzeeland_tv"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://stream1.zeelandnet.nl/omroepzeeland_tv</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://stream1.zeelandnet.nl/omroepzeeland_tv"/>
 </item>
 
 <item>
 <title>AVS</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://clusterstreamhobo.telenet-ops.be/AVS/nieuws/nieuwsdinsdag.wmv</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://clusterstreamhobo.telenet-ops.be/AVS/nieuws/nieuwsdinsdag.wmv"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://clusterstreamhobo.telenet-ops.be/AVS/nieuws/nieuwsdinsdag.wmv</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://clusterstreamhobo.telenet-ops.be/AVS/nieuws/nieuwsdinsdag.wmv"/>
 </item>
 
 <item>
 <title>msnbc</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://msnbc.wmod.llnwd.net/a275/e1/video/100/vh.asf</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://msnbc.wmod.llnwd.net/a275/e1/video/100/vh.asf"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://msnbc.wmod.llnwd.net/a275/e1/video/100/vh.asf</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://msnbc.wmod.llnwd.net/a275/e1/video/100/vh.asf"/>
 </item>
 
 <item>
 <title>Sport Italia</title>
 <link>http://89.45.181.51:5000/test.flv</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
+<media:thumbnail url="/scripts/image/tv_radio.png" />
 <enclosure type="video/mp4" url="http://89.45.181.51:5000/test.flv"/>
 </item>
 

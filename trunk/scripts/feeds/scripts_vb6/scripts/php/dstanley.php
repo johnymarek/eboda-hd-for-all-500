@@ -38,7 +38,7 @@ function str_between($string, $start, $end){
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
 	return substr($string,$ini,$len); 
 }
-$image = "/tmp/hdd/volumes/HDD1/scripts/image/mv_logo.gif";
+$image = "/scripts/image/mv_logo.gif";
 $link = str_replace(' ','%20',$link);
 $html = file_get_contents($link);
 if (stripos($html,"mv_logo.gif") !== false) {

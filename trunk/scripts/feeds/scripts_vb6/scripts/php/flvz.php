@@ -10,7 +10,7 @@ function str_between($string, $start, $end){
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
 	return substr($string,$ini,$len); 
 }
-$image = "/tmp/hdd/volumes/HDD1/scripts/image/movies.png";
+$image = "/scripts/image/movies.png";
 $id = $_GET["id"];
 $link = "http://upstream.flvz.com/convertite/".$id.".flv";
 //http://upstream.flvz.com/convertite/173.flv
@@ -26,7 +26,7 @@ echo'
 <item>
 	<title>Nine (2009)</title>
 	<link>http://upstream.flvz.com/convertite/173.flv</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/movies.png" />
+	<media:thumbnail url="/scripts/image/movies.png" />
 	<enclosure type="video/flv" url="http://upstream.flvz.com/convertite/173.flv" />
 	</item>
 </channel>

@@ -29,7 +29,7 @@ foreach($videos as $video) {
     $t4 = explode('<',$t3[1]);
     $title = $t4[0];
 
-    $image = "/tmp/hdd/volumes/HDD1/scripts/image/bing.jpg";
+    $image = "/scripts/image/bing.jpg";
 		$link = 'http://127.0.0.1:82/scripts/php/bing_link.php?file='.$link;
 		$data = str_between($video,'<span class="date p2-2">','</span>');
     echo '<item>';
