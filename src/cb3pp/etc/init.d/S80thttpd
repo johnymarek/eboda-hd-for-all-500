@@ -37,13 +37,32 @@ case "$rc" in
             killall $NAME 2> /dev/null
         fi
         ;;
+    status)
+	if [ -n "`pidof $NAME`" ]; then
+	    echo $NAME is running
+	    exit 0
+	else
+	    echo $NAME is stopped
+	    exit 1
+	fi
+	;;
+    try-start)
+	if [ -n "`pidof $NAME`" ]; then
+	    echo $NAME is running
+	    exit 0
+	else
+	    echo $NAME is stopped, starting it
+            "$0" restart
+	fi
+
+	;;
     restart)
         "$0" stop
         sleep 1
         "$0" start
         ;;
     *)  
-        echo "Usage: $0 (start|stop|restart|usage)"
+        echo "Usage: $0 (start|stop|restart|status|try-start|usage)"
         ;;
 esac
 
