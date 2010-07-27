@@ -96,6 +96,8 @@ mkdir xLive9
 # and utilities for me to play
 mkdir utilities
 
+#for cron
+mkdir /var/spool/cron/crontabs
 
 #home dir for root part 1
 sed -i -e '/^root/c\
@@ -201,6 +203,8 @@ echo "storage=$storage" > /usr/local/etc/storage
 [ -d ${storage}/cb3pp ] || mkdir ${storage}/cb3pp
 [ -d ${storage}/scripts ] || mkdir ${storage}/scripts
 [ -d ${storage}/ewcp ] || mkdir ${storage}/ewcp
+[ -d ${storage}/crontabs ] || mkdir ${storage}/crontabs
+
 
 if [ ! -f /cb3pp/.overmounted ];then
     echo overmount start
@@ -220,10 +224,18 @@ fi
 if [ ! -f /ewcp/.overmounted ];then
     echo overmount start
     mount -o bind ${storage}/ewcp /ewcp
-    touch /scripts/.overmounted
+    touch /ewcp/.overmounted
     echo overmount end
 fi
 
+
+if [ ! -f /var/spool/cron/crontabs/.overmounted ];then
+    echo overmount start
+    mount -o bind ${storage}/crontabs /var/spool/cron/crontabs/
+    touch /var/spool/cron/crontabs/.overmounted
+    echo overmount end
+fi
+/var/spool/cron/crontabs
 
 # check if .../cb3pp installed from us, if not, unpack
 SERIAL=0
