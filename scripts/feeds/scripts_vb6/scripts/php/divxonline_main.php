@@ -13,7 +13,7 @@ function str_between($string, $start, $end){
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
 	return substr($string,$ini,$len); 
 }
-$image = "/tmp/hdd/volumes/HDD1/scripts/image/divxonline.png";
+$image = "/scripts/image/divxonline.png";
 $videos = explode('<ul', $html);
 unset($videos[0]);
 $videos = array_values($videos);

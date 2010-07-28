@@ -14,7 +14,7 @@ function str_between($string, $start, $end){
 	return substr($string,$ini,$len); 
 }
 $html = file_get_contents("http://www.sportgioco.it/calcio/highlights.php");
-$image = "/tmp/hdd/volumes/HDD1/scripts/image/sportgioco.jpg";
+$image = "/scripts/image/sportgioco.jpg";
 $videos = explode('<tr>', $html);
 
 unset($videos[0]);

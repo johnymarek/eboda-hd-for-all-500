@@ -1,0 +1,6 @@
+#!/bin/sh
+cat <<EOF
+Content-type: video/x-ms-wmv
+
+EOF
+exec /cb3pp/bin/msdl_1.2.6+ -q -o - -m $QUERY_STRING

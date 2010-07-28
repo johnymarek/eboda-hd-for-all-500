@@ -7,19 +7,19 @@
 <item>
 <title>TV Gol</title>
 <link>http://127.0.0.1:82/scripts/php/myspace_tvgol.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
+<media:thumbnail url="/scripts/image/tv_radio.png" />
 </item>
 
 <item>
 <title>Ricardo's Videos</title>
 <link>http://127.0.0.1:82/scripts/php/myspace_ricardo.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
+<media:thumbnail url="/scripts/image/tv_radio.png" />
 </item>
 
 <item>
 <title>FOX Sports's Videos</title>
 <link>http://127.0.0.1:82/scripts/php/myspace_fox.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
+<media:thumbnail url="/scripts/image/tv_radio.png" />
 </item>
 
 </channel>

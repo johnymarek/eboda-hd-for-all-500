@@ -27,67 +27,67 @@
 <item>
 <title>Emisiuni tvt89</title>
 <link>http://127.0.0.1:82/scripts/php/tvt89.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tvt89.jpg" />
+<media:thumbnail url="/scripts/image/tvt89.jpg" />
 </item>
 
 <item>
 <title>1tvbacau.ro</title>
 <link>http://127.0.0.1:82/scripts/php/1tvbacau.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/1tvbacau.jpg" />
+<media:thumbnail url="/scripts/image/1tvbacau.jpg" />
 </item>
 
 <!--<item>
 <title>TV Bacau</title>
 <link>http://127.0.0.1:82/scripts/php/tvbacau.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tvbacau.gif" />
+<media:thumbnail url="/scripts/image/tvbacau.gif" />
 </item>-->
 
 <item>
 <title>ctvmedia (Constanta)</title>
 <link>http://127.0.0.1:82/scripts/php/ctvmedia.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/ctvmedia.jpg" />
+<media:thumbnail url="/scripts/image/ctvmedia.jpg" />
 </item>
 
 <item>
 <title>TVSat (Buzau)</title>
 <link>http://127.0.0.1:82/scripts/php/tvsatrm.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tvsat.gif" />
+<media:thumbnail url="/scripts/image/tvsat.gif" />
 </item>
 
 <!--<item>
 <title>InfoTV (Arad)</title>
 <link>http://127.0.0.1:82/scripts/php/infotv.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/infotv.gif" />
+<media:thumbnail url="/scripts/image/infotv.gif" />
 </item>-->
 
 <!--<item>
 <title>IntermediaTv (Suceava)</title>
 <link>http://127.0.0.1:82/scripts/php/intermediatv.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/intermediatv.png" />
+<media:thumbnail url="/scripts/image/intermediatv.png" />
 </item>-->
 
 <item>
 <title>RadioTeleviziunea Severin</title>
 <link>http://127.0.0.1:82/scripts/php/televiziuneaseverin.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/televiziuneaseverin.png" />
+<media:thumbnail url="/scripts/image/televiziuneaseverin.png" />
 </item>
 
 <!--<item>
 <title>TARGOVISTE TV</title>
 <link>http://127.0.0.1:82/scripts/php/tvtargoviste.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tvtargoviste.png" />
+<media:thumbnail url="/scripts/image/tvtargoviste.png" />
 </item>-->
 
 <!--<item>
 <title>TV Oltenia</title>
 <link>http://127.0.0.1:82/scripts/php/tvoltenia.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tvoltenia.jpg" />
+<media:thumbnail url="/scripts/image/tvoltenia.jpg" />
 </item>-->
 
 <item>
 <title>TeleM (Iasi)</title>
 <link>http://127.0.0.1:82/scripts/php/telem_main.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/telem.png" />
+<media:thumbnail url="/scripts/image/telem.png" />
 </item>
 
 </channel>

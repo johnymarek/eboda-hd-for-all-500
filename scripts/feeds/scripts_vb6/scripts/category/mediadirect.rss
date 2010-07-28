@@ -6,13 +6,13 @@
 <item>
 <title>Mediadirect - desene animate</title>
 <link>http://127.0.0.1:82/scripts/php/mediadirect_da.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/movies.png" />
+<media:thumbnail url="/scripts/image/movies.png" />
 </item>
 
 <item>
 <title>Mediadirect - filme</title>
 <link>http://127.0.0.1:82/scripts/php/mediadirect_film.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/movies.png" />
+<media:thumbnail url="/scripts/image/movies.png" />
 </item>
 
 

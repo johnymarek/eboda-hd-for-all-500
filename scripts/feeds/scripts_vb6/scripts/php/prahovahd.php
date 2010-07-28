@@ -23,7 +23,7 @@ foreach($videos as $video) {
     echo '<item>';
     echo '<title>'.$title.'</title>';
     echo '<link>'.$link.'</link>';
-    echo '<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />';
+    echo '<media:thumbnail url="/scripts/image/tv_radio.png" />';
     echo '<enclosure type="video/mp4" url="'.$link.'"/>';	
     echo '</item>';
 }

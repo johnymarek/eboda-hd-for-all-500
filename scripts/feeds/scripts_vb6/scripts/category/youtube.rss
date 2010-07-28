@@ -124,11 +124,11 @@
 
 <channel>
 	<title>YouTube Video</title>
-	<link>/tmp/hdd/volumes/HDD1/scripts/category/youtube.rss</link>
+	<link>/scripts/category/youtube.rss</link>
 
 <item>
 <title>Search Video</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/category/searchVideo.rss</link>
+<link>/scripts/category/searchVideo.rss</link>
 <media:thumbnail url="image/youtube.gif" width="240" height="180" />
 </item>	
 

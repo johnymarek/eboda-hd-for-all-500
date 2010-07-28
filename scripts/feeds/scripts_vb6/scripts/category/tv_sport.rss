@@ -27,49 +27,49 @@
 <item>
 <title>Emisiuni InfoPescarTV</title>
 <link>http://www.infopescar.tv/videoz/playlist.xml</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/infopescar.png" />
+<media:thumbnail url="/scripts/image/infopescar.png" />
 </item>
 
 <item>
 <title>Sport.ro - Inregistrari</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/category/sport_ro.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/sport_ro.gif" />
+<link>/scripts/category/sport_ro.rss</link>
+<media:thumbnail url="/scripts/image/sport_ro.gif" />
 </item>
 
 <item>
 <title>Liga2.ro</title>
 <link>http://127.0.0.1:82/scripts/php/liga2.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/liga2.gif" />
+<media:thumbnail url="/scripts/image/liga2.gif" />
 </item>
 
 <item>
 <title>UEFA</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/category/uefa.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/uefa4.jpg" />
+<link>/scripts/category/uefa.rss</link>
+<media:thumbnail url="/scripts/image/uefa4.jpg" />
 </item>
 
 <item>
 <title>livesoccertv</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/category/livesoccertv.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/livesoccertv.gif" />
+<link>/scripts/category/livesoccertv.rss</link>
+<media:thumbnail url="/scripts/image/livesoccertv.gif" />
 </item>
 
 <!--<item>
 <title>sportgioco.it</title>
 <link>http://127.0.0.1:82/scripts/php/sportgioco.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/sportgioco.jpg" />
+<media:thumbnail url="/scripts/image/sportgioco.jpg" />
 </item>-->
 
 <item>
 <title>sportitalia</title>
 <link>http://127.0.0.1:82/scripts/php/sportitalia.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/sportitalia.jpg" />
+<media:thumbnail url="/scripts/image/sportitalia.jpg" />
 </item>
 
 <item>
 <title>MySpace.com</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/category/myspace.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
+<link>/scripts/category/myspace.rss</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
 </item>
 
 

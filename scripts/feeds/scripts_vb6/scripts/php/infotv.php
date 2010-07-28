@@ -14,7 +14,7 @@ function str_between($string, $start, $end){
 	return substr($string,$ini,$len); 
 }
 
-$image = "/tmp/hdd/volumes/HDD1/scripts/image/infotv.gif";
+$image = "/scripts/image/infotv.gif";
 $videos = explode('<li>', $html);
 
 unset($videos[0]);

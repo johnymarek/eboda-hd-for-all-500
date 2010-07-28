@@ -39,7 +39,7 @@ foreach($videos as $video) {
     echo '<item>';
     echo '<title>'.$title.'</title>';
     echo '<link>http://127.0.0.1:82/scripts/php/radio_rom_link.php?id='.$id.'</link>';
-    echo '<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/shoutcast.png" />';	
+    echo '<media:thumbnail url="/scripts/image/shoutcast.png" />';	
     echo '</item>';
     print "\n";
   }

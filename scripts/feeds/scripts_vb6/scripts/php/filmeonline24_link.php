@@ -22,7 +22,7 @@ foreach($videos as $video) {
 
 $n++;
 $titlu = 'Link '.$n;
-$image = "/tmp/hdd/volumes/HDD1/scripts/image/movies.png";
+$image = "/scripts/image/movies.png";
 
 $v1 = explode('mediaFile=', $video);
 $v2 = explode('&', $v1[1]);
@@ -61,7 +61,7 @@ $videos = array_values($videos);
 foreach($videos as $video) {
 $n++;
 $titlu = 'Link '.$n;
-$image = "/tmp/hdd/volumes/HDD1/scripts/image/movies.png";
+$image = "/scripts/image/movies.png";
 
 $link = str_between($video,"src='","'");
 if (strpos($link, 'novamov') !== false) {

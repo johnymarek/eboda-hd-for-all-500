@@ -6,31 +6,31 @@
 <item>
 <title>Recomandate</title>
 <link>http://127.0.0.1:82/scripts/php/videonews_recomandate.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/videonews.jpg" />
+<media:thumbnail url="/scripts/image/videonews.jpg" />
 </item>
 
 <item>
 <title>TV</title>
 <link>http://127.0.0.1:82/scripts/php/videonews_tv.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/videonews.jpg" />
+<media:thumbnail url="/scripts/image/videonews.jpg" />
 </item>
 
 <item>
 <title>Fotbal</title>
 <link>http://127.0.0.1:82/scripts/php/videonews_fotbal.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/videonews.jpg" />
+<media:thumbnail url="/scripts/image/videonews.jpg" />
 </item>
 
 <item>
 <title>Sport</title>
 <link>http://127.0.0.1:82/scripts/php/videonews_sport.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/videonews.jpg" />
+<media:thumbnail url="/scripts/image/videonews.jpg" />
 </item>
 
 <item>
 <title>Muzica</title>
 <link>http://127.0.0.1:82/scripts/php/videonews_muzica.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/videonews.jpg" />
+<media:thumbnail url="/scripts/image/videonews.jpg" />
 </item>
 
 </channel>

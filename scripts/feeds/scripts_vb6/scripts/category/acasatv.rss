@@ -7,19 +7,19 @@
 <item>
 <title>AcasaTV - Povestiri Adevarate</title>
 <link>http://127.0.0.1:82/scripts/php/acasatv-povestiri-adevarate.php?query=1,</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/acasatv-povestiri-adevarate.jpg" />
+<media:thumbnail url="/scripts/image/acasatv-povestiri-adevarate.jpg" />
 </item>
 
 <item>
 <title>AcasaTV - Povestiri De Noapte</title>
 <link>http://127.0.0.1:82/scripts/php/acasatv-povestiri-de-noapte.php?query=1,</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/acasatv-povestiri-de-noapte.jpg" />
+<media:thumbnail url="/scripts/image/acasatv-povestiri-de-noapte.jpg" />
 </item>
 
 <item>
 <title>AcasaTV - La naiba sa povestim</title>
 <link>http://127.0.0.1:82/scripts/php/acasatv-la-naiba-sa-povestim.php?query=1,</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/acasatv-la-naiba-sa-povestim.jpg" />
+<media:thumbnail url="/scripts/image/acasatv-la-naiba-sa-povestim.jpg" />
 </item>
 
 </channel>

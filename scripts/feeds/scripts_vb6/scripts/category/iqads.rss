@@ -6,25 +6,25 @@
 <item>
 <title>IQadsTv</title>
 <link>http://127.0.0.1:82/scripts/php/iqads.php?query=,http://www.iqads.ro/IQadsTv</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/iqads.jpg" />
+<media:thumbnail url="/scripts/image/iqads.jpg" />
 </item>
 
 <item>
 <title>AdCouture</title>
 <link>http://127.0.0.1:82/scripts/php/iqads.php?query=,http://www.iqads.ro/AdCouture</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/iqads.jpg" />
+<media:thumbnail url="/scripts/image/iqads.jpg" />
 </item>
 
 <item>
 <title>PopTalk</title>
 <link>http://127.0.0.1:82/scripts/php/iqads.php?query=,http://www.iqads.ro/PopTalk</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/iqads.jpg" />
+<media:thumbnail url="/scripts/image/iqads.jpg" />
 </item>
 
 <item>
 <title>MakingOf</title>
 <link>http://127.0.0.1:82/scripts/php/iqads.php?query=,http://www.iqads.ro/MakingOf</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/iqads.jpg" />
+<media:thumbnail url="/scripts/image/iqads.jpg" />
 </item>
 
 </channel>

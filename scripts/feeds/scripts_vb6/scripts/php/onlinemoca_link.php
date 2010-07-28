@@ -10,7 +10,7 @@ function str_between($string, $start, $end){
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
 	return substr($string,$ini,$len); 
 }
-$image = "/tmp/hdd/volumes/HDD1/scripts/image/movies.png";
+$image = "/scripts/image/movies.png";
 $search = $_GET["file"];
 
 $baza = file_get_contents($search);
