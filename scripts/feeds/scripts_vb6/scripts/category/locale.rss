@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<!--Xtreamer Community 2010 - xMenu8 Cap-->
+<rss version="2.0" xmlns:media="http://purl.org/dc/elements/1.1/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
+		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_03.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_04.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_05.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_06.jpg </idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		Posturi TV Locale
+		</text>			
+	    </mediaDisplay>
+  <channel>
+
+    <title>Emisiuni posturi locale</title>
+
+<item>
+<title>Emisiuni tvt89</title>
+<link>http://127.0.0.1:82/scripts/php/tvt89.php</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tvt89.jpg" />
+</item>
+
+<item>
+<title>1tvbacau.ro</title>
+<link>http://127.0.0.1:82/scripts/php/1tvbacau.php</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/1tvbacau.jpg" />
+</item>
+
+<!--<item>
+<title>TV Bacau</title>
+<link>http://127.0.0.1:82/scripts/php/tvbacau.php</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tvbacau.gif" />
+</item>-->
+
+<item>
+<title>ctvmedia (Constanta)</title>
+<link>http://127.0.0.1:82/scripts/php/ctvmedia.php</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/ctvmedia.jpg" />
+</item>
+
+<item>
+<title>TVSat (Buzau)</title>
+<link>http://127.0.0.1:82/scripts/php/tvsatrm.php</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tvsat.gif" />
+</item>
+
+<!--<item>
+<title>InfoTV (Arad)</title>
+<link>http://127.0.0.1:82/scripts/php/infotv.php</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/infotv.gif" />
+</item>-->
+
+<!--<item>
+<title>IntermediaTv (Suceava)</title>
+<link>http://127.0.0.1:82/scripts/php/intermediatv.php</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/intermediatv.png" />
+</item>-->
+
+<item>
+<title>RadioTeleviziunea Severin</title>
+<link>http://127.0.0.1:82/scripts/php/televiziuneaseverin.php</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/televiziuneaseverin.png" />
+</item>
+
+<!--<item>
+<title>TARGOVISTE TV</title>
+<link>http://127.0.0.1:82/scripts/php/tvtargoviste.php</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tvtargoviste.png" />
+</item>-->
+
+<!--<item>
+<title>TV Oltenia</title>
+<link>http://127.0.0.1:82/scripts/php/tvoltenia.php</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tvoltenia.jpg" />
+</item>-->
+
+<item>
+<title>TeleM (Iasi)</title>
+<link>http://127.0.0.1:82/scripts/php/telem_main.php</link>
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/telem.png" />
+</item>
+
+</channel>
+</rss>

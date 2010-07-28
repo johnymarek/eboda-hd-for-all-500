@@ -1,0 +1,34 @@
+<?xml version='1.0' ?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+<title>Metacafe</title>
+<link>/metacafe.rss</link>
+
+<item>
+<title>Search</title>
+<link>rss_command://search</link>
+<search url="http://127.0.0.1:82/scripts/php/metacafe_search.php?query=1,%s" />
+<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/search.png" />
+</item>
+
+ <item>
+<title>Metacafe</title>
+	      <link>http://127.0.0.1:82/scripts/php/metacafe.php</link>
+  </item>
+
+ <item>
+<title>Metacafe - best</title>
+	      <link>http://127.0.0.1:82/scripts/php/metacafe_best.php</link>
+  </item>
+
+ <item>
+<title>Metacafe - Most Viewed</title>
+	      <link>http://127.0.0.1:82/scripts/php/metacafe_popular.php</link>
+  </item>
+
+ <item>
+<title>Metacafe - Rising Stars</title>
+	      <link>http://127.0.0.1:82/scripts/php/metacafe_stars.php</link>
+  </item>  
+</channel>
+</rss>

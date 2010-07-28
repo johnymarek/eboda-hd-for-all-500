@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<channel>
+	<title>TV</title>
+	<menu>main menu</menu>
+
+<item>
+<title>Parliament of Austria (Austria)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://DMZVIDEO1.aph.gov.au/HMS1V?WMContentBitrate=100000</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://DMZVIDEO1.aph.gov.au/HMS1V?WMContentBitrate=100000"/>
+</item>
+
+<item>
+<title>Suedburgenland TV (Austria)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://globalserver.speednet.at/sbgldtv_live01</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://globalserver.speednet.at/sbgldtv_live01"/>
+</item>
+
+<item>
+<title>Burgenland TV (Austria)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://83.142.83.22/bgld</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://83.142.83.22/bgld"/>
+</item>
+
+<item>
+<title>Muhlviertel TV (Austria)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://gcs.redir.pkfdom.ris.at/mf1plus</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://gcs.redir.pkfdom.ris.at/mf1plus"/>
+</item>
+
+<item>
+<title>Nordburgenland TV (Austria)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://83.142.83.22/bgld_n</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://83.142.83.22/bgld_n"/>
+</item>
+
+<item>
+<title>TreffPunkt Austria TV (Austria)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://213.155.73.167/Treffpunkt-Austria-TV_Standard_15</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://213.155.73.167/Treffpunkt-Austria-TV_Standard_15"/>
+</item>
+
+</channel>
+</rss>
