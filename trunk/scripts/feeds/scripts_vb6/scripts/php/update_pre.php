@@ -22,7 +22,7 @@ echo "<?xml version='1.0' ?>";
 <item>
 <title>Actualizeaza HDD Links acum</title>
 <link>http://127.0.0.1:82/scripts/php/update.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/system.png"/>
+<media:thumbnail url="/scripts/image/system.png"/>
 </item>
 
 </channel>

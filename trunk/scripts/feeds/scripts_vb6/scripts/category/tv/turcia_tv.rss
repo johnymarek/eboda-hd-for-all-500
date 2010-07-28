@@ -123,7 +123,7 @@
 <item>
 <title>TRT Avaz</title>
 <link>http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.131/TRTAVAZ</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
+<media:thumbnail url="/scripts/image/tv_radio.png" />
 <enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.131/TRTAVAZ"/>
 </item>
 
@@ -166,7 +166,7 @@
 <item>
 <title>SKY</title>
 <link>http://127.0.0.1/cgi-bin/wmv-m?mms://84.16.240.179/skytv</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
+<media:thumbnail url="/scripts/image/tv_radio.png" />
 <enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://84.16.240.179/skytv"/>
 </item>
 

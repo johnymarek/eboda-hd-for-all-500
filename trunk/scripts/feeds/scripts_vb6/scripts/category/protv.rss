@@ -6,44 +6,44 @@
 
 <item>
 <title>ProTV - Happy Hour</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/category/protv_happyhour.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/protv_happyhour.jpg" />
+<link>/scripts/category/protv_happyhour.rss</link>
+<media:thumbnail url="/scripts/image/protv_happyhour.jpg" />
 </item>
 
 <item>
 <title>ProTV - State de Romania</title>
 <link>http://127.0.0.1:82/scripts/php/protv_state.php?query=1</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/protv_state.jpg" />
+<media:thumbnail url="/scripts/image/protv_state.jpg" />
 </item>
 
 <item>
 <title>ProTv - Ce se intampla, doctore?</title>
 <link>http://127.0.0.1:82/scripts/php/protv_emisiuni.php?query=1,http://www.protv.ro/emisiuni/shows/ce-se-intampla-doctore/video-maria-radu-cornel-ilie-si-cabral-vorbesc-despre-sex/38252/pagina-</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/protv.jpg" />
+<media:thumbnail url="/scripts/image/protv.jpg" />
 </item>
 
 <item>
 <title>ProTv - Omul care aduce cartea</title>
 <link>http://127.0.0.1:82/scripts/php/protv_emisiuni.php?query=1,http://www.protv.ro/emisiuni/shows/omul-care-aduce-cartea/video-james-hollis-de-ce-oamenii-buni-savarsesc-fapte-rele/38344/pagina-</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/protv.jpg" />
+<media:thumbnail url="/scripts/image/protv.jpg" />
 </item>
 
 <item>
 <title>ProTv - Pro Motor</title>
 <link>http://127.0.0.1:82/scripts/php/protv_emisiuni.php?query=1,http://www.protv.ro/emisiuni/shows/pro-motor/video-stiri-pro-motor-partea-a-ii-a/38282/pagina-</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/protv.jpg" />
+<media:thumbnail url="/scripts/image/protv.jpg" />
 </item>
 
 <item>
 <title>ProTv - Horoscop cu Neti Sandu</title>
 <link>http://127.0.0.1:82/scripts/php/protv_emisiuni.php?query=1,http://www.protv.ro/emisiuni/protv_news/horoscop-cu-neti-sandu/video-horoscop-2-iunie/38341/pagina-</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/protv.jpg" />
+<media:thumbnail url="/scripts/image/protv.jpg" />
 </item>
 
 <item>
 <title>ProTv - Vremea</title>
 <link>http://127.0.0.1:82/scripts/php/protv_emisiuni.php?query=1,http://www.protv.ro/emisiuni/protv_news/vremea/video-vremea-2-iunie-prognoza/38343/pagina-</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/protv.jpg" />
+<media:thumbnail url="/scripts/image/protv.jpg" />
 </item>
 
 </channel>

@@ -17,7 +17,7 @@ $html = file_get_contents("http://www.cinemaxx.ro/index.html");
 
 $html = str_between($html,'<div id="list_cats">','</div>');
 //http://www.cinemaxx.ro/browse-filme-actiune-online-videos-1-date.html
-$img = "/tmp/hdd/volumes/HDD1/scripts/image/movies.png";
+$img = "/scripts/image/movies.png";
 $videos = explode('<li', $html);
 unset($videos[0]);
 $videos = array_values($videos);

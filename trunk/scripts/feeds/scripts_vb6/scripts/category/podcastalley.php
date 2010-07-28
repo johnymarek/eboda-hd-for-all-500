@@ -10,7 +10,7 @@
 <item>
 <title>Next Page</title>
 <link>http://localhost/dm/podcastalley.php?query=2,</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/right.jpg" />
+<media:thumbnail url="/scripts/image/right.jpg" />
 </item>
 
 </channel>

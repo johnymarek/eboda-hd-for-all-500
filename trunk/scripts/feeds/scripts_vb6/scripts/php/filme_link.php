@@ -18,7 +18,7 @@ $lastlink = "abc";
 $link = str_replace(' ','%20',$link);
 $link = str_replace('[','%5B',$link);
 $link = str_replace(']','%5D',$link);
-$image = "/tmp/hdd/volumes/HDD1/scripts/image/movies.png";
+$image = "/scripts/image/movies.png";
 
 // flash... mediafile,file.....
 $html = file_get_contents($link);

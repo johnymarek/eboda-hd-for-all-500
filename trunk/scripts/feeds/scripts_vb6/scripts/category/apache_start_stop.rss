@@ -32,20 +32,20 @@
 <title>Network tools</title>
 <item>
 <title>Start/Stop Apache Server</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/category/apache_start_stop.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/Network-tools-256.png"/>
+<link>/scripts/category/apache_start_stop.rss</link>
+<media:thumbnail url="/scripts/image/Network-tools-256.png"/>
 </item>
 
 <item>
 <title>Start/Stop FTP Server</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/category/ftp_start_stop.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/Network-tools-256.png"/>
+<link>/scripts/category/ftp_start_stop.rss</link>
+<media:thumbnail url="/scripts/image/Network-tools-256.png"/>
 </item>
 
 <item>
 <title>Go Home</title>
 <link>scripts/menu.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/Network-tools-256.png"/>
+<media:thumbnail url="/scripts/image/Network-tools-256.png"/>
 </item>
 
 </channel>

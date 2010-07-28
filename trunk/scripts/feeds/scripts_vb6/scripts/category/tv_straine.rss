@@ -27,13 +27,13 @@
 <!--<item>
 <title>TV Mike</title>
 <link>http://99.57.45.128/epg.aspx</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
+<media:thumbnail url="/scripts/image/tv_radio.png" />
 </item>-->
 
 <item>
 <title>TV Live - pe tari</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/category/tv.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tv_radio.png" />
+<link>/scripts/category/tv.rss</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
 </item>
 
 </channel>

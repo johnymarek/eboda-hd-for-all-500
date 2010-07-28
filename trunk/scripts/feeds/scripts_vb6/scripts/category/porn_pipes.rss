@@ -9,14 +9,14 @@
 		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
 		Xtreamer Porn Pipes
 		</text>	
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy1.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy2.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy3.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy4.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy5.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy6.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy7.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy8.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
 	</mediaDisplay>
 
 
