@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<channel>
+	<title>TV</title>
+	<menu>main menu</menu>
+
+<item>
+<title>BRT 1 (Cipru)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://bms.brtk.net/brttv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://bms.brtk.net/brttv"/>
+</item>
+
+<item>
+<title>Rik Sat (Cipru)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://iptv.cytanet.com.cy/cysat</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://iptv.cytanet.com.cy/cysat"/>
+</item>
+
+<item>
+<title>Sigma TV (Cipru)</title>
+<link>http://www2.jumptv.com/clips/sigmaclip.asf</link>
+<enclosure type="video/mx-wmv" url="http://www2.jumptv.com/clips/sigmaclip.asf"/>
+</item>
+
+</channel>
+</rss>

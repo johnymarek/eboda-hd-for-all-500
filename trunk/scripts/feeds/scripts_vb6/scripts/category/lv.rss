@@ -1,0 +1,33 @@
+<?xml version='1.0' ?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+<title>LiveVideo</title>
+<link>/lv.rss</link>
+
+<item>
+<title>Featured Videos</title>
+<link>http://rss.livevideo.com/rss/rss.ashx?v=Featured</link>
+</item>
+
+<item>
+<title>New Videos</title>
+<link>http://rss.livevideo.com/rss/rss.ashx?v=Newest</link>
+</item>
+
+<item>
+<title>Most Viewed Videos</title>
+<link>http://rss.livevideo.com/rss/rss.ashx?v=MostViewed</link>
+</item>
+
+<item>
+<title>Most Discussed Videos</title>
+<link>http://rss.livevideo.com/rss/rss.ashx?v=MostDiscussed</link>
+</item>
+
+<item>
+<title>Most Hit Votes Videos</title>
+<link>http://rss.livevideo.com/rss/rss.ashx?v=MostHit</link>
+</item>
+
+</channel>
+</rss>
