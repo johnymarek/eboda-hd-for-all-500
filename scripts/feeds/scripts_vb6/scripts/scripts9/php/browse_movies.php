@@ -8,8 +8,8 @@ $roottitle           = "RSS MOVIE BROWSER";
 $root                = "/tmp/usbmounts/";
 
 $directorydepth      = 6;
-$moviedb             = "/tmp/usbmounts/sda1/scripts/php/moviedb.txt";
-$moviefolderscfg     = "/tmp/usbmounts/sda1/scripts/php/scan_folder_settings.txt";
+$moviedb             = "/scripts/scripts9/php/moviedb.txt";
+$moviefolderscfg     = "/scripts/scripts9/php/scan_folder_settings.txt";
 $fontsize            = 16;
 $defaultposterfolder = 'http://xtreamer-web-sdk.googlecode.com/svn/trunk/rss/scripts/image/defaultposterfolder.png';
 $defaultpostermovies = 'http://xtreamer-web-sdk.googlecode.com/svn/trunk/rss/scripts/image/defaultpostermovies.png';

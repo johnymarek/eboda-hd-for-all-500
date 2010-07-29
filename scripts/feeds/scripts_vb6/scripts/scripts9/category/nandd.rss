@@ -8,80 +8,80 @@
     <item>
       <title>Boing Boing TV</title>
       <link>http://feeds.boingboing.net/boingboing/tv</link>
-      <media:thumbnail url="/tmp/usbmounts/sda1/scripts/image/nandd-bb.png" />
+      <media:thumbnail url="/scripts/scripts9/image/nandd-bb.png" />
 	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy1.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy2.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy3.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy4.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy5.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy6.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy7.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy8.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
 	</mediaDisplay>
   </item>
 
     <item>
       <title>Car Pool - Llewtube</title>
 	      <link>http://llewtubevideo.blip.tv/rss</link>
-	<media:thumbnail url="/tmp/usbmounts/sda1/scripts/image/nandd-cp.jpg"/>
+	<media:thumbnail url="/scripts/scripts9/image/nandd-cp.jpg"/>
 	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy1.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy2.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy3.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy4.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy5.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy6.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy7.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy8.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
 	</mediaDisplay>
   </item>
 
     <item>
       <title>Euronews - No Comment</title>
       <link>http://www.euronews.net/podcasts/nocomment/no_comment.xml</link>
-      <media:thumbnail url="/tmp/usbmounts/sda1/scripts/image/nandd-en.jpg" />
+      <media:thumbnail url="/scripts/scripts9/image/nandd-en.jpg" />
 	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy1.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy2.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy3.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy4.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy5.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy6.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy7.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy8.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
 	</mediaDisplay>
   </item>
 
 <item>
 <title>Poptech</title>
 <link>http://feeds2.feedburner.com/poptech/NKfz</link>
-<media:thumbnail url="/tmp/usbmounts/sda1/scripts/image/nandd-pt.jpg"/>
+<media:thumbnail url="/scripts/scripts9/image/nandd-pt.jpg"/>
 	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy1.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy2.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy3.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy4.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy5.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy6.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy7.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy8.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
 	</mediaDisplay>
   </item>
 
     <item>
       <title>Ted Talks</title>
       <link>http://feeds.feedburner.com/TedtalksHD</link>
-      <media:thumbnail url="/tmp/usbmounts/sda1/scripts/image/nandd-tt.jpg" />
+      <media:thumbnail url="/scripts/scripts9/image/nandd-tt.jpg" />
 	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy1.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy2.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy3.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy4.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy5.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy6.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy7.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy8.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
 	</mediaDisplay>
   </item>
 
