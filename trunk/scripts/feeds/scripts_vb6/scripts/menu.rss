@@ -254,19 +254,5 @@ idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26"
 	    </mediaDisplay>
 </item>
 
-<item>
-<title>Adult Channel</title>
-<link>rss_command://search</link>
-<search url="/scripts/category/adult%s.rss" />
-<media:thumbnail url="/scripts/image/adult.png"/>
-	<mediaDisplay name="photoView" backgroundColor="0:0:0" sideColorBottom="220:0:0" sideColorTop="220:0:0" drawItemText="no" columnCount="7" rowCount="4" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
-	<idleImage>image/POPUP_LOADING_01.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_02.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_03.jpg</idleImage>     
-	<idleImage>image/POPUP_LOADING_04.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_05.jpg</idleImage>
-	<idleImage>image/POPUP_LOADING_06.jpg</idleImage>
-	</mediaDisplay>
-  </item>
   </channel>
 </rss>
