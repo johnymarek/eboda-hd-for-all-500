@@ -97,7 +97,7 @@ mkdir xLive9
 mkdir utilities
 
 #for cron
-mkdir /var/spool/cron/crontabs
+mkdir var/spool/cron/crontabs
 
 #home dir for root part 1
 sed -i -e '/^root/c\
