@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<!--Xtreamer Community 2010 - xMenu9 Cap-->
+<rss version="2.0" xmlns:media="http://purl.org/dc/elements/1.1/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+
+    <title>Xtreamer - Travel & International</title>
+
+    <item>
+      <title>International</title>
+      <link>http://www.metafeeds.com/channel/regional/rss</link>
+      <media:thumbnail url="/tmp/usbmounts/sda1/scripts/image/tandi-int.jpg" />
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy1.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy2.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy3.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy4.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy5.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy6.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy7.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+  <item>
+	<title>Alaska HDTV</title>
+		<link>http://feeds.feedburner.com/alaskahdtv?format=xml</link>
+	<media:thumbnail url="/tmp/usbmounts/sda1/scripts/image/tandi-atv.jpg"/>
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy1.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy2.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy3.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy4.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy5.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy6.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy7.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+    <item>
+      <title>City By City</title>
+      <link>http://www.onnetworks.com/feeds/4634/video/rss.xml?default_format=hd</link>
+      <media:thumbnail url="/tmp/usbmounts/sda1/scripts/image/tandi-cbc.jpg" />
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy1.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy2.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy3.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy4.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy5.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy6.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy7.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+<item>
+<title>Disneyland - Mouse Magic</title>
+<link>http://feeds2.feedburner.com/mousemagichd/</link>
+<media:thumbnail url="/tmp/usbmounts/sda1/scripts/image/tandi-dmm.gif"/>
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy1.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy2.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy3.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy4.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy5.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy6.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy7.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+    <item>
+      <title>DiveFilm</title>
+      <link>http://divefilmhd.com/podcasts/podcast.xml</link>
+      <media:thumbnail url="/tmp/usbmounts/sda1/scripts/image/tandi-df.jpg" />
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy1.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy2.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy3.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy4.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy5.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy6.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy7.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+    <item>
+      <title>Finding America</title>
+      <link>http://www.podshow.com/feeds/hdv.xml</link>
+      <media:thumbnail url="/tmp/usbmounts/sda1/scripts/image/tandi-fa.jpg" />
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy1.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy2.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy3.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy4.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy5.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy6.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy7.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+    <item>
+      <title>London Landscape TV</title>
+      <link>http://lltv.libsyn.com/rss</link>
+	<media:thumbnail url="/tmp/usbmounts/sda1/scripts/image/tandi-ll.jpg"/>
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy1.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy2.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy3.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy4.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy5.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy6.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy7.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+</channel>
+</rss>
