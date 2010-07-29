@@ -1,6 +1,8 @@
 #!/bin/sh
 
-[ -f install.img ] || exit
+IMAGE_FILE=install.img
+
+[ -f ${IMAGE_FILE} ] || exit
 
 if [ $# -ne 1 ]
 then
@@ -58,7 +60,7 @@ mkdir unpacked_install
 [ $? -eq 0 ] || exit cannot create dir please start from a clean directory
 
 cd unpacked_install/
-tar xvf ../install.img
+tar xvf ../${IMAGE_FILE}
 
 #
 # go to package 2
@@ -101,14 +103,14 @@ mkdir utilities
 sed -i -e '/^root/c\
 root::0:0:root:/usr/local/etc/root:/bin/sh' etc/passwd
 
-## traducere + font
-cp  $1/src/500plus/Resource/* usr/local/bin/Resource 
+# traducere + font
+#cp  $1/src/500plus/Resource/*.str usr/local/bin/Resource 
+cp  $1/src/500plus/Resource/*.TTF usr/local/bin/Resource 
 
-
-
-# screensaver + skinpack NOPE
-#cp  $1/src/Resource/bmp/* usr/local/bin/Resource/bmp 
-#cp  $1/src/image/* usr/local/bin/image 
+# screensaver + skinpack
+# keeping original files
+#cp  $1/src/500plus/Resource/bmp/* usr/local/bin/Resource/bmp 
+#cp  $1/src/500plus/image/* usr/local/bin/image 
 
 # awk
 cp  $1/src/bin/* usr/bin
@@ -118,12 +120,14 @@ chmod +x usr/bin/*
 dir=`pwd`
 cd $1/www/
 find ewcp | grep -v .svn | grep -v '~' | zip -9 ${dir}/ewcp.zip -@
+cp ewcp-version.txt ${dir}/ewcp-version.txt
 cd $dir
 
 # /cb3pp
 dir=`pwd`
 cd $1/src/
 find cb3pp | grep -v .svn | grep -v '~'  | zip -9 ${dir}/cb3pp.zip -@
+cp cb3pp-version.txt ${dir}/cb3pp-version.txt
 cd $dir
 
 # cgi-bin
@@ -134,12 +138,14 @@ chmod +x tmp_orig/www/cgi-bin/*
 # menu
 cp -r $1/src/500plus/menu/* usr/local/bin/scripts/
 #rename weather menu pictures
+# BUG in firmware
 mv usr/local/bin/IMS_Modules/Weather/image/weather_focus.jpg usr/local/bin/IMS_Modules/Weather/image/weather_focus_en.jpg
 mv usr/local/bin/IMS_Modules/Weather/image/weather_unfocus.jpg usr/local/bin/IMS_Modules/Weather/image/weather_unfocus_en.jpg
 # scripts
 dir=`pwd`
 cd $1/scripts/feeds/scripts_vb6/
 find scripts | grep -v .svn | grep -v '~' | zip -9 ${dir}/scripts.zip -@
+cp scripts-version.txt ${dir}/scripts-version.txt
 cd ${dir}
 
 cd ..
@@ -194,11 +200,14 @@ echo "storage=$storage" > /usr/local/etc/storage
 #remount RW
 mount -o rw,remount $storage
 
-
+storage="$storage/zapps"
+echo "storage=$storage" > /usr/local/etc/storage
 
 #check if overmount dirs present 
+[ -d ${storage}] || mkdir ${storage}
 [ -d ${storage}/cb3pp ] || mkdir ${storage}/cb3pp
 [ -d ${storage}/scripts ] || mkdir ${storage}/scripts
+[ -d ${storage}/ewcp ] || mkdir ${storage}/ewcp
 
 if [ ! -f /cb3pp/.overmounted ];then
     echo overmount start
@@ -215,33 +224,55 @@ if [ ! -f /scripts/.overmounted ];then
     echo overmount end
 fi
 
+if [ ! -f /ewcp/.overmounted ];then
+    echo overmount start
+    mount -o bind ${storage}/ewcp /ewcp
+    touch /ewcp/.overmounted
+    echo overmount end
+fi
 
 # check if .../cb3pp installed from us, if not, unpack
-if [ ! -f  ${storage}/cb3pp/.modified_full_firmware2 ]
+SERIAL=0
+ [ -f ${storage}/cb3pp-version.txt ] && . ${storage}/cb3pp-version.txt
+DISK_SERIAL=${SERIAL}
+[ -f /cb3pp-version.txt ] && . /cb3pp-version.txt
+
+if [ ${SERIAL} -gt ${DISK_SERIAL} ]
 then
 	rm -rf  ${storage}/cb3pp/*
 	cd ${storage}
 	unzip -o /cb3pp.zip 
-	touch  ${storage}/cb3pp/.modified_full_firmware2
+	cp /cb3pp-version.txt ${storage}/cb3pp-version.txt
 fi
 
 
 # check if .../scripts from us, if not, unpack
-if [ ! -f ${storage}/scripts/.modified_full_firmware2 ]
+SERIAL=0
+ [ -f ${storage}/scripts-version.txt ] && . ${storage}/scripts-version.txt
+DISK_SERIAL=${SERIAL}
+[ -f /scripts-version.txt ] && . /scripts-version.txt
+
+if [ ${SERIAL} -gt ${DISK_SERIAL} ]
 then
         rm -rf ${storage}/scripts/*
         cd ${storage}
         unzip -o /scripts.zip
-        touch  ${storage}/scripts/.modified_full_firmware2
+	cp /scripts-version.txt ${storage}/scripts-version.txt
 fi
 
-# check if .../cb3pp installed from us, if not, unpack
-if [ ! -f ${storage}/ewcp/.modified_full_firmware2 ]
+# check if .../ewcp installed from us, if not, unpack
+SERIAL=0
+ [ -f ${storage}/ewcp-version.txt ] && . ${storage}/ewcp-version.txt
+DISK_SERIAL=${SERIAL}
+[ -f /ewcp-version.txt ] && . /ewcp-version.txt
+
+if [ ${SERIAL} -gt ${DISK_SERIAL} ]
 then
         rm -rf ${storage}/ewcp/*
         cd  ${storage}
         unzip -o /ewcp.zip
-        touch  ${storage}/ewcp/.modified_full_firmware2
+	cp /ewcp-version.txt ${storage}/ewcp-version.txt
+
 	[ -f  ${storage}/cb3pp/etc/init.s/S99ewcp ] || cp  ${storage}/ewcp/S99ewcp  ${storage}/cb3pp/etc/init.d
         chmod +x ${storage}/cb3pp/etc/init.d/S99ewcp
 fi
@@ -265,8 +296,8 @@ cd ..
 rm -rf unpacked_etc/
 
 cd ..
-mv ../install.img ../install.img.orig
-tar cvf ../install.img *
+mv ../${IMAGE_FILE} ../${IMAGE_FILE}.orig
+tar cvf ../${IMAGE_FILE} *
 cd ..
 ls -l
 
