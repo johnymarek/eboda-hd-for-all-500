@@ -27,15 +27,16 @@ case "$rc" in
 	mkdir /tmp/cbwww
 	ln -s ${prefix}/share/www /tmp/cbwww/
 	ln -s /scripts /tmp/cbwww/
-	nice -n 30 $DAEMON $DAEMON_OPTS
+	nice -n 30 ${prefix}/sbin/daemon -n dthttpd -U -r -a 10 -A 100 -L 10 -M 0 -- $DAEMON $DAEMON_OPTS
         ;;
     stop)
-    	rm /tmp/cbwww/*
-    	rmdir /tmp/cbwww
         if [ -n "`pidof $NAME`" ]; then
             echo "Stopping web server: $NAME"
+            daemon -n dthttpd --stop 
             killall $NAME 2> /dev/null
         fi
+    	rm /tmp/cbwww/*
+    	rmdir /tmp/cbwww
         ;;
     status)
 	if [ -n "`pidof $NAME`" ]; then
