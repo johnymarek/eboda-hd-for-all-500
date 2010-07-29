@@ -29,8 +29,8 @@ btpd=false
 apache=false
 
 #begin rtorrent
-rutorrent=false
-rtgui=false
+rutorrent=true
+rtgui=true
 openssl=false
 dtach=false
 libsigc=false
@@ -55,7 +55,7 @@ transmission=false
 #end transmission
 
 #begin samba
-smbd=true
+smbd=false
 #end samba
 
 nginx=false
