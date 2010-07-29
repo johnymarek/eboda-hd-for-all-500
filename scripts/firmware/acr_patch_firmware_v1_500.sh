@@ -1,6 +1,8 @@
 #!/bin/sh
 
-[ -f install.img ] || exit
+IMAGE_FILE=install.img
+
+[ -f ${IMAGE_FILE} ] || exit
 
 if [ $# -ne 1 ]
 then
@@ -58,7 +60,7 @@ mkdir unpacked_install
 [ $? -eq 0 ] || exit cannot create dir please start from a clean directory
 
 cd unpacked_install/
-tar xvf ../install.img
+tar xvf ../${IMAGE_FILE}
 
 #
 # go to package 2
@@ -101,12 +103,12 @@ mkdir utilities
 sed -i -e '/^root/c\
 root::0:0:root:/usr/local/etc/root:/bin/sh' etc/passwd
 
-# traducere + font + servicii
+# traducere + font
 #cp  $1/src/500/Resource/*.str usr/local/bin/Resource 
 cp  $1/src/500/Resource/*.TTF usr/local/bin/Resource 
 
 # screensaver + skinpack
-# keep not the original from acryan
+# keeping original files
 #cp  $1/src/500/Resource/bmp/* usr/local/bin/Resource/bmp 
 #cp  $1/src/500/image/* usr/local/bin/image 
 
@@ -222,7 +224,7 @@ fi
 if [ ! -f /ewcp/.overmounted ];then
     echo overmount start
     mount -o bind ${storage}/ewcp /ewcp
-    touch /scripts/.overmounted
+    touch /ewcp/.overmounted
     echo overmount end
 fi
 
@@ -231,7 +233,7 @@ fi
 SERIAL=0
  [ -f ${storage}/cb3pp-version.txt ] && . ${storage}/cb3pp-version.txt
 DISK_SERIAL=${SERIAL}
-. /cb3pp-version.txt
+[ -f /cb3pp-version.txt ] && . /cb3pp-version.txt
 
 if [ ${SERIAL} -gt ${DISK_SERIAL} ]
 then
@@ -247,7 +249,7 @@ fi
 SERIAL=0
  [ -f ${storage}/scripts-version.txt ] && . ${storage}/scripts-version.txt
 DISK_SERIAL=${SERIAL}
-. /scripts-version.txt
+[ -f /scripts-version.txt ] && . /scripts-version.txt
 
 if [ ${SERIAL} -gt ${DISK_SERIAL} ]
 then
@@ -261,7 +263,7 @@ fi
 SERIAL=0
  [ -f ${storage}/ewcp-version.txt ] && . ${storage}/ewcp-version.txt
 DISK_SERIAL=${SERIAL}
-. /ewcp-version.txt
+[ -f /ewcp-version.txt ] && . /ewcp-version.txt
 
 if [ ${SERIAL} -gt ${DISK_SERIAL} ]
 then
@@ -297,8 +299,8 @@ cd ..
 rm install_a
 cp $1/src/500/install/install_a .
 
-mv ../install.img ../install.img.orig
-tar cvf ../install.img *
+mv ../${IMAGE_FILE} ../${IMAGE_FILE}.orig
+tar cvf ../${IMAGE_FILE} *
 cd ..
 ls -l
 

@@ -5,7 +5,7 @@ prefix="/cb3pp"
 PATH=${prefix}/bin:${prefix}/sbin:/sbin:/bin:/usr/sbin:/usr/bin
 NAME=thttpd
 DAEMON=${prefix}/sbin/${NAME}
-DAEMON_OPTS="-d /tmp/cbwww -p 82 -nos"
+DAEMON_OPTS="-d /tmp/cbwww -p 82 -nos -D"
 
 
 

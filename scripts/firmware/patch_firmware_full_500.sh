@@ -1,6 +1,8 @@
 #!/bin/sh
 
-[ -f install.img ] || exit
+IMAGE_FILE=install.img
+
+[ -f ${IMAGE_FILE} ] || exit
 
 if [ $# -ne 1 ]
 then
@@ -58,7 +60,7 @@ mkdir unpacked_install
 [ $? -eq 0 ] || exit cannot create dir please start from a clean directory
 
 cd unpacked_install/
-tar xvf ../install.img
+tar xvf ../${IMAGE_FILE}
 
 #
 # go to package 2
@@ -96,19 +98,19 @@ mkdir xLive9
 # and utilities for me to play
 mkdir utilities
 
-#for cron
-mkdir var/spool/cron/crontabs
 
 #home dir for root part 1
 sed -i -e '/^root/c\
 root::0:0:root:/usr/local/etc/root:/bin/sh' etc/passwd
 
-# traducere + font + servicii
-cp  $1/src/500/Resource/* usr/local/bin/Resource 
+# traducere + font
+#cp  $1/src/500/Resource/*.str usr/local/bin/Resource 
+cp  $1/src/500/Resource/*.TTF usr/local/bin/Resource 
 
 # screensaver + skinpack
-cp  $1/src/500/Resource/bmp/* usr/local/bin/Resource/bmp 
-cp  $1/src/500/image/* usr/local/bin/image 
+# keeping original files
+#cp  $1/src/500/Resource/bmp/* usr/local/bin/Resource/bmp 
+#cp  $1/src/500/image/* usr/local/bin/image 
 
 # awk
 cp  $1/src/bin/* usr/bin
@@ -159,6 +161,9 @@ tar jxvf ../usr.local.etc.tar.bz2
 mkdir root
 #
 
+# keep this to be mine
+# later update to come for external images of xtreamer
+# cp $1/src/500/etc/rcS .
 
 # creating our startup script to install cb3pp stuff if not in
 echo '#!/bin/sh
@@ -190,6 +195,7 @@ else
 #storage online !! go go go
 
 storage=`mount | grep ${mount_pattern} | tr -s " " | cut -d " " -f 3 | head -n 1`
+echo "storage=$storage" > /usr/local/etc/storage
 
 #remount RW
 mount -o rw,remount $storage
@@ -203,8 +209,6 @@ echo "storage=$storage" > /usr/local/etc/storage
 [ -d ${storage}/cb3pp ] || mkdir ${storage}/cb3pp
 [ -d ${storage}/scripts ] || mkdir ${storage}/scripts
 [ -d ${storage}/ewcp ] || mkdir ${storage}/ewcp
-[ -d ${storage}/crontabs ] || mkdir ${storage}/crontabs
-
 
 if [ ! -f /cb3pp/.overmounted ];then
     echo overmount start
@@ -229,19 +233,11 @@ if [ ! -f /ewcp/.overmounted ];then
 fi
 
 
-if [ ! -f /var/spool/cron/crontabs/.overmounted ];then
-    echo overmount start
-    mount -o bind ${storage}/crontabs /var/spool/cron/crontabs/
-    touch /var/spool/cron/crontabs/.overmounted
-    echo overmount end
-fi
-/var/spool/cron/crontabs
-
 # check if .../cb3pp installed from us, if not, unpack
 SERIAL=0
  [ -f ${storage}/cb3pp-version.txt ] && . ${storage}/cb3pp-version.txt
 DISK_SERIAL=${SERIAL}
-. /cb3pp-version.txt
+[ -f /cb3pp-version.txt ] && . /cb3pp-version.txt
 
 if [ ${SERIAL} -gt ${DISK_SERIAL} ]
 then
@@ -249,7 +245,6 @@ then
 	cd ${storage}
 	unzip -o /cb3pp.zip 
 	cp /cb3pp-version.txt ${storage}/cb3pp-version.txt
-	
 fi
 
 
@@ -257,7 +252,7 @@ fi
 SERIAL=0
  [ -f ${storage}/scripts-version.txt ] && . ${storage}/scripts-version.txt
 DISK_SERIAL=${SERIAL}
-. /scripts-version.txt
+[ -f /scripts-version.txt ] && . /scripts-version.txt
 
 if [ ${SERIAL} -gt ${DISK_SERIAL} ]
 then
@@ -271,7 +266,7 @@ fi
 SERIAL=0
  [ -f ${storage}/ewcp-version.txt ] && . ${storage}/ewcp-version.txt
 DISK_SERIAL=${SERIAL}
-. /ewcp-version.txt
+[ -f /ewcp-version.txt ] && . /ewcp-version.txt
 
 if [ ${SERIAL} -gt ${DISK_SERIAL} ]
 then
@@ -281,7 +276,7 @@ then
 	cp /ewcp-version.txt ${storage}/ewcp-version.txt
 
 	[ -f  ${storage}/cb3pp/etc/init.s/S99ewcp ] || cp  ${storage}/ewcp/S99ewcp  ${storage}/cb3pp/etc/init.d
-	chmod +x ${storage}/cb3pp/etc/init.d/S99ewcp
+        chmod +x ${storage}/cb3pp/etc/init.d/S99ewcp
 fi
 
 cb3pp_startup=/cb3pp/etc/init.d/rcS
@@ -303,8 +298,8 @@ cd ..
 rm -rf unpacked_etc/
 
 cd ..
-mv ../install.img ../install.img.orig
-tar cvf ../install.img *
+mv ../${IMAGE_FILE} ../${IMAGE_FILE}.orig
+tar cvf ../${IMAGE_FILE} *
 cd ..
 ls -l
 
