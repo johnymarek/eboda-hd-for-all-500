@@ -48,7 +48,7 @@ $aMoviesFolder[] = array('movies' => '/tmp/usbmounts/sda1/Movies/', 'images' => 
 //where this file is located
 $sThisFile = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 //image for the background
-$sBackGroundImage = '/tmp/usbmounts/sda1/scripts/image/background.jpg';
+$sBackGroundImage = '/scripts/scripts9/image/background.jpg';
 
 //walk $aMoviesFolder array, find out if its network shared folder, mount it and create new array with local and mounted directories 
 foreach($aMoviesFolder as $key => $aLocations) {

@@ -8,7 +8,7 @@
 <item>
      <title>RSS Skin Manager</title>
      <link>http://127.0.0.1/media/sda1/scripts/php/skin_manager.php</link>
-     <media:thumbnail url="/tmp/usbmounts/sda1/scripts/image/skin_browser.jpg" />
+     <media:thumbnail url="/scripts/scripts9/image/skin_browser.jpg" />
      <mediaDisplay name=photoView
             rowCount="2" columnCount="3" 
             itemBorderColor="0:255:180"
@@ -20,21 +20,21 @@
          itemOffsetXPC="7"
          backgroundColor="0:0:0"
             idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy1.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy2.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy3.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy4.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy5.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy6.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy7.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy8.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
          </mediaDisplay>
    </item>
 
 <item>
 <title>Radio Stations</title>
 <link>http://127.0.0.1/media/sda1/scripts/php/radiostation.php</link> 
-<media:thumbnail url="/tmp/usbmounts/sda1/scripts/image/x-rs.jpg" />
+<media:thumbnail url="/scripts/scripts9/image/x-rs.jpg" />
 <mediaDisplay name=photoView
 rowCount="5" columnCount="7" 
 itemBorderColor="0:255:180"
@@ -46,21 +46,21 @@ itemImageXPC="10"
 itemOffsetXPC="7"
 backgroundColor="0:0:0"
 idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy1.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy2.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy3.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy4.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy5.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy6.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy7.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy8.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
 </mediaDisplay>
 </item>
 
    <item>
     <title>RSS Movie Browser</title>
      <link>http://127.0.0.1/media/sda1/scripts/php/browse_movies.php</link>
-     <media:thumbnail url="/tmp/usbmounts/sda1/scripts/image/moviewall.jpg" />
+     <media:thumbnail url="/scripts/scripts9/image/moviewall.jpg" />
      <mediaDisplay name=photoView
             rowCount="8" columnCount="4" 
             itemBorderColor="0:255:180"
@@ -72,21 +72,21 @@ idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26"
       	itemOffsetXPC="7"
       	backgroundColor="0:0:0"
             idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy1.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy2.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy3.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy4.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy5.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy6.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy7.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy8.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
          </mediaDisplay>
    </item>
 
 <item>
    <title>PHP Movie Jukebox</title>
    <link>http://localhost/media/sda1/scripts/php/moviejukebox.php</link>
-   <media:thumbnail url="/tmp/usbmounts/sda1/scripts/image/x-php.jpg" />
+   <media:thumbnail url="/scripts/scripts9/image/x-php.jpg" />
    <mediaDisplay name="onePartView"
    sideLeftWidthPC="100"
    sideRightWidthPC="0"
@@ -106,14 +106,14 @@ idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26"
    showHeader="no"
    bottomYPC="85"      
    idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy1.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy2.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy3.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy4.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy5.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy6.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy7.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/image/busy8.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
    </mediaDisplay>
 </item>
 
