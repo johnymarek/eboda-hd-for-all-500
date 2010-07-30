@@ -288,6 +288,18 @@ chmod +x rccb3ppS
 echo '
 [ -f /usr/local/etc/rccb3ppS ] && sh /usr/local/etc/rccb3ppS &' >> rcS
 
+sed -e '/insmod \/usr\/local\/etc\/sata_mars.ko/a\
+\
+# load the external images\
+mount -t ufsd -o force -o sparse -o rw -o nls=utf8 -o umask=0000 /dev/sda1 /mnt/hdb\
+if [ $? -ne 0 ]; then\
+	echo mount failed\
+else\
+	mount -o bind /mnt/hdb/zapps/external_bitmaps /usr/local/bin/Resource/bmp\
+fi\
+\
+' rcS
+
 
 cd ..
 rm yaffs2_2.img
