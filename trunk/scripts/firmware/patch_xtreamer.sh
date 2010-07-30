@@ -112,6 +112,13 @@ cp  $1/src/500/Resource/*.TTF usr/local/bin/Resource
 #cp  $1/src/500/Resource/bmp/* usr/local/bin/Resource/bmp 
 #cp  $1/src/500/image/* usr/local/bin/image 
 
+#saving extra-images
+#external_bitmaps /usr/local/bin/Resource/bmp
+
+mkdir -p ../../../zapps/Resource
+mv usr/local/bin/Resource/* ../../../zapps/Resource
+
+
 # awk
 cp  $1/src/bin/* usr/bin
 chmod +x usr/bin/*
@@ -295,7 +302,7 @@ mount -t ufsd -o force -o sparse -o rw -o nls=utf8 -o umask=0000 /dev/sda1 /mnt/
 if [ $? -ne 0 ]; then\
 	echo mount failed\
 else\
-	mount -o bind /mnt/hdb/zapps/external_bitmaps /usr/local/bin/Resource/bmp\
+	mount -o bind /mnt/hdb/zapps/external_bitmapsResources /usr/local/bin/Resource\
 fi\
 \
 ' rcS
