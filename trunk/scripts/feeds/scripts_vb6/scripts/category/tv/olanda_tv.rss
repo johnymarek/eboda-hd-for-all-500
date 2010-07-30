@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<channel>
+	<title>TV</title>
+	<menu>main menu</menu>
+
+<item>
+<title>Salto A1 (Olanda)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://195.169.148.57/A1</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://195.169.148.57/A1"/>
+</item>
+
+<item>
+<title>Salto A2 (Olanda)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://195.169.148.57/A2</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://195.169.148.57/A2"/>
+</item>
+
+<item>
+<title>RTV Noord - Holland (Olanda)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://stream.rtvnh.nl/TVNH</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://stream.rtvnh.nl/TVNH"/>
+</item>
+
+<item>
+<title>RTV Noord (Olanda)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://media.rtvnoord.nl/tvrtvnoord</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://media.rtvnoord.nl/tvrtvnoord"/>
+</item>
+
+</channel>
+</rss>

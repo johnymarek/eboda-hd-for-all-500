@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="40" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		Antena3
+		</text>	
+		<text offsetXPC=5 offsetYPC=20 widthPC=90 heightPC=8 fontSize=16 backgroundColor=-1:-1:-1 foregroundColor=200:200:200>
+1=azi, 2=ieri, 3=alaltaieri
+		</text>
+		<text offsetXPC=5 offsetYPC=25 widthPC=90 heightPC=8 fontSize=16 backgroundColor=-1:-1:-1 foregroundColor=200:200:200>
+dd=ziua din luna curenta, mmdd=luna,ziua, yyyymmdd=an,luna,zi
+		</text>
+	</mediaDisplay>
+<channel>
+<title>Emisiuni Antena3</title>
+
+<item>
+<title>Bizbazar cu Moise Guran</title>
+<link>rss_command://search</link>
+<search url="http://127.0.0.1:82/scripts/php/antena3.php?query=%s,bizbazar" />
+<media:thumbnail url="/scripts/image/antena3.jpg" />
+</item>
+
+<item>
+<title>La ordinea zilei</title>
+<link>rss_command://search</link>
+<search url="http://127.0.0.1:82/scripts/php/antena3.php?query=%s,ordinea_zilei" />
+<media:thumbnail url="/scripts/image/antena3.jpg" />
+</item>
+
+<item>
+<title>Stirea zilei</title>
+<link>rss_command://search</link>
+<search url="http://127.0.0.1:82/scripts/php/antena3.php?query=%s,stirea_zilei" />
+<media:thumbnail url="/scripts/image/antena3.jpg" />
+</item>
+
+<item>
+<title>Sinteza zilei</title>
+<link>rss_command://search</link>
+<search url="http://127.0.0.1:82/scripts/php/antena3.php?query=%s,sinteza_zilei" />
+<media:thumbnail url="/scripts/image/antena3.jpg" />
+</item>
+
+</channel>
+</rss>

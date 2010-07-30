@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<channel>
+	<title>TV</title>
+	<menu>main menu</menu>
+
+<item>
+<title>Bratislavia TV (Slovenia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://81.89.49.210/tvbalive</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://81.89.49.210/tvbalive"/>
+</item>
+
+<item>
+<title>Play TV (Slovenia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://beotelmedia.beotel.net/rtvpink</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://beotelmedia.beotel.net/rtvpink"/>
+</item>
+
+</channel>
+</rss>

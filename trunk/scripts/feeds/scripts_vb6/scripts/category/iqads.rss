@@ -1,0 +1,31 @@
+<?xml version='1.0' ?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+<title>IQads</title>
+
+<item>
+<title>IQadsTv</title>
+<link>http://127.0.0.1:82/scripts/php/iqads.php?query=,http://www.iqads.ro/IQadsTv</link>
+<media:thumbnail url="/scripts/image/iqads.jpg" />
+</item>
+
+<item>
+<title>AdCouture</title>
+<link>http://127.0.0.1:82/scripts/php/iqads.php?query=,http://www.iqads.ro/AdCouture</link>
+<media:thumbnail url="/scripts/image/iqads.jpg" />
+</item>
+
+<item>
+<title>PopTalk</title>
+<link>http://127.0.0.1:82/scripts/php/iqads.php?query=,http://www.iqads.ro/PopTalk</link>
+<media:thumbnail url="/scripts/image/iqads.jpg" />
+</item>
+
+<item>
+<title>MakingOf</title>
+<link>http://127.0.0.1:82/scripts/php/iqads.php?query=,http://www.iqads.ro/MakingOf</link>
+<media:thumbnail url="/scripts/image/iqads.jpg" />
+</item>
+
+</channel>
+</rss>

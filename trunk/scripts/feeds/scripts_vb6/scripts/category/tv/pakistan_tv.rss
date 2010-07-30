@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<channel>
+	<title>TV</title>
+	<menu>main menu</menu>
+
+<item>
+<title>MTA (Pakistan)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://live300k1.wm.muslimtv.servecast.net/MuslimTV_wmlz_live300k</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://live300k1.wm.muslimtv.servecast.net/MuslimTV_wmlz_live300k"/>
+</item>
+
+<item>
+<title>Express News (Pakistan)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://ams01.egihosting.com/ExpressEnglish</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://ams01.egihosting.com/ExpressEnglish"/>
+</item>
+
+</channel>
+</rss>
