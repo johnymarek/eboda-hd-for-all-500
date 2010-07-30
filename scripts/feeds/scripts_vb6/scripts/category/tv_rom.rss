@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<!--Xtreamer Community 2010 - xMenu8 Cap-->
+<rss version="2.0" xmlns:media="http://purl.org/dc/elements/1.1/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="20" idleImageHeightPC="26">
+		<idleImage> /scripts/image/busy1.png </idleImage>
+		<idleImage> /scripts/image/busy2.png </idleImage>
+		<idleImage> /scripts/image/busy3.png </idleImage>
+		<idleImage> /scripts/image/busy4.png </idleImage>
+		<idleImage> /scripts/image/busy5.png </idleImage>
+		<idleImage>/scripts/image/busy6.png</idleImage><idleImage>/scripts/image/busy7.png</idleImage><idleImage>/scripts/image/busy8.png</idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		TV Live
+		</text>			
+	    </mediaDisplay>
+  <channel>
+
+    <title>TV Live - posturi romanesti</title>
+
+<item>
+<title>Tele Sport</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://194.169.235.98/384x</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://194.169.235.98/384x"/>
+</item>
+
+<item>
+<title>Antena 2</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://86.55.8.134/ant2</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://86.55.8.134/ant2"/>
+</item>
+
+<item>
+<title>1 TV Neamt</title>
+<link>http://1tv.ambra.ro</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mp4" url="http://1tv.ambra.ro"/>
+</item>
+
+
+<item>
+<title>Alfa Omega Tv</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://ns.alfanet.ro/live</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://ns.alfanet.ro/live"/>
+</item>
+
+<item>
+<title>Alfa Omega CrestinTv</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://ns.alfanet.ro/CrestinTv</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://ns.alfanet.ro/CrestinTv"/>
+</item>
+
+<item>
+<title>Alfa Omega Movies</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://ns.alfanet.ro/AlfaOmegaMovies</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://ns.alfanet.ro/AlfaOmegaMovies"/>
+</item>
+
+<item>
+<title>Alfa Omega YouthTv</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://ns.alfanet.ro/YouthTv</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://ns.alfanet.ro/YouthTv"/>
+</item>
+
+<item>
+<title>Prima TV</title>
+<link>http://telem.ambra.ro</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mp4" url="http://telem.ambra.ro"/>
+</item>
+
+<item>
+<title>TV M</title>
+<link>http://telem.ambra.ro</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mp4" url="http://tvm.ambra.ro"/>
+</item>
+
+<item>
+<title>TV Samtel</title>
+<link>http://www.tv1samtel.ro:8080/stream.flv</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mp4" url="http://www.tv1samtel.ro:8080/stream.flv"/>
+</item>
+
+<item>
+<title>Tele M</title>
+<link>http://telem.telem.ro:8780/telem_live.flv</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mp4" url="http://telem.telem.ro:8780/telem_live.flv"/>
+</item>
+
+<item>
+<title>Prohova TV</title>
+<link>http://89.45.181.51:5000/test.flv</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mp4" url="http://89.45.181.51:5000/test.flv"/>
+</item>
+
+<item>
+<title>Tele'M Botosani</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://195.64.178.23/telem</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://195.64.178.23/telem"/>
+</item>
+
+<item>
+<title>TV6 Bucuresti</title>
+<link>http://83.166.193.50:8800/flv-audio-video/</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/flv" url="http://83.166.193.50:8800/flv-audio-video/"/>
+</item>
+
+<item>
+<title>Info Somes</title>
+<link>http://127.0.0.1/cgi-bin/rtmp?rtmpe://fms14.mediadirect.ro:1935/live/somes?id=1676684/somes</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/x-flv" url="http://127.0.0.1/cgi-bin/rtmp?rtmpe://fms14.mediadirect.ro:1935/live/somes?id=1676684/somes"/>
+</item>
+
+<item>
+<title>kung fu tv</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://85.214.87.175/kung-fu-tv</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://85.214.87.175/kung-fu-tv"/>
+</item>
+
+</channel>
+</rss>

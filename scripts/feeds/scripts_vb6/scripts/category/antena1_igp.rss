@@ -1,0 +1,38 @@
+<?xml version='1.0' ?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+<title>In gura presei cu Mircea Badea</title>
+<link>/antena1_igp.rss</link>
+
+<item>
+<title>In gura presei - Emisiuni</title>
+<link>http://127.0.0.1:82/scripts/php/antena1_igp_emisiuni.php</link>
+</item>
+
+<item>
+<title>In gura presei - Politic</title>
+<link>http://127.0.0.1:82/scripts/php/antena1_igp_politic.php</link>
+</item>
+
+<item>
+<title>In gura presei - Monden</title>
+<link>http://127.0.0.1:82/scripts/php/antena1_igp_monden.php</link>
+</item>
+
+<item>
+<title>In gura presei - Social</title>
+<link>http://127.0.0.1:82/scripts/php/antena1_igp_social.php</link>
+</item>
+
+<item>
+<title>In gura presei - Revista Presei</title>
+<link>http://127.0.0.1:82/scripts/php/antena1_igp_revista-presei.php</link>
+</item>
+
+<item>
+<title>In gura presei - Intamplari</title>
+<link>http://127.0.0.1:82/scripts/php/antena1_igp_intamplari.php</link>
+</item>
+
+</channel>
+</rss>

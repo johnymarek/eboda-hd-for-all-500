@@ -1,0 +1,198 @@
+<?xml version='1.0' ?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<mediaDisplay name=ThreePartsView
+	itemBackgroundColor=0:0:0
+	backgroundColor=0:0:0
+	sideLeftWidthPC=10
+	sideRightWidthPC=100
+	fontSize=16
+	showHeader="no"
+	headerXPC=101
+	headerYPC=101
+	headerImageXPC=101 
+	headerImageYPC=101
+	itemImageXPC="9" 
+	itemImageYPC="21"
+    itemImageHeightPC="12" 
+	itemImageWidthPC="8.9"           
+    itemXPC="18"
+    itemYPC="20.5"			
+	itemPerPage="5"			
+	popupXPC = 7
+	popupYPC = 21
+	popupFontSize = 17
+	popupWidthPC = 15
+	popupBorderColor = 0:0:0>
+		<idleImage> /scripts/image/busy1.png </idleImage>
+		<idleImage> /scripts/image/busy2.png </idleImage>
+		<idleImage> /scripts/image/busy3.png </idleImage>
+		<idleImage> /scripts/image/busy4.png </idleImage>
+		<idleImage> /scripts/image/busy5.png </idleImage>
+		<idleImage>/scripts/image/busy6.png</idleImage><idleImage>/scripts/image/busy7.png</idleImage><idleImage>/scripts/image/busy8.png</idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/uzg_title.jpg
+		</image>
+		<text  offsetXPC=20 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		Uitzending gemist
+		</text>			
+	    </mediaDisplay>
+
+
+
+<channel>
+        <title>Uitzending Gemist</title>
+        <link>./scripts/uzg.rss</link>
+        <media:thumbnail url="/scripts/image/feed_default.png" width="120" height="90" />
+
+
+<item>
+<title>UZG: Populair vandaag</title>
+<link>http://www.eminent-online.com/amtest/uzg/index.php?page=populair1</link>
+<media:thumbnail url="/scripts/image/uzg_logo.jpg" width="151" height="115" />
+<mediaDisplay name=ThreePartsView
+	itemBackgroundColor=0:0:0
+	backgroundColor=0:0:0
+	sideLeftWidthPC=10
+	sideRightWidthPC=100
+	fontSize=16
+	showHeader="no"
+	headerXPC=101
+	headerYPC=101
+	headerImageXPC=101 
+	headerImageYPC=101
+	itemImageXPC="9" 
+	itemImageYPC="21"
+    	itemImageHeightPC="12" 
+	itemImageWidthPC="14"           
+    itemXPC="23"
+    itemYPC="20.5"			
+	itemPerPage="5"			
+	popupXPC = 7
+	popupYPC = 21
+	popupFontSize = 17
+	popupWidthPC = 15
+	popupBorderColor = 0:0:0>
+		<idleImage> /scripts/image/busy1.png </idleImage>
+		<idleImage> /scripts/image/busy2.png </idleImage>
+		<idleImage> /scripts/image/busy3.png </idleImage>
+		<idleImage> /scripts/image/busy4.png </idleImage>
+		<idleImage> /scripts/image/busy5.png </idleImage>
+		<idleImage>/scripts/image/busy6.png</idleImage><idleImage>/scripts/image/busy7.png</idleImage><idleImage>/scripts/image/busy8.png</idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		/scripts/image/uzg_title.jpg
+		</image>	
+		<text  offsetXPC=20 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		Populair
+		</text>	
+		<!-- <text  offsetXPC=400 offsetYPC=8 widthPC=35 heightPC=10 fontSize=8 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		Disclaimer text kan hier, debug de exacte locatie nog even..
+		</text>	 -->
+	    </mediaDisplay>
+</item>
+
+<item>
+<title>UZG: Eerdere tips</title>
+<link>http://www.eminent-online.com/amtest/uzg/index.php?page=tip1</link>
+<media:thumbnail url="/scripts/image/uzg_logo.jpg" width="151" height="115" />
+<mediaDisplay name=ThreePartsView
+	itemBackgroundColor=0:0:0
+	backgroundColor=0:0:0
+	sideLeftWidthPC=10
+	sideRightWidthPC=100
+	fontSize=16
+	showHeader="no"
+	headerXPC=101
+	headerYPC=101
+	headerImageXPC=101 
+	headerImageYPC=101
+	itemImageXPC="9" 
+	itemImageYPC="21"
+    itemImageHeightPC="12" 
+	itemImageWidthPC="14"           
+    itemXPC="23"
+    itemYPC="20.5"			
+	itemPerPage="5"			
+	popupXPC = 7
+	popupYPC = 21
+	popupFontSize = 17
+	popupWidthPC = 15
+	popupBorderColor = 0:0:0>
+		<idleImage> /scripts/image/busy1.png </idleImage>
+		<idleImage> /scripts/image/busy2.png </idleImage>
+		<idleImage> /scripts/image/busy3.png </idleImage>
+		<idleImage> /scripts/image/busy4.png </idleImage>
+		<idleImage> /scripts/image/busy5.png </idleImage>
+		<idleImage>/scripts/image/busy6.png</idleImage><idleImage>/scripts/image/busy7.png</idleImage><idleImage>/scripts/image/busy8.png</idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		/scripts/image/uzg_title.jpg
+		</image>	
+		<text  offsetXPC=20 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		Eerdere tips
+		</text>		
+	    </mediaDisplay>
+</item>
+
+<item>
+<title>Zoek een uitzending</title>
+<link>rss_command://search</link>
+<media:thumbnail url="/scripts/image/uzg_search_logo.jpg" width="151" height="115" />
+<search url="http://www.eminent-online.com/amtest/uzg/index.php?find=%s" />
+<mediaDisplay name=ThreePartsView
+	itemBackgroundColor=0:0:0
+	backgroundColor=0:0:0
+	sideLeftWidthPC=10
+	sideRightWidthPC=100
+	fontSize=16
+	showHeader="no"
+	headerXPC=101
+	headerYPC=101
+	headerImageXPC=101 
+	headerImageYPC=101
+	itemImageXPC="9" 
+	itemImageYPC="21"
+    itemImageHeightPC="12" 
+	itemImageWidthPC="14"           
+    itemXPC="23"
+    itemYPC="20.5"			
+	itemPerPage="5"			
+	popupXPC = 7
+	popupYPC = 21
+	popupFontSize = 17
+	popupWidthPC = 15
+	popupBorderColor = 0:0:0>
+		<idleImage> /scripts/image/busy1.png </idleImage>
+		<idleImage> /scripts/image/busy2.png </idleImage>
+		<idleImage> /scripts/image/busy3.png </idleImage>
+		<idleImage> /scripts/image/busy4.png </idleImage>
+		<idleImage> /scripts/image/busy5.png </idleImage>
+		<idleImage>/scripts/image/busy6.png</idleImage><idleImage>/scripts/image/busy7.png</idleImage><idleImage>/scripts/image/busy8.png</idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		/scripts/image/uzg_title.jpg
+		</image>	
+		<text  offsetXPC=20 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		Zoeken
+		</text>		
+	    </mediaDisplay>
+</item>
+</channel>
+</rss>
