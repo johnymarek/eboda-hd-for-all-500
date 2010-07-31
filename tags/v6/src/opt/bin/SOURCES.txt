@@ -1,0 +1,6 @@
+mplayer from :  http://forum.xtreamer.net/viewtopic.php?f=168&t=10685&p=82727#p82727
+nohup,bash,tr from : http://www.acryan.com/forums/viewtopic.php?f=41&t=2819
+
+
+
+

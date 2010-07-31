@@ -1,0 +1,642 @@
+<?xml version='1.0' ?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<mediaDisplay name=ThreePartsView
+	itemBackgroundColor=0:0:0
+	backgroundColor=0:0:0
+	sideLeftWidthPC=10
+	sideRightWidthPC=100
+	fontSize=16
+	showHeader="no"
+	headerXPC=101
+	headerYPC=101
+	headerImageXPC=101 
+	headerImageYPC=101
+	itemImageXPC="9" 
+	itemImageYPC="21"
+    itemImageHeightPC="12" 
+	itemImageWidthPC="18"           
+    itemXPC="28"
+    itemYPC="20.5"
+	itemPerPage="5"			
+	popupXPC = 7
+	popupYPC = 21
+	popupFontSize = 17
+	popupWidthPC = 15
+	popupBorderColor = 0:0:0>
+		<idleImage> /scripts/image/busy1.png </idleImage>
+		<idleImage> /scripts/image/busy2.png </idleImage>
+		<idleImage> /scripts/image/busy3.png </idleImage>
+		<idleImage> /scripts/image/busy4.png </idleImage>
+		<idleImage> /scripts/image/busy5.png </idleImage>
+		<idleImage>/scripts/image/busy6.png</idleImage><idleImage>/scripts/image/busy7.png</idleImage><idleImage>/scripts/image/busy8.png</idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		/scripts/image/vimeo_title.jpg
+		</image>
+		<text  offsetXPC=20 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		Vimeo
+		</text>			
+	    </mediaDisplay>
+
+
+
+<channel>
+	<title>Vimeo</title>
+	<link>/scripts/category/vimeo.rss</link>
+	<media:thumbnail url="image/logoTVGuide.gif" width="120" height="90" />
+
+<item>
+<title>Cautare dupa video tag</title>
+<link>rss_command://search</link>
+<search url="http://titooo.net23.net/vimeo_tag.php?tag=%s" />
+<media:thumbnail url="/scripts/image/vimeo.jpg"/>
+</item>
+
+<item>
+<title>Cautare dupa nume user</title>
+<link>rss_command://search</link>
+<search url="http://titooo.net23.net/vimeo_user.php?user=%s" />
+<media:thumbnail url="/scripts/image/vimeo.jpg"/>
+</item>
+
+<item>
+<title>Cautare dupa nume canal</title>
+<link>rss_command://search</link>
+<search url="http://titooo.net23.net/vimeo_channel.php?channel=%s" />
+<media:thumbnail url="/scripts/image/vimeo.jpg"/>
+</item>
+
+ <item>
+<title>VimeoHD</title>
+<link>http://titooo.net23.net/vimeo_channel.php?channel=hd</link>
+<media:thumbnail url="http://channelbadge.vimeo.com.s3.amazonaws.com/000/803_300.jpg" width="120" height="90" />
+<mediaDisplay name=ThreePartsView
+itemBackgroundColor=0:0:0
+	backgroundColor=0:0:0
+	sideLeftWidthPC=10
+	sideRightWidthPC=100
+	fontSize=16
+	showHeader="n0"
+	headerXPC=101
+	headerYPC=101
+	headerImageXPC=101 
+	headerImageYPC=101
+	itemImageXPC="9" 
+	itemImageYPC="21"
+    itemImageHeightPC="12" 
+	itemImageWidthPC="14"           
+    itemXPC="23"
+    itemYPC="20.5"			
+	itemPerPage="5"			
+	popupXPC = 7
+	popupYPC = 21
+	popupFontSize = 17
+	popupWidthPC = 15
+	popupBorderColor = 0:0:0>
+		<idleImage> /scripts/image/busy1.png </idleImage>
+		<idleImage> /scripts/image/busy2.png </idleImage>
+		<idleImage> /scripts/image/busy3.png </idleImage>
+		<idleImage> /scripts/image/busy4.png </idleImage>
+		<idleImage> /scripts/image/busy5.png </idleImage>
+		<idleImage>/scripts/image/busy6.png</idleImage><idleImage>/scripts/image/busy7.png</idleImage><idleImage>/scripts/image/busy8.png</idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		/scripts/image/vimeo_title.jpg
+		</image>
+		<text  offsetXPC=20 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		VimeoHD
+		</text>			
+	    </mediaDisplay>
+</item>
+
+ <item>
+<title>Vimeo staffpicks</title>
+<link>http://titooo.net23.net/vimeo_channel.php?channel=staffpicks</link>
+<media:thumbnail url="http://images.vimeo.com/channelbadge-112957409.jpg" width="120" height="90" />
+<mediaDisplay name=ThreePartsView
+itemBackgroundColor=0:0:0
+	backgroundColor=0:0:0
+	sideLeftWidthPC=10
+	sideRightWidthPC=100
+	fontSize=16
+	showHeader="n0"
+	headerXPC=101
+	headerYPC=101
+	headerImageXPC=101 
+	headerImageYPC=101
+	itemImageXPC="9" 
+	itemImageYPC="21"
+    itemImageHeightPC="12" 
+	itemImageWidthPC="14"           
+    itemXPC="23"
+    itemYPC="20.5"			
+	itemPerPage="5"			
+	popupXPC = 7
+	popupYPC = 21
+	popupFontSize = 17
+	popupWidthPC = 15
+	popupBorderColor = 0:0:0>
+		<idleImage> /scripts/image/busy1.png </idleImage>
+		<idleImage> /scripts/image/busy2.png </idleImage>
+		<idleImage> /scripts/image/busy3.png </idleImage>
+		<idleImage> /scripts/image/busy4.png </idleImage>
+		<idleImage> /scripts/image/busy5.png </idleImage>
+		<idleImage>/scripts/image/busy6.png</idleImage><idleImage>/scripts/image/busy7.png</idleImage><idleImage>/scripts/image/busy8.png</idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		/scripts/image/vimeo_title.jpg
+		</image>
+		<text  offsetXPC=20 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		Staff picks
+		</text>			
+	    </mediaDisplay>
+</item>
+
+ <item>
+<title>Everything Animated</title>
+<link>http://titooo.net23.net/vimeo_channel.php?channel=everythinganimated</link>
+<media:thumbnail url="http://channelbadge.vimeo.com.s3.amazonaws.com/453/4535_300.jpg" width="120" height="90" />
+<mediaDisplay name=ThreePartsView
+itemBackgroundColor=0:0:0
+	backgroundColor=0:0:0
+	sideLeftWidthPC=10
+	sideRightWidthPC=100
+	fontSize=16
+	showHeader="n0"
+	headerXPC=101
+	headerYPC=101
+	headerImageXPC=101 
+	headerImageYPC=101
+	itemImageXPC="9" 
+	itemImageYPC="21"
+    itemImageHeightPC="12" 
+	itemImageWidthPC="14"           
+    itemXPC="23"
+    itemYPC="20.5"			
+	itemPerPage="5"			
+	popupXPC = 7
+	popupYPC = 21
+	popupFontSize = 17
+	popupWidthPC = 15
+	popupBorderColor = 0:0:0>
+		<idleImage> /scripts/image/busy1.png </idleImage>
+		<idleImage> /scripts/image/busy2.png </idleImage>
+		<idleImage> /scripts/image/busy3.png </idleImage>
+		<idleImage> /scripts/image/busy4.png </idleImage>
+		<idleImage> /scripts/image/busy5.png </idleImage>
+		<idleImage>/scripts/image/busy6.png</idleImage><idleImage>/scripts/image/busy7.png</idleImage><idleImage>/scripts/image/busy8.png</idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		/scripts/image/vimeo_title.jpg
+		</image>
+		<text  offsetXPC=20 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		Everything Animated
+		</text>			
+	    </mediaDisplay>
+</item>
+
+ <item>
+<title>Film School - Filmmaking</title>
+<link>http://titooo.net23.net/vimeo_channel.php?channel=filmschool</link>
+<media:thumbnail url="http://images.vimeo.com/channelbadge-112975412.png" width="120" height="90" />
+<mediaDisplay name=ThreePartsView
+itemBackgroundColor=0:0:0
+	backgroundColor=0:0:0
+	sideLeftWidthPC=10
+	sideRightWidthPC=100
+	fontSize=16
+	showHeader="n0"
+	headerXPC=101
+	headerYPC=101
+	headerImageXPC=101 
+	headerImageYPC=101
+	itemImageXPC="9" 
+	itemImageYPC="21"
+    itemImageHeightPC="12" 
+	itemImageWidthPC="14"           
+    itemXPC="23"
+    itemYPC="20.5"			
+	itemPerPage="5"			
+	popupXPC = 7
+	popupYPC = 21
+	popupFontSize = 17
+	popupWidthPC = 15
+	popupBorderColor = 0:0:0>
+		<idleImage> /scripts/image/busy1.png </idleImage>
+		<idleImage> /scripts/image/busy2.png </idleImage>
+		<idleImage> /scripts/image/busy3.png </idleImage>
+		<idleImage> /scripts/image/busy4.png </idleImage>
+		<idleImage> /scripts/image/busy5.png </idleImage>
+		<idleImage>/scripts/image/busy6.png</idleImage><idleImage>/scripts/image/busy7.png</idleImage><idleImage>/scripts/image/busy8.png</idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		/scripts/image/vimeo_title.jpg
+		</image>
+		<text  offsetXPC=20 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		Film School - Filmmaking
+		</text>			
+	    </mediaDisplay>
+</item>
+
+ <item>
+<title>Shoot for the Edit</title>
+<link>http://titooo.net23.net/vimeo_channel.php?channel=theedit</link>
+<media:thumbnail url="http://images.vimeo.com/channelbadge-112957415.jpg" width="120" height="90" />
+<mediaDisplay name=ThreePartsView
+itemBackgroundColor=0:0:0
+	backgroundColor=0:0:0
+	sideLeftWidthPC=10
+	sideRightWidthPC=100
+	fontSize=16
+	showHeader="n0"
+	headerXPC=101
+	headerYPC=101
+	headerImageXPC=101 
+	headerImageYPC=101
+	itemImageXPC="9" 
+	itemImageYPC="21"
+    itemImageHeightPC="12" 
+	itemImageWidthPC="14"           
+    itemXPC="23"
+    itemYPC="20.5"			
+	itemPerPage="5"			
+	popupXPC = 7
+	popupYPC = 21
+	popupFontSize = 17
+	popupWidthPC = 15
+	popupBorderColor = 0:0:0>
+		<idleImage> /scripts/image/busy1.png </idleImage>
+		<idleImage> /scripts/image/busy2.png </idleImage>
+		<idleImage> /scripts/image/busy3.png </idleImage>
+		<idleImage> /scripts/image/busy4.png </idleImage>
+		<idleImage> /scripts/image/busy5.png </idleImage>
+		<idleImage>/scripts/image/busy6.png</idleImage><idleImage>/scripts/image/busy7.png</idleImage><idleImage>/scripts/image/busy8.png</idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		/scripts/image/vimeo_title.jpg
+		</image>
+		<text  offsetXPC=20 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		Shoot for the Edit
+		</text>			
+	    </mediaDisplay>
+</item>
+
+ <item>
+<title>Music Videos</title>
+<link>http://titooo.net23.net/vimeo_channel.php?channel=musicvideos</link>
+<media:thumbnail url="http://channelbadge.vimeo.com.s3.amazonaws.com/115/11529_300.jpg" width="120" height="90" />
+<mediaDisplay name=ThreePartsView
+itemBackgroundColor=0:0:0
+	backgroundColor=0:0:0
+	sideLeftWidthPC=10
+	sideRightWidthPC=100
+	fontSize=16
+	showHeader="n0"
+	headerXPC=101
+	headerYPC=101
+	headerImageXPC=101 
+	headerImageYPC=101
+	itemImageXPC="9" 
+	itemImageYPC="21"
+    itemImageHeightPC="12" 
+	itemImageWidthPC="14"           
+    itemXPC="23"
+    itemYPC="20.5"			
+	itemPerPage="5"			
+	popupXPC = 7
+	popupYPC = 21
+	popupFontSize = 17
+	popupWidthPC = 15
+	popupBorderColor = 0:0:0>
+		<idleImage> /scripts/image/busy1.png </idleImage>
+		<idleImage> /scripts/image/busy2.png </idleImage>
+		<idleImage> /scripts/image/busy3.png </idleImage>
+		<idleImage> /scripts/image/busy4.png </idleImage>
+		<idleImage> /scripts/image/busy5.png </idleImage>
+		<idleImage>/scripts/image/busy6.png</idleImage><idleImage>/scripts/image/busy7.png</idleImage><idleImage>/scripts/image/busy8.png</idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		/scripts/image/vimeo_title.jpg
+		</image>
+		<text  offsetXPC=20 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		Music Videos
+		</text>			
+	    </mediaDisplay>
+</item>
+
+ <item>
+<title>Documentary Film</title>
+<link>http://titooo.net23.net/vimeo_channel.php?channel=documentaryfilm</link>
+<media:thumbnail url="http://images.vimeo.com/channelbadge-112957445.jpg" width="120" height="90" />
+<mediaDisplay name=ThreePartsView
+itemBackgroundColor=0:0:0
+	backgroundColor=0:0:0
+	sideLeftWidthPC=10
+	sideRightWidthPC=100
+	fontSize=16
+	showHeader="n0"
+	headerXPC=101
+	headerYPC=101
+	headerImageXPC=101 
+	headerImageYPC=101
+	itemImageXPC="9" 
+	itemImageYPC="21"
+    itemImageHeightPC="12" 
+	itemImageWidthPC="14"           
+    itemXPC="23"
+    itemYPC="20.5"			
+	itemPerPage="5"			
+	popupXPC = 7
+	popupYPC = 21
+	popupFontSize = 17
+	popupWidthPC = 15
+	popupBorderColor = 0:0:0>
+		<idleImage> /scripts/image/busy1.png </idleImage>
+		<idleImage> /scripts/image/busy2.png </idleImage>
+		<idleImage> /scripts/image/busy3.png </idleImage>
+		<idleImage> /scripts/image/busy4.png </idleImage>
+		<idleImage> /scripts/image/busy5.png </idleImage>
+		<idleImage>/scripts/image/busy6.png</idleImage><idleImage>/scripts/image/busy7.png</idleImage><idleImage>/scripts/image/busy8.png</idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		/scripts/image/vimeo_title.jpg
+		</image>
+		<text  offsetXPC=20 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		Documentary Film
+		</text>			
+	    </mediaDisplay>
+</item>
+
+ <item>
+<title>Slowmotion and Timelapse Theater</title>
+<link>http://titooo.net23.net/vimeo_channel.php?channel=1341</link>
+<media:thumbnail url="http://images.vimeo.com/channelbadge-112957413.jpg" width="120" height="90" />
+<mediaDisplay name=ThreePartsView
+itemBackgroundColor=0:0:0
+	backgroundColor=0:0:0
+	sideLeftWidthPC=10
+	sideRightWidthPC=100
+	fontSize=16
+	showHeader="n0"
+	headerXPC=101
+	headerYPC=101
+	headerImageXPC=101 
+	headerImageYPC=101
+	itemImageXPC="9" 
+	itemImageYPC="21"
+    itemImageHeightPC="12" 
+	itemImageWidthPC="14"           
+    itemXPC="23"
+    itemYPC="20.5"			
+	itemPerPage="5"			
+	popupXPC = 7
+	popupYPC = 21
+	popupFontSize = 17
+	popupWidthPC = 15
+	popupBorderColor = 0:0:0>
+		<idleImage> /scripts/image/busy1.png </idleImage>
+		<idleImage> /scripts/image/busy2.png </idleImage>
+		<idleImage> /scripts/image/busy3.png </idleImage>
+		<idleImage> /scripts/image/busy4.png </idleImage>
+		<idleImage> /scripts/image/busy5.png </idleImage>
+		<idleImage>/scripts/image/busy6.png</idleImage><idleImage>/scripts/image/busy7.png</idleImage><idleImage>/scripts/image/busy8.png</idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		/scripts/image/vimeo_title.jpg
+		</image>
+		<text  offsetXPC=20 offsetYPC=8 widthPC=45 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		Slowmotion and Timelapse Theater
+		</text>			
+	    </mediaDisplay>
+</item>
+
+ <item>
+<title>The Stereo 3D Channel</title>
+<link>http://titooo.net23.net/vimeo_channel.php?channel=stereoscopy</link>
+<media:thumbnail url="http://images.vimeo.com/channelbadge-112984098.jpg" width="120" height="90" />
+<mediaDisplay name=ThreePartsView
+itemBackgroundColor=0:0:0
+	backgroundColor=0:0:0
+	sideLeftWidthPC=10
+	sideRightWidthPC=100
+	fontSize=16
+	showHeader="n0"
+	headerXPC=101
+	headerYPC=101
+	headerImageXPC=101 
+	headerImageYPC=101
+	itemImageXPC="9" 
+	itemImageYPC="21"
+    itemImageHeightPC="12" 
+	itemImageWidthPC="14"           
+    itemXPC="23"
+    itemYPC="20.5"			
+	itemPerPage="5"			
+	popupXPC = 7
+	popupYPC = 21
+	popupFontSize = 17
+	popupWidthPC = 15
+	popupBorderColor = 0:0:0>
+		<idleImage> /scripts/image/busy1.png </idleImage>
+		<idleImage> /scripts/image/busy2.png </idleImage>
+		<idleImage> /scripts/image/busy3.png </idleImage>
+		<idleImage> /scripts/image/busy4.png </idleImage>
+		<idleImage> /scripts/image/busy5.png </idleImage>
+		<idleImage>/scripts/image/busy6.png</idleImage><idleImage>/scripts/image/busy7.png</idleImage><idleImage>/scripts/image/busy8.png</idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		/scripts/image/vimeo_title.jpg
+		</image>
+		<text  offsetXPC=20 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		The Stereo 3D Channel
+		</text>			
+	    </mediaDisplay>
+</item>
+ <item>
+<title>The White House</title>
+<link>http://titooo.net23.net/vimeo_channel.php?channel=whitehouse</link>
+<media:thumbnail url="http://images.vimeo.com/channelbadge-112957453.jpg" width="120" height="90" />
+<mediaDisplay name=ThreePartsView
+itemBackgroundColor=0:0:0
+	backgroundColor=0:0:0
+	sideLeftWidthPC=10
+	sideRightWidthPC=100
+	fontSize=16
+	showHeader="n0"
+	headerXPC=101
+	headerYPC=101
+	headerImageXPC=101 
+	headerImageYPC=101
+	itemImageXPC="9" 
+	itemImageYPC="21"
+    itemImageHeightPC="12" 
+	itemImageWidthPC="14"           
+    itemXPC="23"
+    itemYPC="20.5"			
+	itemPerPage="5"			
+	popupXPC = 7
+	popupYPC = 21
+	popupFontSize = 17
+	popupWidthPC = 15
+	popupBorderColor = 0:0:0>
+		<idleImage> /scripts/image/busy1.png </idleImage>
+		<idleImage> /scripts/image/busy2.png </idleImage>
+		<idleImage> /scripts/image/busy3.png </idleImage>
+		<idleImage> /scripts/image/busy4.png </idleImage>
+		<idleImage> /scripts/image/busy5.png </idleImage>
+		<idleImage>/scripts/image/busy6.png</idleImage><idleImage>/scripts/image/busy7.png</idleImage><idleImage>/scripts/image/busy8.png</idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		/scripts/image/vimeo_title.jpg
+		</image>
+		<text  offsetXPC=20 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		The White House	
+		</text>			
+	    </mediaDisplay>
+</item>
+
+<item>
+<title>Time Lapse in HD</title>
+<link>http://titooo.net23.net/vimeo_channel.php?channel=timelapseinhd</link>
+<media:thumbnail url="http://images.vimeo.com/channelbadge-112963530.jpg" width="120" height="90" />
+<mediaDisplay name=ThreePartsView
+itemBackgroundColor=0:0:0
+	backgroundColor=0:0:0
+	sideLeftWidthPC=10
+	sideRightWidthPC=100
+	fontSize=16
+	showHeader="n0"
+	headerXPC=101
+	headerYPC=101
+	headerImageXPC=101 
+	headerImageYPC=101
+	itemImageXPC="9" 
+	itemImageYPC="21"
+    itemImageHeightPC="12" 
+	itemImageWidthPC="14"           
+    itemXPC="23"
+    itemYPC="20.5"			
+	itemPerPage="5"			
+	popupXPC = 7
+	popupYPC = 21
+	popupFontSize = 17
+	popupWidthPC = 15
+	popupBorderColor = 0:0:0>
+		<idleImage> /scripts/image/busy1.png </idleImage>
+		<idleImage> /scripts/image/busy2.png </idleImage>
+		<idleImage> /scripts/image/busy3.png </idleImage>
+		<idleImage> /scripts/image/busy4.png </idleImage>
+		<idleImage> /scripts/image/busy5.png </idleImage>
+		<idleImage>/scripts/image/busy6.png</idleImage><idleImage>/scripts/image/busy7.png</idleImage><idleImage>/scripts/image/busy8.png</idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		/scripts/image/vimeo_title.jpg
+		</image>
+		<text  offsetXPC=20 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		Time Lapse in HD	
+		</text>			
+	    </mediaDisplay>
+</item>
+
+<item>
+<title>01SHORTFILM</title>
+<link>http://titooo.net23.net/vimeo_channel.php?channel=01shortfilm</link>
+<media:thumbnail url="http://images.vimeo.com/channelbadge-112957598.jpg" width="120" height="90" />
+<mediaDisplay name=ThreePartsView
+itemBackgroundColor=0:0:0
+	backgroundColor=0:0:0
+	sideLeftWidthPC=10
+	sideRightWidthPC=100
+	fontSize=16
+	showHeader="n0"
+	headerXPC=101
+	headerYPC=101
+	headerImageXPC=101 
+	headerImageYPC=101
+	itemImageXPC="9" 
+	itemImageYPC="21"
+    itemImageHeightPC="12" 
+	itemImageWidthPC="14"           
+    itemXPC="23"
+    itemYPC="20.5"			
+	itemPerPage="5"			
+	popupXPC = 7
+	popupYPC = 21
+	popupFontSize = 17
+	popupWidthPC = 15
+	popupBorderColor = 0:0:0>
+		<idleImage> /scripts/image/busy1.png </idleImage>
+		<idleImage> /scripts/image/busy2.png </idleImage>
+		<idleImage> /scripts/image/busy3.png </idleImage>
+		<idleImage> /scripts/image/busy4.png </idleImage>
+		<idleImage> /scripts/image/busy5.png </idleImage>
+		<idleImage>/scripts/image/busy6.png</idleImage><idleImage>/scripts/image/busy7.png</idleImage><idleImage>/scripts/image/busy8.png</idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		/scripts/image/vimeo_title.jpg
+		</image>
+		<text  offsetXPC=20 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		01SHORTFILM	
+		</text>			
+	    </mediaDisplay>
+</item>
+
+
+
+
+
+
+</channel>
+</rss>

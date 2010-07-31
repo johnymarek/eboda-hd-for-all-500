@@ -1,0 +1,66 @@
+.menu {font-size:11pt;color:#B1D3F6;}
+.txt {font-size:11pt;color:#A8D1E6;}
+.boxtxt {font-size:11pt;color:#91B3D0;}
+.status {font-size:11pt;color:#639FBE;}
+.button {font-size:11pt;color:#A8D1E6;}
+.pagination{font-size:11pt;color:#80B2D9;}
+.pagination a:link, .pagination a:visited {font-size:11pt;color:#A8D1E6;text-decoration:none}
+.title {font-size:14pt;color:#CEE9F0;}
+table.progressbar{}
+td.progressbar{font-size:1pt;}
+
+input[type="text"], input[type="reset"], input[type="password"], select, textarea, input[type="button"], input[type="submit"], button
+{
+	border:black 1px solid; padding-left:3px;
+}
+
+input[type="button"], input[type="submit"], input[type="reset"], button, .span_button
+{
+	background-color: #EEEEEE;
+}
+
+input[type="text"], input[type="password"], select, textarea
+{
+	background-color: #FFFFFF;
+}
+
+div.msg_important
+{
+	position:relative;
+	left:25%;
+	min-height:25px;
+	width:500px;
+	line-height:25px;
+	text-align: center;
+	background-color: #E8A433;
+}
+
+body   {
+	font-size: 12px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	background-color: #014f7f;
+	background-repeat: no-repeat;
+}
+
+a			{ color: #A8D1E6; text-decoration:none}
+a.visited	{ color: #A8D1E6; text-decoration:none }
+a:hover		{ color: #B1D3F6; text-decoration:none }
+
+.div_error
+{
+	position:relative;
+	left:25%;
+	min-height:25px;
+	min-width:200px;
+	width:400px;
+	line-height:25px;
+	text-align: center;
+	background-color: #E8A433;
+	font-weight: bold;
+	border: #000000 1px dashed;
+}
+
+td
+{
+	vertical-align: top;
+}

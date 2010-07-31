@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<channel>
+	<title>TV</title>
+	<menu>main menu</menu>
+
+<item>
+<title>Digi TV (Honduras)</title>
+<link>http://193.110.59.95:8080</link>
+<enclosure type="video/mx-wmv" url="http://193.110.59.95:8080"/>
+</item>
+
+<item>
+<title>Telered 21 (Honduras)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://wms1.iviplanet.com/telered21</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://wms1.iviplanet.com/telered21"/>
+</item>
+
+<item>
+<title>Teleprogresso (Honduras)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://wm5.spacialnet.com/hhtv110906</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://wm5.spacialnet.com/hhtv110906"/>
+</item>
+
+<item>
+<title>Teleceiba (Honduras)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://www.teleceiba.com/Transmision_Vivo</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://www.teleceiba.com/Transmision_Vivo"/>
+</item>
+
+<item>
+<title>Dernicres vapeurs r Cuba (Honduras)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://railtv.net/canal1</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://railtv.net/canal1"/>
+</item>
+
+<item>
+<title>Globo TV (Honduras)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://208.75.230.34/Globotv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://208.75.230.34/Globotv"/>
+</item>
+
+<item>
+<title>Sulavision (Honduras)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://wm5.spacialnet.com/gcshn127557</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://wm5.spacialnet.com/gcshn127557"/>
+</item>
+
+</channel>
+</rss>

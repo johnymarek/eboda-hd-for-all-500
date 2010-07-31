@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<!--Xtreamer Community 2010 - xMenu9 Cap-->
+<rss version="2.0" xmlns:media="http://purl.org/dc/elements/1.1/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+
+    <title>Xtreamer - Comedy & Entertainment</title>
+
+    <item>
+      <title>A-List - Butterscotch.com</title>
+      <link>http://alistipod.video.butterscotch.com/rss</link>
+      <media:thumbnail url="/scripts/scripts9/image/cande-al.jpg" />
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+  <item>
+	<title>Anime TV</title>
+		<link>http://revision3.com/animetv/feed/MP4-High-Definition</link>
+	<media:thumbnail url="/scripts/scripts9/image/cande-atv.jpg"/>
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+<item>
+<title>Best Ads on TV</title>
+<link>http://feeds2.feedburner.com/tvx1tv</link>
+<media:thumbnail url="/scripts/scripts9/image/cande-ba.jpg"/>
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+    <item>
+      <title>Best of YouTube</title>
+	      <link>http://feeds.feedburner.com/boyt</link>
+	<media:thumbnail url="/scripts/scripts9/image/cande-byt.jpg"/>
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+    <item>
+      <title>College Humor</title>
+      <link>http://www.collegehumor.com/itunes/podcast/chtv/rss</link>
+      <media:thumbnail url="/scripts/scripts9/image/cande-ch.jpg" />
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+    <item>
+      <title>Happy Tree Friends</title>
+      <link>http://podcast.happytreefriends.com/htfrss.xml</link>
+      <media:thumbnail url="/scripts/scripts9/image/cande-htf.jpg"/>
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+    <item>
+      <title>Onion News Network</title>
+      <link>http://feeds.theonion.com/OnionNewsNetwork</link>
+      <media:thumbnail url="/scripts/scripts9/image/cande-onn.jpg" />
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+    <item>
+      <title>ROFL</title>
+      <link>http://revision3.com/rofl/feed/MP4-Large</link>
+      <media:thumbnail url="/scripts/scripts9/image/cande-rfl.jpg" />
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+    <item>
+      <title>Scam School</title>
+      <link>http://revision3.com/scamschool/feed/MP4-Large</link>
+      <media:thumbnail url="/scripts/scripts9/image/cande-ss.jpg" />
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+    <item>
+      <title>The Digg Reel</title>
+      <link>http://revision3.com/diggreel/feed/MP4-Large</link>
+      <media:thumbnail url="/scripts/scripts9/image/cande-tdr.jpg" />
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+  <item>
+	<title>Tiki Bar TV</title>
+		<link>http://www.tikibartv.com/feeds/itunes</link>
+	<media:thumbnail url="/scripts/scripts9/image/cande-tb.jpg"/>
+  </item>
+
+</channel>
+</rss>

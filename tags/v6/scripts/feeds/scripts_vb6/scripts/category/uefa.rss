@@ -1,0 +1,43 @@
+<?xml version='1.0' ?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+<title>UEFA</title>
+
+<item>
+<title>UEFA - training ground</title>
+<link>http://127.0.0.1:82/scripts/php/uefa1.php</link>
+<media:thumbnail url="/scripts/image/uefa1.jpg" />
+</item>
+
+<item>
+<title>UEFA - Weekly Edition</title>
+<link>http://127.0.0.1:82/scripts/php/uefa4.php</link>
+<media:thumbnail url="/scripts/image/uefa4.jpg" />
+</item>
+
+<item>
+<title>UEFA - Football first</title>
+<link>http://127.0.0.1:82/scripts/php/uefa6.php</link>
+<media:thumbnail url="/scripts/image/uefa6.jpg" />
+</item>
+
+<item>
+<title>UEFA - World Cup</title>
+<link>http://127.0.0.1:82/scripts/php/uefa2.php</link>
+<media:thumbnail url="/scripts/image/uefa2.jpg" />
+</item>
+
+<item>
+<title>UEFA - Champions League</title>
+<link>http://127.0.0.1:82/scripts/php/uefa3.php</link>
+<media:thumbnail url="/scripts/image/uefa3.jpg" />
+</item>
+
+<item>
+<title>UEFA - Europa League</title>
+<link>http://127.0.0.1:82/scripts/php/uefa5.php</link>
+<media:thumbnail url="/scripts/image/uefa5.jpg" />
+</item>
+
+</channel>
+</rss>
