@@ -1,6 +1,6 @@
 #summary 500_cipibad_v6a
 
-= Nou firmware v6a bazat pe Playon!HD PV73100 Firmware Version: r4318 =
+= Nou firmware disponibil (bazat pe Playon!HD PV73100 4318)
 
 http://eboda-hd-for-all-500.googlecode.com/files/HD_for_all_500_cipibad_v6.0a.zip
 
