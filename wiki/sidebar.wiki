@@ -9,6 +9,11 @@
     * [500plus_r1245_modified_v4 Firmware for 500plus r1245 modified v4.0]
     * [500_cipibad_v5 Firmware for 500 v5.0 by cipibad]
     * [500plus_cipibad_v5 Firmware for 500plus v5.0 by cipibad]
+    * [500_cipibad_v5 Firmware for 500 v6.0 by cipibad]
+    * [500_cipibad_v5a Firmware for 500 v6.0a by cipibad]
+    * [500mini_cipibad_v5 Firmware for 500plus v6.0 by cipibad]
+    * [500mini_cipibad_v5a Firmware for 500plus v6.0a by cipibad]
+    * [500plus_cipibad_v5 Firmware for 500plus v6.0 by cipibad]
   * Optware
     * [RtorrentInstallation Installing rtorrent]
     * [SambaInstallation Installing samba]
