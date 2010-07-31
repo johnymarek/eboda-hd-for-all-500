@@ -1,16 +1,12 @@
 #summary 500_cipibad_v6a
 
-= Nou firmware v6a bazat pe Playon!HD PV73100 Firmware Version: r4318  - not ready yet=
+= Nou firmware v6a bazat pe Playon!HD PV73100 Firmware Version: r4318 =
+
+http://eboda-hd-for-all-500.googlecode.com/files/HD_for_all_500_cipibad_v6.0a.zip
 
 v6a:
-  * webserver+php support noi (cele din optware ocupau prea mult spatiu/memorie)
-  * E-boda Web Control Panel (design by eqqie http://forum.softpedia.com/index.php?showuser=51317) http://IP_MP/ewcp.html 
-  * new torrent client btpd 0.15 (merge iPlay, pentru alte trackere astept confirmari) http://IP_MP/webui
-  * functionare aproape completa si cu HDD/storage extern (exceptie sunt pachetele extensie de la e-boda)
-  * alt font system + subtitrare
-  * suport pentru streaming (ShoutCast , mms, etc). Linkurile trebuie insa prelucrate (puteti folosi ca exemplu cele din pachetul script).
-  * *extensiile/serviciile sunt incluse in firmware, trebuie doar instalate/updatate*
-  * *scripts de la vb6 sunt instalate si configurate(versiunea 9 + patch)*
-  * *MetaFeeds*
-
-  * *Acest firmware a aparut cu ajutorul (ordine ASCII): Mtz, costidraghia, eqqie, vb6rocod*
+  * inlocuire lighttpd cu thttpd: php-urile ar trebui sa mearga mai repede
+  * sunt instalate transmission + rtorrent + btpd 0.15 (inca nu sunt configurate, sunt doar pentru a fi testate de cei ce se mai descurca cu Linux)
+  * revenire la traducere, skinpack si screensaver original
+  * update la ultima versiune de HDD links (31.07.2010)
+  * Metafeeds
