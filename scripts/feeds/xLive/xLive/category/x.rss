@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!--Xtreamer Community 2010 - xLive9.1 Cap-->
+<rss version="2.0" xmlns:media="http://purl.org/dc/elements/1.1/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+	<onEnter>
+		if(GetProduct() == "XTREAMER") 
+		{ 
+			addItem("xitem", 0); 
+		}
+	</onEnter>
+
+<xitem>
+     <title>RSS Skin Manager</title>
+     <link>http://127.0.0.1:82/xLive/php/skin_manager.php</link>
+     <media:thumbnail url="/xLive/image/skin_browser.jpg" />
+     <mediaDisplay name=photoView
+            rowCount="2" columnCount="3" 
+            itemBorderColor="0:255:180"
+            drawItemText="no"
+         menuBorderColor="20:20:20"
+         sideColorBottom="20:20:20"
+         sideColorTop="20:20:20"
+         itemImageXPC="10"
+         itemOffsetXPC="7"
+         backgroundColor="0:0:0"
+            idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage>
+         </mediaDisplay>
+   </xitem>
+
+  <channel>
+
+    <title>Xtensions - Community Tools</title>
+
+</channel>
+</rss>
