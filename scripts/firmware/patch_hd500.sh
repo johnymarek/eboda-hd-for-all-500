@@ -1,28 +1,35 @@
 #!/bin/sh
 
+
+####################
+# CHECKING prequisites
+#
+
+#checking original firmware presence
 IMAGE_FILE=install.img
+[ -f ${IMAGE_FILE} ] || ( echo "Original install.img not found" &&  exit 3 )
+echo Original install.img not found, continuing
 
-[ -f ${IMAGE_FILE} ] || exit
 
+#check SVN repository presence
 if [ $# -ne 1 ]
 then
-    
-    echo SVN dir not found, please supply
+    echo No arguments given, please suppply absolute path to SVN directory in first argument
     exit 1
 fi
-echo SVN dir: $1
+
 if [ -d $1/.svn ]
 then
-
-    echo SVN dir found
+    echo SVN dir ( $1) found, continuing
 else
-    echo SVN dir not found, please supply
+    echo  Wrong argument given, please suppply absolute path to SVN directory in first argument
     exit 1
 fi
 
+#checking Resources and other directories presence
 if [ ! -d $1/src/500/Resource ]
 then
-    echo resources not found, repository incomplete
+    echo Resources not found, repository incomplete
     exit 1
 fi
 
@@ -37,27 +44,36 @@ then
     echo image not found, repository incomplete
     exit 1
 fi
+echo "All resources and directories found, continuing"
 
-echo Checking if tool are present ....
+#cheking unyaffs tools
 which unyaffs >/dev/null
 if [ $? -eq 1 ]
 then
-    echo 'required tool unyaffs not in PATH'
+    echo 'required tool unyaffs not in PATH, please update PATH or copy unyaffs binary in "/usr/bin"'
     exit
 fi
 
 which mkyaffs2image >/dev/null
 if [ $? -eq 1 ]
 then
-    echo 'required tool unyaffs not in PATH'
+    echo 'required tool unyaffs not in PATH, please update PATH or copy mkyaffs2image binary in "/usr/bin"'
     exit
 fi
-echo Checking OK
+echo unyaffs tools apre present
 
 #
+# CHECKING prequisites
+####################
+
+
+####################
+# modifying firmware
+
+
 # unpack img
 mkdir unpacked_install
-[ $? -eq 0 ] || exit cannot create dir please start from a clean directory
+[ $? -eq 0 ] || exit 'cannot create "unpacked_install" dir please start from a clean directory'
 
 cd unpacked_install/
 tar xvf ../${IMAGE_FILE}
@@ -138,19 +154,21 @@ chmod +x tmp_orig/www/cgi-bin/*
 # menu
 cp -r $1/src/500/menu/* usr/local/bin/scripts/
 
-# scripts
+# vb6 scripts
 dir=`pwd`
 cd $1/scripts/feeds/scripts_vb6/
 find scripts | grep -v .svn | grep -v '~' | zip -9 ${dir}/scripts.zip -@
 cp scripts-version.txt ${dir}/scripts-version.txt
 cd ${dir}
 
+#packaging root back
 cd ..
 rm yaffs2_1.img
 mkyaffs2image unpacked_root yaffs2_1.img 
 
 rm -rf unpacked_root/
 
+#unpacking /usr/local/etc
 mkdir unpacked_etc
 [ $? -eq 0 ] || exit cannot create dir please start from a clean directory
 
@@ -158,8 +176,9 @@ mkdir unpacked_etc
 cd unpacked_etc/
 
 tar jxvf ../usr.local.etc.tar.bz2
+
+#root home part 2
 mkdir root
-#
 
 # keep this to be mine
 # later update to come for external images of xtreamer
@@ -288,14 +307,18 @@ fi
 #END CBA_CB3PP_STARTUP' > rccb3ppS
 chmod +x rccb3ppS
 
+
+#addind my startup to standard startup procedure
 echo '
 [ -f /usr/local/etc/rccb3ppS ] && sh /usr/local/etc/rccb3ppS &' >> rcS
 
-
+#packing back /usr/local/etc
 rm ../usr.local.etc.tar.bz2
 tar jcvf ../usr.local.etc.tar.bz2 *
 cd ..
 rm -rf unpacked_etc/
+
+#packing the normal image
 
 cd ..
 mv ../${IMAGE_FILE} ../${IMAGE_FILE}.orig
