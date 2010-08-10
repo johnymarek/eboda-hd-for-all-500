@@ -20,19 +20,19 @@ fi
 
 #vb6 scripts to HDD
 
-cd $storage
 SERIAL=0
-VERSION=v0.0
+[ -f ${storage}/scripts-version.txt ] && . ${storage}/scripts-version.txt
+DISK_SERIAL=${SERIAL}
 
-
-wget http://eboda-hd-for-all-500.googlecode.com/files/scripts-latest-version.txt
+wget http://eboda-hd-for-all-500.googlecode.com/files/scripts-version.txt -O scripts-version-new.txt
 [ $? == 0 ] || nice_exit 1  
-. ./scripts-latest-version.txt
-. ./scripts/scripts-version.txt
 
-if [ $LATEST_SERIAL -gt $SERIAL ]
+[ -f ./scripts-version-new.txt ] && . ./scripts-version-new.txt
+
+if [ ${SERIAL} -gt ${DISK_SERIAL} ]
 then
-    echo "Latest version available is ${LATEST_VERSION}, you have $VERSION, updating !!!"
+    echo "Latest version available is ${SERIAL}, you have $DISK_SERIAL, updating !!!"
+
 
 wget http://eboda-hd-for-all-500.googlecode.com/files/scripts-latest.zip
 [ $? == 0 ] || nice_exit 2
@@ -42,8 +42,10 @@ rm -rf scripts/*
 unzip -o scripts-latest.zip
 rm scripts-latest.zip
 
+    mv scripts-version-new.txt scripts-version.txt
+
 else
-    echo "You are already running the latest version ($VERSION)"
+    echo "You are already running the latest version ($SERIAL)"
 fi
 
 nice_exit 0 

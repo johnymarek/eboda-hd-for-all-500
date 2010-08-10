@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<!--Xtreamer Community 2010 - xMenu9 Cap-->
+<rss version="2.0" xmlns:media="http://purl.org/dc/elements/1.1/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+
+    <title>Xtreamer - News & Discussion</title>
+
+    <item>
+      <title>ABC News</title>
+      <link>http://ims.hdplayers.net/scripts/category/abc.rss</link>
+      <media:thumbnail url="http://ims.hdplayers.net/scripts/scripts9/image/abcnews_google_rss_logo.png" />
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		ABC News
+		</text>	
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+    <item>
+      <title>Boing Boing TV</title>
+      <link>http://feeds.boingboing.net/boingboing/tv</link>
+      <media:thumbnail url="http://ims.hdplayers.net/scripts/scripts9/image/nandd-bb.png" />
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+    <item>
+      <title>Car Pool - Llewtube</title>
+	      <link>http://llewtubevideo.blip.tv/rss</link>
+	<media:thumbnail url="http://ims.hdplayers.net/scripts/scripts9/image/nandd-cp.jpg"/>
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+    <item>
+      <title>Euronews - No Comment</title>
+      <link>http://www.euronews.net/podcasts/nocomment/no_comment.xml</link>
+      <media:thumbnail url="http://ims.hdplayers.net/scripts/scripts9/image/nandd-en.jpg" />
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+<item>
+<title>Poptech</title>
+<link>http://feeds2.feedburner.com/poptech/NKfz</link>
+<media:thumbnail url="http://ims.hdplayers.net/scripts/scripts9/image/nandd-pt.jpg"/>
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+    <item>
+      <title>Ted Talks</title>
+      <link>http://feeds.feedburner.com/TedtalksHD</link>
+      <media:thumbnail url="http://ims.hdplayers.net/scripts/scripts9/image/nandd-tt.jpg" />
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>http://ims.hdplayers.net/scripts/scripts9/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+</channel>
+</rss>

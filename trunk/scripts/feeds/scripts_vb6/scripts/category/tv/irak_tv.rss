@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<channel>
+	<title>TV</title>
+	<menu>main menu</menu>
+
+<item>
+<title>Salam TV (Irak)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://198.64.249.15/salam</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://198.64.249.15/salam"/>
+</item>
+
+<item>
+<title>TV Masar (Irak)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://almasartv.org/almasar</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://almasartv.org/almasar"/>
+</item>
+
+<item>
+<title>Aso Sat (Irak)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://194.23.100.35/Asosat</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://194.23.100.35/Asosat"/>
+</item>
+
+</channel>
+</rss>

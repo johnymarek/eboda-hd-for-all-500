@@ -90,7 +90,7 @@
        </media:thumbnail>
     </item>-->
     <item>
-    <title>xLive</title>^M
+    <title>HDD Links</title>^M
       <media:thumbnail  width="120" height="90" >
         <script>
           if (getQueryItemIndex() == HddIndex)
@@ -109,8 +109,8 @@
   </item>^M
   
     <item>
-      <title>MetaFeeds</title>
-      <link>http://www.metafeeds.com/channel/hdforall5/rss</link>
+      <title>xLive9</title>
+      <link>rss_file:///xLive9/menu.rss</link>
       <media:thumbnail  width="120" height="90" >
         <script>
           if (getQueryItemIndex() == MetafeedsIndex)

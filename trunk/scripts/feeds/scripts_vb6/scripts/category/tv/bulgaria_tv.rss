@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<channel>
+	<title>TV</title>
+	<menu>main menu</menu>
+
+<item>
+<title>Eco Bulgaria (Bulgaria)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://212.25.37.148/EcoBulgariaTV</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://212.25.37.148/EcoBulgariaTV"/>
+</item>
+
+<item>
+<title>City BG (Bulgaria)</title>
+<link>http://87.120.16.6:8001</link>
+<enclosure type="video/mx-wmv" url="http://87.120.16.6:8001"/>
+</item>
+
+<item>
+<title>Gabrovo webcam1 (Bulgaria)</title>
+<link>http://87.120.16.6:8060</link>
+<enclosure type="video/mx-wmv" url="http://87.120.16.6:8060"/>
+</item>
+
+<item>
+<title>Gabrovo webcam2 (Bulgaria)</title>
+<link>http://87.120.16.6:8070</link>
+<enclosure type="video/mx-wmv" url="http://87.120.16.6:8070"/>
+</item>
+
+</channel>
+</rss>

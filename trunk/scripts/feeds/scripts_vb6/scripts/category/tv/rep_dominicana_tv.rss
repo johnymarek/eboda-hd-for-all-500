@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<channel>
+	<title>TV</title>
+	<menu>main menu</menu>
+
+<item>
+<title>Canal 4 (Rep. Dominicana)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://208.53.158.184/canal4tv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://208.53.158.184/canal4tv"/>
+</item>
+
+<item>
+<title>Telemicro (Rep. Dominicana)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://66.128.53.146/TELEMICRO</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://66.128.53.146/TELEMICRO"/>
+</item>
+
+<item>
+<title>Digita 15 (Rep. Dominicana)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://66.128.53.146/DIGITAL15</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://66.128.53.146/DIGITAL15"/>
+</item>
+
+</channel>
+</rss>
