@@ -1,7 +1,7 @@
 #!/bin/sh
 
-component=cb3pp
-description="binaries compiled by cipibad"
+component=xLive
+description="Xtreamer Live"
 
 
 . ./common.sh

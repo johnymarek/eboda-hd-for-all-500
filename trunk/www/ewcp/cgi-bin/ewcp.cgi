@@ -58,7 +58,7 @@ name_bftpd="NAS: bftpd"
 name_DvdPlayer="CORE: DvdPlayer"
 
 #apache transmission lighttpd not in this scope
-for i in thttpd btpd15  bftpd btpd smbd DvdPlayer 
+for i in lighttpd btpd15  bftpd btpd smbd DvdPlayer 
 do
     pic=/eb_imgs/cp_on.gif
     script=util_${i}-stop.cgi
@@ -125,9 +125,10 @@ EOF
 # name_DvdPlayer="CORE: DvdPlayer"
 name_ewcp="WWW: Eboda Web Control Panel"
 name_vb6="RSS: vb6rocod php scripts"
+name_xLive="RSS: Xtreamer Live"
 name_apps="APPS: extra apps"
 
-for i in ewcp vb6 apps 
+for i in ewcp apps vb6 xLive
 do
     script=util_${i}-update.cgi
     full_name=`eval echo \\$name_${i}`
@@ -152,7 +153,7 @@ startfile_btpd="/tmp/package/script/btpd"
 startfile_smbd="/tmp/package/script/samba"
 
 #apache transmission lighttpd not in this scope
-for i in thttpd btpd15 bftpd
+for i in lighttpd btpd15 bftpd
 do
     full_name=`eval echo \\$name_${i}`
     script="#"
