@@ -22,17 +22,17 @@ fi
 cd $storage
 
 SERIAL=0
-VERSION=v0.0
+[ -f ${storage}/cb3pp-version.txt ] && . ${storage}/cb3pp-version.txt
+DISK_SERIAL=${SERIAL}
 
-
-wget http://eboda-hd-for-all-500.googlecode.com/files/cb3pp-latest-version.txt
+wget http://eboda-hd-for-all-500.googlecode.com/files/cb3pp-version.txt -O cb3pp-version-new.txt
 [ $? == 0 ] || nice_exit 1  
-. ./cb3pp-latest-version.txt
-. ./cb3pp/cb3pp-version.txt
 
-if [ $LATEST_SERIAL -gt $SERIAL ]
+[ -f ./cb3pp-version-new.txt ] && . ./cb3pp-version-new.txt
+
+if [ ${SERIAL} -gt ${DISK_SERIAL} ]
 then
-    echo "Latest version available is ${LATEST_VERSION}, you have $VERSION, updating !!!"
+    echo "Latest version available is ${SERIAL}, you have $DISK_SERIAL, updating !!!"
 
 
     wget http://eboda-hd-for-all-500.googlecode.com/files/cb3pp-latest.zip
@@ -45,8 +45,10 @@ then
     
     cp $storage/ewcp/S99ewcp /cb3pp/etc/init.d/S99ewcp
     sh /cb3pp/etc/init.d/S99ewcp
+
+    mv cb3pp-version-new.txt cb3pp-version.txt
 else
-    echo "You are already running the latest version ($VERSION)"
+    echo "You are already running the latest version ($SERIAL)"
 fi
 
 

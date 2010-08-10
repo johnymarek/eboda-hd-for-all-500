@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<channel>
+	<title>TV</title>
+	<menu>main menu</menu>
+
+<item>
+<title>7 News (Belgia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://200.32.198.90/7news</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://200.32.198.90/7news"/>
+</item>
+
+<item>
+<title>AVS (Belgia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://clusterstreamhobo.telenet-ops.be/AVS/nieuws/nieuwsdinsdag.wmv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://clusterstreamhobo.telenet-ops.be/AVS/nieuws/nieuwsdinsdag.wmv"/>
+</item>
+</channel>
+</rss>

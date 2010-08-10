@@ -1,0 +1,71 @@
+<?xml version='1.0' ?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="20" idleImageHeightPC="26">
+	<idleImage>image/busy1.png</idleImage>
+	<idleImage>image/busy2.png</idleImage>
+	<idleImage>image/busy3.png</idleImage>
+	<idleImage>image/busy4.png</idleImage>
+	<idleImage>image/busy5.png</idleImage>
+	<idleImage>image/busy6.png</idleImage>
+	<idleImage>image/busy7.png</idleImage>
+	<idleImage>image/busy8.png</idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		ProTV
+		</text>			
+</mediaDisplay>
+<channel>
+<title>Emisiuni ProTV</title>
+
+
+<item>
+<title>ProTV - Happy Hour</title>
+<link>http://ims.hdplayers.net/scripts/category/protv_happyhour.rss</link>
+<media:thumbnail url="http://ims.hdplayers.net/scripts/image/protv_happyhour.jpg" />
+</item>
+
+<item>
+<title>ProTV - State de Romania</title>
+<link>http://ims.hdplayers.net/scripts/php/protv_state.php?query=1</link>
+<media:thumbnail url="http://ims.hdplayers.net/scripts/image/protv_state.jpg" />
+</item>
+
+<item>
+<title>ProTv - Ce se intampla, doctore?</title>
+<link>http://ims.hdplayers.net/scripts/php/protv_emisiuni.php?query=1,http://www.protv.ro/emisiuni/shows/ce-se-intampla-doctore/video-maria-radu-cornel-ilie-si-cabral-vorbesc-despre-sex/38252/pagina-</link>
+<media:thumbnail url="http://ims.hdplayers.net/scripts/image/protv.jpg" />
+</item>
+
+<item>
+<title>ProTv - Omul care aduce cartea</title>
+<link>http://ims.hdplayers.net/scripts/php/protv_emisiuni.php?query=1,http://www.protv.ro/emisiuni/shows/omul-care-aduce-cartea/video-james-hollis-de-ce-oamenii-buni-savarsesc-fapte-rele/38344/pagina-</link>
+<media:thumbnail url="http://ims.hdplayers.net/scripts/image/protv.jpg" />
+</item>
+
+<item>
+<title>ProTv - Pro Motor</title>
+<link>http://ims.hdplayers.net/scripts/php/protv_emisiuni.php?query=1,http://www.protv.ro/emisiuni/shows/pro-motor/video-stiri-pro-motor-partea-a-ii-a/38282/pagina-</link>
+<media:thumbnail url="http://ims.hdplayers.net/scripts/image/protv.jpg" />
+</item>
+
+<item>
+<title>ProTv - Horoscop cu Neti Sandu</title>
+<link>http://ims.hdplayers.net/scripts/php/protv_emisiuni.php?query=1,http://www.protv.ro/emisiuni/protv_news/horoscop-cu-neti-sandu/video-horoscop-2-iunie/38341/pagina-</link>
+<media:thumbnail url="http://ims.hdplayers.net/scripts/image/protv.jpg" />
+</item>
+
+<item>
+<title>ProTv - Vremea</title>
+<link>http://ims.hdplayers.net/scripts/php/protv_emisiuni.php?query=1,http://www.protv.ro/emisiuni/protv_news/vremea/video-vremea-2-iunie-prognoza/38343/pagina-</link>
+<media:thumbnail url="http://ims.hdplayers.net/scripts/image/protv.jpg" />
+</item>
+
+</channel>
+</rss>

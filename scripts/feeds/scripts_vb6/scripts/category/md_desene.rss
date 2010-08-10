@@ -1,0 +1,78 @@
+<?xml version='1.0' ?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="20" idleImageHeightPC="26">
+	<idleImage>image/busy1.png</idleImage>
+	<idleImage>image/busy2.png</idleImage>
+	<idleImage>image/busy3.png</idleImage>
+	<idleImage>image/busy4.png</idleImage>
+	<idleImage>image/busy5.png</idleImage>
+	<idleImage>image/busy6.png</idleImage>
+	<idleImage>image/busy7.png</idleImage>
+	<idleImage>image/busy8.png</idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		Mediadirect
+		</text>			
+</mediaDisplay>
+<channel>
+<title>Mediadirect - desene animate</title>
+
+<item>
+<title>Bugs Bunny Adventures</title>
+<link>http://127.0.0.1/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:1935/desene_animate?id=1676684/mp4:Bugs_Bunny_Adventures.mp4</link>
+<media:thumbnail url="http://www.mediadirect.ro/desene_thumb/Bugs_Bunny_Adventures.jpg" />
+<enclosure type="video/mp4" url="http://127.0.0.1/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:1935/desene_animate?id=1676684/mp4:Bugs_Bunny_Adventures.mp4"/>
+</item>
+
+<item>
+<title>A Bucket Full of Cartoons</title>
+<link>http://127.0.0.1/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:1935/desene_animate?id=1676684/mp4:A_Bucket_Full_of_Cartoons.mp4</link>
+<media:thumbnail url="http://www.mediadirect.ro/desene_thumb/A_Bucket_Full_of_Cartoons.jpg" />
+<enclosure type="video/mp4" url="http://127.0.0.1/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:1935/desene_animate?id=1676684/mp4:A_Bucket_Full_of_Cartoons.mp4"/>
+</item>
+
+
+<item>
+<title>Cartoon Explosion</title>
+<link>http://127.0.0.1/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:1935/desene_animate?id=1676684/mp4:Cartoon_Explosion.mp4</link>
+<media:thumbnail url="http://www.mediadirect.ro/desene_thumb/Cartoon_Explosion.jpg" />
+<enclosure type="video/mp4" url="http://127.0.0.1/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:1935/desene_animate?id=1676684/mp4:Cartoon_Explosion.mp4"/>
+</item>
+
+<item>
+<title>The Betty Boop Collection P2</title>
+<link>http://127.0.0.1/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:1935/desene_animate?id=1676684/mp4:The_Betty_Boop_Collection_P2.mp4</link>
+<media:thumbnail url="http://www.mediadirect.ro/desene_thumb/The_Betty_Boop_Collection_P2.jpg" />
+<enclosure type="video/mp4" url="http://127.0.0.1/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:1935/desene_animate?id=1676684/mp4:The_Betty_Boop_Collection_P2.mp4"/>
+</item>
+
+<item>
+<title>Superman - The Lost Episodes</title>
+<link>http://127.0.0.1/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:1935/desene_animate?id=1676684/mp4:Superman_The_Lost_Episodes.mp4</link>
+<media:thumbnail url="http://www.mediadirect.ro/desene_thumb/Superman_-_The_Lost_Episodes.jpg" />
+<enclosure type="video/mp4" url="http://127.0.0.1/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:1935/desene_animate?id=1676684/mp4:Superman_The_Lost_Episodes.mp4"/>
+</item>
+
+<item>
+<title>Cartoon Favorites Vol 2</title>
+<link>http://127.0.0.1/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:1935/desene_animate?id=1676684/mp4:Cartoon_Favorites_Vol_2.mp4</link>
+<media:thumbnail url="http://www.mediadirect.ro/desene_thumb/Cartoon_Favorites_Vol_2.jpg" />
+<enclosure type="video/mp4" url="http://127.0.0.1/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:1935/desene_animate?id=1676684/mp4:Cartoon_Favorites_Vol_2.mp4"/>
+</item>
+
+<item>
+<title>Alice in Wonderland</title>
+<link>http://127.0.0.1/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:1935/desene_animate?id=1676684/mp4:Alice_in_Wonderland.mp4</link>
+<media:thumbnail url="http://www.mediadirect.ro/desene_thumb/Alice_in_Wonderland.jpg" />
+<enclosure type="video/mp4" url="http://127.0.0.1/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:1935/desene_animate?id=1676684/mp4:Alice_in_Wonderland.mp4"/>
+</item>
+
+</channel>
+</rss>

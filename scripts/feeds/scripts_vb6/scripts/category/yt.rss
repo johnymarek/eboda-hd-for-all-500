@@ -1,0 +1,65 @@
+<?xml version='1.0' ?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+<title>YouTube</title>
+<link>/yt.rss</link>
+
+<item>
+<title>Search</title>
+<link>rss_command://search</link>
+<search url="http://ims.hdplayers.net/scripts/php/yt_search.php?query=1,%s" />
+<media:thumbnail url="http://ims.hdplayers.net/scripts/image/search.png" />
+</item>
+
+<item>
+<title>Recent Videos</title>
+<link>http://ims.hdplayers.net/scripts/php/yt_recent.php</link>
+</item>
+
+<item>
+<title>Top Favorited</title>
+<link>http://ims.hdplayers.net/scripts/php/ytf.php</link>
+</item>
+
+<item>
+<title>Popular</title>
+<link>http://ims.hdplayers.net/scripts/php/yt_popular.php</link>
+</item>
+
+<item>
+<title>Most Viewed</title>
+<link>http://ims.hdplayers.net/scripts/php/yt_mv.php</link>
+</item>
+
+<item>
+<title>HD</title>
+<link>http://ims.hdplayers.net/scripts/php/yt_hd.php</link>
+</item>
+
+<item>
+<title>Movie</title>
+<link>http://ims.hdplayers.net/scripts/php/yt_movie.php</link>
+</item>
+
+<item>
+<title>trailer Search</title>
+<link>http://ims.hdplayers.net/scripts/php/yt_search.php?query=1,trailer</link>
+</item>
+
+<item>
+<title>game trailer Search</title>
+<link>http://ims.hdplayers.net/scripts/php/yt_search.php?query=1,game+trailer</link>
+</item>
+
+<!--<item>
+<title>UEFA Search</title>
+<link>http://ims.hdplayers.net/scripts/php/yt_search.php?query=1,uefa</link>
+</item>
+
+<item>
+<title>world cup 2010 Search</title>
+<link>http://ims.hdplayers.net/scripts/php/yt_search.php?query=1,world+cup+2010</link>
+</item>-->
+
+</channel>
+</rss>

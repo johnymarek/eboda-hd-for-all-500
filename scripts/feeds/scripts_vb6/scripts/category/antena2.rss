@@ -1,0 +1,215 @@
+<?xml version='1.0' ?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="20" idleImageHeightPC="26">
+	<idleImage>image/busy1.png</idleImage>
+	<idleImage>image/busy2.png</idleImage>
+	<idleImage>image/busy3.png</idleImage>
+	<idleImage>image/busy4.png</idleImage>
+	<idleImage>image/busy5.png</idleImage>
+	<idleImage>image/busy6.png</idleImage>
+	<idleImage>image/busy7.png</idleImage>
+	<idleImage>image/busy8.png</idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		Antena2
+		</text>			
+</mediaDisplay>
+
+<channel>
+	<title>Antena 2 - Emisiuni</title>
+	<menu>main menu</menu>
+
+
+<item>
+<title>Agentul VIP</title>
+<link>http://ims.hdplayers.net/scripts/php/antena2.php?query=1,http://www.antena2.tv/arhiva/agentul-vip/</link>
+
+<media:thumbnail url="http://www.antena2.tv/files/shows/medium/2.jpg" />
+</item>
+
+<item>
+<title>Vorbe grele</title>
+<link>http://ims.hdplayers.net/scripts/php/antena2.php?query=1,http://www.antena2.tv/arhiva/vorbe-grele/</link>
+<media:thumbnail url="http://www.antena2.tv/files/shows/medium/12.jpg" />
+</item>
+
+<item>
+<title>Stele sub lupa</title>
+<link>http://ims.hdplayers.net/scripts/php/antena2.php?query=1,http://www.antena2.tv/arhiva/stele-sub-lupa/</link>
+<media:thumbnail url="http://www.antena2.tv/files/shows/medium/125.jpg" />
+
+</item>
+
+<item>
+<title>Adevar sau baliverne</title>
+<link>http://ims.hdplayers.net/scripts/php/antena2.php?query=1,http://www.antena2.tv/arhiva/adevar-sau-baliverne/</link>
+<media:thumbnail url="http://www.antena2.tv/files/shows/medium/87.jpg" />
+</item>
+
+<item>
+<title>Dincolo de aparente</title>
+<link>http://ims.hdplayers.net/scripts/php/antena2.php?query=1,http://www.antena2.tv/arhiva/dincolo-de-aparente/</link>
+<media:thumbnail url="http://www.antena2.tv/files/shows/medium/17.jpg" />
+</item>
+
+<item>
+<title>Oamenii timpului nostru</title>
+<link>http://ims.hdplayers.net/scripts/php/antena2.php?query=1,http://www.antena2.tv/arhiva/oamenii-timpului-nostru/</link>
+<media:thumbnail url="http://www.antena2.tv/files/shows/medium/69.jpg" />
+</item>
+
+<item>
+<title>Neconventional</title>
+<link>http://ims.hdplayers.net/scripts/php/antena2.php?query=1,http://www.antena2.tv/arhiva/neconventional/</link>
+<media:thumbnail url="http://www.antena2.tv/files/shows/medium/129.jpg" />
+</item>
+
+<item>
+<title>PUNK&#39;D</title>
+<link>http://ims.hdplayers.net/scripts/php/antena2.php?query=1,http://www.antena2.tv/arhiva/punk-d/</link>
+<media:thumbnail url="http://www.antena2.tv/files/shows/medium/27.jpg" />
+</item>
+
+<item>
+<title>Crime odioase</title>
+<link>http://ims.hdplayers.net/scripts/php/antena2.php?query=1,http://www.antena2.tv/arhiva/crime-odioase/</link>
+<media:thumbnail url="http://www.antena2.tv/files/shows/medium/25.jpg" />
+</item>
+
+<item>
+
+<title>La tinta</title>
+<link>http://ims.hdplayers.net/scripts/php/antena2.php?query=1,http://www.antena2.tv/arhiva/la-tinta/</link>
+<media:thumbnail url="http://www.antena2.tv/files/shows/medium/124.jpg" />
+</item>
+
+<item>
+<title>DECIZII PENTRU VIATA</title>
+<link>http://ims.hdplayers.net/scripts/php/antena2.php?query=1,http://www.antena2.tv/arhiva/decizii-pentru-viata/</link>
+<media:thumbnail url="http://www.antena2.tv/files/shows/medium/144.jpg" />
+</item>
+
+<item>
+<title>CONCERT: SARBATOAREA CRACIUNULUI</title>
+
+<link>http://ims.hdplayers.net/scripts/php/antena2.php?query=1,http://www.antena2.tv/arhiva/concert-sarbatoarea-craciunului/</link>
+<media:thumbnail url="http://www.antena2.tv/files/shows/medium/148.jpg" />
+</item>
+
+<item>
+<title>Gala Premiilor Confidential</title>
+<link>http://ims.hdplayers.net/scripts/php/antena2.php?query=1,http://www.antena2.tv/arhiva/gala-premiilor-confidential/</link>
+<media:thumbnail url="http://www.antena2.tv/files/shows/medium/154.jpg" />
+</item>
+
+<item>
+<title>Filmul sau Viata?</title>
+<link>http://ims.hdplayers.net/scripts/php/antena2.php?query=1,http://www.antena2.tv/arhiva/filmul-sau-viata/</link>
+
+<media:thumbnail url="http://www.antena2.tv/files/shows/medium/159.jpg" />
+</item>
+
+<item>
+<title>Rai da&#39; buni</title>
+<link>http://ims.hdplayers.net/scripts/php/antena2.php?query=1,http://www.antena2.tv/arhiva/rai-da-buni/</link>
+
+<media:thumbnail url="http://www.antena2.tv/files/shows/medium/14.jpg" />
+</item>
+
+<item>
+<title>Conferinta de presa</title>
+<link>http://ims.hdplayers.net/scripts/php/antena2.php?query=1,http://www.antena2.tv/arhiva/conferinta-de-presa/</link>
+<media:thumbnail url="http://www.antena2.tv/files/shows/medium/16.jpg" />
+</item>
+
+<item>
+<title>Traieste sanatos</title>
+<link>http://ims.hdplayers.net/scripts/php/antena2.php?query=1,http://www.antena2.tv/arhiva/traieste-sanatos/</link>
+<media:thumbnail url="http://www.antena2.tv/files/shows/medium/15.jpg" />
+
+</item>
+
+<item>
+<title>Confidential</title>
+<link>http://ims.hdplayers.net/scripts/php/antena2.php?query=1,http://www.antena2.tv/arhiva/confidential/</link>
+<media:thumbnail url="http://www.antena2.tv/files/shows/medium/96.jpg" />
+</item>
+
+<item>
+<title>It&#39;s Show Time</title>
+<link>http://ims.hdplayers.net/scripts/php/antena2.php?query=1,http://www.antena2.tv/arhiva/it-s-show-time/</link>
+<media:thumbnail url="http://www.antena2.tv/files/shows/medium/138.jpg" />
+</item>
+
+<item>
+<title>Rebecca</title>
+<link>http://ims.hdplayers.net/scripts/php/antena2.php?query=1,http://www.antena2.tv/arhiva/rebecca/</link>
+<media:thumbnail url="http://www.antena2.tv/files/shows/medium/68.jpg" />
+</item>
+
+<item>
+<title>Celebri sau nu la Mihaela Tatu</title>
+<link>http://ims.hdplayers.net/scripts/php/antena2.php?query=1,http://www.antena2.tv/arhiva/celebri-sau-nu-la-mihaela-tatu/</link>
+<media:thumbnail url="http://www.antena2.tv/files/shows/medium/90.jpg" />
+</item>
+
+<item>
+<title>Conventional</title>
+<link>http://ims.hdplayers.net/scripts/php/antena2.php?query=1,http://www.antena2.tv/arhiva/conventional/</link>
+<media:thumbnail url="http://www.antena2.tv/files/shows/medium/140.jpg" />
+</item>
+
+<item>
+<title>Saturday Night Live</title>
+<link>http://ims.hdplayers.net/scripts/php/antena2.php?query=1,http://www.antena2.tv/arhiva/saturday-night-live/</link>
+<media:thumbnail url="http://www.antena2.tv/files/shows/medium/29.jpg" />
+</item>
+
+<item>
+
+<title>Misterele Trecutului</title>
+<link>http://ims.hdplayers.net/scripts/php/antena2.php?query=1,http://www.antena2.tv/arhiva/misterele-trecutului/</link>
+<media:thumbnail url="http://www.antena2.tv/files/shows/medium/47.jpg" />
+</item>
+
+<item>
+<title>Pe urmele monstrilor</title>
+<link>http://ims.hdplayers.net/scripts/php/antena2.php?query=1,http://www.antena2.tv/arhiva/pe-urmele-monstrilor/</link>
+<media:thumbnail url="http://www.antena2.tv/files/shows/medium/82.jpg" />
+</item>
+
+<item>
+<title>MINCINOSII</title>
+
+<link>http://ims.hdplayers.net/scripts/php/antena2.php?query=1,http://www.antena2.tv/arhiva/mincinosii/</link>
+<media:thumbnail url="http://www.antena2.tv/files/shows/medium/146.jpg" />
+</item>
+
+<item>
+<title>Aventurile lui Mos Craciun</title>
+<link>http://ims.hdplayers.net/scripts/php/antena2.php?query=1,http://www.antena2.tv/arhiva/aventurile-lui-mos-craciun/</link>
+<media:thumbnail url="http://www.antena2.tv/files/shows/medium/153.jpg" />
+</item>
+
+<item>
+<title>La hanu&#39; lu&#39; Tatu</title>
+<link>http://ims.hdplayers.net/scripts/php/antena2.php?query=1,http://www.antena2.tv/arhiva/la-hanu-lu-tatu/</link>
+
+<media:thumbnail url="http://www.antena2.tv/files/shows/medium/158.jpg" />
+</item>
+
+<item>
+<title>Concert Mark KNOPFLER One night in London</title>
+<link>http://ims.hdplayers.net/scripts/php/antena2.php?query=1,http://www.antena2.tv/arhiva/concert-mark-knopfler-one-night-in-london/</link>
+<media:thumbnail url="http://www.antena2.tv/files/shows/medium/161.jpg" />
+</item>
+
+
+</channel>
+</rss>

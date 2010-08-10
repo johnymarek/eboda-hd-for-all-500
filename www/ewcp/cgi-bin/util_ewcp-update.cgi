@@ -22,17 +22,17 @@ fi
 cd $storage
 
 SERIAL=0
-VERSION=v0.0
+[ -f ${storage}/ewcp-version.txt ] && . ${storage}/ewcp-version.txt
+DISK_SERIAL=${SERIAL}
 
-
-wget http://eboda-hd-for-all-500.googlecode.com/files/ewcp-latest-version.txt
+wget http://eboda-hd-for-all-500.googlecode.com/files/ewcp-version.txt -O ewcp-version-new.txt
 [ $? == 0 ] || nice_exit 1  
-. ./ewcp-latest-version.txt
-. ./ewcp/ewcp-version.txt
 
-if [ $LATEST_SERIAL -gt $SERIAL ]
+[ -f ./ewcp-version-new.txt ] && . ./ewcp-version-new.txt
+
+if [ ${SERIAL} -gt ${DISK_SERIAL} ]
 then
-    echo "Latest version available is ${LATEST_VERSION}, you have $VERSION, updating !!!"
+    echo "Latest version available is ${SERIAL}, you have $DISK_SERIAL, updating !!!"
 
     wget http://eboda-hd-for-all-500.googlecode.com/files/ewcp-latest.zip
     
@@ -45,8 +45,11 @@ then
     
     cp $storage/ewcp/S99ewcp /cb3pp/etc/init.d/S99ewcp
     sh /cb3pp/etc/init.d/S99ewcp
+    mv ewcp-version-new.txt ewcp-version.txt
+
+
 else
-    echo "You are already running the latest version ($VERSION)"
+    echo "You are already running the latest version ($SERIAL)"
 fi
 nice_exit 0 
 
