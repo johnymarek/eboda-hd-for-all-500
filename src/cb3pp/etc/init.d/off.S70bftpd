@@ -4,7 +4,7 @@ prefix="/cb3pp"
 
 PATH=${prefix}/bin:${prefix}/sbin:/sbin:/bin:/usr/sbin:/usr/bin
 NAME=bftpd
-DAEMON=/sbin/${NAME}
+DAEMON=${prefix}/sbin/${NAME}
 DAEMON_OPTS="-c ${prefix}/etc/bftpd.conf -d"
 
 
