@@ -1,20 +1,8 @@
 #summary Tool Chain installation
 
-= warning =
-
-
-
-= Introduction =
-
-This is the description of a cross compiler installation process. More info about what what is a cross compiler and specific MIPS information can be found here: http://www.linux-mips.org/wiki/Toolchains
-
-Following description is based on the latest MIPSEL compiler that was available on mips.com ftp site.
-
-
-= Details =
-
-1. fedora installation
-2. packages installation (yum)
-3. packages installation (rpm)
-    
-=TBC=
+* get a Linux PC
+* install packages: binutils, 
+* get the compiler from here: http://download.conceptronic.net/GNU-GPL/CM3Gxx/toolchain/mipsel-sdelinux-v6.05.00-4.i386.rpm and install-in
+* update your PATH environment variable to include mipsel-linux-gcc and the other new binaries
+* happy compiling
+* (I recommend static compilation to not have surprises while running the binary on the target)
