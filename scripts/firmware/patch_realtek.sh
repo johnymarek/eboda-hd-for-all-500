@@ -1,4 +1,4 @@
-#!/bin/sh
+!/bin/sh
 
 
 
@@ -7,13 +7,27 @@ function patch_firmware()
 
 if [ $# -ne 3 ]
 then
-    echo 3 arguments expected by function patch_firmware IMAGE_FILE, svn-repo absolute path, \[500|500mini|500plus\]
+    echo 3 arguments expected by function patch_firmware IMAGE_FILE, svn-repo absolute path, \[500|500a|500mini|500minia|500plus\]
     exit 1
 fi
 
 IMAGE_FILE=$1
 SVN_REPO=$2
 VERSION=$3
+
+if [ ${VERSION} = "500a" ]
+then
+    USE_EBODA_INSTALL="yes";
+    VERSION="500";
+fi
+
+if [ ${VERSION} = "500minia" ]
+then
+    USE_EBODA_INSTALL="yes";
+    VERSION="500mini";
+fi
+
+
 if [ ${VERSION} = "500" -o ${VERSION} = "500mini" -o ${VERSION} = "500plus" ]
 then
     echo Patching firmware variant ${VERSION}
@@ -276,6 +290,9 @@ then
 	cd ${storage}
 	unzip -o /cb3pp.zip 
 	cp /cb3pp-version.txt ${storage}/cb3pp-version.txt
+
+	[ -f  ${storage}/cb3pp/etc/init.s/S99ewcp ] || cp  ${storage}/ewcp/S99ewcp  ${storage}/cb3pp/etc/init.d
+        chmod +x ${storage}/cb3pp/etc/init.d/S99ewcp
 fi
 
 
@@ -333,6 +350,12 @@ rm -rf unpacked_etc/
 #packing the normal image
 
 cd ..
+
+#copy eboda installer
+rm install_*
+cp ${SVN_REPO}/src/${VERSION}/install/install_a .
+
+
 mv ../${IMAGE_FILE} ../${IMAGE_FILE}.orig
 tar cvf ../${IMAGE_FILE} *
 cd ..

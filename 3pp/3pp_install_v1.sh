@@ -29,10 +29,10 @@ btpd=false
 apache=false
 
 #begin rtorrent
-rutorrent=true
-rtgui=true
+rutorrent=false
+rtgui=false
 openssl=false
-dtach=false
+dtach=true
 libsigc=false
 libtorrent=false
 ncurses=false
