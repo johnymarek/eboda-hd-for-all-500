@@ -1,3 +1,4 @@
+
 #!/bin/sh
 
 
@@ -5,7 +6,7 @@
 
 #checking original firmware presence
 IMAGE_FILE=install.img
-VERSION="500"
+VERSION="500a"
 
 #check SVN repository presence
 if [ $# -ne 1 ]
