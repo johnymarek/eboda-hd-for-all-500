@@ -1,3 +1,0 @@
-/opt/etc/lighttpd/lighttpd.conf
-/opt/etc/lighttpd/conf.d/01-default.conf
-/opt/etc/init.d/S80lighttpd
