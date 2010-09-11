@@ -1,0 +1,4 @@
+include CHANGES
+include LICENSE
+recursive-include btpdwebui/data *.tmpl *.png *.css *.ico *.js *.html
+

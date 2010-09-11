@@ -1,0 +1,57 @@
+<div class="torrent">
+<table cellspacing="0">
+<tr>
+<td class="title"><TMPL_VAR name></td>
+<td rowspan="3" class="nav">
+<TMPL_IF inactive>
+<a href="#" onClick="torrentAction(<TMPL_VAR num>, 'start');">Start</a>
+</TMPL_IF>
+<TMPL_IF start>
+<a href="#" onClick="torrentAction(<TMPL_VAR num>, 'stop');">Stop</a>
+</TMPL_IF>
+<TMPL_IF stop>
+<a href="#" onClick="torrentAction(<TMPL_VAR num>, 'start');">Start</a>
+</TMPL_IF>
+<TMPL_IF seed>
+<a href="#" onClick="torrentAction(<TMPL_VAR num>, 'stop');">Stop</a>
+</TMPL_IF>
+<TMPL_IF leech>
+<a href="#" onClick="torrentAction(<TMPL_VAR num>, 'stop');">Stop</a>
+</TMPL_IF>
+<br />
+<a href="#" onClick="torrentAction(<TMPL_VAR num>, 'delete');">Delete</a>
+</td>
+</tr>
+<tr><td>
+<div class="prog-bar">
+<TMPL_IF inactive>
+<div class="prog-bar-inactive" style="width: <TMPL_VAR percent>%"></div>
+</TMPL_IF>
+<TMPL_IF leech>
+<div class="prog-bar-leech" style="width: <TMPL_VAR percent>%"></div>
+</TMPL_IF>
+<TMPL_IF seed>
+<div class="prog-bar-seed" style="width: <TMPL_VAR percent>%"></div>
+</TMPL_IF>
+</div>
+</td></tr>
+<tr><td>
+<TMPL_IF inactive>
+Inactive &ndash; <TMPL_VAR got> of <TMPL_VAR size> [<TMPL_VAR percent>%]
+</TMPL_IF>
+<TMPL_IF start>
+Starting...
+</TMPL_IF>
+<TMPL_IF stop>
+Stopping...
+</TMPL_IF>
+<TMPL_IF leech>
+Downloading from <TMPL_VAR peers> peers &ndash; <TMPL_VAR got> of <TMPL_VAR size> [<TMPL_VAR percent>%] &ndash; Down: <TMPL_VAR drate>, Up: <TMPL_VAR urate>
+</TMPL_IF>
+<TMPL_IF seed>
+Seeding to <TMPL_VAR peers> peers &ndash; <TMPL_VAR totup> [<TMPL_VAR ratio>%] &ndash; Up: <TMPL_VAR urate>
+</TMPL_IF>
+</td></tr>
+</table>
+</div>
+
