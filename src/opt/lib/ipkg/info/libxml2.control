@@ -1,9 +1,0 @@
-Package: libxml2
-Architecture: mipsel
-Priority: optional
-Section: libs
-Version: 2.7.7-1
-Maintainer: NSLU2 Linux <nslu2-linux@yahoogroups.com>
-Source: ftp://xmlsoft.org/libxml2/libxml2-2.7.7.tar.gz
-Description: Libxml2 is the XML C parser and toolkit developed for the Gnome project.
-Depends: zlib

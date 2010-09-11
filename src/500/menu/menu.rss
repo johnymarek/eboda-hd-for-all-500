@@ -109,8 +109,8 @@
   </item>^M
   
     <item>
-      <title>xLive9</title>
-      <link>rss_file:///xLive9/menu.rss</link>
+      <title>xLive</title>
+      <link>rss_file:///xLive/menu.rss</link>
       <media:thumbnail  width="120" height="90" >
         <script>
           if (getQueryItemIndex() == MetafeedsIndex)
