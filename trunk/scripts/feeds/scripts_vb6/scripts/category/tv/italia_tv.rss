@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<channel>
+	<title>TV</title>
+	<menu>main menu</menu>
+
+<item>
+<title>Canale 7, Italy</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://www.superstreaming.it/canale7</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://www.superstreaming.it/canale7"/>
+</item>
+
+<item>
+<title>Primocanale, Italy</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://85.18.78.90/diretta</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://85.18.78.90/diretta"/>
+</item>
+
+<item>
+<title>3 Channel, Italy</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://iptv.telecard.it/3Channel</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://iptv.telecard.it/3Channel"/>
+</item>
+
+<item>
+<title>Cinquestelle TV, Italy</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://iptv.telecard.it/Cinquestelle</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://iptv.telecard.it/Cinquestelle"/>
+</item>
+
+<item>
+<title>Video Tolentino, Italy</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://streaming1.bsnewline.com/videotolentino</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://streaming1.bsnewline.com/videotolentino"/>
+</item>
+
+<item>
+<title>Radio Napoli Emme (Italia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://65.19.129.26/radioemme</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://65.19.129.26/radioemme"/>
+</item>
+
+<item>
+<title>Acroiris TV (Italia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://streaming3.arcoiris.tv/vive-adsl</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://streaming3.arcoiris.tv/vive-adsl"/>
+</item>
+
+<item>
+<title>Rock TV1 (Italia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://194.116.83.15/New</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://194.116.83.15/New"/>
+</item>
+
+<item>
+<title>Teletruia (Italia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://83.147.65.2/TeletruriaLive</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://83.147.65.2/TeletruriaLive"/>
+</item>
+
+<item>
+<title>TV 2000 (Italia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://89.119.94.130/Sat2000</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://89.119.94.130/Sat2000"/>
+</item>
+
+<item>
+<title>La 8 Veneto Lq (Italia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://iptv.telecard.it/LA8VE_LQ</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://iptv.telecard.it/LA8VE_LQ"/>
+</item>
+
+<item>
+<title>LA8 Romagna (Italia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://iptv.telecard.it/LA8ER_LQ</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://iptv.telecard.it/LA8ER_LQ"/>
+</item>
+
+<item>
+<title>Carpe Diem (Italia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://iptv.telecard.it/carpediem</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://iptv.telecard.it/carpediem"/>
+</item>
+
+<item>
+<title>Ibiza On TV (Italia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://81.174.67.45/ibizaontv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://81.174.67.45/ibizaontv"/>
+</item>
+
+<item>
+<title>Sport Italia 24 (Italia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://mms.cdn-tiscali.com/sportitalia</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://mms.cdn-tiscali.com/sportitalia"/>
+</item>
+
+<item>
+<title>Rock TV4 70's (Italia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://194.116.83.15/70s</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://194.116.83.15/70s"/>
+</item>
+
+<item>
+<title>Primocanale (Italia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://iptv.primocanale.it/diretta</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://iptv.primocanale.it/diretta"/>
+</item>
+
+<item>
+<title>E-TV (Italia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://streaming.e-tv.it/etvsatellite</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://streaming.e-tv.it/etvsatellite"/>
+</item>
+
+<item>
+<title>Rock TV2 90's (Italia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://194.116.83.15/90s</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://194.116.83.15/90s"/>
+</item>
+
+<item>
+<title>Teleradioerre (Italia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://www.teleradioerre.com/Teleradioerre</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://www.teleradioerre.com/Teleradioerre"/>
+</item>
+
+<item>
+<title>Cinquestelle (Italia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://iptv.telecard.it/Cinquestelle</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://iptv.telecard.it/Cinquestelle"/>
+</item>
+
+<item>
+<title>La 9 Sat (Italia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://iptv.telecard.it/LA9SAT_HQ</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://iptv.telecard.it/LA9SAT_HQ"/>
+</item>
+
+<item>
+<title>Oasis TV (Italia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://200.6.152.82/oasistv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://200.6.152.82/oasistv"/>
+</item>
+
+<item>
+<title>Super TV (Italia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://streaming1.bsnewline.com/supertvoristano</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://streaming1.bsnewline.com/supertvoristano"/>
+</item>
+
+<item>
+<title>RTL (Italia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://151.1.245.36/rtl102.5vs</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://151.1.245.36/rtl102.5vs"/>
+</item>
+
+<item>
+<title>Sport Italia (Italia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://mms.cdn-tiscali.com/sportitalia</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://mms.cdn-tiscali.com/sportitalia"/>
+</item>
+
+<item>
+<title>Studio 100 TV (Italia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://iptv.telecard.it/Studio100</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://iptv.telecard.it/Studio100"/>
+</item>
+
+<item>
+<title>TeleRama (Italia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://streaming1.bsnewline.com/telerama</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://streaming1.bsnewline.com/telerama"/>
+</item>
+
+<item>
+<title>3 Channel (Italia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://84.233.254.2/3Channel</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://84.233.254.2/3Channel"/>
+</item>
+
+<item>
+<title>Rock TV2 80's (Italia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://194.116.83.15/80s</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://194.116.83.15/80s"/>
+</item>
+
+<item>
+<title>Telemolise (Italia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://wmlive.telemolise.com/stream2</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://wmlive.telemolise.com/stream2"/>
+</item>
+
+</channel>
+</rss>
