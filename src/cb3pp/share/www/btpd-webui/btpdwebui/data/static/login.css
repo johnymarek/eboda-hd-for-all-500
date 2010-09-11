@@ -1,0 +1,24 @@
+#login-box {
+    margin-top: 100px;
+    width: 280px;
+    padding: 36px 0 20px 0;  
+    background: #eee;
+    border: 1px solid #333;
+}
+
+#login-table {
+
+    text-align: left;
+    border: 0;
+    padding; 0;
+}
+
+input {
+    background: #fff;
+    border: 1px solid #333;
+}
+
+#error {
+    color: #e00;
+}
+
