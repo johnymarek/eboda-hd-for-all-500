@@ -31,7 +31,7 @@ btpd_start(){
 #start running btpd
     echo "Starting Torrent client: btpd 0.15"
 
-    $btpdbin --port 6992 --max-peers 64
+    $btpdbin --port 6992 --max-peers 64 --empty-start
 	chmod -R 777 /usr/local/etc/root/.btpd
    # return 0;
 	exit 0;
