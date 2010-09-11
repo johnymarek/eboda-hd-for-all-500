@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<channel>
+	<title>TV</title>
+	<menu>main menu</menu>
+
+<item>
+<title>Live TV Miracle (Thailanda)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://streaming.livetv.co.th/LiveTV4</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://streaming.livetv.co.th/LiveTV4"/>
+</item>
+
+<item>
+<title>Live TV Pop (Thailanda)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://streaming.livetv.co.th/LiveTV1</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://streaming.livetv.co.th/LiveTV1"/>
+</item>
+
+<item>
+<title>Toc TV (Thailanda)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://broadcast.manager.co.th/toc</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://broadcast.manager.co.th/toc"/>
+</item>
+
+<item>
+<title>CH5  (Thailanda)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://video.tv5.co.th/live</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://video.tv5.co.th/live"/>
+</item>
+
+<item>
+<title>Live TV Earth (Thailanda)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://streaming.livetv.co.th/LiveTVB-EDN</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://streaming.livetv.co.th/LiveTVB-EDN"/>
+</item>
+
+<item>
+<title>ASTV (Thailanda)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://broadcast.issp.co.th/11news1</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://broadcast.issp.co.th/11news1"/>
+</item>
+
+<item>
+<title>RUTV-1 (Thailanda)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://media.ru.ac.th/Faikham_TV</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://media.ru.ac.th/Faikham_TV"/>
+</item>
+
+<item>
+<title>Live TV  THAICHAIYO (Thailanda)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://streaming.livetv.co.th/LiveTV2</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://streaming.livetv.co.th/LiveTV2"/>
+</item>
+
+</channel>
+</rss>
