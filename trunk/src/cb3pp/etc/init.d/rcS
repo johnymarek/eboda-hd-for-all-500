@@ -28,3 +28,7 @@ for i in /cb3pp/etc/init.d/S??* ;do
             ;;
     esac
 done
+
+[ -d /tmp/hdd/volumes/HDD1/ext2 ] || mkdir /tmp/hdd/volumes/HDD1/ext2                                                                                        
+[ -d /tmp/hdd/root ] && [ -d /tmp/hdd/volumes/HDD1/ext2 ] && mount -o bind /tmp/hdd/root /tmp/hdd/volumes/HDD1/ext2                                          
+
