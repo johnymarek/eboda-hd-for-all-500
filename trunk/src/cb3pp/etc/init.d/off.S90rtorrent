@@ -5,7 +5,7 @@ prefix="/cb3pp"
 PATH=${prefix}/bin:${prefix}/sbin:/sbin:/bin:/usr/sbin:/usr/bin
 NAME=rtorrent
 DAEMON=${prefix}/bin/${NAME}
-DAEMON_OPTS="-n -o import = /cb3pp/etc/rtorrent.rc"
+DAEMON_OPTS="-n -o import=/cb3pp/etc/rtorrent.rc"
 
 
 
@@ -24,11 +24,11 @@ fi
 case "$rc" in
     start)
 	echo "Starting torrent client: $NAME"
-	nice -n 30 dtach -n /tmp/rtorrent.socket $DAEMON $DAEMON_OPTS
+	nice -n 30 ${prefix}/bin/dtach -n /tmp/rtorrent.socket $DAEMON $DAEMON_OPTS
         ;;
     attach)
 	echo "Attaching to torrent client: $NAME"
-	dtach -a /tmp/rtorrent.socket
+	${prefix}/bin/dtach -a /tmp/rtorrent.socket
         ;;
     stop)
         if [ -n "`pidof $NAME`" ]; then
