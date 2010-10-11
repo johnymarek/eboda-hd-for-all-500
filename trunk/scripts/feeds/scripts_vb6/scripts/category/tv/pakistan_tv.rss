@@ -7,14 +7,14 @@
 
 <item>
 <title>MTA (Pakistan)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://live300k1.wm.muslimtv.servecast.net/MuslimTV_wmlz_live300k</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://live300k1.wm.muslimtv.servecast.net/MuslimTV_wmlz_live300k"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://live300k1.wm.muslimtv.servecast.net/MuslimTV_wmlz_live300k</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://live300k1.wm.muslimtv.servecast.net/MuslimTV_wmlz_live300k"/>
 </item>
 
 <item>
 <title>Express News (Pakistan)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://ams01.egihosting.com/ExpressEnglish</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://ams01.egihosting.com/ExpressEnglish"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://ams01.egihosting.com/ExpressEnglish</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://ams01.egihosting.com/ExpressEnglish"/>
 </item>
 
 </channel>

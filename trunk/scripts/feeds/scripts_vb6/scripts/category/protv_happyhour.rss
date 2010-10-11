@@ -6,31 +6,31 @@
 <item>
 <title>Happy Hour - MOMENTE HAPPY</title>
 <link>http://127.0.0.1:82/scripts/php/protv_happyhour.php?query=1,http://happyhour.protv.ro/arhiva/momente_happy/pagina-</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/protv_happyhour.jpg" />
+<media:thumbnail url="/scripts/image/protv_happyhour.jpg" />
 </item>
 
 <item>
 <title>Happy Hour - INTREBAREA AMARUTA</title>
 <link>http://127.0.0.1:82/scripts/php/protv_happyhour.php?query=1,http://happyhour.protv.ro/arhiva/intrebarea_amaruta/pagina-</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/protv_happyhour.jpg" />
+<media:thumbnail url="/scripts/image/protv_happyhour.jpg" />
 </item>
 
 <item>
 <title>Happy Hour - MONOLOGUL ZILEI</title>
 <link>http://127.0.0.1:82/scripts/php/protv_happyhour.php?query=1,http://happyhour.protv.ro/arhiva/monologul_zilei/pagina-</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/protv_happyhour.jpg" />
+<media:thumbnail url="/scripts/image/protv_happyhour.jpg" />
 </item>
 
 <item>
 <title>Happy Hour - MUZICA HAPPY</title>
 <link>http://127.0.0.1:82/scripts/php/protv_happyhour.php?query=1,http://happyhour.protv.ro/arhiva/muzica-happy/pagina-</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/protv_happyhour.jpg" />
+<media:thumbnail url="/scripts/image/protv_happyhour.jpg" />
 </item>
 
 <item>
 <title>Happy Hour - BEST OF MARUTA</title>
 <link>http://127.0.0.1:82/scripts/php/protv_happyhour.php?query=1,http://happyhour.protv.ro/arhiva/best-of-maruta/pagina-</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/protv_happyhour.jpg" />
+<media:thumbnail url="/scripts/image/protv_happyhour.jpg" />
 </item>
 
 </channel>

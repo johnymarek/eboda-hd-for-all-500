@@ -31,7 +31,7 @@ $sThisFile = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['SCRIPT_NAME'];
 $url = $sThisFile."?query=".($page-1).",";
 ?>
 <title>Previous Page</title>
-<link><?php echo $url;?></link><media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/left.jpg" />
+<link><?php echo $url;?></link><media:thumbnail url="/scripts/image/left.jpg" />
 </item>
 
 
@@ -43,7 +43,7 @@ function str_between($string, $start, $end){
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
 	return substr($string,$ini,$len); 
 }
-//$image = "/tmp/hdd/volumes/HDD1/scripts/image/tvoltenia.jpg";
+//$image = "/scripts/image/tvoltenia.jpg";
 $videos = explode('<div class="single"', $html);
 
 unset($videos[0]);
@@ -88,7 +88,7 @@ $url = $sThisFile."?query=".($page+1).",";
 ?>
 <title>Next Page</title>
 <link><?php echo $url;?></link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/right.jpg" />
+<media:thumbnail url="/scripts/image/right.jpg" />
 </item>
 
 </channel>

@@ -7,8 +7,8 @@
 
 <item>
 <title>Eco Bulgaria (Bulgaria)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://212.25.37.148/EcoBulgariaTV</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://212.25.37.148/EcoBulgariaTV"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://212.25.37.148/EcoBulgariaTV</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://212.25.37.148/EcoBulgariaTV"/>
 </item>
 
 </channel>

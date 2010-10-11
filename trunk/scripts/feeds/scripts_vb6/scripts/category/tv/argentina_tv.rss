@@ -7,14 +7,14 @@
 
 <item>
 <title>24Horas - News (Argentina)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://streamtn.uigc.net/TN</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://streamtn.uigc.net/TN"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://streamtn.uigc.net/TN</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://streamtn.uigc.net/TN"/>
 </item>
 
 <item>
 <title>Canal 6 (Argentina)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://streamall.alsolnet.com/noticiasdel6</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://streamall.alsolnet.com/noticiasdel6"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://streamall.alsolnet.com/noticiasdel6</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://streamall.alsolnet.com/noticiasdel6"/>
 </item>
 
 </channel>

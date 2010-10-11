@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <rss version="2.0" xmlns:media="http://purl.org/dc/elements/1.1/" xmlns:dc="http://purl.org/dc/elements/1.1/">
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/Users-256.png"/>
+<media:thumbnail url="/scripts/image/Users-256.png"/>
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
 		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
 		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
@@ -48,7 +48,7 @@
 <item>
 <title>Eddie's Favorites</title>
 <link>http://www.metafeeds.com/channel/fav_Eddie/rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/eddie.jpg"/>
+<media:thumbnail url="/scripts/image/eddie.jpg"/>
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
 		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
 		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
@@ -92,7 +92,7 @@
 		AlexEminent
 		</text>			
 	    </mediaDisplay>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/metafeeds.jpg" />
+<media:thumbnail url="/scripts/image/metafeeds.jpg" />
 </item>	
 <item>
 <title>VB6 test</title>
@@ -116,7 +116,7 @@
 		VB6 testing....
 		</text>			
 	    </mediaDisplay>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/metafeeds.jpg" />
+<media:thumbnail url="/scripts/image/metafeeds.jpg" />
 </item>	
 
 <item>
@@ -141,7 +141,7 @@
 		titooo's favorite
 		</text>			
 	    </mediaDisplay>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/metafeeds.jpg" />
+<media:thumbnail url="/scripts/image/metafeeds.jpg" />
 </item>
 
 </channel>

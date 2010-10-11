@@ -43,7 +43,7 @@ if($search) {
 }
 ?>
 <title>Previous Page</title>
-<link><?php echo $url;?></link><media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/left.jpg" />
+<link><?php echo $url;?></link><media:thumbnail url="/scripts/image/left.jpg" />
 </item>
 
 
@@ -65,7 +65,7 @@ foreach($videos as $video) {
 	$link = str_replace(']','%5D',$link); 
 //$link = rawurlencode($link);   
 
-    $image = "/tmp/hdd/volumes/HDD1/scripts/image/wowtv.gif";
+    $image = "/scripts/image/wowtv.gif";
 
     $t1 = explode('<a href="', $video);
     $t2 = explode('<', $t1[1]);
@@ -92,7 +92,7 @@ if($search) {
 ?>
 <title>Next Page</title>
 <link><?php echo $url;?></link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/right.jpg" />
+<media:thumbnail url="/scripts/image/right.jpg" />
 </item>
 
 </channel>

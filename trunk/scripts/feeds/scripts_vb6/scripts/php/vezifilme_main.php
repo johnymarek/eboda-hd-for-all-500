@@ -14,7 +14,7 @@ function str_between($string, $start, $end){
 	return substr($string,$ini,$len); 
 }
 $html = file_get_contents("http://www.vezifilme.ro/");
-$img = "/tmp/hdd/volumes/HDD1/scripts/image/movies.png";
+$img = "/scripts/image/movies.png";
 $html = str_between($html,'<div id="navigation_category">','</div>');
 $videos = explode('<li class="cat-item', $html);
 unset($videos[0]);

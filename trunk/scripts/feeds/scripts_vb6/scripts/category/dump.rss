@@ -7,49 +7,49 @@
 <item>
 <title>Video noi</title>
 <link>http://127.0.0.1:82/scripts/php/dump.php?query=,http://www.dump.ro/videoclipuri</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/dump.jpg" />
+<media:thumbnail url="/scripts/image/dump.jpg" />
 </item>
 
 <item>
 <title>Filmulete</title>
 <link>http://127.0.0.1:82/scripts/php/dump.php?query=,http://www.dump.ro/videoclipuri/filmulete</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/dump.jpg" />
+<media:thumbnail url="/scripts/image/dump.jpg" />
 </item>
 
 <item>
 <title>Filmulete haioase</title>
 <link>http://127.0.0.1:82/scripts/php/dump.php?query=,http://www.dump.ro/videoclipuri/filmulete-haioase</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/dump.jpg" />
+<media:thumbnail url="/scripts/image/dump.jpg" />
 </item>
 
 <item>
 <title>Videoclipuri</title>
 <link>http://127.0.0.1:82/scripts/php/dump.php?query=,http://www.dump.ro/videoclipuri/videoclipuri</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/dump.jpg" />
+<media:thumbnail url="/scripts/image/dump.jpg" />
 </item>
 
 <item>
 <title>Videoclipuri 2010</title>
 <link>http://127.0.0.1:82/scripts/php/dump.php?query=,http://www.dump.ro/videoclipuri/videoclipuri-2010</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/dump.jpg" />
+<media:thumbnail url="/scripts/image/dump.jpg" />
 </item>
 
 <item>
 <title>Videoclipuri romanesti</title>
 <link>http://127.0.0.1:82/scripts/php/dump.php?query=,http://www.dump.ro/videoclipuri/videoclipuri-romanesti</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/dump.jpg" />
+<media:thumbnail url="/scripts/image/dump.jpg" />
 </item>
 
 <item>
 <title>Desene animate</title>
 <link>http://127.0.0.1:82/scripts/php/dump.php?query=,http://www.dump.ro/videoclipuri/desene-animate</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/dump.jpg" />
+<media:thumbnail url="/scripts/image/dump.jpg" />
 </item>
 
 <item>
 <title>Top video</title>
 <link>http://127.0.0.1:82/scripts/php/dump.php?query=,http://www.dump.ro/videoclipuri/top-video</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/dump.jpg" />
+<media:thumbnail url="/scripts/image/dump.jpg" />
 </item>
 
 </channel>

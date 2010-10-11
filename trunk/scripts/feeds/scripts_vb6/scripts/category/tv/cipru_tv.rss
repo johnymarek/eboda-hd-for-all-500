@@ -7,14 +7,14 @@
 
 <item>
 <title>BRT 1 (Cipru)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://bms.brtk.net/brttv</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://bms.brtk.net/brttv"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://bms.brtk.net/brttv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://bms.brtk.net/brttv"/>
 </item>
 
 <item>
 <title>Rik Sat (Cipru)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://iptv.cytanet.com.cy/cysat</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://iptv.cytanet.com.cy/cysat"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://iptv.cytanet.com.cy/cysat</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://iptv.cytanet.com.cy/cysat"/>
 </item>
 
 <item>

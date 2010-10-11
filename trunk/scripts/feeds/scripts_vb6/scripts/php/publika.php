@@ -27,7 +27,7 @@ function ascii2entities($string){
     }
     return $string;
 }
-$image = "/tmp/hdd/volumes/HDD1/scripts/image/publika.jpg";
+$image = "/scripts/image/publika.jpg";
 $videos = explode('<li>', $html);
 
 unset($videos[0]);

@@ -7,206 +7,206 @@
 
 <item>
 <title>Orange Sport TV, France</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://livewm.orange.fr/live-multicanaux</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://livewm.orange.fr/live-multicanaux"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://livewm.orange.fr/live-multicanaux</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://livewm.orange.fr/live-multicanaux"/>
 </item>
 
 <item>
 <title>NRJ DANCE</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_webtv02</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_webtv02"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_webtv02</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_webtv02"/>
 </item>
 
 <item>
 <title>NRJ HITS</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_tvhit</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_tvhit"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_tvhit</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_tvhit"/>
 </item>
 
 <item>
 <title>NRJ POP-ROCK</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_webtv03</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_webtv03"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_webtv03</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_webtv03"/>
 </item>
 
 <item>
 <title>NRJ WEB TV</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_tvhit</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_tvhit"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_tvhit</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_tvhit"/>
 </item>
 
 <item>
 <title>Centre Zahra France</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://live210.impek.com/zahra</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://live210.impek.com/zahra"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://live210.impek.com/zahra</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://live210.impek.com/zahra"/>
 </item>
 
 <item>
 <title>Clap Tv France (Music)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://rr93.diffusepro.com/rr93</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://rr93.diffusepro.com/rr93"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://rr93.diffusepro.com/rr93</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://rr93.diffusepro.com/rr93"/>
 </item>
 
 <item>
 <title>TV 8 Mossele (Franta)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://live.tv8.fr/tv</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://live.tv8.fr/tv"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://live.tv8.fr/tv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://live.tv8.fr/tv"/>
 </item>
 
 <item>
 <title>Zahra TV (Franta)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://live240.impek.com/zahra</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://live240.impek.com/zahra"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://live240.impek.com/zahra</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://live240.impek.com/zahra"/>
 </item>
 
 <item>
 <title>France 24 - Arabic (Franta)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://stream1.france24.yacast.net/f24_livefrda</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://stream1.france24.yacast.net/f24_livefrda"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://stream1.france24.yacast.net/f24_livefrda</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://stream1.france24.yacast.net/f24_livefrda"/>
 </item>
 
 <item>
 <title>France 24 (Franta)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://stream1.france24.yacast.net/f24_livefr</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://stream1.france24.yacast.net/f24_livefr"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://stream1.france24.yacast.net/f24_livefr</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://stream1.france24.yacast.net/f24_livefr"/>
 </item>
 
 <item>
 <title>France 24 - English (Franta)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://stream1.france24.yacast.net/f24_liveen</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://stream1.france24.yacast.net/f24_liveen"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://stream1.france24.yacast.net/f24_liveen</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://stream1.france24.yacast.net/f24_liveen"/>
 </item>
 
 <item>
 <title>Weo TV (Franta)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://91.121.188.214/weopub</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://91.121.188.214/weopub"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://91.121.188.214/weopub</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://91.121.188.214/weopub"/>
 </item>
 
 <item>
 <title>IDF 1 (Franta)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://live240.impek.com/idf1</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://live240.impek.com/idf1"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://live240.impek.com/idf1</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://live240.impek.com/idf1"/>
 </item>
 
 <item>
 <title>Net Gaming (Franta)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://88.191.89.94/netgamingtv</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://88.191.89.94/netgamingtv"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://88.191.89.94/netgamingtv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://88.191.89.94/netgamingtv"/>
 </item>
 
 <item>
 <title>Soleil TV (Franta)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://soleiltv.impek.tv/soleiltv</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://soleiltv.impek.tv/soleiltv"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://soleiltv.impek.tv/soleiltv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://soleiltv.impek.tv/soleiltv"/>
 </item>
 
 <item>
 <title>TLL (Franta)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://tll.diffusepro.com/tll</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://tll.diffusepro.com/tll"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://tll.diffusepro.com/tll</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://tll.diffusepro.com/tll"/>
 </item>
 
 <item>
 <title>TVSF (Franta)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://stream.tvsf.fr/live</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://stream.tvsf.fr/live"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://stream.tvsf.fr/live</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://stream.tvsf.fr/live"/>
 </item>
 
 <item>
 <title>Calais TV (Franta)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://91.121.2.60/calaistv</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://91.121.2.60/calaistv"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://91.121.2.60/calaistv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://91.121.2.60/calaistv"/>
 </item>
 
 <item>
 <title>Clap TV (Franta)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://rr93.diffusepro.com/rr93</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://rr93.diffusepro.com/rr93"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://rr93.diffusepro.com/rr93</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://rr93.diffusepro.com/rr93"/>
 </item>
 
 <item>
 <title>NRJ Pop Rock (Franta)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_webtv03</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_webtv03"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_webtv03</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_webtv03"/>
 </item>
 
 <item>
 <title>Paris Cap (Franta)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://wm.live.tv-radio.com/cap24_360k</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://wm.live.tv-radio.com/cap24_360k"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://wm.live.tv-radio.com/cap24_360k</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://wm.live.tv-radio.com/cap24_360k"/>
 </item>
 
 <item>
 <title>Tv Plaisance (Franta)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://www.diffusepro.com:554/liveteleplaiz</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://www.diffusepro.com:554/liveteleplaiz"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://www.diffusepro.com:554/liveteleplaiz</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://www.diffusepro.com:554/liveteleplaiz"/>
 </item>
 
 <item>
 <title>R.King TV (Franta)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://rkingtv.diffusepro.com/rkingtv</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://rkingtv.diffusepro.com/rkingtv"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://rkingtv.diffusepro.com/rkingtv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://rkingtv.diffusepro.com/rkingtv"/>
 </item>
 
 <item>
 <title>NRJ Groove (Franta)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_webtv01</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_webtv01"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_webtv01</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_webtv01"/>
 </item>
 
 <item>
 <title>Ciel TV (Franta)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://91.121.10.82/ct2e</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://91.121.10.82/ct2e"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://91.121.10.82/ct2e</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://91.121.10.82/ct2e"/>
 </item>
 
 <item>
 <title>AGL TV (Franta)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://stream1.france24.yacast.net/f24_livefr</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://stream1.france24.yacast.net/f24_livefr"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://stream1.france24.yacast.net/f24_livefr</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://stream1.france24.yacast.net/f24_livefr"/>
 </item>
 
 <item>
 <title>LabelleTV (Franta)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://www.labelletv.net/labelleTV</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://www.labelletv.net/labelleTV"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://www.labelletv.net/labelleTV</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://www.labelletv.net/labelleTV"/>
 </item>
 
 <item>
 <title>NRJ Pure (Franta)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_tvhit</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_tvhit"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_tvhit</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_tvhit"/>
 </item>
 
 <item>
 <title>R King TV (Franta)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://rkingtv.diffusepro.com:554/rkingtv</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://rkingtv.diffusepro.com:554/rkingtv"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://rkingtv.diffusepro.com:554/rkingtv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://rkingtv.diffusepro.com:554/rkingtv"/>
 </item>
 
 <item>
 <title>NRJ Dance (Franta)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_webtv02</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_webtv02"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_webtv02</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://vipnrj.yacast.net/nrj_webtv02"/>
 </item>
 
 <item>
 <title>ACI (Franta)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://live240.impek.com/mizik</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://live240.impek.com/mizik"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://live240.impek.com/mizik</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://live240.impek.com/mizik"/>
 </item>
 
 <item>
 <title>La Locale (Franta)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://stream.lalocale.com/lalocale</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://stream.lalocale.com/lalocale"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://stream.lalocale.com/lalocale</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://stream.lalocale.com/lalocale"/>
 </item>
 
 <item>
 <title>Touluse info (Franta)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://toulouseinfos.fr/toulouseinfos</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://toulouseinfos.fr/toulouseinfos"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://toulouseinfos.fr/toulouseinfos</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://toulouseinfos.fr/toulouseinfos"/>
 </item>
 </channel>
 </rss>

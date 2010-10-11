@@ -13,7 +13,7 @@
 			</image>  
 		</backgroundDisplay>
 		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
-		/tmp/hdd/volumes/HDD1/scripts/image/sc_title.jpg
+		/scripts/image/sc_title.jpg
 		</image>
 		<text  offsetXPC=60 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
 		ShoutCast - Station
@@ -44,7 +44,7 @@ foreach($videos as $video) {
     echo '<item>';
     echo '<title>'.$title.'</title>';
     echo '<link>http://127.0.0.1:82/scripts/php/magic.php?id='.$id.'</link>';
-    echo '<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/rss1.jpg" />';	
+    echo '<media:thumbnail url="/scripts/image/rss1.jpg" />';	
     echo '</item>';
     $n = $n + 1;
   }
