@@ -22,8 +22,9 @@ thttpd=false
 #end php
 
 
-btpd=false
+btpd=true
 
+bftpd=false
 
 #!!!!!! do not use apache for now !!!!!
 apache=false
@@ -32,7 +33,7 @@ apache=false
 rutorrent=false
 rtgui=false
 openssl=false
-dtach=true
+dtach=false
 libsigc=false
 libtorrent=false
 ncurses=false
@@ -166,7 +167,7 @@ $rtorrent && (  [ -f rtorrent-0.8.6.tar.gz ] || $download_cmd http://libtorrent.
 $transmission && (  [ -f transmission-2.01.tar.bz2 ] || $download_cmd http://mirrors.m0k.org/transmission/files/transmission-2.01.tar.bz2 )
 
 
-$btpd && ( [ -f btpd-0.15.tar.gz ] || $download_cmd http://www.murmeldjur.se/btpd/btpd-0.15.tar.gz )
+$btpd && ( [ -f btpd-btpd-v0.16-0-g950bfcb.tar.gz ] || $download_cmd http://github.com/btpd/btpd/tarball/v0.16 )
 
 $smbd && ( [ -f samba-3.5.2.tar.gz ] || $download_cmd http://www.samba.org/samba/ftp/stable/samba-3.5.2.tar.gz )
 
@@ -177,6 +178,7 @@ $rutorrent && ( [ -f rutorrent-3.0.tar.gz ] || $download_cmd http://rutorrent.go
 
 $rtgui && ( [ -f rtgui-0.2.7.tgz ] || $download_cmd http://rtgui.googlecode.com/files/rtgui-0.2.7.tgz )
 
+$bftpd && ( [ -f bftpd-2.9.tar.gz ] || $download_cmd http://sourceforge.net/projects/bftpd/files/bftpd/bftpd-2.9/bftpd-2.9.tar.gz/download )
 
 #
 # openssl installation
@@ -563,9 +565,9 @@ fi
 if [ $btpd == true ]
 then
     cd $compile
-    tar zxf $downloads/btpd-0.15.tar.gz
-    cd btpd-0.15
-    patch -p1 < ${patches}/btpd-1.patch
+    tar zxf $downloads/btpd-btpd-v0.16-0-g950bfcb.tar.gz
+    cd btpd-btpd-*
+#    patch -p1 < ${patches}/btpd-1.patch
     CFLAGS="-I/cb3pp/include" LIBS="-L/cb3pp/lib" ./configure --prefix=${cipibad} --host=mipsel-linux 
     $CLEAN && make clean
     make
@@ -709,6 +711,27 @@ include "config.php.dist";
 \$scgi_host = "unix:///tmp/rpc.socket";
 ?>
 EOF
+
+fi
+
+
+if [ $bftpd == true ]
+then
+
+    cd $compile
+    tar zxf $downloads/bftpd-2.9.tar.gz
+    cd bftpd
+    ./configure --prefix=${cipibad} --host=mipsel-linux 
+    $CLEAN && make clean
+    make
+    make install
+
+
+#
+# btpd target
+#
+
+    cp ${cipibad}/bin/bftpd $target/lib
 
 fi
 
