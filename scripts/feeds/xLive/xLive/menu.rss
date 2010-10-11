@@ -4,7 +4,7 @@
 
 <mediaDisplay name=photoView
 	rowCount=3
-	columnCount=5
+	columnCount=6
 	drawItemText="no"
 	menuBorderColor="0:0:0"
 	sideColorBottom="0:0:0"
@@ -71,7 +71,14 @@
 
 
 <channel>
-<title>Xtreamer Live! v9.1</title>
+<title>Xtreamer Live! v9.1.1</title>
+
+<item>
+<title>My content (location: /tmp/usbmounts/sda1/scripts/menu.rss)</title>
+<link>/tmp/usbmounts/sda1/scripts/menu.rss</link>
+<media:thumbnail url="/xLive/image/mycontent.png" />
+</item>
+
 
 <item>
 <title>Live TV</title>
@@ -273,7 +280,7 @@ idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26"
 <title>Comedy and Entertainment</title>
 <link>/xLive/category/cande.rss</link>
 <media:thumbnail url="/xLive/image/cande.jpg"/>
-      <mediaDisplay name="photoView" showHeader="no" rowCount="3" columnCount="4" drawItemText="no" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="10" itemOffsetXPC="10" backgroundColor="0:0:0" sliding="yes" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">        
+      <mediaDisplay name="photoView" showHeader="no" rowCount="3" columnCount="5" drawItemText="no" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="10" itemOffsetXPC="10" backgroundColor="0:0:0" sliding="yes" idleImageXPC="10" idleImageYPC="10" idleImageWidthPC="10" idleImageHeightPC="13">        
         <idleImage>/xLive/image/busy1.png</idleImage>
         <idleImage>/xLive/image/busy2.png</idleImage>
         <idleImage>/xLive/image/busy3.png</idleImage>
@@ -333,8 +340,6 @@ idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26"
         <idleImage>/xLive/image/busy8.png</idleImage>
 </mediaDisplay>
 </item>
-
-
 
   </channel>
 </rss>

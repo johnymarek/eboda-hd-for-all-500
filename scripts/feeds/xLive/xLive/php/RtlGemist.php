@@ -1,4 +1,3 @@
-
 <? echo "<?xml version='1.0' ?>"; ?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
 
@@ -9,8 +8,40 @@
 	itemOffsetXPC=10  itemImageXPC=10 itemXPC=20
 	rollMenu=yes forceFocusOnMenu=yes menuPerPage=1 canAddToFavorit=yes
  -->
- <mediaDisplay name=photoView rowCount=6  columnCount=2 
-	sliding=yes drawItemText=yes circlingItems=no rollItems=yes fontSize=11 showHeader=yes showDefaultInfo=yes canAddToFavorit=yes
+
+<!--	sideTopHeightPC=10 sideBottomHeightPC=10 sideLeftWidthPC=5 sideRightWidthPC=10
+	viewAreaXPC=0 viewAreaYPC=0 viewAreaWidthPC=100 viewAreaHeightPC=100
+	itemOffsetXPC=10  itemImageXPC=10 itemXPC=20
+	rollMenu=yes forceFocusOnMenu=yes menuPerPage=1 canAddToFavorit=yes
+-->
+
+ <mediaDisplay name=threePartsView 
+	sliding=yes drawItemText=yes circlingItems=no rollItems=yes fontSize=16 showHeader=no showDefaultInfo=yes canAddToFavorit=no
+	itemXPC=25
+	menuXPC=43 menuYPC=25 menuWidthPC=13 menuOffsetXPC=10 menuOffsetYPC=10 menuItemHeightPC=7 menuItemWidthPC=9
+	menuBorderColor=0:0:0 sideColorBottom=0:0:0 sideColorTop=0:0:0 focusFontColor=255:0:0 itemBorderColor=255:0:0 itemBackgroundColor=0:0:0
+	itemGapXPC=1 itemGapYPC=2 itemOffsetXPC=16
+	itemWidthPC=65
+	viewAreaXPC=0 viewAreaYPC=0 viewAreaWidthPC=100 viewAreaHeightPC=100
+	sideTopHeightPC=8 sideBottomHeightPC=6 sideLeftWidthPC=5 sideRightWidthPC=5
+	idleImageXPC=45   idleImageYPC=42   idleImageWidthPC=10   idleImageHeightPC=16  >
+	<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
+	<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
+	<idleImage> image/POPUP_LOADING_03.jpg </idleImage>
+	<idleImage> image/POPUP_LOADING_04.jpg </idleImage>
+	<idleImage> image/POPUP_LOADING_05.jpg </idleImage>
+	<idleImage> image/POPUP_LOADING_06.jpg </idleImage>
+	<menuImage> /xLive/backgrounds/rtl.jpg </menuImage>
+	
+<backgroundDisplay>
+<image offsetXPC=31 offsetYPC=8 widthPC=35 heightPC=10> /xLive/backgrounds/rtl.jpg </image>
+</backgroundDisplay> 
+
+</mediaDisplay>
+
+<!-- RTL Gemist RSS script for all my dutch fans :) by Tweakradje. version 2.0 (30 juli 2010)
+ <mediaDisplay name=threePartsView rowCount=6 columnCount=2
+	sliding=yes drawItemText=yes circlingItems=no rollItems=yes fontSize=11 showHeader=no showDefaultInfo=yes canAddToFavorit=no
 	menuXPC=5 menuYPC=12 menuWidthPC=10 menuOffsetXPC=4 menuOffsetYPC=10 menuItemHeightPC=5 menuItemWidthPC=9
 	menuBorderColor=0:0:0 sideColorBottom=0:0:0 sideColorTop=0:0:0 focusFontColor=255:0:0 itemBorderColor=255:0:0 itemBackgroundColor=0:0:0
 	itemGapXPC=1 itemGapYPC=2 itemOffsetXPC=16 itemWidthPC=39
@@ -24,54 +55,68 @@
 	<idleImage> image/POPUP_LOADING_05.jpg </idleImage>
 	<idleImage> image/POPUP_LOADING_06.jpg </idleImage>
  </mediaDisplay>
-
-<!-- RTL Gemist RSS script for all my dutch fans :) by Tweakradje. version 1.2 (16 juli 2010)
 --> 
 
-<submenu>
-  <menu>RTL Gemist</menu>
-  <title>Vandaag</title>  
-  <onClick>
-	url="http://127.0.0.1:82/xLive/RtlGemist.php";
-   </onClick>
-</submenu>
-<submenu>
-  <menu>RTL Gemist</menu>
-  <title>Maandag</title>  
-  <onClick>
-	url="http://127.0.0.1:82/xLive/RtlGemist.php?day=1";
-   </onClick>
-</submenu>
-<submenu name="Dinsdag" >
-  <onClick>
-	url="http://127.0.0.1:82/xLive/RtlGemist.php?day=2";
-   </onClick>
-</submenu>
-<submenu name="Woensdag" >
-  <onClick>
-	url="http://127.0.0.1:82/xLive/RtlGemist.php?day=3";
-   </onClick>
-</submenu>
-<submenu name="Donderdag" >
-  <onClick>
-	url="http://127.0.0.1:82/xLive/RtlGemist.php?day=4";
-   </onClick>
-</submenu>
-<submenu name="Vrijdag" >
-  <onClick>
-	url="http://127.0.0.1:82/xLive/RtlGemist.php?day=5";
-   </onClick>
-</submenu>
-<submenu name="Zaterdag" >
-  <onClick>
-	url="http://127.0.0.1:82/xLive/RtlGemist.php?day=6";
-   </onClick>
-</submenu>
-<submenu name="Zondag" >
-  <onClick>
-	url="http://127.0.0.1:82/xLive/RtlGemist.php?day=7";
-   </onClick>
-</submenu>
+<?
+#
+# mp4 streams for 7 days on http://www.rtl.nl/service/gemist/device/ipad/feed/index.xml  more  ?day=1 (monday)
+#
+
+# check if this script was called with argument
+$argument = $_GET["day"];
+
+# now if submenu item choosen then only back submenu
+
+if($argument) {
+
+#echo '  <submenu name="Terug" >';
+#echo '  <onClick>';
+#### go back to previous screen! How?
+##echo '	return;';
+#echo '	postMessage("return");';
+#echo '   </onClick>';
+#echo '</submenu>';
+
+} else {
+
+echo '<submenu name="  Maandag  " >';
+echo '  <onClick>';
+echo '	url="http://127.0.0.1:82/xLive/php/RtlGemist.php?day=1";';
+echo '   </onClick>';
+echo '</submenu>';
+echo '<submenu name="  Dinsdag  " >';
+echo '  <onClick>';
+echo '	url="http://127.0.0.1:82/xLive/php/RtlGemist.php?day=2";';
+echo '   </onClick>';
+echo '</submenu>';
+echo '<submenu name="  Woensdag  " >';
+echo '  <onClick>';
+echo '	url="http://127.0.0.1:82/xLive/php/RtlGemist.php?day=3";';
+echo '   </onClick>';
+echo '</submenu>';
+echo '<submenu name="  Donderdag  " >';
+echo '  <onClick>';
+echo '	url="http://127.0.0.1:82/xLive/php/RtlGemist.php?day=4";';
+echo '   </onClick>';
+echo '</submenu>';
+echo '<submenu name="  Vrijdag  " >';
+echo '  <onClick>';
+echo '	url="http://127.0.0.1:82/xLive/php/RtlGemist.php?day=5";';
+echo '   </onClick>';
+echo '</submenu>';
+echo '<submenu name="  Zaterdag  " >';
+echo '  <onClick>';
+echo '	url="http://127.0.0.1:82/xLive/php/RtlGemist.php?day=6";';
+echo '   </onClick>';
+echo '</submenu>';
+echo '<submenu name="  Zondag  " >';
+echo '  <onClick>';
+echo '	url="http://127.0.0.1:82/xLive/php/RtlGemist.php?day=7";';
+echo '   </onClick>';
+echo '</submenu>';
+}
+
+?>
 
 <channel>
    <title>RTL Gemist</title>
@@ -79,19 +124,15 @@
 
 <?
 
-#
-# mp4 streams for 7 days on http://www.rtl.nl/service/gemist/device/ipad/feed/index.xml  more  ?day=1 (monday)
-#
-
 # day=1 monday
-$argument = $_GET["day"];
 if($argument) {
   $url = "http://www.rtl.nl/service/gemist/device/ipad/feed/index.xml?day=".$argument;
+  $html = file_get_contents($url);
 } else {
   $url = "http://www.rtl.nl/service/gemist/device/ipad/feed/index.xml";
 }
 
-$html = file_get_contents($url);
+
 
 if($html) {
 
@@ -128,42 +169,54 @@ $items = array_values($items);
 
  foreach($items as $item) {
 
-    $t1 = explode(' href="', $item);
+### the rtl html keeps changing, server won't!? (28 juli 2010)
+    $t1 = explode('http://iptv.rtl.nl', $item);
     $t2 = explode('"', $t1[1]);
-    $link = $t2[0];
+    $link = "http://iptv.rtl.nl".$t2[0];
 
 #    $t1 = explode('background-image:url(', $item);
 #    $t2 = explode(');', $t1[1]);
 #    $image = $t2[0];
 
 # name of program
-    $t1 = explode('"text_link">', $item);
-    $t2 = explode('<', $t1[1]);
-    $title = $t2[0];
-# add time
-    $t1 = explode('<span>', $item);
-    $t2 = explode('<', $t1[1]);
-#    $title = $title."\n".$t2[0];   #newline would be nice to have here Realtek!
-    $title = $title." (".$t2[0].")";
+### the rtl html keeps changing, server won't? (28 juli 2010)
+#  $t1 = explode('class="v">', $item);
+#  $t2 = explode('<', $t1[1]);
+#  $title = $t2[0];
 
+   $t1 = explode('class="v"', $item);
+   $t2 = explode('>', $t1[1]);
+   $t3 = explode('<', $t2[1]);
+   $title = $t3[0];
+
+# name of program
+#   $t1 = explode('"text_link">', $item);
+#   $t2 = explode('<', $t1[1]);
+#   $title = $t2[0];
+
+
+# add time
+   $t1 = explode('<span>', $item);
+   $t2 = explode('<', $t1[1]);
+#  $title = $title." &#x0A;".$t2[0];   #newline would be nice to have here Realtek!
+ 
+##################   $title = $title."  (".$t2[0].")";  -- Out commented by mlv
+# $title = "(".$t2[0].") - ".$title;
+
+$title = $t2[0]." - ".$title;
 
 #test# echo "### Link: ".$link."\n";
 
     echo '<item>';
+#    echo '<title>'.$title.'</title>';
     echo '<title>'.$title.'</title>';
     echo '<link>'.$link.'</link>';
-# does below work?
-    echo '<media:thumbnail url="'.strstr($link,".",TRUE).'poster.jpg" />';
+    echo '<media:thumbnail url="'.strstr($link,".mp4",TRUE).'.poster.jpg" />';
     echo '<enclosure type="video/mp4" url="'.$link.'"/>';
     echo '</item>';
 
  }
-} else {
-    echo '<item>';
-    echo '<title>Probleem bij het lezen van HTML</title>';
-    echo '<link></link>';
-    echo '</item>'; 
-}
+} 
 
 ?>
 
