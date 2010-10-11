@@ -136,8 +136,8 @@ mkdir opt
 # and scripts for me to play
 mkdir scripts
 
-# and xLive9 for me to play
-mkdir xLive9
+# and xLive for me to play
+mkdir xLive
 
 # and utilities for me to play
 mkdir utilities
@@ -187,6 +187,13 @@ dir=`pwd`
 cd ${SVN_REPO}/scripts/feeds/scripts_vb6/
 find scripts | grep -v .svn | grep -v '~' | zip -9 ${dir}/scripts.zip -@
 cp scripts-version.txt ${dir}/scripts-version.txt
+cd ${dir}
+
+# xLive
+dir=`pwd`
+cd ${SVN_REPO}/scripts/feeds/xLive
+find xLive | grep -v .svn | grep -v '~' | zip -9 ${dir}/xLive.zip -@
+cp xLive-version.txt ${dir}/xLive-version.txt
 cd ${dir}
 
 #packaging root back
@@ -255,11 +262,19 @@ echo "storage=$storage" > /usr/local/etc/storage
 [ -d ${storage}/cb3pp ] || mkdir ${storage}/cb3pp
 [ -d ${storage}/scripts ] || mkdir ${storage}/scripts
 [ -d ${storage}/ewcp ] || mkdir ${storage}/ewcp
+[ -d ${storage}/xLive ] || mkdir ${storage}/xLive
 
 if [ ! -f /cb3pp/.overmounted ];then
     echo overmount start
     mount -o bind ${storage}/cb3pp /cb3pp
     touch /cb3pp/.overmounted
+    echo overmount end
+fi
+
+if [ ! -f /xLive/.overmounted ];then
+    echo overmount start
+    mount -o bind ${storage}/xLive /xLive
+    touch /xLive/.overmounted
     echo overmount end
 fi
 
@@ -309,6 +324,22 @@ then
         unzip -o /scripts.zip
 	cp /scripts-version.txt ${storage}/scripts-version.txt
 fi
+
+# check if .../xLive from us, if not, unpack
+SERIAL=0
+ [ -f ${storage}/xLive-version.txt ] && . ${storage}/xLive-version.txt
+DISK_SERIAL=${SERIAL}
+[ -f /xLive-version.txt ] && . /xLive-version.txt
+
+if [ ${SERIAL} -gt ${DISK_SERIAL} ]
+then
+        rm -rf ${storage}/xLive/*
+        cd ${storage}
+        unzip -o /xLive.zip
+	cp /xLive-version.txt ${storage}/xLive-version.txt
+fi
+
+
 
 # check if .../ewcp installed from us, if not, unpack
 SERIAL=0
