@@ -58,7 +58,7 @@ name_bftpd="NAS: bftpd"
 name_DvdPlayer="CORE: DvdPlayer"
 
 #apache transmission lighttpd not in this scope
-for i in lighttpd btpd15  bftpd btpd smbd DvdPlayer 
+for i in lighttpd btpd15 transmission rotrrent bftpd btpd smbd DvdPlayer 
 do
     pic=/eb_imgs/cp_on.gif
     script=util_${i}-stop.cgi
@@ -153,7 +153,7 @@ startfile_btpd="/tmp/package/script/btpd"
 startfile_smbd="/tmp/package/script/samba"
 
 #apache transmission lighttpd not in this scope
-for i in lighttpd btpd15 bftpd
+for i in lighttpd btpd15 transmission rotrrent bftpd
 do
     full_name=`eval echo \\$name_${i}`
     script="#"
