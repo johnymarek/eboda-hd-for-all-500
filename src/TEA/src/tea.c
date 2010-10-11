@@ -1,13 +1,40 @@
-//XOR Encryption
+//          Realtek SDK 3.x firmware decrypter/encrypter
+//
+// This program is a C re-write of delphi application from here:
+// http://playonhd.ucoz.ru/publ/prodvinutye_manualy/modifikacija_proshivki/razborka_sborka_proshivok_na_sdk3_x/5-1-0-23
+
+/***************************************************************************
+ *   Copyright (C) 2010 cipibad                                            *
+ *   cipibad@gmail.com                                                     *
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ *   The program is distributed in the hope that it will be useful,        *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *   GNU General Public License for more details.                          *
+ *                                                                         *
+ *   You may obtain a copy of the GNU General Public License by writing to *
+ *   the Free Software Foundation, Inc.,                                   *
+ *   51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA.             *
+ ***************************************************************************/
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 
+#include <limits.h>
+#include <errno.h>
+
+
 #define CRC0        0x0
 #define MAGIC1      0x656C656D
 #define MAGIC2      0x69676964
+#define MAGICU      0x0055454E
 
 #define VERSION     0xb
 #define UNK5        0x148
@@ -15,11 +42,14 @@
 #define HLEN        0x34
 #define BUFFER_MAX      (64 * 1024)
 
-void usage(int argc, char* argv[]);
-void close_files(FILE* input, FILE* output);
 
 typedef unsigned int uint32_t ;
 typedef unsigned char uint8_t ;
+
+
+void usage(int argc, char* argv[]);
+void close_files(FILE* input, FILE* output);
+int check_crc(FILE* input, FILE* output);
 
 
 
@@ -125,6 +155,36 @@ const uint32_t crc32Table[256]=
   };
 
 void decrypt (uint32_t* v, uint32_t* k);
+void encrypt (uint32_t* v, uint32_t* k);
+
+int encrypt_file(FILE* in, FILE* out, uint32_t* key)
+{
+  rewind(in);
+  fseek(out, HLEN, SEEK_SET);
+ 
+  uint32_t v[2];
+  uint32_t r = 2 * sizeof(uint32_t);
+
+  while ( r == fread( v, 1, r, in))
+    {
+      encrypt(v, key);
+      if ( r != fwrite(v, 1, r, out))
+	{
+	  printf ("Wrror writing file\n");
+	  exit(1);
+	}
+    }
+  if (feof(in))
+    {
+      //      printf("Reached end of file\n");
+      clearerr(in);
+    }
+  if (ferror(in))
+    {
+      printf("Error occured while reading file\n");
+      clearerr(in);
+    }
+}
 
 int decrypt_file(FILE* in, FILE* out, uint32_t* key)
 {
@@ -205,13 +265,13 @@ int main(int argc, char* argv[])
   int dflag = 0; //decode
   char *ivalue = NULL; //infile
   char *ovalue = NULL; //outfile
-  uint32_t *kvalue = NULL; //outfile
+  char *kvalue = NULL; //outfile
 
   int index;
   int c;
 
 
-  while ((c = getopt (argc, argv, "edi:o:k:")) != -1)
+  while ((c = getopt (argc, argv, "hedi:o:k:")) != -1)
     switch (c)
       {
       case 'e':
@@ -227,7 +287,10 @@ int main(int argc, char* argv[])
 	ovalue = optarg;
 	break;
       case 'k':
-	kvalue = (uint32_t * )optarg;
+	kvalue = optarg;
+	break;
+      case 'h':
+	usage (argc, argv);
 	break;
       case '?':
 	if (optopt == 'i' || optopt == 'o' || optopt == 'k' )
@@ -254,12 +317,33 @@ int main(int argc, char* argv[])
   if ( kvalue == NULL )
 	usage (argc, argv);
 
+  int j;
+  uint32_t k[4];
+  char tkey[8+1];
+  tkey[8]=0;
+  for (j=0; j < 4; j++)
+    {
+      errno = 0;    /* To distinguish success/failure after call */
+      memcpy(tkey, &kvalue[j*sizeof(char)*8], sizeof(char)*8);
+
+      k[j] = strtol(tkey, 0, 16);
+      
+      /* Check for various possible errors */
+      
+      if ((errno == ERANGE && (k[j] == LONG_MAX || k[j] == LONG_MIN))
+	  || (errno != 0 && k[j] == 0)) {
+	perror("strtol");
+	exit(EXIT_FAILURE);
+      }
+      
+    }
+
   FILE* input;
   FILE* output;
 
   //Open input and output files
   input = fopen(ivalue, "r");
-  output = fopen(ovalue, "w");
+  output = fopen(ovalue, "w+");
 		
 
   //Check input file
@@ -284,28 +368,36 @@ int main(int argc, char* argv[])
 	  exit (1);
 	}
       //decrypt
-      if (decrypt_file(input, output, kvalue) != 0)
+      if (decrypt_file(input, output, k) != 0)
 	{
 	  close_files(input, output);
 	  exit (1);
 	}
-      /*      
-	  
+      
       if (check_crc(input, output) != 0)
 	{
 	  close_files(input, output);
 	  exit (1);
 	}
 	// OK
-	*/
+
    }
   if (eflag == 1)
     {
-      //crypt file
-      //compute_deader
-      //write header file
-      
+      //encrypt
+      if (encrypt_file(input, output, k) != 0)
+	{
+	  close_files(input, output);
+	  exit (1);
+	}
+      if (write_encrypted_header(input, output) != 0)
+	{
+	  close_files(input, output);
+	  exit (1);
+	}
+
     }
+  close_files(input, output);
   return 0;
 
 }
@@ -317,8 +409,8 @@ void encrypt (uint32_t* v, uint32_t* k) {
     uint32_t k0=k[0], k1=k[1], k2=k[2], k3=k[3];   /* cache key */
     for (i=0; i < 32; i++) {                       /* basic cycle start */
         sum += delta;
-        v0 += ((v1<<4) + k0) ^ (v1 + sum) ^ ((v1>>5) + k1);
-        v1 += ((v0<<4) + k2) ^ (v0 + sum) ^ ((v0>>5) + k3);  
+        v0 += (v1<<4) + ( k0 ^ v1) + (sum ^ (v1>>5)) + k1;
+        v1 += (v0<<4)+ ( k2 ^ v0) + (sum ^ (v0>>5)) + k3;  
     }                                              /* end cycle */
     v[0]=v0; v[1]=v1;
 }
@@ -328,9 +420,9 @@ void decrypt (uint32_t* v, uint32_t* k) {
     uint32_t delta=0x9e3779b9;                     /* a key schedule constant */
     uint32_t k0=k[0], k1=k[1], k2=k[2], k3=k[3];   /* cache key */
     for (i=0; i<32; i++) {                         /* basic cycle start */
-        v1 -= ((v0<<4) + k2) ^ (v0 + sum) ^ ((v0>>5) + k3);
-        v0 -= ((v1<<4) + k0) ^ (v1 + sum) ^ ((v1>>5) + k1);
-        sum -= delta;                                   
+      v1 -= ( v0 << 4 ) + ( k2 ^ v0 ) + ( sum ^ ( v0 >> 5 )) + k3;
+      v0 -= ( v1 << 4)  + ( k0 ^ v1 ) + ( sum ^ ( v1 >> 5 )) + k1;
+      sum -= delta;                                   
     }                                              /* end cycle */
     v[0]=v0; v[1]=v1;
 }
@@ -339,7 +431,7 @@ void decrypt (uint32_t* v, uint32_t* k) {
 void usage(int argc, char* argv[])
 {
   printf("Invalid arguments\n");
-  printf("Usage: %s -[e|d] -i infile -o ofile -k key\n", argv[0]); 
+  printf("Usage: %s -[e|d] -i infile -o outfile -k key\n", argv[0]); 
   exit(0);
 }
 
@@ -395,4 +487,83 @@ int read_header (fwHeader_t * pHeader, FILE* file)
     }
   return 0;
   
+}
+
+int fill_header (fwHeader_t * pHeader, FILE* input, FILE* output)
+{
+
+  pHeader->crc0 = CRC0; // 0
+  pHeader->magic1 = MAGIC1; // mele
+  pHeader->magic2 = MAGIC2; // digi
+  pHeader->magicU = MAGICU; // NEU\n
+  pHeader->unk1 = 0; // 0
+  pHeader->unk2 = 1; // 1
+  pHeader->unk3 = 0; // 0
+
+  pHeader->crcp = 0; // crc packed
+  pHeader->crcu = 0; // crc unpacked
+
+  pHeader->ver = VERSION;  // version? 0x0B
+  pHeader->unk4 = 0; // 0
+  pHeader->unk5 = UNK5; // 0x0148
+
+  fseek(input  , 0, SEEK_END);
+  pHeader->dlen = ftell(input); // data length
+
+  fseek(input, 0, SEEK_SET);
+  pHeader->crcu = get_file_crc(input);
+
+  pHeader->crcp = get_encrypted_file_crc(output);
+
+  return 0;
+}
+
+int write_encrypted_header ( FILE* input, FILE* output)
+{
+  fwHeader_t header_;
+
+  if (fill_header (&header_, input, output) != 0)
+    {
+      printf("Cannot fill\n");
+      return(1);
+    }
+
+  if (write_header (&header_, output) != 0)
+    {
+      printf("Cannot write header\n");
+      return(1);
+    }
+
+
+  
+}
+
+int write_header (fwHeader_t * pHeader, FILE* file)
+{
+  int r;
+  rewind(file);
+  r = fwrite( (void*) pHeader, 1, sizeof(fwHeader_t), file);
+  if (r < sizeof(fwHeader_t))
+    { 
+      printf("Cannot read header\n");
+      return(1);
+    }
+  return 0;
+  
+}
+
+int check_crc(FILE* input, FILE* output)
+{
+  fwHeader_t header_;
+  if (read_header (&header_, input) != 0)
+    {
+      printf("Cannot check header 1\n");
+      return(1);
+    }
+  rewind(output);
+  if (header_.crcu != get_file_crc(output))
+    {
+      printf("Wrong CRC32 of unencrypted data\n");
+      return(1);
+    }
 }
