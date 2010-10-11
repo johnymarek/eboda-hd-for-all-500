@@ -174,12 +174,15 @@ find cb3pp | grep -v .svn | grep -v '~'  | zip -9 ${dir}/cb3pp.zip -@
 cp cb3pp-version.txt ${dir}/cb3pp-version.txt
 cd $dir
 
-# cgi-bin
-cp ${SVN_REPO}/scripts/feeds/scripts_vb6/cgi-bin/mf/* tmp_orig/www/cgi-bin/
+# vb6 bin
+# bin is directly in cb3pp
+
+
+# vb6 cgi-bin
 cp ${SVN_REPO}/scripts/feeds/scripts_vb6/cgi-bin/vb6/* tmp_orig/www/cgi-bin/
 chmod +x tmp_orig/www/cgi-bin/*
 
-# menu
+# vb6 menu
 cp -r ${SVN_REPO}/src/${VERSION}/menu/* usr/local/bin/scripts/
 
 # vb6 scripts
