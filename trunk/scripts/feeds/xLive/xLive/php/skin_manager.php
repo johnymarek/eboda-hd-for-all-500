@@ -7,7 +7,7 @@ $internetversionfile ="http://xtreamer-web-sdk.googlecode.com/svn/trunk/xmp/skin
 $extractpath = "/usr/local/bin/Resource/bmp/";
 
 
-$skinpathoffset  = "/xLive/";
+$skinpathoffset  = "/xLive/php/";
 $scriptfile  = "http://127.0.0.1:82/xLive/php/skin_manager.php";
 
 $skin     = $_GET["skin"];
@@ -32,6 +32,7 @@ $skinbrowserupgrade = "http://xtreamer-web-sdk.googlecode.com/svn/trunk/rss/scri
 header("Content-type: text/xml");
 echo "<?xml version='1.0' ?>";
 echo '<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">'."\n";
+echo photoView23();
 echo "<channel>\n";
 
 
@@ -51,7 +52,7 @@ else if ( "" != $root  ){
 }
 else if ( "" != $update  ){
    skin_browser_update();
-   printitem( "Reload Skin Browser", $scriptfile , $skinmainicon, 'photoView23' );
+   printitem( "Reload Skin Browser", $scriptfile , $skinmainicon );
 }
 else if ( "" != $backup  ){
    backup_original_skin();
@@ -67,8 +68,8 @@ else
 function entermainmenu()
 {
    global $skinpath, $scriptfile, $skinmainicon, $skinmainiconnew;
-   printitem( "Skin Browser", $scriptfile.'?root=true' , $skinmainicon, 'photoView23' );
-   printitem( "Check for new skins", $scriptfile.'?newskins=true' , $skinmainiconnew, 'photoView23' );
+   printitem( "Skin Browser", $scriptfile.'?root=true' , $skinmainicon );
+   printitem( "Check for new skins", $scriptfile.'?newskins=true' , $skinmainiconnew );
    if (! file_exists("$skinpath") )  {
       system("mkdir $skinpath" );
    }
@@ -82,7 +83,7 @@ function checkNewSkinManagerVersion()
 
    $skinbrowserversion = substr( file_get_contents("http://xtreamer-web-sdk.googlecode.com/svn/trunk/rss/scripts/skin_manager.php"), 16, 3) ;
    if( $skinbrowserversion != $smversion){
-      printitem( "New Skinmanager version $skinbrowserversion available, current is $smversion", $scriptfile.'?update=true' , $skinbrowserupgrade, 'photoView23' );
+      printitem( "New Skinmanager version $skinbrowserversion available, current is $smversion", $scriptfile.'?update=true' , $skinbrowserupgrade );
    }
 }
 
@@ -102,7 +103,7 @@ function changeSkin(  )
    global $scriptfile,$extractpath, $skinpage, $skinpath, $mdskin, $urlskin, $skin,$skinmainicon,$skinpathoffset;
    $title = "$skin skin installed successfull !";
    if ( ! file_exists( "$skinpath/$skin/$skin.zip" ) ){
-      exec("wget '$skinpage/$urlskin/$urlskin.zip' -O '$skinpath/$mdskin/$mdskin.zip'", $output[], $retval );
+      exec("wget $skinpage/$urlskin/$urlskin.zip -O $skinpath/$mdskin/$mdskin.zip", $output[], $retval );
    }
 
    if ($retval) {
@@ -111,11 +112,11 @@ function changeSkin(  )
    }
    else {
       if ( file_exists( "$skinpath/$skin/$skin.zip" ) ) {
-         system("unzip -o '$skinpath/$skin/$skin.zip' -d $extractpath", $retval);
+         system("unzip -o $skinpath/$mdskin/$mdskin.zip -d $extractpath", $retval);
          if ( $retval != "0"){ $title = 'Install failed!'; }
       }
       else if ( file_exists( "$skinpath/$skin/$skin.tar.gz" ) ){
-         system("./busybox tar -xzvf '$skinpath/$skin/$skin.tar.gz' -C /", $retval);
+         system("./busybox tar -xzvf $skinpath/$mdskin/$mdskin.tar.g' -C /", $retval);
          if ( $retval != "0") { $title = 'Install failed!'; }
       }
       else{
@@ -123,8 +124,8 @@ function changeSkin(  )
       }
    }
    echo "<title>$title</title>\n";
-   printitem( "Return to MAIN MENU", $scriptfile.'?home=1', "$skinpathoffset$skinpath/$skin/$skin.jpg", 'photoView23' );
-   printitem( "Return to SKIN BROWSER", $scriptfile, $skinmainicon, 'photoView23' );
+   printitem( "Return to MAIN MENU", $scriptfile.'?home=1', "$skinpathoffset$skinpath/$skin/$skin.jpg" );
+   printitem( "Return to SKIN BROWSER", $scriptfile, $skinmainicon );
 
 }
 
@@ -138,7 +139,7 @@ function skin_browser()
    exec("ls $skinpathoffset$skinpath/*/*.jpg", $aSkins );
    foreach( $aSkins as $skinfile ){
       $skinname = basename(dirname($skinfile));
-      printitem( $skinname, $scriptfile.'?skin='.urlencode($skinname), $skinfile, 'photoView23' );
+      printitem( $skinname, $scriptfile.'?skin='.urlencode($skinname), $skinfile );
    }
 } //
 
@@ -147,8 +148,8 @@ function getNewSkins( )
 {
    global $skinpage, $skinpath;
    @exec("ping google.de", $retval);
-
-   if ( substr_count( $retval[0] , "is alive!") == 1) {
+   
+   if ( substr_count( $retval[0] , "is alive!") == 1) {     
       $filecontent = explode("\n", @file_get_contents( $skinpage ) );
       foreach( $filecontent as $line ){
          list($key, $val) = explode("<li><a href=\"", $line );
@@ -157,10 +158,10 @@ function getNewSkins( )
             $skin     = str_replace("%20", " ", $skin);
             $urlskin  = rawurlencode($skin);
             $mdskin   = str_replace(" ", "\ ", $skin);
-
+            
             if( "" != $skin && ".." != $skin && ! file_exists( "$skinpath/$skin/$skin.jpg" )  ) {
                exec("mkdir $skinpath/$mdskin" );
-               exec("wget '$skinpage/$urlskin/$urlskin.jpg' -O '$skinpath/$mdskin/$mdskin.jpg'" );
+               exec("wget '$skinpage/$urlskin/$urlskin.jpg' -O '$skinpath/$skin/$skin.jpg'" );
             }
          }
       } // end foreach
@@ -203,14 +204,14 @@ function backup_original_skin()
       $title = "busybox application not found in xmp !";
    }
    echo "<title>$title</title>\n";
-   printitem( "Return to Skin Browser", $scriptfile, $skinmainicon, 'photoView23' );
-   printitem( "Return to Main Menu", $scriptfile.'?home=1', "$skinpathoffset$skinpath/original/original.jpg", 'photoView23' );
+   printitem( "Return to Skin Browser", $scriptfile, $skinmainicon );
+   printitem( "Return to Main Menu", $scriptfile.'?home=1', "$skinpathoffset$skinpath/original/original.jpg" );
 
 }
 
 function checkNewOriginalSkinVersion()
 {
-   global $versionfile, $internetversionfile, $skinoriginalicon;
+   global $versionfile, $internetversionfile, $skinoriginalicon, $scriptfile;
    $title = "";
    $internetversion = rtrim( file_get_contents($internetversionfile) );
    $version = getVersion();
@@ -229,9 +230,8 @@ function checkNewOriginalSkinVersion()
    else{
       $title =  "versionfile: $versionfile not found! Please perform backup!";
    }
-   return $title;
    if( "" != $title ){
-      printitem( $title, $scriptfile.'?backup=true' , $skinoriginalicon, 'photoView23' );
+      printitem( $title, $scriptfile.'?backup=true' , $skinoriginalicon );
    }
 }
 
@@ -249,7 +249,7 @@ function getVersion()
  * printitem - helper function for folder items
  *             including subentries
  */
-function printitem( $title, $link, $mediaimage, $style, $searchurl="")
+function printitem( $title, $link, $mediaimage, $searchurl="")
 {
    global $fontsize, $scriptfile, $defaultfanart;
 
@@ -257,8 +257,7 @@ function printitem( $title, $link, $mediaimage, $style, $searchurl="")
    $output.=  "<title>$title</title>\n";
    $output.=  '<link>'.$link."</link>\n";
    $output.=  getItemThumbnail($mediaimage);
-   $output.= $style();
-   //$output.= submenu( "Original skin backup", $scriptfile.'?backup=true', 'photoView23' );
+   //$output.= submenu( "Original skin backup", $scriptfile.'?backup=true' );
    $output.= "\n</item>\n\n";
    echo $output;
 }
@@ -279,7 +278,7 @@ function submenu( $title, $link, $style )
 function getItemThumbnail( $image )
 {
    global $debug;
-   $image = str_replace(" ", "%20", $image);
+   //$image = str_replace(" ", "%20", $image);
    $ret = '<media:thumbnail url="'.$image.'" />'."\n";
 
    if ( "" != $debug )

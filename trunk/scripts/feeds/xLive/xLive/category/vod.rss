@@ -6,37 +6,15 @@
     <title>Xtreamer - VoD</title>
 
 <item>
+<title>xMegafilm</title>
+<link>http://localhost/media/sda1/scripts/xMegafilm/php/index.php</link>
+<media:thumbnail url="/tmp/usbmounts/sda1/scripts/xMegafilm/image/xmegafilm.jpg"/>
+</item>
+
+<item>
 <title>RTL Gemist</title>
 <link>/xLive/php/RtlGemist.php</link>
 <media:thumbnail url="/xLive/image/vod-rtl.jpg"/>
-<mediaDisplay name="threePartsView"
-	sideLeftWidthPC="0"
-	itemImageXPC="5"
-	itemImageHeightPC="9"
-	itemXPC="20"
-	itemYPC="20"
-	itemGap="0"
-	itemPerPage="7"
-	itemHeightPC="9"
-	itemWidthPC="65"
-	sideBottomHeightPC="10"
-	capWidthPC="70"
-      showDefaultInfo="no"
-      showHeader="no"
-	unFocusFontColor="101:101:101"
-	focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>/xLive/image/busy1.png</idleImage>
-        <idleImage>/xLive/image/busy2.png</idleImage>
-        <idleImage>/xLive/image/busy3.png</idleImage>
-        <idleImage>/xLive/image/busy4.png</idleImage>
-        <idleImage>/xLive/image/busy5.png</idleImage>
-        <idleImage>/xLive/image/busy6.png</idleImage>
-        <idleImage>/xLive/image/busy7.png</idleImage>
-        <idleImage>/xLive/image/busy8.png</idleImage>
-<backgroundDisplay>
-<image offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100> /xLive/backgrounds/rtl.jpg </image>
-</backgroundDisplay>
-</mediaDisplay>
 </item>
 
     <item>
@@ -63,20 +41,6 @@ idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26"
       <title>Welph Full Movies</title>
       <link>http://www.metafeeds.com/channel/fullmovies/rss</link>
       <media:thumbnail url="/xLive/image/tvandm-movies.jpg" />
-<mediaDisplay name="threePartsView" showDefaultInfo="no" bottomYPC="0" itemGap="0" itemPerPage="10" showHeader="no" sideLeftWidthPC="0" itemImageXPC="0" itemImageHeightPC="0" itemImageWidthPC="0" itemXPC="5" itemYPC="10" itemWidthPC="55" itemHeightPC="8" capWidthPC="60" unFocusFontColor="101:101:101" focusFontColor="255:255:255" 
-idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-         <idleImage>/xLive/image/busy1.png</idleImage>
-        <idleImage>/xLive/image/busy2.png</idleImage>
-        <idleImage>/xLive/image/busy3.png</idleImage>
-        <idleImage>/xLive/image/busy4.png</idleImage>
-        <idleImage>/xLive/image/busy5.png</idleImage>
-        <idleImage>/xLive/image/busy6.png</idleImage>
-        <idleImage>/xLive/image/busy7.png</idleImage>
-        <idleImage>/xLive/image/busy8.png</idleImage>
-<backgroundDisplay>
-<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>/xLive/backgrounds/bg_livetv.jpg</image>
-</backgroundDisplay>
-</mediaDisplay>
 </item>
 
 </channel>
