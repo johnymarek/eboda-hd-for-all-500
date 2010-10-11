@@ -13,7 +13,7 @@ echo strrchr($link,"/");
 $link = str_replace(' ','%20',$link);
 $link = str_replace('[','%5B',$link);
 $link = str_replace(']','%5D',$link);
-$image = "/tmp/hdd/volumes/HDD1/scripts/image/fhdnet.png";
+$image = "/scripts/image/fhdnet.png";
 
 $html = file_get_contents($link);
 $videos = explode('flashvars="', $html);

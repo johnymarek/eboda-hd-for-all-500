@@ -7,14 +7,14 @@
 		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
 		peteava.ro
 		</text>	
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy1.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy2.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy3.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy4.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy5.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy6.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy7.png</idleImage>
-        <idleImage>/tmp/hdd/volumes/HDD1/scripts/scripts9/image/busy8.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy1.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy2.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy3.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy4.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy5.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy6.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy7.png</idleImage>
+        <idleImage>/scripts/scripts9/image/busy8.png</idleImage>
 	</mediaDisplay>
 <channel>
 	<title>peteava.ro - main</title>
@@ -24,317 +24,317 @@
 <title>Search</title>
 <link>rss_command://search</link>
 <search url="http://127.0.0.1:82/scripts/php/peteava_search.php?query=1,%s" />
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/search.png" />
+<media:thumbnail url="/scripts/image/search.png" />
 </item>
 	
 	<item>
 		<title>****************Divertisment********************</title>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 
 	<item>
 		<title>Toate</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/3/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 		
 	<item>
 		<title>Reclame</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/300/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 	
 	<item>
 		<title>Farse</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/301/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 	
 		<item>
 		<title>Animale</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/302/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 	
 		<item>
 		<title>Amuzant</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/303/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 
 		<item>
 		<title>Incredibil</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/304/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 
 		<item>
 		<title>Stand-Up</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/305/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 
 		<item>
 		<title>Reality</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/306/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 	
 	<item>
 		<title>****************Sport si Moto********************</title>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 
 	<item>
 		<title>Toate</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/2/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 		
 	<item>
 		<title>Auto-moto</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/200/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 	
 	<item>
 		<title>Fotbal</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/201/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 	
 		<item>
 		<title>Sporturi</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/202/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 	
 		<item>
 		<title>Extrem</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/203/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 
 		<item>
 		<title>Iarna</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/204/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 	
 	<item>
 		<title>****************Travel********************</title>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 
 	<item>
 		<title>Toate</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/6/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 		
 	<item>
 		<title>Destinatii</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/600/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 	
 	<item>
 		<title>Natura</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/601/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 	
 		<item>
 		<title>Arta si cultura</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/602/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 	
 	<item>
 		<title>****************Gadget********************</title>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 
 	<item>
 		<title>Toate</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/4/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 		
 	<item>
 		<title>Gadget</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/400/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 	
 	<item>
 		<title>Gaming</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/401/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 	
 		<item>
 		<title>PC</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/402/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 	
 	<item>
 		<title>****************Cunoastere********************</title>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 
 	<item>
 		<title>Toate</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/8/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 		
 	<item>
 		<title>Stiinta si Tehnologie</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/800/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 	
 	<item>
 		<title>Dezastre</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/801/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 	
 		<item>
 		<title>Istorie</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/802/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 	
 		<item>
 		<title>Credinte</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/803/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 	
 	<item>
 		<title>****************Lifestyle********************</title>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 
 	<item>
 		<title>Toate</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/5/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 		
 	<item>
 		<title>Frumusete</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/500/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 	
 	<item>
 		<title>Moda</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/501/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 	
 		<item>
 		<title>Sanatate</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/502/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 	
 		<item>
 		<title>Educatie</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/503/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 	
 		<item>
 		<title>Culinar</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/504/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 	
 		<item>
 		<title>Casa si Gradina</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/505/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 	
 	<item>
 		<title>****************Cotidian********************</title>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 
 	<item>
 		<title>Toate</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/7/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 		
 	<item>
 		<title>In Jurul Lumii</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/700/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 	
 	<item>
 		<title>Romania</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/701/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 	
 		<item>
 		<title>Business</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/702/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 	
 		<item>
 		<title>Activism</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/703/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 	
 		<item>
 		<title>Diverse</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/704/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 	
 	<item>
 		<title>****************Tabu********************</title>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 
 	<item>
 		<title>Toate</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/9/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 		
 	<item>
 		<title>Sexy</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/900/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 	
 	<item>
 		<title>Ciudat</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/901/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 	
 		<item>
 		<title>Violent</title>
 	<link>http://127.0.0.1:82/scripts/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/902/pagina/</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>
 	
 	<item>
 		<title>****************Muzica si film********************</title>
-		<link>/tmp/hdd/volumes/HDD1/scripts/category/peteava.rss</link>
-	<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+		<link>/scripts/category/peteava.rss</link>
+	<media:thumbnail url="/scripts/image/peteava.png" />
 	</item>	
 
 </channel>

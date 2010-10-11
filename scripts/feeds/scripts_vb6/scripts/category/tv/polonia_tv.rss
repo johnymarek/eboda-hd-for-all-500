@@ -7,26 +7,26 @@
 
 <item>
 <title>ITV (Polonia)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://stream.mni.pl/ITV</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://stream.mni.pl/ITV"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://stream.mni.pl/ITV</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://stream.mni.pl/ITV"/>
 </item>
 
 <item>
 <title>Toya TV (Polonia)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://217.113.224.22/TVToya</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://217.113.224.22/TVToya"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://217.113.224.22/TVToya</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://217.113.224.22/TVToya"/>
 </item>
 
 <item>
 <title>TV Cristo Vive (Polonia)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://overserver1000.com/tvcristovive2</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://overserver1000.com/tvcristovive2"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://overserver1000.com/tvcristovive2</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://overserver1000.com/tvcristovive2"/>
 </item>
 
 <item>
 <title>TV Trwam (Polonia)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://195.94.205.211/Trwam</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://195.94.205.211/Trwam"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://195.94.205.211/Trwam</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://195.94.205.211/Trwam"/>
 </item>
 
 </channel>

@@ -7,49 +7,49 @@
 <item>
 <title>Sport.ro - Stiri</title>
 <link>http://127.0.0.1:82/scripts/php/sport_ro.php?query=1,http://www.sport.ro/video/stiri/</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/sport_ro.gif" />
+<media:thumbnail url="/scripts/image/sport_ro.gif" />
 </item>
 
 <item>
 <title>Sport.ro - Fotbal Extern</title>
 <link>http://127.0.0.1:82/scripts/php/sport_ro.php?query=1,http://www.sport.ro/video/fotbal-extern/</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/sport_ro.gif" />
+<media:thumbnail url="/scripts/image/sport_ro.gif" />
 </item>
 
 <item>
 <title>Sport.ro - Fotbal Intern</title>
 <link>http://127.0.0.1:82/scripts/php/sport_ro.php?query=1,http://www.sport.ro/video/fotbal-intern/</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/sport_ro.gif" />
+<media:thumbnail url="/scripts/image/sport_ro.gif" />
 </item>
 
 <item>
 <title>Sport.ro - Nationala</title>
 <link>http://127.0.0.1:82/scripts/php/sport_ro.php?query=1,http://www.sport.ro/video/nationala/</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/sport_ro.gif" />
+<media:thumbnail url="/scripts/image/sport_ro.gif" />
 </item>
 
 <item>
 <title>Sport.ro - Sporturi</title>
 <link>http://127.0.0.1:82/scripts/php/sport_ro.php?query=1,http://www.sport.ro/video/sporturi/</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/sport_ro.gif" />
+<media:thumbnail url="/scripts/image/sport_ro.gif" />
 </item>
 
 <item>
 <title>Sport.ro - Show</title>
 <link>http://127.0.0.1:82/scripts/php/sport_ro.php?query=1,http://www.sport.ro/video/show/</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/sport_ro.gif" />
+<media:thumbnail url="/scripts/image/sport_ro.gif" />
 </item>
 
 <item>
 <title>Sport.ro - ProMotor</title>
 <link>http://127.0.0.1:82/scripts/php/sport_ro.php?query=1,http://www.sport.ro/video/promotor/</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/sport_ro.gif" />
+<media:thumbnail url="/scripts/image/sport_ro.gif" />
 </item>
 
 <item>
 <title>Sport.ro - Europa League</title>
 <link>http://127.0.0.1:82/scripts/php/sport_ro.php?query=1,http://www.sport.ro/video/europa-league/</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/sport_ro.gif" />
+<media:thumbnail url="/scripts/image/sport_ro.gif" />
 </item>
 
 

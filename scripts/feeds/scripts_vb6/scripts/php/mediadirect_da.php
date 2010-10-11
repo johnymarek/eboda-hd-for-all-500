@@ -33,7 +33,7 @@ if($search) {
 }
 ?>
 <title>Previous Page</title>
-<link><?php echo $url;?></link><media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/left.jpg" />
+<link><?php echo $url;?></link><media:thumbnail url="/scripts/image/left.jpg" />
 </item>
 
 
@@ -61,7 +61,7 @@ foreach($videos as $video) {
     $link = str_replace(' - ','_',$title);
     $link = str_replace(' ','_',$link);
 
-		$link = "http://127.0.0.1/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:1935/desene_animate?id=1676684/mp4:".$link.".mp4";
+		$link = "http://127.0.0.1:82/cgi-bin/rtmp?rtmpe://fms8.mediadirect.ro:1935/desene_animate?id=1676684/mp4:".$link.".mp4";
 if ((strpos($title,'<') === false) && ($title <> "")) {
     echo '<item>';
     echo '<title>'.$title.'</title>';
@@ -86,7 +86,7 @@ if($search) {
 ?>
 <title>Next Page</title>
 <link><?php echo $url;?></link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/right.jpg" />
+<media:thumbnail url="/scripts/image/right.jpg" />
 </item>
 
 </channel>

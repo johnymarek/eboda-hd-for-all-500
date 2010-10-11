@@ -17,7 +17,7 @@ if ($pos !== false) {
     echo '<item>';
     echo '<title>Link</title>';
     echo '<link>'.$link.'</link>';
-    echo '<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/videonews.jpg" />';
+    echo '<media:thumbnail url="/scripts/image/videonews.jpg" />';
     echo '<enclosure type="video/flv" url="'.$link.'"/>';	
     echo '</item>';
 }
@@ -28,7 +28,7 @@ else {
     echo '<item>';
     echo '<title>Link</title>';
     echo '<link>'.$link.'</link>';
-    echo '<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/videonews.jpg" />';
+    echo '<media:thumbnail url="/scripts/image/videonews.jpg" />';
     echo '<enclosure type="video/flv" url="'.$link.'"/>';	
     echo '</item>';
   }

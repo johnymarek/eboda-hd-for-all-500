@@ -14,7 +14,7 @@ function str_between($string, $start, $end){
 }
 $link = $_GET["file"];
 
-$image = "/tmp/hdd/volumes/HDD1/scripts/image/bing.jpg";
+$image = "/scripts/image/bing.jpg";
 $html = file_get_contents($link);
 $link = str_between($html, "formatCode: 1002, url: '", "'");
 $link = str_replace('\x3a',':',$link);

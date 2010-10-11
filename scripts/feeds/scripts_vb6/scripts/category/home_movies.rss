@@ -5,188 +5,188 @@
 
 <item>
 <title>Vimeo</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/category/vimeo.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/vimeo.jpg"/>
+<link>/scripts/category/vimeo.rss</link>
+<media:thumbnail url="/scripts/image/vimeo.jpg"/>
 </item>	
 
 <item>
 <title>Dailymotion</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/category/dm.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/dailymotion.png" />
+<link>/scripts/category/dm.rss</link>
+<media:thumbnail url="/scripts/image/dailymotion.png" />
 </item>
 
 <item>
 <title>220.ro</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/category/220.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/220.jpg" />
+<link>/scripts/category/220.rss</link>
+<media:thumbnail url="/scripts/image/220.jpg" />
 </item>
 
 <item>
 <title>videonews</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/category/videonews.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/videonews.jpg" />
+<link>/scripts/category/videonews.rss</link>
+<media:thumbnail url="/scripts/image/videonews.jpg" />
 </item>
 
 <item>
 <title>peteava.ro</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/category/peteava1.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/peteava.png" />
+<link>/scripts/category/peteava1.rss</link>
+<media:thumbnail url="/scripts/image/peteava.png" />
 </item>
 
 <item>
 <title>jurnaltv.ro</title>
 <link>http://127.0.0.1:82/scripts/php/jurnaltv.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/jurnaltv.png" />
+<media:thumbnail url="/scripts/image/jurnaltv.png" />
 </item>
 
 <item>
 <title>ViataLaServiciu</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/category/viatalaserviciu.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/viatalaserviciu.gif" />
+<link>/scripts/category/viatalaserviciu.rss</link>
+<media:thumbnail url="/scripts/image/viatalaserviciu.gif" />
 </item>
 
 <item>
 <title>VideoAlegeNet</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/category/video_alege_net.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/videoclip.png" />
+<link>/scripts/category/video_alege_net.rss</link>
+<media:thumbnail url="/scripts/image/videoclip.png" />
 </item>
 
 <item>
 <title>IntactMedia</title>
 <link>http://127.0.0.1:82/scripts/php/intactmedia.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/intactmedia.jpg" />
+<media:thumbnail url="/scripts/image/intactmedia.jpg" />
 </item>
 
 <item>
 <title>CancanTV</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/category/cancan.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/cancan.jpg" />
+<link>/scripts/category/cancan.rss</link>
+<media:thumbnail url="/scripts/image/cancan.jpg" />
 </item>
 
 <item>
 <title>almanahe.ro</title>
 <link>http://127.0.0.1:82/scripts/php/almanahe_main.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/almanahe.png" />
+<media:thumbnail url="/scripts/image/almanahe.png" />
 </item>
 
 <item>
 <title>Tare.ro</title>
 <link>http://127.0.0.1:82/scripts/php/tare.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/tare.png" />
+<media:thumbnail url="/scripts/image/tare.png" />
 </item>
 
 <item>
 <title>video.rol.ro</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/category/video_rol.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/video_rol.png" />
+<link>/scripts/category/video_rol.rss</link>
+<media:thumbnail url="/scripts/image/video_rol.png" />
 </item>
 
 <item>
 <title>www.trilulilu.ro</title>
 <link>http://127.0.0.1:82/scripts/php/trilulilu.php?query=1,http://www.trilulilu.ro/video/cele-mai-recente/azi</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/trilulilu.png" />
+<media:thumbnail url="/scripts/image/trilulilu.png" />
 </item>
 
 <item>
 <title>www.sanchi.ro</title>
 <link>http://127.0.0.1:82/scripts/php/sanchi.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/sanchi.jpg" />
+<media:thumbnail url="/scripts/image/sanchi.jpg" />
 </item>
 
 <item>
 <title>myvideo.ro</title>
 <link>http://127.0.0.1:82/scripts/php/myvideo.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/myvideo.gif" />
+<media:thumbnail url="/scripts/image/myvideo.gif" />
 </item>
 
 <item>
 <title>youclubvideo.com</title>
 <link>http://127.0.0.1:82/scripts/php/youclubvideo.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/youclubvideo.png" />
+<media:thumbnail url="/scripts/image/youclubvideo.png" />
 </item>
 
 <item>
 <title>dump.ro</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/category/dump.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/dump.jpg" />
+<link>/scripts/category/dump.rss</link>
+<media:thumbnail url="/scripts/image/dump.jpg" />
 </item>
 
 <item>
 <title>Metacafe</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/category/metacafe.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/metacafe.png" />
+<link>/scripts/category/metacafe.rss</link>
+<media:thumbnail url="/scripts/image/metacafe.png" />
 </item>
 
 <item>
 <title>BlipTV</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/category/bliptv.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/blip_tv.jpg" />
+<link>/scripts/category/bliptv.rss</link>
+<media:thumbnail url="/scripts/image/blip_tv.jpg" />
 </item>
 
 <item>
 <title>Reuters</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/category/reuters.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/reuters.jpg" />
+<link>/scripts/category/reuters.rss</link>
+<media:thumbnail url="/scripts/image/reuters.jpg" />
 </item>
 
 <item>
 <title>Best of YouTube (iPod video)</title>
 <link>http://feeds.feedburner.com/boyt</link> />
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/bestofyoutube.jpg" />
+<media:thumbnail url="/scripts/image/bestofyoutube.jpg" />
 </item>
 
 <item>
 <title>Video Podcast Directory</title>
 <link>http://127.0.0.1:82/scripts/php/videopodcasts_main.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/videopodcasts.gif" />
+<media:thumbnail url="/scripts/image/videopodcasts.gif" />
 </item>
 
 <item>
 <title>podcastalley</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/category/podcastalley.rss</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/podcastalley.gif" />
+<link>/scripts/category/podcastalley.rss</link>
+<media:thumbnail url="/scripts/image/podcastalley.gif" />
 </item>
 
 <!--<item>
 <title>LiveVideo</title>
-<link>/tmp/hdd/volumes/HDD1/scripts/category/lv.rss</link> />
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/livevideo.jpg" />
+<link>/scripts/category/lv.rss</link> />
+<media:thumbnail url="/scripts/image/livevideo.jpg" />
 </item>
 
 <item>
 <title>Break.com</title>
 <link>http://127.0.0.1:82/scripts/php/break.php</link> />
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/break_logo.jpg" />
+<media:thumbnail url="/scripts/image/break_logo.jpg" />
 </item>
 
 <item>
 <title>clickplay.tv</title>
 <link>http://127.0.0.1:82/scripts/php/c.php</link> />
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/clickplay.jpg" />
+<media:thumbnail url="/scripts/image/clickplay.jpg" />
 </item>-->
 
 <item>
 <title>evtv1</title>
 <link>http://127.0.0.1:82/scripts/php/evtv1.php</link> />
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/evtv1.gif" />
+<media:thumbnail url="/scripts/image/evtv1.gif" />
 </item>
 
 <item>
 <title>wowtv</title>
 <link>http://127.0.0.1:82/scripts/php/wowtv_main.php</link> />
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/wowtv.gif" />
+<media:thumbnail url="/scripts/image/wowtv.gif" />
 </item>
 
 <item>
 <title>videoclipsdump</title>
 <link>http://127.0.0.1:82/scripts/php/videoclipsdump.php</link> />
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/videoclipsdump.gif" />
+<media:thumbnail url="/scripts/image/videoclipsdump.gif" />
 </item>
 
 <item>
 <title>FunOnly.net</title>
 <link>http://127.0.0.1:82/scripts/php/funonly.php</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/funonly.gif" />
+<media:thumbnail url="/scripts/image/funonly.gif" />
 </item>
 
 </channel>

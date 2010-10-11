@@ -14,7 +14,7 @@ function str_between($string, $start, $end){
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
 	return substr($string,$ini,$len); 
 }
-$image = "/tmp/hdd/volumes/HDD1/scripts/image/tvtargoviste.png";
+$image = "/scripts/image/tvtargoviste.png";
 $videos = explode('<div class="article_column', $html);
 
 unset($videos[0]);

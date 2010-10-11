@@ -36,7 +36,7 @@ foreach($videos as $video) {
     $t2 = explode('"', $t1[1]);
     $link = htmlentities($t2[0]);
     
-    $image = "/tmp/hdd/volumes/HDD1/scripts/image/1tvbacau.jpg";
+    $image = "/scripts/image/1tvbacau.jpg";
 
     //$title = iconv("ISO-8859-2","UTF-8",trim(str_between($video,'">','</a>')));
     $title = utf8_encode(trim(str_between($video,'">','</a>')));

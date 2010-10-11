@@ -39,7 +39,7 @@ if($pagina!="1") {
 echo'<item>
 <title>Previous Page (pagina '.$prev.')</title>
 <link>'.$page.'='.$prev.'</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/left.jpg" />
+<media:thumbnail url="/scripts/image/left.jpg" />
 </item>
 ';
 }
@@ -89,7 +89,7 @@ echo'
 <item>
 <title>Next Page (pagina '.$next.')</title>
 <link>'.$page.'='.$next.'</link>
-<media:thumbnail url="/tmp/hdd/volumes/HDD1/scripts/image/right.jpg" />
+<media:thumbnail url="/scripts/image/right.jpg" />
 </item>';
 }
 

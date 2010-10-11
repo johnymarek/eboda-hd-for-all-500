@@ -7,176 +7,176 @@
 
 <item>
 <title>RBK</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://tv.gldn.net/rbc</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://tv.gldn.net/rbc"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://tv.gldn.net/rbc</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://tv.gldn.net/rbc"/>
 </item>
 
 <item>
 <title>TV2</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://vconf.tomline.ru/Tomline-TV2</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://vconf.tomline.ru/Tomline-TV2"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://vconf.tomline.ru/Tomline-TV2</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://vconf.tomline.ru/Tomline-TV2"/>
 </item>
 
 <item>
 <title>BizOne</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://mms.amtv.ru/BizOne</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://mms.amtv.ru/BizOne"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://mms.amtv.ru/BizOne</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://mms.amtv.ru/BizOne"/>
 </item>
 
 <item>
 <title>MIR</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://213.232.226.11/MIRTV_128</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://213.232.226.11/MIRTV_128"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://213.232.226.11/MIRTV_128</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://213.232.226.11/MIRTV_128"/>
 </item>
 
 <item>
 <title>MIR</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://213.232.226.11/MIRTV_300</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://213.232.226.11/MIRTV_300"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://213.232.226.11/MIRTV_300</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://213.232.226.11/MIRTV_300"/>
 </item>
 
 <item>
 <title>Tvoy Stroy Kids</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv10</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv10"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv10</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv10"/>
 </item>
 
 <item>
 <title>Tvoy Stroy Music</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv9</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv9"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv9</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv9"/>
 </item>
 
 <item>
 <title>4P</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://vconf.tomline.ru/Tomline-4P</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://vconf.tomline.ru/Tomline-4P"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://vconf.tomline.ru/Tomline-4P</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://vconf.tomline.ru/Tomline-4P"/>
 </item>
 
 <item>
 <title>Tvoy Stroy Anonsi</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv1</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv1"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv1</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv1"/>
 </item>
 
 <item>
 <title>Pervi Biznes Channel</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://mms.tvsme.ru/low</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://mms.tvsme.ru/low"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://mms.tvsme.ru/low</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://mms.tvsme.ru/low"/>
 </item>
 
 <item>
 <title>Smile of a child</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://mms.rrsat-internet.tv/smile</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://mms.rrsat-internet.tv/smile"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://mms.rrsat-internet.tv/smile</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://mms.rrsat-internet.tv/smile"/>
 </item>
 
 <item>
 <title>Tvoy Stroy Documental</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv6</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv6"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv6</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv6"/>
 </item>
 
 <item>
 <title>Tvoy Stroy Kino</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv7</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv7"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv7</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv7"/>
 </item>
 
 <item>
 <title>Tvoy Stroi News</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv11</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv11"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv11</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv11"/>
 </item>
 
 <item>
 <title>TBN</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://mms.rrsat-internet.tv/tbn</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://mms.rrsat-internet.tv/tbn"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://mms.rrsat-internet.tv/tbn</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://mms.rrsat-internet.tv/tbn"/>
 </item>
 
 <item>
 <title>Tvoy Russki Krest</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv2</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv2"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv2</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv2"/>
 </item>
 
 <item>
 <title>Tvoy Stroy Nauchnoye</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv4</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv4"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv4</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv4"/>
 </item>
 
 <item>
 <title>STS</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://media-proxy.napolnitel.net/ru_sts_moscow</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://media-proxy.napolnitel.net/ru_sts_moscow"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://media-proxy.napolnitel.net/ru_sts_moscow</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://media-proxy.napolnitel.net/ru_sts_moscow"/>
 </item>
 
 <item>
 <title>Tvoy Stroy TV Shows</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv3</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv3"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv3</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv3"/>
 </item>
 
 <item>
 <title>UVCM</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://media2.uvcm.eu/tv</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://media2.uvcm.eu/tv"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://media2.uvcm.eu/tv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://media2.uvcm.eu/tv"/>
 </item>
 
 <item>
 <title>Tvoi Stroi</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv"/>
 </item>
 
 <item>
 <title>Tvoy Stryo Zdorovie</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv5</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv5"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv5</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv5"/>
 </item>
 
 <item>
 <title>Tvoy Stroy Kino 2</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv8</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv8"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv8</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://212.1.238.70/ts_tv8"/>
 </item>
 
 <item>
 <title>URGU</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://mediaserv02.urc.ac.ru:5119/SUSU-TV</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://mediaserv02.urc.ac.ru:5119/SUSU-TV"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://mediaserv02.urc.ac.ru:5119/SUSU-TV</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://mediaserv02.urc.ac.ru:5119/SUSU-TV"/>
 </item>
 
 <item>
 <title>Three Angels</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://media2.uvcm.eu/3angels</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://media2.uvcm.eu/3angels"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://media2.uvcm.eu/3angels</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://media2.uvcm.eu/3angels"/>
 </item>
 
 <item>
 <title>K+</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://win.3.c3.audiovideoweb.com/3c3winlive3358</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://win.3.c3.audiovideoweb.com/3c3winlive3358"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://win.3.c3.audiovideoweb.com/3c3winlive3358</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://win.3.c3.audiovideoweb.com/3c3winlive3358"/>
 </item>
 
 <item>
 <title>1st TV</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://69.172.226.39/russian</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://69.172.226.39/russian"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://69.172.226.39/russian</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://69.172.226.39/russian"/>
 </item>
 
 <item>
 <title>Ugra</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://217.115.183.210/Ugra</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://217.115.183.210/Ugra"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://217.115.183.210/Ugra</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://217.115.183.210/Ugra"/>
 </item>
 
 <item>
 <title>TV-L.RU</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://video.corbina.tv/live</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://video.corbina.tv/live"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://video.corbina.tv/live</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://video.corbina.tv/live"/>
 </item>
 
 </channel>

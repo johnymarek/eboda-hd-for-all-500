@@ -19,7 +19,7 @@ $html = str_between($html,'<h3>Emisiuni</h3>','</ul>');
 $videos = explode('<li', $html);
 unset($videos[0]);
 $videos = array_values($videos);
-$img = "/tmp/hdd/volumes/HDD1/scripts/image/telem.png";
+$img = "/scripts/image/telem.png";
 foreach($videos as $video) {
     $t1 = explode('href="', $video);
     $t2 = explode('"', $t1[1]);

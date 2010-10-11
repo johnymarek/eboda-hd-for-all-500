@@ -7,14 +7,14 @@
 
 <item>
 <title>Lusophonie Parisienne (Portugalia)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://www.diffusepro.com/lusophonie</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://www.diffusepro.com/lusophonie"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://www.diffusepro.com/lusophonie</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://www.diffusepro.com/lusophonie"/>
 </item>
 
 <item>
 <title>Regi TV (Portugalia)</title>
-<link>http://127.0.0.1/cgi-bin/wmv-m?mms://www.reginet.pt/rtv-emissao</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://www.reginet.pt/rtv-emissao"/>
+<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://www.reginet.pt/rtv-emissao</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://www.reginet.pt/rtv-emissao"/>
 </item>
 
 </channel>
