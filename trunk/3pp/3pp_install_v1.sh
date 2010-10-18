@@ -22,7 +22,7 @@ thttpd=false
 #end php
 
 
-btpd=true
+btpd=false
 
 bftpd=false
 
@@ -60,6 +60,9 @@ smbd=false
 #end samba
 
 nginx=false
+
+msdl=true
+
 
 strip=false
 #
@@ -179,6 +182,8 @@ $rutorrent && ( [ -f rutorrent-3.0.tar.gz ] || $download_cmd http://rutorrent.go
 $rtgui && ( [ -f rtgui-0.2.7.tgz ] || $download_cmd http://rtgui.googlecode.com/files/rtgui-0.2.7.tgz )
 
 $bftpd && ( [ -f bftpd-2.9.tar.gz ] || $download_cmd http://sourceforge.net/projects/bftpd/files/bftpd/bftpd-2.9/bftpd-2.9.tar.gz/download )
+
+$msdl && ( [ -f msdl-1.2.7-r2.tar.gz ] || $download_cmd http://sourceforge.net/projects/msdl/files/msdl/msdl-1.2.7-r2/msdl-1.2.7-r2.tar.gz/download )
 
 #
 # openssl installation
@@ -342,6 +347,7 @@ EOF
 #
 
 cp ${cipibad}/bin/php $target/bin
+# php ini !!
 
 fi
 
@@ -731,10 +737,32 @@ then
 # btpd target
 #
 
-    cp ${cipibad}/bin/bftpd $target/lib
+    cp ${cipibad}/bin/bftpd $target/sbin
 
 fi
 
+
+
+
+if [ $msdl == true ]
+then
+
+    cd $compile
+    tar zxf $downloads/msdl-1.2.7-r2.tar.gz
+    cd msdl-1.2.7-r2
+    ./configure --prefix=${cipibad} --host=mipsel-linux 
+    $CLEAN && make clean
+    make
+    make install
+
+
+#
+# btpd target
+#
+
+    cp ${cipibad}/bin/msdl $target/bin
+
+fi
 
 
 #
