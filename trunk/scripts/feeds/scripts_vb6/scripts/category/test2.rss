@@ -19,12 +19,12 @@
 <title>Network tools</title>
 <item>
 <title>Click here to start/stop Apache server</title>
-<link>http://127.0.0.1:82/cgi-bin/apache_start_stop.cgi</link>
+<link>http://127.0.0.1/cgi-bin/apache_start_stop.cgi</link>
 <media:thumbnail url=/scripts/image/Network-tools-256.png/>
 </item>
 <item>
 <title>Click here to start/stop FTP server</title>
-<link>http://127.0.0.1:82/cgi-bin/ftp_start_stop.cgi</link>
+<link>http://127.0.0.1/cgi-bin/ftp_start_stop.cgi</link>
 <media:thumbnail url=/scripts/image/Network-tools-256.png/>
 </item>
 <item>

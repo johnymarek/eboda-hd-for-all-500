@@ -7,8 +7,8 @@
 
 <item>
 <title>Canal29 - Ministerios del Camino (Elvetia)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://livetv2.siscompnetwork.com/elcaminotv</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://livetv2.siscompnetwork.com/elcaminotv"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://livetv2.siscompnetwork.com/elcaminotv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://livetv2.siscompnetwork.com/elcaminotv"/>
 </item>
 
 </channel>

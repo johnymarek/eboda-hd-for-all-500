@@ -11,7 +11,7 @@
     setRefreshTime(200);
     startVideo = 1;
 
-    xmlurl = "http://127.0.0.1:82/cgi-bin/translate?status,,http://72.26.204.18:6616";
+    xmlurl = "http://127.0.0.1/cgi-bin/translate?status,,http://72.26.204.18:6616";
     dlok = loadXMLFile(xmlurl);
     if (dlok != null)
     {
@@ -36,7 +36,7 @@
 
       if (startVideo == 1) {
           print("I am moviePlayback onEnter !! startVideo: ", startVideo);
-	  content = "http://127.0.0.1:82/cgi-bin/wmv?http://72.26.204.18:6616";
+	  content = "http://127.0.0.1/cgi-bin/wmv?http://72.26.204.18:6616";
           playItemURL(content, 0, "mediaDisplay", "previewWindow");
           setRefreshTime(1000);
           showLoading = 1;
@@ -62,7 +62,7 @@
        setRefreshTime(30000);
        print ("Updating song title and listeners");
        showLoading = 0;
-       xmlurl = "http://127.0.0.1:82/cgi-bin/translate?status,,http://72.26.204.18:6616";
+       xmlurl = "http://127.0.0.1/cgi-bin/translate?status,,http://72.26.204.18:6616";
        dlok = loadXMLFile(xmlurl);
        if (dlok != null)
         {

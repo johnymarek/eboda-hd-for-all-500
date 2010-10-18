@@ -2,7 +2,7 @@
 <!--mime-type=  text/plain because acryan feeds are not proper xml-->
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
 <onEnter>
-    xmlurl = "http://127.0.0.1:82/cgi-bin/status_server.cgi";
+    xmlurl = "http://127.0.0.1/cgi-bin/status_server.cgi";
     dlok = loadXMLFile(xmlurl);
     if (dlok != null)
     {

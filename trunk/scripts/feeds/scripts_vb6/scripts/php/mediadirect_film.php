@@ -61,7 +61,7 @@ foreach($videos as $video) {
     $link = str_replace(' - ','_',$link);
     $link = str_replace(' ','_',$link);
 
-		$link = "http://127.0.0.1:82/cgi-bin/rtmp?rtmpe://fms1.mediadirect.ro:80/cinemateca/mp4:".$link.".mp4";
+		$link = "http://127.0.0.1/cgi-bin/rtmp?rtmpe://fms1.mediadirect.ro:80/cinemateca/mp4:".$link.".mp4";
 if ((strpos($title,'<') === false) && ($title <> "")) {
     echo '<item>';
     echo '<title>'.$title.'</title>';

@@ -7,14 +7,14 @@
 
 <item>
 <title>7 News (Belgia)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://200.32.198.90/7news</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://200.32.198.90/7news"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://200.32.198.90/7news</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://200.32.198.90/7news"/>
 </item>
 
 <item>
 <title>AVS (Belgia)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://clusterstreamhobo.telenet-ops.be/AVS/nieuws/nieuwsdinsdag.wmv</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://clusterstreamhobo.telenet-ops.be/AVS/nieuws/nieuwsdinsdag.wmv"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://clusterstreamhobo.telenet-ops.be/AVS/nieuws/nieuwsdinsdag.wmv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://clusterstreamhobo.telenet-ops.be/AVS/nieuws/nieuwsdinsdag.wmv"/>
 </item>
 </channel>
 </rss>

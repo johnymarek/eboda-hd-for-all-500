@@ -7,92 +7,92 @@
 
 <item>
 <title>Irib TV3 (Iran)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://live.iransima.ir/irib3</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://live.iransima.ir/irib3"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://live.iransima.ir/irib3</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://live.iransima.ir/irib3"/>
 </item>
 
 <item>
 <title>Tapesh TV (Iran)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://38.117.88.148/TapeshLink</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://38.117.88.148/TapeshLink"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://38.117.88.148/TapeshLink</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://38.117.88.148/TapeshLink"/>
 </item>
 
 <item>
 <title>Irib TV4 (Iran)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.220.122.4/tv4</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.220.122.4/tv4"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://62.220.122.4/tv4</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://62.220.122.4/tv4"/>
 </item>
 
 <item>
 <title>Pars TV (Iran)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://Stream645.PackDeal.Com/ParsTV-Live</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://Stream645.PackDeal.Com/ParsTV-Live"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://Stream645.PackDeal.Com/ParsTV-Live</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://Stream645.PackDeal.Com/ParsTV-Live"/>
 </item>
 
 <item>
 <title>Irib TV5 (Iran)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.220.122.12/tv5</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.220.122.12/tv5"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://62.220.122.12/tv5</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://62.220.122.12/tv5"/>
 </item>
 
 <item>
 <title>Jame Jam TV3 (Iran)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.220.122.6/jj3</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.220.122.6/jj3"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://62.220.122.6/jj3</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://62.220.122.6/jj3"/>
 </item>
 
 <item>
 <title>Jame Jam TV3 (Iran)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://live.iransima.ir/JAM-E-JAM3</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://live.iransima.ir/JAM-E-JAM3"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://live.iransima.ir/JAM-E-JAM3</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://live.iransima.ir/JAM-E-JAM3"/>
 </item>
 
 <item>
 <title>Makarzi TV (Iran)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://Stream645.PackDeal.Com/MarkaziTV-DSL</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://Stream645.PackDeal.Com/MarkaziTV-DSL"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://Stream645.PackDeal.Com/MarkaziTV-DSL</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://Stream645.PackDeal.Com/MarkaziTV-DSL"/>
 </item>
 
 <item>
 <title>JameJam TV1 (Iran)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.220.122.6/jj1</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.220.122.6/jj1"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://62.220.122.6/jj1</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://62.220.122.6/jj1"/>
 </item>
 
 <item>
 <title>Khabar TV (Iran)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.220.122.15/khabar</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.220.122.15/khabar"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://62.220.122.15/khabar</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://62.220.122.15/khabar"/>
 </item>
 
 <item>
 <title>Press TV - English (Iran)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://wms.edgecastcdn.net/200216/ipresstv</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://wms.edgecastcdn.net/200216/ipresstv"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://wms.edgecastcdn.net/200216/ipresstv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://wms.edgecastcdn.net/200216/ipresstv"/>
 </item>
 
 <item>
 <title>Irin News (Iran)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.220.122.15/khabar</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.220.122.15/khabar"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://62.220.122.15/khabar</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://62.220.122.15/khabar"/>
 </item>
 
 <item>
 <title>Alalam (Iran)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.220.122.6/alalam</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.220.122.6/alalam"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://62.220.122.6/alalam</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://62.220.122.6/alalam"/>
 </item>
 
 <item>
 <title>Irib TV2 (Iran)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.220.122.4/tv2</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.220.122.4/tv2"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://62.220.122.4/tv2</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://62.220.122.4/tv2"/>
 </item>
 
 <item>
 <title>X-TV (Iran)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://Stream645.PackDeal.Com/XTV-Cable</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://Stream645.PackDeal.Com/XTV-Cable"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://Stream645.PackDeal.Com/XTV-Cable</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://Stream645.PackDeal.Com/XTV-Cable"/>
 </item>
 
 </channel>

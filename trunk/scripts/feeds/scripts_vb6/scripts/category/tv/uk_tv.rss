@@ -7,32 +7,32 @@
 
 <item>
 <title>James Bond TV</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://195.90.118.87/somethingmovies4_2</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://195.90.118.87/somethingmovies4_2"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://195.90.118.87/somethingmovies4_2</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://195.90.118.87/somethingmovies4_2"/>
 </item>
 
 <item>
 <title>Wild Country (UK)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://streaming.i2i-technology.com/wlc_41000</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://streaming.i2i-technology.com/wlc_41000"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://streaming.i2i-technology.com/wlc_41000</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://streaming.i2i-technology.com/wlc_41000"/>
 </item>
 
 <item>
 <title>Sky News (UK)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://live1.wm.skynews.servecast.net/skynews_wmlz_live300k</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://live1.wm.skynews.servecast.net/skynews_wmlz_live300k"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://live1.wm.skynews.servecast.net/skynews_wmlz_live300k</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://live1.wm.skynews.servecast.net/skynews_wmlz_live300k"/>
 </item>
 
 <item>
 <title>Sky News</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://live1.wm.skynews.servecast.net/skynews_wmlz_live300k</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://live1.wm.skynews.servecast.net/skynews_wmlz_live300k"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://live1.wm.skynews.servecast.net/skynews_wmlz_live300k</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://live1.wm.skynews.servecast.net/skynews_wmlz_live300k"/>
 </item>
 
 <item>
 <title>MuslimTV (UK)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://live300k1.wm.muslimtv.servecast.net/MuslimTV_wmlz_live300k</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://live300k1.wm.muslimtv.servecast.net/MuslimTV_wmlz_live300k"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://live300k1.wm.muslimtv.servecast.net/MuslimTV_wmlz_live300k</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://live300k1.wm.muslimtv.servecast.net/MuslimTV_wmlz_live300k"/>
 </item>
 
 </channel>

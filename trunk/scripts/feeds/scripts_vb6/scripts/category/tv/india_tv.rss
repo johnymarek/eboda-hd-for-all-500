@@ -7,26 +7,26 @@
 
 <item>
 <title>Angel TV (India)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://mms.rrsat-internet.tv/atvstreamhigh</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://mms.rrsat-internet.tv/atvstreamhigh"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://mms.rrsat-internet.tv/atvstreamhigh</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://mms.rrsat-internet.tv/atvstreamhigh"/>
 </item>
 
 <item>
 <title>Rainbow TV (India)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://mms.rrsat-internet.tv/rainbow_high</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://mms.rrsat-internet.tv/rainbow_high"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://mms.rrsat-internet.tv/rainbow_high</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://mms.rrsat-internet.tv/rainbow_high"/>
 </item>
 
 <item>
 <title>Damlak TV (India)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://tv.damlak.net/damlak_tv</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://tv.damlak.net/damlak_tv"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://tv.damlak.net/damlak_tv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://tv.damlak.net/damlak_tv"/>
 </item>
 
 <item>
 <title>Zagros (India)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://live.zagrostv.com/zag</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://live.zagrostv.com/zag"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://live.zagrostv.com/zag</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://live.zagrostv.com/zag"/>
 </item>
 
 </channel>
