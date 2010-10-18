@@ -11,54 +11,57 @@
 <media:thumbnail url="/scripts/image/search.png" />
 </item>
 
+
 <item>
-<title>Recent Videos</title>
-<link>http://127.0.0.1:82/scripts/php/yt_recent.php</link>
+<title>Most recent</title>
+<link>http://127.0.0.1:82/scripts/php/yt_rss.php?rss=http://gdata.youtube.com/feeds/api/standardfeeds/most_recent</link>
 </item>
 
 <item>
-<title>Top Favorited</title>
-<link>http://127.0.0.1:82/scripts/php/ytf.php</link>
+<title>Most viewed</title>
+<link>http://127.0.0.1:82/scripts/php/yt_rss.php?rss=http://gdata.youtube.com/feeds/api/standardfeeds/most_viewed</link>
 </item>
 
 <item>
-<title>Popular</title>
-<link>http://127.0.0.1:82/scripts/php/yt_popular.php</link>
+<title>Top rated</title>
+<link>http://127.0.0.1:82/scripts/php/yt_rss.php?rss=http://gdata.youtube.com/feeds/api/standardfeeds/top_rated</link>
 </item>
 
-<item>
-<title>Most Viewed</title>
-<link>http://127.0.0.1:82/scripts/php/yt_mv.php</link>
-</item>
 
 <item>
-<title>HD</title>
-<link>http://127.0.0.1:82/scripts/php/yt_hd.php</link>
+<title>Most discussed</title>
+<link>http://127.0.0.1:82/scripts/php/yt_rss.php?rss=http://gdata.youtube.com/feeds/api/standardfeeds/most_discussed</link>
 </item>
+
+
+<item>
+<title>Top favorites</title>
+<link>http://127.0.0.1:82/scripts/php/yt_rss.php?rss=http://gdata.youtube.com/feeds/api/standardfeeds/top_favorites</link>
+</item>
+
+
+<item>
+<title>Most linked</title>
+<link>http://127.0.0.1:82/scripts/php/yt_rss.php?rss=http://gdata.youtube.com/feeds/api/standardfeeds/most_linked</link>
+</item>
+
+
+<item>
+<title>Recently featured</title>
+<link>http://127.0.0.1:82/scripts/php/yt_rss.php?rss=http://gdata.youtube.com/feeds/api/standardfeeds/recently_featured</link>
+
+</item>
+
+
+<item>
+<title>Most responded</title>
+<link>http://127.0.0.1:82/scripts/php/yt_rss.php?rss=http://gdata.youtube.com/feeds/api/standardfeeds/most_responded</link>
+</item>
+
 
 <item>
 <title>Movie</title>
 <link>http://127.0.0.1:82/scripts/php/yt_movie.php</link>
-</item>
-
-<item>
-<title>trailer Search</title>
-<link>http://127.0.0.1:82/scripts/php/yt_search.php?query=1,trailer</link>
-</item>
-
-<item>
-<title>game trailer Search</title>
-<link>http://127.0.0.1:82/scripts/php/yt_search.php?query=1,game+trailer</link>
-</item>
-
-<item>
-<title>UEFA Search</title>
-<link>http://127.0.0.1:82/scripts/php/yt_search.php?query=1,uefa</link>
-</item>
-
-<item>
-<title>world cup 2010 Search</title>
-<link>http://127.0.0.1:82/scripts/php/yt_search.php?query=1,world+cup+2010</link>
 </item>
 
 </channel>
