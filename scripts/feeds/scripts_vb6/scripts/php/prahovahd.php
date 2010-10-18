@@ -17,7 +17,7 @@ $videos = explode('<track>', $html);
 unset($videos[0]);
 $videos = array_values($videos);
 foreach($videos as $video) {
-    $link = "http://127.0.0.1:82/cgi-bin/rtmp?rtmp://193.238.56.74/vod/mp4:".str_between($video,"<location>","</location>");
+    $link = "http://127.0.0.1/cgi-bin/rtmp?rtmp://193.238.56.74/vod/mp4:".str_between($video,"<location>","</location>");
 		$title = str_between($video,"<title>","</title>");
     
     echo '<item>';

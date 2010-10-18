@@ -7,14 +7,14 @@
 
 <item>
 <title>24N (Danemarca)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://stream.nordjyske.dk/24nordjyske - Full Broadcast Quality</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://stream.nordjyske.dk/24nordjyske - Full Broadcast Quality"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://stream.nordjyske.dk/24nordjyske - Full Broadcast Quality</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://stream.nordjyske.dk/24nordjyske - Full Broadcast Quality"/>
 </item>
 
 <item>
 <title>DR2 (Danemarca)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://video.dr.dk/dr2</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://video.dr.dk/dr2"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://video.dr.dk/dr2</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://video.dr.dk/dr2"/>
 </item>
 
 </channel>

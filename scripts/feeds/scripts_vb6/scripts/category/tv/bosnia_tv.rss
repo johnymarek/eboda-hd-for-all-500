@@ -7,8 +7,8 @@
 
 <item>
 <title>OBN (Bosnia)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.162.99.150/OBN</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.162.99.150/OBN"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://62.162.99.150/OBN</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://62.162.99.150/OBN"/>
 </item>
 
 </channel>

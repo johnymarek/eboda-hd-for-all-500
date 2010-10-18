@@ -7,14 +7,14 @@
 
 <item>
 <title>Austria's Public Afairs Channel (Australia)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://wm9.streaming.telstra.com/ucs-wh_APAC0Live2</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://wm9.streaming.telstra.com/ucs-wh_APAC0Live2"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://wm9.streaming.telstra.com/ucs-wh_APAC0Live2</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://wm9.streaming.telstra.com/ucs-wh_APAC0Live2"/>
 </item>
 
 <item>
 <title>Yoga In Daily Life (Australia)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://streaming.swamiji.tv/YogaIP-TV</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://streaming.swamiji.tv/YogaIP-TV"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://streaming.swamiji.tv/YogaIP-TV</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://streaming.swamiji.tv/YogaIP-TV"/>
 </item>
 
 </channel>

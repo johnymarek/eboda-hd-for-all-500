@@ -7,8 +7,8 @@
 
 <item>
 <title>Oasis TV (Venezuela)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://200.6.152.82/oasistv</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://200.6.152.82/oasistv"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://200.6.152.82/oasistv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://200.6.152.82/oasistv"/>
 </item>
 
 </channel>

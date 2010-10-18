@@ -7,92 +7,92 @@
 
 <item>
 <title>Television de Galicia en directo (Spania)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://85.91.64.23/Television</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://85.91.64.23/Television"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://85.91.64.23/Television</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://85.91.64.23/Television"/>
 </item>
 
 <item>
 <title>RTV - Insular (Spania)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://wagner.serveisweb.com/TI013</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://wagner.serveisweb.com/TI013"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://wagner.serveisweb.com/TI013</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://wagner.serveisweb.com/TI013"/>
 </item>
 
 <item>
 <title>InterEconomia TV (Spania)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://www.intereconomia.com/INTERECONOMIA-TV</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://www.intereconomia.com/INTERECONOMIA-TV"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://www.intereconomia.com/INTERECONOMIA-TV</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://www.intereconomia.com/INTERECONOMIA-TV"/>
 </item>
 
 <item>
 <title>Canal 44 (Spania)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://91.121.11.172/canal44</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://91.121.11.172/canal44"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://91.121.11.172/canal44</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://91.121.11.172/canal44"/>
 </item>
 
 <item>
 <title>3 Generalitat Valenciana (Spania)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://cache.gva.es/canalgv/cabecera_nueva.wmv?rtvv</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://cache.gva.es/canalgv/cabecera_nueva.wmv?rtvv"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://cache.gva.es/canalgv/cabecera_nueva.wmv?rtvv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://cache.gva.es/canalgv/cabecera_nueva.wmv?rtvv"/>
 </item>
 
 <item>
 <title>UPTV en Directo (Spania)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://mediaserver01.upv.es/TelePoliADSL</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://mediaserver01.upv.es/TelePoliADSL"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://mediaserver01.upv.es/TelePoliADSL</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://mediaserver01.upv.es/TelePoliADSL"/>
 </item>
 
 <item>
 <title>UPTV en Directo (Spania)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://mediaserver01.upv.es/TelePoli</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://mediaserver01.upv.es/TelePoli"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://mediaserver01.upv.es/TelePoli</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://mediaserver01.upv.es/TelePoli"/>
 </item>
 
 <item>
 <title>Ojos Solidarios TV (Spania)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://calixto.c.mad.interhost.com/OjosSolidariosTv</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://calixto.c.mad.interhost.com/OjosSolidariosTv"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://calixto.c.mad.interhost.com/OjosSolidariosTv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://calixto.c.mad.interhost.com/OjosSolidariosTv"/>
 </item>
 
 <item>
 <title>Teletrebol (Spania)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://streaming.alisys.net/rsa_tv</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://streaming.alisys.net/rsa_tv"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://streaming.alisys.net/rsa_tv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://streaming.alisys.net/rsa_tv"/>
 </item>
 
 <item>
 <title>Velevisa (Spania)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://212.163.215.206/Directo</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://212.163.215.206/Directo"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://212.163.215.206/Directo</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://212.163.215.206/Directo"/>
 </item>
 
 <item>
 <title>Canal 13 (Spania)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://wm.mad.interhost.com/OjosSolidariosTv</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://wm.mad.interhost.com/OjosSolidariosTv"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://wm.mad.interhost.com/OjosSolidariosTv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://wm.mad.interhost.com/OjosSolidariosTv"/>
 </item>
 
 <item>
 <title>Intereconomia business (Spania)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://www.intereconomia.com/INTERECONOMIABUSINESS</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://www.intereconomia.com/INTERECONOMIABUSINESS"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://www.intereconomia.com/INTERECONOMIABUSINESS</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://www.intereconomia.com/INTERECONOMIABUSINESS"/>
 </item>
 
 <item>
 <title>IB3 (Spania)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://streamingtv01.ib3.es/ib3tv_en_directe</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://streamingtv01.ib3.es/ib3tv_en_directe"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://streamingtv01.ib3.es/ib3tv_en_directe</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://streamingtv01.ib3.es/ib3tv_en_directe"/>
 </item>
 
 <item>
 <title>URJS (Spania)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://marx.urjc.es/urjc</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://marx.urjc.es/urjc"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://marx.urjc.es/urjc</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://marx.urjc.es/urjc"/>
 </item>
 
 <item>
 <title>Melilla TV (Spania)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://stream.visualnetworks.es/tvmelilla</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://stream.visualnetworks.es/tvmelilla"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://stream.visualnetworks.es/tvmelilla</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://stream.visualnetworks.es/tvmelilla"/>
 </item>
 </channel>
 </rss>

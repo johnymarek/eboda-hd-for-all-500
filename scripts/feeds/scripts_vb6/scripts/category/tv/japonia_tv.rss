@@ -6,8 +6,8 @@
 	<menu>main menu</menu>
 <item>
 <title>Shop Channel (Japonia)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://streamw1.hitpops.jp/shopch</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://streamw1.hitpops.jp/shopch"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://streamw1.hitpops.jp/shopch</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://streamw1.hitpops.jp/shopch"/>
 </item>
 
 </channel>

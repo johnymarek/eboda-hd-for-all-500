@@ -7,74 +7,74 @@
 
 <item>
 <title>RTVE (Brazilia)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://200.189.113.200/TVE</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://200.189.113.200/TVE"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://200.189.113.200/TVE</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://200.189.113.200/TVE"/>
 </item>
 
 <item>
 <title>Canal de Sao Paulo (Brazilia)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://wms.localmidia.com.br/canalsp</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://wms.localmidia.com.br/canalsp"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://wms.localmidia.com.br/canalsp</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://wms.localmidia.com.br/canalsp"/>
 </item>
 
 <item>
 <title>Just TV (Brazilia)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://208.109.239.158/Fazoko</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://208.109.239.158/Fazoko"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://208.109.239.158/Fazoko</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://208.109.239.158/Fazoko"/>
 </item>
 
 <item>
 <title>Nuevo Tiempo (Brazilia)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://strm01.novotempo.org.br/tvnuevotiempo-vivo</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://strm01.novotempo.org.br/tvnuevotiempo-vivo"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://strm01.novotempo.org.br/tvnuevotiempo-vivo</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://strm01.novotempo.org.br/tvnuevotiempo-vivo"/>
 </item>
 
 <item>
 <title>Canal Universitario (Brazilia)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://galileo.netpoint.com.br/cnuvitoria</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://galileo.netpoint.com.br/cnuvitoria"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://galileo.netpoint.com.br/cnuvitoria</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://galileo.netpoint.com.br/cnuvitoria"/>
 </item>
 
 <item>
 <title>Canal 23 (Brazilia)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://palco1.uac.edu.co/canal23</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://palco1.uac.edu.co/canal23"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://palco1.uac.edu.co/canal23</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://palco1.uac.edu.co/canal23"/>
 </item>
 
 <item>
 <title>TV Novo Tempo (Brazilia)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://strm02.novotempo.org.br/TVNovoTempo-Vivo</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://strm02.novotempo.org.br/TVNovoTempo-Vivo"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://strm02.novotempo.org.br/TVNovoTempo-Vivo</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://strm02.novotempo.org.br/TVNovoTempo-Vivo"/>
 </item>
 
 <item>
 <title>Turbo TV (Brazilia)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://media.brturbo.com/turbotv.wmv</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://media.brturbo.com/turbotv.wmv"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://media.brturbo.com/turbotv.wmv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://media.brturbo.com/turbotv.wmv"/>
 </item>
 
 <item>
 <title>Faap TV (Brazilia)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://video.faap.br/tvfaap</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://video.faap.br/tvfaap"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://video.faap.br/tvfaap</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://video.faap.br/tvfaap"/>
 </item>
 
 <item>
 <title>Rede Brasil (Brazilia)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://rbtv.interrogacaodigital.net/rbtv</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://rbtv.interrogacaodigital.net/rbtv"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://rbtv.interrogacaodigital.net/rbtv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://rbtv.interrogacaodigital.net/rbtv"/>
 </item>
 
 <item>
 <title>TV Cultura (Brazilia)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://streaming.net2.com.br/tvcultura</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://streaming.net2.com.br/tvcultura"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://streaming.net2.com.br/tvcultura</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://streaming.net2.com.br/tvcultura"/>
 </item>
 
 <item>
 <title>TV Preve (Brazilia)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://midiaserverbr.com/tvpreve</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://midiaserverbr.com/tvpreve"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://midiaserverbr.com/tvpreve</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://midiaserverbr.com/tvpreve"/>
 </item>
 
 </channel>

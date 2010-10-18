@@ -7,8 +7,8 @@
 
 <item>
 <title>Beliza Tv (Belize)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://bcast.tvr.by/video</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://bcast.tvr.by/video"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://bcast.tvr.by/video</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://bcast.tvr.by/video"/>
 </item>
 
 </channel>

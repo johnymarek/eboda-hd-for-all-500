@@ -7,15 +7,15 @@
 
 <item>
 <title>Rustavi 2 (Georgia)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://208.75.229.18/live1</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://208.75.229.18/live1"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://208.75.229.18/live1</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://208.75.229.18/live1"/>
 </item>
 
 
 <item>
 <title>Canali 2 (Georgia)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://208.75.229.18/live1</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://208.75.229.18/live1"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://208.75.229.18/live1</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://208.75.229.18/live1"/>
 </item>
 
 </channel>

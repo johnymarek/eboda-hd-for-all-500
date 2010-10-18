@@ -7,14 +7,14 @@
 
 <item>
 <title>tv7 (Finlanda)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://live.tv7.fi/tv7_live</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://live.tv7.fi/tv7_live"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://live.tv7.fi/tv7_live</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://live.tv7.fi/tv7_live"/>
 </item>
 
 <item>
 <title>The Voice (Finlanda)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.41.56.32/public_votv_fi</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://62.41.56.32/public_votv_fi"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://62.41.56.32/public_votv_fi</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://62.41.56.32/public_votv_fi"/>
 </item>
 
 </channel>

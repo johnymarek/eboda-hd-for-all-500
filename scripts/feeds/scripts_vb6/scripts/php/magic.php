@@ -14,7 +14,7 @@ $link = $_GET["id"];
     setRefreshTime(200);
     startVideo = 1;
 
-    xmlurl = "http://127.0.0.1:82/cgi-bin/translate?status,,<?php echo $link; ?>";
+    xmlurl = "http://127.0.0.1/cgi-bin/translate?status,,<?php echo $link; ?>";
     dlok = loadXMLFile(xmlurl);
     if (dlok != null)
     {
@@ -39,7 +39,7 @@ $link = $_GET["id"];
 
       if (startVideo == 1) {
           print("I am moviePlayback onEnter !! startVideo: ", startVideo);
-	  content = "http://127.0.0.1:82/cgi-bin/wmv?<?php echo $link; ?>";
+	  content = "http://127.0.0.1/cgi-bin/wmv?<?php echo $link; ?>";
           playItemURL(content, 0, "mediaDisplay", "previewWindow");
           setRefreshTime(1000);
           showLoading = 1;
@@ -65,7 +65,7 @@ $link = $_GET["id"];
        setRefreshTime(30000);
        print ("Updating song title and listeners");
        showLoading = 0;
-       xmlurl = "http://127.0.0.1:82/cgi-bin/translate?status,,<?php echo $link; ?>";
+       xmlurl = "http://127.0.0.1/cgi-bin/translate?status,,<?php echo $link; ?>";
        dlok = loadXMLFile(xmlurl);
        if (dlok != null)
         {

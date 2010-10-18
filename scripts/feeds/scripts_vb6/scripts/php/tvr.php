@@ -26,7 +26,7 @@ foreach($videos as $video) {
     $t1 = explode('file=', $video);
     $t2 = explode('&', $t1[1]);
     $link = $t2[0];
-		$link = "http://127.0.0.1:82/cgi-bin/rtmp?".$link;
+		$link = "http://127.0.0.1/cgi-bin/rtmp?".$link;
 		
     $t1 = explode('name=', $video);
     $t2 = explode("'", $t1[1]);

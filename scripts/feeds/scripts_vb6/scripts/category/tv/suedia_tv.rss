@@ -7,26 +7,26 @@
 
 <item>
 <title>RTV 2 (Suedia)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://212.200.191.85/rtv2</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://212.200.191.85/rtv2"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://212.200.191.85/rtv2</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://212.200.191.85/rtv2"/>
 </item>
 
 <item>
 <title>RTV Pink (Suedia)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://beotelmedia.beotel.net/rtvpink</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://beotelmedia.beotel.net/rtvpink"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://beotelmedia.beotel.net/rtvpink</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://beotelmedia.beotel.net/rtvpink"/>
 </item>
 
 <item>
 <title>Sweiz 5 (Suedia)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://77.59.212.94/ch5live</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://77.59.212.94/ch5live"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://77.59.212.94/ch5live</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://77.59.212.94/ch5live"/>
 </item>
 
 <item>
 <title>RTV 1 (Suedia)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://212.200.191.85/rtv1</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://212.200.191.85/rtv1"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://212.200.191.85/rtv1</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://212.200.191.85/rtv1"/>
 </item>
 
 </channel>

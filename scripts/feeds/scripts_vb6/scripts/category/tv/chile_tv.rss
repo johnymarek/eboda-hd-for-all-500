@@ -7,20 +7,20 @@
 
 <item>
 <title>Arica Tv (Chile)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://wms.digitalproserver.com/aricatv</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://wms.digitalproserver.com/aricatv"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://wms.digitalproserver.com/aricatv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://wms.digitalproserver.com/aricatv"/>
 </item>
 
 <item>
 <title>TV Noevo Tiempo (Chile)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://70.84.164.70/tvnuevotiempo-vivo</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://70.84.164.70/tvnuevotiempo-vivo"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://70.84.164.70/tvnuevotiempo-vivo</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://70.84.164.70/tvnuevotiempo-vivo"/>
 </item>
 
 <item>
 <title>Canal 34 (Chile)</title>
-<link>http://127.0.0.1:82/cgi-bin/wmv-m?mms://media.uniacc.cl/canal34tv</link>
-<enclosure type="video/mx-wmv" url="http://127.0.0.1:82/cgi-bin/wmv-m?mms://media.uniacc.cl/canal34tv"/>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://media.uniacc.cl/canal34tv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://media.uniacc.cl/canal34tv"/>
 </item>
 
 </channel>
