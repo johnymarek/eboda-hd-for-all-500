@@ -3,4 +3,4 @@ cat <<EOF
 Content-type: video/mp4
 
 EOF
-exec /cb3pp/bin/flvstreamer -q -r `echo $QUERY_STRING|sed "s_\&amp;_\&_g"`
+exec /scripts/bin/flvstreamer -q -r `echo $QUERY_STRING|sed "s_\&amp;_\&_g"`

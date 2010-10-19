@@ -11,7 +11,7 @@
     setRefreshTime(200);
     startVideo = 1;
 
-    xmlurl = "http://127.0.0.1/cgi-bin/translate?status,,http://72.26.204.18:6616";
+    xmlurl = "http://127.0.0.1/cgi-bin/translate.vb6?status,,http://72.26.204.18:6616";
     dlok = loadXMLFile(xmlurl);
     if (dlok != null)
     {
@@ -62,7 +62,7 @@
        setRefreshTime(30000);
        print ("Updating song title and listeners");
        showLoading = 0;
-       xmlurl = "http://127.0.0.1/cgi-bin/translate?status,,http://72.26.204.18:6616";
+       xmlurl = "http://127.0.0.1/cgi-bin/translate.vb6?status,,http://72.26.204.18:6616";
        dlok = loadXMLFile(xmlurl);
        if (dlok != null)
         {
