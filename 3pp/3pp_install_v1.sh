@@ -11,7 +11,7 @@ export PATH
 CLEAN=true
 
 
-#ssl for btpd
+#ssl for btpd0
 
 lighttpd=false
 
@@ -62,7 +62,7 @@ smbd=false
 nginx=false
 
 msdl=true
-
+msdl=mplayer
 
 strip=false
 #
@@ -756,8 +756,21 @@ then
     make install
 
 
+if [ $mplayer == true ]
+then
+
+    cd $compile
+    tar zxf $downloads/msdl-1.2.7-r2.tar.gz
+    cd mplayer
+    patch < ../../patches/php/mplayer.patch
+    ./configure  --disable-vidix --enable-cross-compile --cc=mipsel-linux-gcc --host-cc=gcc --disable-runtime-cpudetection --target=mipsel-linux
+    $CLEAN && make clean
+    make
+    make install
+
+
 #
-# btpd target
+# mplayer/mencoder target
 #
 
     cp ${cipibad}/bin/msdl $target/bin
