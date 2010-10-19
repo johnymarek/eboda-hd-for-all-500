@@ -248,7 +248,7 @@ tar jxvf ../usr.local.etc.tar.bz2
 mkdir root
 
 #rss_ex
-ln - s  /rss_ex translate
+ln -s  /rss_ex translate
 
 
 # keep this to be mine

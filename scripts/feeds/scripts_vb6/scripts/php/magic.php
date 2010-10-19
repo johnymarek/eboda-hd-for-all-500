@@ -14,7 +14,7 @@ $link = $_GET["id"];
     setRefreshTime(200);
     startVideo = 1;
 
-    xmlurl = "http://127.0.0.1/cgi-bin/translate?status,,<?php echo $link; ?>";
+    xmlurl = "http://127.0.0.1/cgi-bin/translate.vb6?status,,<?php echo $link; ?>";
     dlok = loadXMLFile(xmlurl);
     if (dlok != null)
     {
@@ -65,7 +65,7 @@ $link = $_GET["id"];
        setRefreshTime(30000);
        print ("Updating song title and listeners");
        showLoading = 0;
-       xmlurl = "http://127.0.0.1/cgi-bin/translate?status,,<?php echo $link; ?>";
+       xmlurl = "http://127.0.0.1/cgi-bin/translate.vb6?status,,<?php echo $link; ?>";
        dlok = loadXMLFile(xmlurl);
        if (dlok != null)
         {
