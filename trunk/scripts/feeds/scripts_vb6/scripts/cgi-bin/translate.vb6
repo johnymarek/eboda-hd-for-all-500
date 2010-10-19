@@ -2,7 +2,7 @@
 
 #QUERY_STRING=scan
 
-MSDL=/cb3pp/bin/msdl
+MSDL=/scripts/bin/msdl
 WGET=/usr/bin/wget
 
 XSPFSCAN=/usr/local/etc/xspf.scan
@@ -22,8 +22,8 @@ arg_cmd=`echo "${QUERY_STRING}" | awk -F, '{print $1}'`
 arg_opt=`echo "${QUERY_STRING}" | awk -F, '{print $2}'`
 arg_url=`echo "${QUERY_STRING}" | awk -F, '{print $3}'`
 
-# http://127.0.0.1/translate[?<scan|*>]
-# http://127.0.0.1/translate?stream,[<option1;...optionN>],<url>
+# http://127.0.0.1/translate.vb6[?<scan|*>]
+# http://127.0.0.1/translate.vb6?stream,[<option1;...optionN>],<url>
 
 # Available options:
 #   Content-type:<content type>
@@ -32,9 +32,9 @@ arg_url=`echo "${QUERY_STRING}" | awk -F, '{print $3}'`
 #   Bandwidth:<bps>
 #   Speed:<streaming speed>
 
-# http://127.0.0.1/translate?<info|status>,,<url>
-# http://127.0.0.1/translate?text,,<url>
-# http://127.0.0.1/translate?playlist,,<path to playlist>
+# http://127.0.0.1/translate.vb6?<info|status>,,<url>
+# http://127.0.0.1/translate.vb6?text,,<url>
+# http://127.0.0.1/translate.vb6?playlist,,<path to playlist>
 
 # <list>
 #   <item>

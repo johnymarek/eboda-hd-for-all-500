@@ -3,4 +3,4 @@ cat <<EOF
 Content-type: video/x-msvideo
 
 EOF
-exec /cb3pp/bin/msdl -q -o - $QUERY_STRING/
+exec /scripts/bin/msdl -q -o - $QUERY_STRING/

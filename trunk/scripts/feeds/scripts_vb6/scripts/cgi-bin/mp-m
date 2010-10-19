@@ -9,4 +9,4 @@ cat <<EOF
 Content-type: video/x-ms-wmv
 
 EOF
-exec /cb3pp/bin/mplayer $QUERY_STRING -really-quiet -quiet -shuffle -ao pcm -format 0x2000 -channels 1 -af resample=8000 -ao pcm:file=$PIPE | cat $PIPE
+exec /scripts/bin/mplayer $QUERY_STRING -really-quiet -quiet -shuffle -ao pcm -format 0x2000 -channels 1 -af resample=8000 -ao pcm:file=$PIPE | cat $PIPE

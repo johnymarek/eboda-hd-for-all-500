@@ -3,4 +3,4 @@ cat <<EOF
 Content-type: audio/x-ms-wma
 
 EOF
-exec /cb3pp/bin/msdl -b 256000 -q -o - $QUERY_STRING
+exec /scripts/bin/msdl -b 256000 -q -o - $QUERY_STRING
