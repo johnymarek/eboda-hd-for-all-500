@@ -3,14 +3,15 @@
   <script>
     showIdle();
     YoutubeIndex =0;
-    PicasaIndex =3;
-    NewsIndex =4;
-    FlickrIndex =5;
+    PicasaIndex =4;
+    NewsIndex =5;
+    FlickrIndex =6;
     PPSIndex =0;
     YoukuIndex =0;
     ThunderIndex =0;
-    WeatherIndex =2;
-    MetafeedsIndex =1;
+    WeatherIndex =3;
+    xliveIndex =1;
+    RssExIndex =2;
     HddIndex =0;
   </script>
 
@@ -113,19 +114,37 @@
       <link>rss_file:///xLive/menu.rss</link>
       <media:thumbnail  width="120" height="90" >
         <script>
-          if (getQueryItemIndex() == MetafeedsIndex)
+          if (getQueryItemIndex() == xliveIndex)
           {
           state=getDrawingItemState();
           if( state == "focus" ){
-          "./scripts/image/metafeeds_focus.jpg";
+          "./scripts/image/xlive_focus.jpg";
           }
           else{
-          "./scripts/image/metafeeds_unfocus.jpg";
+          "./scripts/image/xlive_unfocus.jpg";
           }
           }
         </script>
       </media:thumbnail>
     </item>
+    <item>
+      <title>Rss Ex</title>
+        <link>rss_file://./rss/menuEx.rss</link>
+      <media:thumbnail  width="120" height="90" >
+        <script>
+          if (getQueryItemIndex() == RssExIndex)
+          {
+          state=getDrawingItemState();
+          if( state == "focus" ){
+          "./scripts/image/rssex_focus.jpg";
+          }
+          else{
+          "./scripts/image/rssex_unfocus.jpg";
+          }
+          }
+        </script>
+      </media:thumbnail>
+            </item>
     <item>
       <title>Weather</title>
       <link>rss_file://./IMS_Modules/Weather/scripts/map/myfavorites.rss</link>
