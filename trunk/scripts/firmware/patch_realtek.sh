@@ -1,4 +1,4 @@
-!/bin/sh
+#!/bin/sh
 
 
 
@@ -133,6 +133,10 @@ mkdir ewcp
 # and opt for other people to play
 mkdir opt
 
+# and rss_ex requirements
+mkdir rss_ex
+ln -s ../etc/translate/rss usr/local/bin/rss
+
 # and scripts for me to play
 mkdir scripts
 
@@ -141,6 +145,7 @@ mkdir xLive
 
 # and utilities for me to play
 mkdir utilities
+
 
 
 #home dir for root part 1
@@ -174,21 +179,45 @@ find cb3pp | grep -v .svn | grep -v '~'  | zip -9 ${dir}/cb3pp.zip -@
 cp cb3pp-version.txt ${dir}/cb3pp-version.txt
 cd $dir
 
+# IMS menu
+cp -r ${SVN_REPO}/src/${VERSION}/menu/* usr/local/bin/scripts/
+
+
+#rss_ex
+
+#www
+cp ${SVN_REPO}/scripts/feeds/rss_ex/rss_ex/www/cgi-bin/* tmp_orig/www/cgi-bin/
+chmod +x tmp_orig/www/cgi-bin/*
+
+[ -d tmp_orig/www/bin/ ] || mkdir tmp_orig/www/bin/
+cp ${SVN_REPO}/scripts/feeds/rss_ex/rss_ex/www/bin/* tmp_orig/www/bin/
+chmod +x tmp_orig/www/bin/*
+
+[ -d tmp_orig/www/img/ ] || mkdir tmp_orig/www/img/
+cp ${SVN_REPO}/scripts/feeds/rss_ex/rss_ex/www/img/* tmp_orig/www/img/
+
+
+#media translate
+dir=`pwd`
+cd ${SVN_REPO}/scripts/feeds/rss_ex/
+find rss_ex/ | grep -v .svn | grep -v '~' | grep -v 'www' | zip -9 ${dir}/rss_ex.zip -@
+cp rss_ex-version.txt ${dir}/rss_ex-version.txt
+cd ${dir}
+
+
 # vb6 bin
-# bin is directly in cb3pp
+# bin is in /scripts/bin
 
 
 # vb6 cgi-bin
-cp ${SVN_REPO}/scripts/feeds/scripts_vb6/cgi-bin/vb6/* tmp_orig/www/cgi-bin/
+cp ${SVN_REPO}/scripts/feeds/scripts_vb6/scripts/cgi-bin/* tmp_orig/www/cgi-bin/
 chmod +x tmp_orig/www/cgi-bin/*
 
-# vb6 menu
-cp -r ${SVN_REPO}/src/${VERSION}/menu/* usr/local/bin/scripts/
 
 # vb6 scripts
 dir=`pwd`
 cd ${SVN_REPO}/scripts/feeds/scripts_vb6/
-find scripts | grep -v .svn | grep -v '~' | zip -9 ${dir}/scripts.zip -@
+find scripts | grep -v .svn | grep -v '~' | grep -v 'cgi-bin' | zip -9 ${dir}/scripts.zip -@
 cp scripts-version.txt ${dir}/scripts-version.txt
 cd ${dir}
 
@@ -217,6 +246,10 @@ tar jxvf ../usr.local.etc.tar.bz2
 
 #root home part 2
 mkdir root
+
+#rss_ex
+ln - s  /rss_ex translate
+
 
 # keep this to be mine
 # later update to come for external images of xtreamer
@@ -264,6 +297,7 @@ echo "storage=$storage" > /usr/local/etc/storage
 [ -d ${storage}] || mkdir ${storage}
 [ -d ${storage}/cb3pp ] || mkdir ${storage}/cb3pp
 [ -d ${storage}/scripts ] || mkdir ${storage}/scripts
+[ -d ${storage}/rss_ex ] || mkdir ${storage}/rss_ex
 [ -d ${storage}/ewcp ] || mkdir ${storage}/ewcp
 [ -d ${storage}/xLive ] || mkdir ${storage}/xLive
 
@@ -282,12 +316,20 @@ if [ ! -f /xLive/.overmounted ];then
 fi
 
 
+if [ ! -f /rss_ex/.overmounted ];then
+    echo overmount start
+    mount -o bind ${storage}/rss_ex /rss_ex
+    touch /rss_ex/.overmounted
+    echo overmount end
+fi
+
 if [ ! -f /scripts/.overmounted ];then
     echo overmount start
     mount -o bind ${storage}/scripts /scripts
     touch /scripts/.overmounted
     echo overmount end
 fi
+
 
 if [ ! -f /ewcp/.overmounted ];then
     echo overmount start
@@ -314,6 +356,21 @@ then
 fi
 
 
+# check if .../rss_ex from us, if not, unpack
+SERIAL=0
+ [ -f ${storage}/rss_ex-version.txt ] && . ${storage}/rss_ex-version.txt
+DISK_SERIAL=${SERIAL}
+[ -f /rss_ex-version.txt ] && . /rss_ex-version.txt
+
+if [ ${SERIAL} -gt ${DISK_SERIAL} ]
+then
+        rm -rf ${storage}/rss_ex/*
+        cd ${storage}
+        unzip -o /rss_ex.zip
+	cp /rss_ex-version.txt ${storage}/rss_ex-version.txt
+fi
+
+
 # check if .../scripts from us, if not, unpack
 SERIAL=0
  [ -f ${storage}/scripts-version.txt ] && . ${storage}/scripts-version.txt
@@ -327,6 +384,8 @@ then
         unzip -o /scripts.zip
 	cp /scripts-version.txt ${storage}/scripts-version.txt
 fi
+
+
 
 # check if .../xLive from us, if not, unpack
 SERIAL=0
