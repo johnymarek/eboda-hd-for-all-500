@@ -22,20 +22,21 @@ $videos = array_values($videos);
 foreach($videos as $video) {
 	$v1 = explode('="', $video);
 	$v2 = explode('"', $v1[1]);
-	$link = $v2[0];
+	$v3 = explode('=', $v2[0]);
+	$link = $v3[1];
 	$server = str_between($link,"http://","/");
 	$title = $server;  
 	$link = str_replace(' ','%20',$link);
 	$link = str_replace('[','%5B',$link);
 	$link = str_replace(']','%5D',$link);
 	
-	if (strpos($link, 'videoweed') !== false) {
+	if (strpos($link, 'videoweed') !== false ) {
 		$h1 = file_get_contents($link);
-		$link1 = str_between($h1,'"file","','"');
+		$link1 = str_between($h1,'flashvars.file="','"');
 		$title = $server." - ".substr(strrchr($link1,"/"),1);
 	} elseif (strpos($link, 'novamov') !== false) {
 		$h1 = file_get_contents($link);
-		$link1 = str_between($h1,'"file","','"');
+		$link1 = str_between($h1,'flashvars.file="','"');
 		$title = $server." - ".substr(strrchr($link1,"/"),1);
 	} elseif (strpos($link, 'flvz') !== false) {
 		$h1 = file_get_contents($link);
