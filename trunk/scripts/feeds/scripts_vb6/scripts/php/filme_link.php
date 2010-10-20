@@ -102,6 +102,65 @@ foreach($videos as $video) {
   }
 }
 
+##
+$videos = explode("<iframe", $html);
+unset($videos[0]);
+$videos = array_values($videos);
+foreach($videos as $video) {
+	$t1 = explode('src="', $video);
+	$t2 = explode('"', $t1[1]);
+  $link = $t2[0];
+  $link = str_replace('#038;','',$link); 
+  $link = str_replace('&amp;','&',$link);
+
+  if (strpos($link, 'vkontakte') !== false) {
+  		$baza = file_get_contents($link);
+  		$v1 = explode('<script type="text/javascript">', $baza);
+			$v2 = explode('function', $v1[1]);
+			$link = $v2[0];
+			$host = str_between($baza,"var video_host = '", "';");
+			$uid = str_between($baza,"var video_uid = '", "';");
+			$vtag = str_between($baza,"var video_vtag = '", "';");
+			$noflv = str_between($baza,"var video_no_flv =", "';");
+			$maxhd = str_between($baza,"var video_max_hd = ", "';");
+			
+			if (strpos ($noflv, '1') !== false)
+			{
+				$ext = ".mov";
+			}
+
+			if (strpos ($maxhd, '1') !== false)
+			{
+				$size = ".360";
+			}
+			$link = $host.'u'.$uid.'/video/'.$vtag.$size.$ext;
+
+  } else {
+  	$link = "";
+  }
+
+ 		if (($link <> "") && strcmp($link,$lastlink)) {
+			$link = str_replace('"','',$link);
+			$link = str_replace("'","",$link);
+			$link = str_replace(' ','%20',$link);
+			$link = str_replace('[','%5B',$link);
+			$link = str_replace(']','%5D',$link); 
+			$server = str_between($link,"http://","/");
+			$title = $server." - ".substr(strrchr($link,"/"),1);
+    	echo '<item>';
+    	echo '<title>'.$title.'</title>';
+    	echo '<link>'.$link.'</link>';
+    	echo '<media:thumbnail url="'.$image.'" />';
+    	echo '<enclosure type="video/flv" url="'.$link.'"/>';	
+    	echo '</item>';
+    	print "\n";
+    	$lastlink = $link;
+  }
+}
+
+##
+
+
 $videos = explode("<iframe", $html);
 unset($videos[0]);
 $videos = array_values($videos);
