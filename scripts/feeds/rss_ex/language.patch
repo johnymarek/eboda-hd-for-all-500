@@ -1,0 +1,128 @@
+Index: rss_ex/rss/etc-menu-video.rss
+===================================================================
+--- rss_ex/rss/etc-menu-video.rss	(revision 241)
++++ rss_ex/rss/etc-menu-video.rss	(working copy)
+@@ -1,4 +1,4 @@
+-﻿<?xml version='1.0' encoding="UTF8" ?>
++<?xml version='1.0' encoding="UTF-8" ?>
+ <rss version="2.0">
+ 
+ <!--
+@@ -189,7 +189,7 @@
+ <item>
+ <link>rss/etc-menu-tv-other.rss</link>
+ <title>Other</title>
+-<annotation>Разные списки интернет-телевидения</annotation>
++<annotation>Different lists of the Internet-TV</annotation>
+ <image>rss/image/menu/internettv.png</image>
+ <mediaDisplay name="threePartsView"/>
+ </item>
+Index: rss_ex/rss/menuEx.rss
+===================================================================
+--- rss_ex/rss/menuEx.rss	(revision 241)
++++ rss_ex/rss/menuEx.rss	(working copy)
+@@ -1,4 +1,4 @@
+-﻿<?xml version='1.0' encoding="UTF8" ?>
++<?xml version='1.0' encoding="UTF-8" ?>
+ <rss version="2.0">
+ 
+ <!--
+@@ -178,7 +178,7 @@
+ 
+ 
+ <channel>
+-<title>Дополнительные сервисы</title>
++<title>Additional services</title>
+ <item>
+ <link>rss/etc-menu-video.rss</link>
+ <title>Internet Video</title>
+Index: rss_ex/rss/youtube/yt_index.rss
+===================================================================
+--- rss_ex/rss/youtube/yt_index.rss	(revision 241)
++++ rss_ex/rss/youtube/yt_index.rss	(working copy)
+@@ -1,4 +1,4 @@
+-﻿<?xml version='1.0' ?>
++<?xml version='1.0' ?>
+ <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ 
+ <!--
+@@ -153,18 +153,18 @@
+ 	</searchLink>
+ 
+ 	<channel>
+-		<title>YouTube видео</title>
++		<title>YouTube video</title>
+ 		<link>./rss/youtube/yt_index.rss</link>
+ 		<media:thumbnail url="rss/image/youtube.gif" width="120" height="90" />
+ 
+ 		<item>
+-			<title>Видео в центре внимания</title>
++			<title>Recently featured</title>
+ 			<onClick>
+         optionsPath = getStoragePath("key") + "youtubeOptions.dat";
+         optionsArray = readStringFromFile(optionsPath);
+         if(optionsArray == null)
+         {
+-          youtubeRegion = "RU";
++          youtubeRegion = "EN";
+         }
+         else
+         {
+@@ -188,18 +188,18 @@
+ 		</item>
+ 		
+ 		<item>
+-			<title>Стандартные каналы</title>
++			<title>Standard feeds</title>
+ 			<link>./rss/youtube/yt_standard_feeds.rss</link>
+ 		</item>
+ 
+ 		<item>
+-			<title>Категории</title>
++			<title>Categories</title>
+ 			<url>http://gdata.youtube.com/schemas/2007/categories.cat</url>
+ 			<link>./rss/youtube/yt_categories.rss</link>
+ 		</item>
+ 
+ 		<item>
+-			<title>Избранное</title>
++			<title>Selection</title>
+ 			<onClick>
+         optionsPath = getStoragePath("key") + "youtubeOptions.dat";
+         optionsArray = readStringFromFile(optionsPath);
+@@ -219,7 +219,7 @@
+ 				if (username != null &amp;&amp; username != " ")
+ 				{
+ 	       url = "http://gdata.youtube.com/feeds/api/users/" + urlEncode(username)+"/favorites?";
+-	       title = "Избранное: "+username;
++	       title = "Selection:"+username;
+ 	       
+ 	       arr = null;
+          arr = pushBackStringArray(arr, url);
+@@ -238,7 +238,7 @@
+ 		</item>
+ 
+ 		<item>
+-			<title>Поиск видео</title>
++			<title>Search for video</title>
+ 			<onClick>
+ 				keyword= getInput();
+ 				if (keyword!=null)
+@@ -292,7 +292,7 @@
+ 	       url = youtubeApiSearchBaseURL;
+ 	       if(lr != null)
+ 	         url += "lr="+lr+"&amp;";
+-	       title = "Поиск: "+regionKeyword;
++	       title = "Search "+regionKeyword;
+ 	       
+ 	       arr = null;
+          arr = pushBackStringArray(arr, url);
+@@ -308,7 +308,7 @@
+ 		</item>
+ 
+ 		<item>
+-			<title>Настройки</title>
++			<title>Options</title>
+ 			<link>./rss/youtube/yt_options.rss</link>
+ 			<mediaDisplay name="onePartView"/>
+ 		</item>
