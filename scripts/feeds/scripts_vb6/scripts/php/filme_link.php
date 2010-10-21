@@ -60,7 +60,7 @@ foreach($videos as $video) {
   $link = $t2[0];
   $link = str_replace('#038;','',$link); 
   $link = str_replace('&amp;','&',$link);
-  if ((strpos($link, 'novamov') !== false) || (strpos($link, 'videoweed') !== false)) {
+  if (strpos($link, 'novamov') !== false) {
   		$baza = file_get_contents($link);
   		$v1 = explode('addVariable("file",', $baza);
 			$v2 = explode(')', $v1[1]);
@@ -103,6 +103,60 @@ foreach($videos as $video) {
 }
 
 ##
+$videos = explode("<iframe", $html);
+unset($videos[0]);
+$videos = array_values($videos);
+foreach($videos as $video) {
+	$t1 = explode("src='", $video);
+	$t2 = explode("'", $t1[1]);
+  $link = $t2[0];
+  $link = str_replace('#038;','',$link); 
+  $link = str_replace('&amp;','&',$link);
+  if (strpos($link, 'videoweed') !== false) {
+  		$baza = file_get_contents($link);
+  		$v1 = explode('flashvars.file="', $baza);
+			$v2 = explode('"', $v1[1]);
+			$link = $v2[0];
+			$link = str_replace('"','',$link);
+			$link = str_replace("'","",$link);
+		} elseif (strpos($link, 'movshare') !== false){
+			$baza = file_get_contents($link);
+			$link = str_between($baza,'addVariable("file","','"');
+		} elseif (strpos($link, 'stagevu') !== false){
+			$baza = file_get_contents($link);
+			$link = str_between($baza,'param name="src" value="','"');
+		} elseif (strpos($link, 'divxstage.net') !== false){
+			$baza = file_get_contents($link);
+			$link = str_between($baza,'"file","','"');
+		} elseif (strpos($link, 'flvz.com') !== false){
+			$baza = file_get_contents($link);
+			$link = str_between($baza,'"url": "','"');
+  } else {
+  	$link = "";
+  }
+
+ 		if (($link <> "") && strcmp($link,$lastlink)) {
+			$link = str_replace('"','',$link);
+			$link = str_replace("'","",$link);
+			$link = str_replace(' ','%20',$link);
+			$link = str_replace('[','%5B',$link);
+			$link = str_replace(']','%5D',$link); 
+			$server = str_between($link,"http://","/");
+			$title = $server." - ".substr(strrchr($link,"/"),1);
+    	echo '<item>';
+    	echo '<title>'.$title.'</title>';
+    	echo '<link>'.$link.'</link>';
+    	echo '<media:thumbnail url="'.$image.'" />';
+    	echo '<enclosure type="video/flv" url="'.$link.'"/>';	
+    	echo '</item>';
+    	print "\n";
+    	$lastlink = $link;
+  }
+}
+
+
+
+
 $videos = explode("<iframe", $html);
 unset($videos[0]);
 $videos = array_values($videos);

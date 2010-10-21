@@ -68,7 +68,7 @@ foreach($videos as $video) {
     $image = $t2[0];
 
     $t1 = explode('title="', $video);
-    $t2 = explode('Online Gratis', $t1[1]);
+    $t2 = explode('"', $t1[1]);
     $title = htmlspecialchars_decode($t2[0]);
 
 $pos = strpos($image, '.jpg');

@@ -62,15 +62,18 @@ foreach($videos as $video) {
     $t1 = explode('<a href="', $video);
     $t2 = explode('"', $t1[1]);
     $link = $t2[0];
-
+   
     $t1 = explode(' src="', $video);
     $t2 = explode('"', $t1[1]);
     $image = $t2[0];
+    $image = "/scripts/image/movies.png";
 
-    $t1 = explode('<a title="', $video);
-    $t2 = explode('"', $t1[1]);
+    $t1 = explode('">', $video);
+    $t2 = explode('<', $t1[3]);
     $title = $t2[0];
+
     
+
 
 		$link = 'http://127.0.0.1:82/scripts/php/filme_link.php?file='.$link;
 

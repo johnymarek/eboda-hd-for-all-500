@@ -23,12 +23,12 @@ $data = explode('<div class="time">', $baza);
 $data = explode('</div>', $data[1]);
 $data = $data[0];
 
-$pagina = explode('<span class="current">', $baza);
+$pagina = explode("<span class='current'>", $baza);
 $pagina = explode('</span>', $pagina[1]);
 $pagina = $pagina[0];
 $next = $pagina + 1;
 $prev = $pagina - 1;
-$last = explode('<span class="pages">', $baza);
+$last = explode("<span class='pages'>", $baza);
 $last = explode('</span>', $last[1]);
 $last = $last[0];
 $pos = strpos($last, 'of');
