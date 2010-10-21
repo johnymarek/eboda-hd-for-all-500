@@ -129,7 +129,7 @@
 		</text>			
 	    </mediaDisplay>
 </item>
-
+<!--
 <item>
 <title>www.filmeonlinegratis.me</title>
 <link>http://127.0.0.1:82/scripts/php/filmeonlinegratis_me.php</link>
@@ -154,7 +154,7 @@
 		</text>			
 	    </mediaDisplay>
 </item>
-
+-->
 <!--<item>
 <title>la-cinema.net</title>
 <link>http://127.0.0.1:82/scripts/php/la-cinema.php</link>
