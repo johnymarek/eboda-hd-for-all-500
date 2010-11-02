@@ -222,11 +222,13 @@ cp scripts-version.txt ${dir}/scripts-version.txt
 cd ${dir}
 
 # xLive
-dir=`pwd`
-cd ${SVN_REPO}/scripts/feeds/xLive
-find xLive | grep -v .svn | grep -v '~' | zip -9 ${dir}/xLive.zip -@
-cp xLive-version.txt ${dir}/xLive-version.txt
-cd ${dir}
+#out because no space.
+#I should make script to take-it from internet!
+#dir=`pwd`
+#cd ${SVN_REPO}/scripts/feeds/xLive
+#find xLive | grep -v .svn | grep -v '~' | zip -9 ${dir}/xLive.zip -@
+#cp xLive-version.txt ${dir}/xLive-version.txt
+#cd ${dir}
 
 #packaging root back
 cd ..
