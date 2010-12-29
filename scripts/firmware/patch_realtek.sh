@@ -180,8 +180,9 @@ cp cb3pp-version.txt ${dir}/cb3pp-version.txt
 cd $dir
 
 # IMS menu
-cp -r ${SVN_REPO}/src/${VERSION}/menu/* usr/local/bin/scripts/
-
+cp ${SVN_REPO}/src/${VERSION}/menu/menu.rss usr/local/bin/scripts/
+[ -d usr/local/bin/scripts/image ] || mkdir usr/local/bin/scripts/image
+cp ${SVN_REPO}/src/${VERSION}/menu/image/* usr/local/bin/scripts/image/
 
 #rss_ex
 
@@ -193,16 +194,17 @@ chmod +x tmp_orig/www/cgi-bin/*
 cp ${SVN_REPO}/scripts/feeds/rss_ex/rss_ex/www/bin/* tmp_orig/www/bin/
 chmod +x tmp_orig/www/bin/*
 
-[ -d tmp_orig/www/img/ ] || mkdir tmp_orig/www/img/
-cp ${SVN_REPO}/scripts/feeds/rss_ex/rss_ex/www/img/* tmp_orig/www/img/
+#[ -d tmp_orig/www/img/ ] || mkdir tmp_orig/www/img/
+#cp ${SVN_REPO}/scripts/feeds/rss_ex/rss_ex/www/img/* tmp_orig/www/img/
 
 
 #media translate
-dir=`pwd`
-cd ${SVN_REPO}/scripts/feeds/rss_ex/
-find rss_ex/ | grep -v .svn | grep -v '~' | grep -v 'www' | zip -9 ${dir}/rss_ex.zip -@
-cp rss_ex-version.txt ${dir}/rss_ex-version.txt
-cd ${dir}
+# no space in firmware, latest version will be downloaded from internet
+# dir=`pwd`
+# cd ${SVN_REPO}/scripts/feeds/rss_ex/
+# find rss_ex/ | grep -v .svn | grep -v '~' | grep -v 'www' | zip -9 ${dir}/rss_ex.zip -@
+# cp rss_ex-version.txt ${dir}/rss_ex-version.txt
+# cd ${dir}
 
 
 # vb6 bin
@@ -215,11 +217,12 @@ chmod +x tmp_orig/www/cgi-bin/*
 
 
 # vb6 scripts
-dir=`pwd`
-cd ${SVN_REPO}/scripts/feeds/scripts_vb6/
-find scripts | grep -v .svn | grep -v '~' | grep -v 'cgi-bin' | zip -9 ${dir}/scripts.zip -@
-cp scripts-version.txt ${dir}/scripts-version.txt
-cd ${dir}
+# no space in firmware, latest version will be downloaded from internet
+# dir=`pwd`
+# cd ${SVN_REPO}/scripts/feeds/scripts_vb6/
+# find scripts | grep -v .svn | grep -v '~' | grep -v 'cgi-bin' | zip -9 ${dir}/scripts.zip -@
+# cp scripts-version.txt ${dir}/scripts-version.txt
+# cd ${dir}
 
 # xLive
 #out because no space.

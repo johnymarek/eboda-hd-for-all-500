@@ -125,10 +125,11 @@ EOF
 # name_DvdPlayer="CORE: DvdPlayer"
 name_ewcp="WWW: Eboda Web Control Panel"
 name_vb6="RSS: vb6rocod php scripts"
+name_rssEx="RSS: rssEx (aka media translate)"
 name_xLive="RSS: Xtreamer Live"
 name_apps="APPS: extra apps"
 
-for i in ewcp apps vb6 xLive
+for i in ewcp apps vb6 rssEx xLive
 do
     script=util_${i}-update.cgi
     full_name=`eval echo \\$name_${i}`
@@ -144,7 +145,7 @@ startfile_dir="/cb3pp/etc/init.d/"
 startfile_lighttpd="S80lighttpd"
 startfile_thttpd="S80thttpd"
 startfile_apache="S08apache"
-startfile_transmission="S90transmission"
+startfile_transmission="S90transmission-daemon"
 startfile_rtorrent="S90rtorrent"
 startfile_btpd15="S90btpd15"
 startfile_bftpd="S70bftpd"
@@ -153,7 +154,7 @@ startfile_btpd="/tmp/package/script/btpd"
 startfile_smbd="/tmp/package/script/samba"
 
 #apache transmission lighttpd not in this scope
-for i in lighttpd btpd15 transmission rotrrent bftpd
+for i in lighttpd btpd15 transmission rtorrent bftpd
 do
     full_name=`eval echo \\$name_${i}`
     script="#"

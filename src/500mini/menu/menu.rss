@@ -106,12 +106,12 @@
           }
         </script>
       </media:thumbnail>
-    <link>rss_file:///scripts/menu.rss</link>^M
+    <link>http://localhost:82/scripts/menu.rss</link>^M
   </item>^M
   
     <item>
       <title>xLive</title>
-      <link>rss_file:///xLive/menu.rss</link>
+      <link>http://localhost:82/xLive/menu.rss</link>
       <media:thumbnail  width="120" height="90" >
         <script>
           if (getQueryItemIndex() == xliveIndex)
