@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<channel>
+	<title>TV</title>
+	<menu>main menu</menu>
+
+<item>
+<title>Kontilies TV (Grecia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://87.117.246.29/kontiliestvnew</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://87.117.246.29/kontiliestvnew"/>
+</item>
+
+<item>
+<title>West Channel (Grecia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://216.66.84.2/584932</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://216.66.84.2/584932"/>
+</item>
+
+<item>
+<title>Sport TV (Grecia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://broadcast.hol.gr/tvmagic</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://broadcast.hol.gr/tvmagic"/>
+</item>
+
+<item>
+<title>Voice Of God (Grecia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://media.VoiceofGod.gr/VoiceofGod150GR</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://media.VoiceofGod.gr/VoiceofGod150GR"/>
+</item>
+
+<item>
+<title>Nikaia (Grecia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://wm12.spacialnet.com/nikaia-gr</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://wm12.spacialnet.com/nikaia-gr"/>
+</item>
+
+<item>
+<title>Omega TV (Grecia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://stream.omegatv.net/Live</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://stream.omegatv.net/Live"/>
+</item>
+
+<item>
+<title>Word Of God - Italian (Grecia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://media.WordofGod.gr/WordofGod150IT</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://media.WordofGod.gr/WordofGod150IT"/>
+</item>
+
+<item>
+<title>Patras Church (Grecia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://SH5.audio-stream.com/patraschurch</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://SH5.audio-stream.com/patraschurch"/>
+</item>
+
+<item>
+<title>Ellada TV (Grecia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://live.onestreaming.com/elladatv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://live.onestreaming.com/elladatv"/>
+</item>
+
+<item>
+<title>Word Of God - Greece (Grecia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://media.WordofGod.gr/WordofGod150GR</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://media.WordofGod.gr/WordofGod150GR"/>
+</item>
+
+<item>
+<title>Mad TV (Grecia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://media.mad.gr/madtv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://media.mad.gr/madtv"/>
+</item>
+
+</channel>
+</rss>

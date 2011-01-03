@@ -1,0 +1,6 @@
+#!/bin/sh
+cat <<EOF
+Content-type: audio/mpeg icy-pub
+
+EOF
+exec /scripts/bin/msdl_1.2.6+ -b 384000 -q -o - $QUERY_STRING

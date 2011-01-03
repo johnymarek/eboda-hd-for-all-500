@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<channel>
+	<title>TV</title>
+	<menu>main menu</menu>
+
+<item>
+<title>Miracle Channel (Canada)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://quickstudy.wmlive.internapcdn.net/live_quickstudy_vitalstream_com_CJIL-stream</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://quickstudy.wmlive.internapcdn.net/live_quickstudy_vitalstream_com_CJIL-stream"/>
+</item>
+
+<item>
+<title>Canal Savoir (Canada)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://stream2.canal.qc.ca/enOndes_bas_debit</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://stream2.canal.qc.ca/enOndes_bas_debit"/>
+</item>
+
+</channel>
+</rss>

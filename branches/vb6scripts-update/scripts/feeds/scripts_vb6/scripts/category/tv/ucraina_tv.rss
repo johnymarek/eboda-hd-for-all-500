@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<channel>
+	<title>TV</title>
+	<menu>main menu</menu>
+
+<item>
+<title>1+1 (Ucraina)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://69.172.226.39/ukrainian</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://69.172.226.39/ukrainian"/>
+</item>
+
+<item>
+<title>Star TV (Ucraina)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://77.222.135.42/startv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://77.222.135.42/startv"/>
+</item>
+
+
+<item>
+<title>Gamma (Ucraina)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://89.187.1.165/gamma</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://89.187.1.165/gamma"/>
+</item>
+
+</channel>
+</rss>

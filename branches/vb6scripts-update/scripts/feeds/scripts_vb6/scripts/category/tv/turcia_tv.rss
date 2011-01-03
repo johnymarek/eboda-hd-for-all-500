@@ -1,0 +1,180 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<channel>
+	<title>TV</title>
+	<menu>main menu</menu>
+
+<item>
+<title>Expo Channel</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://yayin.canlitv.com/expochannel</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://yayin.canlitv.com/expochannel"/>
+</item>
+
+<item>
+<title>kanal B</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://212.174.233.141/kanalb</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://212.174.233.141/kanalb"/>
+</item>
+
+<item>
+<title>Olay TV</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://yayin.canlitv.com/olaytv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://yayin.canlitv.com/olaytv"/>
+</item>
+
+<item>
+<title>Kanal 32</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://88.225.232.39/Canli</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://88.225.232.39/Canli"/>
+</item>
+
+<item>
+<title>YOL TV</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://85.214.55.224/yol</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://85.214.55.224/yol"/>
+</item>
+
+<item>
+<title>Dost TV</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://www.dosttv.com/dosttv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://www.dosttv.com/dosttv"/>
+</item>
+
+<item>
+<title>Kanal A Ankara</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://88.255.31.105:554/kanala1</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://88.255.31.105:554/kanala1"/>
+</item>
+
+<item>
+<title>Oncu TV</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://yayin.canlitv.com/oncurtv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://yayin.canlitv.com/oncurtv"/>
+</item>
+
+
+<item>
+<title>Boteb TV T</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://144.122.56.15/odtutv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://144.122.56.15/odtutv"/>
+</item>
+
+<item>
+<title>NewsTV</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://webtv.wtcankara.org.tr/NewsTV</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://webtv.wtcankara.org.tr/NewsTV"/>
+</item>
+
+<item>
+<title>TNM</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://yayin.canlitv.com/Malatya44tv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://yayin.canlitv.com/Malatya44tv"/>
+</item>
+
+<item>
+<title>Kanal 48</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://yayin.canlitv.com/kanal48</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://yayin.canlitv.com/kanal48"/>
+</item>
+
+<item>
+<title>TRT</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.131/TV1</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.131/TV1"/>
+</item>
+
+<item>
+<title>TRT 2</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.131/TV2</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.131/TV2"/>
+</item>
+
+<item>
+<title>TRT 3</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.131/TV3</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.131/TV3"/>
+</item>
+
+<item>
+<title>TRT 4</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.131/TV4</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.131/TV4"/>
+</item>
+
+<item>
+<title>TRT 5</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.131/TV5</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.131/TV5"/>
+</item>
+
+<item>
+<title>TRT Belgesel</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.131/TRTBELGESEL</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.131/TRTBELGESEL"/>
+</item>
+
+<item>
+<title>TRT Music</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.130/TRTMUZIK</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.130/TRTMUZIK"/>
+</item>
+
+<item>
+<title>TRT Avaz</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.131/TRTAVAZ</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.131/TRTAVAZ"/>
+</item>
+
+<item>
+<title>TRT arabic</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.133/TRTARABIC</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.133/TRTARABIC"/>
+</item>
+
+<item>
+<title>TRT turk</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.131/TRTTURK</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://95.0.159.131/TRTTURK"/>
+</item>
+
+<item>
+<title>STV</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://canli.samanyolu.tv/stv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://canli.samanyolu.tv/stv"/>
+</item>
+
+<item>
+<title>SRBT</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://94.75.240.158/sbrt</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://94.75.240.158/sbrt"/>
+</item>
+
+<item>
+<title>Piraziz</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://94.75.240.158/piraziztv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://94.75.240.158/piraziztv"/>
+</item>
+
+<item>
+<title>News tv</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://webtv.wtcankara.org.tr/NewsTV</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://webtv.wtcankara.org.tr/NewsTV"/>
+</item>
+
+<item>
+<title>SKY</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://84.16.240.179/skytv</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://84.16.240.179/skytv"/>
+</item>
+
+<item>
+<title>Bayrak TV-2 (Turcia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://bms.brtk.net/brt2</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://bms.brtk.net/brt2"/>
+</item>
+
+</channel>
+</rss>

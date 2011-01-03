@@ -1,0 +1,34 @@
+#!/bin/sh
+
+
+# Start all init scripts in /cb3pp/etc/init.d
+# executing them in numerical order.
+#
+
+
+PATH=$PATH:/cb3pp/bin:/cb3pp/sbin
+export PATH
+
+for i in /cb3pp/etc/init.d/S??* ;do
+     # Ignore dangling symlinks (if any).
+     [ ! -f "$i" ] && continue
+
+     case "$i" in
+        *.sh)
+            # Source shell script for speed.
+            (
+                trap - INT QUIT TSTP
+                set start
+                . $i
+            )
+            ;;
+        *)
+            # No sh extension, so fork subprocess.
+            $i start
+            ;;
+    esac
+done
+
+[ -d /tmp/hdd/volumes/HDD1/ext2 ] || mkdir /tmp/hdd/volumes/HDD1/ext2                                                                                        
+[ -d /tmp/hdd/root ] && [ -d /tmp/hdd/volumes/HDD1/ext2 ] && mount -o bind /tmp/hdd/root /tmp/hdd/volumes/HDD1/ext2                                          
+

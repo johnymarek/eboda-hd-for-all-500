@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!--Xtreamer Community 2010 - xLive9.1 Cap-->
+<rss version="2.0" xmlns:media="http://purl.org/dc/elements/1.1/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+
+    <title>Xtreamer - VoD</title>
+
+<item>
+<title>RTL Gemist - Maandag (Monday)</title>
+<link>http://www.kijk.info/xtreamer/rtl/maandag.xml</link>
+</item>
+<item>
+<title>RTL Gemist - Dinsdag (Tuesday)</title>
+<link>http://www.kijk.info/xtreamer/rtl/dinsdag.xml</link>
+</item>
+<item>
+<title>RTL Gemist - Woensdag (Wednesday)</title>
+<link>http://www.kijk.info/xtreamer/rtl/woensdag.xml</link>
+</item>
+<item>
+<title>RTL Gemist - Donderdag (Thursday)</title>
+<link>http://www.kijk.info/xtreamer/rtl/donderdag.xml</link>
+</item>
+<item>
+<title>RTL Gemist - Vrijdag (Friday)</title>
+<link>http://www.kijk.info/xtreamer/rtl/vrijdag.xml</link>
+</item>
+<item>
+<title>RTL Gemist - Zaterdag (Saturday)</title>
+<link>http://www.kijk.info/xtreamer/rtl/zaterdag.xml</link>
+</item>
+<item>
+<title>RTL Gemist - Zondag (Sunday)</title>
+<link>http://www.kijk.info/xtreamer/rtl/zondag.xml</link>
+</item>
+</channel>
+</rss>

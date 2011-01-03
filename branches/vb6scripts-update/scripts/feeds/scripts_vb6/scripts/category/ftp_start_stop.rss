@@ -1,0 +1,47 @@
+<?xml version='1.0' ?>
+<!--mime-type=  text/plain because acryan feeds are not proper xml-->
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<onEnter>
+    xmlurl = "http://127.0.0.1/cgi-bin/ftp_start_stop.cgi";
+    dlok = loadXMLFile(xmlurl);
+    if (dlok != null)
+    {
+    serv_status = getXMLText("info", "status", "server-status");
+    apas_status = getXMLText("info", "status", "apache-status");
+        }
+</onEnter>
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="40" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		Network tools
+		</text>	
+		<text offsetXPC=5 offsetYPC=20 widthPC=90 heightPC=8 fontSize=16 backgroundColor=-1:-1:-1 foregroundColor=200:200:200>
+		<script>
+		apas_status;
+		</script>
+		</text>
+		<text offsetXPC=5 offsetYPC=25 widthPC=90 heightPC=8 fontSize=16 backgroundColor=-1:-1:-1 foregroundColor=200:200:200>
+		<script>
+		serv_status;
+		</script>
+		</text>
+	</mediaDisplay>
+<channel>
+<title>Network tools</title>
+
+<item>
+<title>Start/Stop FTP Server</title>
+<link>/scripts/category/ftp_start_stop.rss</link>
+<media:thumbnail url="/scripts/image/network_tools.jpg"/>
+</item>
+
+<item>
+<title>Go Home</title>
+<link>/scripts/menu.rss</link>
+<media:thumbnail url="/scripts/image/network_tools.jpg"/>
+</item>
+
+</channel>
+</rss>

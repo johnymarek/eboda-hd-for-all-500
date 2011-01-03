@@ -1,0 +1,28 @@
+a. better/usefull IMS menu
+
+  1. add X9Live http://live.mvix.net/x_live2/scripts/Xtreamer.rss
+  2. check what's on vb6 stuff (add link to internet only stuff) ?
+    2.1 maybe add a cleaned-up version of it (what is not in X9Live?)
+    2.2 or keep everything?
+    2.3 start new "RSS feeds" with shells scripting? (it should be so faster and we can remove http/php, getting CPU and RAM)
+    2.4 control-panel RSS interface?
+
+b. better torrents client
+  1. configure btpd 0.15
+  2. configure transmission
+  3. configure rtorrent
+
+
+c. web interface
+  1. control panel web interface
+  2. others (TBC)
+
+d. control panel
+  1. shell scripts for management functions
+  1.1 update scripts (should find better names)
+  1.2 update binaries (cb3pp)
+  1.3 update control panel
+  
+
+
+
