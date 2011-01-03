@@ -4,9 +4,8 @@
 
 nice_start "Starting transmission"
 
-echo "NOT IMPLEMENTED"
-#/cb3pp/etc/init.d/S80transmission stop
-#/cb3pp/etc/init.d/S80transmission start
+/cb3pp/etc/init.d/*S90transmission-daemon stop
+/cb3pp/etc/init.d/*S90transmission-daemon start
 
 nice_exit 0 
 

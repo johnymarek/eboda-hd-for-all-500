@@ -37,7 +37,7 @@ Content-type: text/html
             <td width="100%" class="pnlHeader">Daemons Status (click to start/stop) </td>
             <td width="7"><img src="/eb_imgs/cp_TR.gif" width="7" height="36"></td>
           </tr>
-        <tr height="212">
+        <tr height="280">
           <td colspan="3" class="pnlContent"><div class="pnlContentDiv">
             <table width="100%" border="0" cellspacing="0" cellpadding="2">
 EOF
@@ -58,7 +58,7 @@ name_bftpd="NAS: bftpd"
 name_DvdPlayer="CORE: DvdPlayer"
 
 #apache transmission lighttpd not in this scope
-for i in lighttpd btpd15 transmission rotrrent bftpd btpd smbd DvdPlayer 
+for i in lighttpd btpd15 transmission rtorrent bftpd btpd smbd DvdPlayer 
 do
     pic=/eb_imgs/cp_on.gif
     script=util_${i}-stop.cgi
@@ -82,12 +82,13 @@ cat <<EOF
 EOF
 done
 
-
 # END OF STATUS SECTION
 ##############################
 
 
 cat <<EOF
+  <tr>
+  </tr>
 </table>
 </div></td>
           </tr>
@@ -105,7 +106,7 @@ cat <<EOF
             <td width="100%" class="pnlHeader">Utilities </td>
             <td width="7"><img src="/eb_imgs/cp_TR.gif" width="7" height="36"></td>
           </tr>
-          <tr height="212">
+          <tr height="280">
             <td colspan="3" class="pnlContent"><div class="pnlContentDiv">
               <table width="100%" border="0" cellspacing="0" cellpadding="0">
 
