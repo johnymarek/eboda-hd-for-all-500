@@ -453,6 +453,9 @@ cd ..
 rm install_*
 cp ${SVN_REPO}/src/${VERSION}/install/install_a .
 
+#patch size
+sed -ie 's#<sizeBytesMin>0x3000000</sizeBytesMin>#<sizeBytesMin>0x0800000</sizeBytesMin>#g' configuration.xml
+
 
 mv ../${IMAGE_FILE} ../${IMAGE_FILE}.orig
 tar cvf ../${IMAGE_FILE} *
