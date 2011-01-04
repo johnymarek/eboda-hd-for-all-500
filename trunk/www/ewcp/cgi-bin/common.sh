@@ -126,3 +126,19 @@ perform_update()
     fi
 
 }
+
+rss_start()
+{
+    cat <<EOF
+<?xml version='1.0' encoding='UTF-8'?>
+  <info>
+    <status>
+EOF
+}
+rss_exit()
+{
+    cat <<EOF
+    </status>
+  </info>
+EOF
+}

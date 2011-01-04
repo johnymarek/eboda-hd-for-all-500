@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#begin of old stuff
 vb6_rss_start()
 {
 
@@ -74,3 +75,5 @@ cat <<EOF
 </item>
 EOF
 }
+
+#end of old stuff
