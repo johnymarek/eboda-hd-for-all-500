@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# NOT USED
 component=cb3pp
 description="binaries compiled by cipibad"
 
