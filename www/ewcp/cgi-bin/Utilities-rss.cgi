@@ -5,7 +5,6 @@ Content-type: application/xhtml+xml
 
 <?xml version="1.0" ?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
-
     <channel>
         <title>Utilities</title>
         <link>http://localhost/cgi-bin/Utilities-rss.cgi</link>
@@ -19,7 +18,7 @@ name_rssEx="RSS: rssEx (aka media translate)"
 name_xLive="RSS: Xtreamer Live"
 name_apps="APPS: extra apps"
 
-for i in rssEx
+for i in ewcp apps vb6 rssEx xLive
 do
     script=util_${i}-update-rss.cgi
     full_name=`eval echo \\$name_${i}`
@@ -27,19 +26,14 @@ do
 <item>
 <pubDate>Wed, 05 Jan 2011 22:49:32 +0000</pubDate>
 <title>Update ${full_name}</title>
-<link>http://localhost/cgi-bin/${script}</link>
-<description> Press Right Arrow to perform the update </description>
+		<link>rss_file:///scripts/as.rss</link>
 <canEnterItem>false</canEnterItem>
-
-<content> content </content>
+<description> Press Right Arrow to perform the update </description>
 </item>
 EOF
 done
 
 cat <<EOF
-
-
-
 </channel>
 </rss>
 
