@@ -137,7 +137,7 @@ EOF
 }
 rss_exit()
 {
-    cat <<EOF
+cat <<EOF
     </status>
   </info>
 EOF

@@ -201,10 +201,10 @@ chmod +x tmp_orig/www/bin/*
 #media translate
 # no space in firmware, latest version will be downloaded from internet
 # dir=`pwd`
-# cd ${SVN_REPO}/scripts/feeds/rss_ex/
+cd ${SVN_REPO}/scripts/feeds/rss_ex/
 # find rss_ex/ | grep -v .svn | grep -v '~' | grep -v 'www' | zip -9 ${dir}/rss_ex.zip -@
-# cp rss_ex-version.txt ${dir}/rss_ex-version.txt
-# cd ${dir}
+cp rss_ex-version.txt ${dir}/rss_ex-version.txt
+cd ${dir}
 
 
 # vb6 bin
@@ -219,19 +219,19 @@ chmod +x tmp_orig/www/cgi-bin/*
 # vb6 scripts
 # no space in firmware, latest version will be downloaded from internet
 # dir=`pwd`
-# cd ${SVN_REPO}/scripts/feeds/scripts_vb6/
+cd ${SVN_REPO}/scripts/feeds/scripts_vb6/
 # find scripts | grep -v .svn | grep -v '~' | grep -v 'cgi-bin' | zip -9 ${dir}/scripts.zip -@
-# cp scripts-version.txt ${dir}/scripts-version.txt
-# cd ${dir}
+cp scripts-version.txt ${dir}/scripts-version.txt
+cd ${dir}
 
 # xLive
 #out because no space.
 #I should make script to take-it from internet!
 #dir=`pwd`
-#cd ${SVN_REPO}/scripts/feeds/xLive
+cd ${SVN_REPO}/scripts/feeds/xLive
 #find xLive | grep -v .svn | grep -v '~' | zip -9 ${dir}/xLive.zip -@
-#cp xLive-version.txt ${dir}/xLive-version.txt
-#cd ${dir}
+cp xLive-version.txt ${dir}/xLive-version.txt
+cd ${dir}
 
 #packaging root back
 cd ..
