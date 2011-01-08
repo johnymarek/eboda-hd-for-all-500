@@ -129,16 +129,15 @@ perform_update()
 
 rss_start()
 {
+
     cat <<EOF
-<?xml version='1.0' encoding='UTF-8'?>
-  <info>
-    <status>
+<p> $1 </p>
+<p>
 EOF
 }
 rss_exit()
 {
 cat <<EOF
-    </status>
-  </info>
+</p>
 EOF
 }
