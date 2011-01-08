@@ -1,13 +1,12 @@
 #!/bin/sh
 
-# NOT USED
 component=cb3pp
 description="binaries compiled by cipibad"
 
 
 . ./common.sh
 
-nice_start "Updating ${description}"
+rss_start "Updating ${description}"
 
 check_update ${component}
 if [ $? -eq 0 ]
@@ -17,4 +16,4 @@ then
 
 fi
 
-nice_exit 0 
+rss_exit 0 

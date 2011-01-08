@@ -9,7 +9,6 @@ Content-type: application/xhtml+xml
         <title>Utilities</title>
         <link>http://localhost/cgi-bin/Utilities-rss.cgi</link>
         <menu>control panel utilities</menu>
-
 EOF
 
 name_ewcp="WWW: Eboda Web Control Panel"
@@ -23,18 +22,17 @@ do
     script=util_${i}-update-rss.cgi
     full_name=`eval echo \\$name_${i}`
     cat <<EOF
-<item>
-<pubDate>Wed, 05 Jan 2011 22:49:32 +0000</pubDate>
-<title>Update ${full_name}</title>
-		<link>rss_file:///scripts/as.rss</link>
-<canEnterItem>false</canEnterItem>
-<description> Press Right Arrow to perform the update </description>
-</item>
+        <item>
+             <pubDate>Wed, 05 Jan 2011 22:49:32 +0000</pubDate>
+             <title>Update ${full_name}</title>
+             <link>http://localhost/cgi-bin/${script}</link>
+             <description> Press Right Arrow to perform the update </description>
+        </item>
 EOF
 done
 
 cat <<EOF
-</channel>
+    </channel>
 </rss>
 
 EOF

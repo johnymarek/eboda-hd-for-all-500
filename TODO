@@ -2,8 +2,9 @@
 
 - finish new internet menu (images)
 - translate rssEx
-- implement update action in control-panel
 
 - implement sleep function
 - implement daemon start/stop
 - implement minimal transmission interface in CP
+- update to xLive 9.2
+- check other xtreamer stuff
