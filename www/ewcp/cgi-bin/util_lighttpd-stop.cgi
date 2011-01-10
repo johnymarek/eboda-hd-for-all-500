@@ -4,7 +4,7 @@
 
 nice_start "Stopping lighttpd"
 
-sh /cb3pp/etc/init.d/S80lighttpd stop
+sh /cb3pp/etc/init.d/*S80lighttpd stop
 
 nice_exit 0 
 

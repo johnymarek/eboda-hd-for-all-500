@@ -56,13 +56,13 @@
 
 </mediaDisplay>
   <channel>
-    <title>Default Menu, update required</title>
+    <title>Default vb6 scripts menu, update required</title>
 
-<!-- BEGIN_EXTRA -->
+    <!-- BEGIN_EXTRA -->
     <item>
-      <title>Please go to Control Panel>Utilities and update</title>
-	      <link>http://localhost/cgi-bin/ewcp-rss.cgi</link>
-	</item> 
+      <title>Click here and select vb6 scripts update</title>
+      <link>http://localhost/cgi-bin/Utilities-rss.cgi</link>
+    </item> 
 
   </channel>
 </rss>
