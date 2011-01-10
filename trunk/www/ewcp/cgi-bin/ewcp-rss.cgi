@@ -112,6 +112,19 @@ else
 <canEnterItem>false</canEnterItem>
 </item>
 
+
+<item>
+<title>Updates</title>
+<link>http://localhost/cgi-bin/Updates-rss.cgi</link>
+<canEnterItem>false</canEnterItem>
+</item>
+
+<item>
+<title>Services</title>
+<link>http://localhost/cgi-bin/Services-rss.cgi</link>
+<canEnterItem>false</canEnterItem>
+</item>
+
 </channel>
 </rss>
 EOF
