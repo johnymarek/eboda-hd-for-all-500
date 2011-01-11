@@ -92,7 +92,7 @@
        </media:thumbnail>
     </item>-->
     <item>
-    <title>HDD Links</title>^M
+    <title>vb6ro netMedia</title>^M
       <media:thumbnail  width="120" height="90" >
         <script>
           if (getQueryItemIndex() == HddIndex)
@@ -253,10 +253,10 @@
           {
           state=getDrawingItemState();
           if( state == "focus" ){
-          "IMS_Modules/Flickr/flickr_focus.jpg";
+          "./scripts/image/CP_focus.jpg";
           }
           else{
-          "IMS_Modules/Flickr/flickr_unfocus.jpg";
+          "./scripts/image/CP_unfocus.jpg";
           }
           }
         </script>
