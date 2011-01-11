@@ -6,6 +6,7 @@
     PicasaIndex =4;
     NewsIndex =5;
     FlickrIndex =6;
+    CPIndex =7;
     PPSIndex =0;
     YoukuIndex =0;
     ThunderIndex =0;
@@ -22,20 +23,20 @@
                 sideTopHeightPC=0
                 sideBottomHeightPC=0   
               
-                rowCount=1 
-                columnCount=6
+                rowCount=2 
+                columnCount=5
                 fontSize=16
               
-                itemPerPage=6
+                itemPerPage=10
                 itemBorderPC=0
-                itemOffsetXPC=5.80
+                itemOffsetXPC=13
                 itemGapXPC=0
                 itemGapYPC=0
-                itemWidthPC=14.6
-                itemHeightPC=41.7
+                itemWidthPC=18
+                itemHeightPC=37
               
-                centerYPC=33.3
-                centerHeightPC=100 
+                centerYPC=20
+                centerXPC=50
               
                 showHeader="no"  
                 showDefaultInfo="no"	
@@ -91,7 +92,7 @@
        </media:thumbnail>
     </item>-->
     <item>
-    <title>HDD Links</title>^M
+    <title>vb6ro netMedia</title>^M
       <media:thumbnail  width="120" height="90" >
         <script>
           if (getQueryItemIndex() == HddIndex)
@@ -106,12 +107,12 @@
           }
         </script>
       </media:thumbnail>
-    <link>rss_file:///scripts/menu.rss</link>^M
+    <link>http://localhost:82/scripts/menu.rss</link>^M
   </item>^M
   
     <item>
       <title>xLive</title>
-      <link>rss_file:///xLive/menu.rss</link>
+      <link>http://localhost:82/xLive/menu.rss</link>
       <media:thumbnail  width="120" height="90" >
         <script>
           if (getQueryItemIndex() == xliveIndex)
@@ -238,6 +239,24 @@
           }
           else{
           "IMS_Modules/Flickr/flickr_unfocus.jpg";
+          }
+          }
+        </script>
+      </media:thumbnail>
+    </item>
+    <item>
+      <title>CP</title>
+      <link>http://localhost/cgi-bin/ewcp-rss.cgi</link>
+      <media:thumbnail  width="120" height="90" >
+        <script>
+          if (getQueryItemIndex() == CPIndex) 
+          {
+          state=getDrawingItemState();
+          if( state == "focus" ){
+          "./scripts/image/CP_focus.jpg";
+          }
+          else{
+          "./scripts/image/CP_unfocus.jpg";
           }
           }
         </script>

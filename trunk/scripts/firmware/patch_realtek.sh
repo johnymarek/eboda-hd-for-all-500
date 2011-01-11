@@ -5,26 +5,30 @@
 function patch_firmware()
 {
 
-if [ $# -ne 3 ]
+if [ $# -ne 4 ]
 then
-    echo 3 arguments expected by function patch_firmware IMAGE_FILE, svn-repo absolute path, \[500|500a|500mini|500minia|500plus\]
+    echo 4 arguments expected by function patch_firmware IMAGE_FILE, svn-repo absolute path, \[500|500a|500mini|500minia|500plus\], SDK version \[2|3\]
     exit 1
 fi
 
 IMAGE_FILE=$1
 SVN_REPO=$2
 VERSION=$3
+SDK=$4
+TEA="no"
 
 if [ ${VERSION} = "500a" ]
 then
     USE_EBODA_INSTALL="yes";
     VERSION="500";
+    TEA="YES";
 fi
 
 if [ ${VERSION} = "500minia" ]
 then
     USE_EBODA_INSTALL="yes";
     VERSION="500mini";
+    TEA="YES";
 fi
 
 
@@ -35,6 +39,15 @@ else
     echo Wrong firmware variant
     exit 1
 fi
+
+if [ ${SDK} = "2" -o ${SDK} = "3" ]
+then
+    echo Patching SDK version ${SDK}
+else
+    echo Wrong firmware variant
+    exit 1
+fi
+
 
 ####################
 # CHECKING prequisites
@@ -116,7 +129,21 @@ mkdir unpacked_root
 [ $? -eq 0 ] || exit cannot create dir please start from a clean directory
 
 cd unpacked_root/
-unyaffs ../yaffs2_1.img
+
+if [ ${SDK} = "2" ]
+then
+    unyaffs ../yaffs2_1.img
+elif [ ${SDK} = "3" ]
+then
+    if [ $TEA = "YES" ]
+    then
+	tea -d -i ../squashfs1.upg -o ../squashfs1.img -k 12345678195454322338264935438139
+	rm ../squashfs1.upg
+    fi
+    unsquashfs ../squashfs1.img 
+    cd squashfs-root
+fi
+
 
 #
 #modify root
@@ -180,10 +207,16 @@ cp cb3pp-version.txt ${dir}/cb3pp-version.txt
 cd $dir
 
 # IMS menu
-cp ${SVN_REPO}/src/${VERSION}/menu/menu.rss usr/local/bin/scripts/
-[ -d usr/local/bin/scripts/image ] || mkdir usr/local/bin/scripts/image
-cp ${SVN_REPO}/src/${VERSION}/menu/image/* usr/local/bin/scripts/image/
-
+if [ ${SDK} = "2" ]
+then
+    cp ${SVN_REPO}/src/${VERSION}/menu/menu.rss usr/local/bin/scripts/
+    [ -d usr/local/bin/scripts/image ] || mkdir usr/local/bin/scripts/image
+    cp ${SVN_REPO}/src/${VERSION}/menu/image/* usr/local/bin/scripts/image/
+elif [ ${SDK} = "3" ]
+then
+    
+    echo to complete
+fi
 #rss_ex
 
 #www
@@ -234,9 +267,23 @@ cp xLive-version.txt ${dir}/xLive-version.txt
 cd ${dir}
 
 #packaging root back
-cd ..
-rm yaffs2_1.img
-mkyaffs2image unpacked_root yaffs2_1.img 
+if [ ${SDK} = "2" ]
+then
+    cd ..
+    rm yaffs2_1.img
+    mkyaffs2image unpacked_root yaffs2_1.img 
+elif [ ${SDK} = "3" ]
+then
+    mksquashfs * ../../squashfs1.img -b 65536
+    cd  ..
+    if [ $TEA = "YES" ]
+    then
+	tea -e -i ../squashfs1.img -o ../squashfs1.upg -k 12345678195454322338264935438139
+	rm ../squashfs1.img
+    fi
+    cd ..
+fi
+
 
 rm -rf unpacked_root/
 
@@ -349,7 +396,7 @@ SERIAL=0
 DISK_SERIAL=${SERIAL}
 [ -f /cb3pp-version.txt ] && . /cb3pp-version.txt
 
-if [ ${SERIAL} -gt ${DISK_SERIAL} ]
+if [ ${SERIAL} -gt ${DISK_SERIAL} -o ${SERIAL} -eq 0 ]
 then
 	rm -rf  ${storage}/cb3pp/*
 	cd ${storage}
@@ -367,7 +414,7 @@ SERIAL=0
 DISK_SERIAL=${SERIAL}
 [ -f /rss_ex-version.txt ] && . /rss_ex-version.txt
 
-if [ ${SERIAL} -gt ${DISK_SERIAL} ]
+if [ ${SERIAL} -gt ${DISK_SERIAL} -o ${SERIAL} -eq 0 ]
 then
         rm -rf ${storage}/rss_ex/*
         cd ${storage}
@@ -382,7 +429,7 @@ SERIAL=0
 DISK_SERIAL=${SERIAL}
 [ -f /scripts-version.txt ] && . /scripts-version.txt
 
-if [ ${SERIAL} -gt ${DISK_SERIAL} ]
+if [ ${SERIAL} -gt ${DISK_SERIAL} -o ${SERIAL} -eq 0 ]
 then
         rm -rf ${storage}/scripts/*
         cd ${storage}
@@ -398,7 +445,7 @@ SERIAL=0
 DISK_SERIAL=${SERIAL}
 [ -f /xLive-version.txt ] && . /xLive-version.txt
 
-if [ ${SERIAL} -gt ${DISK_SERIAL} ]
+if [ ${SERIAL} -gt ${DISK_SERIAL} -o ${SERIAL} -eq 0 ]
 then
         rm -rf ${storage}/xLive/*
         cd ${storage}
@@ -414,7 +461,7 @@ SERIAL=0
 DISK_SERIAL=${SERIAL}
 [ -f /ewcp-version.txt ] && . /ewcp-version.txt
 
-if [ ${SERIAL} -gt ${DISK_SERIAL} ]
+if [ ${SERIAL} -gt ${DISK_SERIAL} -o ${SERIAL} -eq 0 ]
 then
         rm -rf ${storage}/ewcp/*
         cd  ${storage}

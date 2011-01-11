@@ -61,7 +61,7 @@
     <!-- BEGIN_EXTRA -->
     <item>
       <title>Click here and select vb6 scripts update</title>
-      <link>http://localhost/cgi-bin/Utilities-rss.cgi</link>
+      <link>http://localhost/cgi-bin/Updates-rss.cgi</link>
     </item> 
 
   </channel>
