@@ -13,4 +13,4 @@ v7a:
    * HDD Links (vb6ro scripts) v9.1 + small corrections
    * rss_ex (http://code.google.com/p/media-translate/)
    * xLive (http://www.xtreamer.net/downloads/community-projects/xtreamer-live!.aspx)
-  * Possibility to update components later from CP/EWCP (e-boda web control panel)
+  * Possibility to update components later from CP/EWCP (e-boda web control panel) - update is slow and may take up to 5 minutes.
