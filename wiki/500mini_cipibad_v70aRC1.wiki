@@ -1,0 +1,16 @@
+#summary 500mini_cipibad_v70aRC1
+
+= THIS FIRMWARE IS NOT CURRENTLY WORKING ON E_BODA = 
+= THIS FIRMWARE IS POSTED HERE ONLY FOR ALPHA TESTING =
+
+= New e-boda hd4all 500 mini (based on Playon!HD PV73200 4312) =
+
+v7a:
+  * lighttpd webserver with php support
+  * transmission + rtorrent + btpd 0.15, are installed (for experts ONLY, and DO NOT USE with NTFS/FAT disks)
+  * Web/IMS(Internet Feeds) control panel
+  * possibility to install (from control panel(CP) and ONLY if you have USB storage connected)
+   * HDD Links (vb6ro scripts) v9.1 + small corrections
+   * rss_ex (http://code.google.com/p/media-translate/)
+   * xLive (http://www.xtreamer.net/downloads/community-projects/xtreamer-live!.aspx)
+  * Possibility to update components later from CP/EWCP (e-boda web control panel)
