@@ -53,6 +53,37 @@
 	image/mele/backgd.jpg
       </image>  
     </backgroundDisplay> 
+<onUserInput>
+userInput = currentUserInput();
+print("userInput=:", userInput);
+if (userInput == "edit" &amp;&amp; getFocusItemIndex() &gt; 0)
+{
+        rss = "rss_file://./IMS_Modules/News/scripts/popMenu.rss";
+        ret = doModalRss(rss);
+        print("get the result of popMenu , it is:", ret);
+        if (ret == "Confirm")
+        {
+              if(getFocusItemIndex() &gt; systemItemMaxIndex) {
+                rss = "rss_file://./IMS_Modules/News/scripts/deleteDialog.rss";
+                ret = doModalRss(rss);
+                print("get the result of deleteDialog, it is:", ret);
+                if( ret == "Confirm" ) {
+                    ret = getFocusItemIndex();
+                    deleteItem(getFocusItemIndex());
+                    setFocusItemIndex(ret-1);
+                }
+              }
+              else
+              {
+                rss = "rss_file://./IMS_Modules/News/scripts/noticeDialog.rss";
+                doModalRss(rss);
+              }         
+        }
+        "true";
+}
+else
+  "false";
+</onUserInput>   
 
   </mediaDisplay>
   <channel>

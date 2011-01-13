@@ -1,5 +1,7 @@
 #!/bin/sh
 
+wget="/cb3pp/bin/wget --progress=dot "
+
 nice_start()
 {
 
@@ -89,7 +91,7 @@ check_update()
     [ -f ${storage}/${component}-version.txt ] && . ${storage}/${component}-version.txt
     DISK_SERIAL=${SERIAL}
 
-    wget http://eboda-hd-for-all-500.googlecode.com/files/${component}-version.txt -O ${component}-version-new.txt
+    ${wget} http://eboda-hd-for-all-500.googlecode.com/files/${component}-version.txt -O ${component}-version-new.txt
     [ $? == 0 ] || nice_exit 1  
 
     [ -f ./${component}-version-new.txt ] && . ./${component}-version-new.txt
@@ -109,7 +111,7 @@ perform_update()
 {
     component=$1
 
-    wget http://eboda-hd-for-all-500.googlecode.com/files/${component}-latest.zip
+    ${wget} http://eboda-hd-for-all-500.googlecode.com/files/${component}-latest.zip
     [ $? == 0 ] || nice_exit 2
     
     rm -rf ${component}/*

@@ -20,19 +20,17 @@ TEA="no"
 if [ ${VERSION} = "500a" ]
 then
     USE_EBODA_INSTALL="yes";
-    VERSION="500";
     TEA="YES";
 fi
 
 if [ ${VERSION} = "500minia" ]
 then
     USE_EBODA_INSTALL="yes";
-    VERSION="500mini";
     TEA="YES";
 fi
 
 
-if [ ${VERSION} = "500" -o ${VERSION} = "500mini" -o ${VERSION} = "500plus" ]
+if [ ${VERSION} = "500a" -o ${VERSION} = "500minia" -o ${VERSION} = "500" -o ${VERSION} = "500mini" -o ${VERSION} = "500plus" ]
 then
     echo Patching firmware variant ${VERSION}
 else
@@ -266,6 +264,17 @@ find xLive | grep -v .svn | grep -v '~' | zip -9 ${dir}/xLive.zip -@
 cp xLive-version.txt ${dir}/xLive-version.txt
 cd ${dir}
 
+#patch DvdPlayer binary
+
+#bspatch oldfile newfile patchfile
+if [ ${VERSION} = "500mini" ]
+then
+
+    bspatch usr/local/bin/DvdPlayer usr/local/bin/DvdPlayer.patched ${SVN_REPO}/src/500mini/DvdPlayer.bspatch
+    mv usr/local/bin/DvdPlayer.patched usr/local/bin/DvdPlayer 
+    chmod +x usr/local/bin/DvdPlayer
+fi
+
 #packaging root back
 if [ ${SDK} = "2" ]
 then
@@ -396,7 +405,7 @@ SERIAL=0
 DISK_SERIAL=${SERIAL}
 [ -f /cb3pp-version.txt ] && . /cb3pp-version.txt
 
-if [ ${SERIAL} -gt ${DISK_SERIAL} -o ${SERIAL} -eq 0 ]
+if [ ${SERIAL} -gt ${DISK_SERIAL} ]
 then
 	rm -rf  ${storage}/cb3pp/*
 	cd ${storage}
@@ -414,7 +423,7 @@ SERIAL=0
 DISK_SERIAL=${SERIAL}
 [ -f /rss_ex-version.txt ] && . /rss_ex-version.txt
 
-if [ ${SERIAL} -gt ${DISK_SERIAL} -o ${SERIAL} -eq 0 ]
+if [ ${SERIAL} -gt ${DISK_SERIAL} -o ! -f /rss/menuEx.rss ]
 then
         rm -rf ${storage}/rss_ex/*
         cd ${storage}
@@ -429,7 +438,7 @@ SERIAL=0
 DISK_SERIAL=${SERIAL}
 [ -f /scripts-version.txt ] && . /scripts-version.txt
 
-if [ ${SERIAL} -gt ${DISK_SERIAL} -o ${SERIAL} -eq 0 ]
+if [ ${SERIAL} -gt ${DISK_SERIAL} -o ! -f /scripts/menu.rss ]
 then
         rm -rf ${storage}/scripts/*
         cd ${storage}
@@ -445,7 +454,7 @@ SERIAL=0
 DISK_SERIAL=${SERIAL}
 [ -f /xLive-version.txt ] && . /xLive-version.txt
 
-if [ ${SERIAL} -gt ${DISK_SERIAL} -o ${SERIAL} -eq 0 ]
+if [ ${SERIAL} -gt ${DISK_SERIAL} -o ! -f /xLive/menu.rss ]
 then
         rm -rf ${storage}/xLive/*
         cd ${storage}
@@ -501,7 +510,7 @@ rm install_*
 cp ${SVN_REPO}/src/${VERSION}/install/install_a .
 
 #patch size
-sed -ie 's#<sizeBytesMin>0x3000000</sizeBytesMin>#<sizeBytesMin>0x0800000</sizeBytesMin>#g' configuration.xml
+sed -i -e 's#<sizeBytesMin>0x3000000</sizeBytesMin>#<sizeBytesMin>0x0800000</sizeBytesMin>#g' configuration.xml
 
 
 mv ../${IMAGE_FILE} ../${IMAGE_FILE}.orig
