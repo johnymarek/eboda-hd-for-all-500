@@ -1,4 +1,5 @@
 #!/bin/sh
+d=`date`
 
 cat <<EOF
 Content-type: application/xhtml+xml
@@ -58,7 +59,7 @@ do
 
     cat <<EOF
         <item>
-             <pubDate>Wed, 05 Jan 2011 22:49:32 +0000</pubDate>
+             <pubDate>${d}</pubDate>
              <title>${full_name} is $state</title>
              <link>http://localhost/cgi-bin/${script}</link>
              <description> Press Right Arrow to $action </description>
@@ -92,7 +93,7 @@ do
     
     cat <<EOF
         <item>
-             <pubDate>Wed, 05 Jan 2011 22:49:32 +0000</pubDate>
+             <pubDate>${d}</pubDate>
              <title>${full_name} is $state</title>
              <link>http://localhost/cgi-bin/${script}</link>
              <description> Press Right Arrow to $action </description>

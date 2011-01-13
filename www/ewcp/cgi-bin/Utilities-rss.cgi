@@ -1,5 +1,7 @@
 #!/bin/sh
 
+d=`date`
+
 cat <<EOF
 Content-type: application/xhtml+xml
 
@@ -9,27 +11,13 @@ Content-type: application/xhtml+xml
         <title>Utilities</title>
         <link>http://localhost/cgi-bin/Utilities-rss.cgi</link>
         <menu>control panel utilities</menu>
-EOF
 
-name_ewcp="WWW: Eboda Web Control Panel"
-name_vb6="RSS: vb6rocod php scripts"
-name_rssEx="RSS: rssEx (aka media translate)"
-name_xLive="RSS: Xtreamer Live"
-name_apps="APPS: extra apps"
-
-for i in ewcp apps vb6 rssEx xLive
-do
-    script=util_${i}-update-rss.cgi
-    full_name=`eval echo \\$name_${i}`
-    cat <<EOF
         <item>
-             <pubDate>Wed, 05 Jan 2011 22:49:32 +0000</pubDate>
-             <title>Update ${full_name}</title>
-             <link>http://localhost/cgi-bin/${script}</link>
-             <description> Press Right Arrow to perform the update </description>
+             <pubDate>${d}</pubDate>
+             <title>Nothing yet</title>
+             <link></link>
+             <description> Nothing yet </description>
         </item>
-EOF
-done
 
 cat <<EOF
     </channel>
