@@ -100,17 +100,6 @@ else
         <link>http://localhost/cgi-bin/DaemonsStatus-rss.cgi</link>
         <menu>control panel daemons status</menu>
 
-<item>
-<title>Daemons Status</title>
-<link>http://localhost/cgi-bin/DaemonsStatus-rss.cgi</link>
-<canEnterItem>false</canEnterItem>
-</item>
-
-<item>
-<title>Utilities</title>
-<link>http://localhost/cgi-bin/Utilities-rss.cgi</link>
-<canEnterItem>false</canEnterItem>
-</item>
 
 </channel>
 </rss>

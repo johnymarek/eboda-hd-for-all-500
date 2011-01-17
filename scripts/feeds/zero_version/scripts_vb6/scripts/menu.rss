@@ -1,6 +1,8 @@
-<?xml version="1.0"?>
-<!--Xtreamer Community 2010 - xMenu9 Cap-->
-<rss version="2.0" xmlns:media="http://purl.org/dc/elements/1.1/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<?xml version="1.0" ?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<script>
+  systemItemMaxIndex = 6
+</script>
 <mediaDisplay name=meleNewsPartView
 	itemBackgroundColor=0:0:0
    backgroundColor=0:0:0
@@ -48,11 +50,13 @@
 <idleImage> image/POPUP_LOADING_06.png </idleImage>
 <idleImage> image/POPUP_LOADING_07.png </idleImage>
 <idleImage> image/POPUP_LOADING_08.png </idleImage>
+
 <backgroundDisplay>
     <image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
       image/mele/backgd.jpg
     </image>  
 </backgroundDisplay> 
+
 <onUserInput>
 userInput = currentUserInput();
 print("userInput=:", userInput);
@@ -84,17 +88,19 @@ if (userInput == "edit" &amp;&amp; getFocusItemIndex() &gt; 0)
 else
   "false";
 </onUserInput>   
-
 </mediaDisplay>
-  <channel>
-    <title>Default vb6 scripts menu, update required</title>
 
-    <!-- BEGIN_EXTRA -->
-    <item>
-      <title>Click here and select vb6 scripts update</title>
-      <link>http://localhost/cgi-bin/Updates-rss.cgi</link>
-    </item> 
-
-  </channel>
+<channel>
+  <title>Default vb6 scripts menu, update required</title>
+  <link>http://localhost:82/scripts/menu.rss</link>
+  <menu>vb6ro netMedia</menu>
+  
+  <item>
+    <title>Click here and select vb6 scripts update</title>
+    <link>http://localhost/cgi-bin/Updates-rss.cgi</link>
+    <canEnterItem>false</canEnterItem>
+  </item>
+  
+</channel>
 </rss>
 

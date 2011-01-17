@@ -16,16 +16,19 @@ SVN_REPO=$2
 VERSION=$3
 SDK=$4
 TEA="no"
+SIMPLE_VERSION=${VERSION}
 
 if [ ${VERSION} = "500a" ]
 then
     USE_EBODA_INSTALL="yes";
     TEA="YES";
+    SIMPLE_VERSION="500"
 fi
 
 if [ ${VERSION} = "500minia" ]
 then
     USE_EBODA_INSTALL="yes";
+    SIMPLE_VERSION="500mini"
     TEA="YES";
 fi
 
@@ -66,7 +69,7 @@ else
 fi
 
 #checking Resources and other directories presence
-if [ ! -d ${SVN_REPO}/src/${VERSION}/Resource ]
+if [ ! -d ${SVN_REPO}/src/${SIMPLE_VERSION}/Resource ]
 then
     echo Resources not found, repository incomplete
     exit 1
@@ -78,7 +81,7 @@ then
     exit 1
 fi
 
-if [ ! -d ${SVN_REPO}/src/${VERSION}/image ]
+if [ ! -d ${SVN_REPO}/src/${SIMPLE_VERSION}/image ]
 then
     echo image not found, repository incomplete
     exit 1
@@ -178,13 +181,13 @@ sed -i -e '/^root/c\
 root::0:0:root:/usr/local/etc/root:/bin/sh' etc/passwd
 
 # traducere + font
-#cp  ${SVN_REPO}/src/${VERSION}/Resource/*.str usr/local/bin/Resource 
-cp  ${SVN_REPO}/src/${VERSION}/Resource/*.TTF usr/local/bin/Resource 
+#cp  ${SVN_REPO}/src/${SIMPLE_VERSION}/Resource/*.str usr/local/bin/Resource 
+cp  ${SVN_REPO}/src/${SIMPLE_VERSION}/Resource/*.TTF usr/local/bin/Resource 
 
 # screensaver + skinpack
 # keeping original files
-#cp  ${SVN_REPO}/src/${VERSION}/Resource/bmp/* usr/local/bin/Resource/bmp 
-#cp  ${SVN_REPO}/src/${VERSION}/image/* usr/local/bin/image 
+#cp  ${SVN_REPO}/src/${SIMPLE_VERSION}/Resource/bmp/* usr/local/bin/Resource/bmp 
+#cp  ${SVN_REPO}/src/${SIMPLE_VERSION}/image/* usr/local/bin/image 
 
 # awk
 cp  ${SVN_REPO}/src/bin/* usr/bin
@@ -207,9 +210,9 @@ cd $dir
 # IMS menu
 if [ ${SDK} = "2" ]
 then
-    cp ${SVN_REPO}/src/${VERSION}/menu/menu.rss usr/local/bin/scripts/
+    cp ${SVN_REPO}/src/${SIMPLE_VERSION}/menu/menu.rss usr/local/bin/scripts/
     [ -d usr/local/bin/scripts/image ] || mkdir usr/local/bin/scripts/image
-    cp ${SVN_REPO}/src/${VERSION}/menu/image/* usr/local/bin/scripts/image/
+    cp ${SVN_REPO}/src/${SIMPLE_VERSION}/menu/image/* usr/local/bin/scripts/image/
 elif [ ${SDK} = "3" ]
 then
     
@@ -267,7 +270,7 @@ cd ${dir}
 #patch DvdPlayer binary
 
 #bspatch oldfile newfile patchfile
-if [ ${VERSION} = "500mini" ]
+if [ ${VERSION} = "500minia" ]
 then
 
     bspatch usr/local/bin/DvdPlayer usr/local/bin/DvdPlayer.patched ${SVN_REPO}/src/500mini/DvdPlayer.bspatch
@@ -283,6 +286,7 @@ then
     mkyaffs2image unpacked_root yaffs2_1.img 
 elif [ ${SDK} = "3" ]
 then
+    rm ../../squashfs1.img
     mksquashfs * ../../squashfs1.img -b 65536
     cd  ..
     if [ $TEA = "YES" ]
@@ -314,7 +318,7 @@ ln -s  /rss_ex translate
 
 # keep this to be mine
 # later update to come for external images of xtreamer
-# cp ${SVN_REPO}/src/${VERSION}/etc/rcS .
+# cp ${SVN_REPO}/src/${SIMPLE_VERSION}/etc/rcS .
 
 # creating our startup script to install cb3pp stuff if not in
 echo '#!/bin/sh
@@ -507,7 +511,7 @@ cd ..
 
 #copy eboda installer
 rm install_*
-cp ${SVN_REPO}/src/${VERSION}/install/install_a .
+cp ${SVN_REPO}/src/${SIMPLE_VERSION}/install/install_a .
 
 #patch size
 sed -i -e 's#<sizeBytesMin>0x3000000</sizeBytesMin>#<sizeBytesMin>0x0800000</sizeBytesMin>#g' configuration.xml

@@ -15,7 +15,7 @@ Content-type: application/xhtml+xml
         <item>
              <pubDate>${d}</pubDate>
              <title>Nothing yet</title>
-             <link></link>
+             <link>noLink</link>
              <description> Nothing yet </description>
         </item>
 

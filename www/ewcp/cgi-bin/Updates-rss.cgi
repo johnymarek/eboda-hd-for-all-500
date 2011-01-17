@@ -17,10 +17,17 @@ name_rssEx="RSS: rssEx (aka media translate)"
 name_xLive="RSS: Xtreamer Live"
 name_apps="APPS: extra apps"
 
+component_ewcp="ewcp"
+component_apps="cb3pp"
+component_vb6="scripts"
+component_rssEx="rss_ex"
+component_xLive="xLive"
+
 for i in ewcp apps vb6 rssEx xLive
 do
     script=util_${i}-update-rss.cgi
     full_name=`eval echo \\$name_${i}`
+    component=`eval echo \\$component_${i}`
 
     . /usr/local/etc/storage
     
@@ -29,8 +36,6 @@ do
 	echo Cannot find storage $storage. Exiting
 	mount
 	nice_exit 1
-    else
-	echo Storage $storage found
     fi
     
     
@@ -40,7 +45,7 @@ do
     [ -f ${storage}/${component}-version.txt ] && . ${storage}/${component}-version.txt
     DISK_VERSION=${VERSION}
     
-    /cb3pp/bin/wget http://eboda-hd-for-all-500.googlecode.com/files/${component}-version.txt -O ${component}-version-new.txt
+    /cb3pp/bin/wget -q http://eboda-hd-for-all-500.googlecode.com/files/${component}-version.txt -O ${component}-version-new.txt
     [ $? == 0 ] || nice_exit 1  
     
     [ -f ./${component}-version-new.txt ] && . ./${component}-version-new.txt
@@ -52,9 +57,22 @@ do
              <pubDate>${d}</pubDate>
              <title>Update ${full_name}</title>
              <link>http://localhost/cgi-bin/${script}</link>
-             <description> <p> Press Right Arrow to perform the update </p>
-<p> You have version ${DISK_VERSION}, latest available version is ${VERSION}</p> </description>
+             <description>
+
+You have version ${DISK_VERSION}, latest available version is ${VERSION}.
+EOF
+    if [ ${DISK_VERSION} != ${VERSION} ]
+then
+cat <<EOF
+
+Press Right Arrow to perform the update
+EOF
+fi
+
+cat <<EOF
+</description>
         </item>
+
 EOF
 done
 
