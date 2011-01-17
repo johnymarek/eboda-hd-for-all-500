@@ -1,8 +1,11 @@
 #!/bin/sh
 
+basename $0 | grep -v \\-rss &> /dev/null 
+is_rss=$?
+
 . ./common.sh
 
-nice_start "Disabling btpd 0.15"
+nice_start "Disabling btpd 0.15" ${is_rss}
 
 mv /cb3pp/etc/init.d/S90btpd15 /cb3pp/etc/init.d/off.S90btpd15 
 if [ $? -eq 0 ]
@@ -12,4 +15,4 @@ else
     echo "error occured"
 fi
 
-nice_exit 0 
+nice_exit 0  ${is_rss}

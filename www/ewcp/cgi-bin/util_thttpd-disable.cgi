@@ -1,8 +1,11 @@
 #!/bin/sh
 
+basename $0 | grep -v \\-rss &> /dev/null 
+is_rss=$?
+
 . ./common.sh
 
-nice_start "Disabling thttpd"
+nice_start "Disabling thttpd"  ${is_rss}
 
 mv /cb3pp/etc/init.d/S80thttpd /cb3pp/etc/init.d/off.S80thttpd 
 if [ $? -eq 0 ]
@@ -12,4 +15,4 @@ else
     echo "error occured"
 fi
 
-nice_exit 0 
+nice_exit 0  ${is_rss}
