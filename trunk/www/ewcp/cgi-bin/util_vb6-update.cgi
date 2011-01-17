@@ -3,7 +3,7 @@
 component=scripts
 description="vb6 feeds"
 
-basename $0 | grep -v \\-rss &> /dev/null 
+basename $0 | grep -v \\-rss >/dev/null 2>&1 
 is_rss=$?
 
 . ./common.sh
