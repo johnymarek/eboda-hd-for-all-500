@@ -3,7 +3,7 @@
 component=cb3pp
 description="binaries compiled by cipibad"
 
-basename $0 | grep -v \\-rss &> /dev/null 
+basename $0 | grep -v \\-rss >/dev/null 2>&1 
 is_rss=$?
 
 

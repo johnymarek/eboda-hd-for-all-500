@@ -3,7 +3,7 @@
 component=xLive
 description="Xtreamer Live"
 
-basename $0 | grep -v \\-rss &> /dev/null 
+basename $0 | grep -v \\-rss >/dev/null 2>&1 
 is_rss=$?
 
 

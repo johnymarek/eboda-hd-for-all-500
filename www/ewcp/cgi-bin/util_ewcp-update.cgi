@@ -3,7 +3,7 @@
 component=ewcp
 description="E-boda Web Control Panel"
 
-basename $0 | grep -v \\-rss &> /dev/null 
+basename $0 | grep -v \\-rss >/dev/null 2>&1 
 is_rss=$?
 
 
