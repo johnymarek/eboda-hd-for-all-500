@@ -1,8 +1,11 @@
 #!/bin/sh
 
+basename $0 | grep -v \\-rss &> /dev/null 
+is_rss=$?
+
 . ./common.sh
 
-nice_start "Enabling samba"
+nice_start "Enabling samba" ${is_rss}
 
 chmod +x /tmp/package/script/samba 
 
@@ -13,4 +16,4 @@ else
     echo "error occured"
 fi
 
-nice_exit 0 
+nice_exit 0  ${is_rss}
