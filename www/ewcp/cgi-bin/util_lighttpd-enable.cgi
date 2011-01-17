@@ -1,8 +1,11 @@
 #!/bin/sh
 
+basename $0 | grep -v \\-rss &> /dev/null 
+is_rss=$?
+
 . ./common.sh
 
-nice_start "Enabling lighttpd"
+nice_start "Enabling lighttpd" ${is_rss}
 
 mv /cb3pp/etc/init.d/off.S80lighttpd /cb3pp/etc/init.d/S80lighttpd
 if [ $? -eq 0 ]
@@ -13,4 +16,4 @@ else
 fi
 
 
-nice_exit 0 
+nice_exit 0  ${is_rss}

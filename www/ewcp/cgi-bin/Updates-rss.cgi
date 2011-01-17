@@ -40,7 +40,7 @@ do
     [ -f ${storage}/${component}-version.txt ] && . ${storage}/${component}-version.txt
     DISK_VERSION=${VERSION}
     
-    wget http://eboda-hd-for-all-500.googlecode.com/files/${component}-version.txt -O ${component}-version-new.txt
+    /cb3pp/bin/wget http://eboda-hd-for-all-500.googlecode.com/files/${component}-version.txt -O ${component}-version-new.txt
     [ $? == 0 ] || nice_exit 1  
     
     [ -f ./${component}-version-new.txt ] && . ./${component}-version-new.txt
@@ -52,10 +52,8 @@ do
              <pubDate>${d}</pubDate>
              <title>Update ${full_name}</title>
              <link>http://localhost/cgi-bin/${script}</link>
-             <description> 
-<p> You have version ${DISK_VERSION}, latest available version is ${VERSION}</p>
-<p> Press Right Arrow to perform the update </p>
-</description>
+             <description> <p> Press Right Arrow to perform the update </p>
+<p> You have version ${DISK_VERSION}, latest available version is ${VERSION}</p> </description>
         </item>
 EOF
 done

@@ -4,6 +4,27 @@ wget="/cb3pp/bin/wget --progress=dot "
 
 nice_start()
 {
+    if [ $2 -eq 1 ]
+    then
+	rss_start "$1"
+    else
+	html_start "$1"
+    fi
+}
+
+nice_exit()
+{
+    if [ $2 -eq 1 ]
+    then
+	rss_exit "$1"
+    else
+	html_exit "$1"
+    fi
+
+}
+
+html_start()
+{
 
     cat <<EOF
 Content-type: text/html
@@ -40,7 +61,7 @@ EOF
 
 }
 
-nice_exit()
+html_exit()
 {
     cat <<EOF
 	    </pre>
@@ -73,15 +94,21 @@ check_update()
 
     component=$1
 #check if storage
-    . /usr/local/etc/storage
+    [ -f /usr/local/etc/storage ] && . /usr/local/etc/storage
 
+    if [ -z $storage ]
+    then 
+	echo No storage found
+	mount
+	nice_exit 1 $2
+    fi
     if [ ! -d $storage ]
     then 
 	echo Cannot find storage $storage. Exiting
 	mount
-	nice_exit 1
+	nice_exit 1 $2
     else
-	echo Storage $storage found
+	echo Storage "$storage" found
     fi
 
 
@@ -92,7 +119,7 @@ check_update()
     DISK_SERIAL=${SERIAL}
 
     ${wget} http://eboda-hd-for-all-500.googlecode.com/files/${component}-version.txt -O ${component}-version-new.txt
-    [ $? == 0 ] || nice_exit 1  
+    [ $? == 0 ] || nice_exit 1 $2  
 
     [ -f ./${component}-version-new.txt ] && . ./${component}-version-new.txt
 
@@ -112,7 +139,7 @@ perform_update()
     component=$1
 
     ${wget} http://eboda-hd-for-all-500.googlecode.com/files/${component}-latest.zip
-    [ $? == 0 ] || nice_exit 2
+    [ $? == 0 ] || nice_exit 2 $2
     
     rm -rf ${component}/*
     
