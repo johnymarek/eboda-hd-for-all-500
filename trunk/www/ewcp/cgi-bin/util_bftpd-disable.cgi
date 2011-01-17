@@ -1,8 +1,11 @@
 #!/bin/sh
 
+basename $0 | grep -v \\-rss &> /dev/null 
+is_rss=$?
+
 . ./common.sh
 
-nice_start "Disabling bftpd"
+nice_start "Disabling bftpd" ${is_rss}
 
 mv /cb3pp/etc/init.d/S70bftpd /cb3pp/etc/init.d/off.S70bftpd 
 if [ $? -eq 0 ]
@@ -12,4 +15,4 @@ else
     echo "error occured"
 fi
 
-nice_exit 0 
+nice_exit 0  ${is_rss}
