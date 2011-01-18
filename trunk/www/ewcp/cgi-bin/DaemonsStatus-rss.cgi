@@ -1,4 +1,5 @@
 #!/bin/sh
+d=`date`
 
 cat <<EOF
 Content-type: application/xhtml+xml
@@ -99,7 +100,48 @@ else
         <title>Daemons Status</title>
         <link>http://localhost/cgi-bin/DaemonsStatus-rss.cgi</link>
         <menu>control panel daemons status</menu>
+EOF
 
+name_lighttpd="HTTP: Lighttpd webserver"
+name_thttpd="HTTP: thttpd webserver"
+name_apache="HTTP: Apache webserver"
+name_transmission="TORRENT: Transmission"
+name_rtorrent="TORRENT: rtorrent"
+name_btpd="TORRENT: btpd"
+name_btpd15="TORRENT: btpd 0.15"
+name_smbd="NAS: Samba"
+name_bftpd="NAS: bftpd"
+name_DvdPlayer="CORE: DvdPlayer"
+
+#apache transmission lighttpd not in this scope
+for i in lighttpd btpd15 transmission rtorrent bftpd btpd smbd
+do
+    script=util_${i}-stop-rss.cgi
+    state=Started
+    action=Stop
+    process=$i
+    [ $process == "transmission" ] && process=transmission-daemon
+    pidof ${process} >/dev/null
+    if [ $? -ne 0 ]
+    then
+    	script=util_${i}-start-rss.cgi
+    	state=Stopped
+	action=Start
+    fi
+    
+    full_name=`eval echo \\$name_${i}`
+cat <<EOF
+        <item>
+             <pubDate>${d}</pubDate>
+             <title>${full_name} is $state</title>
+             <link>http://localhost/cgi-bin/${script}</link>
+             <description> Press Right Arrow to $action </description>
+        </item>
+EOF
+done
+
+
+cat <<EOF
 
 </channel>
 </rss>
