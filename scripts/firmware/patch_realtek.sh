@@ -289,11 +289,12 @@ then
     rm ../../squashfs1.img
     mksquashfs * ../../squashfs1.img -b 65536
     cd  ..
-    if [ $TEA = "YES" ]
-    then
-	tea -e -i ../squashfs1.img -o ../squashfs1.upg -k 12345678195454322338264935438139
-	rm ../squashfs1.img
-    fi
+    # this is out because e-boda firmware is not encripted and we use that install_a
+    # if [ $TEA = "YES" ]
+    # then
+    # 	tea -e -i ../squashfs1.img -o ../squashfs1.upg -k 12345678195454322338264935438139
+    # 	rm ../squashfs1.img
+    # fi
     cd ..
 fi
 
@@ -510,12 +511,15 @@ rm -rf unpacked_etc/
 cd ..
 
 #copy eboda installer
-rm install_*
-cp ${SVN_REPO}/src/${SIMPLE_VERSION}/install/install_a .
+rm install_a
+cp ${SVN_REPO}/src/${SIMPLE_VERSION}/install/install_a_sdk${SDK} .
+
 
 #patch size
 sed -i -e 's#<sizeBytesMin>0x3000000</sizeBytesMin>#<sizeBytesMin>0x0800000</sizeBytesMin>#g' configuration.xml
 
+#patch img name
+sed -i -e 's#package2/squashfs1.upg#package2/squashfs1.img#g' configuration.xml  
 
 mv ../${IMAGE_FILE} ../${IMAGE_FILE}.orig
 tar cvf ../${IMAGE_FILE} *

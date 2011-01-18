@@ -1,6 +1,6 @@
 #!/bin/sh
 
-wget="/cb3pp/bin/wget --progress=dot "
+wget="/cb3pp/bin/wget --progress=dot:mega "
 
 nice_start()
 {
