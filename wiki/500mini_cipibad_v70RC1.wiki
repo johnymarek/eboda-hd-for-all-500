@@ -4,7 +4,7 @@
 
  * http://eboda-hd-for-all-500.googlecode.com/files/HD_for_all_500mini_cipibad_v7.0_ver_v7.0.18.r3794.zip
 
-v7a:
+v7:
   * you get full functionality if you have an USB storage/SD card connected while boot.
   * lighttpd webserver with php support
   * transmission + rtorrent + btpd 0.15, are installed (for experts ONLY, and DO NOT USE with NTFS/FAT disks as you may loose data)
@@ -14,4 +14,4 @@ v7a:
    * rss_ex (http://code.google.com/p/media-translate/)
    * xLive (http://www.xtreamer.net/downloads/community-projects/xtreamer-live!.aspx)
 
-  * a lot of documentation and information probably missing. Use this link for comments/support 
+  * a lot of documentation and information probably missing. Use this link http://hd4all.cipex.ro/?p=79 for comments/support requests
