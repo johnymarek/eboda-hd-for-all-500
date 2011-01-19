@@ -4,14 +4,20 @@
   * [Building_your_own_firmware Building your own firmware] 
   * [Web_Interface Web Interface ] 
   * Firmware
-    * [Firmware_by_cipibad What is in a firmware by cipibad]
-    * [500_r3617_modified_v3 Firmware for 500 r3617 modified v3.0]
-    * [500plus_r1245_modified_v4 Firmware for 500plus r1245 modified v4.0]
-    * [500_cipibad_v5 Firmware for 500 v5.0 by cipibad]
-    * [500plus_cipibad_v5 Firmware for 500plus v5.0 by cipibad]
-    * [500_cipibad_v6 Firmware for 500 v6.0 by cipibad]
-    * [500_cipibad_v6a Firmware for 500 v6.0a by cipibad]
-    * [500mini_cipibad_v70aRC1 Firmware for 500mini v7.0aRC1 by cipibad]
+    * Oldies (but goldies)
+      * [Firmware_by_cipibad What is in a firmware by cipibad]
+      * [500_r3617_modified_v3 Firmware for 500 r3617 modified v3.0]
+      * [500plus_r1245_modified_v4 Firmware for 500plus r1245 modified v4.0]
+      * [500_cipibad_v5 Firmware for 500 v5.0 by cipibad]
+      * [500plus_cipibad_v5 Firmware for 500plus v5.0 by cipibad]
+      * [500_cipibad_v6 Firmware for 500 v6.0 by cipibad]
+      * [500_cipibad_v6a Firmware for 500 v6.0a by cipibad]
+    * v7
+      * [500mini_cipibad_v70RC1 Firmware for 500mini v7.0aRC1 by cipibad]
+      * [500mini_cipibad_v70aRC1 Firmware for 500mini v7.0aRC1 by cipibad]
+      * [500_cipibad_v70RC1 Firmware for 500 v7.0aRC1 by cipibad]
+      * [500_cipibad_v70aRC1 Firmware for 500 v7.0aRC1 by cipibad]
+      * [500plus_cipibad_v70RC1 Firmware for 500mini v7.0RC1 by cipibad]
 
   * Optware
     * [RtorrentInstallation Installing rtorrent]
