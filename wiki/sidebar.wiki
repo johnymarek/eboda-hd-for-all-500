@@ -13,9 +13,9 @@
       * [500_cipibad_v6 Firmware for 500 v6.0 by cipibad]
       * [500_cipibad_v6a Firmware for 500 v6.0a by cipibad]
     * v7
-      * [500mini_cipibad_v70RC1 Firmware for 500mini v7.0aRC1 by cipibad]
+      * [500mini_cipibad_v70RC1 Firmware for 500mini v7.0RC1 by cipibad]
       * [500mini_cipibad_v70aRC1 Firmware for 500mini v7.0aRC1 by cipibad]
-      * [500_cipibad_v70RC1 Firmware for 500 v7.0aRC1 by cipibad]
+      * [500_cipibad_v70RC1 Firmware for 500 v7.0RC1 by cipibad]
       * [500_cipibad_v70aRC1 Firmware for 500 v7.0aRC1 by cipibad]
       * [500plus_cipibad_v70RC1 Firmware for 500mini v7.0RC1 by cipibad]
 
