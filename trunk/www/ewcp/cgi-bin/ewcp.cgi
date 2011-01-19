@@ -114,7 +114,41 @@ EOF
 
 ##############################
 # BEGIN OF UTILITIES SECTION
+cat <<EOF
+                <tr height="21">
+                  <td width="8%"><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>
+                  <td width="92%">
+EOF
 
+
+TO_WAIT=-1
+[ -f /tmp/standby_status ] && . /tmp/standby_status
+if [ ${TO_WAIT} -gt -1 ]
+then
+cat <<EOF    
+Player will standby in ${TO_WAIT} minutes  <a href="util_standby-cancel.cgi">cancel timer</a>
+</td>
+                </tr>
+EOF
+
+else
+
+cat <<EOF
+    Standby in
+EOF
+for i in 30 60 90 120
+do cat <<EOF
+ <a href="util_standby-${i}.cgi">$i</a>
+
+EOF
+done
+cat <<EOF
+ minutes</td>
+                </tr>
+
+EOF
+
+fi
 # name_lighttpd="HTTP: Lighttpd webserver"
 # name_apache="HTTP: Apache webserver"
 # name_transmission-daemon="TORRENT: Transmission"

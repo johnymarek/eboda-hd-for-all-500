@@ -109,7 +109,6 @@ else
 <item>
 <title>Utilities</title>
 <link>http://localhost/cgi-bin/Utilities-rss.cgi</link>
-<canEnterItem>false</canEnterItem>
 </item>
 
 
