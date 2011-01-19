@@ -8,7 +8,9 @@ v7:
   * you get full functionality if you have an USB storage/SD card connected while boot.
   * lighttpd webserver with php support
   * transmission + rtorrent + btpd 0.15, are installed (for experts ONLY, and DO NOT USE with NTFS/FAT disks as you may loose data)
-  * Web/IMS(Internet Feeds) control panel including daemons status, standby timer, updates menu and services management http://venus/ewcp.html or http://MP_IP/ewcp.html (replace MP_IP with mediaplayer IP address)
+  * Web/IMS(Internet Feeds) control panel including daemons status, standby timer, updates menu and services management 
+  * URL for web interface: http://venus/ewcp.html or http://MP_IP/ewcp.html (replace MP_IP with mediaplayer IP address)
+  * new menu pictures from eqqie (thanks)
   * extra internet feeds:
    * HDD Links (vb6ro scripts) v9.1 + small corrections
    * rss_ex (http://code.google.com/p/media-translate/)
