@@ -7,7 +7,7 @@ function patch_firmware()
 
 if [ $# -ne 4 ]
 then
-    echo 4 arguments expected by function patch_firmware IMAGE_FILE, svn-repo absolute path, \[500|500a|500mini|500minia|500plus\], SDK version \[2|3\]
+    echo "4 arguments expected by function patch_firmware IMAGE_FILE, svn-repo absolute path, \[500|500a|500mini|500minia|500plus\], SDK version \[2|3\]"
     exit 1
 fi
 
@@ -512,7 +512,7 @@ cd ..
 
 #copy eboda installer
 rm install_a
-cp ${SVN_REPO}/src/${SIMPLE_VERSION}/install/install_a_sdk${SDK} .
+cp ${SVN_REPO}/src/${SIMPLE_VERSION}/install/install_a_sdk${SDK} install_a
 
 
 #patch size

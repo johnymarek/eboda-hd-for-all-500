@@ -14,12 +14,11 @@ Content-type: application/xhtml+xml
 
         <item>
              <pubDate>${d}</pubDate>
-             <title>Nothing yet</title>
-             <link>noLink</link>
-             <description> Nothing yet </description>
+             <title>Standby function</title>
+             <link>http://localhost/cgi-bin/Standby-rss.cgi</link>
+             <description>Standby function</description>
+             <canEnterItem>false</canEnterItem>
         </item>
-
-cat <<EOF
     </channel>
 </rss>
 
