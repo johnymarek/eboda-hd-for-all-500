@@ -17,7 +17,7 @@
       * [500mini_cipibad_v70aRC1 Firmware for 500mini v7.0aRC1 by cipibad]
       * [500_cipibad_v70RC1 Firmware for 500 v7.0RC1 by cipibad]
       * [500_cipibad_v70aRC1 Firmware for 500 v7.0aRC1 by cipibad]
-      * [500plus_cipibad_v70RC1 Firmware for 500mini v7.0RC1 by cipibad]
+      * [500plus_cipibad_v70RC1 Firmware for 500plus v7.0RC1 by cipibad]
 
   * Optware
     * [RtorrentInstallation Installing rtorrent]
