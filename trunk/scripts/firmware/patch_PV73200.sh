@@ -2,7 +2,7 @@
 
 #checking original firmware presence
 IMAGE_FILE=install.img
-VERSION="500mini"
+VERSION="500minia"
 
 #check SVN repository presence
 if [ $# -lt 1 -o $# -gt 2 ]

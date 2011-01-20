@@ -141,7 +141,7 @@ then
 	tea -d -i ../squashfs1.upg -o ../squashfs1.img -k 12345678195454322338264935438139
 	rm ../squashfs1.upg
     fi
-    unsquashfs ../squashfs1.img 
+    unsquashfs3 ../squashfs1.img 
     cd squashfs-root
 fi
 
@@ -180,6 +180,7 @@ mkdir utilities
 sed -i -e '/^root/c\
 root::0:0:root:/usr/local/etc/root:/bin/sh' etc/passwd
 
+
 # traducere + font
 #cp  ${SVN_REPO}/src/${SIMPLE_VERSION}/Resource/*.str usr/local/bin/Resource 
 cp  ${SVN_REPO}/src/${SIMPLE_VERSION}/Resource/*.TTF usr/local/bin/Resource 
@@ -208,16 +209,13 @@ cp cb3pp-version.txt ${dir}/cb3pp-version.txt
 cd $dir
 
 # IMS menu
-if [ ${SDK} = "2" ]
-then
-    cp ${SVN_REPO}/src/${SIMPLE_VERSION}/menu/menu.rss usr/local/bin/scripts/
-    [ -d usr/local/bin/scripts/image ] || mkdir usr/local/bin/scripts/image
-    cp ${SVN_REPO}/src/${SIMPLE_VERSION}/menu/image/* usr/local/bin/scripts/image/
-elif [ ${SDK} = "3" ]
-then
-    
-    echo to complete
-fi
+cp ${SVN_REPO}/src/${SIMPLE_VERSION}/menu/menu.rss_sdk${SDK} usr/local/bin/scripts/menu.rss
+
+[ -d usr/local/bin/scripts/image ] || mkdir usr/local/bin/scripts/image
+cp ${SVN_REPO}/src/${SIMPLE_VERSION}/menu/image/* usr/local/bin/scripts/image/
+
+
+
 #rss_ex
 
 #www
@@ -272,10 +270,17 @@ cd ${dir}
 #bspatch oldfile newfile patchfile
 if [ ${VERSION} = "500minia" ]
 then
-
+    echo patching DvdPlayer
     bspatch usr/local/bin/DvdPlayer usr/local/bin/DvdPlayer.patched ${SVN_REPO}/src/500mini/DvdPlayer.bspatch
     mv usr/local/bin/DvdPlayer.patched usr/local/bin/DvdPlayer 
     chmod +x usr/local/bin/DvdPlayer
+fi
+
+#inetd.conf to start www
+if [ ${SDK} = "3" ]
+then
+    echo enabling www in sdk3
+    sed -i -e 's/^#www/www/' etc/inetd.conf
 fi
 
 #packaging root back
@@ -287,7 +292,7 @@ then
 elif [ ${SDK} = "3" ]
 then
     rm ../../squashfs1.img
-    mksquashfs * ../../squashfs1.img -b 65536
+    mksquashfs3 * ../../squashfs1.img -b 65536
     cd  ..
     # this is out because e-boda firmware is not encripted and we use that install_a
     # if [ $TEA = "YES" ]

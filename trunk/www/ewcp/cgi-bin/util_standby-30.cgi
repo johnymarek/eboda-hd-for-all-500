@@ -8,6 +8,6 @@ is_rss=$?
 
 nice_start "Player will standby in ${to_wait} minutes"  ${is_rss}
 
-/cb3pp/bin/nohup /cb3pp/sbin/standbyafter-${to_wait}&
+/cb3pp/bin/nohup /cb3pp/sbin/standbyafter-${to_wait} > /tmp/nohup.out 2>&1 </dev/null &
 
 nice_exit 0 ${is_rss}
