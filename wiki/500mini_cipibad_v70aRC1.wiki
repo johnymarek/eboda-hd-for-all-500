@@ -1,8 +1,8 @@
 #summary new realtek media player firmware
 
-= New e-boda hd4all 500 mini (based on ) =
+= New e-boda hd4all 500 mini (based on acryan v7.0.21.r4312) =
 
- * 
+ * http://eboda-hd-for-all-500.googlecode.com/files/Firmware_PV73200_cipibad_v7.0_v7.0.21.r4312_European.zip
 
 v7:
   * you get full functionality if you have an USB storage/SD card connected while boot.
@@ -16,4 +16,4 @@ v7:
    * rss_ex (http://code.google.com/p/media-translate/)
    * xLive (http://www.xtreamer.net/downloads/community-projects/xtreamer-live!.aspx)
 
-  * a lot of documentation and information probably missing. Use this link http://hd4all.cipex.ro/?p=79 for comments/support requests
+  * a lot of documentation and information probably missing. Use this link http://hd4all.cipex.ro/?p=101 for comments/support requests
