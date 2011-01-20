@@ -1,16 +1,19 @@
-#summary 500mini_cipibad_v70aRC1
+#summary new realtek media player firmware
 
-= THIS FIRMWARE IS NOT CURRENTLY WORKING ON E_BODA = 
-= THIS FIRMWARE IS POSTED HERE ONLY FOR ALPHA TESTING =
+= New e-boda hd4all 500 mini (based on ) =
 
-= New e-boda hd4all 500 mini (based on Playon!HD PV73200 4312) =
+ * 
 
-v7a:
+v7:
+  * you get full functionality if you have an USB storage/SD card connected while boot.
   * lighttpd webserver with php support
-  * transmission + rtorrent + btpd 0.15, are installed (for experts ONLY, and DO NOT USE with NTFS/FAT disks)
-  * Web/IMS(Internet Feeds) control panel
-  * possibility to install (from control panel(CP) and ONLY if you have USB storage connected)
+  * transmission + rtorrent + btpd 0.15, are installed (for experts ONLY, and DO NOT USE with NTFS/FAT disks as you may loose data)
+  * Web/IMS(Internet Feeds) control panel including daemons status, standby timer, updates menu and services management 
+  * URL for web interface: http://venus/ewcp.html or http://MP_IP/ewcp.html (replace MP_IP with mediaplayer IP address)
+  * new IMS menu pictures from eqqie (thanks)
+  * extra internet feeds:
    * HDD Links (vb6ro scripts) v9.1 + small corrections
    * rss_ex (http://code.google.com/p/media-translate/)
    * xLive (http://www.xtreamer.net/downloads/community-projects/xtreamer-live!.aspx)
-  * Possibility to update components later from CP/EWCP (e-boda web control panel) - update is slow and may take up to 5 minutes.
+
+  * a lot of documentation and information probably missing. Use this link http://hd4all.cipex.ro/?p=79 for comments/support requests
