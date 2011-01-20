@@ -1,7 +1,7 @@
 #summary new realtek firmware
 
 = New e-boda hd4all 500 (based on E-boda v7.0_r1970_13.04.2010) =
-
+ * !! I never tested this firmware as I don't have this kind of hardware, but is modified similar to other versions !!
  * http://eboda-hd-for-all-500.googlecode.com/files/HD_for_all_500plus_cipibad_v7.0_r1970_13.04.2010.zip
 
 v7:
