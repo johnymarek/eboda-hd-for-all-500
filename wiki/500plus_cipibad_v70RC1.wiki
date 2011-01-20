@@ -16,4 +16,4 @@ v7:
    * rss_ex (http://code.google.com/p/media-translate/)
    * xLive (http://www.xtreamer.net/downloads/community-projects/xtreamer-live!.aspx)
 
-  * a lot of documentation and information probably missing. Use this link http://hd4all.cipex.ro/?p=84 for comments/support requests
+  * a lot of documentation and information probably missing. Use this link http://hd4all.cipex.ro/?p=94 for comments/support requests
