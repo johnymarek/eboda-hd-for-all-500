@@ -155,10 +155,10 @@
           {
           state=getDrawingItemState();
           if( state == "focus" ){
-          "./IMS_Modules/Weather/image/weather_focus_en.jpg";
+          "./IMS_Modules/Weather/image/weather_focus.jpg";
           }
           else{
-          "./IMS_Modules/Weather/image/weather_unfocus_en.jpg";
+          "./IMS_Modules/Weather/image/weather_unfocus.jpg";
           }
           }
         </script>

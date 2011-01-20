@@ -19,7 +19,7 @@ done
 #hardcode gracefull transmission shutdown (for now)
 killall transmission-daemon
 sleep 10
-/cb3pp/bin/standby
+/cb3pp/sbin/standby
 
 # n=1
 # mount | grep ${mount_pattern}
