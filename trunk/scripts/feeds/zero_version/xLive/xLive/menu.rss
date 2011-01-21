@@ -95,7 +95,7 @@ else
     <!-- BEGIN_EXTRA -->
     <item>
       <title>Click here and select xLive update</title>
-      <link>http://localhost/cgi-bin/Updates-rss.cgi</link>
+      <link>http://localhost:82/cgi-bin/Updates-rss.cgi</link>
       <canEnterItem>false</canEnterItem>
     </item> 
 

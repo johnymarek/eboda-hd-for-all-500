@@ -97,7 +97,7 @@ else
 	
     <item>
       <title>Updates</title>
-      <link>http://localhost/cgi-bin/Updates-rss.cgi</link>
+      <link>http://localhost:82/cgi-bin/Updates-rss.cgi</link>
       <canEnterItem>false</canEnterItem>
     </item>
     

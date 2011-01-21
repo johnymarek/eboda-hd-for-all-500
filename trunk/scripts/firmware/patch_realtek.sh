@@ -198,14 +198,14 @@ chmod +x usr/bin/*
 dir=`pwd`
 cd ${SVN_REPO}/www/
 find ewcp | grep -v .svn | grep -v '~' | zip -9 ${dir}/ewcp.zip -@
-cp ewcp-version.txt ${dir}/ewcp-version.txt
+cp ewcp${SDK}-version.txt ${dir}/
 cd $dir
 
 # /cb3pp
 dir=`pwd`
 cd ${SVN_REPO}/src/
 find cb3pp | grep -v .svn | grep -v '~'  | zip -9 ${dir}/cb3pp.zip -@
-cp cb3pp-version.txt ${dir}/cb3pp-version.txt
+cp cb3pp${SDK}-version.txt ${dir}/
 cd $dir
 
 # IMS menu
@@ -214,6 +214,8 @@ cp ${SVN_REPO}/src/${SIMPLE_VERSION}/menu/menu.rss_sdk${SDK} usr/local/bin/scrip
 [ -d usr/local/bin/scripts/image ] || mkdir usr/local/bin/scripts/image
 cp ${SVN_REPO}/src/${SIMPLE_VERSION}/menu/image/* usr/local/bin/scripts/image/
 
+#Repair some weather stuff
+cp ${SVN_REPO}/src/${SIMPLE_VERSION}/map/* usr/local/bin/IMS_Modules/Weather/scripts/map/
 
 
 #rss_ex
@@ -274,13 +276,6 @@ then
     bspatch usr/local/bin/DvdPlayer usr/local/bin/DvdPlayer.patched ${SVN_REPO}/src/500mini/DvdPlayer.bspatch
     mv usr/local/bin/DvdPlayer.patched usr/local/bin/DvdPlayer 
     chmod +x usr/local/bin/DvdPlayer
-fi
-
-#inetd.conf to start www
-if [ ${SDK} = "3" ]
-then
-    echo enabling www in sdk3
-    sed -i -e 's/^#www/www/' etc/inetd.conf
 fi
 
 #packaging root back
@@ -411,16 +406,16 @@ fi
 
 # check if .../cb3pp installed from us, if not, unpack
 SERIAL=0
- [ -f ${storage}/cb3pp-version.txt ] && . ${storage}/cb3pp-version.txt
+ [ -f ${storage}/cb3pp3-version.txt ] && . ${storage}/cb3pp3-version.txt
 DISK_SERIAL=${SERIAL}
-[ -f /cb3pp-version.txt ] && . /cb3pp-version.txt
+[ -f /cb3pp3-version.txt ] && . /cb3pp3-version.txt
 
 if [ ${SERIAL} -gt ${DISK_SERIAL} ]
 then
 	rm -rf  ${storage}/cb3pp/*
 	cd ${storage}
 	unzip -o /cb3pp.zip 
-	cp /cb3pp-version.txt ${storage}/cb3pp-version.txt
+	cp /cb3pp3-version.txt ${storage}/
 
 	[ -f  ${storage}/cb3pp/etc/init.s/S99ewcp ] || cp  ${storage}/ewcp/S99ewcp  ${storage}/cb3pp/etc/init.d
         chmod +x ${storage}/cb3pp/etc/init.d/S99ewcp
@@ -476,16 +471,16 @@ fi
 
 # check if .../ewcp installed from us, if not, unpack
 SERIAL=0
- [ -f ${storage}/ewcp-version.txt ] && . ${storage}/ewcp-version.txt
+ [ -f ${storage}/ewcp3-version.txt ] && . ${storage}/ewcp3-version.txt
 DISK_SERIAL=${SERIAL}
-[ -f /ewcp-version.txt ] && . /ewcp-version.txt
+[ -f /ewcp3-version.txt ] && . /ewcp3-version.txt
 
 if [ ${SERIAL} -gt ${DISK_SERIAL} -o ${SERIAL} -eq 0 ]
 then
         rm -rf ${storage}/ewcp/*
         cd  ${storage}
         unzip -o /ewcp.zip
-	cp /ewcp-version.txt ${storage}/ewcp-version.txt
+	cp /ewcp3-version.txt ${storage}/
 
 	[ -f  ${storage}/cb3pp/etc/init.s/S99ewcp ] || cp  ${storage}/ewcp/S99ewcp  ${storage}/cb3pp/etc/init.d
         chmod +x ${storage}/cb3pp/etc/init.d/S99ewcp

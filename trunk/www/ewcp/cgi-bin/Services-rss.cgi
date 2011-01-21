@@ -8,7 +8,7 @@ Content-type: application/xhtml+xml
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
     <channel>
         <title>Services</title>
-        <link>http://localhost/cgi-bin/Services-rss.cgi</link>
+        <link>http://localhost:82/cgi-bin/Services-rss.cgi</link>
         <menu>control panel utilities</menu>
 EOF
 
@@ -61,7 +61,7 @@ do
         <item>
              <pubDate>${d}</pubDate>
              <title>${full_name} is $state</title>
-             <link>http://localhost/cgi-bin/${script}</link>
+             <link>http://localhost:82/cgi-bin/${script}</link>
              <description> Press Right Arrow to $action </description>
         </item>
 EOF
@@ -95,7 +95,7 @@ do
         <item>
              <pubDate>${d}</pubDate>
              <title>${full_name} is $state</title>
-             <link>http://localhost/cgi-bin/${script}</link>
+             <link>http://localhost:82/cgi-bin/${script}</link>
              <description> Press Right Arrow to $action </description>
         </item>
 EOF
