@@ -97,30 +97,30 @@ else
 
     <channel>
         <title>Control Panel</title>
-        <link>http://localhost/cgi-bin/ewcp-rss.cgi</link>
+        <link>http://localhost:82/cgi-bin/ewcp-rss.cgi</link>
         <menu>control panel main menu</menu>
 
 <item>
 <title>Daemons status</title>
-<link>http://localhost/cgi-bin/DaemonsStatus-rss.cgi</link>
+<link>http://localhost:82/cgi-bin/DaemonsStatus-rss.cgi</link>
 <canEnterItem>false</canEnterItem>
 </item>
 
 <item>
 <title>Utilities</title>
-<link>http://localhost/cgi-bin/Utilities-rss.cgi</link>
+<link>http://localhost:82/cgi-bin/Utilities-rss.cgi</link>
 </item>
 
 
 <item>
 <title>Updates</title>
-<link>http://localhost/cgi-bin/Updates-rss.cgi</link>
+<link>http://localhost:82/cgi-bin/Updates-rss.cgi</link>
 <canEnterItem>false</canEnterItem>
 </item>
 
 <item>
 <title>Services</title>
-<link>http://localhost/cgi-bin/Services-rss.cgi</link>
+<link>http://localhost:82/cgi-bin/Services-rss.cgi</link>
 <canEnterItem>false</canEnterItem>
 </item>
 

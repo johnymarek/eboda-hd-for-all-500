@@ -7,7 +7,7 @@ Content-type: application/xhtml+xml
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
     <channel>
         <title>Standby</title>
-        <link>http://localhost/cgi-bin/Standby-rss.cgi</link>
+        <link>http://localhost:82/cgi-bin/Standby-rss.cgi</link>
         <menu>Standby</menu>
 EOF
 
@@ -20,7 +20,7 @@ then
         <item>
              <pubDate>${d}</pubDate>
              <title>Timer is active</title>
-             <link>http://localhost/cgi-bin/util_standby-cancel-rss.cgi</link>
+             <link>http://localhost:82/cgi-bin/util_standby-cancel-rss.cgi</link>
              <description>
 Standby in ${TO_WAIT} minutes.
 Press Right Arrow to cancel timer.
@@ -41,7 +41,7 @@ else
         <item>
              <pubDate>${d}</pubDate>
              <title>${full_name}</title>
-             <link>http://localhost/cgi-bin/${script}</link>
+             <link>http://localhost:82/cgi-bin/${script}</link>
              <description>
 Press Right Arrow to activate timer.
 </description>

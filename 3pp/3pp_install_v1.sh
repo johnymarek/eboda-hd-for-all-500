@@ -62,7 +62,7 @@ smbd=false
 nginx=false
 
 msdl=true
-msdl=mplayer
+mplayer=false
 
 strip=false
 #
@@ -146,8 +146,8 @@ $expat && (  [ -f expat-2.0.0.tar.gz ] || $download_cmd http://sourceforge.net/p
 $pcre && (  [ -f pcre-6.7.tar.gz ] || $download_cmd http://sourceforge.net/projects/pcre/files/pcre/6.7/pcre-6.7.tar.gz/download )
 # php-5.0.5.tar.gz
 $php && (  [ -f php-5.2.13.tar.gz ] || $download_cmd http://www.php.net/distributions/php-5.2.13.tar.gz )
-# lighttpd-1.4.15.tar.gz
-$lighttpd && (  [ -f lighttpd-1.4.15.tar.gz ] || $download_cmd http://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-1.4.15.tar.gz )
+# lighttpd-1.4.28.tar.gz
+$lighttpd && (  [ -f lighttpd-1.4.28.tar.gz ] || $download_cmd http://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-1.4.28.tar.gz )
 $thttpd && (  [ -f thttpd-2.25b.tar.gz ] || $download_cmd http://www.acme.com/software/thttpd/thttpd-2.25b.tar.gz )
 
 $nginx && (  [ -f nginx-0.8.44.tar.gz ] || $download_cmd http://www.nginx.org/download/nginx-0.8.44.tar.gz )
@@ -354,9 +354,9 @@ fi
 if [ $lighttpd == true ]
 then
     cd $compile
-    tar zxf $downloads/lighttpd-1.4.15.tar.gz
-    cd lighttpd-1.4.15
-    ./configure --prefix=${cipibad} --host=mipsel-linux --disable-ipv6
+    tar zxf $downloads/lighttpd-1.4.28.tar.gz
+    cd lighttpd-1.4.28
+    ./configure --prefix=${cipibad} --host=mipsel-linux --disable-ipv6 --without-pcre --without-zlib --without-bzip2
     $CLEAN && make clean
     make
     make install
@@ -755,7 +755,7 @@ then
     make
     make install
 
-
+fi
 if [ $mplayer == true ]
 then
 

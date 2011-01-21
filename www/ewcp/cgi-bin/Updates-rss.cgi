@@ -9,7 +9,7 @@ Content-type: application/xhtml+xml
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
     <channel>
         <title>Updates</title>
-        <link>http://localhost/cgi-bin/Updates-rss.cgi</link>
+        <link>http://localhost:82/cgi-bin/Updates-rss.cgi</link>
         <menu>Updates</menu>
 EOF
 
@@ -58,7 +58,7 @@ do
         <item>
              <pubDate>${d}</pubDate>
              <title>Update ${full_name}</title>
-             <link>http://localhost/cgi-bin/${script}</link>
+             <link>http://localhost:82/cgi-bin/${script}</link>
              <description>
 
 You have version ${DISK_VERSION}, latest available version is ${VERSION}.

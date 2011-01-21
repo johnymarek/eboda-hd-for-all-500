@@ -98,7 +98,7 @@ else
 
     <channel>
         <title>Daemons Status</title>
-        <link>http://localhost/cgi-bin/DaemonsStatus-rss.cgi</link>
+        <link>http://localhost:82/cgi-bin/DaemonsStatus-rss.cgi</link>
         <menu>control panel daemons status</menu>
 EOF
 
@@ -132,7 +132,7 @@ cat <<EOF
         <item>
              <pubDate>${d}</pubDate>
              <title>${full_name} is $state</title>
-             <link>http://localhost/cgi-bin/${script}</link>
+             <link>http://localhost:82/cgi-bin/${script}</link>
              <description> Press Right Arrow to $action </description>
         </item>
 EOF
