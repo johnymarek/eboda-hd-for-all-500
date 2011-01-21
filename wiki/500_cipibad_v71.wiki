@@ -1,8 +1,9 @@
 #summary new realtek firmware
 
-= New e-boda hd4all 500 (based on E-boda ) =
+= New e-boda hd4all 500 (based on E-boda v7.3.21.r4803 ) =
 
- * 
+ * SDK3
+ * http://eboda-hd-for-all-500.googlecode.com/files/HD_for_all_500_cipibad_v7.1_v7.3.21.r4803.zip
 
 v7:
   * you get full functionality if you have an USB storage/SD card connected while boot or internal HDD
@@ -16,4 +17,4 @@ v7:
    * rss_ex (http://code.google.com/p/media-translate/)
    * xLive (http://www.xtreamer.net/downloads/community-projects/xtreamer-live!.aspx)
 
-  * a lot of documentation and information probably missing. Use this link  for comments/support requests
+  * a lot of documentation and information probably missing. Use this link http://hd4all.cipex.ro/?p=110 for comments/support requests
