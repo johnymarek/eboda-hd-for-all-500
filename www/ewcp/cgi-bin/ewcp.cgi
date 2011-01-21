@@ -46,7 +46,7 @@ EOF
 # BEGIN OF STATUS SECTION
 
 
-name_lighttpd="HTTP: Lighttpd webserver"
+
 name_thttpd="HTTP: thttpd webserver"
 name_apache="HTTP: Apache webserver"
 name_transmission="TORRENT: Transmission"
@@ -57,8 +57,7 @@ name_smbd="NAS: Samba"
 name_bftpd="NAS: bftpd"
 name_DvdPlayer="CORE: DvdPlayer"
 
-#apache transmission lighttpd not in this scope
-for i in lighttpd btpd15 transmission rtorrent bftpd btpd smbd DvdPlayer 
+for i in  btpd15 transmission rtorrent bftpd btpd smbd DvdPlayer 
 do
     pic=/eb_imgs/cp_on.gif
     script=util_${i}-stop.cgi
@@ -149,7 +148,7 @@ cat <<EOF
 EOF
 
 fi
-# name_lighttpd="HTTP: Lighttpd webserver"
+
 # name_apache="HTTP: Apache webserver"
 # name_transmission-daemon="TORRENT: Transmission"
 # name_rtorrent="TORRENT: rtorrent"
@@ -177,7 +176,6 @@ EOF
 done
 
 startfile_dir="/cb3pp/etc/init.d/"
-startfile_lighttpd="S80lighttpd"
 startfile_thttpd="S80thttpd"
 startfile_apache="S08apache"
 startfile_transmission="S90transmission-daemon"
@@ -188,8 +186,8 @@ startfile_bftpd="S70bftpd"
 startfile_btpd="/tmp/package/script/btpd"
 startfile_smbd="/tmp/package/script/samba"
 
-#apache transmission lighttpd not in this scope
-for i in lighttpd btpd15 transmission rtorrent bftpd
+
+for i in btpd15 transmission rtorrent bftpd
 do
     full_name=`eval echo \\$name_${i}`
     script="#"

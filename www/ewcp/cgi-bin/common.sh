@@ -143,12 +143,12 @@ perform_update()
     
     rm -rf ${component}/*
     
-    unzip -o ${component}-latest.zip
+    unzip -q -o ${component}-latest.zip
     rm ${component}-latest.zip
     
     mv ${component}-version-new.txt ${component}-version.txt
     
-    if [ ${component} = "ewcp" -o ${component} = "cb3pp" ]
+    if [ ${component} = "ewcp3" -o ${component} = "cb3pp3" ]
     then 
 	cp $storage/ewcp/S99ewcp /cb3pp/etc/init.d/S99ewcp
 	sh /cb3pp/etc/init.d/S99ewcp

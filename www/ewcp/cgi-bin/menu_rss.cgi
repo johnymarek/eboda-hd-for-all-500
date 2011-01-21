@@ -7,7 +7,7 @@ cat <<EOF
 <onEnter>
 EOF
 
-name_lighttpd="HTTP: Lighttpd webserver"
+
 name_apache="HTTP: Apache webserver"
 name_transmission="TORRENT: Transmission"
 name_rtorrent="TORRENT: rtorrent"
@@ -16,7 +16,7 @@ name_smbd="NAS: Samba"
 name_bftpd="NAS: bftpd"
 
 
-for i in lighttpd rtorrent btpd smbd bftpd 
+for i in rtorrent btpd smbd bftpd 
 do
     process=$i
     state=Running
@@ -48,7 +48,7 @@ E-Boda Control Panel
 EOF
 
 
-for i in lighttpd rtorrent btpd smbd bftpd 
+for i in rtorrent btpd smbd bftpd 
 do
     full_name=`eval echo \\$name_${i}`
 
@@ -80,7 +80,7 @@ cat <<EOF
 
 EOF
 
-for i in lighttpd rtorrent btpd smbd bftpd 
+for i in  rtorrent btpd smbd bftpd 
 do
 cat <<EOF
 <item>

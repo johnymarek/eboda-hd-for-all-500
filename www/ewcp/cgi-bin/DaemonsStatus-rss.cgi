@@ -102,7 +102,6 @@ else
         <menu>control panel daemons status</menu>
 EOF
 
-name_lighttpd="HTTP: Lighttpd webserver"
 name_thttpd="HTTP: thttpd webserver"
 name_apache="HTTP: Apache webserver"
 name_transmission="TORRENT: Transmission"
@@ -113,8 +112,7 @@ name_smbd="NAS: Samba"
 name_bftpd="NAS: bftpd"
 name_DvdPlayer="CORE: DvdPlayer"
 
-#apache transmission lighttpd not in this scope
-for i in lighttpd btpd15 transmission rtorrent bftpd btpd smbd
+for i in btpd15 transmission rtorrent bftpd btpd smbd
 do
     script=util_${i}-stop-rss.cgi
     state=Started
