@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<channel>
+	<title>TV</title>
+	<menu>main menu</menu>
+
+<item>
+<title>Kapital Network TV (Croatia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://87.255.34.86/digitalidentity=zagabria</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://87.255.34.86/digitalidentity=zagabria"/>
+</item>
+
+<item>
+<title>STV (Croatia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://89.201.164.181/stv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://89.201.164.181/stv"/>
+</item>
+
+<item>
+<title>Z1 (Croatia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://217.14.208.58/index</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://217.14.208.58/index"/>
+</item>
+
+</channel>
+</rss>

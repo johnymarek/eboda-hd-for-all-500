@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<channel>
+	<title>TV</title>
+	<menu>main menu</menu>
+
+<item>
+<title>Info TV (Vietnam)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://222.255.31.252/InfoTVChannel</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://222.255.31.252/InfoTVChannel"/>
+</item>
+
+<item>
+<title>HTV1 (Vietnam)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://123.30.49.85/htv1</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://123.30.49.85/htv1"/>
+</item>
+
+<item>
+<title>THVL2 (Vietnam)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://123.30.108.77/thvl2</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://123.30.108.77/thvl2"/>
+</item>
+
+<item>
+<title>THVL (Vietnam)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://123.30.108.77/THVL1</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://123.30.108.77/THVL1"/>
+</item>
+
+
+</channel>
+</rss>

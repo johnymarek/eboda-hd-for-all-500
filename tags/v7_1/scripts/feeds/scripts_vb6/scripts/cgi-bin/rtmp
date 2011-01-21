@@ -1,0 +1,6 @@
+#!/bin/sh
+cat <<EOF
+Content-type: video/mp4
+
+EOF
+exec /scripts/bin/flvstreamer -q -r `echo $QUERY_STRING|sed "s_\&amp;_\&_g"`

@@ -1,0 +1,59 @@
+Index: libmpcodecs/vf_qp.c
+===================================================================
+--- libmpcodecs/vf_qp.c	(revision 32514)
++++ libmpcodecs/vf_qp.c	(working copy)
+@@ -34,7 +34,10 @@
+ #include "libavcodec/avcodec.h"
+ #include "libavutil/eval.h"
+ 
++/* standard cast */
++#define lrintf(f) ((int32_t)(f))
+ 
++
+ struct vf_priv_s {
+ 	char eq[200];
+ 	int8_t *qp;
+Index: libfaad2/common.h
+===================================================================
+--- libfaad2/common.h	(revision 32514)
++++ libfaad2/common.h	(working copy)
+@@ -383,10 +383,8 @@
+ 
+ #endif
+ 
+-#ifndef HAS_LRINTF
+ /* standard cast */
+ #define lrintf(f) ((int32_t)(f))
+-#endif
+ 
+ typedef real_t complex_t[2];
+ #define RE(A) A[0]
+Index: configure
+===================================================================
+--- configure	(revision 32514)
++++ configure	(working copy)
+@@ -2382,6 +2382,10 @@
+     test $_fast_clz = "auto" && _fast_clz=yes
+ 
+     ;;
++  mipsel)
++    arch='mipsel'
++    iproc='mipsel'
++    ;;
+ 
+   hppa)
+     arch='pa_risc'
+Index: libaf/af_format.c
+===================================================================
+--- libaf/af_format.c	(revision 32514)
++++ libaf/af_format.c	(working copy)
+@@ -35,6 +35,9 @@
+ /* Functions used by play to convert the input audio to the correct
+    format */
+ 
++/* standard cast */
++#define lrintf(f) ((int32_t)(f))
++
+ /* The below includes retrieves functions for converting to and from
+    ulaw and alaw */
+ #include "af_format_ulaw.h"

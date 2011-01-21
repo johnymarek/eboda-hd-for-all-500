@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<channel>
+	<title>TV</title>
+	<menu>main menu</menu>
+
+<item>
+<title>Smash TV (Malta)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://stream01.nextweb.net.mt/SmashTV</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://stream01.nextweb.net.mt/SmashTV"/>
+</item>
+
+<item>
+<title>Net TV (Malta)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://wms.di-ve.com/encoder_net</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://wms.di-ve.com/encoder_net"/>
+</item>
+
+<item>
+<title>One TV (Malta)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://wms.di-ve.com/encoder_one</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://wms.di-ve.com/encoder_one"/>
+</item>
+
+</channel>
+</rss>

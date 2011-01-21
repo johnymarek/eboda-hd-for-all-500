@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<channel>
+	<title>TV</title>
+	<menu>main menu</menu>
+
+<item>
+<title>Supernet Fehe (Ungaria)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://live2.szupernet.tv/feher90</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://live2.szupernet.tv/feher90"/>
+</item>
+
+<item>
+<title>Info 24 TV (Ungaria)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://213.222.176.3/info-24.wmv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://213.222.176.3/info-24.wmv"/>
+</item>
+
+</channel>
+</rss>
