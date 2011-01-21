@@ -1,0 +1,2 @@
+412d411
+< 	chmod 644 $(root)$(includedir)/*.h $(root)$(includedir)/xml/*.h

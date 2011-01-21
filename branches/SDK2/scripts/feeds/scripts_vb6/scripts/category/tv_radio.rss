@@ -1,0 +1,216 @@
+<?xml version="1.0"?>
+<!--Xtreamer Community 2010 - xMenu8 Cap-->
+<rss version="2.0" xmlns:media="http://purl.org/dc/elements/1.1/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
+		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_03.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_04.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_05.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_06.jpg </idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		TV si Radio
+		</text>			
+	    </mediaDisplay>
+  <channel>
+
+    <title>TV si Radio</title>
+
+<item>
+<title>Posturi radio Romania (Shoutcast)</title>
+<link>http://127.0.0.1:82/scripts/php/radio_rom.php</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+</item>
+
+<item>
+<title>Posturi radio Romania</title>
+<link>http://www.metafeeds.com/channel/fav_Mondi/rss</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+</item>
+
+<item>
+<title>TV Live - posturi straine</title>
+<link>/scripts/category/tv_straine.rss</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+</item>
+
+<item>
+<title>TV Live - posturi romanesti</title>
+<link>/scripts/category/tv_rom.rss</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+</item>
+
+<item>
+<title>Emisiuni Antena 1</title>
+<link>/scripts/category/antena1_all.rss</link>
+<media:thumbnail url="/scripts/image/antena1_all.jpg" />
+</item>
+
+<item>
+<title>Emisiuni Antena2</title>
+<link>/scripts/category/antena2.rss</link>
+<media:thumbnail url="/scripts/image/antena2.jpg" />
+</item>
+
+<item>
+<title>Emisiuni Antena3</title>
+<link>/scripts/category/antena3.rss</link>
+<media:thumbnail url="/scripts/image/antena3.jpg" />
+</item>
+
+<item>
+<title>Emisiuni ProTV</title>
+<link>/scripts/category/protv.rss</link>
+<media:thumbnail url="/scripts/image/protv.jpg" />
+</item>
+
+<item>
+<title>Emisiuni AcasaTV</title>
+<link>/scripts/category/acasatv.rss</link>
+<media:thumbnail url="/scripts/image/acasatv.jpg" />
+</item>
+
+<item>
+<title>Emisiuni EuforiaTV</title>
+<link>http://127.0.0.1:82/scripts/php/euforiatv.php</link>
+<media:thumbnail url="/scripts/image/euforiatv.gif" />
+</item>
+
+<item>
+<title>Emisiuni RealitateaTV</title>
+<link>http://127.0.0.1:82/scripts/php/realitateatv_main.php</link>
+<media:thumbnail url="/scripts/image/realitateatv.gif" />
+</item>
+
+<item>
+<title>Emisiuni Money.ro WebTV</title>
+<link>http://127.0.0.1:82/scripts/php/money.php</link>
+<media:thumbnail url="/scripts/image/money.gif" />
+</item>
+
+<item>
+<title>Emisiuni SensoTV</title>
+<link>/scripts/category/sensotv.rss</link>
+<media:thumbnail url="/scripts/image/sensotv.png" />
+</item>
+
+<item>
+<title>Emisiuni Publika.Md (Rep. Moldova)</title>
+<link>http://127.0.0.1:82/scripts/php/publika.php</link>
+<media:thumbnail url="/scripts/image/publika.jpg" />
+</item>
+
+<!--<item>
+<title>Inregistrari TVR International</title>
+<link>/scripts/category/tvr.rss</link>
+<media:thumbnail url="/scripts/image/tvr.jpg" />
+</item>-->
+
+<item>
+<title>Emisiuni PrahovaHD (direct)</title>
+<link>http://127.0.0.1:82/scripts/php/prahovahd.php</link>
+<media:thumbnail url="/scripts/image/prahovahd.png" />
+</item>
+
+<item>
+<title>IQads</title>
+<link>/scripts/category/iqads.rss</link>
+<media:thumbnail url="/scripts/image/iqads.jpg" />
+</item>
+
+<item>
+<title>Emisiuni Sportive</title>
+<link>/scripts/category/tv_sport.rss</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+</item>
+
+<item>
+<title>Emisiuni TV posturi locale</title>
+<link>/scripts/category/locale.rss</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+</item>
+
+<!--<item>
+<title>AutomobileTV</title>
+<link>http://127.0.0.1:82/scripts/php/automobiletv.php?query=0,</link>
+<media:thumbnail url="/scripts/image/automobiletv.jpg" />
+</item>-->
+
+<!--<item>
+<title>Academia Catavencu</title>
+<link>/scripts/category/catavencu.rss</link>
+<media:thumbnail url="/scripts/image/catavencu.jpg" />
+</item>-->
+
+<item>
+<title>Revision3</title>
+<link>/scripts/category/rev3.rss</link>
+<media:thumbnail url="/scripts/image/revision3.gif"  />
+</item>
+
+<item>
+<title>Bing</title>
+<link>/scripts/category/bing.rss</link>
+<media:thumbnail url="/scripts/image/bing.jpg"  />
+</item>
+
+<item>
+<title>Program-Tv.ro :: Acum la televizor</title>
+<link>http://www.program-tv.ro/acum-la-tv.rss</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+</item>
+
+<item>
+<title>Program-Tv.ro :: Urmeaza la televizor</title>
+<link>http://www.program-tv.ro/urmeaza-la-tv.rss</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+</item>
+
+<item>
+<title>RFI Romania (Podcast)</title>
+<link>/scripts/category/rfi.rss</link>
+<media:thumbnail url="/scripts/image/tv_radio.png" />
+</item>
+
+<item>
+<title>Onion News Network</title>
+<link>http://www.theonion.com/feeds/onn/</link> />
+<media:thumbnail url="/scripts/image/onion.png" />
+</item>
+
+<item>
+<title>UZG</title>
+<link>/scripts/category/uzg.rss</link>
+<media:thumbnail url="/scripts/image/uzg.jpg" />
+<mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
+		<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_03.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_04.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_05.jpg </idleImage>
+		<idleImage> image/POPUP_LOADING_06.jpg </idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		UZG
+		</text>			
+	    </mediaDisplay>
+</item>
+
+
+</channel>
+</rss>

@@ -1,0 +1,106 @@
+#!/bin/sh
+#
+# this script handles the btpd daemon process
+
+
+
+btpd_start(){
+#define where bthome is. This is where btpd stores metadata information
+#such as how many torrents are being downloaded and their progress
+    
+    . /usr/local/etc/storage
+
+    [ -d ${storage}/btpd-0.15 ] || mkdir ${storage}/btpd-0.15
+    [ -d /usr/local/etc/root/.btpd ] || mkdir /usr/local/etc/root/.btpd
+    chmod -x /cb3pp/share/www/webui/images/*
+    chmod -x /cb3pp/share/www/webui/icons/* 
+
+#define where the btpd binary is
+    btpdbin=/cb3pp/bin/btpd15
+#update download dir in web interface
+
+        sed -i -e "/\"download-dir\"     => _isset/c\\
+                \"download-dir\"     => _isset(\$arrTmp,\"DownloadDir\",\"${storage}/btpd-0.15\")," /cb3pp/share/www/webui/utils.php
+
+
+    if [ ! -e $btpdbin ]; then
+	echo "btpd binary is missing"
+	exit 1
+    fi
+
+#start running btpd
+    echo "Starting Torrent client: btpd 0.15"
+
+    $btpdbin --port 6992 --max-peers 64 --empty-start
+	chmod -R 777 /usr/local/etc/root/.btpd
+   # return 0;
+	exit 0;
+}
+
+btpd_stop(){
+    btpidf=/usr/local/etc/root/.btpd/pid
+    echo "Stopping Torrent client: btpd 0.15"
+
+    if [ ! -e $btpidf ]; then
+	exit 0
+    fi
+
+    btpid=`cat $btpidf`
+    pattern1=`ps | grep $btpid | grep -v grep`
+    pattern2=`echo $pattern1 | grep btpd | grep -v grep`
+
+    if test "$pattern2" == ""; then 
+	exit 0
+    fi
+
+#we have the btpd pid
+    kill $btpid
+    echo "btpd kill signal sent, please wait..."
+    sleep 5
+
+#sometimes, btpd takes a while to stop
+    pattern1=`ps | grep $btpid | grep -v grep`
+    if test "$pattern1" == ""; then 
+	exit 0
+    fi
+    kill -9 $btpid
+    sleep 3
+    exit 0
+}
+
+btpd_status(){
+    btpidf=/usr/local/etc/root/.btpd
+
+    if [ ! -e $btpidf ]; then
+	echo "btpd stopped..."
+	exit 0
+    fi
+
+    btpid=`cat $btpidf`
+    pattern1=`ps | grep $btpid | grep -v grep`
+    pattern2=`echo $pattern1 | grep btpd | grep -v grep`
+
+    if test "$pattern2" == ""; then 
+	echo "btpd stopped"
+	exit 0
+    fi
+    echo "btpd running"
+    exit 0
+}
+
+case "$1" in
+	start)
+		btpd_start
+		;;
+	stop)
+		btpd_stop
+		;;
+	status)
+		btpd_status
+		;;
+	*)
+      	echo $"Usage: $0 {start|stop|status}"
+		exit 1
+esac
+
+exit 1

@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<channel>
+	<title>TV</title>
+	<menu>main menu</menu>
+
+<item>
+<title>Jungle TV (Macedonia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://62.162.58.41/Jungle_tv</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://62.162.58.41/Jungle_tv"/>
+</item>
+
+<item>
+<title>Tera (Macedonia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://62.162.58.41/Tera</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://62.162.58.41/Tera"/>
+</item>
+
+<item>
+<title>MTV 1 (Macedonia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://62.162.58.41/MTV1</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://62.162.58.41/MTV1"/>
+</item>
+
+<item>
+<title>Nova TV (Macedonia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://62.162.99.150/Nova_TV</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://62.162.99.150/Nova_TV"/>
+</item>
+
+<item>
+<title>OBN (Macedonia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://62.162.99.150/OBN</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://62.162.99.150/OBN"/>
+</item>
+
+<item>
+<title>Iris TV (Macedonia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://telekabel.com.mk/iris</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://telekabel.com.mk/iris"/>
+</item>
+
+<item>
+<title>HBO (Macedonia)</title>
+<link>http://127.0.0.1/cgi-bin/wmv-m?mms://62.162.99.150/HBO</link>
+<enclosure type="video/mx-wmv" url="http://127.0.0.1/cgi-bin/wmv-m?mms://62.162.99.150/HBO"/>
+</item>
+
+</channel>
+</rss>

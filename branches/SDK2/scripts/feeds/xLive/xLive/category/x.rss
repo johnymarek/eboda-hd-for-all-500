@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--Xtreamer Community 2010 - xLive9.1 Cap-->
+<rss version="2.0" xmlns:media="http://purl.org/dc/elements/1.1/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+	<onEnter>
+		if(GetProduct() == "XTREAMER") 
+		{ 
+			addItem("xitem", 0); 
+		}
+	</onEnter>
+
+   <xitem>
+     <title>RSS Skin Manager</title>
+     <link>http://127.0.0.1:82/xLive/php/skin_manager.php</link>
+     <media:thumbnail url="/xLive/image/skin_browser.jpg" />
+   </xitem>
+
+  <channel>
+
+    <title>Xtensions - Community Tools</title>
+
+</channel>
+</rss>
