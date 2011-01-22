@@ -1,0 +1,67 @@
+
+MAIN MENU
+
+Internet Radio
+  Shoutcast Radio Directory (+)
+  Moskva.FM
+  Piter.FM
+  Digitally Imported (+)
+  SKY.fm (+)
+  SomaFM (+)
+  Bluemars (+)
+  Rock Radio 1
+  Station.ru
+  Other radio/playlists
+    Sampo.ru (+)
+    1.FM
+    RauteMusik.FM
+    audio.rambler.ru/radio
+    radiogrom.ru
+    d-j.ru
+Internet Video
+  YouTube (+)
+  Vimeo
+  IVI.ru
+  TV-Here
+  RuTube TV
+Application
+  Media Stream Renderer (+)
+  XSPF Browser (+)
+
+
+APPLICATION
+
+collection/media (+)
+collection/menu (+)
+collection/list
+lastfm/trackimage (+)
+
+REDESIGN
+
+xspf/rss_mediaFeed.rss
+
+TRANSLATE CGI
+
+?stream,,<playlist.url>   choose 1st valid stream to play
+station.ru  ?status,,     status url support for station.ru (+)
+
+AUDIO/VIDEO PLAYER
+
+multiple source (up to 10) support (asx,asf,pls,m3u)
+
+FEATURES
+
+favorites list
+tv channel list
+
+MODULES
+
+http://www.mysqueezebox.com/appgallery
+http://www.ixbt.com/multimedia/squeezebox-radio/pc-server3.png
+
+PLAYLIST
+
+CBC http://www.cbc.ca/listen/index.html
+http://webteleradio.com/
+
+http://music.yandex.ru

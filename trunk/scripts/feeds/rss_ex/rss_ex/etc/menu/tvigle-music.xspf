@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<playlist xmlns="http://xspf.org/ns/0/" version="1">
+  <title>Tvigle - Музыка</title>
+  <image>../etc/translate/rss/image/tvigle.png</image>
+  <trackList>
+<track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:2123,tvigle/multi</link>
+  <title>Остров 312</title>
+  <annotation>Премьера первого российского 3-D клипа группы  Город 312  на композицию  Помоги мне . Скоро на Tvigle.ru</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2123/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1980,tvigle/multi</link>
+  <title>Видеоклипы</title>
+  <annotation>Новые видеоклипы современных музыкантов.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1980/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1406,tvigle/multi</link>
+  <title>Би-2</title>
+  <annotation>Видеоклипы и концертные выступления группы  Би-2 .</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1406/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1885,tvigle/multi</link>
+  <title>Каста</title>
+  <annotation>Клипы, интервью и живые выступления группы Каста.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1885/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1153,tvigle/multi</link>
+  <title>Смысловые Галлюцинации</title>
+  <annotation>Видеоклипы и концертные выступления.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1153/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1829,tvigle/multi</link>
+  <title>Кто здесь?</title>
+  <annotation>Программа о самых крупных и значимых событиях альтернативной культуры: концертах, фестивалях, презентациях, премиях, крупных выставках и многом другом.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1829/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1884,tvigle/multi</link>
+  <title>AMATORY</title>
+  <annotation>Концерт популярной альт метал группы [AMATORY].</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1884/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1984,tvigle/multi</link>
+  <title>Noize MC</title>
+  <annotation>Видеоклипы Noize MC.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1984/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1522,tvigle/multi</link>
+  <title>СЛОТ</title>
+  <annotation>Клипы, интервью и живые выступления группы СЛОТ.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1522/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1846,tvigle/multi</link>
+  <title>Делаем группу!</title>
+  <annotation>Мы делаем новую музыкальную группу. Специальный проект продюссерского центра Мегалайнер, журнала Браво и Tvigle.ru.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1846/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1111,tvigle/multi</link>
+  <title>Ночные Снайперы</title>
+  <annotation>Диана Арбенина. Клипы и концертные выступления.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1111/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1887,tvigle/multi</link>
+  <title>Ляпис Трубецкой</title>
+  <annotation>Клипы и живые выступления группы  Ляпис Трубецкой .</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1887/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1108,tvigle/multi</link>
+  <title>Тараканы</title>
+  <annotation>Клипы и концертные выступления группы  Тараканы .</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1108/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1769,tvigle/multi</link>
+  <title>Ранетки</title>
+  <annotation>Интервью, клипы и живые выступления группы  Ранетки .</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1769/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1888,tvigle/multi</link>
+  <title>Звездный Live</title>
+  <annotation>Концертные выступления.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1888/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track>
+<track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1326,tvigle/multi</link>
+  <title>Сурганова и Оркестр</title>
+  <annotation>Клипы и концертные выступления группы  Сурганова и Оркестр .</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1326/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1969,tvigle/multi</link>
+  <title>Amber Music</title>
+  <annotation>Современная финская музыка.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1969/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:807,tvigle/multi</link>
+  <title>СиЛя</title>
+  <annotation>Легенда питерского и русского рока.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/807/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1158,tvigle/multi</link>
+  <title>Танцы Минус</title>
+  <annotation>Видеоклипы и концертные выступления группы  Танцы Минус .</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1158/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:2157,tvigle/multi</link>
+  <title>Нежный возраст</title>
+  <annotation>Приключения группы  Нежный возраст  в Европе.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2157/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1823,tvigle/multi</link>
+  <title>BUNNY</title>
+  <annotation>Группа BUNNY   канадско московский рок тонкой выделки.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1823/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:816,tvigle/multi</link>
+  <title>DJ Smash</title>
+  <annotation>Видеоклипы на треки DJ Smash.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/816/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1655,tvigle/multi</link>
+  <title>Разыскиваются</title>
+  <annotation>OnMusicStage.com дает возможность музыкантам проявить себя  живьем    настоящие эмоции и неподдельный драйв в концертном  бункере .</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1655/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:679,tvigle/multi</link>
+  <title>ВИАГРА</title>
+  <annotation>Видеоклипы и концертные выступления группы  ВИАГРА .</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/679/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1794,tvigle/multi</link>
+  <title>Кристина Орбакайте</title>
+  <annotation>Клипы популярной певицы Кристины Орбакайте.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1794/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:677,tvigle/multi</link>
+  <title>Линда</title>
+  <annotation>Видеоклипы самой загадочной певицы современности Линды.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/677/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1687,tvigle/multi</link>
+  <title>Песни про любовь</title>
+  <annotation>Саундтрек праздничного вечера.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1687/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:320,tvigle/multi</link>
+  <title>Валерия</title>
+  <annotation>Клипы популярной певицы Валерии.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/320/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1978,tvigle/multi</link>
+  <title>Михаил Круг</title>
+  <annotation>Один из самых известных и почетаемых авторов и исполнителей русского шансона.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1978/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1981,tvigle/multi</link>
+  <title>Кукрыниксы</title>
+  <annotation>Клипы и живые выступления популярной русской рок группы  Кукрыниксы .</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1981/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track>
+<track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1803,tvigle/multi</link>
+  <title>Ботаника</title>
+  <annotation>Клипы и живые выступления группы  Ботаника .</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1803/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:722,tvigle/multi</link>
+  <title>Дельфин</title>
+  <annotation>Клипы, интервью и живые выступления Дельфина.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/722/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1886,tvigle/multi</link>
+  <title>Юля Чичерина</title>
+  <annotation>Музыкант Юля Чичерина строит дом, путешествует и поет свои песни.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1886/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:655,tvigle/multi</link>
+  <title>Сергей Кот</title>
+  <annotation>Видео-блог композитора и исполнителя Сергея Кота.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/655/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1541,tvigle/multi</link>
+  <title>BIOPSYHOZ</title>
+  <annotation>Видеоклипы и концертные выступления группы  BIOPSYHOZ .</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1541/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1982,tvigle/multi</link>
+  <title>Бутырка</title>
+  <annotation>Видеоклипы и живые выступления группы  Бутырка .</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1982/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1983,tvigle/multi</link>
+  <title>Тутси</title>
+  <annotation>Видеоклипы популярной группы  Тутси .</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1983/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1847,tvigle/multi</link>
+  <title>PODIUM</title>
+  <annotation>Клипы, интервью и живые выступления группы  PODIUM .</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1847/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:38,tvigle/multi</link>
+  <title>Muzinst</title>
+  <annotation>Зажигательные репортажи с клубных вечеринок.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/38/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1282,tvigle/multi</link>
+  <title>Kondor</title>
+  <annotation>Коллекция металлический музыки.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1282/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:806,tvigle/multi</link>
+  <title>World music</title>
+  <annotation>Школа перкуссии Артура Газарова.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/806/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:810,tvigle/multi</link>
+  <title>Hoba live</title>
+  <annotation>Михаил Владимиров и  Hoba live .</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/810/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1147,tvigle/multi</link>
+  <title>Слайд</title>
+  <annotation>Группа  Слайд . Клипы и концертные видео.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1147/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1986,tvigle/multi</link>
+  <title>Наташа Королева</title>
+  <annotation>Видеоклипы и концертные выступления Наташи Королевой.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1986/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1312,tvigle/multi</link>
+  <title>ZNAKI</title>
+  <annotation>Видеоклипы и концертные выступления молодой группы  ZNAKI .</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1312/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track>
+<track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1985,tvigle/multi</link>
+  <title>Александр Новиков</title>
+  <annotation>Видеоклипы и концертные выступления Александра Новикова.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1985/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1332,tvigle/multi</link>
+  <title>Тихий Джа</title>
+  <annotation>Видеоклипы и концертные выступления группы  Тихий Джа .</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1332/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1368,tvigle/multi</link>
+  <title>Soloway</title>
+  <annotation>Видеоклипы и концертные выступления группы  Zband .</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1368/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1306,tvigle/multi</link>
+  <title>Notstar</title>
+  <annotation>Видеоклипы и концертные выступления группы  Амели .</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1306/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:28,tvigle/multi</link>
+  <title>Русский рок</title>
+  <annotation>Коллекция клипов и живых выступлений музыкантов отечественной рок-сцены для ценителей настоящего драйва.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/28/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:30,tvigle/multi</link>
+  <title>Поп музыка</title>
+  <annotation>Видеоклипы современных популярных артистов.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/30/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:33,tvigle/multi</link>
+  <title>Хип Хоп</title>
+  <annotation>Музыка и тексты суровых парней на самые актуальные темы.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/33/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:29,tvigle/multi</link>
+  <title>Альтернатива</title>
+  <annotation>AMATORY,  СЛОТ ,  Тараканы ,  Бригадный подряд  и другие представители альтернативной музыки.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/29/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:37,tvigle/multi</link>
+  <title>Шансон</title>
+  <annotation>Клипы и живые выступления знаменитостей, королей и легенд русского шансона.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/37/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track>
+  </trackList>
+</playlist>

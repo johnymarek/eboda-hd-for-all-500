@@ -1,0 +1,26 @@
+{
+  "playOnPlayer": {
+    "message": "Play on Player",
+    "description": "Default extension title"
+  },
+  "extensionDescripion": {
+    "message": "Play media stream from the current page on the player",
+    "description": "Extension description"
+  },
+  "linkMsg": {
+    "message": "Link",
+    "description": ""
+  },
+  "sendToMsg": {
+    "message": "sent to player",
+    "description": ""
+  },
+  "messageTitleSuccess": {
+    "message": "Success",
+    "description": ""
+  },
+  "messageTitleFailed": {
+    "message": "Failed",
+    "description": ""
+  }
+}

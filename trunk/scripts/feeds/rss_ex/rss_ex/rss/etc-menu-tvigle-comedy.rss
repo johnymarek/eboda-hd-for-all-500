@@ -1,0 +1,446 @@
+﻿<?xml version='1.0' encoding="UTF8" ?>
+<rss version="2.0">
+
+<!--
+#
+#   http://code.google.com/media-translate/
+#   Copyright (C) 2010  Serge A. Timchenko
+#
+#   This program is free software: you can redistribute it and/or modify
+#   it under the terms of the GNU General Public License as published by
+#   the Free Software Foundation, either version 3 of the License, or
+#   (at your option) any later version.
+#
+#   This program is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#   along with this program. If not, see <http://www.gnu.org/licenses/>.
+#
+-->
+
+<onEnter>
+  translate_base_url  = "http://127.0.0.1/cgi-bin/translate?";
+  cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
+  if(cgiconf != null)
+  {
+    value = getStringArrayAt(cgiconf, 0);
+    if(value != null &amp;&amp; value != "")
+    {
+      translate_base_url = value;
+      print("cgi.conf=",value);
+    }
+  }
+
+  screenXp = 4;
+  screenYp = 3;
+  rssconf = readStringFromFile("/usr/local/etc/translate/etc/rss.conf");
+  print("rssconf:",rssconf);
+  if(rssconf != null)
+  {
+    value = getStringArrayAt(rssconf, 0);
+    if(value != null &amp;&amp; value != "")
+      screenXp = Integer(value);
+    value = getStringArrayAt(rssconf, 1);
+    if(value != null &amp;&amp; value != "")
+      screenYp = Integer(value);
+  }
+  print("rssconf:",screenXp,screenYp);
+
+    startitem = "middle";
+		
+  columnCount=3;
+  print(getFocusItemIndex());
+</onEnter>
+
+<script>
+  setRefreshTime(1);
+</script>
+
+<onRefresh>
+  setRefreshTime(-1);
+  itemCount = getPageInfo("itemCount");
+  middleItem = Integer(itemCount / 2);
+  if(startitem == "middle")
+    setFocusItemIndex(middleItem);
+  else
+  if(startitem == "right")
+    setFocusItemIndex(middleItem);
+  redrawDisplay();
+</onRefresh>
+
+	<mediaDisplay name=photoView 
+	  centerXPC=7 
+		centerYPC=25
+		centerHeightPC=50
+    columnCount=3
+		
+	  rowCount=1
+		menuBorderColor="55:55:55"
+		sideColorBottom="0:0:0"
+		sideColorTop="0:0:0"
+	  backgroundColor="0:0:0"
+		imageBorderColor="0:0:0"
+		itemBackgroundColor="0:0:0"
+		itemGapXPC=0
+		itemGapYPC=1
+		sideTopHeightPC=22
+		bottomYPC=95
+		sliding=yes
+		showHeader=no
+		showDefaultInfo=no
+  	imageFocus=""
+  	imageUnFocus=""
+  	imageParentFocus=""
+		>
+		
+  	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
+		  <script>getPageInfo("pageTitle");</script>
+		</text>
+
+		<image offsetXPC=5 offsetYPC=2 widthPC=21 heightPC=16>
+		  <script>channelImage;</script>
+      <widthPC>
+        <script>
+          21 * screenYp / screenXp;
+        </script>
+      </widthPC>
+      <offsetXPC>
+        <script>
+          5 + 21 * (1 - screenYp / screenXp) / 2;
+        </script>
+      </offsetXPC>
+		</image>
+
+  	<text redraw="yes" offsetXPC="82" offsetYPC="12" widthPC="13" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
+		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
+		</text>
+
+		<text align="center" redraw="yes" lines="4" offsetXPC=10 offsetYPC=80 widthPC=80 heightPC=15 fontSize=16 backgroundColor=0:0:0 foregroundColor=120:120:120>
+			<script>print(annotation); annotation;</script>
+		</text>
+		
+  	<idleImage idleImageYPC="45" idleImageHeightPC="10">../etc/translate/rss/image/POPUP_LOADING_01.png<idleImageWidthPC><script>10 * screenYp / screenXp;</script></idleImageWidthPC><idleImageXPC><script>45 + 10 * (1 - screenYp / screenXp) / 2;</script></idleImageXPC></idleImage>
+  	<idleImage idleImageYPC="45" idleImageHeightPC="10">../etc/translate/rss/image/POPUP_LOADING_02.png<idleImageWidthPC><script>10 * screenYp / screenXp;</script></idleImageWidthPC><idleImageXPC><script>45 + 10 * (1 - screenYp / screenXp) / 2;</script></idleImageXPC></idleImage>
+  	<idleImage idleImageYPC="45" idleImageHeightPC="10">../etc/translate/rss/image/POPUP_LOADING_03.png<idleImageWidthPC><script>10 * screenYp / screenXp;</script></idleImageWidthPC><idleImageXPC><script>45 + 10 * (1 - screenYp / screenXp) / 2;</script></idleImageXPC></idleImage>
+  	<idleImage idleImageYPC="45" idleImageHeightPC="10">../etc/translate/rss/image/POPUP_LOADING_04.png<idleImageWidthPC><script>10 * screenYp / screenXp;</script></idleImageWidthPC><idleImageXPC><script>45 + 10 * (1 - screenYp / screenXp) / 2;</script></idleImageXPC></idleImage>
+  	<idleImage idleImageYPC="45" idleImageHeightPC="10">../etc/translate/rss/image/POPUP_LOADING_05.png<idleImageWidthPC><script>10 * screenYp / screenXp;</script></idleImageWidthPC><idleImageXPC><script>45 + 10 * (1 - screenYp / screenXp) / 2;</script></idleImageXPC></idleImage>
+  	<idleImage idleImageYPC="45" idleImageHeightPC="10">../etc/translate/rss/image/POPUP_LOADING_06.png<idleImageWidthPC><script>10 * screenYp / screenXp;</script></idleImageWidthPC><idleImageXPC><script>45 + 10 * (1 - screenYp / screenXp) / 2;</script></idleImageXPC></idleImage>
+  	<idleImage idleImageYPC="45" idleImageHeightPC="10">../etc/translate/rss/image/POPUP_LOADING_07.png<idleImageWidthPC><script>10 * screenYp / screenXp;</script></idleImageWidthPC><idleImageXPC><script>45 + 10 * (1 - screenYp / screenXp) / 2;</script></idleImageXPC></idleImage>
+  	<idleImage idleImageYPC="45" idleImageHeightPC="10">../etc/translate/rss/image/POPUP_LOADING_08.png<idleImageWidthPC><script>10 * screenYp / screenXp;</script></idleImageWidthPC><idleImageXPC><script>45 + 10 * (1 - screenYp / screenXp) / 2;</script></idleImageXPC></idleImage>
+
+		<itemDisplay>
+			<script>
+				imageW = 90/columnCount;
+				imageH = imageW * 3 / 4 * screenXp / screenYp * 100 / 50;
+				if(imageH > 86)
+				{
+				  imageH = 86;
+				  imageW = imageH * 4 / 3 * screenYp / screenXp * 50 / imageW;
+				}
+			  else
+			  {
+			    imageW = 100;
+        }
+			</script>
+			<image>
+				<script>
+					idx = getQueryItemIndex();
+					focus = getFocusItemIndex();
+					if(focus==idx) 
+					{
+					  annotation = getItemInfo(idx, "annotation");
+					}
+					getItemInfo(idx, "image");
+				</script>
+			 <widthPC>
+			   <script>
+					idx = getQueryItemIndex();
+					focus = getFocusItemIndex();
+			    if(focus==idx) imageW; else imageW * 3 / 4;
+			   </script>
+			 </widthPC>
+			 <heightPC>
+			   <script>
+					idx = getQueryItemIndex();
+					focus = getFocusItemIndex();
+			    if(focus==idx) imageH; else imageH * 3 / 4;
+			   </script>
+			 </heightPC>
+			 <offsetXPC>
+			   <script>
+					idx = getQueryItemIndex();
+					focus = getFocusItemIndex();
+			    if(focus==idx) 50 - imageW/2; else 50 - imageW * 3 / 8;
+			   </script>
+			 </offsetXPC>
+			 <offsetYPC>
+			   <script>
+					idx = getQueryItemIndex();
+					focus = getFocusItemIndex();
+			    if(focus==idx) 0; else imageH / 8;
+			   </script>
+			 </offsetYPC>
+			</image>
+			
+			<text align="center" lines="3" offsetXPC=0 offsetYPC=55 widthPC=100 heightPC=45 backgroundColor=-1:-1:-1>
+				<script>
+					idx = getQueryItemIndex();
+					getItemInfo(idx, "title");
+				</script>
+        <lines>
+          <script>Integer((100 - imageH - 2) / 12);</script>
+        </lines>
+        <offsetYPC>
+          <script>imageH + 2;</script>
+        </offsetYPC>
+        <heightPC>
+          <script>100 - imageH - 2;</script>
+        </heightPC>
+				<fontSize>
+  				<script>
+  					idx = getQueryItemIndex();
+  					focus = getFocusItemIndex();
+  			    if(focus==idx) "22"; else "18";
+  				</script>
+				</fontSize>
+			  <foregroundColor>
+  				<script>
+  					idx = getQueryItemIndex();
+  					focus = getFocusItemIndex();
+  			    if(focus==idx) "255:255:255"; else "75:75:75";
+  				</script>
+			  </foregroundColor>
+			</text>
+
+		</itemDisplay>
+		
+  <onUserInput>
+    <script>
+      ret = "false";
+      userInput = currentUserInput();
+      majorContext = getPageInfo("majorContext");
+      
+      print("*** majorContext=",majorContext);
+      print("*** userInput=",userInput);
+      
+      ret;
+    </script>
+  </onUserInput>
+		
+	</mediaDisplay>
+	
+	<item_template>
+		<link>
+		  <script>getItemInfo(getQueryItemIndex(), "location");</script>
+		</link>
+	</item_template>
+
+
+<script>
+    channelImage = "../etc/translate/rss/image/tvigle.png";
+  </script><channel>
+  <title>Tvigle - Юмор</title>
+  <item>
+<link><script>translate_base_url+"app,Channel:2092,tvigle/multi";</script></link>
+    <title>Охрустенный квест</title>
+    <annotation>Мега-охрустенный квест от создателей мульта  Тетрис против Контры . Зажигай вместе с популярными героями охрустенного сериала Versus! Играй бесплатно прямо сейчас!</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/2092/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:2105,tvigle/multi";</script></link>
+    <title>Antiсказка</title>
+    <annotation>Герои детских сказок преследуют тебя на улицах Москвы!</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/2105/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:2054,tvigle/multi";</script></link>
+    <title>Smile TV</title>
+    <annotation>Забавные миниатюры с непредсказуемым финалом.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/2054/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:2038,tvigle/multi";</script></link>
+    <title>Ералаш</title>
+    <annotation>Детский юмористический киножурнал  Ералаш .</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/2038/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:1376,tvigle/multi";</script></link>
+    <title>VERSUS. Хруст без правил</title>
+    <annotation>Мультипликационный сериал VERSUS.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/1376/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:1200,tvigle/multi";</script></link>
+    <title>ДаЁшь МолодЁжь</title>
+    <annotation>Сериал про молодежь и для молодежи! Эксклюзивно на Tvigle.ru&#13;
+</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/1200/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:1827,tvigle/multi";</script></link>
+    <title>Вся правда о Еве</title>
+    <annotation>Новый модный интернет сериал в духе черной комедии, снятый специально для женщин.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/1827/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:1354,tvigle/multi";</script></link>
+    <title>Ах, женщины</title>
+    <annotation>Две подруги постоянно попадают в смешные, нелепые ситуации.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/1354/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:2028,tvigle/multi";</script></link>
+    <title>ГопСтоп</title>
+    <annotation>Лучшие пародии на гопников от  ДаЁшь МолодЁжь .</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/2028/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:1786,tvigle/multi";</script></link>
+    <title>UmaNetto</title>
+    <annotation>Компании UmaNetto на работу требуется новая секретарша. После длительного кастинга, который проводят Андрей Падлыч и Казановский, на работу принимают Катю Очкарёву.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/1786/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:1388,tvigle/multi";</script></link>
+    <title>Правда хочешь знать?</title>
+    <annotation>Что мы думаем на самом деле.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/1388/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:12,tvigle/multi";</script></link>
+    <title>В контакте с одноклассниками</title>
+    <annotation>Интернет сериал о долгожданных встречах бывших одноклассниках.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/12/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:11,tvigle/multi";</script></link>
+    <title>Lobanov Show</title>
+    <annotation>Колкие пародии и злободневные шутки.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/11/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:14,tvigle/multi";</script></link>
+    <title>Маленький человек большого офиса</title>
+    <annotation>Жизнь Васи Пупкина в большом офисе.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/14/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:15,tvigle/multi";</script></link>
+    <title>Вася Пупкин. Начало</title>
+    <annotation>Вася Пупкин стал менеджером низшего звена и теперь работает в офисе.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/15/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:742,tvigle/multi";</script></link>
+    <title>Монологи Папы Новака</title>
+    <annotation>Страшилки и байки из... городской жизни.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/742/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:99,tvigle/multi";</script></link>
+    <title>Белка и Стрелка</title>
+    <annotation>Спасут ли мир две дворняги?</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/99/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:1843,tvigle/multi";</script></link>
+    <title>Учительская</title>
+    <annotation>Веселые истории из жизни учителей и их подопечных.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/1843/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:1844,tvigle/multi";</script></link>
+    <title>СмехZavod</title>
+    <annotation>Юморные истории про тех, кто умеет смеяться и веселить других!</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/1844/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:2024,tvigle/multi";</script></link>
+    <title>Классические анекдоты</title>
+    <annotation/>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/2024/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:204,tvigle/multi";</script></link>
+    <title>Biggi's Blog</title>
+    <annotation>Неожиданные комментарии о самых ярких событиях столичной жизни!</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/204/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:100,tvigle/multi";</script></link>
+    <title>Анекдот от звезды</title>
+    <annotation/>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/100/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:17,tvigle/multi";</script></link>
+    <title>Crazy Хата</title>
+    <annotation>Самые скандальные звезды и самые неоднозначные события светской жизни.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/17/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:16,tvigle/multi";</script></link>
+    <title>За кадром</title>
+    <annotation>Вся правда о съемках современных передач. </annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/16/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:18,tvigle/multi";</script></link>
+    <title>Мульти ТВ</title>
+    <annotation>Репортажи обо всем на свете.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/18/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:1292,tvigle/multi";</script></link>
+    <title>12 недель позитива</title>
+    <annotation>Сборник смешных анекдотов.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/1292/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:1874,tvigle/multi";</script></link>
+    <title>Пятница! Время приколов</title>
+    <annotation>Полчаса безделья и смеха никому не помешают, тем более в пятницу! Специальная подборка коротких видеоприколов для позитивной настройки на выходные. Обновления каждую пятницу.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/1874/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:2085,tvigle/multi";</script></link>
+    <title>Снова в школу!</title>
+    <annotation>Мы все учились понемногу, чему-нибудь и как-нибудь...</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/2085/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+</channel>
+
+
+</rss>

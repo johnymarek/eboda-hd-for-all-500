@@ -1,0 +1,36 @@
+#!/bin/sh
+
+FORCE=0
+
+case $1 in
+    --force)
+	FORCE=1
+    ;;
+    --help)
+        echo "Usage: $0 [--force]"
+        exit
+    ;;
+esac
+
+for f in radio-*.xspf
+    do
+	awk -v FORCEINFO=$FORCE -v SKIPTITLE=0 -f ../resolveinfo.awk $f | sed '/^$/d' > ../../../etc/playlists/$f
+    done
+    
+for f in radiogrom*.xspf
+    do
+	awk -v FORCEINFO=$FORCE -v SKIPTITLE=1 -f ../resolveinfo.awk $f | sed '/^$/d' > ../../../etc/playlists/$f
+    done
+    
+for f in audio-*.xspf
+    do
+	awk -v FORCEINFO=$FORCE -v SKIPTITLE=1 -f ../resolveinfo.awk $f | sed '/^$/d' > ../../../etc/playlists/$f
+    done
+
+for f in tv*.xspf
+    do
+	awk -v FORCEINFO=$FORCE -v SKIPTITLE=1 -f ../resolveinfo.awk $f | sed '/^$/d' > ../../../etc/playlists/$f
+    done
+    
+awk -v FORCEINFO=$FORCE -v SKIPTITLE=1 -f ../resolveinfo.awk moskva_fm.xspf | sed '/^$/d' > ../../../etc/playlists/moskva_fm.xspf
+    

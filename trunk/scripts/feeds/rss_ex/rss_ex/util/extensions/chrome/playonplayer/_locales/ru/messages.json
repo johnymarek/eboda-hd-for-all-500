@@ -1,0 +1,26 @@
+{
+  "playOnPlayer": {
+    "message": "Проиграть на Плеере",
+    "description": "Название"
+  },
+  "extensionDescripion": {
+    "message": "Проиграть аудио/видео ссылку на медиаплеере",
+    "description": "Описание"
+  },
+  "linkMsg": {
+    "message": "Ссылка",
+    "description": ""
+  },
+  "sendToMsg": {
+    "message": "отправлена на плеер",
+    "description": ""
+  },
+  "messageTitleSuccess": {
+    "message": "Сообщение",
+    "description": ""
+  },
+  "messageTitleFailed": {
+    "message": "Ошибка",
+    "description": ""
+  }
+}

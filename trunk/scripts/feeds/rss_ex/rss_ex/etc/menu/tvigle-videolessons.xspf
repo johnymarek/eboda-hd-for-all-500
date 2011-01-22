@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<playlist xmlns="http://xspf.org/ns/0/" version="1">
+  <title>Tvigle - Видеоуроки</title>
+  <image>../etc/translate/rss/image/tvigle.png</image>
+  <trackList>
+<track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:2096,tvigle/multi</link>
+  <title>Фотошкола Lumix G</title>
+  <annotation>Фотошкола Lumix G для тех, кто давно мечтает освоить основы фотографии. Мастер-классы по основам фотографического искусства проводит Дмитрий Чистопрудов   самый известный фотограф блогосферы.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2096/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1864,tvigle/multi</link>
+  <title>Учимся вязать спицами</title>
+  <annotation>Видеоуроки вязания спицами для начинающих.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1864/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:72,tvigle/multi</link>
+  <title>PROделки</title>
+  <annotation>Дизайнеры научат вас делать подарки, украшения и многое другое своими руками!</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/72/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1872,tvigle/multi</link>
+  <title>Техника йоги</title>
+  <annotation>Йога   древняя практика достижения гармонии с собой и окружающим миром.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1872/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1822,tvigle/multi</link>
+  <title>Уроки бокса</title>
+  <annotation>Уроки бокса с 7-ми кратным Чемпионом Европы, Чемпионом Мира по версии IBF и IBC среди профессионалов Борисом Синицыным.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1822/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1656,tvigle/multi</link>
+  <title>MAD Sports TV</title>
+  <annotation>Баскетбольный фристайл   это зрелищное спортивное действо, сложные трюки в сочетании с красотой баскетбола.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1656/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1248,tvigle/multi</link>
+  <title>Volnorez</title>
+  <annotation>Обучающее видео по брейк дансу.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1248/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track>
+  </trackList>
+</playlist>

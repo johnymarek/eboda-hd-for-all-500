@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<playlist xmlns="http://xspf.org/ns/0/" version="1">
+  <title>Tvigle - Сериалы</title>
+  <image>../etc/translate/rss/image/tvigle.png</image>
+  <trackList>
+<track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:2151,tvigle/multi</link>
+  <title>Отчаянные домохозяйки. Первый сезон</title>
+  <annotation>Первый сезон многосерийной комедийной драмы о жизни подруг-домохозяек, проживающих на улице Вистерия-Лэйн в выдуманном американском городе Фэйрвью.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2151/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:2158,tvigle/multi</link>
+  <title>Отчаянные домохозяйки. Второй сезон</title>
+  <annotation>Второй сезон многосерийной комедийной драмы о жизни подруг-домохозяек, проживающих на улице Вистерия-Лэйн в выдуманном американском городе Фэйрвью.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2158/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:2162,tvigle/multi</link>
+  <title>Атлантида</title>
+  <annotation>Любая семья   это маленькая страна, загадочная и непознанная Атлантида...</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2162/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:2103,tvigle/multi</link>
+  <title>Antiсказка</title>
+  <annotation>Герои детских сказок преследуют тебя на улицах Москвы!</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2103/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1828,tvigle/multi</link>
+  <title>Вся правда о Еве</title>
+  <annotation>Новый модный интернет сериал в духе черной комедии, снятый специально для женщин.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1828/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1685,tvigle/multi</link>
+  <title>Тридцатилетние</title>
+  <annotation>Жизнь поколения 30-летних в историях из жизни четырех семейных пар и их друзей.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1685/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:2082,tvigle/multi</link>
+  <title>Право на счастье</title>
+  <annotation>Мелодрама, где присутствует и юмор, и много музыки, и даже детектив.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2082/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1818,tvigle/multi</link>
+  <title>33 квадратных метра</title>
+  <annotation>Комедийный сериал о жизни семьи Звездуновых, которая обитает на площаде двухкомнатной квартиры в панельном доме.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1818/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1684,tvigle/multi</link>
+  <title>Люди Шпака</title>
+  <annotation>Команда Шпакова   или Шпака, как все называют этого добродушного толстяка, это команда милиционеров-неудачников. Они неминуемо проваливают любую операцию.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1684/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:2003,tvigle/multi</link>
+  <title>Мастер и Маргарита</title>
+  <annotation>Экранизация романа Михаила Афанасьевича Булгакова  Мастер и Маргарита .</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2003/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:2071,tvigle/multi</link>
+  <title>Люба, дети и завод   </title>
+  <annotation>Забавные истории из жизни неунывающей матери-одиночки Любы Орловы.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2071/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1858,tvigle/multi</link>
+  <title>Апостол</title>
+  <annotation>В начале войны немцы забрасывают в СССР своего диверсанта. Шпион попадает в руки НКВД. При попытке побега диверсант погибает. Чтобы найти остальных шпионов, участвующих в операции, чекистам приходится обратиться к брату-близнецу преступника.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1858/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:2006,tvigle/multi</link>
+  <title>Ермоловы</title>
+  <annotation>Тяжкое проклятие несчастливой любви долгие годы висит над родом Ермоловых. Вслед за несколькими поколениями своих предков, настало время испытать этот тяжелый рок бизнесмену Сергею.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2006/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:2156,tvigle/multi</link>
+  <title>Жизнь Клима Самгина</title>
+  <annotation>Телесериал по одноименному роману Максима Горького. Панорама российской жизни с 1877 по 1917 годы.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2156/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1859,tvigle/multi</link>
+  <title>Застава Жилина</title>
+  <annotation>1941 год. Павел Жилин попадает на службу в погранвойска незадолго перед гитлеровским нашествием.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1859/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track>
+<track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:2009,tvigle/multi</link>
+  <title>Офицеры</title>
+  <annotation>Их отцы и деды сражались в гражданскую войну, воевали в Испании, прошли Великую Отечественную. На долю их потомков выпала служба в Афганистане.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2009/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:2089,tvigle/multi</link>
+  <title>Золотой теленок</title>
+  <annotation>Экранизация культового романа Ильфа и Петрова.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2089/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:2004,tvigle/multi</link>
+  <title>Большая прогулка</title>
+  <annotation>Талантливый работник телевидения Яна мечтает сделать собственную программу. Но прежде чем продюсеры позволят ей осуществить мечту, Яне необходимо  засветиться  на голубом экране.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2004/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:2088,tvigle/multi</link>
+  <title>Звезда эпохи</title>
+  <annotation>История актрисы Вали Плавниковой.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2088/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:2037,tvigle/multi</link>
+  <title>Герой нашего времени</title>
+  <annotation>Историческая драма по роману Михаила Юрьевича Лермонтова.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2037/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1964,tvigle/multi</link>
+  <title>Братья Карамазовы</title>
+  <annotation>XIX век. В уездном российском городе разгораются страсти между стариком Федором Карамазовым и тремя его взрослыми сыновьями.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1964/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1861,tvigle/multi</link>
+  <title>Ликвидация</title>
+  <annotation>Лето 1946 года. Маршал Жуков в опале. Он отправлен в ссылку в Одессу, где банда  Степные волки  грабит военные склады, а всем заправляет немецкий шпион  Академик , которого никто не знает в лицо. И только начальник угрозыска Давид Гоцман и Георгий Жуков могут спасти город.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1861/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1420,tvigle/multi</link>
+  <title>МаршROOTы</title>
+  <annotation>Реалити-сериал о молодых и талантливых музыкантах.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1420/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track>
+  </trackList>
+</playlist>

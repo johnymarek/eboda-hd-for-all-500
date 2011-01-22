@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<playlist xmlns="http://xspf.org/ns/0/" version="1">
+  <title>Tvigle - Еда</title>
+  <image>../etc/translate/rss/image/tvigle.png</image>
+  <trackList>
+<track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1393,tvigle/multi</link>
+  <title>Вкусно и быстро</title>
+  <annotation>Лучшее руководство, как для новичков, так и для блистательных шеф-поваров по созданию изумительных шедевров кулинарии в условиях одной кухни и минимального количества времени.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1393/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1381,tvigle/multi</link>
+  <title>Горячие блюда</title>
+  <annotation>Более ста интересных и оригинальных рецептов приготовления мяса, рыбы, овощей и многих других продуктов на ужин.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1381/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1378,tvigle/multi</link>
+  <title>Закуски</title>
+  <annotation>Видеорецепты холодных и горячих закусок идеально подойдут как для легкого завтрака или обеда, так и для банкетного стола: от сложносочиненных бутербродов до изысканных рулетиков из буженины с  Пармезаном .</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1378/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1382,tvigle/multi</link>
+  <title>Десерты</title>
+  <annotation>Восхитительное завершение любой трапезы   вкуснейший десерт. Множество рецептов для сладкоежек.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1382/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1379,tvigle/multi</link>
+  <title>Салаты</title>
+  <annotation>Большая коллекция видео о том, как приготовить салат на любой вкус: от классического  Оливье  до изысканного  Сурими с апельсинами .</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1379/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1380,tvigle/multi</link>
+  <title>Супы</title>
+  <annotation>Коллекция рецепты традиционных и оригинальных первых блюд, а также секреты создания вкуснейших супов на самый взыскательный вкус из самых разнообразных ингредиентов.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1380/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1450,tvigle/multi</link>
+  <title>Talerka</title>
+  <annotation>Кулинарный блог Андрея Азарова. Энциклопедия рецептов традиционных блюд со всего света.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1450/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1435,tvigle/multi</link>
+  <title>От шеф-повара</title>
+  <annotation>Шеф повара раскрывают свои секреты   видеорецепты классических блюд ресторанов.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1435/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1387,tvigle/multi</link>
+  <title>Рецепты на каждый день</title>
+  <annotation>Надоели полуфабрикаты? Разнообразные рецепты приготовления простых, но вкусных блюд из доступных продуктов.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1387/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1431,tvigle/multi</link>
+  <title>Ярмарка на Tvigle.ru</title>
+  <annotation>Блюда из бобовых вкусны и благоприятны для здоровья. Пятьдесят видео разнообразных рецептов.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1431/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1389,tvigle/multi</link>
+  <title>Шейкер Шоу</title>
+  <annotation>Профессиональные бармены покажут, как готовить коктейли по-настоящему.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1389/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1583,tvigle/multi</link>
+  <title>Кулинарный блог Михаила Марчука</title>
+  <annotation/>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1583/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track>
+  </trackList>
+</playlist>

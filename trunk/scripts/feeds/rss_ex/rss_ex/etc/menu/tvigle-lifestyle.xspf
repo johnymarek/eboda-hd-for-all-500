@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<playlist xmlns="http://xspf.org/ns/0/" version="1">
+  <title>Tvigle - Lifestyle</title>
+  <image>../etc/translate/rss/image/tvigle.png</image>
+  <trackList>
+<track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:2150,tvigle/multi</link>
+  <title>Shine show</title>
+  <annotation>Electrolux представляет: модные показы.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2150/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:71,tvigle/multi</link>
+  <title>MakeUpgrade</title>
+  <annotation>Леон Клима продемонстрирует основные техники и приемы в макияже.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/71/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:70,tvigle/multi</link>
+  <title>Звездные прически</title>
+  <annotation>Как при помощи нехитрых средств превратиться в настоящую голливудскую звезду!</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/70/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:73,tvigle/multi</link>
+  <title>Техника йоги</title>
+  <annotation>Йога   древняя практика достижения гармонии с собой и окружающим миром.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/73/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1375,tvigle/multi</link>
+  <title>Star Fashion</title>
+  <annotation>Самые свежие новинки из звездного мира моды.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1375/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:205,tvigle/multi</link>
+  <title>Офисная гимнастика</title>
+  <annotation>Упражнения для быстрого восстановления сил.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/205/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:68,tvigle/multi</link>
+  <title>Street Fashion</title>
+  <annotation>Мода городских улиц.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/68/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:2023,tvigle/multi</link>
+  <title>Мать и дитя</title>
+  <annotation>Программа о материнстве и детстве.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2023/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1870,tvigle/multi</link>
+  <title>In Style</title>
+  <annotation>Всё о звездах, вещах и красивой жизни.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1870/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:198,tvigle/multi</link>
+  <title>Мода в лицах</title>
+  <annotation>Модная история.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/198/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1580,tvigle/multi</link>
+  <title>Астропрогноз</title>
+  <annotation> Звездный мост  с Еленой Жаровой.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1580/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1575,tvigle/multi</link>
+  <title>Новогодний стиль</title>
+  <annotation>Прически и макияж для новогоднего пати от ведущих стилистов.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1575/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:224,tvigle/multi</link>
+  <title>На диете</title>
+  <annotation>Наша героиня в поисках идеальной диеты.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/224/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track>
+  </trackList>
+</playlist>
