@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<playlist xmlns="http://xspf.org/ns/0/" version="1">
+  <title>Tvigle - Спорт</title>
+  <image>../etc/translate/rss/image/tvigle.png</image>
+  <trackList>
+<track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1819,tvigle/multi</link>
+  <title>Уроки бокса</title>
+  <annotation>Уроки бокса с 7-ми кратным Чемпионом Европы, Чемпионом Мира по версии IBF и IBC среди профессионалов Борисом Синицыным.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1819/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1318,tvigle/multi</link>
+  <title>Мотокросс</title>
+  <annotation>Спортивный мотоцикл на бездорожье.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1318/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1716,tvigle/multi</link>
+  <title>Чемпионат.ру</title>
+  <annotation>Всё видео о футболе, хоккее, теннисе, баскетболе, боксе, автоспорте, мотоспорте, мини-футболе и других видах спорта.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1716/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1345,tvigle/multi</link>
+  <title>Crash Boom Bang</title>
+  <annotation>Взрывные трюки и взрывные падения.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1345/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1244,tvigle/multi</link>
+  <title>Сноуборд</title>
+  <annotation>Горячий зимний вид спорта.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1244/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1228,tvigle/multi</link>
+  <title>Серфинг</title>
+  <annotation>Экстремальный серф.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1228/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1231,tvigle/multi</link>
+  <title>BMX</title>
+  <annotation>Экстремальный велоспорт.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1231/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1321,tvigle/multi</link>
+  <title>Скейтборд</title>
+  <annotation>Мир скейтбординга.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1321/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1352,tvigle/multi</link>
+  <title>A-ONE. Экстрим</title>
+  <annotation>Программа FIZRA на первом альтернативном.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1352/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1289,tvigle/multi</link>
+  <title>1. Red Bull Flugtag 2009.</title>
+  <annotation>1. Red Bull Flugtag 2009.   особый день в году, когда любому по плечу взлететь и эффектно упасть в воду с шестиметровой высоты.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1289/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:79,tvigle/multi</link>
+  <title>GUNter</title>
+  <annotation>Экстремальный спорт.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/79/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1715,tvigle/multi</link>
+  <title>Олимпиада</title>
+  <annotation>Комментарии из первых рук о спортивных соревнованиях в Ванкувере. </annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1715/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1554,tvigle/multi</link>
+  <title>Ажиотаж</title>
+  <annotation>Фильм о фрирайде.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1554/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track>
+  </trackList>
+</playlist>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<playlist version="1" xmlns="http://xspf.org/ns/0/">
+  <title>Radiogrom.com - piter_fm</title>
+  <trackList>
+    <track>
+      <location>http://www.radiogrom.com/online/piter_fm/dorozhnoe_radio_online.html</location>
+      <title>- 87,5 FM - Дорожное радио </title>
+    
+<meta rel="stream_url">http://radio.mv.ru:8080/Dorojnoe_Radio</meta>
+<meta rel="stream_class">audio</meta>
+<meta rel="stream_soft">icecast</meta>
+<meta rel="stream_type">audio/mpeg</meta>
+<meta rel="stream_protocol">http</meta>
+<meta rel="stream_bitrate">64</meta>
+</track>
+    <track>
+      <location>http://www.radiogrom.com/online/piter_fm/avtoradio_online.html</location>
+      <title>- 88,4 FM - Авторадио </title>
+    
+</track>
+    <track>
+      <location>http://www.radiogrom.com/online/piter_fm/radio_zenit_online.html</location>
+      <title>- 89,7 FM - Радио Зенит </title>
+    
+<meta rel="stream_url">mms://217.170.65.66/zenit</meta>
+<meta rel="stream_class">audio</meta>
+<meta rel="stream_server">_empty_</meta>
+<meta rel="stream_type">audio/x-ms-wma</meta>
+<meta rel="stream_protocol">rtsp</meta>
+</track>
+    <track>
+      <location>http://www.radiogrom.com/online/piter_fm/radio_ermitazh_online.html</location>
+      <title>- 90,1 FM - Радио Эрмитаж </title>
+    
+</track>
+    <track>
+      <location>http://www.radiogrom.com/online/piter_fm/radio_hit_online.html</location>
+      <title>- 90,6 FM - Радио Хит </title>
+    
+<meta rel="stream_url">http://217.170.67.77/radiohit</meta>
+<meta rel="stream_class">audio</meta>
+<meta rel="stream_soft">icecast</meta>
+<meta rel="stream_type">audio/mpeg</meta>
+<meta rel="stream_protocol">http</meta>
+<meta rel="stream_genre">RDD 90.6 FM</meta>
+<meta rel="stream_bitrate">64</meta>
+</track>
+    <track>
+      <location>http://www.radiogrom.com/online/piter_fm/radio_vanya_online.html</location>
+      <title>- 100,1 FM - Радио Ваня </title>
+    
+<meta rel="stream_url">http://online.radiovanya.ru/radiovanya</meta>
+<meta rel="stream_class">audio</meta>
+<meta rel="stream_soft">icecast</meta>
+<meta rel="stream_type">audio/mpeg</meta>
+<meta rel="stream_protocol">http</meta>
+<meta rel="stream_genre">Radio Vanya</meta>
+<meta rel="stream_bitrate">64</meta>
+</track>
+    <track>
+      <location>http://www.radiogrom.com/online/piter_fm/radio_eldoradio_online.html</location>
+      <title>- 101,4 FM - Радио Эльдорадио </title>
+    
+<meta rel="stream_url">http://onair.eltel.net/eldoradio-128k</meta>
+<meta rel="stream_class">audio</meta>
+<meta rel="stream_soft">icecast</meta>
+<meta rel="stream_type">audio/mpeg</meta>
+<meta rel="stream_protocol">http</meta>
+<meta rel="stream_genre">Various</meta>
+<meta rel="stream_bitrate">128</meta>
+</track>
+    <track>
+      <location>http://www.radiogrom.com/online/piter_fm/radio_roks_online.html</location>
+      <title>- 102,0 FM - Радио Рокс </title>
+    
+</track>
+    <track>
+      <location>http://www.radiogrom.com/online/piter_fm/radio_metro_online.html</location>
+      <title>- 102,4 FM - Радио Metro </title>
+    
+<meta rel="stream_url">http://195.182.132.18:8230/</meta>
+<meta rel="stream_class">audio</meta>
+<meta rel="stream_soft">shoutcast</meta>
+<meta rel="stream_type">audio/mpeg</meta>
+<meta rel="stream_protocol">http</meta>
+<meta rel="stream_genre">Pop Hit Dance</meta>
+<meta rel="stream_bitrate">96</meta>
+</track>
+    <track>
+      <location>http://www.radiogrom.com/online/piter_fm/radio_baltika_online.html</location>
+      <title>- 104,8 FM - Радио Балтика </title>
+    
+</track>
+    <track>
+      <location>http://www.radiogrom.com/online/piter_fm/monte_carlo_online.html</location>
+      <title>- 105,9 FM - Радио Монте-Карло </title>
+    
+</track>
+    <track>
+      <location>http://www.radiogrom.com/online/piter_fm/radio_record_online.html</location>
+      <title>- 106,3 FM - Радио Рекорд </title>
+    
+<meta rel="stream_url">http://radio.11one.ru/record192.mp3?u=6SQsq8V9</meta>
+<meta rel="stream_class">audio</meta>
+<meta rel="stream_soft">icecast</meta>
+<meta rel="stream_type">audio/mpeg</meta>
+<meta rel="stream_protocol">http</meta>
+<meta rel="stream_genre">Dance</meta>
+<meta rel="stream_bitrate">192</meta>
+</track>
+  </trackList>
+</playlist>

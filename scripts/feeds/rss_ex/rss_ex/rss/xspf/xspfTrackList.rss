@@ -1,0 +1,401 @@
+<?xml version='1.0' ?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<!--
+#
+#   http://code.google.com/media-translate/
+#   Copyright (C) 2010  Serge A. Timchenko
+#
+#   This program is free software: you can redistribute it and/or modify
+#   it under the terms of the GNU General Public License as published by
+#   the Free Software Foundation, either version 3 of the License, or
+#   (at your option) any later version.
+#
+#   This program is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#   along with this program. If not, see <http://www.gnu.org/licenses/>.
+#
+-->
+
+<!--
+  options:
+    0:repeat: <None|One|All|Random>
+-->
+
+  <onEnter>
+    auto = 0;
+    translateBaseURL    = "http://127.0.0.1/cgi-bin/translate";
+    cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
+    if(cgiconf != null)
+    {
+      value = getStringArrayAt(cgiconf, 0);
+      if(value != null &amp;&amp; value != "")
+      {
+        translate_base_url = value;
+        print("cgi.conf=",value);
+      }
+    }
+
+
+  	titleArray = null;
+  	contentArray = null;
+  	imageArray = null;
+  	metaArray = null;
+  
+    xspfPath = readStringFromFile(storagePath_xspf);
+    
+    print("Playlist path: "+xspfPath);
+    dlok = loadXMLFile(translateBaseURL+"?playlist,,"+urlEncode(xspfPath));
+    if (dlok != null)
+    {
+    	itemSize = getXMLElementCount("playlist","trackList","track");
+    	
+    	playlistTitle = getXMLText("playlist","title");
+    
+    	count=0;
+    	while(itemSize != 0)
+    	{
+    		location = getXMLText("playlist","trackList","track",count,"location");
+    		
+    		title = getXMLText("playlist","trackList","track",count,"title");
+    		if(title == null)
+    		{
+      		annotation = getXMLText("playlist","trackList","track",count,"annotation");
+      		if(annotation != null)
+      		{
+      		  title = annotation;
+      		}
+      	  else
+      	  {
+      		  title = location;
+        	}
+    		}
+    		else
+    		{ 
+      		creator = getXMLText("playlist","trackList","track",count,"creator");
+    		  if (creator != null)
+    		  {
+    		    title = creator + " - " + title;
+    		  }
+    		}
+      		
+    		image = getXMLText("playlist","trackList","track",count,"image");
+    		meta = "";
+
+        metaCounter = getXMLElementCount("playlist","trackList","track",count,"meta");
+    	  while(metaCounter &gt; 0)
+    	  {
+    	    metaIndex = metaCounter-1;
+    	    metaRel = getXMLAttribute("playlist","trackList","track",count,"meta",metaIndex,"rel");
+    	    if(metaRel == "translate")
+    	    {
+    	      meta = getXMLText("playlist","trackList","track",count,"meta",metaIndex);
+    	    }
+    	    metaCounter -= 1;
+    	  }
+
+  	  	titleArray  = pushBackStringArray(titleArray, title);
+  	  	contentArray  = pushBackStringArray(contentArray, location);
+  	  	imageArray  = pushBackStringArray(imageArray, image);
+  	  	metaArray  = pushBackStringArray(metaArray, meta);
+  
+  	  	count += 1;
+  	  	if (count == itemSize)
+    		{
+  			  break;
+  	  	}
+    	}
+  
+    	print("title array =", titleArray);
+    	setFocusItemIndex(0);
+    	setItemFocus(0);
+    	redrawDisplay();
+    
+    }
+    else
+    {
+      postMessage("return");
+    }
+  
+
+    storagePath         = getStoragePath("tmp");
+    storagePath_xspf    = storagePath + "xspfPath.dat";
+    storagePath_stream  = storagePath + "stream.dat";
+    storagePath_status  = storagePath + "streamStatus.dat";
+    storagePath_random  = storagePath + "playlistRandom.dat";
+    storagePath_index   = storagePath + "playlistRandomIndex.dat";
+    
+    optionsPath         = getStoragePath("key");
+    optionsPath_xspf    = optionsPath + "xspfOptions.dat";
+    playlistOptions     = readStringFromFile(optionsPath_xspf);
+    if(playlistOptions == null)
+    {
+      repeat = "None";
+      playlistOptions = pushBackStringArray(playlistOptions, repeat);
+    }
+    else
+    {
+      repeat = getStringArrayAt(playlistOptions , 0);
+    }
+
+    playingStatus = readStringFromFile(storagePath_status);
+    print("playingStatus=",playingStatus);
+    idx = Integer(getFocusItemIndex());
+    if(playingStatus == "play")
+    {
+      repeat = getStringArrayAt(playlistOptions , 0);
+      if(repeat == "One")
+      {
+        auto = 1;
+        postMessage("enter");
+      }
+      else if(repeat == "All")
+      {
+        idx = Integer(getFocusItemIndex());
+        idx -= -1;
+        if(idx &gt;= itemSize)
+          idx = 0;
+        setFocusItemIndex(idx);
+      	setItemFocus(idx);
+        auto = 1;
+        postMessage("enter");
+      }
+      else if(repeat == "Random")
+      {
+        current = readStringFromFile(storagePath_index);
+        current -= -1;
+        writeStringToFile(storagePath_index, current);
+        randomArray = readStringFromFile(storagePath_random);
+        idx = getStringArrayAt(randomArray , current);
+        setFocusItemIndex(idx);
+      	setItemFocus(idx);
+        auto = 1;
+        if(current >= (itemSize-1))
+          auto = 0;
+        postMessage("enter");
+      }
+    }
+  </onEnter>
+  
+  <onExit>
+    writeStringToFile(storagePath_status, "return");
+  </onExit>
+
+<mediaDisplay name=onePartView
+	sideLeftWidthPC = 15
+	sideRightWidthPC = 0
+
+	sideColorRight="0:0:0"
+	sideColorLeft="0:0:0"
+	headerImageWidthPC="0"
+	selectMenuOnRight=no
+	autoSelectMenu=no
+	autoSelectItem=no
+	headerImageXPC="10"
+	headerXPC="10"
+	itemImageXPC="12"
+	itemImageYPC="18"
+	itemImageHeightPC="0"
+	itemImageWidthPC="0"
+	itemXPC="20"
+	itemYPC="18"
+	capXPC="20"
+	capYPC="17"
+	capWidthPC="70"
+	capHeightPC="7"
+	itemBackgroundColor="0:0:0"
+	itemHeightPC="8"
+	itemWidthPC="60"
+	itemPerPage="8"
+	bottomYPC="90"
+	backgroundColor="0:0:0"
+	showHeader=no
+	showDefaultInfo=yes
+	>
+
+  <text offsetXPC=5 offsetYPC=0 widthPC=100 heightPC=15 fontSize=20 backgroundColor=0:0:0 foregroundColor=200:200:200>
+    <script>playlistTitle;</script>
+  </text>
+  <image offsetXPC=0 offsetYPC=12 widthPC=100 heightPC=1>
+		../etc/translate/rss/image/gradient_line.bmp
+	</image>
+
+		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_01.png </idleImage>
+		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_02.png </idleImage>
+		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_03.png </idleImage>
+		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_04.png </idleImage>
+		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_05.png </idleImage>
+		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_06.png </idleImage>
+		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_07.png </idleImage>
+		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_08.png </idleImage>
+
+		<itemDisplay>
+			<image offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+				<script>
+					idx1 = getFocusItemIndex();
+					idx2 = getQueryItemIndex();
+					if (idx1 == idx2)
+					{
+						"../etc/translate/rss/image/IMAGE_NEWRSS_MENU_BTFOC.bmp";
+					}
+					else
+					{
+						"";
+					}
+				</script>
+			</image>
+
+			<text offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100 fontSize=17 backgroundColor=-1:-1:-1 foregroundColor=200:200:200>
+				<script>
+				  tit = getStringArrayAt(titleArray , -1);
+				  tit;
+				</script>
+			</text>
+		</itemDisplay>
+
+    <onUserInput>
+      <script>
+        ret = "false";
+        majorContext = getPageInfo("majorContext");
+        minorContext = getPageInfo("minorContext");
+        userInput = currentUserInput();
+        print("*** userInput=",userInput);
+        
+        if (userInput == "pagedown" || userInput == "pageup")
+        {
+          idx = Integer(getFocusItemIndex());
+          if (userInput == "pagedown")
+          {
+            idx -= -8;
+            if(idx &gt;= itemSize)
+              idx = itemSize-1;
+          }
+          else
+          {
+            idx -= 8;
+            if(idx &lt; 0)
+              idx = 0;
+          }
+          setFocusItemIndex(idx);
+        	setItemFocus(idx);
+          redrawDisplay();
+          ret = "true";
+        }
+        else if (majorContext == "items" &amp;&amp; userInput == "enter") 
+        {
+             idx = getFocusItemIndex();
+             title = getStringArrayAt(titleArray, idx);
+             url   = getStringArrayAt(contentArray, idx);
+             image = getStringArrayAt(imageArray,idx);
+             meta  = getStringArrayAt(metaArray,idx);
+             
+             streamArray = null;
+             
+             streamArray = pushBackStringArray(streamArray, url);
+             streamArray = pushBackStringArray(streamArray, title);
+             streamArray = pushBackStringArray(streamArray, image);
+             streamArray = pushBackStringArray(streamArray, meta);
+             
+             writeStringToFile(storagePath_stream, streamArray);
+             
+             if(auto == 0)
+             {
+              writeStringToFile(storagePath_status, "enter");
+              if(repeat == "Random")
+              {
+                dlok = loadXMLFile(translateBaseURL+"?random,"+itemSize+","+idx);
+                if (dlok != null)
+                {
+                  randomArray = null;
+                	count=0;
+                	while(itemSize != 0)
+                	{
+                		num = getXMLText("randomList","item",count);
+              	  	randomArray  = pushBackStringArray(randomArray, num);
+              	  	count += 1;
+              	  	if (count == itemSize)
+                		{
+              			  break;
+              	  	}
+                	}
+                  writeStringToFile(storagePath_random, randomArray);
+                  writeStringToFile(storagePath_index, 0);
+                }
+              }
+             }
+        } 
+        else if (userInput == "video_repeat")
+        {
+          if(repeat == "None")
+          {
+            repeat = "One";
+          }
+          else if(repeat == "One")
+          {
+            repeat = "All";
+          }
+          else if(repeat == "All")
+          {
+            repeat = "Random";
+          }
+          else
+          {
+            repeat = "None";
+          }
+          playlistOptions = null;
+          playlistOptions = pushBackStringArray(playlistOptions, repeat);
+          writeStringToFile(optionsPath_xspf, playlistOptions);
+          redrawDisplay();
+        }
+        ret;
+      </script>
+    </onUserInput>
+
+    <text redraw=yes offsetXPC=10 offsetYPC=85 widthPC=80 heightPC=5 fontSize=14 backgroundColor=0:0:0 foregroundColor=100:100:100>
+      <script>getStringArrayAt(contentArray , getFocusItemIndex());</script>
+    </text>
+
+    <text offsetXPC=70 offsetYPC=90 widthPC=10 heightPC=5 fontSize=16 backgroundColor=0:0:0 foregroundColor=40:200:200>
+      Repeat:
+    </text>
+    <text offsetXPC=80 offsetYPC=90 widthPC=15 heightPC=5 fontSize=16 backgroundColor=0:0:0 foregroundColor=200:200:200>
+      <script>repeat;</script>
+    </text>
+  
+	</mediaDisplay>
+
+	<item_template>	
+    <mediaDisplay name=threePartsView
+		    sideLeftWidthPC = 0
+		    sideRightWidthPC = 0
+        backgroundColor="0:0:0">
+			<idleImage idleImageXPC=80 idleImageYPC=80 idleImageWidthPC=5 idleImageHeightPC=5> ../etc/translate/rss/image/POPUP_LOADING_01.png </idleImage>
+			<idleImage idleImageXPC=80 idleImageYPC=80 idleImageWidthPC=5 idleImageHeightPC=5> ../etc/translate/rss/image/POPUP_LOADING_02.png </idleImage>
+			<idleImage idleImageXPC=80 idleImageYPC=80 idleImageWidthPC=5 idleImageHeightPC=5> ../etc/translate/rss/image/POPUP_LOADING_03.png </idleImage>
+			<idleImage idleImageXPC=80 idleImageYPC=80 idleImageWidthPC=5 idleImageHeightPC=5> ../etc/translate/rss/image/POPUP_LOADING_04.png </idleImage>
+			<idleImage idleImageXPC=80 idleImageYPC=80 idleImageWidthPC=5 idleImageHeightPC=5> ../etc/translate/rss/image/POPUP_LOADING_05.png </idleImage>
+			<idleImage idleImageXPC=80 idleImageYPC=80 idleImageWidthPC=5 idleImageHeightPC=5> ../etc/translate/rss/image/POPUP_LOADING_06.png </idleImage>
+			<idleImage idleImageXPC=80 idleImageYPC=80 idleImageWidthPC=5 idleImageHeightPC=5> ../etc/translate/rss/image/POPUP_LOADING_07.png </idleImage>
+			<idleImage idleImageXPC=80 idleImageYPC=80 idleImageWidthPC=5 idleImageHeightPC=5> ../etc/translate/rss/image/POPUP_LOADING_08.png </idleImage>
+		</mediaDisplay>
+		<link>rss_file://../etc/translate/rss/xspf/streamPlayer.rss</link>
+		<title><script>getStringArrayAt(contentArray , -1);</script></title>
+	</item_template>
+
+<channel>
+	<title>
+  	<script>playlistTitle;</script>
+	</title>
+	
+<itemSize>
+	<script>
+		itemSize;
+	</script>
+</itemSize>
+
+</channel>
+</rss>

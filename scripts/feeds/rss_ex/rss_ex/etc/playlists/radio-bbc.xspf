@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<playlist version="1" xmlns="http://xspf.org/ns/0/">
+<title>BBC Radio</title>
+<trackList>
+<track>
+<title>BBC Radio 1</title>
+<annotation>The best new music and entertainment</annotation>
+<location>http://bbc.co.uk/radio/listen/live/r1.asx</location>
+<meta rel="stream_url">mmsh://wmlive.bbc.net.uk/wms/bbc_ami/radio1/radio1_bb_live_int_eq1_sl0</meta>
+<meta rel="stream_class">audio</meta>
+<meta rel="stream_server">_empty_</meta>
+<meta rel="stream_type">audio/x-ms-wma</meta>
+<meta rel="stream_protocol">mmsh</meta>
+<meta rel="stream_title">BBC Radio 1</meta>
+</track>
+<track>
+<title>BBC 1Xtra</title>
+<annotation>Xtra Rnb, Xtra Hip Hop</annotation>
+<location>http://bbc.co.uk/radio/listen/live/r1x.asx</location>
+<meta rel="stream_url">mmsh://wmlive.bbc.net.uk/wms/bbc_ami/1xtra/1xtra_bb_live_int_eq1_sl0</meta>
+<meta rel="stream_class">audio</meta>
+<meta rel="stream_server">_empty_</meta>
+<meta rel="stream_type">audio/x-ms-wma</meta>
+<meta rel="stream_protocol">mmsh</meta>
+<meta rel="stream_title">BBC 1Xtra</meta>
+</track>
+<track>
+<title>BBC Radio 2</title>
+<annotation>The most listened-to station in the UK</annotation>
+<location>http://bbc.co.uk/radio/listen/live/r2.asx</location>
+<meta rel="stream_url">mmsh://wmlive.bbc.net.uk/wms/bbc_ami/radio2/radio2_bb_live_int_eq1_sl0</meta>
+<meta rel="stream_class">audio</meta>
+<meta rel="stream_server">_empty_</meta>
+<meta rel="stream_type">audio/x-ms-wma</meta>
+<meta rel="stream_protocol">mmsh</meta>
+<meta rel="stream_title">BBC Radio 2</meta>
+</track>
+<track>
+<title>BBC Radio 3</title>
+<annotation>Live music and the arts</annotation>
+<location>http://bbc.co.uk/radio/listen/live/r3.asx</location>
+<meta rel="stream_url">mmsh://wmlive.bbc.net.uk/wms/bbc_ami/radio3/radio3_bb_live_int_eq1_sl0</meta>
+<meta rel="stream_class">audio</meta>
+<meta rel="stream_server">_empty_</meta>
+<meta rel="stream_type">audio/x-ms-wma</meta>
+<meta rel="stream_protocol">mmsh</meta>
+<meta rel="stream_title">BBC Radio 3</meta>
+</track>
+<track>
+<title>BBC Radio 4</title>
+<annotation>UK Radio Station of the Year 2008</annotation>
+<location>http://bbc.co.uk/radio/listen/live/r4.asx</location>
+<meta rel="stream_url">mmsh://wmlive.bbc.net.uk/wms/bbc_ami/radio4/radio4_bb_live_int_eq1_sl0</meta>
+<meta rel="stream_class">audio</meta>
+<meta rel="stream_server">_empty_</meta>
+<meta rel="stream_type">audio/x-ms-wma</meta>
+<meta rel="stream_protocol">mmsh</meta>
+<meta rel="stream_title">BBC Radio 4 FM</meta>
+</track>
+<track>
+<title>BBC Radio 5 live</title>
+<annotation>The UK's home of live news and live sport</annotation>
+<location>http://bbc.co.uk/radio/listen/live/r5l.asx</location>
+<meta rel="stream_url">mmsh://wmlive.bbc.net.uk/wms/bbc_ami/radio5/radio5_bb_live_int_eq1_sl0</meta>
+<meta rel="stream_class">audio</meta>
+<meta rel="stream_server">_empty_</meta>
+<meta rel="stream_type">audio/x-ms-wma</meta>
+<meta rel="stream_protocol">mmsh</meta>
+<meta rel="stream_title">BBC 5 Live</meta>
+</track>
+<track>
+<title>BBC Radio 5 live sports extra</title>
+<annotation>More live sport. Pure live sport.</annotation>
+<location>http://bbc.co.uk/radio/listen/live/r5lsp.asx</location>
+<meta rel="stream_url">mmsh://wmlive.bbc.net.uk/wms/bbc_ami/radio5/5spxtra_bb_live_int_eq1_sl0</meta>
+<meta rel="stream_class">audio</meta>
+<meta rel="stream_server">_empty_</meta>
+<meta rel="stream_type">audio/x-ms-wma</meta>
+<meta rel="stream_protocol">mmsh</meta>
+<meta rel="stream_title">BBC 5 Live Sports Extra</meta>
+</track>
+<track>
+<title>BBC Radio 6 Music</title>
+<annotation>Closer to the music that you love</annotation>
+<location>http://bbc.co.uk/radio/listen/live/r6.asx</location>
+<meta rel="stream_url">mmsh://wmlive.bbc.net.uk/wms/bbc_ami/6music/6music_bb_live_int_eq1_sl0</meta>
+<meta rel="stream_class">audio</meta>
+<meta rel="stream_server">_empty_</meta>
+<meta rel="stream_type">audio/x-ms-wma</meta>
+<meta rel="stream_protocol">mmsh</meta>
+<meta rel="stream_title">BBC 6Music</meta>
+</track>
+<track>
+<title>BBC Radio 7</title>
+<annotation>Unadulterated entertainment</annotation>
+<location>http://bbc.co.uk/radio/listen/live/r7.asx</location>
+<meta rel="stream_url">mmsh://wmlive.bbc.net.uk/wms/bbc_ami/bbc7/bbc7_bb_live_int_eq1_sl0</meta>
+<meta rel="stream_class">audio</meta>
+<meta rel="stream_server">_empty_</meta>
+<meta rel="stream_type">audio/x-ms-wma</meta>
+<meta rel="stream_protocol">mmsh</meta>
+<meta rel="stream_title">BBC BBC7</meta>
+</track>
+<track>
+<title>BBC Asian Network</title>
+<annotation>The Sound of Asian Britain</annotation>
+<location>http://bbc.co.uk/radio/listen/live/ran.asx</location>
+<meta rel="stream_url">mmsh://wmlive.bbc.net.uk/wms/bbc_ami/asiannet/asiannet_bb_live_int_eq1_sl0</meta>
+<meta rel="stream_class">audio</meta>
+<meta rel="stream_server">_empty_</meta>
+<meta rel="stream_type">audio/x-ms-wma</meta>
+<meta rel="stream_protocol">mmsh</meta>
+<meta rel="stream_title">BBC Asian Network</meta>
+</track>
+</trackList>
+</playlist>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<playlist xmlns="http://xspf.org/ns/0/" version="1">
+  <title>Tvigle - Компьютерные игры</title>
+  <image>../etc/translate/rss/image/tvigle.png</image>
+  <trackList>
+<track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:2094,tvigle/multi</link>
+  <title>Охрустенный квест</title>
+  <annotation>Мега-охрустенный квест от создателей мульта  Тетрис против Контры . Зажигай вместе с популярными героями охрустенного сериала Versus! Играй бесплатно прямо сейчас!</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2094/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1590,tvigle/multi</link>
+  <title>ОтжЫг</title>
+  <annotation>Видеоряд из различных игр, в сопровождении музыкальной темы.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1590/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1510,tvigle/multi</link>
+  <title>Игротека</title>
+  <annotation>Все лучшее из мира компьютерных и видеоигр.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1510/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1593,tvigle/multi</link>
+  <title>Скороходы</title>
+  <annotation>Самые быстрые прохождения лучших игр.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1593/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1507,tvigle/multi</link>
+  <title>Без винта</title>
+  <annotation>Без пафоса о новых играх.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1507/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1509,tvigle/multi</link>
+  <title>Проходняк</title>
+  <annotation>Самые интересные моменты из игр.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1509/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1598,tvigle/multi</link>
+  <title>Техно</title>
+  <annotation>Новости мира высоких технологий и гаджетов.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1598/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1508,tvigle/multi</link>
+  <title>1й уровень</title>
+  <annotation>Гости из будущего.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1508/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1600,tvigle/multi</link>
+  <title>В фокусе</title>
+  <annotation>Главное событие недели или новая игра через призму геймерского микроскопа. </annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1600/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1591,tvigle/multi</link>
+  <title>Темы</title>
+  <annotation>Новости игрового мира и технологий.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1591/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1512,tvigle/multi</link>
+  <title>Игровой невод</title>
+  <annotation>Программа о новых и ожидаемых играх.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1512/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track>
+  </trackList>
+</playlist>
