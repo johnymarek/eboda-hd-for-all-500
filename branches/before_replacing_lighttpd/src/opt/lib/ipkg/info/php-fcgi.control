@@ -1,9 +1,0 @@
-Package: php-fcgi
-Architecture: mipsel
-Priority: optional
-Section: net
-Version: 5.2.12-1
-Maintainer: NSLU2 Linux <nslu2-linux@yahoogroups.com>
-Source: http://static.php.net/www.php.net/distributions//php-5.2.12.tar.bz2
-Description: The php scripting language, built as an fcgi module
-Depends: php (5.2.12), pcre

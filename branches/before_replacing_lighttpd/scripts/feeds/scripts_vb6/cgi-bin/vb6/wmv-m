@@ -1,6 +1,0 @@
-#!/bin/sh
-cat <<EOF
-Content-type: video/x-ms-wmv
-
-EOF
-exec /cb3pp/bin/msdl -q -o - -m `echo $QUERY_STRING|sed "s_\&amp;_\&_g"`
