@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<!--Xtreamer Community 2010 - xLive9.1 Cap-->
+<rss version="2.0" xmlns:media="http://purl.org/dc/elements/1.1/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+
+    <title>Xtreamer - Wildlife & Nature</title>
+
+    <item>
+      <title>Earth Touch Highlights</title>
+      <link>http://feeds.feedburner.com/earth-touch_featured_720p</link>
+      <media:thumbnail url="/tmp/usbmounts/sda1/scripts/xLive/image/wandn-eth.jpg" />
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+    <item>
+      <title>Marine Channel</title>
+      <link>http://feeds2.feedburner.com/WeeklyMarinePodcast-hd</link>
+      <media:thumbnail url="/tmp/usbmounts/sda1/scripts/xLive/image/wandn-etm.jpg" />
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+    <item>
+      <title>Moremi Lions Channel</title>
+      <link>http://feeds2.feedburner.com/moremi_podcast_720</link>
+      <media:thumbnail url="/tmp/usbmounts/sda1/scripts/xLive/image/wandn-etl.jpg" />
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+    <item>
+      <title>National Geographic - Wild Chronicles</title>
+      <link>http://podcast.nationalgeographic.com/ng-video-shorts/</link>
+      <media:thumbnail url="/tmp/usbmounts/sda1/scripts/xLive/image/wandn-ngw.jpg" />
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+    <item>
+      <title>PBS Nature</title>
+      <link>http://feeds.feedburner.com/pbs/wnet/nature-video</link>
+      <media:thumbnail url="/tmp/usbmounts/sda1/scripts/xLive/image/wandn-pbs.gif" />
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+    <item>
+      <title>Terra Videos</title>
+      <link>http://feeds.feedburner.com/Terravideos</link>
+      <media:thumbnail url="/tmp/usbmounts/sda1/scripts/xLive/image/wandn-ter.jpg" />
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+</channel>
+</rss>

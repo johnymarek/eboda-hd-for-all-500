@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!--Xtreamer Community 2010 - xLive9.1 Cap-->
+<rss version="2.0" xmlns:media="http://purl.org/dc/elements/1.1/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<channel>
+
+    <title>Xtreamer - Adult Channel - XXX</title>
+
+    <item>
+      <title>Xtreamer XXX Surprise</title>
+	      <link>http://www.metafeeds.com/channel/xtreamer-porn-pipes/rss</link>
+	<media:thumbnail url="/tmp/usbmounts/sda1/scripts/xLive/image/xpp.jpg"/>
+  </item>
+
+    <item>
+      <title>XXX - Live TV</title>
+	      <link>http://www.metafeeds.com/channel/xxxlivetv/rss</link>
+	<media:thumbnail url="/tmp/usbmounts/sda1/scripts/xLive/image/XLiveTV.jpg"/>
+  </item>
+
+<item>
+<title>French Maid TV</title>
+<link>http://feeds.feedburner.com/FrenchMaidTV</link>
+<media:thumbnail url="http://images.mefeedia.com/feeds/4048/feed_150.png"/>
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+<item>
+<title>XXX4PODS</title>
+<link>http://xxx4pods.com/podcasts/podcast.xml</link>
+<media:thumbnail url="http://images.mefeedia.com/feeds/22800/feed_150.png"/>
+      <mediaDisplay name="photoView" showHeader="no" rowCount="5" columnCount="8" drawItemText="no" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="10" itemOffsetXPC="10" backgroundColor="0:0:0" sliding="yes" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+          <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+</channel>
+</rss>
