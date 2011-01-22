@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<!--Xtreamer Community 2010 - xLive9.1 Cap-->
+<rss version="2.0" xmlns:media="http://purl.org/dc/elements/1.1/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+
+    <title>Xtreamer - TV Shows & Movies</title>
+
+    <item>
+      <title>Archive Classic Movies</title>
+      <link>http://archiveclassicmovies.com/acm.rss</link>
+      <media:thumbnail url="/tmp/usbmounts/sda1/scripts/xLive/image/tvandm-acm.jpg" />
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+<item> 
+<title>FilmTrailers</title> 
+<link>http://uk.podcast.filmtrailer.com/default/Latest300CinemaCreated/?channel_user_id=441100131-1</link> 
+<media:thumbnail url="/tmp/usbmounts/sda1/scripts/xLive/image/tvandm-ft.jpg" /> 
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+
+    <item>
+      <title>iC Movie Trailers</title>
+      <link>http://mevio.com/feeds/trailers.xml</link>
+      <media:thumbnail url="/tmp/usbmounts/sda1/scripts/xLive/image/tvandm-ic.jpg" />
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+    <item>
+      <title>Movies you may have missed</title>
+      <link>http://feeds.feedburner.com/MoviesYouMayHaveMissedvideo</link>
+      <media:thumbnail url="/tmp/usbmounts/sda1/scripts/xLive/image/tvandm-mymhm.jpg" />
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+
+    <item>
+      <title>TrailerCast HD - 720p</title>
+      <link>http://feeds.feedburner.com/TrailercastHd720p?format=xml</link>
+      <media:thumbnail url="/tmp/usbmounts/sda1/scripts/xLive/image/tvandm-tc720.jpg" />
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+    <item>
+      <title>TrailerCast HD - 1080p</title>
+      <link>http://feeds.feedburner.com/TrailercastHd1080p?format=xml</link>
+      <media:thumbnail url="/tmp/usbmounts/sda1/scripts/xLive/image/tvandm-tc1080.jpg" />
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+</channel>
+</rss>

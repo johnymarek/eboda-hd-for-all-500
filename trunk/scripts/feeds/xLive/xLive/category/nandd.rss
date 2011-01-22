@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!--Xtreamer Community 2010 - xLive9.1 Cap-->
+<rss version="2.0" xmlns:media="http://purl.org/dc/elements/1.1/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+
+    <title>Xtreamer - News & Discussion</title>
+
+    <item>
+      <title>Boing Boing TV</title>
+      <link>http://feeds.boingboing.net/boingboing/tv</link>
+      <media:thumbnail url="/tmp/usbmounts/sda1/scripts/xLive/image/nandd-bb.png" />
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+    <item>
+      <title>Car Pool - Llewtube</title>
+	      <link>http://llewtubevideo.blip.tv/rss</link>
+	<media:thumbnail url="/tmp/usbmounts/sda1/scripts/xLive/image/nandd-cp.jpg"/>
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+    <item>
+      <title>Euronews - No Comment</title>
+      <link>http://www.euronews.net/podcasts/nocomment/no_comment.xml</link>
+      <media:thumbnail url="/tmp/usbmounts/sda1/scripts/xLive/image/nandd-en.jpg" />
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+<item>
+<title>Poptech</title>
+<link>http://feeds2.feedburner.com/poptech/NKfz</link>
+<media:thumbnail url="/tmp/usbmounts/sda1/scripts/xLive/image/nandd-pt.jpg"/>
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+    <item>
+      <title>Ted Talks</title>
+      <link>http://feeds.feedburner.com/TedtalksHD</link>
+      <media:thumbnail url="/tmp/usbmounts/sda1/scripts/xLive/image/nandd-tt.jpg" />
+	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
+        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+	</mediaDisplay>
+  </item>
+
+</channel>
+</rss>
