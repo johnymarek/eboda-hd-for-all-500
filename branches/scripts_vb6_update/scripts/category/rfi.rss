@@ -1,0 +1,49 @@
+<?xml version='1.0' ?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+<title>RFI Romania (Podcast)</title>
+<link>/rfi.rss</link>
+
+<item>
+<title>RFI Romania - Politica (podcast)</title>
+<link>http://www.rfi.ro/podcasts/politica.rss</link>
+<canEnterItem>false</canEnterItem>
+</item>
+
+<item>
+<title>RFI Romania - Social Economic (podcast)</title>
+<link>http://www.rfi.ro/podcasts/social-economic.rss</link>
+<canEnterItem>false</canEnterItem>
+</item>
+
+<item>
+<title>RFI Romania - Externe (podcast)</title>
+<link>http://www.rfi.ro/podcasts/externe.rss</link>
+<canEnterItem>false</canEnterItem>
+</item>
+
+<item>
+<title>RFI Romania - Cultural (podcast)</title>
+<link>http://www.rfi.ro/podcasts/cultural.rss</link>
+<canEnterItem>false</canEnterItem>
+</item>
+
+<item>
+<title>RFI Romania - Cultural (podcast)</title>
+<link>http://www.rfi.ro/podcasts/cultural.rss</link>
+<canEnterItem>false</canEnterItem>
+</item>
+
+<item>
+<title>RFI Romania - Sport (podcast)</title>
+<link>http://www.rfi.ro/podcasts/sport.rss</link>
+<canEnterItem>false</canEnterItem>
+</item>
+
+<item>
+<title>RFI Romania - Muzica (podcast)</title>
+<link>http://www.rfi.ro/podcasts/muzica.rss</link>
+<canEnterItem>false</canEnterItem>
+</item>
+</channel>
+</rss>

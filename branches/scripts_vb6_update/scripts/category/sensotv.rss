@@ -1,0 +1,170 @@
+<?xml version='1.0' ?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+<title>sensotv</title>
+
+
+<item>
+<title>Arte vizuale - Clipa de arta</title>
+<link>http://127.0.0.1:82/scripts/php/sensotv.php?query=,http://www.sensotv.ro/arte/arte-vizuale/clipa-de-arta</link>
+<media:thumbnail url="/scripts/image/sensotv.png" />
+</item>
+
+<item>
+<title>Arte vizuale - Colectia Senso TV</title>
+<link>http://127.0.0.1:82/scripts/php/sensotv.php?query=,http://www.sensotv.ro/arte/arte-vizuale/colectia-senso-tv</link>
+<media:thumbnail url="/scripts/image/sensotv.png" />
+</item>
+
+<item>
+<title>Artele spectacolului - Colectia Senso TV</title>
+<link>http://127.0.0.1:82/scripts/php/sensotv.php?query=,http://www.sensotv.ro/arte/artele-spectacolului/colectia-sensotv</link>
+<media:thumbnail url="/scripts/image/sensotv.png" />
+</item>
+
+<item>
+<title>Artele spectacolului - Festivaluri</title>
+<link>http://127.0.0.1:82/scripts/php/sensotv.php?query=,http://www.sensotv.ro/arte/artele-spectacolului/festivaluri</link>
+<media:thumbnail url="/scripts/image/sensotv.png" />
+</item>
+
+<item>
+<title>Artele spectacolului - Portret Senso TV</title>
+<link>http://127.0.0.1:82/scripts/php/sensotv.php?query=,http://www.sensotv.ro/arte/artele-spectacolului/portret-sensotv</link>
+<media:thumbnail url="/scripts/image/sensotv.png" />
+</item>
+
+<item>
+<title>Artele spectacolului - Spectacole</title>
+<link>http://127.0.0.1:82/scripts/php/sensotv.php?query=,http://www.sensotv.ro/arte/artele-spectacolului/spectacole</link>
+<media:thumbnail url="/scripts/image/sensotv.png" />
+</item>
+
+<item>
+<title>Eveniment - Colectia Senso TV</title>
+<link>http://127.0.0.1:82/scripts/php/sensotv.php?query=,http://www.sensotv.ro/arte/eveniment/colectia-senso-tv</link>
+<media:thumbnail url="/scripts/image/sensotv.png" />
+</item>
+
+<item>
+<title>Eveniment - Concerte</title>
+<link>http://127.0.0.1:82/scripts/php/sensotv.php?query=,http://www.sensotv.ro/arte/eveniment/concerte</link>
+<media:thumbnail url="/scripts/image/sensotv.png" />
+</item>
+
+<item>
+<title>Eveniment - Premiere</title>
+<link>http://127.0.0.1:82/scripts/php/sensotv.php?query=,http://www.sensotv.ro/arte/eveniment/premiere</link>
+<media:thumbnail url="/scripts/image/sensotv.png" />
+</item>
+
+<item>
+<title>Arte - Istorie si Culte</title>
+<link>http://127.0.0.1:82/scripts/php/sensotv.php?query=,http://www.sensotv.ro/arte/categorie-istorie-si-culte</link>
+<media:thumbnail url="/scripts/image/sensotv.png" />
+</item>
+
+<item>
+<title>Lifestyle - fitness</title>
+<link>http://127.0.0.1:82/scripts/php/sensotv.php?query=,http://www.sensotv.ro/lifestyle/categorie-fitness</link>
+<media:thumbnail url="/scripts/image/sensotv.png" />
+</item>
+
+<item>
+<title>Lifestyle - extreme sports</title>
+<link>http://127.0.0.1:82/scripts/php/sensotv.php?query=,http://www.sensotv.ro/lifestyle/categorie-extreme-sports</link>
+<media:thumbnail url="/scripts/image/sensotv.png" />
+</item>
+
+<item>
+<title>Lifestyle - hobby</title>
+<link>http://127.0.0.1:82/scripts/php/sensotv.php?query=,http://www.sensotv.ro/lifestyle/categorie-hobby</link>
+<media:thumbnail url="/scripts/image/sensotv.png" />
+</item>
+
+<item>
+<title>Lifestyle - evenimente</title>
+<link>http://127.0.0.1:82/scripts/php/sensotv.php?query=,http://www.sensotv.ro/lifestyle/categorie-evenimente</link>
+<media:thumbnail url="/scripts/image/sensotv.png" />
+</item>
+
+<item>
+<title>Lifestyle - casa mea</title>
+<link>http://127.0.0.1:82/scripts/php/sensotv.php?query=,http://www.sensotv.ro/lifestyle/categorie-casa-mea</link>
+<media:thumbnail url="/scripts/image/sensotv.png" />
+</item>
+
+<item>
+<title>Lifestyle - gateste</title>
+<link>http://127.0.0.1:82/scripts/php/sensotv.php?query=,http://www.sensotv.ro/lifestyle/categorie-gateste-</link>
+<media:thumbnail url="/scripts/image/sensotv.png" />
+</item>
+
+<item>
+<title>Lifestyle - copilul tau</title>
+<link>http://127.0.0.1:82/scripts/php/sensotv.php?query=,http://www.sensotv.ro/lifestyle/categorie-copilul-tau</link>
+<media:thumbnail url="/scripts/image/sensotv.png" />
+</item>
+
+<item>
+<title>Lifestyle - calatorii</title>
+<link>http://127.0.0.1:82/scripts/php/sensotv.php?query=,http://www.sensotv.ro/lifestyle/categorie-calatorii</link>
+<media:thumbnail url="/scripts/image/sensotv.png" />
+</item>
+
+<item>
+<title>Lifestyle - cartea de weekend</title>
+<link>http://127.0.0.1:82/scripts/php/sensotv.php?query=,http://www.sensotv.ro/lifestyle/categorie-cartea-de-weekend</link>
+<media:thumbnail url="/scripts/image/sensotv.png" />
+</item>
+
+<item>
+<title>Lifestyle - weekend</title>
+<link>http://127.0.0.1:82/scripts/php/sensotv.php?query=,http://www.sensotv.ro/lifestyle/categorie-weekend</link>
+<media:thumbnail url="/scripts/image/sensotv.png" />
+</item>
+
+<item>
+<title>Lifestyle - filmul de weekend</title>
+<link>http://127.0.0.1:82/scripts/php/sensotv.php?query=,http://www.sensotv.ro/lifestyle/categorie-filmul-de-weekend</link>
+<media:thumbnail url="/scripts/image/sensotv.png" />
+</item>
+
+<item>
+<title>Lifestyle - colectia Senso tv</title>
+<link>http://127.0.0.1:82/scripts/php/sensotv.php?query=,http://www.sensotv.ro/lifestyle/categorie-colectia-senso-tv</link>
+<media:thumbnail url="/scripts/image/sensotv.png" />
+</item>
+
+<item>
+<title>Lifestyle - frumusete</title>
+<link>http://127.0.0.1:82/scripts/php/sensotv.php?query=,http://www.sensotv.ro/lifestyle/categorie-frumusete</link>
+<media:thumbnail url="/scripts/image/sensotv.png" />
+</item>
+
+<item>
+<title>Sanatate - evenimente</title>
+<link>http://127.0.0.1:82/scripts/php/sensotv.php?query=,http://www.sensotv.ro/sanatate/categorie-evenimente</link>
+<media:thumbnail url="/scripts/image/sensotv.png" />
+</item>
+
+<item>
+<title>Sanatate - catena tv</title>
+<link>http://127.0.0.1:82/scripts/php/sensotv.php?query=,http://www.sensotv.ro/sanatate/categorie-catena-tv</link>
+<media:thumbnail url="/scripts/image/sensotv.png" />
+</item>
+
+<item>
+<title>Sanatate - campanii</title>
+<link>http://127.0.0.1:82/scripts/php/sensotv.php?query=,http://www.sensotv.ro/sanatate/categorie-campanii</link>
+<media:thumbnail url="/scripts/image/sensotv.png" />
+</item>
+
+<item>
+<title>Sanatate - medicina alternativa</title>
+<link>http://127.0.0.1:82/scripts/php/sensotv.php?query=,http://www.sensotv.ro/sanatate/categorie-medicina-alternativa</link>
+<media:thumbnail url="/scripts/image/sensotv.png" />
+</item>
+
+</channel>
+</rss>

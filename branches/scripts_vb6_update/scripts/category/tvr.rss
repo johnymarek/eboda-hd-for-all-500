@@ -1,0 +1,20 @@
+<?xml version='1.0' ?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+<title>Inregistrari TVR International</title>
+
+
+<item>
+<title>Agenda politicã</title>
+<link>http://127.0.0.1:82/scripts/php/tvr.php?id=4576</link>
+<media:thumbnail url="/scripts/image/tvr.jpg" />
+</item>
+
+<item>
+<title>Garantat 100%</title>
+<link>http://127.0.0.1:82/scripts/php/tvr.php?id=580</link>
+<media:thumbnail url="/scripts/image/tvr.jpg" />
+</item>
+
+</channel>
+</rss>
