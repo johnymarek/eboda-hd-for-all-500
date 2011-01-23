@@ -1,6 +1,7 @@
 #!/bin/sh
 
-wget="/cb3pp/bin/wget -q "
+
+. ./common.sh
 
 cat <<EOF
 Content-type: application/xhtml+xml
@@ -47,7 +48,7 @@ do
     [ -f ${storage}/${component}-version.txt ] && . ${storage}/${component}-version.txt
     DISK_VERSION=${VERSION}
     
-    ${wget} http://eboda-hd-for-all-500.googlecode.com/files/${component}-version.txt -O ${component}-version-new.txt
+    ${quietwget} ${masterhost_url}/${component}-version.txt -O ${component}-version-new.txt
     [ $? == 0 ] || nice_exit 1  
     
     [ -f ./${component}-version-new.txt ] && . ./${component}-version-new.txt
