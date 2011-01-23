@@ -102,19 +102,19 @@
 <LiveButton>
 <title>Live TV</title>
 <link>http://www.metafeeds.com/channel/livetv/rss</link>
-<media:thumbnail url="/tmp/usbmounts/sda1/scripts/xLive/image/livetv.jpg" />
+<media:thumbnail url="/xLive/image/livetv.jpg" />
 <mediaDisplay name="threePartsView" showDefaultInfo="no" bottomYPC="0" itemGap="0" itemPerPage="10" showHeader="no" sideLeftWidthPC="0" itemImageXPC="0" itemImageHeightPC="0" itemImageWidthPC="0" itemXPC="5" itemYPC="10" itemWidthPC="50" itemHeightPC="8" capWidthPC="55" unFocusFontColor="101:101:101" focusFontColor="255:255:255" 
 idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+        <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage>
 <backgroundDisplay>
-<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>/tmp/usbmounts/sda1/scripts/xLive/backgrounds/bg_livetv.jpg</image>
+<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>/xLive/backgrounds/bg_livetv.jpg</image>
 </backgroundDisplay>
     <onEnter>
 		SwitchViewer(0);
@@ -124,18 +124,18 @@ idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26"
 
 <CommunityButton>
 <title>Community Tools - 'Xtensions'</title>
-<link>/tmp/usbmounts/sda1/scripts/xLive/category/x.rss</link>
-<media:thumbnail url="/tmp/usbmounts/sda1/scripts/xLive/image/x.jpg"/>
+<link>/xLive/category/x.rss</link>
+<media:thumbnail url="/xLive/image/x.jpg"/>
       <mediaDisplay name="photoView" showHeader="no" rowCount="2" columnCount="2" drawItemText="no" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="10" itemOffsetXPC="10" backgroundColor="0:0:0" sliding="yes" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage><backgroundDisplay>
-<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>/tmp/usbmounts/sda1/scripts/xLive/backgrounds/bg_community.jpg</image>
+        <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage><backgroundDisplay>
+<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>/xLive/backgrounds/bg_community.jpg</image>
 </backgroundDisplay>
     <onEnter>
 		SwitchViewer(0);
@@ -145,17 +145,17 @@ idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26"
 
 <NewsButton>
 <title>News and Discussion</title>
-<link>/tmp/usbmounts/sda1/scripts/xLive/category/nandd.rss</link>
-<media:thumbnail url="/tmp/usbmounts/sda1/scripts/xLive/image/nandd.jpg"/>
+<link>/xLive/category/nandd.rss</link>
+<media:thumbnail url="/xLive/image/nandd.jpg"/>
       <mediaDisplay name="photoView" showHeader="no" rowCount="2" columnCount="4" drawItemText="no" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="10" itemOffsetXPC="10" backgroundColor="0:0:0" sliding="yes" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+        <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage>
     <onEnter>
 		SwitchViewer(0);
 		</onEnter>
@@ -165,7 +165,7 @@ idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26"
 <GermanButton>
 <title>German / Deutsch</title>
 <link>http://download.xtreamer.net/Firmware/APP/xLive/csb/xlde/menu.rss</link>
-<media:thumbnail url="/tmp/usbmounts/sda1/scripts/xLive/image/deutsch.jpg"/>
+<media:thumbnail url="/xLive/image/deutsch.jpg"/>
 <mediaDisplay name=photoView
 	rowCount=3
 	columnCount=5
@@ -194,8 +194,8 @@ idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26"
     
 <SocialButton>
 <title>Social Networks</title>
-<link>/tmp/usbmounts/sda1/scripts/xLive/category/sn.rss</link>
-<media:thumbnail url="/tmp/usbmounts/sda1/scripts/xLive/image/sn.jpg"/>
+<link>/xLive/category/sn.rss</link>
+<media:thumbnail url="/xLive/image/sn.jpg"/>
 	<mediaDisplay name=photoFocusView 
 	focusItem="3"
 	imageFocus=null 
@@ -228,14 +228,14 @@ idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26"
 	showDefaultInfo="yes"
 	headerYPC="10"
 	idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+        <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage>
     <onEnter>
 		SwitchViewer(0);
 		</onEnter>
@@ -244,17 +244,17 @@ idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26"
 
 <MovieButton>
 <title>TV Shows and Movies</title>
-<link>/tmp/usbmounts/sda1/scripts/xLive/category/tvandm.rss</link>
-<media:thumbnail url="/tmp/usbmounts/sda1/scripts/xLive/image/tvandm.jpg"/>
+<link>/xLive/category/tvandm.rss</link>
+<media:thumbnail url="/xLive/image/tvandm.jpg"/>
       <mediaDisplay name="photoView" showHeader="no" rowCount="2" columnCount="4" drawItemText="no" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="10" itemOffsetXPC="10" backgroundColor="0:0:0" sliding="yes" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+        <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage>
     <onEnter>
 		SwitchViewer(0);
 		</onEnter>
@@ -263,17 +263,17 @@ idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26"
 
 <NatureButton>
 <title>Wildlife and Nature</title>
-<link>/tmp/usbmounts/sda1/scripts/xLive/category/wandn.rss</link>
-<media:thumbnail url="/tmp/usbmounts/sda1/scripts/xLive/image/wandn.jpg"/>
+<link>/xLive/category/wandn.rss</link>
+<media:thumbnail url="/xLive/image/wandn.jpg"/>
       <mediaDisplay name="photoView" showHeader="no" rowCount="3" columnCount="4" drawItemText="no" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="10" itemOffsetXPC="10" backgroundColor="0:0:0" sliding="yes" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+        <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage>
     <onEnter>
 		SwitchViewer(0);
 		</onEnter>
@@ -282,17 +282,17 @@ idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26"
 
 <MusicButton>
 <title>Music and Lifestyle</title>
-<link>/tmp/usbmounts/sda1/scripts/xLive/category/mandl.rss</link>
-<media:thumbnail url="/tmp/usbmounts/sda1/scripts/xLive/image/mandl.jpg"/>
+<link>/xLive/category/mandl.rss</link>
+<media:thumbnail url="/xLive/image/mandl.jpg"/>
       <mediaDisplay name="photoView" showHeader="no" rowCount="3" columnCount="4" drawItemText="no" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="10" itemOffsetXPC="10" backgroundColor="0:0:0" sliding="yes" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+        <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage>
     <onEnter>
 		SwitchViewer(0);
 		</onEnter>
@@ -302,31 +302,31 @@ idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26"
 <FoodButton>
 <title>Food and Drinks</title>
 <link>http://www.metafeeds.com/channel/food/rss</link>
-<media:thumbnail url="/tmp/usbmounts/sda1/scripts/xLive/image/fandd.jpg"/>
+<media:thumbnail url="/xLive/image/fandd.jpg"/>
 <mediaDisplay name="threePartsView" sliding="yes" showDefaultInfo="no" bottomYPC="0" itemGap="0" itemPerPage="13" showHeader="no" sideLeftWidthPC="0" itemImageXPC="0" itemImageHeightPC="0" itemImageWidthPC="0" itemXPC="5" itemYPC="10" itemWidthPC="45" itemHeightPC="6.5" capWidthPC="50" unFocusFontColor="101:101:101" focusFontColor="255:255:255" 
 idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-         <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+         <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage>
 <backgroundDisplay>
-<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>/tmp/usbmounts/sda1/scripts/xLive/backgrounds/bg_food.jpg</image>
+<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>/xLive/backgrounds/bg_food.jpg</image>
 </backgroundDisplay>
 </mediaDisplay>
 		<item_template>
 		<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+        <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage>
     <onEnter>
 		SwitchViewer(0);
 		</onEnter>
@@ -336,17 +336,17 @@ idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26"
 
 <SportsButton>
 <title>Sports and Games</title>
-<link>/tmp/usbmounts/sda1/scripts/xLive/category/sandg.rss</link>
-<media:thumbnail url="/tmp/usbmounts/sda1/scripts/xLive/image/sandg.jpg"/>
+<link>/xLive/category/sandg.rss</link>
+<media:thumbnail url="/xLive/image/sandg.jpg"/>
       <mediaDisplay name="photoView" showHeader="no" rowCount="4" columnCount="5" drawItemText="no" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="10" itemOffsetXPC="10" backgroundColor="0:0:0" sliding="yes" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+        <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage>
     <onEnter>
 		SwitchViewer(0);
 		</onEnter>
@@ -355,17 +355,17 @@ idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26"
 
 <ComedyButton>
 <title>Comedy and Entertainment</title>
-<link>/tmp/usbmounts/sda1/scripts/xLive/category/cande.rss</link>
-<media:thumbnail url="/tmp/usbmounts/sda1/scripts/xLive/image/cande.jpg"/>
+<link>/xLive/category/cande.rss</link>
+<media:thumbnail url="/xLive/image/cande.jpg"/>
       <mediaDisplay name="photoView" showHeader="no" rowCount="3" columnCount="4" drawItemText="no" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="10" itemOffsetXPC="10" backgroundColor="0:0:0" sliding="yes" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">        
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+        <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage>
     <onEnter>
 		SwitchViewer(0);
 		</onEnter>
@@ -374,17 +374,17 @@ idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26"
 
 <TechnologyButton>
 <title>Technology and Education</title>
-<link>/tmp/usbmounts/sda1/scripts/xLive/category/tande.rss</link>
-<media:thumbnail url="/tmp/usbmounts/sda1/scripts/xLive/image/tande.jpg"/>
+<link>/xLive/category/tande.rss</link>
+<media:thumbnail url="/xLive/image/tande.jpg"/>
       <mediaDisplay name="photoView" showHeader="no" rowCount="4" columnCount="4" drawItemText="no" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="10" itemOffsetXPC="10" backgroundColor="0:0:0" sliding="yes" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+        <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage>
     <onEnter>
 		SwitchViewer(0);
 		</onEnter>
@@ -393,17 +393,17 @@ idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26"
 
 <TravelButton>
 <title>Travel and International</title>
-<link>/tmp/usbmounts/sda1/scripts/xLive/category/tandi.rss</link>
-<media:thumbnail url="/tmp/usbmounts/sda1/scripts/xLive/image/tandi.jpg"/>
+<link>/xLive/category/tandi.rss</link>
+<media:thumbnail url="/xLive/image/tandi.jpg"/>
       <mediaDisplay name="photoView" showHeader="no" rowCount="2" columnCount="4" drawItemText="no" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="10" itemOffsetXPC="10" backgroundColor="0:0:0" sliding="yes" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+        <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage>
     <onEnter>
 		SwitchViewer(0);
 		</onEnter>
@@ -412,18 +412,18 @@ idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26"
 
 <VodButton>
 <title>VoD</title>
-<link>/tmp/usbmounts/sda1/scripts/xLive/category/vod.rss</link>
-<media:thumbnail url="/tmp/usbmounts/sda1/scripts/xLive/image/vod.jpg"/>
+<link>/xLive/category/vod.rss</link>
+<media:thumbnail url="/xLive/image/vod.jpg"/>
 <mediaDisplay name="threePartsView" showDefaultInfo="no" bottomYPC="0" itemGap="0" itemPerPage="10" showHeader="no" sideLeftWidthPC="0" itemImageXPC="0" itemImageHeightPC="0" itemImageWidthPC="0" itemXPC="5" itemYPC="10" itemWidthPC="50" itemHeightPC="8" capWidthPC="55" unFocusFontColor="101:101:101" focusFontColor="255:255:255" 
 idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+        <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage>
     <onEnter>
 		SwitchViewer(0);
 		</onEnter>
@@ -432,22 +432,22 @@ idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26"
 
 <AdultButton>
 <title>Adult Channel - XXX</title>
-<link>/tmp/usbmounts/sda1/scripts/xLive/category/adult.rss</link>
-<media:thumbnail url="/tmp/usbmounts/sda1/scripts/xLive/image/adult.jpg"/>
+<link>/xLive/category/adult.rss</link>
+<media:thumbnail url="/xLive/image/adult.jpg"/>
       <mediaDisplay name="onePartView" showDefaultInfo="no" cornerRounding="no" itemXPC="18" itemWidthPC="22" capWidthPC="27" itemImageHeightPC="18" showHeader="no" itemOffsetXPC="5" itemOffsetYPC="5" itemGap="1" itemImageGap="1" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="5" itemHeightPC="18" backgroundColor="0:0:0" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-         <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+         <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage>
     <onEnter>
 		SwitchViewer(0);
 		</onEnter>
 <backgroundDisplay>
-<image offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>/tmp/usbmounts/sda1/scripts/xLive/backgrounds/bg_adult.jpg</image>
+<image offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>/xLive/backgrounds/bg_adult.jpg</image>
 </backgroundDisplay>
 </mediaDisplay>
 </AdultButton>

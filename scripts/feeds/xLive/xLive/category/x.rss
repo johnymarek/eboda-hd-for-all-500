@@ -11,8 +11,8 @@
 
 <xitem>
      <title>RSS Skin Manager</title>
-     <link>http://127.0.0.1/media/sda1/scripts/xLive/php/skin_manager.php</link>
-     <media:thumbnail url="/tmp/usbmounts/sda1/scripts/xLive/image/skin_browser.jpg" />
+     <link>http://127.0.0.1:82/xLive/php/skin_manager.php</link>
+     <media:thumbnail url="/xLive/image/skin_browser.jpg" />
      <mediaDisplay name=photoView
             rowCount="2" columnCount="3" 
             itemBorderColor="0:255:180"
@@ -24,14 +24,14 @@
          itemOffsetXPC="7"
          backgroundColor="0:0:0"
             idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+        <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage>
          </mediaDisplay>
    </xitem>
 
