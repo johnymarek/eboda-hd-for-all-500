@@ -7,8 +7,8 @@ $internetversionfile ="http://xtreamer-web-sdk.googlecode.com/svn/trunk/xmp/skin
 $extractpath = "/usr/local/bin/Resource/bmp/";
 
 
-$skinpathoffset  = "/tmp/usbmounts/sda1/scripts/xLive/";
-$scriptfile  = "http://127.0.0.1/media/sda1/scripts/xLive/php/skin_manager.php";
+$skinpathoffset  = "/xLive/";
+$scriptfile  = "http://127.0.0.1:82/xLive/php/skin_manager.php";
 
 $skin     = $_GET["skin"];
 $urlskin  = rawurlencode($skin);

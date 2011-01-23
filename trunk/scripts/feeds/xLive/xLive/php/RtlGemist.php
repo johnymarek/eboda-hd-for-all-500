@@ -32,44 +32,44 @@
   <menu>RTL Gemist</menu>
   <title>Vandaag</title>  
   <onClick>
-	url="http://127.0.0.1/media/sda1/scripts/xLive/RtlGemist.php";
+	url="http://127.0.0.1:82/xLive/RtlGemist.php";
    </onClick>
 </submenu>
 <submenu>
   <menu>RTL Gemist</menu>
   <title>Maandag</title>  
   <onClick>
-	url="http://127.0.0.1/media/sda1/scripts/xLive/RtlGemist.php?day=1";
+	url="http://127.0.0.1:82/xLive/RtlGemist.php?day=1";
    </onClick>
 </submenu>
 <submenu name="Dinsdag" >
   <onClick>
-	url="http://127.0.0.1/media/sda1/scripts/xLive/RtlGemist.php?day=2";
+	url="http://127.0.0.1:82/xLive/RtlGemist.php?day=2";
    </onClick>
 </submenu>
 <submenu name="Woensdag" >
   <onClick>
-	url="http://127.0.0.1/media/sda1/scripts/xLive/RtlGemist.php?day=3";
+	url="http://127.0.0.1:82/xLive/RtlGemist.php?day=3";
    </onClick>
 </submenu>
 <submenu name="Donderdag" >
   <onClick>
-	url="http://127.0.0.1/media/sda1/scripts/xLive/RtlGemist.php?day=4";
+	url="http://127.0.0.1:82/xLive/RtlGemist.php?day=4";
    </onClick>
 </submenu>
 <submenu name="Vrijdag" >
   <onClick>
-	url="http://127.0.0.1/media/sda1/scripts/xLive/RtlGemist.php?day=5";
+	url="http://127.0.0.1:82/xLive/RtlGemist.php?day=5";
    </onClick>
 </submenu>
 <submenu name="Zaterdag" >
   <onClick>
-	url="http://127.0.0.1/media/sda1/scripts/xLive/RtlGemist.php?day=6";
+	url="http://127.0.0.1:82/xLive/RtlGemist.php?day=6";
    </onClick>
 </submenu>
 <submenu name="Zondag" >
   <onClick>
-	url="http://127.0.0.1/media/sda1/scripts/xLive/RtlGemist.php?day=7";
+	url="http://127.0.0.1:82/xLive/RtlGemist.php?day=7";
    </onClick>
 </submenu>
 

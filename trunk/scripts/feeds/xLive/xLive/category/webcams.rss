@@ -3,25 +3,25 @@
 <rss version="2.0" xmlns:media="http://purl.org/dc/elements/1.1/" xmlns:dc="http://purl.org/dc/elements/1.1/">
 
 <mediaDisplay name="photoView" showHeader="no" rowCount="4" columnCount="5" drawItemText="no" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="10" itemOffsetXPC="10" backgroundColor="0:0:0" sliding="yes" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+        <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage>
 		</mediaDisplay>
 		<item_template>
 <mediaDisplay name="photoView" showHeader="no" rowCount="4" columnCount="5" drawItemText="no" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="10" itemOffsetXPC="10" backgroundColor="0:0:0" sliding="yes" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+        <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage>
 
 			</mediaDisplay>
 		</item_template>

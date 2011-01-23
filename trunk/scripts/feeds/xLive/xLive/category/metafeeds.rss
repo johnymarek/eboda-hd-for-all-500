@@ -12,14 +12,14 @@
         showHeader="no"
 	unFocusFontColor="101:101:101"
 	focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy1.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy2.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy3.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy4.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy5.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy6.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy7.png</idleImage>
-        <idleImage>/tmp/usbmounts/sda1/scripts/xLive/image/busy8.png</idleImage>
+        <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage>
 	
 	<backgroundDisplay>
 		<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
