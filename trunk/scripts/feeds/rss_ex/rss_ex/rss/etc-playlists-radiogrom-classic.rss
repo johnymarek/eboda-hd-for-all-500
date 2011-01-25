@@ -22,7 +22,7 @@
 -->
 
 <onEnter>
-  translate_base_url  = "http://127.0.0.1/cgi-bin/translate?";
+  translate_base_url  = "http://127.0.0.1:82/rss_ex/www/cgi-bin/translate?";
   cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
   if(cgiconf != null)
   {
@@ -458,7 +458,7 @@
   <title>Radiogrom.com - classic</title>
   <item>
     <location>http://www.radiogrom.com/online/moskva_fm/orfey_online.html</location>
-    <title>Радио Орфей</title>
+    <title>Radio Орфей</title>
     <annotation>Основу вещания радиостанции «Орфей» составляет классическая музыка. Программы «Орфея» включают русскую и зарубежную классику, духовную музыку, фольклор и джаз, классическую оперетту</annotation>
     <stream_url>mmsh://live.rfn.ru/orfey/</stream_url>
     <stream_class>audio</stream_class>
@@ -468,7 +468,7 @@
   </item>
   <item>
     <location>http://www.radiogrom.com/online/classic/radio_bbc_3_online.html</location>
-    <title>Радио BBC Radio 3</title>
+    <title>Radio BBC Radio 3</title>
     <annotation>Одна из самых популярных радиостанций Великобритании, вещающая классическую музыку. Формат BBC Radio 3: классическая музыка, джаз, драматическая музыка и национальная музыка мира.</annotation>
     <stream_url>mmsh://wmlive.bbc.net.uk/wms/bbc_ami/radio3/radio3_bb_live_int_eq1_sl0</stream_url>
     <stream_class>audio</stream_class>
@@ -478,7 +478,7 @@
   </item>
   <item>
     <location>http://www.radiogrom.com/online/classic/radio_wqxr_fm_online.html</location>
-    <title>Радио WQXR FM</title>
+    <title>Radio WQXR FM</title>
     <annotation>WQXR FM - это старейшая радиостанция США (работает с 1939 года), вещающая классическую музыку. </annotation>
     <stream_url>mmsh://wnyc.streamguys.com/wqxr</stream_url>
     <stream_class>audio</stream_class>
@@ -488,7 +488,7 @@
   </item>
   <item>
     <location>http://www.radiogrom.com/online/classic/radio_classic_fm_praha_online.html</location>
-    <title>Радио Classic FM</title>
+    <title>Radio Classic FM</title>
     <annotation>Classic FM - одна из самых популярных чешких радиостанций, вещающих так называемый classic music. Classic FM вещает в Праге на частоте 98.7FM, а также по всему миру через компьютерную сеть интернет.</annotation>
     <stream_url>mms://netshow4.play.cz/classic128</stream_url>
     <stream_class>audio</stream_class>
@@ -507,7 +507,7 @@
   </item>
   <item>
     <location>http://www.radiogrom.com/online/classic/radio_Pop_Classical_Music_online.html</location>
-    <title>Радио Pop Classical Music</title>
+    <title>Radio Pop Classical Music</title>
     <annotation>Pop Classical Music - это лучшее из классической музыки от ведущего российского радиохолдинга "Вещательная корпорация «Проф-Медиа»" и интернет-портала 101.ru.</annotation>
     <stream_url>mmsh://mos2.101.ru/c16_4_128?st=</stream_url>
     <stream_class>audio</stream_class>
@@ -517,7 +517,7 @@
   </item>
   <item>
     <location>http://www.radiogrom.com/online/classic/radio_RMF_Classic_online.html</location>
-    <title>Радио RMF Classic</title>
+    <title>Radio RMF Classic</title>
     <annotation>Слоган польской радиостанции RMF Classic - "RMF Classic - Muzyka z Klasa". Он полностью совпадает с музыкальным и программным наполнением эфира. На RMF Classic вы услышите как классическую музыку, так и оперу, музыку из фильмов, а также концерты современных исполнителей классики.</annotation>
     <stream_url>http://www.miastomuzyki.pl/wpl/mmsrc.asx?id=7&amp;n=0&amp;m=0</stream_url>
     <stream_class>audio</stream_class>

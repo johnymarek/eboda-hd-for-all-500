@@ -59,7 +59,7 @@
       menuArray = null;
       menuLinkArray = null;
       <xsl:apply-templates select="outline[@type='link']" mode="menu"/>
-      menuArray = pushBackStringArray(menuArray, "Поиск");
+      menuArray = pushBackStringArray(menuArray, "Search");
       menuLinkArray = pushBackStringArray(menuLinkArray, "=search=");
       menuSize = <xsl:value-of select="count(outline[@type='link'])+1"/>;
     </script>

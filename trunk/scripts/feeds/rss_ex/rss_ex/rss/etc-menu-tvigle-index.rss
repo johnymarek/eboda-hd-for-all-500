@@ -22,7 +22,7 @@
 -->
 
 <onEnter>
-  translate_base_url  = "http://127.0.0.1/cgi-bin/translate?";
+  translate_base_url  = "http://127.0.0.1:82/rss_ex/www/cgi-bin/translate?";
   cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
   if(cgiconf != null)
   {
@@ -303,7 +303,7 @@
   </item>
   <item>
 <link>rss_file://../etc/translate/rss/etc-menu-tvigle-autors.rss</link>
-    <title>Авторское видео</title>
+    <title>Авторское video</title>
     <annotation/>
     <image>../etc/translate/rss/image/tvigle.png</image>
     <mediaDisplay name="photoView"/>

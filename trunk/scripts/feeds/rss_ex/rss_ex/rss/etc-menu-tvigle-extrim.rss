@@ -22,7 +22,7 @@
 -->
 
 <onEnter>
-  translate_base_url  = "http://127.0.0.1/cgi-bin/translate?";
+  translate_base_url  = "http://127.0.0.1:82/rss_ex/www/cgi-bin/translate?";
   cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
   if(cgiconf != null)
   {
@@ -260,7 +260,7 @@
   <item>
 <link><script>translate_base_url+"app,Channel:1716,tvigle/multi";</script></link>
     <title>Чемпионат.ру</title>
-    <annotation>Всё видео о футболе, хоккее, теннисе, баскетболе, боксе, автоспорте, мотоспорте, мини-футболе и других видах спорта.</annotation>
+    <annotation>Всё video о футболе, хоккее, теннисе, баскетболе, боксе, автоспорте, мотоспорте, мини-футболе и других видах спорта.</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/1716/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>

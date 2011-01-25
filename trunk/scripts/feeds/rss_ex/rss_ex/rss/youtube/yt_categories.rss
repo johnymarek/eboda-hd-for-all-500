@@ -190,7 +190,7 @@
     youtubeApiCategoryBaseURL = "http://gdata.youtube.com/feeds/api/videos/-/";
   
     storagePath = getStoragePath("tmp") + "youtubeRSS.dat";
-  	pageTitle = "Категории видео";
+  	pageTitle = "Categories video";
   
     cachePath = getStoragePath("key");
     optionsArray = readStringFromFile(cachePath + "youtubeOptions.dat");
@@ -198,7 +198,7 @@
     {
       youtubeRegion = readStringFromFile(cachePath + "youtubeRegion.dat");
       if(youtubeRegion == null)
-        youtubeRegion = "RU";
+        youtubeRegion = "EN";
       hd = 1;
       username = " ";
     }
@@ -274,7 +274,7 @@
 	</onEnter>
 
 	<channel>
-		<title>YouTube: Категории видео</title>
+		<title>YouTube: Categories video</title>
 		<link>../etc/translate/rss/youtube/yt_categories.rss</link>
 		<media:thumbnail url="../etc/translate/rss/image/youtube.gif" width="120" height="90" />
 

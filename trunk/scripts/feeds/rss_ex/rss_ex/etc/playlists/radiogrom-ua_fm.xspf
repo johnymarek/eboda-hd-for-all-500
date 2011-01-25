@@ -4,7 +4,7 @@
   <trackList>
     <track>
       <location>http://www.radiogrom.com/online/ua_fm/radio_retro_fm_kiev_online.html</location>
-      <title>- 92.4 FM - Радио Ретро FM Киев 92.4 FM </title>
+      <title>- 92.4 FM - Radio Ретро FM Киев 92.4 FM </title>
     
 <meta rel="stream_url">http://webcast1.emg.fm:55655/retro128.mp3</meta>
 <meta rel="stream_class">audio</meta>
@@ -16,7 +16,7 @@
 </track>
     <track>
       <location>http://www.radiogrom.com/online/ua_fm/radio_europa_plus_kiev_online.html</location>
-      <title>- 92.8 FM - Радио Европа Плюс Киев 92.8 FM </title>
+      <title>- 92.8 FM - Radio Европа Плюс Киев 92.8 FM </title>
     
 <meta rel="stream_url">http://glob.radiogroup.com.ua:8000/europaplus</meta>
 <meta rel="stream_class">audio</meta>
@@ -40,7 +40,7 @@
 </track>
     <track>
       <location>http://www.radiogrom.com/online/ua_fm/radio_kontinent_kiev_online.html</location>
-      <title>- 94.2 FM - Радио Континент Киев 94.2 FM </title>
+      <title>- 94.2 FM - Radio Континент Киев 94.2 FM </title>
     
 <meta rel="stream_url">http://217.20.164.163:8014/</meta>
 <meta rel="stream_class">audio</meta>
@@ -52,7 +52,7 @@
 </track>
     <track>
       <location>http://www.radiogrom.com/online/ua_fm/radio_lradio_kiev_online.html</location>
-      <title>- 95.2 FM - Радио L'Radio 95.2 FM </title>
+      <title>- 95.2 FM - Radio L'Radio 95.2 FM </title>
     
 <meta rel="stream_url">mmsh://212.26.146.32:80/wmtencoder/lr.wma</meta>
 <meta rel="stream_class">audio</meta>
@@ -62,7 +62,7 @@
 </track>
     <track>
       <location>http://www.radiogrom.com/online/ua_fm/radio_jem_kiev_online.html</location>
-      <title>- 95.6 FM - Радио Джем FM 95.6 FM </title>
+      <title>- 95.6 FM - Radio Джем FM 95.6 FM </title>
     
 <meta rel="stream_url">http://glob.radiogroup.com.ua:8000/jamfm</meta>
 <meta rel="stream_class">audio</meta>
@@ -74,7 +74,7 @@
 </track>
     <track>
       <location>http://www.radiogrom.com/online/ua_fm/radio_era_kiev_online.html</location>
-      <title>- 96.0 FM - Радио Радіо Ерa-FM 96.0 FM </title>
+      <title>- 96.0 FM - Radio Радіо Ерa-FM 96.0 FM </title>
     
 <meta rel="stream_url">mmsh://212.26.146.47:8080/wmtencoder/era.wma</meta>
 <meta rel="stream_class">audio</meta>
@@ -84,7 +84,7 @@
 </track>
     <track>
       <location>http://www.radiogrom.com/online/ua_fm/hitfm_fm_radio_online.html</location>
-      <title>- 96.4 FM - Радио ХIT FM 96.4 FM </title>
+      <title>- 96.4 FM - Radio ХIT FM 96.4 FM </title>
     
 <meta rel="stream_url">http://online-hitfm.tavrmedia.ua/HitFM_256</meta>
 <meta rel="stream_class">audio</meta>
@@ -96,12 +96,12 @@
 </track>
     <track>
       <location>http://www.radiogrom.com/online/ua_fm/radio_dj_fm_kiev_online.html</location>
-      <title>- 96.8 FM - Радио DJ FM 96.8 FM </title>
+      <title>- 96.8 FM - Radio DJ FM 96.8 FM </title>
     
 </track>
     <track>
       <location>http://www.radiogrom.com/online/ua_fm/radio_kiev_online.html</location>
-      <title>- 98.0 FM - Радио Радіо Київ 98.0 FM </title>
+      <title>- 98.0 FM - Radio Радіо Київ 98.0 FM </title>
     
 <meta rel="stream_url">http://217.76.201.26:8000</meta>
 <meta rel="stream_class">audio</meta>
@@ -113,17 +113,17 @@
 </track>
     <track>
       <location>http://www.radiogrom.com/online/ua_fm/radio_russkoe_kiev_online.html</location>
-      <title>- 98.5 FM - Русское Радио 98.5 FM </title>
+      <title>- 98.5 FM - Русское Radio 98.5 FM </title>
     
 </track>
     <track>
       <location>http://www.radiogrom.com/online/ua_fm/radio_Nostalgie_kiev_online.html</location>
-      <title>- 99.0 FM - Радио Nostalgie 99.0 FM </title>
+      <title>- 99.0 FM - Radio Nostalgie 99.0 FM </title>
     
 </track>
     <track>
       <location>http://www.radiogrom.com/online/ua_fm/radio_Alla_kiev_online.html</location>
-      <title>- 99.4 FM - Радио Алла 99.4 FM </title>
+      <title>- 99.4 FM - Radio Алла 99.4 FM </title>
     
 <meta rel="stream_url">http://glob.radiogroup.com.ua:8000/radioalla</meta>
 <meta rel="stream_class">audio</meta>
@@ -135,7 +135,7 @@
 </track>
     <track>
       <location>http://www.radiogrom.com/online/ua_fm/gala_radio_online.html</location>
-      <title>- 100.0 FM - Гала Радио 100.0 FM </title>
+      <title>- 100.0 FM - Гала Radio 100.0 FM </title>
     
 <meta rel="stream_url">http://live.galaradio.com:8000/kiev</meta>
 <meta rel="stream_class">audio</meta>
@@ -146,7 +146,7 @@
 </track>
     <track>
       <location>http://www.radiogrom.com/online/ua_fm/radio_narodnoe_kiev_online.html</location>
-      <title>- 100.5 FM - Народное Радио 100.5 FM </title>
+      <title>- 100.5 FM - Народное Radio 100.5 FM </title>
     
 <meta rel="stream_url">http://62.80.190.247:8001/NRK128</meta>
 <meta rel="stream_class">audio</meta>
@@ -182,7 +182,7 @@
 </track>
     <track>
       <location>http://www.radiogrom.com/online/ua_fm/radio_chanson_kiev_online.html</location>
-      <title>- 101.9 FM - Радио Шансон 101.9 FM </title>
+      <title>- 101.9 FM - Radio Шансон 101.9 FM </title>
     
 <meta rel="stream_url">http://217.20.164.163:8002/</meta>
 <meta rel="stream_class">audio</meta>
@@ -194,7 +194,7 @@
 </track>
     <track>
       <location>http://www.radiogrom.com/online/ua_fm/prosto_radio_kiev_online.html</location>
-      <title>- 102.5 FM - Радио Просто Ради.О 102.5 FM </title>
+      <title>- 102.5 FM - Radio Просто Ради.О 102.5 FM </title>
     
 <meta rel="stream_url">http://62.80.190.246:8000/PRK128</meta>
 <meta rel="stream_class">audio</meta>
@@ -206,7 +206,7 @@
 </track>
     <track>
       <location>http://www.radiogrom.com/online/ua_fm/lux_fm_radio_online.html</location>
-      <title>- 103.1 FM - Радио Люкс FM 103.1 FM </title>
+      <title>- 103.1 FM - Radio Люкс FM 103.1 FM </title>
     
 <meta rel="stream_url">http://77.120.104.251:8088</meta>
 <meta rel="stream_class">audio</meta>
@@ -230,7 +230,7 @@
 </track>
     <track>
       <location>http://www.radiogrom.com/online/ua_fm/radio_sharmanka_kiev_online.html</location>
-      <title> - 104.0 FM - Радио Шарманка 104.0 FM </title>
+      <title> - 104.0 FM - Radio Шарманка 104.0 FM </title>
     
 <meta rel="stream_url">http://media.wnet.ua:8000/sharmanka128</meta>
 <meta rel="stream_class">audio</meta>
@@ -242,7 +242,7 @@
 </track>
     <track>
       <location>http://www.radiogrom.com/online/ua_fm/radio_energy_kiev_online.html</location>
-      <title> - 104.6 FM - Радио NRJ 104.6 FM </title>
+      <title> - 104.6 FM - Radio NRJ 104.6 FM </title>
     
 <meta rel="stream_url">http://212.26.129.2:8080</meta>
 <meta rel="stream_class">audio</meta>
@@ -254,7 +254,7 @@
 </track>
     <track>
       <location>http://www.radiogrom.com/online/ua_fm/radio_nrku_kiev_online.html</location>
-      <title> - 105.0 FM - Радио НРКУ 2 - Радіо Промінь 105.0 FM </title>
+      <title> - 105.0 FM - Radio НРКУ 2 - Радіо Промінь 105.0 FM </title>
     
 <meta rel="stream_url">mmsh://89.187.1.165/NRCU2?MSWMExt=.asf</meta>
 <meta rel="stream_class">audio</meta>
@@ -276,7 +276,7 @@
 </track>
     <track>
       <location>http://www.radiogrom.com/online/ua_fm/radio_dinamo_kiev_online.html</location>
-      <title> - 106.0 FM - Радио Динамо 106.0 FM </title>
+      <title> - 106.0 FM - Radio Динамо 106.0 FM </title>
     
 <meta rel="stream_url">http://glob.radiogroup.com.ua:8000/106fm</meta>
 <meta rel="stream_class">audio</meta>
@@ -288,7 +288,7 @@
 </track>
     <track>
       <location>http://www.radiogrom.com/online/ua_fm/kiss_fm_radio_online.html</location>
-      <title> - 106.5 FM - Радио Kiss FM 106.5 FM </title>
+      <title> - 106.5 FM - Radio Kiss FM 106.5 FM </title>
     
 <meta rel="stream_url">http://91.201.37.42:8000/kiss</meta>
 <meta rel="stream_class">audio</meta>
@@ -300,7 +300,7 @@
 </track>
     <track>
       <location>http://www.radiogrom.com/online/ua_fm/radio_evropa_107_fm_kiev_online.html</location>
-      <title> - 107.0 FM - Радио Европа FM 107.0 FM </title>
+      <title> - 107.0 FM - Radio Европа FM 107.0 FM </title>
     
 <meta rel="stream_url">http://212.26.129.197:8080/</meta>
 <meta rel="stream_class">audio</meta>
@@ -336,12 +336,12 @@
 </track>
     <track>
       <location>http://www.radiogrom.com/online/ua_fm/visokiy_val_online.html</location>
-      <title>- Радио Высокий Вал </title>
+      <title>- Radio Высокий Вал </title>
     
 </track>
     <track>
       <location>http://www.radiogrom.com/online/ua_fm/prosto_radio_odessa_online.html</location>
-      <title>- Просто Радио Одесса </title>
+      <title>- Просто Radio Одесса </title>
     
 <meta rel="stream_url">http://62.80.190.246:8000/ProstoRadiO128</meta>
 <meta rel="stream_class">audio</meta>
@@ -353,7 +353,7 @@
 </track>
     <track>
       <location>http://www.radiogrom.com/online/ua_fm/mfm_fm_radio_online.html</location>
-      <title>- Радио MFM </title>
+      <title>- Radio MFM </title>
     
 <meta rel="stream_url">http://radio.mfm.ua:8080/online128</meta>
 <meta rel="stream_class">audio</meta>

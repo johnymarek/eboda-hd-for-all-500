@@ -4,7 +4,7 @@
   <trackList>
     <track>
       <location>http://www.radiogrom.com/online/radio_france/radio_maxlaradio_fr_online.html</location>
-      <title> - Радио MAXLARADIO </title>
+      <title> - Radio MAXLARADIO </title>
     
 <meta rel="stream_url">http://91.121.62.121:9410</meta>
 <meta rel="stream_class">audio</meta>
@@ -16,27 +16,27 @@
 </track>
     <track>
       <location>http://www.radiogrom.com/online/radio_france/radio_48fm_fr_online.html</location>
-      <title> - Радио 48FM </title>
+      <title> - Radio 48FM </title>
     
 </track>
     <track>
       <location>http://www.radiogrom.com/online/radio_france/radio_pulsar_fr_online.html</location>
-      <title>- Радио Pulsar </title>
+      <title>- Radio Pulsar </title>
     
 </track>
     <track>
       <location>http://www.radiogrom.com/online/radio_france/one_station_fr_online.html</location>
-      <title>- Радио One Station </title>
+      <title>- Radio One Station </title>
     
 </track>
     <track>
       <location>http://www.radiogrom.com/online/radio_france/maxx_france_online.html</location>
-      <title>- Радио MaxxHits </title>
+      <title>- Radio MaxxHits </title>
     
 </track>
     <track>
       <location>http://www.radiogrom.com/online/radio_france/virgin_radio_france_online.html</location>
-      <title>- Радио Virgin Radio - Scene Francaise </title>
+      <title>- Radio Virgin Radio - Scene Francaise </title>
     
 </track>
   </trackList>

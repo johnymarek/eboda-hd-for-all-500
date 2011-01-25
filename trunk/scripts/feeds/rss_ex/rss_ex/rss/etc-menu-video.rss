@@ -22,7 +22,7 @@
 -->
 
 <onEnter>
-  translate_base_url  = "http://127.0.0.1/cgi-bin/translate?";
+  translate_base_url  = "http://127.0.0.1:82/rss_ex/www/cgi-bin/translate?";
   cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
   if(cgiconf != null)
   {
@@ -253,21 +253,21 @@
   <item>
 <link>rss_file://../etc/translate/rss/etc-menu-tvigle-index.rss</link>
     <title>Tvigle</title>
-    <annotation>Tvigle Media — медиакомпания нового поколения, производитель и дистрибьютор профессионального развлекательного видеоконтента для New Media: интернета, мобильных сетей, цифровых телеканалов.</annotation>
+    <annotation>Tvigle Media — медиакомпания нового поколения, производитель и дистрибьютор профессионального развлекательного videoконтента для New Media: интернета, мобильных сетей, цифровых телеканалов.</annotation>
     <image>../etc/translate/rss/image/menu/tvigle.png</image>
     <mediaDisplay name="onePartView"/>
   </item>
   <item>
 <link>rss_file://../etc/translate/rss/app-ivi-index.rss</link>
     <title>Ivi</title>
-    <annotation>ivi.ru - первый в России бесплатный видеосервис с лицензионным полнометражным контентом. ivi.ru - это, пожалуй, самая большая коллекция лицензионного видео российского интернета.</annotation>
+    <annotation>ivi.ru - первый в России бесплатный videoсервис с лицензионным полнометражным контентом. ivi.ru - это, пожалуй, самая большая коллекция лицензионного video российского интернета.</annotation>
     <image>../etc/translate/rss/image/menu/ivi.png</image>
     <mediaDisplay name="onePartView"/>
   </item>
   <item>
 <link>rss_file://../etc/translate/rss/etc-menu-tv-other.rss</link>
     <title>Other</title>
-    <annotation>Разные списки интернет-телевидения</annotation>
+    <annotation>Different lists of the Internet-TV</annotation>
     <image>../etc/translate/rss/image/menu/internettv.png</image>
     <mediaDisplay name="onePartView"/>
   </item>

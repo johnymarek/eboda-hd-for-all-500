@@ -72,7 +72,7 @@ if [ -f "$STATION_PLS" ]; then
   echo "$stream_url" > $STREAMDAT       # request_url
   echo "" >> $STREAMDAT                 # request_options
   echo "$stream_url" >> $STREAMDAT      # stream_url
-  echo "http://127.0.0.1/cgi-bin/translate?stream,Content-type:${STATION_MT},`urlencode_s $stream_url`" >> $STREAMDAT # [renderer_]url
+  echo "http://127.0.0.1:82/rss_ex/www/cgi-bin/translate?stream,Content-type:${STATION_MT},`urlencode_s $stream_url`" >> $STREAMDAT # [renderer_]url
   echo "$STATION_MT" >> $STREAMDAT      # stream_type
   echo "" >> $STREAMDAT                 # stream_status_url
   echo "" >> $STREAMDAT                 # stream_current_song

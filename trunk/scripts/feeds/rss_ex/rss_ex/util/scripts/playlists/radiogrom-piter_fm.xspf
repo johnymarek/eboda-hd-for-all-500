@@ -20,7 +20,7 @@
 </track>
     <track>
       <location>http://www.radiogrom.com/online/piter_fm/radio_zenit_online.html</location>
-      <title>- 89,7 FM - Радио Зенит </title>
+      <title>- 89,7 FM - Radio Зенит </title>
     
 <meta rel="stream_url">mms://217.170.65.66/zenit</meta>
 <meta rel="stream_class">audio</meta>
@@ -30,12 +30,12 @@
 </track>
     <track>
       <location>http://www.radiogrom.com/online/piter_fm/radio_ermitazh_online.html</location>
-      <title>- 90,1 FM - Радио Эрмитаж </title>
+      <title>- 90,1 FM - Radio Эрмитаж </title>
     
 </track>
     <track>
       <location>http://www.radiogrom.com/online/piter_fm/radio_hit_online.html</location>
-      <title>- 90,6 FM - Радио Хит </title>
+      <title>- 90,6 FM - Radio Хит </title>
     
 <meta rel="stream_url">http://217.170.67.77/radiohit</meta>
 <meta rel="stream_class">audio</meta>
@@ -47,7 +47,7 @@
 </track>
     <track>
       <location>http://www.radiogrom.com/online/piter_fm/radio_vanya_online.html</location>
-      <title>- 100,1 FM - Радио Ваня </title>
+      <title>- 100,1 FM - Radio Ваня </title>
     
 <meta rel="stream_url">http://online.radiovanya.ru/radiovanya</meta>
 <meta rel="stream_class">audio</meta>
@@ -59,7 +59,7 @@
 </track>
     <track>
       <location>http://www.radiogrom.com/online/piter_fm/radio_eldoradio_online.html</location>
-      <title>- 101,4 FM - Радио Эльдорадио </title>
+      <title>- 101,4 FM - Radio Эльдорадио </title>
     
 <meta rel="stream_url">http://onair.eltel.net/eldoradio-128k</meta>
 <meta rel="stream_class">audio</meta>
@@ -71,12 +71,12 @@
 </track>
     <track>
       <location>http://www.radiogrom.com/online/piter_fm/radio_roks_online.html</location>
-      <title>- 102,0 FM - Радио Рокс </title>
+      <title>- 102,0 FM - Radio Рокс </title>
     
 </track>
     <track>
       <location>http://www.radiogrom.com/online/piter_fm/radio_metro_online.html</location>
-      <title>- 102,4 FM - Радио Metro </title>
+      <title>- 102,4 FM - Radio Metro </title>
     
 <meta rel="stream_url">http://195.182.132.18:8230/</meta>
 <meta rel="stream_class">audio</meta>
@@ -88,17 +88,17 @@
 </track>
     <track>
       <location>http://www.radiogrom.com/online/piter_fm/radio_baltika_online.html</location>
-      <title>- 104,8 FM - Радио Балтика </title>
+      <title>- 104,8 FM - Radio Балтика </title>
     
 </track>
     <track>
       <location>http://www.radiogrom.com/online/piter_fm/monte_carlo_online.html</location>
-      <title>- 105,9 FM - Радио Монте-Карло </title>
+      <title>- 105,9 FM - Radio Монте-Карло </title>
     
 </track>
     <track>
       <location>http://www.radiogrom.com/online/piter_fm/radio_record_online.html</location>
-      <title>- 106,3 FM - Радио Рекорд </title>
+      <title>- 106,3 FM - Radio Рекорд </title>
     
 <meta rel="stream_url">http://radio.11one.ru/record192.mp3?u=6SQsq8V9</meta>
 <meta rel="stream_class">audio</meta>

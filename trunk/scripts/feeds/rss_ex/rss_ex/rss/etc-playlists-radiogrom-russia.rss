@@ -22,7 +22,7 @@
 -->
 
 <onEnter>
-  translate_base_url  = "http://127.0.0.1/cgi-bin/translate?";
+  translate_base_url  = "http://127.0.0.1:82/rss_ex/www/cgi-bin/translate?";
   cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
   if(cgiconf != null)
   {
@@ -458,7 +458,7 @@
   <title>Radiogrom.com - russia</title>
   <item>
     <location>http://www.radiogrom.com/online/russia/piratskaya_stantsiya_radio_online.html</location>
-    <title>- ***,* FM - Радио Пиратская станция </title>
+    <title>- ***,* FM - Radio Пиратская станция </title>
     <stream_url>http://stream.radiorecord.ru:8100/ps_aac</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>icecast</stream_soft>
@@ -469,7 +469,7 @@
   </item>
   <item>
     <location>http://www.radiogrom.com/online/russia/radio_priboy_online.html</location>
-    <title>- 100,7 FM - Радио Прибой Махачкала </title>
+    <title>- 100,7 FM - Radio Прибой Махачкала </title>
     <stream_url>http://stream6.radiostyle.ru:8006/priboyfm</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>icecast</stream_soft>
@@ -480,7 +480,7 @@
   </item>
   <item>
     <location>http://www.radiogrom.com/online/russia/radio_vatan_online.html</location>
-    <title>- 104,8 FM - Радио Ватан Махачкала </title>
+    <title>- 104,8 FM - Radio Ватан Махачкала </title>
     <stream_url>http://stream1.radiostyle.ru:8001/radiovatan</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>icecast</stream_soft>
@@ -491,7 +491,7 @@
   </item>
   <item>
     <location>http://www.radiogrom.com/online/russia/radio_maks_fm_online.html</location>
-    <title>- 107,4 FM - Радио Макс FM </title>
+    <title>- 107,4 FM - Radio Макс FM </title>
     <stream_url>http://radio.maks-fm.ru:8000/maksfm128</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>icecast</stream_soft>
@@ -502,7 +502,7 @@
   </item>
   <item>
     <location>http://www.radiogrom.com/online/russia/radio_intervolna_online.html</location>
-    <title>- 102,9 FM - Радио Интерволна </title>
+    <title>- 102,9 FM - Radio Интерволна </title>
     <stream_url>http://online.intervolna.ru:8000</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>shoutcast</stream_soft>
@@ -513,7 +513,7 @@
   </item>
   <item>
     <location>http://www.radiogrom.com/online/russia/glavnoe_radio_online.html</location>
-    <title>- ***,* FM - Главное Радио </title>
+    <title>- ***,* FM - Главное Radio </title>
     <stream_url>http://www.orrfm.ru:8000/orr-128</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>icecast</stream_soft>
@@ -524,7 +524,7 @@
   </item>
   <item>
     <location>http://www.radiogrom.com/online/russia/radio_premuim_online.html</location>
-    <title>- ***,* FM - Радио Премиум </title>
+    <title>- ***,* FM - Radio Премиум </title>
     <stream_url>http://listen.rpfm.ru:9000/premium128</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>icecast</stream_soft>
@@ -535,7 +535,7 @@
   </item>
   <item>
     <location>http://www.radiogrom.com/online/russia/radio_107_krasnodar_online.html</location>
-    <title>- 107,7 FM - Радио 107 Краснодар </title>
+    <title>- 107,7 FM - Radio 107 Краснодар </title>
     <stream_url>http://62.183.34.109:8000/radio107.mp3</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>icecast</stream_soft>
@@ -550,7 +550,7 @@
   </item>
   <item>
     <location>http://www.radiogrom.com/online/russia/radio_literaturnoe_online.html</location>
-    <title>- Литературное Радио Москва </title>
+    <title>- Литературное Radio Москва </title>
     <stream_url>http://79.137.234.183:8000</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>shoutcast</stream_soft>
@@ -561,7 +561,7 @@
   </item>
   <item>
     <location>http://www.radiogrom.com/online/russia/radio_teos_online.html</location>
-    <title>- AM 1134 кГц - Радио Теос Москва </title>
+    <title>- AM 1134 кГц - Radio Теос Москва </title>
     <stream_url>http://radioteos.ru:8004/</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>shoutcast</stream_soft>
@@ -572,7 +572,7 @@
   </item>
   <item>
     <location>http://www.radiogrom.com/online/russia/radio_svoboda_online.html</location>
-    <title>- AM 1044 кГц - Радио Свобода. Москва </title>
+    <title>- AM 1044 кГц - Radio Свобода. Москва </title>
     <stream_url>mmsh://a1075.l1062331074.c10623.g.lm.akamaistream.net/D/1075/10623/v0001/reflector:31074</stream_url>
     <stream_class>audio</stream_class>
     <stream_server>_empty_</stream_server>
@@ -585,7 +585,7 @@
   </item>
   <item>
     <location>http://www.radiogrom.com/online/russia/radio_borneo_online.html</location>
-    <title>- 107,2 FM - Радио Борнео. Воронеж </title>
+    <title>- 107,2 FM - Radio Борнео. Воронеж </title>
     <stream_url>http://live.borneo.ru:8888/128</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>icecast</stream_soft>
@@ -596,11 +596,11 @@
   </item>
   <item>
     <location>http://www.radiogrom.com/online/russia/radio_red_army_online.html</location>
-    <title>- 104,6 FM - Радио Красная Армия Тюмень </title>
+    <title>- 104,6 FM - Radio Красная Армия Тюмень </title>
   </item>
   <item>
     <location>http://www.radiogrom.com/online/russia/radio_sibir_online.html</location>
-    <title>- 104,6 FM - Радио Сибирь. Томск </title>
+    <title>- 104,6 FM - Radio Сибирь. Томск </title>
     <stream_url>http://radiosibir.ru:8090/HQ</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>icecast</stream_soft>
@@ -611,11 +611,11 @@
   </item>
   <item>
     <location>http://www.radiogrom.com/online/russia/radio_uniton_online.html</location>
-    <title>- 100,7 FM - Радио Юнитон Новосибирск </title>
+    <title>- 100,7 FM - Radio Юнитон Новосибирск </title>
   </item>
   <item>
     <location>http://www.radiogrom.com/online/russia/radio_vbc_online.html</location>
-    <title>- 103,3 FM - Радио VBC. Владивосток </title>
+    <title>- 103,3 FM - Radio VBC. Владивосток </title>
     <stream_url>http://radiovbc.ru:8000/Radio32</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>icecast</stream_soft>
@@ -637,7 +637,7 @@
   </item>
   <item>
     <location>http://www.radiogrom.com/online/russia/love_radio_irkutsk_online.html</location>
-    <title>- 104,2 FM - Love Радио Иркутск </title>
+    <title>- 104,2 FM - Love Radio Иркутск </title>
     <stream_url>http://as.baikal.tv:8004</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>shoutcast</stream_soft>

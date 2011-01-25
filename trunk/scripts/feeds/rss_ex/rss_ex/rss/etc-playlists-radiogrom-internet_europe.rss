@@ -22,7 +22,7 @@
 -->
 
 <onEnter>
-  translate_base_url  = "http://127.0.0.1/cgi-bin/translate?";
+  translate_base_url  = "http://127.0.0.1:82/rss_ex/www/cgi-bin/translate?";
   cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
   if(cgiconf != null)
   {
@@ -458,11 +458,11 @@
   <title>Radiogrom.com - internet_europe</title>
   <item>
     <location>http://www.radiogrom.com/online/internet_europe/radio_ru_fm_online.html</location>
-    <title>- Радио RU-fm </title>
+    <title>- Radio RU-fm </title>
   </item>
   <item>
     <location>http://www.radiogrom.com/online/internet_europe/star_fm_bulgaria_online.html</location>
-    <title>- Радио Star FM </title>
+    <title>- Radio Star FM </title>
     <stream_url>http://inforadio.atlantis.bg:8000/inforadio.ogg</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>icecast</stream_soft>
@@ -473,15 +473,15 @@
   </item>
   <item>
     <location>http://www.radiogrom.com/online/internet_europe/ministry_of_sound_online.html</location>
-    <title>- Радио Ministry Of Sound Radio </title>
+    <title>- Radio Ministry Of Sound Radio </title>
   </item>
   <item>
     <location>http://www.radiogrom.com/online/internet_europe/russkoe_berlin_online.html</location>
-    <title>- Русское Радио Берлин. Russkoe Radio Berlin </title>
+    <title>- Русское Radio Берлин. Russkoe Radio Berlin </title>
   </item>
   <item>
     <location>http://www.radiogrom.com/online/great_britain/capital_fm_london_95_8_online.html</location>
-    <title>- 95,8 FM - Радио Capital FM 95.8 London (UK)</title>
+    <title>- 95,8 FM - Radio Capital FM 95.8 London (UK)</title>
     <stream_url>mmsh://mediasrv-sov.musicradio.com/CapitalRadio</stream_url>
     <stream_class>audio</stream_class>
     <stream_server>_empty_</stream_server>

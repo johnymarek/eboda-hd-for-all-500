@@ -283,7 +283,7 @@
   {
     youtubeRegion = readStringFromFile(cachePath + "youtubeRegion.dat");
     if(youtubeRegion == null)
-      youtubeRegion = "RU";
+      youtubeRegion = "EN";
     hd = 1;
     username = " ";
   }
@@ -315,7 +315,7 @@
   if(youtubeRegion=="JP") lr="ja"; else
     lr=null;
   
-  translateBaseURL = "http://127.0.0.1/cgi-bin/translate?";
+  translateBaseURL = "http://127.0.0.1:82/rss_ex/www/cgi-bin/translate?";
   cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
   if(cgiconf != null)
   {
@@ -367,12 +367,12 @@
 </submenu>
 
 <submenu>
-  <title>Похожие видео</title>
+  <title>Похожие video</title>
   <onClick>
 	if (relatedUrl != "")
 	{
    url = relatedUrl+"?";
-   title = "Похожие видео: "+title;
+   title = "Похожие video: "+title;
    
    arr = null;
    arr = pushBackStringArray(arr, url);

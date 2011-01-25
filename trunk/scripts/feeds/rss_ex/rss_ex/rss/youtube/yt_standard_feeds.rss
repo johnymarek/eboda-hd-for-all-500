@@ -165,7 +165,7 @@
     {
       youtubeRegion = readStringFromFile(cachePath + "youtubeRegion.dat");
       if(youtubeRegion == null)
-        youtubeRegion = "RU";
+        youtubeRegion = "EN";
       hd = 1;
       username = " ";
     }
@@ -184,7 +184,7 @@
     
     storagePath = getStoragePath("tmp") + "youtubeRSS.dat";
   
-  	pageTitle = "Стандартные каналы";
+  	pageTitle = "Standard feeds";
 
 		itemTitleArray = null;
 
@@ -219,7 +219,7 @@
 	</onEnter>
 
 	<channel>
-		<title>YouTube: Стандартные каналы</title>
+		<title>YouTube: Standard feeds</title>
 		<link>../etc/translate/rss/youtube/yt_standrd_feeds.rss</link>
 		<media:thumbnail url="../etc/translate/rss/image/youtube.gif" width="120" height="90" />
 
@@ -248,7 +248,7 @@
 		</item>
 
 		<item>
-			<title>Топ избранного</title>
+			<title>Top favorites</title>
 			<feed_name>top_favorites</feed_name>
 			<media:thumbnail url="../etc/translate/rss/image/youtube.gif" width="120" height="90" />
 		</item>
@@ -260,7 +260,7 @@
 		</item>
 <!--
 		<item>
-			<title>Видео в центре внимания</title>
+			<title>Recently featured</title>
 			<feed_name>recently_featured</feed_name>
 			<media:thumbnail url="../etc/translate/rss/image/youtube.gif" width="120" height="90" />
 		</item>
