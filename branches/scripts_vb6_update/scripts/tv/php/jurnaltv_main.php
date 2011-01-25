@@ -1,6 +1,5 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php echo "<?xml version='1.0' encoding='UTF8' ?>";
-$host = "http://127.0.0.1/cgi-bin";
+$host = "http://127.0.0.1:82";
 ?>
 <rss version="2.0">
 <onEnter>
@@ -150,7 +149,7 @@ ret;
 
 	</item_template>
 <script>
-    channelImage = "/usr/local/etc/www/cgi-bin/scripts/tv/image/jurnaltv.jpg";
+    channelImage = "/scripts/tv/image/jurnaltv.jpg";
   </script>
 
 

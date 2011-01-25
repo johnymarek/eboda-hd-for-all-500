@@ -1,4 +1,3 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php
 error_reporting(0);
 $filelink=$_ENV["QUERY_STRING"];
@@ -61,14 +60,14 @@ if ($pg == "") {
 
 	if( userInput == "two")
 	{
-		topUrl = "http://127.0.0.1/cgi-bin/scripts/util/download.cgi?link=" + getItemInfo(getFocusItemIndex(),"download") + ";name=" + getItemInfo(getFocusItemIndex(),"name");
+		topUrl = "http://127.0.0.1:82/scripts/util/download.cgi?link=" + getItemInfo(getFocusItemIndex(),"download") + ";name=" + getItemInfo(getFocusItemIndex(),"name");
 		dlok = loadXMLFile(topUrl);
 	}
 
 </onUserInput>
 </mediaDisplay>
 <destination>
-	<link>http://127.0.0.1/cgi-bin/scripts/util/level.php
+	<link>http://127.0.0.1:82/scripts/util/level.php
 	</link>
 </destination>
 <channel>
@@ -151,7 +150,7 @@ function divxden($string) {
 /**####################################**/
 /** Here we start.......**/
 $lastlink = "abc";
-$baseurl = "http://127.0.0.1/cgi-bin/translate?stream,Content-type:video/x-flv,";
+$baseurl = "http://127.0.0.1:82/scripts/cgi-bin/translate?stream,Content-type:video/x-flv,";
 $filelink = str_prep($filelink);
 $html = file_get_contents($filelink);
 /**################################filmeonlinesubtitrate.ro###############**/
@@ -682,7 +681,7 @@ foreach($videos as $video) {
   	      $id = $v[1];
         }
 		$title = "megavideo link";
-		$link1 = "http://127.0.0.1/cgi-bin/scripts/php1/mega.php?id=".$id;
+		$link1 = "http://127.0.0.1:82/scripts/php1/mega.php?id=".$id;
     	echo '
         <item>
     	<title>'.$title.'</title>
@@ -703,7 +702,7 @@ if (strpos($html, 'googleplayer.swf') !== false) {
 	  $server = str_between($link,"http://","/");
 	  $title = $server." - ".substr(strrchr($link,"/"),1);
 	  if (($link <> "") && strcmp($link,$lastlink)) {
-        $link1 = "http://127.0.0.1/cgi-bin/translate?stream,,".$link;
+        $link1 = "http://127.0.0.1:82/scripts/cgi-bin/translate?stream,,".$link;
 		$titledownload = substr(strrchr($link,"/"),1);
 		$pct = substr($titledownload, -4, 1);
 		if ($pct == ".") {
@@ -866,7 +865,7 @@ if (strpos($html, 'www.youtube.com/v/') !== false) {
 	  $server = str_between($link,"http://","/");
 	  $title = $server." - ".substr(strrchr($link,"/"),1);
 	  if (($link <> "") && strcmp($link,$lastlink)) {
-       $link1 = "http://127.0.0.1/cgi-bin/translate?stream,HD:1,http://www.youtube.com/watch?v=".$v_id;
+       $link1 = "http://127.0.0.1:82/scripts/cgi-bin/translate?stream,HD:1,http://www.youtube.com/watch?v=".$v_id;
        echo '
           <item>
     	  <title>'.$title.'</title>
@@ -1088,7 +1087,7 @@ if (strpos($html, 'stagevu.com') !== false) {
     }
 }
 // utils
-    $link = "http://127.0.0.1/cgi-bin/scripts/util/util1.cgi";
+    $link = "http://127.0.0.1:82/scripts/util/util1.cgi";
   	echo '
     <item>
   	<title>Stop download</title>
@@ -1096,7 +1095,7 @@ if (strpos($html, 'stagevu.com') !== false) {
   	<enclosure type="text/txt" url="'.$link.'"/>
   	</item>
       ';
-   $link = "http://127.0.0.1/cgi-bin/scripts/util/ren.php";
+   $link = "http://127.0.0.1:82/scripts/util/ren.php";
    echo '
    <item>
    <title>Redenumire fisiere descarcate</title>
@@ -1106,7 +1105,7 @@ if (strpos($html, 'stagevu.com') !== false) {
    echo '
    <item>
    <title>Download Manager</title>
-   <link>http://127.0.0.1/cgi-bin/scripts/util/level.php</link>
+   <link>http://127.0.0.1:82/scripts/util/level.php</link>
    </item>
    ';
 ?>

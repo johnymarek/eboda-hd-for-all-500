@@ -53,14 +53,14 @@ columnCount=3
 		<text align="center" redraw="yes" lines="4" offsetXPC=10 offsetYPC=80 widthPC=75 heightPC=15 fontSize=15 backgroundColor=0:0:0 foregroundColor=120:120:120>
 			<script>print(annotation); annotation;</script>
 		</text>		
-        <idleImage>image/busy1.png</idleImage>
-        <idleImage>image/busy2.png</idleImage>
-        <idleImage>image/busy3.png</idleImage>
-        <idleImage>image/busy4.png</idleImage>
-        <idleImage>image/busy5.png</idleImage>
-        <idleImage>image/busy6.png</idleImage>
-        <idleImage>image/busy7.png</idleImage>
-        <idleImage>image/busy8.png</idleImage>
+        <idleImage>image/POPUP_LOADING_01.png</idleImage>
+        <idleImage>image/POPUP_LOADING_02.png</idleImage>
+        <idleImage>image/POPUP_LOADING_03.png</idleImage>
+        <idleImage>image/POPUP_LOADING_04.png</idleImage>
+        <idleImage>image/POPUP_LOADING_05.png</idleImage>
+        <idleImage>image/POPUP_LOADING_06.png</idleImage>
+        <idleImage>image/POPUP_LOADING_07.png</idleImage>
+        <idleImage>image/POPUP_LOADING_08.png</idleImage>
 		<itemDisplay>
 			<image>
 				<script>
@@ -142,14 +142,14 @@ columnCount=3
 	
 	<item_template>
 		<mediaDisplay  name="threePartsView" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>image/busy1.png</idleImage>
-        <idleImage>image/busy2.png</idleImage>
-        <idleImage>image/busy3.png</idleImage>
-        <idleImage>image/busy4.png</idleImage>
-        <idleImage>image/busy5.png</idleImage>
-        <idleImage>image/busy6.png</idleImage>
-        <idleImage>image/busy7.png</idleImage>
-        <idleImage>image/busy8.png</idleImage>
+        <idleImage>image/POPUP_LOADING_01.png</idleImage>
+        <idleImage>image/POPUP_LOADING_02.png</idleImage>
+        <idleImage>image/POPUP_LOADING_03.png</idleImage>
+        <idleImage>image/POPUP_LOADING_04.png</idleImage>
+        <idleImage>image/POPUP_LOADING_05.png</idleImage>
+        <idleImage>image/POPUP_LOADING_06.png</idleImage>
+        <idleImage>image/POPUP_LOADING_07.png</idleImage>
+        <idleImage>image/POPUP_LOADING_08.png</idleImage>
 		</mediaDisplay>
 		<link>
 		  <script>getItemInfo(getQueryItemIndex(), "location");</script>
@@ -159,45 +159,45 @@ columnCount=3
   <channel>
     <title>HDD Links</title>
   <item>
-    <link>http://127.0.0.1:82/scripts:82/scripts/trailer/trailer.php</link>
+    <link>http://127.0.0.1:82/scripts/trailer/trailer.php</link>
     <title>Trailere filme şi jocuri</title>
     <annotation>Vedeţi aici ultimele trailere pentru filme sau jocuri...</annotation>
-    <image>image/trailerb.png</image>
+    <image>/scripts/image/trailerb.png</image>
     <mediaDisplay name="threePartsView"/>
   </item>
   <item>
-    <link>http://127.0.0.1:82/scripts:82/scripts/filme/filme.php</link>
+    <link>http://127.0.0.1:82/scripts/filme/filme.php</link>
     <title>Filme şi seriale subtitrate</title>
     <annotation>Vedeţi aici filme şi seriale cu subtitrare...</annotation>
-    <image>image/movies.png</image>
+    <image>/scripts//scripts/image/movies.png</image>
     <mediaDisplay name="threePartsView"/>
   </item>
   <item>
-    <link>http://127.0.0.1:82/scripts:82/scripts/clip/clip.php</link>
+    <link>http://127.0.0.1:82/scripts/clip/clip.php</link>
     <title>Videoclipuri şi altele</title>
     <annotation>Filmuleţe nostime, clipuri video şi altele</annotation>
-    <image>image/videoclip.png</image>
+    <image>/scripts//scripts/image/videoclip.png</image>
     <mediaDisplay name="photoView"/>
   </item>
   <item>
-    <link>http://127.0.0.1:82/scripts:82/scripts/news/news.php</link>
+    <link>http://127.0.0.1:82/scripts/news/news.php</link>
     <title>Ştiri şi alte informaţii</title>
     <annotation>Vezi orarul serialelor, cursul valutar sau alte informaţii utile</annotation>
-    <image>image/blog.png</image>
+    <image>/scripts/image/blog.png</image>
     <mediaDisplay name="threePartsView"/>
   </item>
   <item>
-    <link>http://127.0.0.1:82/scripts:82/scripts/tv/tv_radio.php</link>
+    <link>http://127.0.0.1:82/scripts/tv/tv_radio.php</link>
     <title>TV, Radio şi emisiuni Inregistrate</title>
     <annotation>Ascultă sau vezi postul tău de radio sau TV favorit. Ai ratat o emisiune? Aici poţi s-o găseşti!</annotation>
-    <image>image/tv_radio.png</image>
+    <image>/scripts//scripts/image/tv_radio.png</image>
     <mediaDisplay name="threePartsView"/>
   </item>
   <item>
-    <link>http://127.0.0.1:82/scripts:82/scripts/user/users.php</link>
+    <link>http://127.0.0.1:82/scripts/user/users.php</link>
     <title>Conturi personale metafeeds</title>
     <annotation>Ai un cont pe metafeeds? Aici putem să-l adăugăm!</annotation>
-    <image>image/users.png</image>
+    <image>/scripts/image/users.png</image>
     <mediaDisplay name="threePartsView"/>
   </item>
   

@@ -1,17 +1,16 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 ﻿<?php echo "<?xml version='1.0' encoding='UTF8' ?>";
-$host = "http://127.0.0.1/cgi-bin";
+$host = "http://127.0.0.1:82";
 ?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="20" idleImageHeightPC="26">
-	<idleImage>image/busy1.png</idleImage>
-	<idleImage>image/busy2.png</idleImage>
-	<idleImage>image/busy3.png</idleImage>
-	<idleImage>image/busy4.png</idleImage>
-	<idleImage>image/busy5.png</idleImage>
-	<idleImage>image/busy6.png</idleImage>
-	<idleImage>image/busy7.png</idleImage>
-	<idleImage>image/busy8.png</idleImage>
+	<idleImage>image/POPUP_LOADING_01.png</idleImage>
+	<idleImage>image/POPUP_LOADING_02.png</idleImage>
+	<idleImage>image/POPUP_LOADING_03.png</idleImage>
+	<idleImage>image/POPUP_LOADING_04.png</idleImage>
+	<idleImage>image/POPUP_LOADING_05.png</idleImage>
+	<idleImage>image/POPUP_LOADING_06.png</idleImage>
+	<idleImage>image/POPUP_LOADING_07.png</idleImage>
+	<idleImage>image/POPUP_LOADING_08.png</idleImage>
 		<backgroundDisplay>
 			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
 			image/mele/backgd.jpg
@@ -49,7 +48,7 @@ if($page > 1) { ?>
 
 <item>
 <?php
-$sThisFile = 'http://127.0.0.1'.$_SERVER['SCRIPT_NAME'];
+$sThisFile = 'http://127.0.0.1:82'.$_SERVER['SCRIPT_NAME'];
 $url = $sThisFile."?query=".($page-1).",";
 if($search) { 
   $url = $url.$search; 
@@ -57,7 +56,7 @@ if($search) {
 ?>
 <title>Previous Page</title>
 <link><?php echo $url;?></link>
-<media:thumbnail url="image/left.jpg" />
+<media:thumbnail url="/scripts//scripts/image/left.jpg" />
 </item>
 
 
@@ -104,7 +103,7 @@ foreach($videos as $video) {
 
 <item>
 <?php
-$sThisFile = 'http://127.0.0.1'.$_SERVER['SCRIPT_NAME'];
+$sThisFile = 'http://127.0.0.1:82'.$_SERVER['SCRIPT_NAME'];
 $url = $sThisFile."?query=".($page+1).",";
 if($search) { 
   $url = $url.$search; 
@@ -112,7 +111,7 @@ if($search) {
 ?>
 <title>Next Page</title>
 <link><?php echo $url;?></link>
-<media:thumbnail url="image/right.jpg" />
+<media:thumbnail url="/scripts//scripts/image/right.jpg" />
 </item>
 
 </channel>

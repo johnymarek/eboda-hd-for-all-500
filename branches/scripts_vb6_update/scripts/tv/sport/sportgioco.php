@@ -1,17 +1,16 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php echo "<?xml version='1.0' encoding='UTF8' ?>";
-$host = "http://127.0.0.1/cgi-bin";
+$host = "http://127.0.0.1:82";
 ?>
 <rss version="2.0" xmlns:media="http://purl.org/dc/elements/1.1/" xmlns:dc="http://purl.org/dc/elements/1.1/">
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="20" idleImageHeightPC="26">
-	<idleImage>image/busy1.png</idleImage>
-	<idleImage>image/busy2.png</idleImage>
-	<idleImage>image/busy3.png</idleImage>
-	<idleImage>image/busy4.png</idleImage>
-	<idleImage>image/busy5.png</idleImage>
-	<idleImage>image/busy6.png</idleImage>
-	<idleImage>image/busy7.png</idleImage>
-	<idleImage>image/busy8.png</idleImage>
+	<idleImage>image/POPUP_LOADING_01.png</idleImage>
+	<idleImage>image/POPUP_LOADING_02.png</idleImage>
+	<idleImage>image/POPUP_LOADING_03.png</idleImage>
+	<idleImage>image/POPUP_LOADING_04.png</idleImage>
+	<idleImage>image/POPUP_LOADING_05.png</idleImage>
+	<idleImage>image/POPUP_LOADING_06.png</idleImage>
+	<idleImage>image/POPUP_LOADING_07.png</idleImage>
+	<idleImage>image/POPUP_LOADING_08.png</idleImage>
 		<backgroundDisplay>
 			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
 			image/mele/backgd.jpg
@@ -37,7 +36,7 @@ function str_between($string, $start, $end){
 	return substr($string,$ini,$len); 
 }
 $html = file_get_contents("http://www.sportgioco.it/calcio/highlights.php");
-$image = "/usr/local/etc/www/cgi-bin/scripts/tv/image/sportgioco.jpg";
+$image = "/scripts/tv/image/sportgioco.jpg";
 $videos = explode('<tr>', $html);
 
 unset($videos[0]);
@@ -52,10 +51,10 @@ foreach($videos as $video) {
 		if (strpos($link, "youtube") !== false) {
 			if (strpos($link, "&") === false) {
 			$v_id = substr(strrchr($link, "="), 1);
-			$link = "http://127.0.0.1/cgi-bin/translate?stream,HD:1,http://www.youtube.com/watch?v=".$v_id;
+			$link = "http://127.0.0.1:82/scripts/cgi-bin/translate?stream,HD:1,http://www.youtube.com/watch?v=".$v_id;
 		} else {
 			$v_id = str_between($link,'v=','&');
-			$link = "http://127.0.0.1/cgi-bin/translate?stream,HD:1,http://www.youtube.com/watch?v=".$v_id;
+			$link = "http://127.0.0.1:82/scripts/cgi-bin/translate?stream,HD:1,http://www.youtube.com/watch?v=".$v_id;
 		}
     	echo '<item>';
     	echo '<title>'.$title.'</title>';
@@ -80,7 +79,7 @@ foreach($videos as $video) {
 		}
 //http://dailymotion.virgilio.it/video/xf1qq7_bir-vs-eve_sport
 		if (strpos($link, "dailymotion") !== false) {
-			$link="http://127.0.0.1/cgi-bin/scripts/clip/php/dm_link.php?file=".$link;
+			$link="http://127.0.0.1:82/scripts/clip/php/dm_link.php?file=".$link;
     	echo '<item>';
     	echo '<title>'.$title.'</title>';
     	echo '<pubDate>'.$data.'</pubDate>';

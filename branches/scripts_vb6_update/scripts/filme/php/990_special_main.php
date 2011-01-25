@@ -1,6 +1,5 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php echo "<?xml version='1.0' encoding='UTF8' ?>";
-$host = "http://127.0.0.1/cgi-bin";
+$host = "http://127.0.0.1:82";
 ?>
 <rss version="2.0">
 <onEnter>
@@ -137,7 +136,7 @@ $host = "http://127.0.0.1/cgi-bin";
 
 <?php
 $html = file_get_contents("http://www.990.ro/special.html");
-$host = "http://127.0.0.1/cgi-bin";
+$host = "http://127.0.0.1:82";
 $videos = explode("<td width='35%' rowspan='2'>", $html);
 unset($videos[0]);
 $videos = array_values($videos);

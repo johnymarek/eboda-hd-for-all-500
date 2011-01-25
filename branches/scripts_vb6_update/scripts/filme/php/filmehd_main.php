@@ -1,6 +1,5 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php echo "<?xml version='1.0' encoding='UTF8' ?>";
-$host = "http://127.0.0.1/cgi-bin";
+$host = "http://127.0.0.1:82";
 ?>
 <rss version="2.0">
 <onEnter>
@@ -53,7 +52,7 @@ $host = "http://127.0.0.1/cgi-bin";
 		  <script>print(annotation); annotation;</script>
 		</text>
 		<image  redraw="yes" offsetXPC=60 offsetYPC=35 widthPC=30 heightPC=30>
-		image/movies.png
+		/scripts//scripts/image/movies.png
 		</image>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_01.png </idleImage>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_02.png </idleImage>
@@ -133,7 +132,7 @@ $host = "http://127.0.0.1/cgi-bin";
 	<title>filmehd.net - categorii</title>
 	<menu>main menu</menu>
 <?php
-$host = "http://127.0.0.1/cgi-bin";
+$host = "http://127.0.0.1:82";
 $link = "http://filmehd.net";
 	echo '
 	<item>

@@ -1,4 +1,3 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php echo "<?xml version='1.0' ?>"; ?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
 <mediaDisplay name="threePartsView" 
@@ -46,14 +45,14 @@
 
 	if( userInput == "two")
 	{
-		topUrl = "http://127.0.0.1/cgi-bin/scripts/util/download.cgi?link=" + getItemInfo(getFocusItemIndex(),"download") + ";name=" + getItemInfo(getFocusItemIndex(),"name");
+		topUrl = "http://127.0.0.1:82/scripts/util/download.cgi?link=" + getItemInfo(getFocusItemIndex(),"download") + ";name=" + getItemInfo(getFocusItemIndex(),"name");
 		dlok = loadXMLFile(topUrl);
 	}
 
 </onUserInput>
 </mediaDisplay>
 <destination>
-	<link>http://127.0.0.1/cgi-bin/scripts/util/level.php
+	<link>http://127.0.0.1:82/scripts/util/level.php
 	</link>
 </destination>
 <channel>
@@ -67,7 +66,7 @@ function str_between($string, $start, $end){
 }
 $id = $_GET["id"];
 $lastlink = "abc";
-$baseurl = "http://127.0.0.1/cgi-bin/translate?stream,Content-type:video/x-flv,";
+$baseurl = "http://127.0.0.1:82/scripts/cgi-bin/translate?stream,Content-type:video/x-flv,";
 	 //$link = "http://estosesale.com/mvpremiumoriginal.php?video_id=".$id;
 	 $link = "http://titooo.net23.net/megavideo/mvpremiumoriginal.php?video_id=".$id;
    $title = "megavideo (premium) - file=".$id;
@@ -79,14 +78,14 @@ $baseurl = "http://127.0.0.1/cgi-bin/translate?stream,Content-type:video/x-flv,"
     	echo '<link>'.$link1.'</link>';
     	echo '<name>'.$id.'.'.$ext.'</name>';
     	echo '<download>'.$link.'</download>';
-    	echo '<media:thumbnail url="image/movies.png"/>';
+    	echo '<media:thumbnail url="/scripts//scripts/image/movies.png"/>';
     	echo '<enclosure type="video/flv" url="'.$link1.'"/>';
     	echo '</item>';
     print "\n";
     $lastlink = $link;
   }
 	 $title = "megavideo (limit to 71 min.) - file=".$id;
-   $link = "http://127.0.0.1/cgi-bin/scripts/php1/megavideo.php?video_id=".$id;
+   $link = "http://127.0.0.1:82/scripts/php1/megavideo.php?video_id=".$id;
    if (($link <> "") && strcmp($link,$lastlink)) {  
    		$link1 = $baseurl.$link;
         $ext = "flv";
@@ -95,7 +94,7 @@ $baseurl = "http://127.0.0.1/cgi-bin/translate?stream,Content-type:video/x-flv,"
     	echo '<link>'.$link1.'</link>';
     	echo '<name>'.$id.'.'.$ext.'</name>';
     	echo '<download>'.$link.'</download>';
-    	echo '<media:thumbnail url="image/movies.png"/>';
+    	echo '<media:thumbnail url="/scripts//scripts/image/movies.png"/>';
     	echo '<enclosure type="video/flv" url="'.$link1.'"/>';	
     	echo '</item>';
     print "\n";
@@ -137,7 +136,7 @@ $title = "mmegavideo - premium 2 - file=".$id;
     	echo '<link>'.$link1.'</link>';
     	echo '<name>'.$id.'.'.$ext.'</name>';
     	echo '<download>'.$link.'</download>';
-    	echo '<media:thumbnail url="image/movies.png"/>';
+    	echo '<media:thumbnail url="/scripts//scripts/image/movies.png"/>';
     	echo '<enclosure type="video/flv" url="'.$link1.'"/>';
     	echo '</item>';
     print "\n";
@@ -145,7 +144,7 @@ $title = "mmegavideo - premium 2 - file=".$id;
     }
 
 // utils
-    $link = "http://127.0.0.1/cgi-bin/scripts/util/util1.cgi";
+    $link = "http://127.0.0.1:82/scripts/util/util1.cgi";
   	echo '
     <item>
   	<title>Stop download</title>
@@ -153,7 +152,7 @@ $title = "mmegavideo - premium 2 - file=".$id;
   	<enclosure type="text/txt" url="'.$link.'"/>
   	</item>
       ';
-   $link = "http://127.0.0.1/cgi-bin/scripts/util/ren.php";
+   $link = "http://127.0.0.1:82/scripts/util/ren.php";
    echo '
    <item>
    <title>Redenumire fisiere descarcate</title>
@@ -163,7 +162,7 @@ $title = "mmegavideo - premium 2 - file=".$id;
    echo '
    <item>
    <title>Download Manager</title>
-   <link>http://127.0.0.1/cgi-bin/scripts/util/level.php</link>
+   <link>http://127.0.0.1:82/scripts/util/level.php</link>
    </item>
    ';
 ?>

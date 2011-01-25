@@ -1,4 +1,3 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php echo "<?xml version='1.0' encoding='UTF8' ?>"; ?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
 <onEnter>
@@ -108,14 +107,14 @@ function str_between($string, $start, $end){
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
 	return substr($string,$ini,$len); 
 }
-$host = "http://127.0.0.1/cgi-bin";
+$host = "http://127.0.0.1:82";
 
 $html = file_get_contents("http://www.serialepe.net/p/seriale-online-gratis-subtitrate.html");
 $html = str_between($html,"<h2 class='title'>Seriale Online</h2>","</ul>");
 $videos = explode('<li>', $html);
 unset($videos[0]);
 $videos = array_values($videos);
-$img = "image/movies.png";
+$img = "/scripts//scripts/image/movies.png";
 foreach($videos as $video) {
   $t1 = explode('href="', $video);
   $t2 = explode('"', $t1[1]);

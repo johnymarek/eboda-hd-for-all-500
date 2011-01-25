@@ -1,4 +1,3 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php echo "<?xml version='1.0' encoding='UTF8' ?>"; ?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
 <mediaDisplay name="threePartsView" 
@@ -50,7 +49,7 @@ function str_between($string, $start, $end){
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
 	return substr($string,$ini,$len); 
 }
-$baseurl = "http://127.0.0.1/cgi-bin/translate?stream,Content-type:video/x-flv,";
+$baseurl = "http://127.0.0.1:82/scripts/cgi-bin/translate?stream,Content-type:video/x-flv,";
 $link = $_GET["file"];
 $t=explode(",",$link);
 $link = $t1[0];
@@ -72,7 +71,7 @@ echo '
 <enclosure type="video/flv" url="'.$link.'"/>	
 </item>
 ';
-$link = "http://127.0.0.1/cgi-bin/scripts/util/util1.cgi";
+$link = "http://127.0.0.1:82/scripts/util/util1.cgi";
 echo '<item>';
 echo '<title>Stop download</title>';
 echo '<link>'.$link.'</link>';
@@ -80,7 +79,7 @@ echo '<enclosure type="text/txt" url="'.$link.'"/>';
 echo '</item>';
 print "\n";
 
-$link = "http://127.0.0.1/cgi-bin/scripts/util/ren.php";
+$link = "http://127.0.0.1:82/scripts/util/ren.php";
 echo '<item>';
 echo '<title>Redenumire fisiere descarcate</title>';
 echo '<link>'.$link.'</link>';

@@ -1,4 +1,3 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php
 function str_between($string, $start, $end){ 
 	$string = " ".$string; $ini = strpos($string,$start); 
@@ -178,7 +177,7 @@ foreach($videos as $video) {
     if ($link <> "") {
 	    $link = "http://www.990.ro/".$link;        
 			$title = str_between($video,"<td>","</td>")." - ".$title1;
-	    $link = 'http://127.0.0.1/cgi-bin/scripts/filme/php/filme_link.php?'.$link.','.urlencode($title);
+	    $link = 'http://127.0.0.1:82/scripts/filme/php/filme_link.php?'.$link.','.urlencode($title);
     echo '
     <item>
     <title>'.$title.'</title>

@@ -1,4 +1,3 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php echo "<?xml version='1.0' ?>"; ?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
 <mediaDisplay name="threePartsView" 
@@ -24,14 +23,14 @@
 	idleImageYPC="42" 
 	idleImageWidthPC="20" 
 	idleImageHeightPC="26">
-	<idleImage>image/busy1.png</idleImage>
-	<idleImage>image/busy2.png</idleImage>
-	<idleImage>image/busy3.png</idleImage>
-	<idleImage>image/busy4.png</idleImage>
-	<idleImage>image/busy5.png</idleImage>
-	<idleImage>image/busy6.png</idleImage>
-	<idleImage>image/busy7.png</idleImage>
-	<idleImage>image/busy8.png</idleImage>
+	<idleImage>image/POPUP_LOADING_01.png</idleImage>
+	<idleImage>image/POPUP_LOADING_02.png</idleImage>
+	<idleImage>image/POPUP_LOADING_03.png</idleImage>
+	<idleImage>image/POPUP_LOADING_04.png</idleImage>
+	<idleImage>image/POPUP_LOADING_05.png</idleImage>
+	<idleImage>image/POPUP_LOADING_06.png</idleImage>
+	<idleImage>image/POPUP_LOADING_07.png</idleImage>
+	<idleImage>image/POPUP_LOADING_08.png</idleImage>
 		<backgroundDisplay>
 			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
 			image/mele/backgd.jpg
@@ -55,7 +54,7 @@ function str_between($string, $start, $end){
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
 	return substr($string,$ini,$len); 
 }
-$host = "http://127.0.0.1/cgi-bin";
+$host = "http://127.0.0.1:82";
 $html = file_get_contents("http://www.fcdinamo.ro/web/guest/galerii-video");
 $videos = explode('td class="imagine_single"', $html);
 unset($videos[0]);

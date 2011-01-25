@@ -1,4 +1,3 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php echo "<?xml version='1.0' encoding='UTF8' ?>"; ?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
 <onEnter>
@@ -114,7 +113,7 @@ function str_title($string){
 	$string=trim($string);
 	return $string;
 }
-$host = "http://127.0.0.1/cgi-bin";
+$host = "http://127.0.0.1:82";
 $html = file_get_contents("http://www.seriale.filmesubtitrate.info/p/seriale-online-subtitrate-in-romana.html");
 $html1=str_between($html,'Seriale Noi!!!','<table border="0" cellpadding="2" cellspacing="0" style="width: 370px;">');
 $videos=explode('href="',$html1);

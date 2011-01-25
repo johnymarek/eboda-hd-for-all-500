@@ -1,4 +1,3 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php
 $query = $_GET["file"];
 if($query) {
@@ -10,7 +9,7 @@ $html = file_get_contents($link);
 $image = "http://www.990.ro/".str_between($html,"<img src='","'");
 ?>
 <?php echo "<?xml version='1.0' encoding='UTF8' ?>";
-$host = "http://127.0.0.1/cgi-bin";
+$host = "http://127.0.0.1:82";
 ?>
 <rss version="2.0">
 <onEnter>
@@ -181,7 +180,7 @@ foreach($videos as $video) {
     if ($link <> "") {
 	    $link = "http://www.990.ro/".$link;        
 			$title = str_between($video,"<td>","</td>")." - ".$title1;
-	    $link = 'http://127.0.0.1/cgi-bin/scripts/filme/php/filme_link.php?'.$link;
+	    $link = 'http://127.0.0.1:82/scripts/filme/php/filme_link.php?'.$link;
     echo '
     <item>
     <title>'.$title.'</title>

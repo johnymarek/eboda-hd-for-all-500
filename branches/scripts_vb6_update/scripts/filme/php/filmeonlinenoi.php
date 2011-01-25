@@ -1,4 +1,3 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php echo "<?xml version='1.0' encoding='UTF8' ?>"; ?>
 <rss version="2.0">
 <onEnter>
@@ -156,7 +155,7 @@ if($page > 1) { ?>
 
 <item>
 <?php
-$sThisFile = 'http://127.0.0.1'.$_SERVER['SCRIPT_NAME'];
+$sThisFile = 'http://127.0.0.1:82'.$_SERVER['SCRIPT_NAME'];
 $url = $sThisFile."?query=".($page-1).",";
 if($search) { 
   $url = $url.$search; 
@@ -165,7 +164,7 @@ if($search) {
 <title>Previous Page</title>
 <link><?php echo $url;?></link>
 <annotation>Pagina anterioara</annotation>
-<image>image/left.jpg</image>
+<image>/scripts//scripts/image/left.jpg</image>
 <mediaDisplay name="threePartsView"/>
 </item>
 
@@ -178,7 +177,7 @@ function str_between($string, $start, $end){
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
 	return substr($string,$ini,$len); 
 }
-$image = "image/movies.png";
+$image = "/scripts//scripts/image/movies.png";
 $videos = explode('<div id="post-', $html);
 
 unset($videos[0]);
@@ -204,7 +203,7 @@ foreach($videos as $video) {
 	$descriere = $v2[0];  
 	$descriere = preg_replace("/(<\/?)(\w+)([^>]*>)/e","",$descriere); 
 	if (($link <> "") && ($link <> "http://filmeonlinenoi.com/") && ($title <> "")) {
-		$link = 'http://127.0.0.1/cgi-bin/scripts/filme/php/filme_link.php?'.$link.','.urlencode($title);
+		$link = 'http://127.0.0.1:82/scripts/filme/php/filme_link.php?'.$link.','.urlencode($title);
 		echo'
 		<item>
 		<title>'.$title.'</title>
@@ -222,7 +221,7 @@ foreach($videos as $video) {
 
 <item>
 <?php
-$sThisFile = 'http://127.0.0.1'.$_SERVER['SCRIPT_NAME'];
+$sThisFile = 'http://127.0.0.1:82'.$_SERVER['SCRIPT_NAME'];
 $url = $sThisFile."?query=".($page+1).",";
 if($search) { 
   $url = $url.$search; 
@@ -231,7 +230,7 @@ if($search) {
 <title>Next Page</title>
 <link><?php echo $url;?></link>
 <annotation>Pagina urmatoare</annotation>
-<image>image/right.jpg</image>
+<image>/scripts//scripts/image/right.jpg</image>
 <mediaDisplay name="threePartsView"/>
 </item>
 

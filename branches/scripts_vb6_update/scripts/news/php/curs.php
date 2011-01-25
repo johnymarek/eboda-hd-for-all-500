@@ -19,14 +19,14 @@
 	unFocusFontColor="101:101:101" 
 	focusFontColor="255:255:255" 
 	idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-        <idleImage>image/busy1.png</idleImage>
-        <idleImage>image/busy2.png</idleImage>
-        <idleImage>image/busy3.png</idleImage>
-        <idleImage>image/busy4.png</idleImage>
-        <idleImage>image/busy5.png</idleImage>
-        <idleImage>image/busy6.png</idleImage>
-        <idleImage>image/busy7.png</idleImage>
-        <idleImage>image/busy8.png</idleImage>
+        <idleImage>image/POPUP_LOADING_01.png</idleImage>
+        <idleImage>image/POPUP_LOADING_02.png</idleImage>
+        <idleImage>image/POPUP_LOADING_03.png</idleImage>
+        <idleImage>image/POPUP_LOADING_04.png</idleImage>
+        <idleImage>image/POPUP_LOADING_05.png</idleImage>
+        <idleImage>image/POPUP_LOADING_06.png</idleImage>
+        <idleImage>image/POPUP_LOADING_07.png</idleImage>
+        <idleImage>image/POPUP_LOADING_08.png</idleImage>
 </mediaDisplay>
 <channel>
 	<title>Curs Valutar</title>

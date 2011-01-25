@@ -1,6 +1,5 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php echo "<?xml version='1.0' encoding='UTF8' ?>";
-$host = "http://127.0.0.1/cgi-bin";
+$host = "http://127.0.0.1:82";
 ?>
 <rss version="2.0">
 <onEnter>
@@ -150,7 +149,7 @@ ret;
 
 	</item_template>
 <script>
-    channelImage = "/usr/local/etc/www/cgi-bin/scripts/adult/image/hardsextube.gif";
+    channelImage = "/scripts/adult/image/hardsextube.gif";
   </script>
 
 
@@ -164,7 +163,7 @@ function str_between($string, $start, $end){
 	return substr($string,$ini,$len); 
 }
 $html = file_get_contents("http://www.hardsextube.com/categories/");
-$img = "image/movies.png";
+$img = "/scripts//scripts/image/movies.png";
 $videos = explode('<div style="background: url(http://www.hardsextube.com/images/loading-mp.gif', $html);
 unset($videos[0]);
 $videos = array_values($videos);

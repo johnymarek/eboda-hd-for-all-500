@@ -1,4 +1,3 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php echo "<?xml version='1.0' encoding='UTF8' ?>"; ?>
 <rss version="2.0">
 <onEnter>
@@ -147,7 +146,7 @@ function str_between($string, $start, $end){
 	return substr($string,$ini,$len); 
 }
 $html = file_get_contents($search."?max-results=100");
-$image = "image/movies.png";
+$image = "/scripts//scripts/image/movies.png";
 $videos = explode("<h3 class='post-title entry-title'>", $html);
 unset($videos[0]);
 $videos = array_values($videos);
@@ -159,7 +158,7 @@ foreach($videos as $video) {
     $t3 = explode('<',$t2[1]);
     $title = $t3[0];
 		if ($link <> "") {
-			$link = "http://127.0.0.1/cgi-bin/scripts/filme/php/filme_link.php?".$link.",".urlencode($title);
+			$link = "http://127.0.0.1:82/scripts/filme/php/filme_link.php?".$link.",".urlencode($title);
     echo '
     <item>
     <title>'.$title.'</title>

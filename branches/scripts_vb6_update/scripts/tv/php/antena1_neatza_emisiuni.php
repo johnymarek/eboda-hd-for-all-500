@@ -1,4 +1,3 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 ﻿<?php echo "<?xml version='1.0' ?>"; ?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
 
@@ -27,7 +26,7 @@ if($page > 1) { ?>
 
 <item>
 <?php
-$sThisFile = 'http://127.0.0.1'.$_SERVER['SCRIPT_NAME'];
+$sThisFile = 'http://127.0.0.1:82'.$_SERVER['SCRIPT_NAME'];
 $url = $sThisFile."?query=".($page-1).",";
 if($search) { 
   $url = $url.$search; 
@@ -35,7 +34,7 @@ if($search) {
 ?>
 <title>Previous Page</title>
 <link><?php echo $url;?></link>
-<media:thumbnail url="image/left.jpg" />
+<media:thumbnail url="/scripts//scripts/image/left.jpg" />
 </item>
 
 
@@ -88,7 +87,7 @@ foreach($videos as $video) {
 
 <item>
 <?php
-$sThisFile = 'http://127.0.0.1'.$_SERVER['SCRIPT_NAME'];
+$sThisFile = 'http://127.0.0.1:82'.$_SERVER['SCRIPT_NAME'];
 $url = $sThisFile."?query=".($page+1).",";
 if($search) { 
   $url = $url.$search; 
@@ -96,7 +95,7 @@ if($search) {
 ?>
 <title>Next Page</title>
 <link><?php echo $url;?></link>
-<media:thumbnail url="image/right.jpg" />
+<media:thumbnail url="/scripts//scripts/image/right.jpg" />
 </item>
 
 </channel>

@@ -1,4 +1,3 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php echo "<?xml version='1.0' encoding='UTF8' ?>"; ?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
 <onEnter>
@@ -16,7 +15,7 @@
   }
   else
   {
-    url="http://127.0.0.1/cgi-bin/scripts/util/download.php?file=" + logfile;
+    url="http://127.0.0.1:82/scripts/util/download.php?file=" + logfile;
     info=getURL(url);
   }
 </onRefresh>
@@ -82,20 +81,20 @@
 </text>
 </mediaDisplay>
 <destination>
-	<link>http://127.0.0.1/cgi-bin/scripts/util/level.php</link>
+	<link>http://127.0.0.1:82/scripts/util/level.php</link>
 </destination>
 <destination1>
-	<link>http://127.0.0.1/cgi-bin/scripts/mini1.php</link>
+	<link>http://127.0.0.1:82/scripts/mini1.php</link>
 </destination1>
 <channel>
 	<title>Download</title>
 	<menu>main menu</menu>
     <item>
     <title>Stop toate - curata lista</title>
-	<download>http://127.0.0.1/cgi-bin/scripts/util/stop_exua.cgi</download>
-	<download1>http://127.0.0.1/cgi-bin/scripts/util/stop_exua.cgi</download1>
+	<download>http://127.0.0.1:82/scripts/util/stop_exua.cgi</download>
+	<download1>http://127.0.0.1:82/scripts/util/stop_exua.cgi</download1>
 	<logfile>1</logfile>
-	<media:thumbnail url="/usr/local/etc/www/cgi-bin/scripts/util/image/fon.jpg" />
+	<media:thumbnail url="/scripts/util/image/fon.jpg" />
     </item>
 <?php
 clearstatcache();
@@ -148,19 +147,19 @@ $title = $t0.'. '. $t1[0].' -  '.$t3[0].'KB'.$t4;
 	echo '<logfile>'.$file_list[$i].'</logfile>';
 	if ($end != "100") {
 	if (!$pid_file)  echo '
-	<download>http://127.0.0.1/cgi-bin/scripts/util/manag.cgi?link='.$link.';name='.$t1[0].';go=start</download>
-	<download1>http://127.0.0.1/cgi-bin/scripts/util/manag.cgi?name='.$t1[0].';go=delete</download1>
-	<media:thumbnail url="/usr/local/etc/www/cgi-bin/scripts/util/image/off.jpg" />';
+	<download>http://127.0.0.1:82/scripts/util/manag.cgi?link='.$link.';name='.$t1[0].';go=start</download>
+	<download1>http://127.0.0.1:82/scripts/util/manag.cgi?name='.$t1[0].';go=delete</download1>
+	<media:thumbnail url="/scripts/util/image/off.jpg" />';
 	else
 	echo '
-		<download>http://127.0.0.1/cgi-bin/scripts/util/manag.cgi?pid='.$pid[0].';name='.$t1[0].';go=stop</download>
-		<download1>http://127.0.0.1/cgi-bin/scripts/util/manag.cgi?name='.$t1[0].';go=delete</download1>
-	<media:thumbnail url="/usr/local/etc/www/cgi-bin/scripts/util/image/on.jpg" />';
+		<download>http://127.0.0.1:82/scripts/util/manag.cgi?pid='.$pid[0].';name='.$t1[0].';go=stop</download>
+		<download1>http://127.0.0.1:82/scripts/util/manag.cgi?name='.$t1[0].';go=delete</download1>
+	<media:thumbnail url="/scripts/util/image/on.jpg" />';
 	} else
 	 echo '
-	<download>http://127.0.0.1/cgi-bin/scripts/util/manag.cgi?name='.$t1[0].';go=delete</download>
-	<download1>http://127.0.0.1/cgi-bin/scripts/util/manag.cgi?name='.$t1[0].';go=delete</download1>
-	<media:thumbnail url="/usr/local/etc/www/cgi-bin/scripts/util/image/end.jpg" />';
+	<download>http://127.0.0.1:82/scripts/util/manag.cgi?name='.$t1[0].';go=delete</download>
+	<download1>http://127.0.0.1:82/scripts/util/manag.cgi?name='.$t1[0].';go=delete</download1>
+	<media:thumbnail url="/scripts/util/image/end.jpg" />';
 	echo '
     </item>
     ';

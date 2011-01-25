@@ -1,6 +1,5 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php echo "<?xml version='1.0' encoding='UTF8' ?>";
-$host = "http://127.0.0.1/cgi-bin";
+$host = "http://127.0.0.1:82";
 ?>
 <rss version="2.0">
 <onEnter>
@@ -53,7 +52,7 @@ $host = "http://127.0.0.1/cgi-bin";
 		  <script>print(annotation); annotation;</script>
 		</text>
 		<image  redraw="yes" offsetXPC=60 offsetYPC=35 widthPC=30 heightPC=30>
-  /usr/local/etc/www/cgi-bin/scripts/tv/image/onehd.png
+  /scripts/tv/image/onehd.png
 		</image>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_01.png </idleImage>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_02.png </idleImage>
@@ -136,67 +135,67 @@ $host = "http://127.0.0.1/cgi-bin";
 <item>
 <title>OneHD - Live! Concert</title>
 <link><?php echo $host; ?>/scripts/tv/php/prahovahd_playlist.php?cat=0</link>
-<media:thumbnail url="/usr/local/etc/www/cgi-bin/scripts/tv/image/onehd.png" />
+<media:thumbnail url="/scripts/tv/image/onehd.png" />
 </item>
 
 <item>
 <title>OneHD - Live! Jazz</title>
 <link><?php echo $host; ?>/scripts/tv/php/prahovahd_playlist.php?cat=1</link>
-<media:thumbnail url="/usr/local/etc/www/cgi-bin/scripts/tv/image/onehd.png" />
+<media:thumbnail url="/scripts/tv/image/onehd.png" />
 </item>
 
 <item>
 <title>OneHD - Live! Classics</title>
 <link><?php echo $host; ?>/scripts/tv/php/prahovahd_playlist.php?cat=2</link>
-<media:thumbnail url="/usr/local/etc/www/cgi-bin/scripts/tv/image/onehd.png" />
+<media:thumbnail url="/scripts/tv/image/onehd.png" />
 </item>
 
 <item>
 <title>OneHD - Live! Dance</title>
 <link><?php echo $host; ?>/scripts/tv/php/prahovahd_playlist.php?cat=3</link>
-<media:thumbnail url="/usr/local/etc/www/cgi-bin/scripts/tv/image/onehd.png" />
+<media:thumbnail url="/scripts/tv/image/onehd.png" />
 </item>
 
 <item>
 <title>OneHD - Live! Rock</title>
 <link><?php echo $host; ?>/scripts/tv/php/prahovahd_playlist.php?cat=4</link>
-<media:thumbnail url="/usr/local/etc/www/cgi-bin/scripts/tv/image/onehd.png" />
+<media:thumbnail url="/scripts/tv/image/onehd.png" />
 </item>
 
 <item>
 <title>OneHD - Live! Pop</title>
 <link><?php echo $host; ?>/scripts/tv/php/prahovahd_playlist.php?cat=5</link>
-<media:thumbnail url="/usr/local/etc/www/cgi-bin/scripts/tv/image/onehd.png" />
+<media:thumbnail url="/scripts/tv/image/onehd.png" />
 </item>
 
 <item>
 <title>OneHD - playlist</title>
 <link><?php echo $host; ?>/scripts/tv/php/prahovahd.php</link>
-<media:thumbnail url="/usr/local/etc/www/cgi-bin/scripts/tv/image/onehd.png" />
+<media:thumbnail url="/scripts/tv/image/onehd.png" />
 </item>
 
 <item>
 <title>Divertisment</title>
 <link><?php echo $host; ?>/scripts/tv/php/prahova.php?cat=Divertisment</link>
-<media:thumbnail url="/usr/local/etc/www/cgi-bin/scripts/tv/image/onehd.png" />
+<media:thumbnail url="/scripts/tv/image/onehd.png" />
 </item>
 
 <item>
 <title>Documentare</title>
 <link><?php echo $host; ?>/scripts/tv/php/prahova.php?cat=Documentare</link>
-<media:thumbnail url="/usr/local/etc/www/cgi-bin/scripts/tv/image/onehd.png" />
+<media:thumbnail url="/scripts/tv/image/onehd.png" />
 </item>
 
 <item>
 <title>Emisiuni</title>
 <link><?php echo $host; ?>/scripts/tv/php/prahova.php?cat=Emisiuni</link>
-<media:thumbnail url="/usr/local/etc/www/cgi-bin/scripts/tv/image/onehd.png" />
+<media:thumbnail url="/scripts/tv/image/onehd.png" />
 </item>
 
 <item>
 <title>Business</title>
 <link><?php echo $host; ?>/scripts/tv/php/prahova.php?cat=Business</link>
-<media:thumbnail url="/usr/local/etc/www/cgi-bin/scripts/tv/image/onehd.png" />
+<media:thumbnail url="/scripts/tv/image/onehd.png" />
 </item>
 
 </channel>

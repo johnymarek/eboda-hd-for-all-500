@@ -1,6 +1,5 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 ﻿<?php echo "<?xml version='1.0' encoding='UTF8' ?>";
-$host = "http://127.0.0.1/cgi-bin";
+$host = "http://127.0.0.1:82";
 ?>
 <rss version="2.0" xmlns:media="http://purl.org/dc/elements/1.1/">
 <mediaDisplay name="threePartsView" 
@@ -18,14 +17,14 @@ $host = "http://127.0.0.1/cgi-bin";
 	idleImageYPC="42" 
 	idleImageWidthPC="20" 
 	idleImageHeightPC="26">
-	<idleImage>image/busy1.png</idleImage>
-	<idleImage>image/busy2.png</idleImage>
-	<idleImage>image/busy3.png</idleImage>
-	<idleImage>image/busy4.png</idleImage>
-	<idleImage>image/busy5.png</idleImage>
-	<idleImage>image/busy6.png</idleImage>
-	<idleImage>image/busy7.png</idleImage>
-	<idleImage>image/busy8.png</idleImage>
+	<idleImage>image/POPUP_LOADING_01.png</idleImage>
+	<idleImage>image/POPUP_LOADING_02.png</idleImage>
+	<idleImage>image/POPUP_LOADING_03.png</idleImage>
+	<idleImage>image/POPUP_LOADING_04.png</idleImage>
+	<idleImage>image/POPUP_LOADING_05.png</idleImage>
+	<idleImage>image/POPUP_LOADING_06.png</idleImage>
+	<idleImage>image/POPUP_LOADING_07.png</idleImage>
+	<idleImage>image/POPUP_LOADING_08.png</idleImage>
 		<backgroundDisplay>
 			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
 			image/mele/backgd.jpg
@@ -45,21 +44,21 @@ $host = "http://127.0.0.1/cgi-bin";
 <item>
 <title>TvBlog - Orarul serialelor</title>
 <link><?php echo $host; ?>/scripts/news/php/tvblog.php</link>
-<media:thumbnail url="/usr/local/etc/www/cgi-bin/scripts/news/image/tvblog.jpg" />
+<media:thumbnail url="/scripts/news/image/tvblog.jpg" />
 <mediaDisplay name="threePartsView"/>
 </item>
 
 <item>
 <title>Curs Valutar</title>
 <link><?php echo $host; ?>/scripts/news/php/curs.php</link>
-<media:thumbnail url="/usr/local/etc/www/cgi-bin/scripts/news/image/curs.png" />
+<media:thumbnail url="/scripts/news/image/curs.png" />
 <mediaDisplay name="threePartsView"/>
 </item>
 
 <item>
 <title>Program-Tv.ro :: Acum la televizor</title>
 <link>http://www.program-tv.ro/acum-la-tv.rss</link>
-<media:thumbnail url="image/tv_radio.png" />
+<media:thumbnail url="/scripts//scripts/image/tv_radio.png" />
 <mediaDisplay name="threePartsView" 
 	itemBackgroundColor="0:0:0" 
 	backgroundColor="0:0:0" 
@@ -75,14 +74,14 @@ $host = "http://127.0.0.1/cgi-bin";
 	idleImageYPC="42" 
 	idleImageWidthPC="20" 
 	idleImageHeightPC="26">
-	<idleImage>image/busy1.png</idleImage>
-	<idleImage>image/busy2.png</idleImage>
-	<idleImage>image/busy3.png</idleImage>
-	<idleImage>image/busy4.png</idleImage>
-	<idleImage>image/busy5.png</idleImage>
-	<idleImage>image/busy6.png</idleImage>
-	<idleImage>image/busy7.png</idleImage>
-	<idleImage>image/busy8.png</idleImage>
+	<idleImage>image/POPUP_LOADING_01.png</idleImage>
+	<idleImage>image/POPUP_LOADING_02.png</idleImage>
+	<idleImage>image/POPUP_LOADING_03.png</idleImage>
+	<idleImage>image/POPUP_LOADING_04.png</idleImage>
+	<idleImage>image/POPUP_LOADING_05.png</idleImage>
+	<idleImage>image/POPUP_LOADING_06.png</idleImage>
+	<idleImage>image/POPUP_LOADING_07.png</idleImage>
+	<idleImage>image/POPUP_LOADING_08.png</idleImage>
 		<backgroundDisplay>
 			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
 			image/mele/backgd.jpg
@@ -100,7 +99,7 @@ $host = "http://127.0.0.1/cgi-bin";
 <item>
 <title>Program-Tv.ro :: Urmeaza la televizor</title>
 <link>http://www.program-tv.ro/urmeaza-la-tv.rss</link>
-<media:thumbnail url="image/tv_radio.png" />
+<media:thumbnail url="/scripts//scripts/image/tv_radio.png" />
 <mediaDisplay name="threePartsView" 
 	itemBackgroundColor="0:0:0" 
 	backgroundColor="0:0:0" 
@@ -116,14 +115,14 @@ $host = "http://127.0.0.1/cgi-bin";
 	idleImageYPC="42" 
 	idleImageWidthPC="20" 
 	idleImageHeightPC="26">
-	<idleImage>image/busy1.png</idleImage>
-	<idleImage>image/busy2.png</idleImage>
-	<idleImage>image/busy3.png</idleImage>
-	<idleImage>image/busy4.png</idleImage>
-	<idleImage>image/busy5.png</idleImage>
-	<idleImage>image/busy6.png</idleImage>
-	<idleImage>image/busy7.png</idleImage>
-	<idleImage>image/busy8.png</idleImage>
+	<idleImage>image/POPUP_LOADING_01.png</idleImage>
+	<idleImage>image/POPUP_LOADING_02.png</idleImage>
+	<idleImage>image/POPUP_LOADING_03.png</idleImage>
+	<idleImage>image/POPUP_LOADING_04.png</idleImage>
+	<idleImage>image/POPUP_LOADING_05.png</idleImage>
+	<idleImage>image/POPUP_LOADING_06.png</idleImage>
+	<idleImage>image/POPUP_LOADING_07.png</idleImage>
+	<idleImage>image/POPUP_LOADING_08.png</idleImage>
 		<backgroundDisplay>
 			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
 			image/mele/backgd.jpg

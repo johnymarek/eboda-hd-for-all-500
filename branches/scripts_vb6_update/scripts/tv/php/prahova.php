@@ -1,4 +1,3 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php echo "<?xml version='1.0' ?>"; ?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
 <onEnter>
@@ -108,7 +107,7 @@ foreach($videos as $video) {
   $file = str_between($video,"playfile=","&");
   //$file = str_replace(" ","%20",$file);
   $link = "rtmp://".$server."/vod/".$file;
-  $link = "http://127.0.0.1/cgi-bin/translate?stream,Content-type:video/mp4,".$link;
+  $link = "http://127.0.0.1:82/scripts/cgi-bin/translate?stream,Content-type:video/mp4,".$link;
   $title = str_between($video,"<h2>","</h2>");
       echo '
     <item>

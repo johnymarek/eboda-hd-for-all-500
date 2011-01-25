@@ -1,6 +1,5 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php echo "<?xml version='1.0' encoding='UTF8' ?>";
-$host = "http://127.0.0.1/cgi-bin";
+$host = "http://127.0.0.1:82";
 ?>
 <rss version="2.0">
 <onEnter>
@@ -150,7 +149,7 @@ ret;
 
 	</item_template>
 <script>
-    channelImage = "image/movies.png";
+    channelImage = "/scripts//scripts/image/movies.png";
   </script>
 
 <channel>
@@ -171,7 +170,7 @@ $videos = array_values($videos);
 foreach($videos as $video) {
     $t1 = explode('href="', $video);
     $t2 = explode('"', $t1[1]);
-    $link = "http://127.0.0.1/cgi-bin/scripts/filme/php/filme_link.php?".$t2[0];
+    $link = "http://127.0.0.1:82/scripts/filme/php/filme_link.php?".$t2[0];
     $t3 = explode(">",$t1[1]);
     $t4 = explode("<",$t3[1]);
     $title = $t4[0];
@@ -179,7 +178,7 @@ foreach($videos as $video) {
     <item>
     <title>'.$title.'</title>
     <link>'.$link.'</link>
-    <media:thumbnail url="image/movies.png" />
+    <media:thumbnail url="/scripts//scripts/image/movies.png" />
     </item>
     ';
 }

@@ -1,17 +1,16 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 ﻿<?php echo "<?xml version='1.0' encoding='UTF8' ?>";
-$host = "http://127.0.0.1/cgi-bin";
+$host = "http://127.0.0.1:82";
 ?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="20" idleImageHeightPC="26">
-	<idleImage>image/busy1.png</idleImage>
-	<idleImage>image/busy2.png</idleImage>
-	<idleImage>image/busy3.png</idleImage>
-	<idleImage>image/busy4.png</idleImage>
-	<idleImage>image/busy5.png</idleImage>
-	<idleImage>image/busy6.png</idleImage>
-	<idleImage>image/busy7.png</idleImage>
-	<idleImage>image/busy8.png</idleImage>
+	<idleImage>image/POPUP_LOADING_01.png</idleImage>
+	<idleImage>image/POPUP_LOADING_02.png</idleImage>
+	<idleImage>image/POPUP_LOADING_03.png</idleImage>
+	<idleImage>image/POPUP_LOADING_04.png</idleImage>
+	<idleImage>image/POPUP_LOADING_05.png</idleImage>
+	<idleImage>image/POPUP_LOADING_06.png</idleImage>
+	<idleImage>image/POPUP_LOADING_07.png</idleImage>
+	<idleImage>image/POPUP_LOADING_08.png</idleImage>
 		<backgroundDisplay>
 			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
 			image/mele/backgd.jpg
@@ -35,14 +34,14 @@ $host = "http://127.0.0.1/cgi-bin";
 <media:thumbnail url="http://a.blip.tv/skin/mercury/images/logo.gif" width="120" height="90" />
 <search url="http://www.blip.tv/rss/itunes?sort=popularity&amp;vq=%s" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="20" idleImageHeightPC="26">
-	<idleImage>image/busy1.png</idleImage>
-	<idleImage>image/busy2.png</idleImage>
-	<idleImage>image/busy3.png</idleImage>
-	<idleImage>image/busy4.png</idleImage>
-	<idleImage>image/busy5.png</idleImage>
-	<idleImage>image/busy6.png</idleImage>
-	<idleImage>image/busy7.png</idleImage>
-	<idleImage>image/busy8.png</idleImage>
+	<idleImage>image/POPUP_LOADING_01.png</idleImage>
+	<idleImage>image/POPUP_LOADING_02.png</idleImage>
+	<idleImage>image/POPUP_LOADING_03.png</idleImage>
+	<idleImage>image/POPUP_LOADING_04.png</idleImage>
+	<idleImage>image/POPUP_LOADING_05.png</idleImage>
+	<idleImage>image/POPUP_LOADING_06.png</idleImage>
+	<idleImage>image/POPUP_LOADING_07.png</idleImage>
+	<idleImage>image/POPUP_LOADING_08.png</idleImage>
 		<backgroundDisplay>
 			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
 			image/mele/backgd.jpg
@@ -63,14 +62,14 @@ $host = "http://127.0.0.1/cgi-bin";
 <media:thumbnail url="http://a.blip.tv/skin/mercury/images/logo.gif" width="120" height="90" />
 <search url="http://www.blip.tv/rss/itunes?vq=%s" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="20" idleImageHeightPC="26">
-	<idleImage>image/busy1.png</idleImage>
-	<idleImage>image/busy2.png</idleImage>
-	<idleImage>image/busy3.png</idleImage>
-	<idleImage>image/busy4.png</idleImage>
-	<idleImage>image/busy5.png</idleImage>
-	<idleImage>image/busy6.png</idleImage>
-	<idleImage>image/busy7.png</idleImage>
-	<idleImage>image/busy8.png</idleImage>
+	<idleImage>image/POPUP_LOADING_01.png</idleImage>
+	<idleImage>image/POPUP_LOADING_02.png</idleImage>
+	<idleImage>image/POPUP_LOADING_03.png</idleImage>
+	<idleImage>image/POPUP_LOADING_04.png</idleImage>
+	<idleImage>image/POPUP_LOADING_05.png</idleImage>
+	<idleImage>image/POPUP_LOADING_06.png</idleImage>
+	<idleImage>image/POPUP_LOADING_07.png</idleImage>
+	<idleImage>image/POPUP_LOADING_08.png</idleImage>
 		<backgroundDisplay>
 			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
 			image/mele/backgd.jpg
@@ -91,14 +90,14 @@ $host = "http://127.0.0.1/cgi-bin";
 <link>http://achievementhunter.blip.tv/rss</link>
 <media:thumbnail url="http://bitcast-a.bitgravity.com/revision3/images/shows/appjudgment/appjudgment.jpg" width="120" height="120" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="20" idleImageHeightPC="26">
-	<idleImage>image/busy1.png</idleImage>
-	<idleImage>image/busy2.png</idleImage>
-	<idleImage>image/busy3.png</idleImage>
-	<idleImage>image/busy4.png</idleImage>
-	<idleImage>image/busy5.png</idleImage>
-	<idleImage>image/busy6.png</idleImage>
-	<idleImage>image/busy7.png</idleImage>
-	<idleImage>image/busy8.png</idleImage>
+	<idleImage>image/POPUP_LOADING_01.png</idleImage>
+	<idleImage>image/POPUP_LOADING_02.png</idleImage>
+	<idleImage>image/POPUP_LOADING_03.png</idleImage>
+	<idleImage>image/POPUP_LOADING_04.png</idleImage>
+	<idleImage>image/POPUP_LOADING_05.png</idleImage>
+	<idleImage>image/POPUP_LOADING_06.png</idleImage>
+	<idleImage>image/POPUP_LOADING_07.png</idleImage>
+	<idleImage>image/POPUP_LOADING_08.png</idleImage>
 		<backgroundDisplay>
 			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
 			image/mele/backgd.jpg
@@ -118,14 +117,14 @@ $host = "http://127.0.0.1/cgi-bin";
 <link>http://beachesoceanwaves.blip.tv/rss</link>
 <media:thumbnail url="http://bitcast-a.bitgravity.com/revision3/images/shows/bytejacker/bytejacker.jpg" width="120" height="120" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="20" idleImageHeightPC="26">
-	<idleImage>image/busy1.png</idleImage>
-	<idleImage>image/busy2.png</idleImage>
-	<idleImage>image/busy3.png</idleImage>
-	<idleImage>image/busy4.png</idleImage>
-	<idleImage>image/busy5.png</idleImage>
-	<idleImage>image/busy6.png</idleImage>
-	<idleImage>image/busy7.png</idleImage>
-	<idleImage>image/busy8.png</idleImage>
+	<idleImage>image/POPUP_LOADING_01.png</idleImage>
+	<idleImage>image/POPUP_LOADING_02.png</idleImage>
+	<idleImage>image/POPUP_LOADING_03.png</idleImage>
+	<idleImage>image/POPUP_LOADING_04.png</idleImage>
+	<idleImage>image/POPUP_LOADING_05.png</idleImage>
+	<idleImage>image/POPUP_LOADING_06.png</idleImage>
+	<idleImage>image/POPUP_LOADING_07.png</idleImage>
+	<idleImage>image/POPUP_LOADING_08.png</idleImage>
 		<backgroundDisplay>
 			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
 			image/mele/backgd.jpg
@@ -144,14 +143,14 @@ $host = "http://127.0.0.1/cgi-bin";
 <link>http://besttechienetshow.blip.tv/rss</link>
 <media:thumbnail url="http://bitcast-a.bitgravity.com/revision3/images/shows/coop/coop.jpg" width="120" height="120" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="20" idleImageHeightPC="26">
-	<idleImage>image/busy1.png</idleImage>
-	<idleImage>image/busy2.png</idleImage>
-	<idleImage>image/busy3.png</idleImage>
-	<idleImage>image/busy4.png</idleImage>
-	<idleImage>image/busy5.png</idleImage>
-	<idleImage>image/busy6.png</idleImage>
-	<idleImage>image/busy7.png</idleImage>
-	<idleImage>image/busy8.png</idleImage>
+	<idleImage>image/POPUP_LOADING_01.png</idleImage>
+	<idleImage>image/POPUP_LOADING_02.png</idleImage>
+	<idleImage>image/POPUP_LOADING_03.png</idleImage>
+	<idleImage>image/POPUP_LOADING_04.png</idleImage>
+	<idleImage>image/POPUP_LOADING_05.png</idleImage>
+	<idleImage>image/POPUP_LOADING_06.png</idleImage>
+	<idleImage>image/POPUP_LOADING_07.png</idleImage>
+	<idleImage>image/POPUP_LOADING_08.png</idleImage>
 		<backgroundDisplay>
 			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
 			image/mele/backgd.jpg
@@ -171,14 +170,14 @@ $host = "http://127.0.0.1/cgi-bin";
 <link>http://filmeromanesti.blip.tv/rss</link>
 <media:thumbnail url="http://2.bp.blogspot.com/_t3aRKciB_VM/SraBRpsDnZI/AAAAAAAAAgQ/0VkfmKCu5xI/S1600-R/filme+romanesti+baner.jpg" width="120" height="120" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="20" idleImageHeightPC="26">
-	<idleImage>image/busy1.png</idleImage>
-	<idleImage>image/busy2.png</idleImage>
-	<idleImage>image/busy3.png</idleImage>
-	<idleImage>image/busy4.png</idleImage>
-	<idleImage>image/busy5.png</idleImage>
-	<idleImage>image/busy6.png</idleImage>
-	<idleImage>image/busy7.png</idleImage>
-	<idleImage>image/busy8.png</idleImage>
+	<idleImage>image/POPUP_LOADING_01.png</idleImage>
+	<idleImage>image/POPUP_LOADING_02.png</idleImage>
+	<idleImage>image/POPUP_LOADING_03.png</idleImage>
+	<idleImage>image/POPUP_LOADING_04.png</idleImage>
+	<idleImage>image/POPUP_LOADING_05.png</idleImage>
+	<idleImage>image/POPUP_LOADING_06.png</idleImage>
+	<idleImage>image/POPUP_LOADING_07.png</idleImage>
+	<idleImage>image/POPUP_LOADING_08.png</idleImage>
 		<backgroundDisplay>
 			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
 			image/mele/backgd.jpg
@@ -198,14 +197,14 @@ $host = "http://127.0.0.1/cgi-bin";
 <link>http://cinemassacre.blip.tv/rss</link>
 <media:thumbnail url="http://bitcast-a.bitgravity.com/revision3/images/shows/animetv/animetv.jpg" width="120" height="120" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="20" idleImageHeightPC="26">
-	<idleImage>image/busy1.png</idleImage>
-	<idleImage>image/busy2.png</idleImage>
-	<idleImage>image/busy3.png</idleImage>
-	<idleImage>image/busy4.png</idleImage>
-	<idleImage>image/busy5.png</idleImage>
-	<idleImage>image/busy6.png</idleImage>
-	<idleImage>image/busy7.png</idleImage>
-	<idleImage>image/busy8.png</idleImage>
+	<idleImage>image/POPUP_LOADING_01.png</idleImage>
+	<idleImage>image/POPUP_LOADING_02.png</idleImage>
+	<idleImage>image/POPUP_LOADING_03.png</idleImage>
+	<idleImage>image/POPUP_LOADING_04.png</idleImage>
+	<idleImage>image/POPUP_LOADING_05.png</idleImage>
+	<idleImage>image/POPUP_LOADING_06.png</idleImage>
+	<idleImage>image/POPUP_LOADING_07.png</idleImage>
+	<idleImage>image/POPUP_LOADING_08.png</idleImage>
 		<backgroundDisplay>
 			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
 			image/mele/backgd.jpg
@@ -225,14 +224,14 @@ $host = "http://127.0.0.1/cgi-bin";
 <link>http://ambnib1.blip.tv/rss</link>
 <media:thumbnail url="http://bitcast-a.bitgravity.com/revision3/images/shows/diggdialogg/diggdialogg.jpg" width="120" height="120" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="20" idleImageHeightPC="26">
-	<idleImage>image/busy1.png</idleImage>
-	<idleImage>image/busy2.png</idleImage>
-	<idleImage>image/busy3.png</idleImage>
-	<idleImage>image/busy4.png</idleImage>
-	<idleImage>image/busy5.png</idleImage>
-	<idleImage>image/busy6.png</idleImage>
-	<idleImage>image/busy7.png</idleImage>
-	<idleImage>image/busy8.png</idleImage>
+	<idleImage>image/POPUP_LOADING_01.png</idleImage>
+	<idleImage>image/POPUP_LOADING_02.png</idleImage>
+	<idleImage>image/POPUP_LOADING_03.png</idleImage>
+	<idleImage>image/POPUP_LOADING_04.png</idleImage>
+	<idleImage>image/POPUP_LOADING_05.png</idleImage>
+	<idleImage>image/POPUP_LOADING_06.png</idleImage>
+	<idleImage>image/POPUP_LOADING_07.png</idleImage>
+	<idleImage>image/POPUP_LOADING_08.png</idleImage>
 		<backgroundDisplay>
 			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
 			image/mele/backgd.jpg
@@ -251,14 +250,14 @@ $host = "http://127.0.0.1/cgi-bin";
 <link>http://hdnetfights.blip.tv/rss</link>
 <media:thumbnail url="http://a.images.blip.tv/MsBH-FightOfTheWeekShinyaAokiVDavidGardner637-805.jpg" width="120" height="120" />
 <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="20" idleImageHeightPC="26">
-	<idleImage>image/busy1.png</idleImage>
-	<idleImage>image/busy2.png</idleImage>
-	<idleImage>image/busy3.png</idleImage>
-	<idleImage>image/busy4.png</idleImage>
-	<idleImage>image/busy5.png</idleImage>
-	<idleImage>image/busy6.png</idleImage>
-	<idleImage>image/busy7.png</idleImage>
-	<idleImage>image/busy8.png</idleImage>
+	<idleImage>image/POPUP_LOADING_01.png</idleImage>
+	<idleImage>image/POPUP_LOADING_02.png</idleImage>
+	<idleImage>image/POPUP_LOADING_03.png</idleImage>
+	<idleImage>image/POPUP_LOADING_04.png</idleImage>
+	<idleImage>image/POPUP_LOADING_05.png</idleImage>
+	<idleImage>image/POPUP_LOADING_06.png</idleImage>
+	<idleImage>image/POPUP_LOADING_07.png</idleImage>
+	<idleImage>image/POPUP_LOADING_08.png</idleImage>
 		<backgroundDisplay>
 			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
 			image/mele/backgd.jpg

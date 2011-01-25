@@ -1,4 +1,3 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php echo "<?xml version='1.0' encoding='UTF8' ?>";
 $query = $_GET["query"];
 if($query) {
@@ -116,7 +115,7 @@ if ($pageimage=="") {
 	$pageimage=str_between($html,'border="0" height="240" src="','?');
 }
 if ($pageimage=="") {
-	$pageimage="image/movies.png";
+	$pageimage="/scripts//scripts/image/movies.png";
 }
 $serial_file=substr(strrchr($link,"/"),1);
 $serial_file=ltrim($serial_file,"seriale-online-");
@@ -149,7 +148,7 @@ foreach($videos as $video) {
 		$title=str_replace("&nbsp;","",$title);
 	}		
 	if ((strpos($link, $serial) !== false) && ($link <> $queryArr[0]) && ($title <> "")){
-		$link="http://127.0.0.1/cgi-bin/scripts/filme/php/filme_link.php?".$link;
+		$link="http://127.0.0.1:82/scripts/filme/php/filme_link.php?".$link;
     echo '
     <item>
     <title>'.$title.'</title>
