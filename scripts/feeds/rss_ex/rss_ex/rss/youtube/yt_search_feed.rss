@@ -203,7 +203,7 @@
   {
     youtubeRegion = readStringFromFile(cachePath + "youtubeRegion.dat");
     if(youtubeRegion == null)
-      youtubeRegion = "RU";
+      youtubeRegion = "EN";
     hd = 1;
     username = " ";
   }
@@ -217,7 +217,7 @@
   page = 1;
   maxResults = 20;
 
-  translateBaseURL = "http://127.0.0.1/cgi-bin/translate?";
+  translateBaseURL = "http://127.0.0.1:82/rss_ex/www/cgi-bin/translate?";
   cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
   if(cgiconf != null)
   {
@@ -331,7 +331,7 @@
 </onRefresh>
 
 <submenu>
-  <title>Вперед</title>
+  <title>Forward</title>
   <onClick>
     next = page * maxResults;
     if( next &lt; totalResults )
@@ -346,7 +346,7 @@
 </submenu>
 
 <submenu>
-  <title>Назад</title>
+  <title>Back</title>
   <onClick>
     if(page &gt; 1)
     {
@@ -360,7 +360,7 @@
 </submenu>
 
 <submenu>
-  <title>Поиск</title>
+  <title>Search</title>
   <onClick>
 		keyword = getInput();
 		if (keyword!=null)
@@ -387,7 +387,7 @@
         }
       }
 
-      title = "Поиск: "+regionKeyword;
+      title = "Search: "+regionKeyword;
       
       arr = null;
       arr = pushBackStringArray(arr, url);

@@ -7,30 +7,30 @@
          <annotation>На этом сайте вы можете абсолютно бесплатно загрузить мультфильмы для вас и ваших детей. На сайте собрана коллекция мультфильмов советских времен и не только. Самые лучшие мультики из вашего детства! Коллекция постоянно пополняется новыми мультфильмами.</annotation>
          <title>Мультики от mults.spb.ru</title>
          <image>../etc/translate/rss/image/menu/rss.png</image>
-         <location>http://127.0.0.1/cgi-bin/translate?app/rss/mults.spb.ru,http://mults.spb.ru/rss.php</location>
+         <location>http://127.0.0.1:82/rss_ex/www/cgi-bin/translate?app/rss/mults.spb.ru,http://mults.spb.ru/rss.php</location>
       
-<meta rel="stream_url">http://127.0.0.1/cgi-bin/translate?app/rss/mults.spb.ru,http://mults.spb.ru/rss.php</meta>
+<meta rel="stream_url">http://127.0.0.1:82/rss_ex/www/cgi-bin/translate?app/rss/mults.spb.ru,http://mults.spb.ru/rss.php</meta>
 <meta rel="stream_class">rss</meta>
 <meta rel="stream_type">application/rss</meta>
 <meta rel="stream_protocol">http</meta>
 </track>
       <track>
-         <annotation>Все видео: бесплатно смотреть кино, сериалы, программы, мультфильмы и клипы в хорошем качестве без регистрации: Новое видео</annotation>
-         <title>Новое видео от ivi.ru</title>
+         <annotation>Все video: бесплатно смотреть кино, сериалы, программы, мультфильмы и клипы в хорошем качестве без регистрации: Новое video</annotation>
+         <title>Новое video от ivi.ru</title>
          <image>../etc/translate/rss/image/menu/rss.png</image>
          <location>http://www.ivi.ru/rss/new</location>
       
 </track>
       <track>
-         <annotation>Все видео: бесплатно смотреть кино, сериалы, программы, мультфильмы и клипы в хорошем качестве без регистрации: Популярное видео</annotation>
-         <title>Самое популярное видео от ivi.ru</title>
+         <annotation>Все video: бесплатно смотреть кино, сериалы, программы, мультфильмы и клипы в хорошем качестве без регистрации: Популярное video</annotation>
+         <title>Самое популярное video от ivi.ru</title>
          <image>../etc/translate/rss/image/menu/rss.png</image>
          <location>http://www.ivi.ru/rss/best</location>
       
 </track>
       <track>
-         <annotation>Все видео: бесплатно смотреть кино, сериалы, программы, мультфильмы и клипы в хорошем качестве без регистрации: Рекомендуемое видео</annotation>
-         <title>Рекомендованное видео от ivi.ru</title>
+         <annotation>Все video: бесплатно смотреть кино, сериалы, программы, мультфильмы и клипы в хорошем качестве без регистрации: Рекомендуемое video</annotation>
+         <title>Рекомендованное video от ivi.ru</title>
          <image>../etc/translate/rss/image/menu/rss.png</image>
          <location>http://www.ivi.ru/rss/recommend</location>
 </track>
@@ -38,9 +38,9 @@
          <annotation>RSS-лента Tvigle Media</annotation>
          <title>Tvigle Media</title>
          <image>../etc/translate/rss/image/menu/rss.png</image>
-         <location>http://127.0.0.1/cgi-bin/translate?app/rss/tvigle.ru,http://www.tvigle.ru/rss/</location>
+         <location>http://127.0.0.1:82/rss_ex/www/cgi-bin/translate?app/rss/tvigle.ru,http://www.tvigle.ru/rss/</location>
       
-<meta rel="stream_url">http://127.0.0.1/cgi-bin/translate?app/rss/tvigle.ru,http://www.tvigle.ru/rss/</meta>
+<meta rel="stream_url">http://127.0.0.1:82/rss_ex/www/cgi-bin/translate?app/rss/tvigle.ru,http://www.tvigle.ru/rss/</meta>
 <meta rel="stream_class">rss</meta>
 <meta rel="stream_type">application/rss</meta>
 <meta rel="stream_protocol">http</meta>

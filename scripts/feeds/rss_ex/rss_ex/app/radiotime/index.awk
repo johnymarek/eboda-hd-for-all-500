@@ -106,7 +106,7 @@ BEGIN {
       {
         if(processMenu == 1 && depth == 0)
         {
-          print "menuArray = pushBackStringArray(menuArray, \"Поиск\");";
+          print "menuArray = pushBackStringArray(menuArray, \"Search\");";
           print "menuLinkArray = pushBackStringArray(menuLinkArray, \"=search=\");";
           printf "menuSize = %d;\n", menuSize+1;
           print "</script>";

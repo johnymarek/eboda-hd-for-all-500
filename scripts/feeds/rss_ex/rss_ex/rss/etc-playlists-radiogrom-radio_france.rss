@@ -22,7 +22,7 @@
 -->
 
 <onEnter>
-  translate_base_url  = "http://127.0.0.1/cgi-bin/translate?";
+  translate_base_url  = "http://127.0.0.1:82/rss_ex/www/cgi-bin/translate?";
   cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
   if(cgiconf != null)
   {
@@ -458,7 +458,7 @@
   <title>Radiogrom.com - radio_france</title>
   <item>
     <location>http://www.radiogrom.com/online/radio_france/radio_maxlaradio_fr_online.html</location>
-    <title> - Радио MAXLARADIO </title>
+    <title> - Radio MAXLARADIO </title>
     <stream_url>http://91.121.62.121:9410</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>shoutcast</stream_soft>
@@ -469,23 +469,23 @@
   </item>
   <item>
     <location>http://www.radiogrom.com/online/radio_france/radio_48fm_fr_online.html</location>
-    <title> - Радио 48FM </title>
+    <title> - Radio 48FM </title>
   </item>
   <item>
     <location>http://www.radiogrom.com/online/radio_france/radio_pulsar_fr_online.html</location>
-    <title>- Радио Pulsar </title>
+    <title>- Radio Pulsar </title>
   </item>
   <item>
     <location>http://www.radiogrom.com/online/radio_france/one_station_fr_online.html</location>
-    <title>- Радио One Station </title>
+    <title>- Radio One Station </title>
   </item>
   <item>
     <location>http://www.radiogrom.com/online/radio_france/maxx_france_online.html</location>
-    <title>- Радио MaxxHits </title>
+    <title>- Radio MaxxHits </title>
   </item>
   <item>
     <location>http://www.radiogrom.com/online/radio_france/virgin_radio_france_online.html</location>
-    <title>- Радио Virgin Radio - Scene Francaise </title>
+    <title>- Radio Virgin Radio - Scene Francaise </title>
   </item>
 </channel>
 

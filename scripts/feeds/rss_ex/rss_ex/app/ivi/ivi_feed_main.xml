@@ -130,7 +130,7 @@
 <onEnter>
   cachePath = getStoragePath("key");
 
-  translateBaseURL = "http://127.0.0.1/cgi-bin/translate?";
+  translateBaseURL = "http://127.0.0.1:82/rss_ex/www/cgi-bin/translate?";
   cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
   if(cgiconf != null)
   {
@@ -178,13 +178,13 @@
     
   	pageTitle = feedTitle + " - ";
   	if(feedType == "new")
-  	 pageTitle += "новое видео"; 
+  	 pageTitle += "новое video"; 
     else
   	if(feedType == "best")
-  	 pageTitle += "популярное видео"; 
+  	 pageTitle += "популярное video"; 
   	else
   	if(feedType == "recommend")
-  	 pageTitle += "рекоммендуемое видео"; 
+  	 pageTitle += "рекоммендуемое video"; 
   
     url = "http://www.ivi.ru/rss/"+feedType+feedPath;
 

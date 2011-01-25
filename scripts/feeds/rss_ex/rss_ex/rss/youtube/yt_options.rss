@@ -235,12 +235,12 @@
   }
   print("rssconf:",screenXp,screenYp);
 
-  pageTitle = "Настройки";
+  pageTitle = "Options";
   cachePath = getStoragePath("key");
   regionPath = cachePath + "youtubeRegion.dat";
   youtubeRegion = readStringFromFile(regionPath);
   if(youtubeRegion == null)
-    youtubeRegion = "RU";
+    youtubeRegion = "EN";
   print(youtubeRegion);
 
   optionsPath = cachePath + "youtubeOptions.dat";
@@ -354,19 +354,19 @@
 
 
 <channel>
-  <title> Youtube: Настройки </title>
+  <title> Youtube: Options </title>
   <link>../etc/translate/rss/youtube/yt_options.rss</link>
   
   <item>
-    <title>Регион:</title>
+    <title>Region:</title>
   </item>
 
   <item>
-    <title>HD видео:</title>
+    <title>HD video:</title>
   </item>
 
   <item>
-    <title>Имя пользователя:</title>
+    <title>Username:</title>
   </item>
 
 </channel>

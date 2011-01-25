@@ -22,7 +22,7 @@
 -->
 
 <onEnter>
-  translate_base_url  = "http://127.0.0.1/cgi-bin/translate?";
+  translate_base_url  = "http://127.0.0.1:82/rss_ex/www/cgi-bin/translate?";
   cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
   if(cgiconf != null)
   {
@@ -198,7 +198,7 @@
   <item>
 <link>rss_file://../etc/translate/rss/etc-playlists-radiogrom-classic.rss</link>
     <title>Классическая музыка</title>
-    <annotation>РадиоГром (www.radiogrom.com) предоставляет на ваш выбор лучшие радиостанции для тех, кто ценит и понимает инструментальную и классическую музыку. Здесь вы также найдете радиостанции, вещающие оперную музыку онлайн, симфоническую музыку, а также всё то, что относится к классике. Другими словами - это Classical Music Online Radio!</annotation>
+    <annotation>RadioГром (www.radiogrom.com) предоставляет на ваш выбор лучшие радиостанции для тех, кто ценит и понимает инструментальную и классическую музыку. Здесь вы также найдете радиостанции, вещающие оперную музыку онлайн, симфоническую музыку, а также всё то, что относится к классике. Другими словами - это Classical Music Online Radio!</annotation>
     <image>../etc/translate/rss/image/menu/internetradio.png</image>
     <mediaDisplay name="onePartView"/>
   </item>
@@ -212,42 +212,42 @@
   <item>
 <link>rss_file://../etc/translate/rss/etc-playlists-radiogrom-piter_fm.rss</link>
     <title>Питер FM</title>
-    <annotation>FM-радиостанции Санкт-Петербурга. Онлайн Радио. Слушать радио онлайн через интернет </annotation>
+    <annotation>FM-радиостанции Санкт-Петербурга. Онлайн Radio. Слушать радио онлайн через интернет </annotation>
     <image>../etc/translate/rss/image/menu/internetradio.png</image>
     <mediaDisplay name="onePartView"/>
   </item>
   <item>
 <link>rss_file://../etc/translate/rss/etc-playlists-radiogrom-russia.rss</link>
     <title>Россия AM-FM</title>
-    <annotation>AM-FM Радиостанции России. Вещание через интернет слушать онлайн Радио онлайн</annotation>
+    <annotation>AM-FM Radioстанции России. Вещание через интернет слушать онлайн Radio онлайн</annotation>
     <image>../etc/translate/rss/image/menu/internetradio.png</image>
     <mediaDisplay name="onePartView"/>
   </item>
   <item>
 <link>rss_file://../etc/translate/rss/etc-playlists-radiogrom-belarus_fm.rss</link>
     <title>Беларусь FM</title>
-    <annotation>FM-радиостанции Беларуси. Вещание через интернет. Слушать Радио онлайн</annotation>
+    <annotation>FM-радиостанции Беларуси. Вещание через интернет. Слушать Radio онлайн</annotation>
     <image>../etc/translate/rss/image/menu/internetradio.png</image>
     <mediaDisplay name="onePartView"/>
   </item>
   <item>
 <link>rss_file://../etc/translate/rss/etc-playlists-radiogrom-ua_fm.rss</link>
     <title>Киев FM</title>
-    <annotation>FМ радиостанции г. Киев и Украины. Вещание через интернет. Радио онлайн</annotation>
+    <annotation>FМ радиостанции г. Киев и Украины. Вещание через интернет. Radio онлайн</annotation>
     <image>../etc/translate/rss/image/menu/internetradio.png</image>
     <mediaDisplay name="onePartView"/>
   </item>
   <item>
 <link>rss_file://../etc/translate/rss/etc-playlists-radiogrom-radio_france.rss</link>
-    <title>Радио Франции</title>
-    <annotation>Французские радиостанции. Вещание через интернет. Радио Франции слушать онлайн online</annotation>
+    <title>Radio Франции</title>
+    <annotation>Французские радиостанции. Вещание через интернет. Radio Франции слушать онлайн online</annotation>
     <image>../etc/translate/rss/image/menu/internetradio.png</image>
     <mediaDisplay name="onePartView"/>
   </item>
   <item>
 <link>rss_file://../etc/translate/rss/etc-playlists-radiogrom-internet_europe.rss</link>
-    <title>Радио Европы</title>
-    <annotation>Зарубежные интернет радиостанции. Вещание через интернет. Радио онлайн</annotation>
+    <title>Radio Европы</title>
+    <annotation>Зарубежные интернет радиостанции. Вещание через интернет. Radio онлайн</annotation>
     <image>../etc/translate/rss/image/menu/internetradio.png</image>
     <mediaDisplay name="onePartView"/>
   </item>

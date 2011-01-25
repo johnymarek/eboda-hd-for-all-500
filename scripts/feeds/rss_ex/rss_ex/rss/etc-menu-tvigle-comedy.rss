@@ -22,7 +22,7 @@
 -->
 
 <onEnter>
-  translate_base_url  = "http://127.0.0.1/cgi-bin/translate?";
+  translate_base_url  = "http://127.0.0.1:82/rss_ex/www/cgi-bin/translate?";
   cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
   if(cgiconf != null)
   {
@@ -429,7 +429,7 @@
   <item>
 <link><script>translate_base_url+"app,Channel:1874,tvigle/multi";</script></link>
     <title>Пятница! Время приколов</title>
-    <annotation>Полчаса безделья и смеха никому не помешают, тем более в пятницу! Специальная подборка коротких видеоприколов для позитивной настройки на выходные. Обновления каждую пятницу.</annotation>
+    <annotation>Полчаса безделья и смеха никому не помешают, тем более в пятницу! Специальная подборка коротких videoприколов для позитивной настройки на выходные. Обновления каждую пятницу.</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/1874/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>

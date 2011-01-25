@@ -108,7 +108,7 @@
 </mediaDisplay>
 
 	<onEnter>
-    translateBaseURL = "http://127.0.0.1/cgi-bin/translate?";
+    translateBaseURL = "http://127.0.0.1:82/rss_ex/www/cgi-bin/translate?";
     cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
     if(cgiconf != null)
     {
@@ -186,18 +186,18 @@
 	</searchLink>
 
 	<channel>
-		<title>YouTube видео</title>
+		<title>YouTube video</title>
 		<link>../etc/translate/rss/youtube/yt_index.rss</link>
 		<media:thumbnail url="../etc/translate/rss/image/youtube.gif" width="120" height="90" />
 
 		<item>
-			<title>Видео в центре внимания</title>
+			<title>Recently featured</title>
 			<onClick>
         optionsPath = getStoragePath("key") + "youtubeOptions.dat";
         optionsArray = readStringFromFile(optionsPath);
         if(optionsArray == null)
         {
-          youtubeRegion = "RU";
+          youtubeRegion = "EN";
         }
         else
         {
@@ -221,18 +221,18 @@
 		</item>
 		
 		<item>
-			<title>Стандартные каналы</title>
+			<title>Standard feeds</title>
 			<link>rss_file://../etc/translate/rss/youtube/yt_standard_feeds.rss</link>
 		</item>
 
 		<item>
-			<title>Категории</title>
+			<title>Categories</title>
 			<url>http://gdata.youtube.com/schemas/2007/categories.cat</url>
 			<link>rss_file://../etc/translate/rss/youtube/yt_categories.rss</link>
 		</item>
 
 		<item>
-			<title>Избранное</title>
+			<title>Selection</title>
 			<onClick>
         optionsPath = getStoragePath("key") + "youtubeOptions.dat";
         optionsArray = readStringFromFile(optionsPath);
@@ -252,7 +252,7 @@
 				if (username != null &amp;&amp; username != " ")
 				{
 	       url = "http://gdata.youtube.com/feeds/api/users/" + urlEncode(username)+"/favorites?";
-	       title = "Избранное: "+username;
+	       title = "Selection: "+username;
 	       
 	       arr = null;
          arr = pushBackStringArray(arr, url);
@@ -271,7 +271,7 @@
 		</item>
 
 		<item>
-			<title>Поиск видео</title>
+			<title>Search for video</title>
 			<onClick>
 				keyword= getInput();
 				if (keyword!=null)
@@ -280,7 +280,7 @@
           optionsArray = readStringFromFile(optionsPath);
           if(optionsArray == null)
           {
-            youtubeRegion = "RU";
+            youtubeRegion = "EN";
           }
           else
           {
@@ -324,7 +324,7 @@
 	       url = youtubeApiSearchBaseURL;
 	       if(lr != null)
 	         url += "lr="+lr+"&amp;";
-	       title = "Поиск: "+regionKeyword;
+	       title = "Search: "+regionKeyword;
 	       
 	       arr = null;
          arr = pushBackStringArray(arr, url);
@@ -340,7 +340,7 @@
 		</item>
 
 		<item>
-			<title>Настройки</title>
+			<title>Options</title>
 			<link>rss_file://../etc/translate/rss/youtube/yt_options.rss</link>
 			<mediaDisplay name="onePartView"/>
 		</item>

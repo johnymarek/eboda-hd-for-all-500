@@ -22,7 +22,7 @@
 -->
 
 <onEnter>
-  translate_base_url  = "http://127.0.0.1/cgi-bin/translate?";
+  translate_base_url  = "http://127.0.0.1:82/rss_ex/www/cgi-bin/translate?";
   cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
   if(cgiconf != null)
   {
@@ -242,7 +242,7 @@
 <script>
     channelImage = "";
   </script><channel>
-  <title>Дополнительные сервисы</title>
+  <title>Additional services</title>
   <item>
 <link>rss_file://../etc/translate/rss/etc-menu-video.rss</link>
     <title>Internet Video</title>

@@ -345,7 +345,7 @@
   storagePath_stream      = storagePath + "stream.dat";
   storagePath_streamInfo  = storagePath + "streamInfo.dat";
 
-  translateBaseURL = "http://127.0.0.1/cgi-bin/translate?";
+  translateBaseURL = "http://127.0.0.1:82/rss_ex/www/cgi-bin/translate?";
   cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
   if(cgiconf != null)
   {

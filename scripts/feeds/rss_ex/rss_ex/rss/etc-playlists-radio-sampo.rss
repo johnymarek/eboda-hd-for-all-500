@@ -22,7 +22,7 @@
 -->
 
 <onEnter>
-  translate_base_url  = "http://127.0.0.1/cgi-bin/translate?";
+  translate_base_url  = "http://127.0.0.1:82/rss_ex/www/cgi-bin/translate?";
   cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
   if(cgiconf != null)
   {
@@ -499,8 +499,8 @@
   </script><channel>
   <title>Sampo.ru</title>
   <item>
-    <annotation>Радио хорошего настроения. Современная музыка способная поднять настроение.</annotation>
-    <title>Радио Импульс</title>
+    <annotation>Radio хорошего настроения. Современная музыка способная поднять настроение.</annotation>
+    <title>Radio Импульс</title>
     <image>../etc/translate/rss/image/sampo/impulse.png</image>
     <location>http://radio.sampo.ru/impulse.mp3</location>
     <stream_url>http://radio.sampo.ru:8088/impulse.mp3</stream_url>
@@ -512,7 +512,7 @@
     <stream_bitrate>192</stream_bitrate>
   </item>
   <item>
-    <annotation>НАШЕ радио – Петрозаводск это не только «самая полная коллекция рок-н-ролла», но и разнообразные программы местного производства. Только на 105,7 fm можно услышать дневную и вечернюю программы по заявкам «Вперед и с песней!», подборку лучших образцов нашей музыки в программе «Главные Песни», ночной проект «Экспертиза», а также карельские новости и погоду.</annotation>
+    <annotation>НАШЕ радио – Петрозаводск это не только «самая полная коллекция рок-н-ролла», но и разнообразные программы местного производства. Только на 105,7 fm можно услышать дневную и вечернюю программы по заявкам «Forward и с песней!», подборку лучших образцов нашей музыки в программе «Главные Песни», ночной проект «Экспертиза», а также карельские новости и погоду.</annotation>
     <title>НАШЕ радио - Петрозаводск</title>
     <image>../etc/translate/rss/image/sampo/nashe-ptz.png</image>
     <location>http://radio.sampo.ru/nashe-ptz.mp3</location>
@@ -543,7 +543,7 @@
   </item>
   <item>
     <annotation>Государственная радиовещательная компания "Маяк". В прямом эфире вы можете слышать голоса Сергея Стиллавина, Антона Комолова и Ольги Шелест, Романа Трахтенберга, Леры Кудрявцевой, Тутты Ларсен и бесменного ведущего автомобильного радио-шоу "Право руля" Виктора Травина, а так же многих других известных людей.</annotation>
-    <title>Радио Маяк</title>
+    <title>Radio Маяк</title>
     <image>../etc/translate/rss/image/sampo/mayak.png</image>
     <location>http://radio.sampo.ru/mayak.mp3</location>
   </item>
@@ -638,8 +638,8 @@
     <stream_bitrate>128</stream_bitrate>
   </item>
   <item>
-    <annotation>Радио Ваня – музыкально-информационная радиостанция, впервые появившаяся в эфире в июле 2007 года. Частота радио Ваня Санкт-Петербург – 68,66 УКВ. Руководство радио Ваня описывает его как «потешное, разудалое, простецкое, свое в доску радио» для слушателей до 40 лет. Песни радио Ваня – веселые и озорные, исключительно русскоязычные (поскольку народное радио), иногда эпатажные, иногда разухабистые, но всегда для хорошего настроения – заметно отличают радиостанцию от всех других.</annotation>
-    <title>Радио Ваня</title>
+    <annotation>Radio Ваня – музыкально-информационная радиостанция, впервые появившаяся в эфире в июле 2007 года. Частота радио Ваня Санкт-Петербург – 68,66 УКВ. Руководство радио Ваня описывает его как «потешное, разудалое, простецкое, свое в доску радио» для слушателей до 40 лет. Песни радио Ваня – веселые и озорные, исключительно русскоязычные (поскольку народное радио), иногда эпатажные, иногда разухабистые, но всегда для хорошего настроения – заметно отличают радиостанцию от всех других.</annotation>
+    <title>Radio Ваня</title>
     <image>../etc/translate/rss/image/sampo/vanya.png</image>
     <location>http://radio.sampo.ru/vanya.mp3</location>
     <stream_url>http://radio.sampo.ru:8088/vanya.mp3</stream_url>
@@ -652,8 +652,8 @@
     <stream_bitrate>64</stream_bitrate>
   </item>
   <item>
-    <annotation>Радио «Юность» - «Ю-FM»!!! Круглосуточное молодёжное радио с акцентом на танцевальную музыку! Клубные хиты и новинки в исполнении отечественных и зарубежных джедаев! Авторские программы мастеров танцпола, ежедневные dj’s live-сеты! Звёздные гости, новости, фирменная двадцатка лучших треков недели!</annotation>
-    <title>Радио Юность</title>
+    <annotation>Radio «Юность» - «Ю-FM»!!! Круглосуточное молодёжное радио с акцентом на танцевальную музыку! Клубные хиты и новинки в исполнении отечественных и зарубежных джедаев! Авторские программы мастеров танцпола, ежедневные dj’s live-сеты! Звёздные гости, новости, фирменная двадцатка лучших треков недели!</annotation>
+    <title>Radio Юность</title>
     <image>../etc/translate/rss/image/sampo/unost.png</image>
     <location>http://radio.sampo.ru/unost.mp3</location>
     <stream_url>http://radio.sampo.ru:8088/unost.mp3</stream_url>
@@ -681,7 +681,7 @@
   </item>
   <item>
     <annotation>Легендарная питерская станция "Модерн" - уникальное актерское радио с актуальным музыкальным форматом - покинула fm-диапазон в 2001 году. Спустя 9 лет после закрытия, "Модерн" возвращается к своему слушателю. Основа Интернет-версии - музыкальное наполнение того времени, которое мы попытались воссоздать в оригинальном виде. В ближайших планах - появление специальных программ, отвечающих главному - духу и настроению этого "очень странного места"...</annotation>
-    <title>Радио Модерн</title>
+    <title>Radio Модерн</title>
     <image>../etc/translate/rss/image/sampo/modern.png</image>
     <location>http://radio.sampo.ru/modern.mp3</location>
     <stream_url>http://radio.sampo.ru:8088/modern.mp3</stream_url>
@@ -695,7 +695,7 @@
   </item>
   <item>
     <annotation>«Эхо Москвы» информирует обо всем, что делается в мире. Круглые сутки в его эфире - новости политики и культуры, обзоры прессы, беседы с гостями, интерактивное общение со слушателями, авторские программы на различные, интересующие москвичей и жителей других городов, темы.</annotation>
-    <title>Радио Эхо Москвы</title>
+    <title>Radio Эхо Москвы</title>
     <image>../etc/translate/rss/image/sampo/echo-moskvy.png</image>
     <location>http://radio.sampo.ru/echo-moskvy.mp3</location>
     <stream_url>http://radio.sampo.ru:8088/echo-moskvy.mp3</stream_url>
@@ -705,8 +705,8 @@
     <stream_protocol>http</stream_protocol>
   </item>
   <item>
-    <annotation>Радио Рекорд — первая танцевальная радиостанция России с самой развитой структурой: помимо радио, это одна из крупнейших в Европе event-компаний с собственным record-лейблом.</annotation>
-    <title>Радио Рекорд</title>
+    <annotation>Radio Рекорд — первая танцевальная радиостанция России с самой развитой структурой: помимо радио, это одна из крупнейших в Европе event-компаний с собственным record-лейблом.</annotation>
+    <title>Radio Рекорд</title>
     <image>../etc/translate/rss/image/sampo/record.png</image>
     <location>http://radio.sampo.ru/record.mp3</location>
     <stream_url>http://radio.sampo.ru:8088/record.mp3</stream_url>
@@ -720,7 +720,7 @@
   </item>
   <item>
     <annotation>Все, кто любит и любим – вот слушатели LOVE RADIO. Песни, звучащие на этой волне на разных языках – только о любви. В программах этой волнующей радиостанции - признания и любовные истории обычных людей, а также романтические воспоминания знаменитых артистов. </annotation>
-    <title>Love Радио</title>
+    <title>Love Radio</title>
     <image>../etc/translate/rss/image/sampo/loveradio.png</image>
     <location>http://radio.sampo.ru/loveradio.mp3</location>
     <stream_url>http://radio.sampo.ru:8088/loveradio.mp3</stream_url>

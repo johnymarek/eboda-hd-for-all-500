@@ -22,7 +22,7 @@
 -->
 
 <onEnter>
-  translate_base_url  = "http://127.0.0.1/cgi-bin/translate?";
+  translate_base_url  = "http://127.0.0.1:82/rss_ex/www/cgi-bin/translate?";
   cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
   if(cgiconf != null)
   {
@@ -242,7 +242,7 @@
 <script>
     channelImage = "../etc/translate/rss/image/tvigle.png";
   </script><channel>
-  <title>Tvigle - Авторское видео</title>
+  <title>Tvigle - Авторское video</title>
   <item>
 <link><script>translate_base_url+"app,Channel:792,tvigle/multi";</script></link>
     <title>Лучшие авторы Tvigle.ru  2008</title>

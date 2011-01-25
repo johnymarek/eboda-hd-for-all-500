@@ -22,7 +22,7 @@
 -->
 
 <onEnter>
-  translate_base_url  = "http://127.0.0.1/cgi-bin/translate?";
+  translate_base_url  = "http://127.0.0.1:82/rss_ex/www/cgi-bin/translate?";
   cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
   if(cgiconf != null)
   {
@@ -489,8 +489,8 @@
   <title>Moskva.FM</title>
   <item>
     <location>mms://live.rfn.ru/radiorussia</location>
-    <title>Радио России</title>
-    <annotation>Государственная радиовещательная компания «Радио России» – главная государственная радиостанция страны</annotation>
+    <title>Radio России</title>
+    <annotation>Государственная радиовещательная компания «Radio России» – главная государственная радиостанция страны</annotation>
     <image>http://img.moskva.fm/img/stations/msk/66_44.gif</image>
     <url>http://www.moskva.fm/stations/FM_66.44</url>
     <id>2106</id>
@@ -504,7 +504,7 @@
   </item>
   <item>
     <location>http://streamall.rambler.ru/svoboda32.mp3</location>
-    <title>Радио Свобода</title>
+    <title>Radio Свобода</title>
     <annotation>В эфире с 6:00 до 24:00</annotation>
     <image>http://img.moskva.fm/img/stations/msk/68_30.gif</image>
     <url>http://www.moskva.fm/stations/FM_68.30</url>
@@ -618,7 +618,7 @@
   </item>
   <item>
     <location>http://streamall.rambler.ru:/jazz128.mp3</location>
-    <title>Радио Jazz</title>
+    <title>Radio Jazz</title>
     <annotation>Самое стильное радио в городе</annotation>
     <image>http://img.moskva.fm/img/stations/msk/89_1.gif</image>
     <url>http://www.moskva.fm/stations/FM_89.1</url>
@@ -635,7 +635,7 @@
   <item>
     <location>http://w01-cn01.akadostream.ru:8108/megapolisfm128.mp3</location>
     <title>Мегаполис FM</title>
-    <annotation>Радио для современных, активных и обеспеченных людей.</annotation>
+    <annotation>Radio для современных, активных и обеспеченных людей.</annotation>
     <image>http://img.moskva.fm/img/stations/msk/89_5.gif</image>
     <url>http://www.moskva.fm/stations/FM_89.5</url>
     <id>2013</id>
@@ -715,7 +715,7 @@
   </item>
   <item>
     <location>mmsh://live.rfn.ru/rcult</location>
-    <title>Радио Культура</title>
+    <title>Radio Культура</title>
     <annotation>Государственная телевизионная и радиовещательная компания</annotation>
     <image>http://img.moskva.fm/img/stations/msk/91_6.gif</image>
     <url>http://www.moskva.fm/stations/FM_91.6</url>
@@ -731,7 +731,7 @@
   <item>
     <location>http://govoritmoskva.ru:8000/gm-fm-128</location>
     <title>Говорит Москва</title>
-    <annotation>Радио большого города</annotation>
+    <annotation>Radio большого города</annotation>
     <image>http://img.moskva.fm/img/stations/msk/92_0.gif</image>
     <url>http://www.moskva.fm/stations/FM_92.0</url>
     <id>4016</id>
@@ -747,7 +747,7 @@
   </item>
   <item>
     <location>http://radiogrom.com/online/moskva_fm/dacha_fm_online.m3u</location>
-    <title>Радио Дача</title>
+    <title>Radio Дача</title>
     <annotation>Удачное радио!</annotation>
     <image>http://img.moskva.fm/img/stations/msk/92_4.gif</image>
     <url>http://www.moskva.fm/stations/FM_92.4</url>
@@ -764,7 +764,7 @@
   </item>
   <item>
     <location>mmsh://online.carnivalfm.ru:1234</location>
-    <title>Радио Карнавал</title>
+    <title>Radio Карнавал</title>
     <annotation>Мировые хиты</annotation>
     <image>http://img.moskva.fm/img/stations/msk/92_8.gif</image>
     <url>http://www.moskva.fm/stations/FM_92.8</url>
@@ -779,7 +779,7 @@
   </item>
   <item>
     <location>http://www.sportfm.ru:8000/sportfm-128</location>
-    <title>Радио Спорт</title>
+    <title>Radio Спорт</title>
     <annotation>Главное спортивное радио страны</annotation>
     <image>http://img.moskva.fm/img/stations/msk/93_2.gif</image>
     <url>http://www.moskva.fm/stations/FM_93.2</url>
@@ -898,7 +898,7 @@
   </item>
   <item>
     <location>http://89.208.99.16:8088/zvezda_128</location>
-    <title>Радио Звезда</title>
+    <title>Radio Звезда</title>
     <annotation>Телерадиокомпания Вооруженных Сил Российской Федерации</annotation>
     <image>http://img.moskva.fm/img/stations/msk/95_6.gif</image>
     <url>http://www.moskva.fm/stations/FM_95.6</url>
@@ -1039,8 +1039,8 @@
   </item>
   <item>
     <location>mmsh://mms.online.ru/v4_1_22</location>
-    <title>Радио Алла</title>
-    <annotation>Все звезды на "Радио Алла"!</annotation>
+    <title>Radio Алла</title>
+    <annotation>Все звезды на "Radio Алла"!</annotation>
     <image>http://img.moskva.fm/img/stations/msk/98_8.gif</image>
     <url>http://www.moskva.fm/stations/FM_98.8</url>
     <id>4011</id>
@@ -1054,7 +1054,7 @@
   </item>
   <item>
     <location>mmsh://live.rfn.ru/orfey/</location>
-    <title>Радио Орфей</title>
+    <title>Radio Орфей</title>
     <annotation>Классическая музыка</annotation>
     <image>http://img.moskva.fm/img/stations/msk/99_2.gif</image>
     <url>http://www.moskva.fm/stations/FM_99.2</url>
@@ -1119,7 +1119,7 @@
   </item>
   <item>
     <location>http://radiogrom.com/online/moskva_fm/classic_fm_online.m3u</location>
-    <title>Радио Classic</title>
+    <title>Radio Classic</title>
     <annotation>Красивая музыка красивых людей</annotation>
     <image>http://img.moskva.fm/img/stations/msk/100_9.gif</image>
     <url>http://www.moskva.fm/stations/FM_100.9</url>
@@ -1145,7 +1145,7 @@
   </item>
   <item>
     <location>http://streamall.rambler.ru:80/nashe128.mp3</location>
-    <title>Наше Радио</title>
+    <title>Наше Radio</title>
     <annotation>Наша музыка</annotation>
     <image>http://img.moskva.fm/img/stations/msk/101_7.gif</image>
     <url>http://www.moskva.fm/stations/FM_101.7</url>
@@ -1163,7 +1163,7 @@
   <item>
     <location>http://station.ru/RadioStation.aspx?id=1721</location>
     <title>Монте-Карло</title>
-    <annotation>Радио для искушенных</annotation>
+    <annotation>Radio для искушенных</annotation>
     <image>http://img.moskva.fm/img/stations/msk/102_1.gif</image>
     <url>http://www.moskva.fm/stations/FM_102.1</url>
     <id>2004</id>
@@ -1211,7 +1211,7 @@
   </item>
   <item>
     <location>mmsh://stream03.rambler.ru/radiomayak</location>
-    <title>Радио Маяк</title>
+    <title>Radio Маяк</title>
     <annotation>Жизнь продолжается!</annotation>
     <image>http://img.moskva.fm/img/stations/msk/103_4.gif</image>
     <url>http://www.moskva.fm/stations/FM_103.4</url>
@@ -1257,8 +1257,8 @@
   </item>
   <item>
     <location>http://webcast.emg.fm:55655/radiosept128.mp3</location>
-    <title>Радио 7</title>
-    <annotation>Радио на семи холмах</annotation>
+    <title>Radio 7</title>
+    <annotation>Radio на семи холмах</annotation>
     <image>http://img.moskva.fm/img/stations/msk/104_7.gif</image>
     <options>Protocol:http</options>
     <url>http://www.moskva.fm/stations/FM_104.7</url>
@@ -1291,7 +1291,7 @@
   </item>
   <item>
     <location>http://station.ru/RadioStation.aspx?id=1723</location>
-    <title>Русское Радио</title>
+    <title>Русское Radio</title>
     <annotation>Музыка для души</annotation>
     <image>http://img.moskva.fm/img/stations/msk/105_7.gif</image>
     <url>http://www.moskva.fm/stations/FM_105.7</url>
@@ -1374,7 +1374,7 @@
   <item>
     <location>http://streamall.rambler.ru/mv128.mp3</location>
     <title>Милицейская волна</title>
-    <annotation>Радио МВД РФ</annotation>
+    <annotation>Radio МВД РФ</annotation>
     <image>http://img.moskva.fm/img/stations/msk/107_8.gif</image>
     <url>http://www.moskva.fm/stations/FM_107.8</url>
     <id>4004</id>

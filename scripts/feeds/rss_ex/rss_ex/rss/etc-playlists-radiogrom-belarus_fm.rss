@@ -22,7 +22,7 @@
 -->
 
 <onEnter>
-  translate_base_url  = "http://127.0.0.1/cgi-bin/translate?";
+  translate_base_url  = "http://127.0.0.1:82/rss_ex/www/cgi-bin/translate?";
   cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
   if(cgiconf != null)
   {
@@ -469,7 +469,7 @@
   </item>
   <item>
     <location>http://www.radiogrom.com/online/belarus_fm/radio_gomel_online.html</location>
-    <title>- Радио Гомель </title>
+    <title>- Radio Гомель </title>
     <stream_url>http://skycast.su:2007/998</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>icecast</stream_soft>
@@ -510,7 +510,7 @@
   </item>
   <item>
     <location>http://www.radiogrom.com/online/belarus_fm/unistar_fm_online.html</location>
-    <title>- Радио Unistar </title>
+    <title>- Radio Unistar </title>
     <stream_url>http://213.184.232.36:8000/</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>shoutcast</stream_soft>
@@ -521,7 +521,7 @@
   </item>
   <item>
     <location>http://www.radiogrom.com/online/belarus_fm/alfa_radio_online.html</location>
-    <title>- Альфа Радио </title>
+    <title>- Альфа Radio </title>
     <stream_url>http://86.57.151.4:8009/</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>shoutcast</stream_soft>
@@ -532,7 +532,7 @@
   </item>
   <item>
     <location>http://www.radiogrom.com/online/belarus_fm/novoe_radio_online.html</location>
-    <title>- Новое Радио </title>
+    <title>- Новое Radio </title>
     <stream_url>http://streaming.telecom.by:8001/novoeradio-128kb</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>icecast</stream_soft>
@@ -543,7 +543,7 @@
   </item>
   <item>
     <location>http://www.radiogrom.com/online/belarus_fm/ba_radio_online.html</location>
-    <title>- Радио Би Эй </title>
+    <title>- Radio Би Эй </title>
     <stream_url>http://radio.solo.by:8002/radioba</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>icecast</stream_soft>

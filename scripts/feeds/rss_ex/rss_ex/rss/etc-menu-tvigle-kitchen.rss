@@ -22,7 +22,7 @@
 -->
 
 <onEnter>
-  translate_base_url  = "http://127.0.0.1/cgi-bin/translate?";
+  translate_base_url  = "http://127.0.0.1:82/rss_ex/www/cgi-bin/translate?";
   cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
   if(cgiconf != null)
   {
@@ -274,7 +274,7 @@
   <item>
 <link><script>translate_base_url+"app,Channel:1379,tvigle/multi";</script></link>
     <title>Салаты</title>
-    <annotation>Большая коллекция видео о том, как приготовить салат на любой вкус: от классического  Оливье  до изысканного  Сурими с апельсинами .</annotation>
+    <annotation>Большая коллекция video о том, как приготовить салат на любой вкус: от классического  Оливье  до изысканного  Сурими с апельсинами .</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/1379/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
@@ -295,7 +295,7 @@
   <item>
 <link><script>translate_base_url+"app,Channel:1435,tvigle/multi";</script></link>
     <title>От шеф-повара</title>
-    <annotation>Шеф повара раскрывают свои секреты   видеорецепты классических блюд ресторанов.</annotation>
+    <annotation>Шеф повара раскрывают свои секреты   videoрецепты классических блюд ресторанов.</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/1435/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
@@ -309,7 +309,7 @@
   <item>
 <link><script>translate_base_url+"app,Channel:1431,tvigle/multi";</script></link>
     <title>Ярмарка на Tvigle.ru</title>
-    <annotation>Блюда из бобовых вкусны и благоприятны для здоровья. Пятьдесят видео разнообразных рецептов.</annotation>
+    <annotation>Блюда из бобовых вкусны и благоприятны для здоровья. Пятьдесят video разнообразных рецептов.</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/1431/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>

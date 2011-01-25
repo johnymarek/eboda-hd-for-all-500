@@ -183,7 +183,7 @@
     tagsArray = readStringFromFile(storagePath);
     if(tagsArray == null)
       postMessage("return");
-  	pageTitle = "Теги видео";
+  	pageTitle = "Теги video";
 
 		itemSize = 0;
 		while(1)

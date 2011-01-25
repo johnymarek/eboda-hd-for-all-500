@@ -39,7 +39,7 @@ if echo "${arg_url}" | grep -q -s '\(www\.\)*station\.ru/RadioStation.aspx?id=[0
   if [ -f ${TMPFILE} ]; then
     arg_url=`grep "url = '" "$TMPFILE" | sed "s/.* '//;s/'.*//"`;
     local station_id=`echo "$arg_url" | sed 's/.*media=//'`
-    local station_title=`awk '/Радиостанция/{getline; printf "%s", $0}' "$TMPFILE"`;
+    local station_title=`awk '/Radioстанция/{getline; printf "%s", $0}' "$TMPFILE"`;
     rm -f "$TMPFILE"
     check_av_stream
     check_playlist
