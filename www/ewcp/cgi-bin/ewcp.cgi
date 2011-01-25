@@ -352,6 +352,10 @@ cat <<EOF
                 </tr>
                 <tr>
                   <td><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>
+                  <td><a href="http://$LOCALIP:9091">Transmission web interface</a></td>
+                </tr>
+                <tr>
+                  <td><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>
                   <td><a href="http://$LOCALIP:8081/webui">btpd 0.15 web interface</a></td>
                 </tr>
                 <tr>
