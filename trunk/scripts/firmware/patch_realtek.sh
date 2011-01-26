@@ -220,13 +220,20 @@ cp ${SVN_REPO}/src/${SIMPLE_VERSION}/map/* usr/local/bin/IMS_Modules/Weather/scr
 
 #rss_ex
 
-#www
-cp ${SVN_REPO}/scripts/feeds/rss_ex/rss_ex/www/cgi-bin/* tmp_orig/www/cgi-bin/
-chmod +x tmp_orig/www/cgi-bin/*
+if [ ${SIMPLE_VERSION} = "500" ]
 
-[ -d tmp_orig/www/bin/ ] || mkdir tmp_orig/www/bin/
-cp ${SVN_REPO}/scripts/feeds/rss_ex/rss_ex/www/bin/* tmp_orig/www/bin/
-chmod +x tmp_orig/www/bin/*
+then
+    cp ${SVN_REPO}/scripts/feeds/rss_ex/rss_ex/www/cgi-bin/* usr/local/bin/Resource/www/cgi-bin/
+    chmod +x usr/local/bin/Resource/www/cgi-bin/
+else
+    cp ${SVN_REPO}/scripts/feeds/rss_ex/rss_ex/www/cgi-bin/* tmp_orig/www/cgi-bin/
+    chmod +x tmp_orig/www/cgi-bin/*
+fi
+#www
+
+# [ -d tmp_orig/www/bin/ ] || mkdir tmp_orig/www/bin/
+# cp ${SVN_REPO}/scripts/feeds/rss_ex/rss_ex/www/bin/* tmp_orig/www/bin/
+# chmod +x tmp_orig/www/bin/*
 
 #[ -d tmp_orig/www/img/ ] || mkdir tmp_orig/www/img/
 #cp ${SVN_REPO}/scripts/feeds/rss_ex/rss_ex/www/img/* tmp_orig/www/img/
@@ -244,10 +251,19 @@ cd ${dir}
 # vb6 bin
 # bin is in /scripts/bin
 
-
+1
 # vb6 cgi-bin
-cp ${SVN_REPO}/scripts/feeds/scripts_vb6/scripts/cgi-bin/* tmp_orig/www/cgi-bin/
-chmod +x tmp_orig/www/cgi-bin/*
+
+if [ ${SIMPLE_VERSION} = "500" ]
+
+then
+    cp {SVN_REPO}/scripts/feeds/scripts_vb6/scripts/cgi-bin/* usr/local/bin/Resource/www/cgi-bin/
+    chmod +x usr/local/bin/Resource/www/cgi-bin/
+else
+    cp {SVN_REPO}/scripts/feeds/scripts_vb6/scripts/cgi-bin/* tmp_orig/www/cgi-bin/
+    chmod +x tmp_orig/www/cgi-bin/*
+fi
+
 
 
 # vb6 scripts
@@ -428,7 +444,7 @@ SERIAL=0
 DISK_SERIAL=${SERIAL}
 [ -f /rss_ex-version.txt ] && . /rss_ex-version.txt
 
-if [ ${SERIAL} -gt ${DISK_SERIAL} -o ! -f /rss/menuEx.rss ]
+if [ ${SERIAL} -gt ${DISK_SERIAL} -o ! -f /rss_ex/rss/menuEx.rss ]
 then
         rm -rf ${storage}/rss_ex/*
         cd ${storage}

@@ -1,10 +1,17 @@
- v70
+v72 
 
-- finish new internet menu (images)
-- translate rssEx
+- add Africa countries for weather
+- add reboot/standby from web interface
+- update to latest HDDLinks (done in branch, to be back to trunk at request)
 
-- implement sleep function
-- implement daemon start/stop
-- implement minimal transmission interface in CP
-- update to xLive 9.2
-- check other xtreamer stuff
+linked:
+- split internet services per ports(port 82 ewcp, port 83 vb6 scripts, port 84 rss_ex, port 85 xLive, etc)
+- probably internet services will be renamed not to break compatibility
+
+later:
+
+- better translate rssEx
+- allow font upload/change from web interface
+- xVod
+- other goodies
+
