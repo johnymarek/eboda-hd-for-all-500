@@ -1,55 +1,19 @@
 <?xml version='1.0' ?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
-
- <mediaDisplay>
-       viewAreaXPC=0
-	viewAreaYPC=5
-	viewAreaWidthPC=100
-	viewAreaHeightPC=95
- >
- </mediaDisplay>
-<channel>
-        <title>World Weather Forecast Service</title>
-        <link>./IMS_Modules/Weather/scripts/map/world.rss</link>
-        <media:thumbnail url="./IMS_Modules/Weather/image/weather.jpg"/>
-<item>
-<title>Asia</title>
-<link>rss_file://./IMS_Modules/Weather/scripts/map/Asia.rss</link>
-<media:thumbnail url="./IMS_Modules/Weather/image/weather.jpg"/>
-<yahoomap>
-http://local.yahooapis.com/MapsService/V1/mapImage?location=Asia&amp;radius=1000
-</yahoomap>
-</item>
-
-<item>
-<title>Europe</title>
-<link>rss_file://./IMS_Modules/Weather/scripts/map/Europe.rss</link>
-<media:thumbnail url="./IMS_Modules/Weather/image/weather.jpg"/>
-<yahoomap>
-http://local.yahooapis.com/MapsService/V1/mapImage?location=Europe&amp;radius=1000
-</yahoomap>
-</item>
-
-<item>
-<title>Africa</title>
-<link>rss_file://./IMS_Modules/Weather/scripts/map/Africa.rss</link>
-<media:thumbnail url="./IMS_Modules/Weather/image/weather.jpg"/>
-<yahoomap>
-http://local.yahooapis.com/MapsService/V1/mapImage?location=Africa&amp;radius=1000
-</yahoomap>
-</item>
--->
-
-<item>
-<title>United States</title>
-<link>rss_file://./IMS_Modules/Weather/scripts/map/United_States/United_States.rss</link>
-<media:thumbnail url="./IMS_Modules/Weather/image/weather.jpg"/>
-
-<submenu name="Enter ZIP code"  description="Use ZIP code to search weather" menuYPC=20 menuXPC=30>
-	<url>http://weather.yahooapis.com/forecastrss?p=%s&amp;u=f</url>
-	<input name="keyword"> keyword </input>
+<script>
+la = getItemInfoArray("cur");
+fa = getItemInfoArray("for");
+</script>
+<item_template>
+<link>
+<script>"http://weather.yahooapis.com/forecastrss?p="+getStringArrayAt(la, -1)+"&amp;u=c";
+</script>
+</link>
+<forcast>
+<script>"http://api.wunderground.com/auto/wui/geo/ForecastXML/index.xml?query="+getStringArrayAt(fa, -1)+",Angola";
+</script>
+</forcast>
 <mediaDisplay name=weatherViewRss
-		displayMetrics=0
               curConditionXPC=10
 		curConditionYPC=20
 		curConditionWPC=15
@@ -90,7 +54,7 @@ http://local.yahooapis.com/MapsService/V1/mapImage?location=Africa&amp;radius=10
 
 		forcastCondXPC=21
               forcastCondYPC=71
-		forcastCondWPC=15
+              forcastCondWPC=15
 		forcastCondHPC=5
 		forcastCondFontSize=22
 		
@@ -129,15 +93,14 @@ http://local.yahooapis.com/MapsService/V1/mapImage?location=Africa&amp;radius=10
 	</background>
 
 	</mediaDisplay>
-</submenu>
-</item>
+	</item_template>
 
+<channel>
 <item>
-<title>Australia</title>
-<link>rss_file://./IMS_Modules/Weather/scripts/map/Australia.rss</link>
-<media:thumbnail url="./IMS_Modules/Weather/image/weather.jpg"/>
+<title>Luanda</title>
+<cur>AOXX0008</cur>
+<for>Luanda</for>
 </item>
 
-</channel>
-</rss>
 
+</channel></rss>

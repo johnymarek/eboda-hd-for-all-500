@@ -1,3 +1,8 @@
 v7.0
 - implemented Control Panel Feed (Utilities/Update)
 - added Services to control panel
+v7.1RC1
+- support of SDK3
+v7.1RC2
+- rss_ex repairing and lighttpd configuration update (preparation for newer HDDLinks/rss_ex/xLive)
+ 
