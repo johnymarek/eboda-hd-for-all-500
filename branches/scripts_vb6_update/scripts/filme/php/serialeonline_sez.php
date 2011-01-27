@@ -177,8 +177,12 @@ function str_between($string, $start, $end){
 
 //http://www.serialeonline.tv/category/californication/
 //hhttp://www.serialeonline.tv/category/californication/sezonul-1-californication/
-$html = str_between($html,'<div style="background-color: #1c1f29; font-size: 16px; text-align: center;">','</div>');
-$videos = explode('href="', $html);
+$html1 = str_between($html,'<div style="background-color: #1c1f29; font-size: 16px; text-align: center;">','</div>');
+if ($html1 == "") {
+   $html1 = str_between($html,'<div id="seasons">','</div>');
+   }
+
+$videos = explode('href="', $html1);
 unset($videos[0]);
 $videos = array_values($videos);
 $n=0;

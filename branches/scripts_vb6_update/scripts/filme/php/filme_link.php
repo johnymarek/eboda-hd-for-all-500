@@ -508,6 +508,11 @@ foreach($videos as $video) {
       $link = str_replace('"','',$link);
       $server = str_between($link,"http://","/");
       $title = $server." - ".substr(strrchr($link,"/"),1);
+   } elseif (strpos($link, 'loombo.com') !== false) {
+     $baza = file_get_contents($link);
+     $link = str_between($baza,"addParam('flashvars','file=","'");
+     $server = str_between($link,"http://","/");
+     $title = $server." - ".substr(strrchr($link,"/"),1);
    } elseif (strpos($link, 'movshare') !== false){
      $baza = file_get_contents($link);
      $link = str_between($baza,'addVariable("file","','"');

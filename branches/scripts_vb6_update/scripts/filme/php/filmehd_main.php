@@ -143,7 +143,7 @@ $link = "http://filmehd.net";
 	</item>
 	';
 $html = file_get_contents("http://filmehd.net");
-$videos = explode('<li class="cat-item', $html);
+$videos = explode('<li id="menu-item-', $html);
 unset($videos[0]);
 $videos = array_values($videos);
 
@@ -155,9 +155,10 @@ foreach($videos as $video) {
 	$link = str_replace('[','%5B',$link);
 	$link = str_replace(']','%5D',$link);   
 	
-	$t1 = explode('title="', $video);
-	$t2 = explode('"', $t1[1]);
-	$title = $t2[0];
+	$t3 = explode('>', $t1[1]);
+	$t4 = explode('<', $t3[1]);
+	$title = $t4[0];
+	if (strpos($link,"category") !== false) {
 	echo '
 	<item>
 	<title>'.$title.'</title>
@@ -166,6 +167,7 @@ foreach($videos as $video) {
 	<mediaDisplay name="threePartsView"/>
 	</item>
 	';
+	}
 }
 ?>
 </channel>

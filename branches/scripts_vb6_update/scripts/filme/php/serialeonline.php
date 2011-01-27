@@ -145,8 +145,10 @@ if($query) {
 
 
 <?php
+//http://www.serialeonline.tv/category/how-i-met-your-mother/sezonul-1-how-i-met-your-mother/page/2/
 //http://www.serialeonline.tv/?cat=62&paged=1
-$link = "http://www.serialeonline.tv/?cat=".$search."&paged=".$page;
+//$link = "http://www.serialeonline.tv/?cat=".$search."&paged=".$page;
+$link = $search."page/".$page."/";
 $html = file_get_contents($link);
 if($page > 1) { ?>
 

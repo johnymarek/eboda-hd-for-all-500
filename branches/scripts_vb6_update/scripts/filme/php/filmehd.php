@@ -143,7 +143,7 @@ if($page) {
 	$html = file_get_contents($search."/page/".$page);
 } else {
   $page = 1;
-	$html = file_get_contents($search);
+  $html = file_get_contents($search."/page/".$page);
 }
 
 if($page > 1) { ?>
@@ -167,7 +167,7 @@ if($search) {
 <?php } ?>
 <?php
 
-$videos = explode('<div class="item">', $html);
+$videos = explode('<div id="post-', $html);
 
 unset($videos[0]);
 $videos = array_values($videos);

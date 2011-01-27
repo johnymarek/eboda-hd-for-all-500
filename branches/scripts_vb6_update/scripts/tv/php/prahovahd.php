@@ -140,8 +140,6 @@ function str_between($string, $start, $end){
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
 	return substr($string,$ini,$len); 
 }
-//rtmp://193.238.56.74/vod/mp4:notredame.mp4
-//http://live.prahovahd.ro/playlist.php
 //http://live.1hd.ro/playlist.php
 $url="http://live.1hd.ro";
 $file = get_headers($url);
@@ -153,13 +151,17 @@ foreach ($file as $key => $value)
      } // end if
    } // end foreach
 $url = "http://live.1hd.ro/playlist.php";
-$user_agent = 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.0.3705; .NET CLR 1.1.4322; Media Center PC 4.0)';
-$process = curl_init($url);
-curl_setopt($process, CURLOPT_USERAGENT, $user_agent);
-curl_setopt ($process, CURLOPT_COOKIE, $cookie );
-curl_setopt($process, CURLOPT_RETURNTRANSFER, 1);
-$html = curl_exec($process);
-curl_close($process);
+// Create a stream
+$opts = array(
+  'http'=>array(
+    'method'=>"GET",
+    'header'=>"Accept-language: en\r\n" .
+              "Cookie: ".$cookie."\r\n"
+  )
+);
+
+$context = stream_context_create($opts);
+$html = file_get_contents($url, false, $context);
 $videos = explode('<track>', $html);
 unset($videos[0]);
 $videos = array_values($videos);

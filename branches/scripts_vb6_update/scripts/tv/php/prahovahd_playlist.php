@@ -120,6 +120,7 @@ switch ($cat) {
 echo '
   <title>'.$tit.'</title>
   ';
+
 $url="http://live.1hd.ro";
 $file = get_headers($url);
 foreach ($file as $key => $value)
@@ -129,13 +130,16 @@ foreach ($file as $key => $value)
       $cookie = ltrim($value,"Set-Cookie: ");
      } // end if
    } // end foreach
-$user_agent = 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.0.3705; .NET CLR 1.1.4322; Media Center PC 4.0)';
-$process = curl_init($link);
-curl_setopt($process, CURLOPT_USERAGENT, $user_agent);
-curl_setopt ($process, CURLOPT_COOKIE, $cookie );
-curl_setopt($process, CURLOPT_RETURNTRANSFER, 1);
-$html = curl_exec($process);
-curl_close($process);
+// Create a stream
+$opts = array(
+  'http'=>array(
+    'method'=>"GET",
+    'header'=>"Accept-language: en\r\n" .
+              "Cookie: ".$cookie."\r\n"
+  )
+);
+$context = stream_context_create($opts);
+$html = file_get_contents($link, false, $context);
 $videos = explode('<track>', $html);
 unset($videos[0]);
 $videos = array_values($videos);
