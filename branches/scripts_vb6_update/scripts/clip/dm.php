@@ -31,7 +31,7 @@ $host = "http://127.0.0.1:82";
 <title>Search</title>
 <link>rss_command://search</link>
 <search url="<?php echo $host; ?>/scripts/clip/php/dm_search.php?query=1,%s" />
-<media:thumbnail url="/scripts//scripts/image/search.png" />
+<media:thumbnail url="/scripts/image/search.png" />
 </item>
 
 <item>

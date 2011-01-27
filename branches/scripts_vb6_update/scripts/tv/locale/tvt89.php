@@ -61,7 +61,7 @@ if($search) {
 ?>
 <title>Previous Page</title>
 <link><?php echo $url;?></link>
-<media:thumbnail url="/scripts//scripts/image/left.jpg" />
+<media:thumbnail url="/scripts/image/left.jpg" />
 </item>
 
 
@@ -118,7 +118,7 @@ if($search) {
 ?>
 <title>Next Page</title>
 <link><?php echo $url;?></link>
-<media:thumbnail url="/scripts//scripts/image/right.jpg" />
+<media:thumbnail url="/scripts/image/right.jpg" />
 </item>
 </channel>
 </rss>

@@ -78,7 +78,7 @@ $baseurl = "http://127.0.0.1:82/scripts/cgi-bin/translate?stream,Content-type:vi
     	echo '<link>'.$link1.'</link>';
     	echo '<name>'.$id.'.'.$ext.'</name>';
     	echo '<download>'.$link.'</download>';
-    	echo '<media:thumbnail url="/scripts//scripts/image/movies.png"/>';
+    	echo '<media:thumbnail url="/scripts/image/movies.png"/>';
     	echo '<enclosure type="video/flv" url="'.$link1.'"/>';
     	echo '</item>';
     print "\n";
@@ -94,7 +94,7 @@ $baseurl = "http://127.0.0.1:82/scripts/cgi-bin/translate?stream,Content-type:vi
     	echo '<link>'.$link1.'</link>';
     	echo '<name>'.$id.'.'.$ext.'</name>';
     	echo '<download>'.$link.'</download>';
-    	echo '<media:thumbnail url="/scripts//scripts/image/movies.png"/>';
+    	echo '<media:thumbnail url="/scripts/image/movies.png"/>';
     	echo '<enclosure type="video/flv" url="'.$link1.'"/>';	
     	echo '</item>';
     print "\n";
@@ -136,7 +136,7 @@ $title = "mmegavideo - premium 2 - file=".$id;
     	echo '<link>'.$link1.'</link>';
     	echo '<name>'.$id.'.'.$ext.'</name>';
     	echo '<download>'.$link.'</download>';
-    	echo '<media:thumbnail url="/scripts//scripts/image/movies.png"/>';
+    	echo '<media:thumbnail url="/scripts/image/movies.png"/>';
     	echo '<enclosure type="video/flv" url="'.$link1.'"/>';
     	echo '</item>';
     print "\n";

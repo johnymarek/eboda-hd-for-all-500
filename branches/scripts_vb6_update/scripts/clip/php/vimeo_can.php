@@ -167,7 +167,7 @@ if($search) {
 <title>Previous Page</title>
 <link><?php echo $url;?></link>
 <annotation>Pagina anterioara</annotation>
-<image>/scripts//scripts/image/left.jpg</image>
+<image>/scripts/image/left.jpg</image>
 <mediaDisplay name="threePartsView"/>
 </item>
 
@@ -224,7 +224,7 @@ if($search) {
 <title>Next Page</title>
 <link><?php echo $url;?></link>
 <annotation>Pagina urmatoare</annotation>
-<image>/scripts//scripts/image/right.jpg</image>
+<image>/scripts/image/right.jpg</image>
 <mediaDisplay name="threePartsView"/>
 </item>
 

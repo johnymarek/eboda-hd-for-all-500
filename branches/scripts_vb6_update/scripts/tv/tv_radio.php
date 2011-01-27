@@ -52,7 +52,7 @@ $host = "http://127.0.0.1:82";
 <item>
 <title>TV Live</title>
 <link><?php echo $host; ?>/scripts/tv/tv_live.php</link>
-<media:thumbnail url="/scripts//scripts/image/tv_radio.png" />
+<media:thumbnail url="/scripts/image/tv_radio.png" />
 </item>
 
 <item>
@@ -124,13 +124,13 @@ $host = "http://127.0.0.1:82";
 <item>
 <title>Emisiuni Sportive</title>
 <link><?php echo $host; ?>/scripts/tv/tv_sport.php</link>
-<media:thumbnail url="/scripts//scripts/image/tv_radio.png" />
+<media:thumbnail url="/scripts/image/tv_radio.png" />
 </item>
 
 <item>
 <title>Emisiuni TV posturi locale</title>
 <link><?php echo $host; ?>/scripts/tv/locale.php</link>
-<media:thumbnail url="/scripts//scripts/image/tv_radio.png" />
+<media:thumbnail url="/scripts/image/tv_radio.png" />
 </item>
 
 <item>
@@ -148,7 +148,7 @@ $host = "http://127.0.0.1:82";
 <item>
 <title>Cronica Carcotasilor KissFM</title>
 <link>http://cronica.primatv.ro/podcast/podcast.xml</link>
-<media:thumbnail url="/scripts//scripts/image/tv_radio.png" />
+<media:thumbnail url="/scripts/image/tv_radio.png" />
 </item>
 
 </channel>

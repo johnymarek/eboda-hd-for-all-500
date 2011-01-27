@@ -114,7 +114,7 @@ $html = str_between($html,"<h2 class='title'>Seriale Online</h2>","</ul>");
 $videos = explode('<li>', $html);
 unset($videos[0]);
 $videos = array_values($videos);
-$img = "/scripts//scripts/image/movies.png";
+$img = "/scripts/image/movies.png";
 foreach($videos as $video) {
   $t1 = explode('href="', $video);
   $t2 = explode('"', $t1[1]);

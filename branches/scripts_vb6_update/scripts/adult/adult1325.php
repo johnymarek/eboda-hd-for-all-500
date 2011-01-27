@@ -20,7 +20,7 @@ $host = "http://127.0.0.1:82";
 <item>
 <title>Porn TV</title>
 <link><?php echo $host; ?>/scripts/adult/porn_tv.php</link>
-<media:thumbnail url="/scripts//scripts/image/adult.png"/>
+<media:thumbnail url="/scripts/image/adult.png"/>
 </item>
 
 <item>

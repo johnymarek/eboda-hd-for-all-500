@@ -146,7 +146,7 @@ function str_between($string, $start, $end){
 	return substr($string,$ini,$len); 
 }
 $html = file_get_contents($search."?max-results=100");
-$image = "/scripts//scripts/image/movies.png";
+$image = "/scripts/image/movies.png";
 $videos = explode("<h3 class='post-title entry-title'>", $html);
 unset($videos[0]);
 $videos = array_values($videos);

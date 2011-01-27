@@ -29,19 +29,19 @@ $host = "http://127.0.0.1:82";
 <item>
 <title>Start-Stop FTP server</title>
 <link><?php echo $host; ?>/scripts/util/ftp_start_stop.php</link>
-<media:thumbnail url="/scripts//scripts/image/system.png" />
+<media:thumbnail url="/scripts/image/system.png" />
 </item>
 
 <item>
 <title>Redenumire fisiere descarcate</title>
 <link>http://127.0.0.1:82/scripts/util/ren.php</link>
-<media:thumbnail url="/scripts//scripts/image/system.png" />
+<media:thumbnail url="/scripts/image/system.png" />
 </item>
 
 <item>
 <title>Download Manager</title>
 <link>http://127.0.0.1:82/scripts/util/level.php</link>
-<media:thumbnail url="/scripts//scripts/image/system.png" />
+<media:thumbnail url="/scripts/image/system.png" />
 </item>
 
 </channel>

@@ -149,7 +149,7 @@ ret;
 
 	</item_template>
 <script>
-    channelImage = "/scripts//scripts/image/movies.png";
+    channelImage = "/scripts/image/movies.png";
   </script>
 
 <channel>

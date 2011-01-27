@@ -149,7 +149,7 @@ ret;
 
 	</item_template>
 <script>
-    channelImage = "/scripts//scripts/image/movies.png";
+    channelImage = "/scripts/image/movies.png";
   </script>
 
 <channel>
@@ -178,7 +178,7 @@ foreach($videos as $video) {
     <item>
     <title>'.$title.'</title>
     <link>'.$link.'</link>
-    <media:thumbnail url="/scripts//scripts/image/movies.png" />
+    <media:thumbnail url="/scripts/image/movies.png" />
     </item>
     ';
 }

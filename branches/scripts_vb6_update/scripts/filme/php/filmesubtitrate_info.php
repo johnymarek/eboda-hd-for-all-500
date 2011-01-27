@@ -115,7 +115,7 @@ if ($pageimage=="") {
 	$pageimage=str_between($html,'border="0" height="240" src="','?');
 }
 if ($pageimage=="") {
-	$pageimage="/scripts//scripts/image/movies.png";
+	$pageimage="/scripts/image/movies.png";
 }
 $serial_file=substr(strrchr($link,"/"),1);
 $serial_file=ltrim($serial_file,"seriale-online-");

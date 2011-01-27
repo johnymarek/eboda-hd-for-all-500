@@ -36,7 +36,7 @@ $host = "http://127.0.0.1:82";
 <item>
 <title>nullwave.ru</title>
 <link><?php echo $host; ?>/scripts/tv/nullwave.rss</link>
-<media:thumbnail url="/scripts//scripts//scripts/image/internetradio.png" />
+<media:thumbnail url="/scripts//scripts/image/internetradio.png" />
 <mediaDisplay name="threePartsView"/>
 </item>
 <item>

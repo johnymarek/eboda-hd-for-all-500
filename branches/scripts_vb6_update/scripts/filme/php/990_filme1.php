@@ -52,7 +52,7 @@ $host = "http://127.0.0.1:82";
 		  <script>print(annotation); annotation;</script>
 		</text>
 		<image  redraw="yes" offsetXPC=60 offsetYPC=35 widthPC=30 heightPC=30>
-		/scripts//scripts/image/movies.png
+		/scripts/image/movies.png
 		</image>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_01.png </idleImage>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_02.png </idleImage>
@@ -139,7 +139,7 @@ function str_between($string, $start, $end){
 $html = file_get_contents("http://www.990.ro");
 $html = str_between($html,"Filme dupa ani","</ul>");
 $host = "http://127.0.0.1:82";
-$image = "/scripts//scripts/image/movies.png";
+$image = "/scripts/image/movies.png";
 $videos = explode("<li>", $html);
 unset($videos[0]);
 $videos = array_values($videos);

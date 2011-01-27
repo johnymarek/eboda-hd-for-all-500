@@ -58,7 +58,7 @@ $host = "http://127.0.0.1:82";
 <item>
 <title>Program-Tv.ro :: Acum la televizor</title>
 <link>http://www.program-tv.ro/acum-la-tv.rss</link>
-<media:thumbnail url="/scripts//scripts/image/tv_radio.png" />
+<media:thumbnail url="/scripts/image/tv_radio.png" />
 <mediaDisplay name="threePartsView" 
 	itemBackgroundColor="0:0:0" 
 	backgroundColor="0:0:0" 
@@ -99,7 +99,7 @@ $host = "http://127.0.0.1:82";
 <item>
 <title>Program-Tv.ro :: Urmeaza la televizor</title>
 <link>http://www.program-tv.ro/urmeaza-la-tv.rss</link>
-<media:thumbnail url="/scripts//scripts/image/tv_radio.png" />
+<media:thumbnail url="/scripts/image/tv_radio.png" />
 <mediaDisplay name="threePartsView" 
 	itemBackgroundColor="0:0:0" 
 	backgroundColor="0:0:0" 

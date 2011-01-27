@@ -1,4 +1,4 @@
 #!/bin/sh
 
-TRANSLATE=/usr/local/etc/translate
+TRANSLATE=/scripts
 PATH=$TRANSLATE/bin:$PATH exec translate.cgi

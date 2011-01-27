@@ -163,7 +163,7 @@ function str_between($string, $start, $end){
 	return substr($string,$ini,$len); 
 }
 $html = file_get_contents("http://www.hardsextube.com/categories/");
-$img = "/scripts//scripts/image/movies.png";
+$img = "/scripts/image/movies.png";
 $videos = explode('<div style="background: url(http://www.hardsextube.com/images/loading-mp.gif', $html);
 unset($videos[0]);
 $videos = array_values($videos);

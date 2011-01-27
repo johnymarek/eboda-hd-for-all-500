@@ -161,7 +161,7 @@ if($search) {
 <title>Previous Page</title>
 <link><?php echo $url;?></link>
 <annotation>Pagina anterioara</annotation>
-<image>/scripts//scripts/image/left.jpg</image>
+<image>/scripts/image/left.jpg</image>
 <mediaDisplay name="threePartsView"/>
 </item>
 
@@ -175,7 +175,7 @@ function str_between($string, $start, $end){
 	return substr($string,$ini,$len);
 }
 
-$image = "/scripts//scripts/image/movies.png";
+$image = "/scripts/image/movies.png";
 $videos = explode('<div class="post-', $html);
 unset($videos[0]);
 $videos = array_values($videos);
@@ -212,7 +212,7 @@ if($search) {
 <title>Next Page</title>
 <link><?php echo $url;?></link>
 <annotation>Pagina urmatoare</annotation>
-<image>/scripts//scripts/image/right.jpg</image>
+<image>/scripts/image/right.jpg</image>
 <mediaDisplay name="threePartsView"/>
 </item>
 

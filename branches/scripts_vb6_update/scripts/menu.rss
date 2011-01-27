@@ -169,14 +169,14 @@ columnCount=3
     <link>http://127.0.0.1:82/scripts/filme/filme.php</link>
     <title>Filme şi seriale subtitrate</title>
     <annotation>Vedeţi aici filme şi seriale cu subtitrare...</annotation>
-    <image>/scripts//scripts/image/movies.png</image>
+    <image>/scripts/image/movies.png</image>
     <mediaDisplay name="threePartsView"/>
   </item>
   <item>
     <link>http://127.0.0.1:82/scripts/clip/clip.php</link>
     <title>Videoclipuri şi altele</title>
     <annotation>Filmuleţe nostime, clipuri video şi altele</annotation>
-    <image>/scripts//scripts/image/videoclip.png</image>
+    <image>/scripts/image/videoclip.png</image>
     <mediaDisplay name="photoView"/>
   </item>
   <item>
@@ -190,7 +190,7 @@ columnCount=3
     <link>http://127.0.0.1:82/scripts/tv/tv_radio.php</link>
     <title>TV, Radio şi emisiuni Inregistrate</title>
     <annotation>Ascultă sau vezi postul tău de radio sau TV favorit. Ai ratat o emisiune? Aici poţi s-o găseşti!</annotation>
-    <image>/scripts//scripts/image/tv_radio.png</image>
+    <image>/scripts/image/tv_radio.png</image>
     <mediaDisplay name="threePartsView"/>
   </item>
   <item>

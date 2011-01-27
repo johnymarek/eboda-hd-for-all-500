@@ -48,7 +48,7 @@ $host = "http://127.0.0.1:82";
 <item>
 <title>DigiSport - youtube</title>
 <link><?php echo $host; ?>/scripts/php1/youtube_user.php?query=1,DigiSportTV</link>
-<media:thumbnail url="/scripts//scripts/image/youtube.gif" />
+<media:thumbnail url="/scripts/image/youtube.gif" />
 </item>
 
 <item>
@@ -84,7 +84,7 @@ $host = "http://127.0.0.1:82";
 <item>
 <title>NBA</title>
 <link><?php echo $host; ?>/scripts/php1/youtube_user.php?query=1,nba</link>
-<media:thumbnail url="/scripts//scripts/image/youtube.gif" />
+<media:thumbnail url="/scripts/image/youtube.gif" />
 </item>
 
 

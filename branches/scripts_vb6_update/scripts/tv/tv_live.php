@@ -30,13 +30,13 @@ $host = "http://127.0.0.1:82";
 <item>
 <title>TV Live - Romania</title>
 <link><?php echo $host; ?>/scripts/tv/tv_rom.php</link>
-<media:thumbnail url="/scripts//scripts/image/tv_radio.png" />
+<media:thumbnail url="/scripts/image/tv_radio.png" />
 </item>
 
 <item>
 <title>TV Live - pe tari</title>
 <link><?php echo $host; ?>/scripts/tv/tv.php</link>
-<media:thumbnail url="/scripts//scripts/image/tv_radio.png" />
+<media:thumbnail url="/scripts/image/tv_radio.png" />
 </item>
 
 </channel>

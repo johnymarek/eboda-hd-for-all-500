@@ -185,8 +185,8 @@ columnCount=5
 	<link>rss_command://search</link>
 	<location>http://youtube.com</location>
 	<search url="<?php echo $host; ?>/scripts/php1/youtube_user.php?query=1,%s" />
-	<image>/scripts//scripts/image/youtube.gif</image>
-	<media:thumbnail url="/scripts//scripts/image/youtube.gif" />
+	<image>/scripts/image/youtube.gif</image>
+	<media:thumbnail url="/scripts/image/youtube.gif" />
 	<annotation>Căutare videoclipuri postate pe youtube de către....</annotation>
 </item>
 
@@ -230,8 +230,8 @@ columnCount=5
 <title>VideoAlegeNet</title>
 	<link><?php echo $host; ?>/scripts/clip/video_alege_net.php</link>
 	<location>http://video.alege.net</location>
-	<image>/scripts//scripts/image/videoclip.png</image>
-	<media:thumbnail url="/scripts//scripts/image/videoclip.png" />
+	<image>/scripts/image/videoclip.png</image>
+	<media:thumbnail url="/scripts/image/videoclip.png" />
 	<annotation>Azi va recomandam urmatoarele filme...</annotation>
 </item>
 
@@ -339,8 +339,8 @@ columnCount=5
     <link>rss_file://../etc/translate/rss/etc-menu-tvigle-index.rss</link>
     <location>http://www.tvigle.ru</location>
     <annotation>Tvigle Media — медиакомпания нового поколения, производитель и дистрибьютор профессионального развлекательного видеоконтента для New Media: интернета, мобильных сетей, цифровых телеканалов.</annotation>
-    <image>/scripts//scripts//scripts/image/tvigle.png</image>
-    <media:thumbnail url="/scripts//scripts//scripts/image/tvigle.png" />
+    <image>/scripts//scripts/image/tvigle.png</image>
+    <media:thumbnail url="/scripts//scripts/image/tvigle.png" />
     <mediaDisplay name="onePartView"/>
   </item>
 </channel>
