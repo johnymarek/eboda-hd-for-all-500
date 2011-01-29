@@ -1,12 +1,7 @@
 v72 
 
-- add Africa countries for weather
-- add reboot/standby from web interface
-- update to latest HDDLinks (done in branch, to be back to trunk at request)
-
-linked:
-- split internet services per ports(port 82 ewcp, port 83 vb6 scripts, port 84 rss_ex, port 85 xLive, etc)
-- probably internet services will be renamed not to break compatibility
+- check msdl+990 nok on mini???
+- test changes
 
 later:
 

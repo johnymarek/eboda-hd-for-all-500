@@ -30,7 +30,7 @@ Press Right Arrow to cancel timer.
 EOF
 else
     
-    for i in 30 60 90 120
+    for i in 30 60 90 120 180 240
     do
 	script=util_standby-${i}-rss.cgi
 	full_name="Standby in ${i} minutes"

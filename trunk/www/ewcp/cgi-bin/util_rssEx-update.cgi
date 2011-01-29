@@ -1,6 +1,6 @@
 #!/bin/sh
 
-component=rss_ex
+component=rss_ex4
 description="Rss Ex"
 
 basename $0 | grep -v \\-rss >/dev/null 2>&1 

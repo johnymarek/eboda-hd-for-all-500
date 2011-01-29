@@ -36,7 +36,7 @@
 <onEnter>
 <!--`cat "$INITSCRIPT"`-->
 
-  translate_base_url  = "http://127.0.0.1:82/rss_ex/www/cgi-bin/translate?";
+  translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
   cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
   if(cgiconf != null)
   {

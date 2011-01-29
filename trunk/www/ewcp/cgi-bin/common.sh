@@ -138,7 +138,7 @@ perform_update()
 {
     component=$1
 
-    ${wget} ${masterhost_url}/${component}-latest.zip
+    ${wget} ${masterhost_url}/${component}-latest.zip -O ${component}-latest.zip
     [ $? == 0 ] || nice_exit 2 $2
     
     rm -rf ${component}/*

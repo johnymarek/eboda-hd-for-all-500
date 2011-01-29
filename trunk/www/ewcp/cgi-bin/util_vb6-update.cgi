@@ -1,6 +1,6 @@
 #!/bin/sh
 
-component=scripts
+component=scripts4
 description="vb6 feeds"
 
 basename $0 | grep -v \\-rss >/dev/null 2>&1 
