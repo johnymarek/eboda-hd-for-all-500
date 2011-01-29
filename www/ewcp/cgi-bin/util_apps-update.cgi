@@ -1,6 +1,6 @@
 #!/bin/sh
 
-component=cb3pp3
+component=cb3pp4
 description="binaries compiled by cipibad"
 
 basename $0 | grep -v \\-rss >/dev/null 2>&1 

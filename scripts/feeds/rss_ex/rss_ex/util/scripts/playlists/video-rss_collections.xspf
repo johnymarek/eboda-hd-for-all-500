@@ -7,9 +7,9 @@
          <annotation>На этом сайте вы можете абсолютно бесплатно загрузить мультфильмы для вас и ваших детей. На сайте собрана коллекция мультфильмов советских времен и не только. Самые лучшие мультики из вашего детства! Коллекция постоянно пополняется новыми мультфильмами.</annotation>
          <title>Мультики от mults.spb.ru</title>
          <image>../etc/translate/rss/image/menu/rss.png</image>
-         <location>http://127.0.0.1:82/rss_ex/www/cgi-bin/translate?app/rss/mults.spb.ru,http://mults.spb.ru/rss.php</location>
+         <location>http://127.0.0.1:84/cgi-bin/translate?app/rss/mults.spb.ru,http://mults.spb.ru/rss.php</location>
       
-<meta rel="stream_url">http://127.0.0.1:82/rss_ex/www/cgi-bin/translate?app/rss/mults.spb.ru,http://mults.spb.ru/rss.php</meta>
+<meta rel="stream_url">http://127.0.0.1:84/cgi-bin/translate?app/rss/mults.spb.ru,http://mults.spb.ru/rss.php</meta>
 <meta rel="stream_class">rss</meta>
 <meta rel="stream_type">application/rss</meta>
 <meta rel="stream_protocol">http</meta>
@@ -38,9 +38,9 @@
          <annotation>RSS-лента Tvigle Media</annotation>
          <title>Tvigle Media</title>
          <image>../etc/translate/rss/image/menu/rss.png</image>
-         <location>http://127.0.0.1:82/rss_ex/www/cgi-bin/translate?app/rss/tvigle.ru,http://www.tvigle.ru/rss/</location>
+         <location>http://127.0.0.1:84/cgi-bin/translate?app/rss/tvigle.ru,http://www.tvigle.ru/rss/</location>
       
-<meta rel="stream_url">http://127.0.0.1:82/rss_ex/www/cgi-bin/translate?app/rss/tvigle.ru,http://www.tvigle.ru/rss/</meta>
+<meta rel="stream_url">http://127.0.0.1:84/cgi-bin/translate?app/rss/tvigle.ru,http://www.tvigle.ru/rss/</meta>
 <meta rel="stream_class">rss</meta>
 <meta rel="stream_type">application/rss</meta>
 <meta rel="stream_protocol">http</meta>

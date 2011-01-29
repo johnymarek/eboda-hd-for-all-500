@@ -197,15 +197,15 @@ chmod +x usr/bin/*
 # eboda web control panel
 dir=`pwd`
 cd ${SVN_REPO}/www/
-find ewcp | grep -v .svn | grep -v '~' | zip -9 ${dir}/ewcp.zip -@
-cp ewcp${SDK}-version.txt ${dir}/
+find ewcp | grep -v .svn | grep -v '~' | zip -9 ${dir}/ewcp4.zip -@
+cp ewcp4-version.txt ${dir}/
 cd $dir
 
 # /cb3pp
 dir=`pwd`
 cd ${SVN_REPO}/src/
-find cb3pp | grep -v .svn | grep -v '~'  | zip -9 ${dir}/cb3pp.zip -@
-cp cb3pp${SDK}-version.txt ${dir}/
+find cb3pp | grep -v .svn | grep -v '~'  | zip -9 ${dir}/cb3pp4.zip -@
+cp cb3pp4-version.txt ${dir}/
 cd $dir
 
 # IMS menu
@@ -220,16 +220,16 @@ cp ${SVN_REPO}/src/${SIMPLE_VERSION}/map/* usr/local/bin/IMS_Modules/Weather/scr
 
 #rss_ex
 
-if [ ${SIMPLE_VERSION} = "500" ]
+# if [ ${SIMPLE_VERSION} = "500" ]
 
-then
-    cp ${SVN_REPO}/scripts/feeds/rss_ex/rss_ex/www/cgi-bin/* usr/local/bin/Resource/www/cgi-bin/
-    chmod +x usr/local/bin/Resource/www/cgi-bin/
-else
-    cp ${SVN_REPO}/scripts/feeds/rss_ex/rss_ex/www/cgi-bin/* tmp_orig/www/cgi-bin/
-    chmod +x tmp_orig/www/cgi-bin/*
-fi
-#www
+# then
+#     cp ${SVN_REPO}/scripts/feeds/rss_ex/rss_ex/www/cgi-bin/* usr/local/bin/Resource/www/cgi-bin/
+#     chmod +x usr/local/bin/Resource/www/cgi-bin/
+# else
+#     cp ${SVN_REPO}/scripts/feeds/rss_ex/rss_ex/www/cgi-bin/* tmp_orig/www/cgi-bin/
+#     chmod +x tmp_orig/www/cgi-bin/*
+# fi
+# #www
 
 # [ -d tmp_orig/www/bin/ ] || mkdir tmp_orig/www/bin/
 # cp ${SVN_REPO}/scripts/feeds/rss_ex/rss_ex/www/bin/* tmp_orig/www/bin/
@@ -243,8 +243,8 @@ fi
 # no space in firmware, latest version will be downloaded from internet
 # dir=`pwd`
 cd ${SVN_REPO}/scripts/feeds/zero_version/rss_ex/
-find rss_ex/ | grep -v .svn | grep -v '~' | grep -v 'www' | zip -9 ${dir}/rss_ex.zip -@
-cp rss_ex-version.txt ${dir}/rss_ex-version.txt
+find rss_ex/ | grep -v .svn | grep -v '~' | zip -9 ${dir}/rss_ex.zip -@
+cp rss_ex4-version.txt ${dir}/rss_ex4-version.txt
 cd ${dir}
 
 
@@ -254,15 +254,15 @@ cd ${dir}
 1
 # vb6 cgi-bin
 
-if [ ${SIMPLE_VERSION} = "500" ]
+# if [ ${SIMPLE_VERSION} = "500" ]
 
-then
-    cp {SVN_REPO}/scripts/feeds/scripts_vb6/scripts/cgi-bin/* usr/local/bin/Resource/www/cgi-bin/
-    chmod +x usr/local/bin/Resource/www/cgi-bin/
-else
-    cp {SVN_REPO}/scripts/feeds/scripts_vb6/scripts/cgi-bin/* tmp_orig/www/cgi-bin/
-    chmod +x tmp_orig/www/cgi-bin/*
-fi
+# then
+#     cp {SVN_REPO}/scripts/feeds/scripts_vb6/scripts/cgi-bin/* usr/local/bin/Resource/www/cgi-bin/
+#     chmod +x usr/local/bin/Resource/www/cgi-bin/
+# else
+#     cp {SVN_REPO}/scripts/feeds/scripts_vb6/scripts/cgi-bin/* tmp_orig/www/cgi-bin/
+#     chmod +x tmp_orig/www/cgi-bin/*
+# fi
 
 
 
@@ -270,8 +270,8 @@ fi
 # no space in firmware, latest version will be downloaded from internet
 # dir=`pwd`
 cd ${SVN_REPO}/scripts/feeds/zero_version/scripts_vb6/
-find scripts | grep -v .svn | grep -v '~' | grep -v 'cgi-bin' | zip -9 ${dir}/scripts.zip -@
-cp scripts-version.txt ${dir}/scripts-version.txt
+find scripts | grep -v .svn | grep -v '~' | zip -9 ${dir}/scripts4.zip -@
+cp scripts4-version.txt ${dir}/scripts4-version.txt
 cd ${dir}
 
 # xLive
@@ -279,8 +279,8 @@ cd ${dir}
 #I should make script to take-it from internet!
 #dir=`pwd`
 cd ${SVN_REPO}/scripts/feeds/zero_version/xLive
-find xLive | grep -v .svn | grep -v '~' | zip -9 ${dir}/xLive.zip -@
-cp xLive-version.txt ${dir}/xLive-version.txt
+find xLive | grep -v .svn | grep -v '~' | zip -9 ${dir}/xLive4.zip -@
+cp xLive4-version.txt ${dir}/xLive4-version.txt
 cd ${dir}
 
 #patch DvdPlayer binary
@@ -331,6 +331,21 @@ mkdir root
 
 #rss_ex
 ln -s  /rss_ex translate
+
+#inetd.conf
+sed -i -e '$a\
+www3    stream  tcp     nowait  www-data        /usr/sbin/httpd httpd -i -h /scripts\
+www4    stream  tcp     nowait  www-data        /usr/sbin/httpd httpd -i -h /rss_ex/www\
+www5    stream  tcp     nowait  www-data        /usr/sbin/httpd httpd -i -h /xLive' etc/inetd.conf
+
+#services.conf
+sed -i -e '$a\
+http3           83/tcp          www3 www3-http  # HyperText Transfer Protocol\
+http3           83/udp          www3 www3-http  # HyperText Transfer Protocol\
+http4           84/tcp          www4 www4-http  # HyperText Transfer Protocol\
+http4           84/udp          www4 www4-http  # HyperText Transfer Protocol\
+http5           85/tcp          www5 www5-http  # HyperText Transfer Protocol\
+http5           85/udp          www5 www5-http  # HyperText Transfer Protocol' etc/services
 
 
 # keep this to be mine
@@ -422,84 +437,80 @@ fi
 
 # check if .../cb3pp installed from us, if not, unpack
 SERIAL=0
- [ -f ${storage}/cb3pp3-version.txt ] && . ${storage}/cb3pp3-version.txt
+ [ -f ${storage}/cb3pp4-version.txt ] && . ${storage}/cb3pp4-version.txt
 DISK_SERIAL=${SERIAL}
-[ -f /cb3pp3-version.txt ] && . /cb3pp3-version.txt
+[ -f /cb3pp4-version.txt ] && . /cb3pp4-version.txt
 
 if [ ${SERIAL} -gt ${DISK_SERIAL} ]
 then
 	rm -rf  ${storage}/cb3pp/*
 	cd ${storage}
-	unzip -o /cb3pp.zip 
-	cp /cb3pp3-version.txt ${storage}/
+	unzip -o /cb3pp4.zip 
+	cp /cb3pp4-version.txt ${storage}/
 
-	[ -f  ${storage}/cb3pp/etc/init.s/S99ewcp ] || cp  ${storage}/ewcp/S99ewcp  ${storage}/cb3pp/etc/init.d
-        chmod +x ${storage}/cb3pp/etc/init.d/S99ewcp
 fi
 
 
 # check if .../rss_ex from us, if not, unpack
 SERIAL=0
- [ -f ${storage}/rss_ex-version.txt ] && . ${storage}/rss_ex-version.txt
+ [ -f ${storage}/rss_ex4-version.txt ] && . ${storage}/rss_ex4-version.txt
 DISK_SERIAL=${SERIAL}
-[ -f /rss_ex-version.txt ] && . /rss_ex-version.txt
+[ -f /rss_ex4-version.txt ] && . /rss_ex4-version.txt
 
 if [ ${SERIAL} -gt ${DISK_SERIAL} -o ! -f /rss_ex/rss/menuEx.rss ]
 then
         rm -rf ${storage}/rss_ex/*
         cd ${storage}
-        unzip -o /rss_ex.zip
-	cp /rss_ex-version.txt ${storage}/rss_ex-version.txt
+        unzip -o /rss_ex4.zip
+	cp /rss_ex4-version.txt ${storage}/rss_ex4-version.txt
 fi
 
 
 # check if .../scripts from us, if not, unpack
 SERIAL=0
- [ -f ${storage}/scripts-version.txt ] && . ${storage}/scripts-version.txt
+ [ -f ${storage}/scripts4-version.txt ] && . ${storage}/scripts4-version.txt
 DISK_SERIAL=${SERIAL}
-[ -f /scripts-version.txt ] && . /scripts-version.txt
+[ -f /scripts4-version.txt ] && . /scripts4-version.txt
 
 if [ ${SERIAL} -gt ${DISK_SERIAL} -o ! -f /scripts/menu.rss ]
 then
         rm -rf ${storage}/scripts/*
         cd ${storage}
-        unzip -o /scripts.zip
-	cp /scripts-version.txt ${storage}/scripts-version.txt
+        unzip -o /scripts4.zip
+	cp /scripts4-version.txt ${storage}/scripts4-version.txt
 fi
 
 
 
 # check if .../xLive from us, if not, unpack
 SERIAL=0
- [ -f ${storage}/xLive-version.txt ] && . ${storage}/xLive-version.txt
+ [ -f ${storage}/xLive4-version.txt ] && . ${storage}/xLive4-version.txt
 DISK_SERIAL=${SERIAL}
-[ -f /xLive-version.txt ] && . /xLive-version.txt
+[ -f /xLive4-version.txt ] && . /xLive4-version.txt
 
 if [ ${SERIAL} -gt ${DISK_SERIAL} -o ! -f /xLive/menu.rss ]
 then
         rm -rf ${storage}/xLive/*
         cd ${storage}
-        unzip -o /xLive.zip
-	cp /xLive-version.txt ${storage}/xLive-version.txt
+        unzip -o /xLive4.zip
+	cp /xLive4-version.txt ${storage}/xLive4-version.txt
 fi
 
 
 
 # check if .../ewcp installed from us, if not, unpack
 SERIAL=0
- [ -f ${storage}/ewcp3-version.txt ] && . ${storage}/ewcp3-version.txt
+ [ -f ${storage}/ewcp4-version.txt ] && . ${storage}/ewcp4-version.txt
 DISK_SERIAL=${SERIAL}
-[ -f /ewcp3-version.txt ] && . /ewcp3-version.txt
+[ -f /ewcp4-version.txt ] && . /ewcp4-version.txt
 
 if [ ${SERIAL} -gt ${DISK_SERIAL} -o ${SERIAL} -eq 0 ]
 then
         rm -rf ${storage}/ewcp/*
         cd  ${storage}
-        unzip -o /ewcp.zip
-	cp /ewcp3-version.txt ${storage}/
+        unzip -o /ewcp4.zip
+	cp /ewcp4-version.txt ${storage}/
 
-	[ -f  ${storage}/cb3pp/etc/init.s/S99ewcp ] || cp  ${storage}/ewcp/S99ewcp  ${storage}/cb3pp/etc/init.d
-        chmod +x ${storage}/cb3pp/etc/init.d/S99ewcp
 fi
 
 cb3pp_startup=/cb3pp/etc/init.d/rcS

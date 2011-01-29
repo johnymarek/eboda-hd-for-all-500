@@ -20,11 +20,11 @@ name_rssEx="RSS: rssEx (aka media translate)"
 name_xLive="RSS: Xtreamer Live"
 name_apps="APPS: extra apps"
 
-component_ewcp="ewcp3"
-component_apps="cb3pp3"
-component_vb6="scripts"
-component_rssEx="rss_ex"
-component_xLive="xLive"
+component_ewcp="ewcp4"
+component_apps="cb3pp4"
+component_vb6="scripts4"
+component_rssEx="rss_ex4"
+component_xLive="xLive4"
 
 for i in ewcp apps vb6 rssEx xLive
 do

@@ -12,21 +12,21 @@
       <meta rel="mediaDisplay">onePartView</meta>
     </track>
     <track>
-      <link>http://127.0.0.1:82/rss_ex/www/cgi-bin/translate?app,Start:first;File:etc/menu/tvigle-index.xspf,collection/simplemenu</link>
+      <link>http://127.0.0.1:84/cgi-bin/translate?app,Start:first;File:etc/menu/tvigle-index.xspf,collection/simplemenu</link>
       <title>Tvigle</title>
       <annotation>Tvigle Media — медиакомпания нового поколения, производитель и дистрибьютор профессионального развлекательного videoконтента для New Media: интернета, мобильных сетей, цифровых телеканалов.</annotation>
       <image>../etc/translate/rss/image/menu/tvigle.png</image>
       <meta rel="mediaDisplay">onePartView</meta>
     </track>
     <track>
-      <link>http://127.0.0.1:82/rss_ex/www/cgi-bin/translate?app/ivi/index</link>
+      <link>http://127.0.0.1:84/cgi-bin/translate?app/ivi/index</link>
       <title>Ivi</title>
       <annotation>ivi.ru - первый в России бесплатный videoсервис с лицензионным полнометражным контентом. ivi.ru - это, пожалуй, самая большая коллекция лицензионного video российского интернета.</annotation>
       <image>../etc/translate/rss/image/menu/ivi.png</image>
       <meta rel="mediaDisplay">onePartView</meta>
     </track>
     <track>
-      <link>http://127.0.0.1:82/rss_ex/www/cgi-bin/translate?app,File:etc/menu/tv-other.xspf,collection/menulist</link>
+      <link>http://127.0.0.1:84/cgi-bin/translate?app,File:etc/menu/tv-other.xspf,collection/menulist</link>
       <title>Other</title>
       <annotation>Different lists of the Internet-TV</annotation>
       <image>../etc/translate/rss/image/menu/internettv.png</image>

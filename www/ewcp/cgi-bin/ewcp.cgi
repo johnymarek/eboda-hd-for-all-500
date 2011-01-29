@@ -126,8 +126,6 @@ if [ ${TO_WAIT} -gt -1 ]
 then
 cat <<EOF    
 Player will standby in ${TO_WAIT} minutes  <a href="util_standby-cancel.cgi">cancel timer</a>
-</td>
-                </tr>
 EOF
 
 else
@@ -135,19 +133,34 @@ else
 cat <<EOF
     Standby in
 EOF
-for i in 30 60 90 120
+for i in 30 60 90 120 180 240
 do cat <<EOF
  <a href="util_standby-${i}.cgi">$i</a>
 
 EOF
 done
 cat <<EOF
- minutes</td>
-                </tr>
+ minutes.
 
 EOF
 
 fi
+
+
+cat <<EOF
+</td>
+                </tr>
+                <tr>
+<td>
+ <a href="util_standby-now.cgi">Standby</a>
+ <a href="util_reset-now.cgi">Reset</a>
+
+
+</td>
+                </tr>
+
+EOF
+
 
 # name_apache="HTTP: Apache webserver"
 # name_transmission-daemon="TORRENT: Transmission"

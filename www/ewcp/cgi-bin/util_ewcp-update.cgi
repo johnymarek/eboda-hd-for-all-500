@@ -1,6 +1,6 @@
 #!/bin/sh
 
-component=ewcp3
+component=ewcp4
 description="E-boda Web Control Panel"
 
 basename $0 | grep -v \\-rss >/dev/null 2>&1 

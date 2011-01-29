@@ -166,7 +166,7 @@
     username = getStringArrayAt(optionsArray, 2);
   }
 
-  translateBaseURL = "http://127.0.0.1:82/rss_ex/www/cgi-bin/translate?";
+  translateBaseURL = "http://127.0.0.1:84/cgi-bin/translate?";
   cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
   if(cgiconf != null)
   {

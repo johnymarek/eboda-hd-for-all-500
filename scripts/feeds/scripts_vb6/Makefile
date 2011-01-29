@@ -3,13 +3,13 @@ clean:
 deliver: pack 
 
 
-	googlecode_upload.py -s scripts -p eboda-hd-for-all-500 scripts-latest.zip -u cipibad -w ${PASS}
+	googlecode_upload.py -s scripts -p eboda-hd-for-all-500 scripts-latest4.zip -u cipibad -w ${PASS}
 
-	googlecode_upload.py -s scripts -p eboda-hd-for-all-500 scripts-version.txt -u cipibad -w ${PASS}
+	googlecode_upload.py -s scripts -p eboda-hd-for-all-500 scripts-version4.txt -u cipibad -w ${PASS}
 
 
 pack:
-	find scripts | grep -v .svn |  grep -v ~$ | zip -9 scripts-latest.zip -@
+	find scripts | grep -v .svn |  grep -v ~$ | zip -9 scripts-latest4.zip -@
 
 
 

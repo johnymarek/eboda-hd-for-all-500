@@ -1,6 +1,6 @@
 #!/bin/sh
 
-component=xLive
+component=xLive4
 description="Xtreamer Live"
 
 basename $0 | grep -v \\-rss >/dev/null 2>&1 
