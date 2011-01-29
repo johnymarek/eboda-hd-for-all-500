@@ -24,7 +24,7 @@ $host = "http://127.0.0.1:82";
 -->
 
 <script>
-  translate_base_url  = "http://127.0.0.1:82/scripts/cgi-bin/translate?";
+  translate_base_url  = "http://127.0.0.1:83/cgi-bin/translate?";
 
   storagePath             = getStoragePath("tmp");
   storagePath_stream      = storagePath + "stream.dat";

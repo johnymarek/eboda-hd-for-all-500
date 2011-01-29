@@ -96,7 +96,7 @@ foreach($videos as $video) {
 	$data = str_replace("T"," ",$data);
 	$data = str_replace("Z","",$data);
 	$image = "http://i.ytimg.com/vi/".$id."/2.jpg";
-	$link = "http://127.0.0.1:82/scripts/cgi-bin/translate?stream,HD:1,http://www.youtube.com/watch?v=".$id;
+	$link = "http://127.0.0.1:83/cgi-bin/translate?stream,HD:1,http://www.youtube.com/watch?v=".$id;
 	echo '
 	<item>
 	<title>'.$title.'</title>

@@ -64,7 +64,7 @@ $id = str_between($video,"<id>http://gdata.youtube.com/feeds/api/videos/","</id>
 $title = str_between($video,"<title type='text'>","</title>");
 $data = str_between($video,"<updated>","</updated>");
 $image = "http://i.ytimg.com/vi/".$id."/2.jpg";
-$link = "http://127.0.0.1:82/scripts/cgi-bin/translate?stream,HD:1,http://www.youtube.com/watch?v=".$id;
+$link = "http://127.0.0.1:83/cgi-bin/translate?stream,HD:1,http://www.youtube.com/watch?v=".$id;
 echo '<item>';
 echo '<title>'.$title.'</title>';
 echo '<link>'.$link.'</link>';

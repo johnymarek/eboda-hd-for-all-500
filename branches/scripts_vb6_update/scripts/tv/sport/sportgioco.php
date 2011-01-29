@@ -51,10 +51,10 @@ foreach($videos as $video) {
 		if (strpos($link, "youtube") !== false) {
 			if (strpos($link, "&") === false) {
 			$v_id = substr(strrchr($link, "="), 1);
-			$link = "http://127.0.0.1:82/scripts/cgi-bin/translate?stream,HD:1,http://www.youtube.com/watch?v=".$v_id;
+			$link = "http://127.0.0.1:83/cgi-bin/translate?stream,HD:1,http://www.youtube.com/watch?v=".$v_id;
 		} else {
 			$v_id = str_between($link,'v=','&');
-			$link = "http://127.0.0.1:82/scripts/cgi-bin/translate?stream,HD:1,http://www.youtube.com/watch?v=".$v_id;
+			$link = "http://127.0.0.1:83/cgi-bin/translate?stream,HD:1,http://www.youtube.com/watch?v=".$v_id;
 		}
     	echo '<item>';
     	echo '<title>'.$title.'</title>';

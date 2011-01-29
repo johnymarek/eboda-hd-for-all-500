@@ -193,7 +193,7 @@ foreach($videos as $video) {
   $title = $t3[0];
   $title = trim($title);
   if ($title <> "") {
-  $link = "http://127.0.0.1:82/scripts/cgi-bin/translate?stream,HD:1,http://vimeo.com/".$link;
+  $link = "http://127.0.0.1:83/cgi-bin/translate?stream,HD:1,http://vimeo.com/".$link;
 	echo'
 	<item>
 	<title>'.$title.'</title>
@@ -232,7 +232,7 @@ foreach($videos as $video) {
   $title = trim($title);
   }
   if ($title <> "") {
-  $link = "http://127.0.0.1:82/scripts/cgi-bin/translate?stream,HD:1,http://vimeo.com/".$link;
+  $link = "http://127.0.0.1:83/cgi-bin/translate?stream,HD:1,http://vimeo.com/".$link;
 	echo'
 	<item>
 	<title>'.$title.'</title>

@@ -148,7 +148,7 @@ foreach($videos as $video) {
     $link = $server.str_between($video,"<location>","</location>");
     //$link = str_replace(' ','%20',$link);
     //$link = "http://127.0.0.1/cgi-bin/rtmp?".$link;
-    $link = "http://127.0.0.1:82/scripts/cgi-bin/translate?stream,Content-type:video/mp4,".$link;
+    $link = "http://127.0.0.1:83/cgi-bin/translate?stream,Content-type:video/mp4,".$link;
     $title = str_between($video,"<title>","</title>");
     echo '
     <item>

@@ -66,7 +66,7 @@ function str_between($string, $start, $end){
 }
 $id = $_GET["id"];
 $lastlink = "abc";
-$baseurl = "http://127.0.0.1:82/scripts/cgi-bin/translate?stream,Content-type:video/x-flv,";
+$baseurl = "http://127.0.0.1:83/cgi-bin/translate?stream,Content-type:video/x-flv,";
 	 //$link = "http://estosesale.com/mvpremiumoriginal.php?video_id=".$id;
 	 $link = "http://titooo.net23.net/megavideo/mvpremiumoriginal.php?video_id=".$id;
    $title = "megavideo (premium) - file=".$id;

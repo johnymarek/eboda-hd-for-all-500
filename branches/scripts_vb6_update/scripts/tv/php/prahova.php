@@ -107,7 +107,7 @@ foreach($videos as $video) {
   $file = str_between($video,"playfile=","&");
   //$file = str_replace(" ","%20",$file);
   $link = "rtmp://".$server."/vod/".$file;
-  $link = "http://127.0.0.1:82/scripts/cgi-bin/translate?stream,Content-type:video/mp4,".$link;
+  $link = "http://127.0.0.1:83/cgi-bin/translate?stream,Content-type:video/mp4,".$link;
   $title = str_between($video,"<h2>","</h2>");
       echo '
     <item>
