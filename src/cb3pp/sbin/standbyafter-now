@@ -1,0 +1,38 @@
+#!/bin/sh
+
+to_wait=0
+minute=60 #seconds
+
+cat >/tmp/standby_status<<EOF
+TO_WAIT=${to_wait}
+EOF
+
+while [ ${to_wait} -ne 0 ]
+do
+    sleep ${minute}
+    let to_wait-=1
+    cat >/tmp/standby_status<<EOF
+TO_WAIT=${to_wait}
+EOF
+done
+
+#hardcode gracefull transmission shutdown (for now)
+killall transmission-daemon
+sleep 10
+/cb3pp/sbin/standby
+
+# n=1
+# mount | grep ${mount_pattern}
+# while [ $? -ne 0 ] ; do
+# sleep 3
+# [ $n -gt 30 ] && break
+# let n+=1
+# echo "#waiting for hdd.."
+# mount | grep ${mount_pattern}
+# done
+
+# if [ $n -gt 30 ]
+# then
+# 	echo no storage found, nothing to do ...
+# else
+# #storage online !! go go go
