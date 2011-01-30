@@ -28,10 +28,11 @@
     <track>
       <link>http://127.0.0.1:84/cgi-bin/translate?app,File:etc/playlists/video-rss_collections.xspf,collection/medialist</link>
       <title>RSS Media Feeds</title>
-      <annotation>RSS-ленты - ivi.ru, tvigle.ru, mults.spb.ru, vimeo.com</annotation>
+      <annotation>RSS-ленты - ivi.ru, tvigle.ru, mults.spb.ru, vimeo.com, трансляции rutube.ru</annotation>
       <image>../etc/translate/rss/image/menu/rss.png</image>
       <meta rel="mediaDisplay">onePartView</meta>
     </track>
+<!--    
     <track>
       <link>http://127.0.0.1:84/cgi-bin/translate?app,File:etc/playlists/tv-my_favorites.xspf,collection/medialist</link>
       <title>my favorites</title>
@@ -39,6 +40,7 @@
       <image>../etc/translate/rss/image/menu/internettv.png</image>
       <meta rel="mediaDisplay">onePartView</meta>
     </track>
+-->    
   </trackList>
 
 </playlist>

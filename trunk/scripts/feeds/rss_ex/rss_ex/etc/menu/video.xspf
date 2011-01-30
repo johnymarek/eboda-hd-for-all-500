@@ -5,6 +5,13 @@
 
   <trackList>
     <track>
+      <link>rss_file://../etc/translate/rss/rutube/rutube_categories.rss</link>
+      <title>RuTube</title>
+      <annotation>На RuTube Вы всегда сможете найти интересные ролики, новые клипы, anime и другое интересное video.</annotation>
+      <image>../etc/translate/rss/image/menu/rutube.png</image>
+      <meta rel="mediaDisplay">threePartsView</meta>
+    </track>
+    <track>
       <link>rss_file://../etc/translate/rss/youtube/yt_index.rss</link>
       <title>YouTube</title>
       <annotation>Founded in February 2005, YouTube is the world's most popular online video community, allowing millions of people to discover, watch and share originally-created videos.</annotation>

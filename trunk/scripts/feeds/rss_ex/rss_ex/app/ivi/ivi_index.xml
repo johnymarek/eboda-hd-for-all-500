@@ -166,7 +166,7 @@
        arr = null;
        arr = pushBackStringArray(arr, getItemInfo(focus, "feedPath"));
        arr = pushBackStringArray(arr, getItemInfo(focus, "feedTitle"));
-       writeStringToFile(storagePath, arr);
+       writeStringToFile(storagePath + "stream.dat", arr);
 	     focus = getFocusItemIndex();
 	     if(getItemInfo(focus, "feedPath") == "/")
 	       linkurl = "rss_file://../etc/translate/app/ivi/ivi_feed_main.xml";
@@ -210,7 +210,7 @@
   }
   print("rssconf:",screenXp,screenYp);
   
-  storagePath = getStoragePath("tmp") + "stream.dat";
+  storagePath = getStoragePath("tmp");
 </onEnter>
 
 <!--`cat "$CHANNELFILE"`-->

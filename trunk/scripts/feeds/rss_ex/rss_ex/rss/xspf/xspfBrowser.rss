@@ -35,10 +35,6 @@
 	itemYPC="13"
 	itemWidthPC="60"
 	itemHeightPC="7"
-	capXPC="10"
-	capYPC="13"
-	capWidthPC="60"
-	capHeightPC="7"
 	itemBackgroundColor="0:0:0"
 	itemPerPage="10"
   itemGap="0"
@@ -101,20 +97,25 @@
     <script>errorInfo;</script>
   </text>
 
-  <text redraw="yes" offsetXPC="10" offsetYPC="85" widthPC="10" heightPC="5" fontSize="20" backgroundColor="0:0:0" foregroundColor="100:100:100">
+  <text redraw="yes" offsetXPC="0" offsetYPC="84" heightPC="2" fontSize="10" backgroundColor="0:100:155" foregroundColor="0:200:255">
+		<widthPC><script>print(loadingProgress); Integer(loadingProgress);</script></widthPC>
+	</text>
+	
+  <text redraw="yes" offsetXPC="10" offsetYPC="86" widthPC="10" heightPC="5" fontSize="20" backgroundColor="0:0:0" foregroundColor="100:100:100">
     <script>elapsedTime;</script>
   </text>
-  <text redraw="yes" offsetXPC="20" offsetYPC="85" widthPC="70" heightPC="5" fontSize="14" backgroundColor="0:0:0" foregroundColor="255:255:255" align="left">
+  <text redraw="yes" offsetXPC="20" offsetYPC="86" widthPC="70" heightPC="5" fontSize="14" backgroundColor="0:0:0" foregroundColor="255:255:255" align="left">
     <script>playTitle;</script>
   </text>
-  <text redraw="yes" offsetXPC="20" offsetYPC="90" widthPC="59" heightPC="5" fontSize="14" backgroundColor="0:0:0" foregroundColor="100:100:100" align="left">
+  <text redraw="yes" offsetXPC="20" offsetYPC="91" widthPC="59" heightPC="5" fontSize="14" backgroundColor="0:0:0" foregroundColor="100:100:100" align="left">
     <script>playSong;</script>
   </text>
 
-  <text redraw="no" offsetXPC="79" offsetYPC="90" widthPC="8" heightPC="5" fontSize="16" backgroundColor="0:0:0" foregroundColor="40:200:200">Repeat:</text>
-  <text redraw="yes" offsetXPC="87" offsetYPC="90" widthPC="13" heightPC="5" fontSize="16" backgroundColor="0:0:0" foregroundColor="200:200:200">
+  <text redraw="no" offsetXPC="79" offsetYPC="91" widthPC="8" heightPC="5" fontSize="16" backgroundColor="0:0:0" foregroundColor="40:200:200">Repeat:</text>
+  <text redraw="yes" offsetXPC="87" offsetYPC="91" widthPC="13" heightPC="5" fontSize="16" backgroundColor="0:0:0" foregroundColor="200:200:200">
     <script>repeat;</script>
   </text>
+
 
 	<itemDisplay>
 		<image offsetXPC="8" offsetYPC="0" widthPC="92" heightPC="100">
@@ -428,11 +429,255 @@
   randomIndex = -1;
 
   history = -1;
+  loadingProgress = 0;
   executeScript("sub_refreshList");
 </onEnter>
 
+<sub_doRefreshList>
+  length = getXMLElementCount("playlist","trackList","track");
+	if(length == 0)
+	{
+    errorInfo = "Empty list!";
+	  postMessage("return");
+	}
+	count=startItem;
+	while(length != 0)
+	{
+	  loadingProgress = Integer(count * 100 / length);
+	  location = getXMLText("playlist","trackList","track",count,"location");
+		title = getXMLText("playlist","trackList","track",count,"title");
+		if(title == null)
+		{
+  		annotation = getXMLText("playlist","trackList","track",count,"annotation");
+  		if(annotation != null)
+  		{
+  		  title = annotation;
+  		}
+  	  else
+  	  {
+  		  title = location;
+    	}
+		}
+		else
+		{ 
+  		creator = getXMLText("playlist","trackList","track",count,"creator");
+		  if (creator != null)
+		  {
+		    title = creator + " - " + title;
+		  }
+		}
+	  url = location;
+	  image = getXMLText("playlist","trackList","track",count,"image");
+	  option = "";
+    class = "auto";
+    protocol = "";
+    type = "";
+	  
+	  metaSize = getXMLElementCount("playlist","trackList","track",count,"meta")-1;
+  	while(metaSize &gt;= 0)
+  	{
+	    meta = getXMLText("playlist","trackList","track",count,"meta", metaSize);
+  	  rel = getXMLAttribute("playlist","trackList","track",count,"meta",metaSize,"rel");
+  	  if(rel == "class") 
+  	  {
+  	    class = meta;  
+  	  }
+  	  else if (rel == "ext")
+  	  {
+	      if(meta == "mp3" || meta == "mp2" || meta == "mpga")
+	      {
+  	      class = "audio";
+	        type = "audio/mpeg";
+	      }
+	      else if (meta == "ogg")
+	      {
+  	      class = "audio";
+	        type = "application/ogg";
+	      }
+	      else if (meta == "flac")
+	      {
+  	      class = "audio";
+	        type = "";
+	      }
+	      else if (meta == "wav")
+	      {
+  	      class = "audio";
+	        type = "audio/wav";
+	      }
+	      else if (meta == "wma" || meta == "wax")
+	      {
+  	      class = "audio";
+	        type = "audio/x-ms-" + meta;
+	      }
+	      else if (meta == "m4a" || meta == "mp4a")
+	      {
+  	      class = "audio";
+	        type = "audio/mp4";
+	      }
+	      
+	      else if (meta == "avi" || meta == "mpeg" || meta == "mpg" || meta == "mpe")
+	      {
+  	      class = "video";
+	        type = "video/mpeg";
+	      }
+	      else if (meta == "mkv")
+	      {
+  	      class = "video";
+	        type = "";
+	      }
+	      else if (meta == "wmv" || meta == "wvx" || meta == "wm" || meta == "wmx")
+	      {
+  	      class = "video";
+	        type = "video/x-ms-" + meta;
+	      }
+	      else if (meta == "flv")
+	      {
+  	      class = "video";
+	        type = "video/x-flv";
+	      }
+	      else if (meta == "qt" || meta == "mov")
+	      {
+  	      class = "video";
+	        type = "video/quicktime";
+	      }
+	      else if (meta == "asf" || meta == "asx")
+	      {
+  	      class = "video";
+	        type = "video/x-ms-asf";
+	      }
+	      else if (meta == "mp4" || meta == "m4v" || meta == "mp4v" || meta == "mpg4")
+	      {
+  	      class = "video";
+	        type = "video/mp4";
+	      }
+
+	      else if (meta == "xspf")
+	      {
+  	      class = "playlist";
+	        type = "application/xspf+xml";
+	      }
+	      else if (meta == "m3u")
+	      {
+  	      class = "playlist";
+	        type = "audio/x-mpegurl";
+	      }
+	      else if (meta == "pls")
+	      {
+  	      class = "playlist";
+	        type = "audio/x-scpls";
+	      }
+	      else if (meta == "cue")
+	      {
+  	      class = "cue";
+	        type = "text/plain";
+	      }
+	      else if (meta == "rss")
+	      {
+  	      class = "rss";
+	        type = "application/rss+xml";
+	      }
+	      else if (meta == "png" || meta == "gif" || meta == "bmp")
+	      {
+  	      class = "image";
+	        type = "image/"+meta;
+	      }
+	      else if (meta == "jpg" || meta == "jpeg" || meta == "jpe")
+	      {
+  	      class = "image";
+	        type = "image/jpeg";
+	      }
+	      else if (meta == "txt")
+	      {
+  	      class = "text";
+	        type = "text/plain";
+	      }
+  	  }
+  	  else if(rel == "translate")
+  	  {
+  	    option = meta;  
+  	  }
+  	  else if(rel == "protocol")
+  	  {
+  	    protocol = meta;  
+  	  }
+  	  else if(rel == "streamer")
+  	  {
+  	    url = meta + location;
+  	  }
+  	  metaSize = metaSize - 1;
+  	}
+  	
+  	if(protocol == "file" || protocol == "ftp")
+  	{
+    	if(type != "")
+    	{
+    	  type = "Content-type:" + type;
+      	if(option == "")
+      	  option = type;
+      	else
+      	  option = type + ";" + option;
+      }
+    }
+    else
+    {
+      class = "";
+    }
+	  
+	  titleArray    = pushBackStringArray(titleArray, title);
+	  urlArray      = pushBackStringArray(urlArray, url);
+	  classArray    = pushBackStringArray(classArray, class);
+	  protocolArray = pushBackStringArray(protocolArray, protocol);
+	  optionArray   = pushBackStringArray(optionArray, option);
+	  imageArray    = pushBackStringArray(imageArray, image);
+	  
+	  count += 1;
+	  if (count == length || count == (startItem+50))
+	  {
+		  break;
+	  }
+	}
+	itemSize = count;
+	print("Item Size = ", itemSize);
+	if(count == length)
+	{
+	  cancelIdle();
+  	waitForRefreshList = 0;
+  	setRefreshTime(-1);
+  	loadingProgress = 0;
+  	setFocusItemIndex(currentIndex);
+  	setItemFocus(currentIndex);
+
+    elapsedTime = "";
+	  print("Refresh list done!", itemSize);
+
+    if(autoplay == 1)
+    {
+      autoplay = 0;
+      idx = currentIndex;
+      executeScript("sub_clickItem");
+    }
+    else
+    {
+      if(playStatus != 0)
+      {
+        setRefreshTime(1000);
+      }
+    }
+	}
+	else
+	{
+ 	  setRefreshTime(10);
+    startItem = count;
+	}
+</sub_doRefreshList>
+
+
 <sub_refreshList>
   print("sub_refreshList start");
+    cancelIdle();
+  	waitForRefreshList = 0;
+  	setRefreshTime(-1);
+  	
     pageTitle = currentTitle;
     
     print("PWD: ",currentPwd);
@@ -468,230 +713,14 @@
     	if(playStatus == 0)
     	  pageLogo = playlistLogo;
 
-    	itemSize = getXMLElementCount("playlist","trackList","track");
-    	if(itemSize == 0)
-    	{
-        errorInfo = "Empty list!";
-    	  postMessage("return");
-    	}
-    	print("Item Size = ", itemSize);
-    	
-    	count=0;
-    	while(itemSize != 0)
-    	{
-    	  location = getXMLText("playlist","trackList","track",count,"location");
-    		title = getXMLText("playlist","trackList","track",count,"title");
-    		if(title == null)
-    		{
-      		annotation = getXMLText("playlist","trackList","track",count,"annotation");
-      		if(annotation != null)
-      		{
-      		  title = annotation;
-      		}
-      	  else
-      	  {
-      		  title = location;
-        	}
-    		}
-    		else
-    		{ 
-      		creator = getXMLText("playlist","trackList","track",count,"creator");
-    		  if (creator != null)
-    		  {
-    		    title = creator + " - " + title;
-    		  }
-    		}
-    	  url = location;
-    	  image = getXMLText("playlist","trackList","track",count,"image");
-    	  option = "";
-  	    class = "auto";
-  	    protocol = "";
-  	    type = "";
-    	  
-    	  metaSize = getXMLElementCount("playlist","trackList","track",count,"meta")-1;
-      	while(metaSize &gt;= 0)
-      	{
-    	    meta = getXMLText("playlist","trackList","track",count,"meta", metaSize);
-      	  rel = getXMLAttribute("playlist","trackList","track",count,"meta",metaSize,"rel");
-      	  if(rel == "class") 
-      	  {
-      	    class = meta;  
-      	  }
-      	  else if (rel == "ext")
-      	  {
-    	      if(meta == "mp3" || meta == "mp2" || meta == "mpga")
-    	      {
-      	      class = "audio";
-    	        type = "audio/mpeg";
-    	      }
-    	      else if (meta == "ogg")
-    	      {
-      	      class = "audio";
-    	        type = "application/ogg";
-    	      }
-    	      else if (meta == "flac")
-    	      {
-      	      class = "audio";
-    	        type = "";
-    	      }
-    	      else if (meta == "wav")
-    	      {
-      	      class = "audio";
-    	        type = "audio/wav";
-    	      }
-    	      else if (meta == "wma" || meta == "wax")
-    	      {
-      	      class = "audio";
-    	        type = "audio/x-ms-" + meta;
-    	      }
-    	      else if (meta == "m4a" || meta == "mp4a")
-    	      {
-      	      class = "audio";
-    	        type = "audio/mp4";
-    	      }
-    	      
-    	      else if (meta == "avi" || meta == "mpeg" || meta == "mpg" || meta == "mpe")
-    	      {
-      	      class = "video";
-    	        type = "video/mpeg";
-    	      }
-    	      else if (meta == "mkv")
-    	      {
-      	      class = "video";
-    	        type = "";
-    	      }
-    	      else if (meta == "wmv" || meta == "wvx" || meta == "wm" || meta == "wmx")
-    	      {
-      	      class = "video";
-    	        type = "video/x-ms-" + meta;
-    	      }
-    	      else if (meta == "flv")
-    	      {
-      	      class = "video";
-    	        type = "video/x-flv";
-    	      }
-    	      else if (meta == "qt" || meta == "mov")
-    	      {
-      	      class = "video";
-    	        type = "video/quicktime";
-    	      }
-    	      else if (meta == "asf" || meta == "asx")
-    	      {
-      	      class = "video";
-    	        type = "video/x-ms-asf";
-    	      }
-    	      else if (meta == "mp4" || meta == "m4v" || meta == "mp4v" || meta == "mpg4")
-    	      {
-      	      class = "video";
-    	        type = "video/mp4";
-    	      }
-
-    	      else if (meta == "xspf")
-    	      {
-      	      class = "playlist";
-    	        type = "application/xspf+xml";
-    	      }
-    	      else if (meta == "m3u")
-    	      {
-      	      class = "playlist";
-    	        type = "audio/x-mpegurl";
-    	      }
-    	      else if (meta == "pls")
-    	      {
-      	      class = "playlist";
-    	        type = "audio/x-scpls";
-    	      }
-    	      else if (meta == "cue")
-    	      {
-      	      class = "cue";
-    	        type = "text/plain";
-    	      }
-    	      else if (meta == "rss")
-    	      {
-      	      class = "rss";
-    	        type = "application/rss+xml";
-    	      }
-    	      else if (meta == "png" || meta == "gif" || meta == "bmp")
-    	      {
-      	      class = "image";
-    	        type = "image/"+meta;
-    	      }
-    	      else if (meta == "jpg" || meta == "jpeg" || meta == "jpe")
-    	      {
-      	      class = "image";
-    	        type = "image/jpeg";
-    	      }
-    	      else if (meta == "txt")
-    	      {
-      	      class = "text";
-    	        type = "text/plain";
-    	      }
-      	  }
-      	  else if(rel == "translate")
-      	  {
-      	    option = meta;  
-      	  }
-      	  else if(rel == "protocol")
-      	  {
-      	    protocol = meta;  
-      	  }
-      	  else if(rel == "streamer")
-      	  {
-      	    url = meta + location;
-      	  }
-      	  metaSize = metaSize - 1;
-      	}
-      	
-      	if(protocol == "file" || protocol == "ftp")
-      	{
-        	if(type != "")
-        	{
-        	  type = "Content-type:" + type;
-          	if(option == "")
-          	  option = type;
-          	else
-          	  option = type + ";" + option;
-          }
-        }
-        else
-        {
-          class = "";
-        }
-    	  
-    	  titleArray    = pushBackStringArray(titleArray, title);
-    	  urlArray      = pushBackStringArray(urlArray, url);
-    	  classArray    = pushBackStringArray(classArray, class);
-    	  protocolArray = pushBackStringArray(protocolArray, protocol);
-    	  optionArray   = pushBackStringArray(optionArray, option);
-    	  imageArray    = pushBackStringArray(imageArray, image);
-    	  
-    	  count += 1;
-    	  if (count == itemSize)
-    	  {
-    		  break;
-    	  }
-    	}
-
-    	print("title array =", titleArray);
-    	print("url array =", urlArray);
-    	print("class array =", classArray);
-    	print("protocol array =", protocolArray);
-    	print("option array =", optionArray);
-    	print("image array =", imageArray);
-
-    	setFocusItemIndex(currentIndex);
-    	setItemFocus(currentIndex);
-
       randomArray = null;
       
-    	redrawDisplay();
-
-      if(autoplay == 1)
-      {
-        autoplay = 0;
-        idx = currentIndex;
-        executeScript("sub_clickItem");
-      }
+      elapsedTime = "Wait ...";
+      showIdle();
+    	waitForRefreshList = 1;
+    	startItem = 0;
+    	itemSize = 0;
+    	setRefreshTime(1);
     }
     else
     {
@@ -704,316 +733,319 @@
 <sub_clickItem>
   print("sub_clickItem start", idx);
   
-  if(currentPwd != playContext || idx != playIndex)
+  if(waitForRefreshList == 0)
   {
-    class = getStringArrayAt(classArray, idx);
-    protocol = getStringArrayAt(protocolArray, idx);
-    url = getStringArrayAt(urlArray, idx);
-    title = getStringArrayAt(titleArray, idx);
-    options = getStringArrayAt(optionArray, idx);
-    image = getStringArrayAt(imageArray, idx);
-    server_url = null;
-    soft = null;
-    statusUrl = null;
-    
-    error = 0;
-    errorInfo = "";
-    
-    translateUrl = translateBaseURL + "stream," + options + "," + urlEncode(url);
-    
-    print(class);
-    print(protocol);
-    print(url);
-    
-    streamTitle = title;
-    streamGenre = "";
-    streamBitrate = "";
-    currentSong = "";
-    
-    if(class == "auto" || class == "" || (protocol != "file" &amp;&amp; protocol != "ftp"))
+    if(currentPwd != playContext || idx != playIndex)
     {
-      infoUrl = translateBaseURL + "info," + options + "," + urlEncode(url);
+      class = getStringArrayAt(classArray, idx);
+      protocol = getStringArrayAt(protocolArray, idx);
+      url = getStringArrayAt(urlArray, idx);
+      title = getStringArrayAt(titleArray, idx);
+      options = getStringArrayAt(optionArray, idx);
+      image = getStringArrayAt(imageArray, idx);
+      server_url = null;
+      soft = null;
+      statusUrl = null;
       
-      print("Info:",infoUrl);
+      error = 0;
+      errorInfo = "";
       
-      writeStringToFile(storagePath_streamInfo, "");
+      translateUrl = translateBaseURL + "stream," + options + "," + urlEncode(url);
       
-      dlok = loadXMLFile(infoUrl);
-      if (dlok != null)
+      print(class);
+      print(protocol);
+      print(url);
+      
+      streamTitle = title;
+      streamGenre = "";
+      streamBitrate = "";
+      currentSong = "";
+      
+      if(class == "auto" || class == "" || (protocol != "file" &amp;&amp; protocol != "ftp"))
       {
-        error = getXMLElementCount("info","error");
+        infoUrl = translateBaseURL + "info," + options + "," + urlEncode(url);
         
-        if(error != 0)
+        print("Info:",infoUrl);
+        
+        writeStringToFile(storagePath_streamInfo, "");
+        
+        dlok = loadXMLFile(infoUrl);
+        if (dlok != null)
         {
-    	    value = getXMLText("info","error");
-    	    if(value != null)
+          error = getXMLElementCount("info","error");
+          
+          if(error != 0)
+          {
+      	    value = getXMLText("info","error");
+      	    if(value != null)
+      	    {
+      	     errorInfo = value;
+      	    }
+          }
+          else
+          {
+      	    value = getXMLAttribute("info","stream","url");
+      	    if(value != null)
+      	     url = value;
+    
+      	    value = getXMLAttribute("info","stream","type");
+      	    if(value != null)
+      	     type = value;
+      	    
+      	    value = getXMLAttribute("info","stream","class");
+      	    if(value != null)
+      	     class = value;
+    
+      	    value = getXMLAttribute("info","stream","protocol");
+      	    if(value != null)
+      	     protocol = value;
+    
+      	    value = getXMLAttribute("info","stream","server");
+      	    if(value != null)
+      	     soft = value;
+    
+      	    value = getXMLAttribute("info","stream","server_url");
+      	    if(value != null)
+      	    {
+      	     server_url = value;
+      	     if(soft == "icecast" || soft == "shoutcast")
+      	     {
+        	      statusUrl = translateBaseURL+"status,"+server_url+","+urlEncode(url);
+        	   }
+      	    }
+      	     
+            value = getXMLText("info","status","stream-title");
+      	    if(value != null)
+      	     streamTitle = value;
+    
+      	    value = getXMLText("info","status","current-song");
+      	    if(value != null)
+        		  currentSong = value;
+        		  
+      	    value = getXMLText("info","status","stream-genre");
+      	    if(value != null)
+      	      streamGenre = value;
+            
+      	    value = getXMLText("info","status","stream-bitrate");
+      	    if(value != null)
+      	      streamBitrate = value;
+  
+            streamoptions = "";
+            
+            if(type != "")
+              streamoptions = "Content-type:"+type;
+            
+            if(streamoptions == "")
+              streamoptions = options;
+            else
+              streamoptions = streamoptions + ";" + options;
+  
+      	    translateUrl = translateBaseURL + "stream," + streamoptions + "," + urlEncode(url);
+    
+            streamArray = null;
+             
+            streamArray = pushBackStringArray(streamArray, url);
+            streamArray = pushBackStringArray(streamArray, type);
+            streamArray = pushBackStringArray(streamArray, class);
+            streamArray = pushBackStringArray(streamArray, protocol);
+            streamArray = pushBackStringArray(streamArray, soft);
+            streamArray = pushBackStringArray(streamArray, server_url);
+            streamArray = pushBackStringArray(streamArray, translateUrl);
+            
+            writeStringToFile(storagePath_streamInfo, streamArray);
+          }
+        }
+      }
+  
+      if(error == 0)
+      {
+        if(class == "directory" || class == "playlist")
+        {
+          done = 0;
+        
+          if(title == ".." &amp;&amp; history &gt;= 0)
+          {
+            pwd = getStringArrayAt(historyPwd, history);
+            if(pwd == url)
+            {
+              postMessage("return");
+              done = 1;
+            }
+          }
+          
+          if(done == 0)
+          {
+            currentIndex = getFocusItemIndex();
+            
+            history += 1;
+            historyPwd      = pushBackStringArray(historyPwd, currentPwd);
+            historyTitle    = pushBackStringArray(historyTitle, currentTitle);
+            historyImage    = pushBackStringArray(historyImage, currentImage);
+            historyOptions  = pushBackStringArray(historyOptions, currentOptions);
+            historyCommand  = pushBackStringArray(historyCommand, currentCommand);
+            historyIndex    = pushBackStringArray(historyIndex, currentIndex);
+            historyProtocol = pushBackStringArray(historyProtocol, currentProtocol);
+            
+            print("********** history:",history,historyPwd);
+      
+            currentPwd = url;
+            if(title == "..")
+              currentTitle = url;
+            else
+              currentTitle = title;
+            currentImage    = image;
+            print("########### ",currentCommand,class);
+            if(currentCommand != "directory" &amp;&amp; class == "directory")
+              options = "Chroot:yes;" + options;
+            currentOptions  = options;
+            currentCommand  = class;
+            currentIndex    = 0;
+            currentProtocol = protocol;
+            
+            executeScript("sub_refreshList");
+          }
+        }
+        else if(class == "video")
+        {
+          executeScript("sub_stopPlayback");
+          
+          if(image == "")
+            image = playlistLogo;
+            
+          print("!!!!!!!!!! image:",image);
+          
+          if(pageLogo != image &amp;&amp; image != "")
+          {
+            pageLogo = image;
+          }
+          if(protocol == "file" || protocol == "http")
+          {
+            urlToPlay = url;
+          }
+          else
+          {
+            urlToPlay = translateUrl;
+          }
+          playIndex = idx;
+          playContext = currentPwd;
+          
+          setRefreshTime(1000);
+      
+          playItemURL(urlToPlay, 0);
+          print("play:",urlToPlay);
+        }
+        else if(class == "audio")
+        {
+          executeScript("sub_stopPlayback");
+        
+          if(protocol == "file" || (protocol == "http" &amp;&amp; soft != "shoutcast"))
+          {
+            urlToPlay = url;
+          }
+          else
+          {
+            urlToPlay = translateUrl;
+          }
+          
+          if(image == "")
+          {
+            if(soft == "icecast" || soft == "shoutcast" || protocol == "rtsp" || protocol == "mms" || protocol == "mmsh" || protocol == "mmst")
+              image = "../etc/translate/rss/image/radio_online.png";
+            else
+              image = playlistLogo;
+          }
+            
+          print("!!!!!!!!!! image:",image);
+          
+          if(pageLogo != image &amp;&amp; image != "")
+          {
+            pageLogo = image;
+          }
+          
+          playTitle   = streamTitle;
+          playSong    = currentSong;
+          playIndex   = idx;
+          playContext = currentPwd;
+          
+  		    if(streamBitrate != "")
     	    {
-    	     errorInfo = value;
-    	    }
+    	      title_1 = "Bitrate:";
+    		    info_1 = streamBitrate;
+    		  }
+  		    if(streamGenre != "")
+    	    {
+    	      title_2 = "Genre:";
+    		    info_2 = streamGenre;
+    		  }
+    		  
+    		  elapsedTime = "Wait ...";
+    		  
+          setRefreshTime(1000);
+          showIdle();
+          playItemURL(urlToPlay, 0, "mediaDisplay", "previewWindow");
+          print("play:",urlToPlay);
+          redrawDisplay();
+        }
+        else if(class == "image")
+        {
+          if(protocol == "file" || protocol == "http")        
+          {
+            pageLogo = url;
+          }
+          else
+          {
+            pageLogo = translateUrl;
+          }
+          playlistLogo = pageLogo;
+          print("image:",pageLogo);
+          redrawDisplay();
         }
         else
         {
-    	    value = getXMLAttribute("info","stream","url");
-    	    if(value != null)
-    	     url = value;
-  
-    	    value = getXMLAttribute("info","stream","type");
-    	    if(value != null)
-    	     type = value;
-    	    
-    	    value = getXMLAttribute("info","stream","class");
-    	    if(value != null)
-    	     class = value;
-  
-    	    value = getXMLAttribute("info","stream","protocol");
-    	    if(value != null)
-    	     protocol = value;
-  
-    	    value = getXMLAttribute("info","stream","server");
-    	    if(value != null)
-    	     soft = value;
-  
-    	    value = getXMLAttribute("info","stream","server_url");
-    	    if(value != null)
-    	    {
-    	     server_url = value;
-    	     if(soft == "icecast" || soft == "shoutcast")
-    	     {
-      	      statusUrl = translateBaseURL+"status,"+server_url+","+urlEncode(url);
-      	   }
-    	    }
-    	     
-          value = getXMLText("info","status","stream-title");
-    	    if(value != null)
-    	     streamTitle = value;
-  
-    	    value = getXMLText("info","status","current-song");
-    	    if(value != null)
-      		  currentSong = value;
-      		  
-    	    value = getXMLText("info","status","stream-genre");
-    	    if(value != null)
-    	      streamGenre = value;
-          
-    	    value = getXMLText("info","status","stream-bitrate");
-    	    if(value != null)
-    	      streamBitrate = value;
-
-          streamoptions = "";
-          
-          if(type != "")
-            streamoptions = "Content-type:"+type;
-          
-          if(streamoptions == "")
-            streamoptions = options;
-          else
-            streamoptions = streamoptions + ";" + options;
-
-    	    translateUrl = translateBaseURL + "stream," + streamoptions + "," + urlEncode(url);
-  
           streamArray = null;
            
           streamArray = pushBackStringArray(streamArray, url);
-          streamArray = pushBackStringArray(streamArray, type);
-          streamArray = pushBackStringArray(streamArray, class);
-          streamArray = pushBackStringArray(streamArray, protocol);
-          streamArray = pushBackStringArray(streamArray, soft);
-          streamArray = pushBackStringArray(streamArray, server_url);
-          streamArray = pushBackStringArray(streamArray, translateUrl);
+          streamArray = pushBackStringArray(streamArray, title);
+          streamArray = pushBackStringArray(streamArray, image);
+          streamArray = pushBackStringArray(streamArray, options);
           
-          writeStringToFile(storagePath_streamInfo, streamArray);
-        }
-      }
-    }
-
-    if(error == 0)
-    {
-      if(class == "directory" || class == "playlist")
-      {
-        done = 0;
-      
-        if(title == ".." &amp;&amp; history &gt;= 0)
-        {
-          pwd = getStringArrayAt(historyPwd, history);
-          if(pwd == url)
+          writeStringToFile(storagePath_stream, streamArray);
+    
+          if(class == "cue")
           {
-            postMessage("return");
-            done = 1;
+            gotoUrl = "rss_file://../etc/translate/rss/xspf/cue_Player.rss";
+          }
+          else
+          if(class == "rss")
+          {
+            gotoUrl = "rss_file://../etc/translate/rss/xspf/rss_mediaFeed.rss";
+          }
+          else
+          if(class == "renderer")
+          {
+            gotoUrl = "rss_file://../etc/translate/rss/xspf/streamRenderer.rss";
+          }
+          else
+          {
+            gotoUrl = "";
+            errorInfo = "Unsupported content type (" + type + ")!";
+          }
+          if(gotoUrl != "")
+          {
+            executeScript("sub_stopPlayback");
+            doModalRss(gotoUrl);
           }
         }
-        
-        if(done == 0)
-        {
-          currentIndex = getFocusItemIndex();
-          
-          history += 1;
-          historyPwd      = pushBackStringArray(historyPwd, currentPwd);
-          historyTitle    = pushBackStringArray(historyTitle, currentTitle);
-          historyImage    = pushBackStringArray(historyImage, currentImage);
-          historyOptions  = pushBackStringArray(historyOptions, currentOptions);
-          historyCommand  = pushBackStringArray(historyCommand, currentCommand);
-          historyIndex    = pushBackStringArray(historyIndex, currentIndex);
-          historyProtocol = pushBackStringArray(historyProtocol, currentProtocol);
-          
-          print("********** history:",history,historyPwd);
-    
-          currentPwd = url;
-          if(title == "..")
-            currentTitle = url;
-          else
-            currentTitle = title;
-          currentImage    = image;
-          print("########### ",currentCommand,class);
-          if(currentCommand != "directory" &amp;&amp; class == "directory")
-            options = "Chroot:yes;" + options;
-          currentOptions  = options;
-          currentCommand  = class;
-          currentIndex    = 0;
-          currentProtocol = protocol;
-          
-          executeScript("sub_refreshList");
-        }
-      }
-      else if(class == "video")
-      {
-        executeScript("sub_stopPlayback");
-        
-        if(image == "")
-          image = playlistLogo;
-          
-        print("!!!!!!!!!! image:",image);
-        
-        if(pageLogo != image &amp;&amp; image != "")
-        {
-          pageLogo = image;
-        }
-        if(protocol == "file" || protocol == "http")
-        {
-          urlToPlay = url;
-        }
-        else
-        {
-          urlToPlay = translateUrl;
-        }
-        playIndex = idx;
-        playContext = currentPwd;
-        
-        setRefreshTime(1000);
-    
-        playItemURL(urlToPlay, 0);
-        print("play:",urlToPlay);
-      }
-      else if(class == "audio")
-      {
-        executeScript("sub_stopPlayback");
-      
-        if(protocol == "file" || (protocol == "http" &amp;&amp; soft != "shoutcast"))
-        {
-          urlToPlay = url;
-        }
-        else
-        {
-          urlToPlay = translateUrl;
-        }
-        
-        if(image == "")
-        {
-          if(soft == "icecast" || soft == "shoutcast" || protocol == "rtsp" || protocol == "mms" || protocol == "mmsh" || protocol == "mmst")
-            image = "../etc/translate/rss/image/radio_online.png";
-          else
-            image = playlistLogo;
-        }
-          
-        print("!!!!!!!!!! image:",image);
-        
-        if(pageLogo != image &amp;&amp; image != "")
-        {
-          pageLogo = image;
-        }
-        
-        playTitle   = streamTitle;
-        playSong    = currentSong;
-        playIndex   = idx;
-        playContext = currentPwd;
-        
-		    if(streamBitrate != "")
-  	    {
-  	      title_1 = "Bitrate:";
-  		    info_1 = streamBitrate;
-  		  }
-		    if(streamGenre != "")
-  	    {
-  	      title_2 = "Genre:";
-  		    info_2 = streamGenre;
-  		  }
-  		  
-  		  elapsedTime = "Wait ...";
-  		  
-        setRefreshTime(1000);
-        showIdle();
-        playItemURL(urlToPlay, 0, "mediaDisplay", "previewWindow");
-        print("play:",urlToPlay);
-        redrawDisplay();
-      }
-      else if(class == "image")
-      {
-        if(protocol == "file" || protocol == "http")        
-        {
-          pageLogo = url;
-        }
-        else
-        {
-          pageLogo = translateUrl;
-        }
-        playlistLogo = pageLogo;
-        print("image:",pageLogo);
-        redrawDisplay();
       }
       else
       {
-        streamArray = null;
-         
-        streamArray = pushBackStringArray(streamArray, url);
-        streamArray = pushBackStringArray(streamArray, title);
-        streamArray = pushBackStringArray(streamArray, image);
-        streamArray = pushBackStringArray(streamArray, options);
-        
-        writeStringToFile(storagePath_stream, streamArray);
-  
-        if(class == "cue")
-        {
-          gotoUrl = "rss_file://../etc/translate/rss/xspf/cue_Player.rss";
-        }
-        else
-        if(class == "rss")
-        {
-          gotoUrl = "rss_file://../etc/translate/rss/xspf/rss_mediaFeed.rss";
-        }
-        else
-        if(class == "renderer")
-        {
-          gotoUrl = "rss_file://../etc/translate/rss/xspf/streamRenderer.rss";
-        }
-        else
-        {
-          gotoUrl = "";
-          errorInfo = "Unsupported content type (" + type + ")!";
-        }
-        if(gotoUrl != "")
-        {
-          executeScript("sub_stopPlayback");
-          doModalRss(gotoUrl);
-        }
+        playIndex = -1;
       }
     }
     else
     {
-      playIndex = -1;
+      print("already playing:",idx);
     }
-  }
-  else
-  {
-    print("already playing:",idx);
   }
   print("sub_clickItem end");
 </sub_clickItem>
@@ -1060,104 +1092,113 @@
 </sub_initRandom>
 
 <onRefresh>
-  playbackStatus  = getPlaybackStatus();
-  playElapsed     = getStringArrayAt(playbackStatus, 0);
-  playStatus      = getStringArrayAt(playbackStatus, 3);
-
-  print("playbackStatus: ",playbackStatus);
-
-  cancelIdle();
-  
-  if (playStatus == 0) 
+  if(waitForRefreshList == 1)
   {
-    print("playStatus",playStatus);
-    
-    executeScript("sub_onStop");
-    
-    idx = -1;
-    
-    if(playContext == currentPwd &amp;&amp; userInput != "video_stop")
-    {
-      if(repeat == "One")
-      {
-        idx = playIndex;
-      }
-      else if(repeat == "All")
-      {
-        idx = playIndex;
-        idx -= -1;
-        if(idx &gt;= itemSize)
-          idx = 0;
-      }
-      else if (repeat == "Random")
-      {
-        if(randomArray != null &amp;&amp; playIndex == getStringArrayAt(randomArray, randomIndex))
-        {
-          randomIndex -= -1;
-          if(randomIndex &gt;= itemSize)
-          {
-            randomArray = null;
-          }
-        }
-        if(randomArray == null)
-        {
-          executeScript("sub_initRandom");
-          if(itemSize == 1)
-            randomIndex = 0;
-          else
-            randomIndex = 1;
-        }
-        idx = getStringArrayAt(randomArray, randomIndex);
-      }
-    }
-
-    if(idx != -1)
-    {
-      executeScript("sub_clickItem");
-    }
-    else
-    {
-      playIndex = -1;
-      pageLogo = playlistLogo;
-      redrawDisplay();
-    }
-    
-    user_input = "";
+    setRefreshTime(-1);
+    executeScript("sub_doRefreshList");
+  	redrawDisplay();
   }
-  else if (playElapsed != 0) 
+  else
   {
-    statusCheck += 1;
-    
-    if(statusCheck &gt;= streamInfoTimeout)
-    {
-      statusCheck = 0;
-      
-      if(statusUrl != null)
-      {
-        dlok = loadXMLFile(statusUrl);
-        if (dlok != null)
-        {
-    	    value = getXMLText("info","status","current-song");
-    	    if(value != null)
-      		  currentSong = value;
-        }
-    		playSong = currentSong;
-      }
-    }
+    playbackStatus  = getPlaybackStatus();
+    playElapsed     = getStringArrayAt(playbackStatus, 0);
+    playStatus      = getStringArrayAt(playbackStatus, 3);
   
-    startPlaying = 1;
-
-    t = playElapsed;
-    x = Integer(t / 60);
-    h = Integer(t / 3600);
-    s = t - (x * 60);
-    m = x - (h * 60);
-    elapsedTime = sprintf("%s:", h);
-    if(m &lt; 10)  elapsedTime += "0";
-    elapsedTime += sprintf("%s:", m);
-    if(s &lt; 10)  elapsedTime += "0";
-    elapsedTime += sprintf("%s", s);
-  } 
+    print("playbackStatus: ",playbackStatus);
+  
+    cancelIdle();
+    
+    if (playStatus == 0) 
+    {
+      print("playStatus",playStatus);
+      
+      executeScript("sub_onStop");
+      
+      idx = -1;
+      
+      if(playContext == currentPwd &amp;&amp; userInput != "video_stop")
+      {
+        if(repeat == "One")
+        {
+          idx = playIndex;
+        }
+        else if(repeat == "All")
+        {
+          idx = playIndex;
+          idx -= -1;
+          if(idx &gt;= itemSize)
+            idx = 0;
+        }
+        else if (repeat == "Random")
+        {
+          if(randomArray != null &amp;&amp; playIndex == getStringArrayAt(randomArray, randomIndex))
+          {
+            randomIndex -= -1;
+            if(randomIndex &gt;= itemSize)
+            {
+              randomArray = null;
+            }
+          }
+          if(randomArray == null)
+          {
+            executeScript("sub_initRandom");
+            if(itemSize == 1)
+              randomIndex = 0;
+            else
+              randomIndex = 1;
+          }
+          idx = getStringArrayAt(randomArray, randomIndex);
+        }
+      }
+  
+      if(idx != -1)
+      {
+        executeScript("sub_clickItem");
+      }
+      else
+      {
+        playIndex = -1;
+        pageLogo = playlistLogo;
+        redrawDisplay();
+      }
+      
+      user_input = "";
+    }
+    else if (playElapsed != 0) 
+    {
+      statusCheck += 1;
+      
+      if(statusCheck &gt;= streamInfoTimeout)
+      {
+        statusCheck = 0;
+        
+        if(statusUrl != null)
+        {
+          dlok = loadXMLFile(statusUrl);
+          if (dlok != null)
+          {
+      	    value = getXMLText("info","status","current-song");
+      	    if(value != null)
+        		  currentSong = value;
+          }
+      		playSong = currentSong;
+        }
+      }
+    
+      startPlaying = 1;
+  
+      t = playElapsed;
+      x = Integer(t / 60);
+      h = Integer(t / 3600);
+      s = t - (x * 60);
+      m = x - (h * 60);
+      elapsedTime = sprintf("%s:", h);
+      if(m &lt; 10)  elapsedTime += "0";
+      elapsedTime += sprintf("%s:", m);
+      if(s &lt; 10)  elapsedTime += "0";
+      elapsedTime += sprintf("%s", s);
+    } 
+  }
 </onRefresh>
 
 <item_template>

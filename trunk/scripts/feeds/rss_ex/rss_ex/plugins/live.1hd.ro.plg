@@ -35,9 +35,34 @@ if echo "${arg_url}" | grep -q -s 'live\.*\(1hd\|prahovahd\)\.ro/playlist.*\.php
 
   if [ -f $PLAYLISTFILE ]; then
     awk '
-        { print $0; }
+        BEGIN {
+          counter=2000;
+          skip=0;
+        }
+        { 
+          if(skip == 0) { 
+            gsub(/&/, "&amp;"); print $0; 
+          } 
+        }
+        /<playlist/ {
+          if(skip == 0) {
+            print "<title>OneHD</title>"
+          }
+        }
         /<location>/ {
+          if(skip == 0) {
             print "<meta rel=\"translate\">Rtmp-options:-v</meta>"
+          }
+        }
+        /<\/track>/ {
+          counter--;
+          if(counter <= 0)
+          {
+            skip = 1;
+          }
+        }
+        /(<\/trackList>|<\/playlist>)/ {
+          if(skip != 0) print $0; 
         }
     ' $PLAYLISTFILE > $PLAYLISTFILE.tmp
     mv -f $PLAYLISTFILE.tmp $PLAYLISTFILE

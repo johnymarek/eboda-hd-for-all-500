@@ -77,5 +77,15 @@
 <meta rel="stream_type">application/xml</meta>
 <meta rel="stream_protocol">http</meta>
 </track>
+      <track>
+    <annotation>Телеканалы на RuTube - В эфире</annotation>
+    <title>Телеканалы на RuTube</title>
+    <image>../etc/translate/rss/image/menu/rss.png</image>
+    <location>http://127.0.0.1:84/cgi-bin/translate?app/rss/channels.rutube.ru</location>
+<meta rel="stream_url">http://127.0.0.1:84/cgi-bin/translate?app/rss/channels.rutube.ru</meta>
+<meta rel="stream_class">rss</meta>
+<meta rel="stream_type">application/xml</meta>
+<meta rel="stream_protocol">http</meta>
+</track>
    </trackList>
 </playlist>
