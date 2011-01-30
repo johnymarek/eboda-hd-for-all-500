@@ -114,6 +114,27 @@
       }
       else if(majorContext == "items" &amp;&amp; userInput == "right")
       {
+        idx = getFocusItemIndex();
+        url = getStringArrayAt(urlArray, idx);
+        title = getStringArrayAt(titleArray, idx);
+        thumbnail = getStringArrayAt(thumbnailArray, idx);
+        description = getXMLText("rss","channel","item",idx,"description");
+        
+        arr = null;
+        arr = pushBackStringArray(arr, url);
+        arr = pushBackStringArray(arr, title);
+        arr = pushBackStringArray(arr, thumbnail);
+        writeStringToFile(storagePath + "entry.dat", arr);
+
+        arr = null;
+        arr = pushBackStringArray(arr, "&lt;body&gt;");
+        arr = pushBackStringArray(arr, description);
+        arr = pushBackStringArray(arr, "&lt;/body&gt;");
+        writeStringToFile(storagePath + "entry.htm", arr);
+        
+        print("description",description);
+        
+        act = doModalRss("rss_file://../etc/translate/app/ivi/ivi_entry.xml");
         ret = "true";
       }
       ret;
@@ -160,8 +181,7 @@
 	pageLogo = "../etc/translate/rss/image/menu/ivi.png";
 
   storagePath = getStoragePath("tmp");
-  storagePath = storagePath + "stream.dat";
-  arr = readStringFromFile(storagePath);
+  arr = readStringFromFile(storagePath + "stream.dat");
   feedPath = getStringArrayAt(arr, 0);
   feedTitle = getStringArrayAt(arr, 1);
 

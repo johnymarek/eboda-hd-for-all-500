@@ -7,7 +7,7 @@
     <track>
       <link>http://127.0.0.1:84/cgi-bin/translate?app,Start:middle;Size:3;File:etc/menu/video.xspf,collection/menu</link>
       <title>Internet Video</title>
-      <annotation>YouTube, Tvigle, Ivi, Internet TV</annotation>
+      <annotation>RuTube, YouTube, Tvigle, Ivi, Internet TV</annotation>
       <image>../etc/translate/rss/image/menu/video.png</image>
       <meta rel="mediaDisplay">photoView</meta>
     </track>

@@ -1,10 +1,10 @@
 clean:
-	rm rss_ex-latest.zip
+	rm rss_ex4-latest.zip
 
 localdeliver: pack
 	rsync ....
 
-deliver: pack 
+deliver: rss_ex4-latest.zip
 
 
 	googlecode_upload.py -s rss_ex -p eboda-hd-for-all-500 rss_ex4-latest.zip -u cipibad -w ${PASS}
@@ -12,7 +12,7 @@ deliver: pack
 	googlecode_upload.py -s rss_ex -p eboda-hd-for-all-500 rss_ex4-version.txt -u cipibad -w ${PASS}
 
 
-pack: patch
+rss_ex4-latest.zip: 
 	find rss_ex | grep -v .svn |  grep -v ~$ | zip -9 rss_ex4-latest.zip -@
 
 
@@ -22,7 +22,7 @@ patch: translate
 	grep 'http://127.0.0.1' $$i;\
 	if [ $$? -eq 0 ] ; then\
 		echo changing port;\
-		sed -i -e 's#http://127.0.0.1/cgi-bin#http://127.0.0.1:82/rss_ex/www/cgi-bin#g' $$i;\
+		sed -i -e 's#http://127.0.0.1/cgi-bin#http://127.0.0.1:84/cgi-bin#g' $$i;\
 	fi;\
 	done
 

@@ -633,7 +633,7 @@ command_playlist()
     ;;
     m3u|M3U)
       if [ -f "${playlist_file}" ]; then
-        m3u2xspf -v name="$name" -v path="$path" -v ext="$ext" "${playlist_file}"
+        awk -f $BASEPATH/bin/m3u2xspf -v name="$name" -v path="$path" -v ext="$ext" "${playlist_file}"
       else
         echo "<?xml version='1.0' encoding='UTF-8'?>"
         echo "<playlist version='1' xmlns='http://xspf.org/ns/0/'>"
@@ -643,7 +643,7 @@ command_playlist()
     ;;
     pls|PLS)
       if [ -f "${playlist_file}" ]; then
-        pls2xspf -v name="$name" -v path="$path" -v ext="$ext" "${playlist_file}"
+        awk -f $BASEPATH/bin/pls2xspf -v name="$name" -v path="$path" -v ext="$ext" "${playlist_file}"
       else
         echo "<?xml version='1.0' encoding='UTF-8'?>"
         echo "<playlist version='1' xmlns='http://xspf.org/ns/0/'>"
@@ -653,7 +653,7 @@ command_playlist()
     ;;
     cue|CUE)
       if [ -f "${playlist_file}" ]; then
-        cue2xspf -v path="$path" "${playlist_file}"
+        awk -f $BASEPATH/bin/cue2xspf -v path="$path" "${playlist_file}"
       else
         echo "<?xml version='1.0' encoding='UTF-8'?>"
         echo "<playlist version='1' xmlns='http://xspf.org/ns/0/'>"
@@ -664,9 +664,9 @@ command_playlist()
     asx|ASX|asf|ASF)
       if [ -f "${playlist_file}" ]; then
         if grep -qsi "\[reference\]" ${playlist_file}; then
-          cat "${playlist_file}" | awk '{gsub(/\t/," ");gsub(/\r/,"");sub(/^\s*/,"");sub(/\s*$/,"");print}' | asf2xspf -v name="$name" -v path="$path"
+          cat "${playlist_file}" | awk '{gsub(/\t/," ");gsub(/\r/,"");sub(/^\s*/,"");sub(/\s*$/,"");print}' | awk -f $BASEPATH/bin/asf2xspf -v name="$name" -v path="$path"
         else
-          cat "${playlist_file}" | awk '{gsub(/\t/," ");gsub(/\r/,"");print}' | sed 's/>[ \n]*</>\n</g;s/ *>/>/g;s/^ *//;s/ *$//' | asx2xspf -v name="$name" -v path="$path"
+          cat "${playlist_file}" | awk '{gsub(/\t/," ");gsub(/\r/,"");print}' | sed 's/>[ \n]*</>\n</g;s/ *>/>/g;s/^ *//;s/ *$//' | awk -f $BASEPATH/bin/asx2xspf -v name="$name" -v path="$path"
         fi
       else
         echo "<?xml version='1.0' encoding='UTF-8'?>"
@@ -1298,7 +1298,7 @@ case ${arg_cmd} in
   ;;
   app/*)
     if [ -f $TRANSLATE/$arg_cmd ]; then
-	    . $TRANSLATE/$arg_cmd
+	. $TRANSLATE/$arg_cmd
     fi
   ;;
   scan|*)

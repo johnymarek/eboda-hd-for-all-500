@@ -526,6 +526,16 @@
     <stream_type>application/xml</stream_type>
     <stream_protocol>http</stream_protocol>
   </item>
+  <item>
+    <annotation>Телеканалы на RuTube - В эфире</annotation>
+    <title>Телеканалы на RuTube</title>
+    <image>../etc/translate/rss/image/menu/rss.png</image>
+    <location>http://127.0.0.1:84/cgi-bin/translate?app/rss/channels.rutube.ru</location>
+    <stream_url>http://127.0.0.1:84/cgi-bin/translate?app/rss/channels.rutube.ru</stream_url>
+    <stream_class>rss</stream_class>
+    <stream_type>application/xml</stream_type>
+    <stream_protocol>http</stream_protocol>
+  </item>
 </channel>
 
 

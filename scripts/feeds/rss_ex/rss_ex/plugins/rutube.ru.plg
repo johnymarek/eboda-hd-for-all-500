@@ -21,7 +21,7 @@
 # Translate CGI module
 # 'rutube.ru' plug-in
 #
-# version: 1.1 21.01.2011 11:30:30
+# version: 1.2 26.01.2011 10:39:26
 #
 # http://rutube.ru/tv/o2tv.html
 # http://rutube.ru/tracks/1088305.html?v=1c21315933044e39fdd57808ac5e3958
@@ -29,30 +29,50 @@
 
 local video_id=
 
-if echo "${arg_url}" | grep -q -s "\(www\.\)*rutube\.ru.*[&?]v=[0-9a-f]*$"; then 
-  	case $arg_cmd in
-  		info)
-  			stream_url=$arg_url
-  			stream_type=
-  			server_type='_translate_'
-  			stream_class='video'
-  		;;
-  		*)
-		  video_id=`echo "$arg_url" | sed -e 's/.*[?&]v=//;s/&.*//`
-		  host_response=`$MSDL -q -o ${TMPFILE} -p http --useragent "${USERAGENT}" http://bl.rutube.ru/${video_id}.xml 2>&1`
-		  if [ -f ${TMPFILE} ]; then
-		    stream_type='video/x-flv'
-		    server_type='rutube'
-		    stream_url=`awk -f getxml.awk -f ${PLUGINS_DIR}rutube.ru.response.awk "$TMPFILE" | sed -n '1p'`
-		    protocol=`echo "$stream_url" | sed -e 's/:\/\/.*$//`
-		    local rtmp_swfurl="http://rutube.ru/player.swf"
-		    local rtmp_tcurl=`echo "$stream_url" | sed 's/\/mp4:.*$//'`
-		    local rtmp_playpath=`echo "$stream_url" | sed 's/^.*\/mp4:/mp4:/;s/&.*$//'`
-		    arg_opt="Rtmp-options:-v -s $rtmp_swfurl -t $rtmp_tcurl -y $rtmp_playpath;$arg_opt"
-		    rm -f $TMPFILE
-		  fi
-  		;;
-  	esac
+rutube_video()
+{
+    case $arg_cmd in
+        info)
+            stream_url=$arg_url
+            stream_type=
+            server_type='_translate_'
+            stream_class='video'
+            protocol='http'
+            $MSDL -q -o ${TMPFILE} -p http --useragent "${USERAGENT}" "http://rutube.ru/trackinfo/${video_id}.html?" 2>/dev/null
+            if [ -f ${TMPFILE} ]; then
+                icy_name=`get_xml_text "title"`
+                icy_name=`unescapeXML "$icy_name"`
+            fi
+            rm -f $TMPFILE
+        ;;
+        *)
+          $MSDL -q -o ${TMPFILE} -p http --useragent "${USERAGENT}" "http://bl.rutube.ru/${video_id}.xml?schema=rtmp" 2>/dev/null
+          if [ -f ${TMPFILE} ]; then
+            stream_type='video/x-flv'
+            server_type='rutube'
+            stream_url=`awk -f getxml.awk -f ${PLUGINS_DIR}rutube.ru.response.awk "$TMPFILE" | sed -n '1p'`
+            protocol=`echo "$stream_url" | sed -e 's/:\/\/.*$//`
+            # http://tradiz.org/Rutube/Skachivanie-s-rutuberu-po-rtmp-ssylkam
+            local rtmp_swfurl="http://rutube.ru/player.swf"
+            if echo "$stream_url" | grep -qs "_definst_"; then
+                arg_opt="Rtmp-options:-s $rtmp_swfurl;$arg_opt"
+            else
+                local rtmp_playpath=`echo "$stream_url" | sed 's/^.*\/mp4:/mp4:/;s/&.*$//'`
+                arg_opt="Rtmp-options:-s $rtmp_swfurl -v -y $rtmp_playpath;$arg_opt"
+            fi
+            rm -f $TMPFILE
+          fi
+        ;;
+    esac
+}
+
+if echo "${arg_url}" | grep -q -s "video\.rutube\.ru/[0-9a-f]*$"; then 
+  video_id=`echo "$arg_url" | sed -e 's/.*\///;s/&.*//`
+  rutube_video
+  return $RC_OK
+elif echo "${arg_url}" | grep -q -s "\(www\.\)*rutube\.ru.*[&?]v=[0-9a-f]*$"; then 
+  video_id=`echo "$arg_url" | sed -e 's/.*[?&]v=//;s/&.*//`
+  rutube_video
   return $RC_OK
 elif echo "${arg_url}" | grep -q -s "\(www\.\)*rutube\.ru/tv/.*$"; then 
   host_response=`$MSDL -q -o ${TMPFILE} -p http --useragent "${USERAGENT}" $arg_url 2>&1`
