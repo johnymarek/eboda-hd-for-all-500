@@ -23,13 +23,13 @@ update:
 
 
 clean:
-	rm xLive-latest.zip
+	rm xLive4-latest.zip
 
-pack: 
+xLive4-latest: 
 	find xLive | grep -v .svn |  grep -v ~$ | zip -9 xLive4-latest.zip -@
 
 
-deliver: pack
+deliver: xLive4-latest
 	googlecode_upload.py -s xLive -p eboda-hd-for-all-500 xLive4-latest.zip -u cipibad -w ${PASS}
 
 	googlecode_upload.py -s xLive -p eboda-hd-for-all-500 xLive4-version.txt -u cipibad -w ${PASS}
