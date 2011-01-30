@@ -1,5 +1,0 @@
-#EXTM3U
-#EXTINF:-1,Player HDD
-/var/hdd/volumes/
-#EXTINF:-1,Player USB
-/var/ramfs/volumes/
