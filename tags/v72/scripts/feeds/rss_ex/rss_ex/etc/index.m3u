@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Плеер USB
+/var/ramfs/volumes/
+#EXTINF:-1,Плеер Playlists
+/usr/local/etc/playlist/
+#EXTINF:-1,Home Playlists
+/home/Media/Playlists/XSPF/
+#EXTINF:-1,Serviceline FTP Очаково
+ftp://10.150.2.50/sorted/
+#EXTINF:-1,Serviceline FTP Люблино (win1251)
+ftp://10.100.0.2/
+#EXTINF:-1,Local FTP
+ftp://127.0.0.1/

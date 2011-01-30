@@ -1,0 +1,108 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+body, input, select {
+	font-family: "Trebuchet MS","Lucida Sans unicode",Arial,Helvetica,sans-serif,courier;
+}
+body {
+	text-align: center;
+	color: #fff;
+	background: #000 url('/osdImages/welcome_background_bg.jpg') fixed;
+	overflow: auto;
+}
+form {
+	display: inline;
+}
+#wrap {
+	text-align: left;
+	background: url('/osdImages/video_control_frame_bg.png') top center no-repeat;
+	padding: 42px;
+}
+h1 {
+	text-transform: uppercase;
+	margin-bottom: 30px;
+}
+h2 {
+	color: #aaa;
+}
+a {
+	color: skyblue;
+}
+label, input {
+	margin-bottom: 4px;
+}
+label {
+	width: 20%;
+	float: left;
+	text-transform: capitalize;
+}
+input {
+	display: block;
+	width: 20%;
+}
+img {
+	border: none;
+	vertical-align: middle;
+}
+h1 a {
+	color: #fff;
+	text-decoration: none;
+}
+h1 img {
+	position: relative;
+	top: -6px;
+}
+.comment {
+	font-size: 90%;
+	color: skyblue;
+	position: absolute;
+	left: 44%;
+	padding: 2px;
+}
+.first {
+	position: static;
+}
+.info {
+	position: absolute;
+	left: 200px;
+
+	padding-left: 22px;
+	background: url('img/info.png') 0px 3px no-repeat;
+}
+.info:first-letter {
+	text-transform: capitalize;
+}
+button {
+	color: #fff;
+	border: none;
+	width: 133px;
+	height: 78px;
+	line-height: 78px;
+	text-align: center;
+	font-size: 1.2em;
+	background: url('/osdImages/settings_system_browser_list_btn_n.png') -20px 2px no-repeat;
+}
+input.input {
+	font-size: 1.2em;
+	padding-left: 4px;
+	border: 4px solid skyblue;
+}
+input.input, .button {
+	vertical-align: middle;
+	margin-right: 8px;
+}
+#search {
+	float: right;
+	position: relative;
+	top: -84px;
+}
+#search input.input {
+	width: 175px;
+	width: auto;
+	float: left;
+}
+#search .button {
+	position: relative;
+	top: -24px;
+}

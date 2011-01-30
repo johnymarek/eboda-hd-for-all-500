@@ -1,0 +1,8 @@
+#!/bin/sh
+
+for i in 30 60 90 120 
+   do killall standbyafter-${i}
+done
+
+rm /tmp/standby_status
+

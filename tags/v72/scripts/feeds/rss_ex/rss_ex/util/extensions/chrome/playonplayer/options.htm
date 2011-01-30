@@ -1,0 +1,36 @@
+<html>
+<head><title>Options</title></head>
+<script type="text/javascript">
+
+// Saves options to localStorage.
+function save_options() {
+
+  localStorage["player_name"] = document.getElementById("player_name").value;
+
+  // Update status to let user know options were saved.
+  var label = document.getElementById("label");
+  label.style.backgroundColor = 'yellow';
+
+  setTimeout(function() {
+    label.style.backgroundColor = "";
+  }, 750);
+}
+
+// Restores select box state to saved value from localStorage.
+function restore_options() {
+  var playername = localStorage["player_name"];
+  if(!playername)
+  {
+    playername = "player";
+    localStorage["player_name"] = playername;
+  }
+  document.getElementById("player_name").value = playername;
+}
+
+</script>
+
+<body onload="restore_options()">
+<label id="label">Player IP or name: </label><input id="player_name" type="text" value="">
+<button onclick="save_options()">Save</button>
+</body>
+</html>

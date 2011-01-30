@@ -1,0 +1,461 @@
+<?xml version="1.0"?>
+<!--Xtreamer Community 2010 - xLive9.2 csb-->
+<rss version="2.0" xmlns:media="http://purl.org/dc/elements/1.1/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<mediaDisplay name=photoView
+	rowCount=3
+	columnCount=5
+	drawItemText="no"
+	menuBorderColor="0:0:0"
+	sideColorBottom="0:0:0"
+	sideColorTop="0:0:0"
+	itemImageXPC="10"
+	itemOffsetXPC="7"
+	backgroundColor="0:0:0"
+	sliding="no"
+	idleImageXPC=45
+	idleImageYPC=42
+	idleImageWidthPC=10
+	idleImageHeightPC=16
+	>
+	<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
+	<idleImage> image/POPUP_LOADING_02.jpg </idleImage>
+	<idleImage> image/POPUP_LOADING_03.jpg </idleImage>
+	<idleImage> image/POPUP_LOADING_04.jpg </idleImage>
+	<idleImage> image/POPUP_LOADING_05.jpg </idleImage>
+	<idleImage> image/POPUP_LOADING_06.jpg </idleImage>
+
+	<onEnter>
+	SwitchViewer(0);
+	
+	lang_index = readStringFromFile("/tmp/OSDLang");
+	
+	createLiveButton=1;
+	createCommunityButton=1;			
+	createNewsButton=1;
+	createGermanButton=0;
+	createSocialButton=1;
+	createMovieButton=1;
+	createNatureButton=1;	  
+	createMusicButton=1;
+	createFoodButton=1;
+	createSportsButton=1;
+	createComedyButton=1;
+	createTechnologyButton=1;
+	createTravelButton=1;
+	createVodButton=1;
+	createAdultButton=1;
+	
+	if(createLiveButton)
+			addItem("LiveButton", 0);
+	if(createCommunityButton)			
+		  addItem("CommunityButton", 0);
+	if(createNewsButton)
+		  addItem("NewsButton", 0);
+	if(createGermanButton || lang_index==5)
+		  addItem("GermanButton", 0);
+	if(createSocialButton)
+		  addItem("SocialButton", 0);
+	if(createMovieButton)
+		  addItem("MovieButton", 0);
+	if(createNatureButton)	  
+		  addItem("NatureButton", 0);
+	if(createMusicButton)
+		  addItem("MusicButton", 0);
+	if(createFoodButton)
+		  addItem("FoodButton", 0);
+	if(createSportsButton)
+		  addItem("SportsButton", 0);
+	if(createComedyButton)
+		  addItem("ComedyButton", 0);
+	if(createTechnologyButton)
+		  addItem("TechnologyButton", 0);
+	if(createTravelButton)
+		  addItem("TravelButton", 0);
+	if(createVodButton)
+		  addItem("VodButton", 0);
+
+	if(createAdultButton) {
+	if(GetLockFolderVisibility()=="true") 
+		{ 
+			addItem("AdultButton", 0);
+		}
+	}
+	</onEnter>
+        
+	<onUserInput>
+		userInput = currentUserInput(); 
+		if ( userInput == &quot;ENTR&quot; ) 
+		{ 
+			title = getItemInfo(&quot;title&quot;); 
+			writeStringToFile("/tmp/debug", title); 
+			if (title == &quot;Adult Channel - XXX&quot;) 
+			{ 
+				if(login() == &quot;true&quot;) 
+				{ 
+					ret = "true"; 
+				} 
+			} 
+		}
+	</onUserInput>
+</mediaDisplay>
+
+<LiveButton>
+<title>Live TV</title>
+<link>http://www.metafeeds.com/channel/livetv/rss</link>
+<media:thumbnail url="/xLive/image/livetv.jpg" />
+<mediaDisplay name="threePartsView" showDefaultInfo="no" bottomYPC="0" itemGap="0" itemPerPage="10" showHeader="no" sideLeftWidthPC="0" itemImageXPC="0" itemImageHeightPC="0" itemImageWidthPC="0" itemXPC="5" itemYPC="10" itemWidthPC="50" itemHeightPC="8" capWidthPC="55" unFocusFontColor="101:101:101" focusFontColor="255:255:255" 
+idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage>
+<backgroundDisplay>
+<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>/xLive/backgrounds/bg_livetv.jpg</image>
+</backgroundDisplay>
+    <onEnter>
+		SwitchViewer(0);
+		</onEnter>
+</mediaDisplay>
+</LiveButton>
+
+<CommunityButton>
+<title>Community Tools - 'Xtensions'</title>
+<link>/xLive/category/x.rss</link>
+<media:thumbnail url="/xLive/image/x.jpg"/>
+      <mediaDisplay name="photoView" showHeader="no" rowCount="2" columnCount="2" drawItemText="no" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="10" itemOffsetXPC="10" backgroundColor="0:0:0" sliding="yes" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage><backgroundDisplay>
+<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>/xLive/backgrounds/bg_community.jpg</image>
+</backgroundDisplay>
+    <onEnter>
+		SwitchViewer(0);
+		</onEnter>
+      </mediaDisplay>
+    </CommunityButton>
+
+<NewsButton>
+<title>News and Discussion</title>
+<link>/xLive/category/nandd.rss</link>
+<media:thumbnail url="/xLive/image/nandd.jpg"/>
+      <mediaDisplay name="photoView" showHeader="no" rowCount="2" columnCount="4" drawItemText="no" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="10" itemOffsetXPC="10" backgroundColor="0:0:0" sliding="yes" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage>
+    <onEnter>
+		SwitchViewer(0);
+		</onEnter>
+      </mediaDisplay>
+    </NewsButton>
+    
+<GermanButton>
+<title>German / Deutsch</title>
+<link>http://download.xtreamer.net/Firmware/APP/xLive/csb/xlde/menu.rss</link>
+<media:thumbnail url="/xLive/image/deutsch.jpg"/>
+<mediaDisplay name=photoView
+	rowCount=3
+	columnCount=5
+	drawItemText="no"
+	menuBorderColor="0:0:0"
+	sideColorBottom="0:0:0"
+	sideColorTop="0:0:0"
+	itemImageXPC="10"
+	itemOffsetXPC="7"
+	backgroundColor="0:0:0"
+	showHeader="no"
+	sliding="no"
+	itemBackgroundColor="-1:-1:-1"
+	idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="16">
+    <idleImage> image/POPUP_LOADING_01.jpg </idleImage>
+    <idleImage> image/POPUP_LOADING_02.jpg </idleImage>
+    <idleImage> image/POPUP_LOADING_03.jpg </idleImage>
+    <idleImage> image/POPUP_LOADING_04.jpg </idleImage>
+    <idleImage> image/POPUP_LOADING_05.jpg </idleImage>
+    <idleImage> image/POPUP_LOADING_06.jpg </idleImage>
+    <onEnter>
+		SwitchViewer(7);
+		</onEnter>
+</mediaDisplay>
+    </GermanButton>   
+    
+<SocialButton>
+<title>Social Networks</title>
+<link>/xLive/category/sn.rss</link>
+<media:thumbnail url="/xLive/image/sn.jpg"/>
+	<mediaDisplay name=photoFocusView 
+	focusItem="3"
+	imageFocus=null 
+	imageParentFocus=null 
+	backgroundColor="0:0:0"
+	rowCount="1"
+	columnCount="5"
+	drawItemText="no"
+	fontSize="15"
+	sideTopHeightPC="20"
+	sideColorTop="0:0:0"
+	sideColorBottom="0:0:0"
+	itemOffsetXPC="0"
+	itemOffsetYPC="40"
+	itemWidthPC="15.5"
+	itemHeightPC="15.5"
+	itemBackgroundWidthPC="16.5"
+	itemBackgroundHeightPC="16.5"
+	itemGapXPC="1.5"
+	focusItemOffsetYPC="32"
+	focusItemWidthPC="30.43"
+	focusItemHeightPC="30.43"
+	focusItemBackgroundWidthPC="31.5"
+	focusItemBackgroundHeightPC="31.5"
+	itemBackgroundColor="0:0:0"
+	bottomYPC="85"
+	itemBorderColor="0:0:0"
+	showHeader="yes"
+	headerXPC="5"
+	showDefaultInfo="yes"
+	headerYPC="10"
+	idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage>
+    <onEnter>
+		SwitchViewer(0);
+		</onEnter>
+        </mediaDisplay> 
+</SocialButton> 
+
+<MovieButton>
+<title>TV Shows and Movies</title>
+<link>/xLive/category/tvandm.rss</link>
+<media:thumbnail url="/xLive/image/tvandm.jpg"/>
+      <mediaDisplay name="photoView" showHeader="no" rowCount="2" columnCount="4" drawItemText="no" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="10" itemOffsetXPC="10" backgroundColor="0:0:0" sliding="yes" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage>
+    <onEnter>
+		SwitchViewer(0);
+		</onEnter>
+      </mediaDisplay>
+    </MovieButton>
+
+<NatureButton>
+<title>Wildlife and Nature</title>
+<link>/xLive/category/wandn.rss</link>
+<media:thumbnail url="/xLive/image/wandn.jpg"/>
+      <mediaDisplay name="photoView" showHeader="no" rowCount="3" columnCount="4" drawItemText="no" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="10" itemOffsetXPC="10" backgroundColor="0:0:0" sliding="yes" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage>
+    <onEnter>
+		SwitchViewer(0);
+		</onEnter>
+      </mediaDisplay>
+    </NatureButton>
+
+<MusicButton>
+<title>Music and Lifestyle</title>
+<link>/xLive/category/mandl.rss</link>
+<media:thumbnail url="/xLive/image/mandl.jpg"/>
+      <mediaDisplay name="photoView" showHeader="no" rowCount="3" columnCount="4" drawItemText="no" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="10" itemOffsetXPC="10" backgroundColor="0:0:0" sliding="yes" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage>
+    <onEnter>
+		SwitchViewer(0);
+		</onEnter>
+      </mediaDisplay>
+    </MusicButton>
+
+<FoodButton>
+<title>Food and Drinks</title>
+<link>http://www.metafeeds.com/channel/food/rss</link>
+<media:thumbnail url="/xLive/image/fandd.jpg"/>
+<mediaDisplay name="threePartsView" sliding="yes" showDefaultInfo="no" bottomYPC="0" itemGap="0" itemPerPage="13" showHeader="no" sideLeftWidthPC="0" itemImageXPC="0" itemImageHeightPC="0" itemImageWidthPC="0" itemXPC="5" itemYPC="10" itemWidthPC="45" itemHeightPC="6.5" capWidthPC="50" unFocusFontColor="101:101:101" focusFontColor="255:255:255" 
+idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+         <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage>
+<backgroundDisplay>
+<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>/xLive/backgrounds/bg_food.jpg</image>
+</backgroundDisplay>
+</mediaDisplay>
+		<item_template>
+		<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage>
+    <onEnter>
+		SwitchViewer(0);
+		</onEnter>
+	</mediaDisplay>
+		</item_template>
+</FoodButton>
+
+<SportsButton>
+<title>Sports and Games</title>
+<link>/xLive/category/sandg.rss</link>
+<media:thumbnail url="/xLive/image/sandg.jpg"/>
+      <mediaDisplay name="photoView" showHeader="no" rowCount="4" columnCount="5" drawItemText="no" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="10" itemOffsetXPC="10" backgroundColor="0:0:0" sliding="yes" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage>
+    <onEnter>
+		SwitchViewer(0);
+		</onEnter>
+      </mediaDisplay>
+    </SportsButton>
+
+<ComedyButton>
+<title>Comedy and Entertainment</title>
+<link>/xLive/category/cande.rss</link>
+<media:thumbnail url="/xLive/image/cande.jpg"/>
+      <mediaDisplay name="photoView" showHeader="no" rowCount="3" columnCount="4" drawItemText="no" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="10" itemOffsetXPC="10" backgroundColor="0:0:0" sliding="yes" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">        
+        <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage>
+    <onEnter>
+		SwitchViewer(0);
+		</onEnter>
+      </mediaDisplay>
+    </ComedyButton>
+
+<TechnologyButton>
+<title>Technology and Education</title>
+<link>/xLive/category/tande.rss</link>
+<media:thumbnail url="/xLive/image/tande.jpg"/>
+      <mediaDisplay name="photoView" showHeader="no" rowCount="4" columnCount="4" drawItemText="no" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="10" itemOffsetXPC="10" backgroundColor="0:0:0" sliding="yes" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage>
+    <onEnter>
+		SwitchViewer(0);
+		</onEnter>
+      </mediaDisplay>
+    </TechnologyButton>
+
+<TravelButton>
+<title>Travel and International</title>
+<link>/xLive/category/tandi.rss</link>
+<media:thumbnail url="/xLive/image/tandi.jpg"/>
+      <mediaDisplay name="photoView" showHeader="no" rowCount="2" columnCount="4" drawItemText="no" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="10" itemOffsetXPC="10" backgroundColor="0:0:0" sliding="yes" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage>
+    <onEnter>
+		SwitchViewer(0);
+		</onEnter>
+      </mediaDisplay>
+    </TravelButton>
+
+<VodButton>
+<title>VoD</title>
+<link>/xLive/category/vod.rss</link>
+<media:thumbnail url="/xLive/image/vod.jpg"/>
+<mediaDisplay name="threePartsView" showDefaultInfo="no" bottomYPC="0" itemGap="0" itemPerPage="10" showHeader="no" sideLeftWidthPC="0" itemImageXPC="0" itemImageHeightPC="0" itemImageWidthPC="0" itemXPC="5" itemYPC="10" itemWidthPC="50" itemHeightPC="8" capWidthPC="55" unFocusFontColor="101:101:101" focusFontColor="255:255:255" 
+idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage>
+    <onEnter>
+		SwitchViewer(0);
+		</onEnter>
+</mediaDisplay>
+</VodButton>
+
+<AdultButton>
+<title>Adult Channel - XXX</title>
+<link>/xLive/category/adult.rss</link>
+<media:thumbnail url="/xLive/image/adult.jpg"/>
+      <mediaDisplay name="onePartView" showDefaultInfo="no" cornerRounding="no" itemXPC="18" itemWidthPC="22" capWidthPC="27" itemImageHeightPC="18" showHeader="no" itemOffsetXPC="5" itemOffsetYPC="5" itemGap="1" itemImageGap="1" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="5" itemHeightPC="18" backgroundColor="0:0:0" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+         <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage>
+    <onEnter>
+		SwitchViewer(0);
+		</onEnter>
+<backgroundDisplay>
+<image offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>/xLive/backgrounds/bg_adult.jpg</image>
+</backgroundDisplay>
+</mediaDisplay>
+</AdultButton>
+
+
+
+<channel>
+<title>Xtreamer Live! v9.2</title>
+
+  </channel>
+</rss>

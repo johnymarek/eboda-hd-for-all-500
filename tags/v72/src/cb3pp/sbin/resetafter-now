@@ -1,0 +1,17 @@
+#!/bin/sh
+
+to_wait=0
+minute=60 #seconds
+
+while [ ${to_wait} -ne 0 ]
+do
+    sleep ${minute}
+    let to_wait-=1
+    cat >/tmp/standby_status<<EOF
+TO_WAIT=${to_wait}
+EOF
+done
+
+#hardcode gracefull transmission shutdown (for now)
+sleep 5
+reboot

@@ -1,0 +1,271 @@
+<?xml version="1.0"?>
+<!--Xtreamer Community 2010 - xLive9.1 Cap-->
+<rss version="2.0" xmlns:media="http://purl.org/dc/elements/1.1/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<mediaDisplay name="photoView" showHeader="no" rowCount="4" columnCount="5" drawItemText="no" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="10" itemOffsetXPC="10" backgroundColor="0:0:0" sliding="yes" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage>
+		</mediaDisplay>
+		<item_template>
+<mediaDisplay name="photoView" showHeader="no" rowCount="4" columnCount="5" drawItemText="no" menuBorderColor="0:0:0" sideColorBottom="0:0:0" sideColorTop="0:0:0" itemImageXPC="10" itemOffsetXPC="10" backgroundColor="0:0:0" sliding="yes" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+        <idleImage>/xLive/image/busy1.png</idleImage>
+        <idleImage>/xLive/image/busy2.png</idleImage>
+        <idleImage>/xLive/image/busy3.png</idleImage>
+        <idleImage>/xLive/image/busy4.png</idleImage>
+        <idleImage>/xLive/image/busy5.png</idleImage>
+        <idleImage>/xLive/image/busy6.png</idleImage>
+        <idleImage>/xLive/image/busy7.png</idleImage>
+        <idleImage>/xLive/image/busy8.png</idleImage>
+
+			</mediaDisplay>
+		</item_template>
+
+<channel>
+	<title>Live Webcams</title>
+
+<item>
+<title>AUSTRALIA - Bojangles Saloon</title>
+<link>mms://media3.shiftreload.com.au/bojangles</link>
+<media:thumbnail url="http://www.metafeeds.com/static/images/feed_enclosure_video.png" />
+<enclosure type="video/ms-wmv" url="mms://media3.shiftreload.com.au/bojangles"/>
+</item>
+
+<item>
+<title>AUSTRALIA - Queensland Rainbow Bay</title>
+<link>mms://cdncon-cw-cam-1900.wm.llnwd.net/cdncon_cw_cam_1900?MSWMExt=.asf</link>
+<media:thumbnail url="http://www.metafeeds.com/static/images/feed_enclosure_video.png" />
+<enclosure type="video/ms-asf" url="mms://cdncon-cw-cam-1900.wm.llnwd.net/cdncon_cw_cam_1900?MSWMExt=.asf"/>
+</item>
+
+<item>
+<title>FRANCE - Besancon</title>
+<link>mms://live.camstreams.com/csbesancon</link>
+<media:thumbnail url="http://www.metafeeds.com/static/images/feed_enclosure_video.png" />
+<enclosure type="video/ms-wmv" url="mms://live.camstreams.com/csbesancon"/>
+</item>
+
+<item>
+<title>BOSNIA - Trannik, Kafana Bar Restaurant</title>
+<link>mms://live.camstreams.com/cskafana</link>
+<media:thumbnail url="http://www.metafeeds.com/static/images/feed_enclosure_video.png" />
+<enclosure type="video/ms-wmv" url="mms://live.camstreams.com/cskafana"/>
+</item><item>
+
+
+<title>FRANCE - France 3 Television Corse</title>
+<link>mms://90.80.5.113/w53523546</link>
+<media:thumbnail url="http://www.metafeeds.com/static/images/feed_enclosure_video.png" />
+<enclosure type="video/ms-wmv" url="mms://90.80.5.113/w53523546"/>
+</item>
+
+<item>
+<title>AUSTRALIA - Sydney Harbour</title>
+<link>mms://strm-wm-03.coastalwatch.com/cstopera_broadband</link>
+<media:thumbnail url="http://www.metafeeds.com/static/images/feed_unknown.png" />
+<enclosure type="video/ms-wmv" url="mms://strm-wm-03.coastalwatch.com/cstopera_broadband"/>
+</item>
+
+<item>
+<title>BELGIUM - Bruxelles Grand Place</title>
+<link>mms://T1.cinebel.be/grandplace</link>
+<media:thumbnail url="http://www.metafeeds.com/static/images/feed_unknown.png" />
+<enclosure type="video/ms-wmv" url="mms://T1.cinebel.be/grandplace"/>
+</item>
+
+<item>
+<title>ENGLAND - Chadderton, Lancashire</title>
+<link>mms://live.camstreams.com/csarthur5080</link>
+<media:thumbnail url="http://www.metafeeds.com/static/images/feed_enclosure_video.png" />
+<enclosure type="video/ms-wmv" url="mms://live.camstreams.com/csarthur5080"/>
+</item>
+
+<item>
+<title>ENGLAND - Cransley Hotel, Bournemouth</title>
+<link>mms://live.camstreams.com/csjonnie</link>
+<media:thumbnail url="http://www.metafeeds.com/static/images/feed_enclosure_video.png" />
+<enclosure type="video/ms-wmv" url="mms://live.camstreams.com/csjonnie"/>
+</item>
+
+<item>
+<title>ENGLAND - London Leicester Square</title>
+<link>mms://live.camstreams.com/cscamglobal4</link>
+<media:thumbnail url="http://www.metafeeds.com/static/images/feed_enclosure_video.png" />
+<enclosure type="video/ms-wmv" url="mms://live.camstreams.com/cscamglobal4"/>
+</item>
+
+<item>
+<title>ENGLAND - London Piccadilly Circus</title>
+<link>mms://live.camstreams.com/cscamglobal5</link>
+<media:thumbnail url="http://www.metafeeds.com/static/images/feed_enclosure_video.png" />
+<enclosure type="video/ms-wmv" url="mms://live.camstreams.com/cscamglobal5"/>
+</item>
+
+<item>
+<title>ENGLAND - London Trafalgar Square</title>
+<link>mms://live.camstreams.com/cscamglobal16</link>
+<media:thumbnail url="http://www.metafeeds.com/static/images/feed_enclosure_video.png" />
+<enclosure type="video/ms-wmv" url="mms://live.camstreams.com/cscamglobal16"/>
+</item>
+
+<item>
+<title>GERMANY - Stuttgart Schlossplatz</title>
+<link>mms://81.169.180.142/Stream-Stuttgart-9F4gS329</link>
+<media:thumbnail url="http://www.metafeeds.com/static/images/feed_unknown.png" />
+<enclosure type="vide/ms-wmv" url="mms://81.169.180.142/Stream-Stuttgart-9F4gS329"/>
+</item>
+
+<item>
+<title>ITALY - Rimini Bagno 26</title>
+<link>mms://8.8.64.134/200E22/SpiaggiaBagno26</link>
+<media:thumbnail url="http://www.metafeeds.com/static/images/feed_enclosure_video.png" />
+<enclosure type="video/ms-wmv" url="mms://8.8.64.134/200E22/SpiaggiaBagno26"/>
+</item>
+
+<item>
+<title>SCOTLAND - Main Street, Rutherglen, Glasgow</title>
+<link>mms://live.camstreams.com/csnairb1</link>
+<media:thumbnail url="http://www.metafeeds.com/static/images/feed_enclosure_video.png" />
+<enclosure type="video/ms-wmv" url="mms://live.camstreams.com/csnairb1"/>
+</item>
+
+<item>
+<title>USA - Camelback Mountain Resort</title>
+<link>mms://24.229.80.201/camelback</link>
+<media:thumbnail url="http://www.metafeeds.com/static/images/feed_unknown.png" />
+<enclosure type="video/ms-wmv" url="mms://24.229.80.201/camelback"/>
+</item>
+
+<item>
+<title>USA - Cowboy Bill`s Bull Cam Keywest Florida</title>
+<link>mms://origin.floridakeysmedia.com/cowboybillsbullride</link>
+<media:thumbnail url="http://www.metafeeds.com/static/images/feed_unknown.png" />
+<enclosure type="video/ms-wmv" url="mms://origin.floridakeysmedia.com/cowboybillsbullride"/>
+</item>
+
+<item>
+<title>USA - Cowboy Bill`s Stage Cam Keywest Florida</title>
+<link>mms://alt.floridakeysmedia.com/cowboybillsstage</link>
+<media:thumbnail url="http://www.metafeeds.com/static/images/feed_unknown.png" />
+<enclosure type="video/ms-wmv" url="mms://alt.floridakeysmedia.com/cowboybillsstage"/>
+</item>
+
+<item>
+<title>USA - Florida Billy's Chicken</title>
+<link>mms://live.camstreams.com/csernstcam71</link>
+<media:thumbnail url="http://www.metafeeds.com/static/images/feed_enclosure_video.png" />
+<enclosure type="video/ms-wmv" url="mms://live.camstreams.com/csernstcam71"/>
+</item>
+
+<item>
+<title>USA - Florida Green Parrot Bar</title>
+<link>mms://alt.floridakeysmedia.com/greenparrot</link>
+<media:thumbnail url="http://www.metafeeds.com/static/images/feed_enclosure_video.png" />
+<enclosure type="video/ms-wmv" url="mms://alt.floridakeysmedia.com/greenparrot"/>
+</item>
+
+<item>
+<title>USA - Florida Schooner Wharf Bar</title>
+<link>mms://alt.floridakeysmedia.com/schoonerwharf</link>
+<media:thumbnail url="http://www.metafeeds.com/static/images/feed_enclosure_video.png" />
+<enclosure type="video/ms-wmv" url="mms://alt.floridakeysmedia.com/schoonerwharf"/>
+</item>
+
+<item>
+<title>USA - Florida Sloppy's Joe Bar</title>
+<link>mms://alt.floridakeysmedia.com/sloppys</link>
+<media:thumbnail url="http://www.metafeeds.com/static/images/feed_unknown.png" />
+<enclosure type="video/ms-wmv" url="mms://alt.floridakeysmedia.com/sloppys"/>
+</item>
+
+<item>
+<title>USA - Hogs Breath Saloon 1</title>
+<link>mms://alt.floridakeysmedia.com/hogsbarcam</link>
+<media:thumbnail url="http://www.metafeeds.com/static/images/feed_unknown.png" />
+<enclosure type="video/ms-wmv" url="mms://alt.floridakeysmedia.com/hogsbarcam"/>
+</item>
+
+<item>
+<title>USA - Hogs Breath Saloon 2</title>
+<link>mms://origin.floridakeysmedia.com/hogsrawbarcam</link>
+<media:thumbnail url="http://www.metafeeds.com/static/images/feed_unknown.png" />
+<enclosure type="video/ms-wmv" url="mms://origin.floridakeysmedia.com/hogsrawbarcam"/>
+</item>
+
+<item>
+<title>USA - Deer Run Bed and Breakfast Cam</title>
+<link>mms://alt.floridakeysmedia.com/deerrun</link>
+<media:thumbnail url="http://www.metafeeds.com/static/images/feed_unknown.png" />
+<enclosure type="video/ms-wmv" url="mms://alt.floridakeysmedia.com/deerrun"/>
+</item>
+
+<item>
+<title>USA - Keywest Florida, Duval Street</title>
+<link>mms://origin.floridakeysmedia.com/liveduvalstreet</link>
+<media:thumbnail url="http://www.metafeeds.com/static/images/feed_enclosure_video.png" />
+<enclosure type="video/ms-wmv" url="mms://origin.floridakeysmedia.com/liveduvalstreet"/>
+</item>
+
+<item>
+<title>USA - Keywest Florida, Duval Street 2</title>
+<link>mms://origin.floridakeysmedia.com/duvalevents</link>
+<media:thumbnail url="http://www.metafeeds.com/static/images/feed_enclosure_video.png" />
+<enclosure type="video/ms-wmv" url="mms://origin.floridakeysmedia.com/duvalevents"/>
+</item>
+
+<item>
+<title>USA - Lynnwood 13th Avenue Pub</title>
+<link>mms://live.camstreams.com/cs13thavepub2</link>
+<media:thumbnail url="http://www.metafeeds.com/static/images/feed_enclosure_video.png" />
+<enclosure type="video/ms-wmv" url="mms://live.camstreams.com/cs13thavepub2"/>
+</item>
+
+<item>
+<title>USA - Mountain Rentals of Gatlinburg</title>
+<link>mms://www.mountainchalets.com/GatlinburgLive</link>
+<media:thumbnail url="http://www.metafeeds.com/static/images/feed_unknown.png" />
+<enclosure type="video/ms-wmv" url="mms://www.mountainchalets.com/GatlinburgLive"/>
+</item>
+
+<item>
+<title>USA - Mountain Rentals of Gatlinburg</title>
+<link>mms://160.111.253.227/pandacam1</link>
+<media:thumbnail url="http://www.metafeeds.com/static/images/feed_unknown.png" />
+<enclosure type="video/ms-wmv" url="mms://160.111.253.227/pandacam1"/>
+</item>
+
+<item>
+<title>USA - Truck Driver US1</title>
+<link>mms://live.camstreams.com/cstbprariedog</link>
+<media:thumbnail url="http://www.metafeeds.com/static/images/feed_enclosure_video.png" />
+<enclosure type="video/ms-wmv" url="mms://live.camstreams.com/cstbprariedog"/>
+</item>
+
+<item>
+<title>USA - Texas Karaoke Bar Haslam</title>
+<link>mms://alt.floridakeysmedia.com/twofriends</link>
+<media:thumbnail url="http://www.metafeeds.com/static/images/feed_enclosure_video.png" />
+<enclosure type="video/ms-wmv" url="mms://alt.floridakeysmedia.com/twofriends"/>
+</item>
+
+<item
+<title>THAILAND - Koh Samui, Lamai Road</title>
+<link>mms://wms.th66.com/Livecam218</link>
+<media:thumbnail url="http://www.metafeeds.com/static/images/feed_enclosure_video.png" />
+<enclosure type="video/ms-wmv" url="mms://wms.th66.com/Livecam218"/>
+</item>
+
+<item>
+<title>THAILAND - Koh Samui, Chaweng Beach</title>
+<link>mms://wms.th66.com/regatta</link>
+<media:thumbnail url="http://www.metafeeds.com/static/images/feed_enclosure_video.png" />
+<enclosure type="video/ms-wmv" url="mms://wms.th66.com/regatta"/>
+</item>
+
+</channel>
+</rss>

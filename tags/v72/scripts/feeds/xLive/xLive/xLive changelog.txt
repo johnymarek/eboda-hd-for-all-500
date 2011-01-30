@@ -1,0 +1,16 @@
+---------------------------------------
+xLive Changelog - v9.1 > v9.2
+---------------------------------------
+
+Version summary:
+
+csb: 	The first, very tentative update in a long time. I'm trying to slowly take over Cap's project. This is a mostly a hotfix to fix freezes and crashes!
+      *Thank you, Cap, for all your great work and I hope you are well, wherever you may be.*
+
+01) Forcing the "classic" web-player for all channels. This should prevent most freezes, lock-ups and crashes for the time being.
+    I'm planning to re-enable the full and more comfortable player for all stable and reliable content in the future.
+    (This change only affects firmware 2.4.2 and higher)
+02) Internal refactoring of the main menu.rss. This should eventually make it much more flexible and configurable. I'm hoping that there is no notable performance hit when opening the Xtreamer Live main menu.
+03) Support for localized content! If your OSD-language is switched to "German" there will be new button linking to my German feeds and videos.
+		I'm planning to add a lot more different languages in the future. If your OSD-language is set to anything but German, you shouldn't be able to see it.
+		If you want to forcefully enable this button, simply change createGermanButton=0 to createGermanButton=1 in the menu.rss

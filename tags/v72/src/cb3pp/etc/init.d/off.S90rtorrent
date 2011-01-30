@@ -1,0 +1,58 @@
+#!/bin/sh
+
+prefix="/cb3pp"
+
+PATH=${prefix}/bin:${prefix}/sbin:/sbin:/bin:/usr/sbin:/usr/bin
+NAME=rtorrent
+DAEMON=${prefix}/bin/${NAME}
+DAEMON_OPTS="-n -o import=/cb3pp/etc/rtorrent.rc"
+
+
+
+test -x $DAEMON || exit 0
+
+if [ -z "$1" ] ; then
+    case `echo "$0" | sed 's:^.*/\(.*\):\1:g'` in
+        S??*) rc="start" ;;
+        K??*) rc="stop" ;;
+        *) rc="usage" ;;
+    esac
+else
+    rc="$1"
+fi
+
+case "$rc" in
+    start)
+	echo "Starting torrent client: $NAME"
+	nice -n 30 ${prefix}/bin/dtach -n /tmp/rtorrent.socket $DAEMON $DAEMON_OPTS
+        ;;
+    attach)
+	echo "Attaching to torrent client: $NAME"
+	${prefix}/bin/dtach -a /tmp/rtorrent.socket
+        ;;
+    stop)
+        if [ -n "`pidof $NAME`" ]; then
+            echo "Stopping torrent client: $NAME"
+            killall $NAME 2> /dev/null
+        fi
+        ;;
+    status)
+	if [ -n "`pidof $NAME`" ]; then
+	    echo $NAME is running
+	    exit 0
+	else
+	    echo $NAME is stopped
+	    exit 1
+	fi
+	;;
+    restart)
+        "$0" stop
+        sleep 1
+        "$0" start
+        ;;
+    *)  
+        echo "Usage: $0 (start|stop|restart|status|usage|attach)"
+        ;;
+esac
+
+exit 0
