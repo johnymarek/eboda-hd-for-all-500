@@ -68,7 +68,7 @@ EOF
 then
 cat <<EOF
 
-Press Right Arrow to perform the update. Be patient, update can take long (sometimes more then 5 minutes) depending of your network speed and package size. Graphical Interface may restart after update (this mai also take 1 minute).
+Press Right Arrow to perform the update. Be patient, update can take long (sometimes more than 5 minutes) depending of your network speed and package size. Graphical Interface may restart after update (this mai also take 1 minute).
 EOF
 fi
 

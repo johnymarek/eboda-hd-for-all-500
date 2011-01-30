@@ -4,11 +4,10 @@ v7.0
 v7.1RC1
 - support of SDK3
 v7.1RC2
-- rss_ex repaired and lighttpd configuration update (preparation for newer HDDLinks/rss_ex/xLive)
-- new HDD Links from vb6ro can now be installed
-- new rss_ex can now be installed
-- added Africa countries for weather
-- new timers (180/240)
-- reset/standby from web itf
+- new HDD Links from vb6ro 
+- new rss_ex from ???
+- added Africa countries for weather thanks ???
+- new timers (180/240) for ???
+- reset/standby from web interface
 
  
