@@ -1,3 +1,4 @@
+
 #!/bin/sh
 
 
@@ -17,6 +18,7 @@ VERSION=$3
 SDK=$4
 TEA="no"
 SIMPLE_VERSION=${VERSION}
+USE_EBODA_INSTALL="no"
 
 if [ ${VERSION} = "500a" ]
 then
@@ -244,14 +246,14 @@ cp ${SVN_REPO}/src/${SIMPLE_VERSION}/map/* usr/local/bin/IMS_Modules/Weather/scr
 # dir=`pwd`
 cd ${SVN_REPO}/scripts/feeds/zero_version/rss_ex/
 find rss_ex/ | grep -v .svn | grep -v '~' | zip -9 ${dir}/rss_ex.zip -@
-cp rss_ex4-version.txt ${dir}/rss_ex4-version.txt
+cp rss_ex-version.txt ${dir}/rss_ex4-version.txt
 cd ${dir}
 
 
 # vb6 bin
 # bin is in /scripts/bin
 
-1
+
 # vb6 cgi-bin
 
 # if [ ${SIMPLE_VERSION} = "500" ]
@@ -271,7 +273,7 @@ cd ${dir}
 # dir=`pwd`
 cd ${SVN_REPO}/scripts/feeds/zero_version/scripts_vb6/
 find scripts | grep -v .svn | grep -v '~' | zip -9 ${dir}/scripts4.zip -@
-cp scripts4-version.txt ${dir}/scripts4-version.txt
+cp scripts-version.txt ${dir}/scripts4-version.txt
 cd ${dir}
 
 # xLive
@@ -280,7 +282,7 @@ cd ${dir}
 #dir=`pwd`
 cd ${SVN_REPO}/scripts/feeds/zero_version/xLive
 find xLive | grep -v .svn | grep -v '~' | zip -9 ${dir}/xLive4.zip -@
-cp xLive4-version.txt ${dir}/xLive4-version.txt
+cp xLive-version.txt ${dir}/xLive4-version.txt
 cd ${dir}
 
 #patch DvdPlayer binary
@@ -293,6 +295,22 @@ then
     mv usr/local/bin/DvdPlayer.patched usr/local/bin/DvdPlayer 
     chmod +x usr/local/bin/DvdPlayer
 fi
+
+#inetd.conf
+sed -i -e '$a\
+www3    stream  tcp     nowait  www-data        /usr/sbin/httpd httpd -i -h /scripts\
+www4    stream  tcp     nowait  www-data        /usr/sbin/httpd httpd -i -h /rss_ex/www\
+www5    stream  tcp     nowait  www-data        /usr/sbin/httpd httpd -i -h /xLive' etc/inetd.conf
+
+#services.conf
+sed -i -e '$a\
+http3           83/tcp          www3 www3-http  # HyperText Transfer Protocol\
+http3           83/udp          www3 www3-http  # HyperText Transfer Protocol\
+http4           84/tcp          www4 www4-http  # HyperText Transfer Protocol\
+http4           84/udp          www4 www4-http  # HyperText Transfer Protocol\
+http5           85/tcp          www5 www5-http  # HyperText Transfer Protocol\
+http5           85/udp          www5 www5-http  # HyperText Transfer Protocol' etc/services
+
 
 #packaging root back
 if [ ${SDK} = "2" ]
@@ -332,20 +350,6 @@ mkdir root
 #rss_ex
 ln -s  /rss_ex translate
 
-#inetd.conf
-sed -i -e '$a\
-www3    stream  tcp     nowait  www-data        /usr/sbin/httpd httpd -i -h /scripts\
-www4    stream  tcp     nowait  www-data        /usr/sbin/httpd httpd -i -h /rss_ex/www\
-www5    stream  tcp     nowait  www-data        /usr/sbin/httpd httpd -i -h /xLive' etc/inetd.conf
-
-#services.conf
-sed -i -e '$a\
-http3           83/tcp          www3 www3-http  # HyperText Transfer Protocol\
-http3           83/udp          www3 www3-http  # HyperText Transfer Protocol\
-http4           84/tcp          www4 www4-http  # HyperText Transfer Protocol\
-http4           84/udp          www4 www4-http  # HyperText Transfer Protocol\
-http5           85/tcp          www5 www5-http  # HyperText Transfer Protocol\
-http5           85/udp          www5 www5-http  # HyperText Transfer Protocol' etc/services
 
 
 # keep this to be mine
@@ -537,10 +541,14 @@ rm -rf unpacked_etc/
 
 cd ..
 
-#copy eboda installer
-rm install_a
-cp ${SVN_REPO}/src/${SIMPLE_VERSION}/install/install_a_sdk${SDK} install_a
 
+
+if [ USE_EBODA_INSTALL = "yes" ]
+then
+#copy eboda installer
+    rm install_a
+    cp ${SVN_REPO}/src/${SIMPLE_VERSION}/install/install_a_sdk${SDK} install_a
+fi
 
 #patch size
 sed -i -e 's#<sizeBytesMin>0x3000000</sizeBytesMin>#<sizeBytesMin>0x0800000</sizeBytesMin>#g' configuration.xml
