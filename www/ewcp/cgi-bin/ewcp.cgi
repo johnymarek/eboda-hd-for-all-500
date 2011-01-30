@@ -150,8 +150,9 @@ fi
 cat <<EOF
 </td>
                 </tr>
-                <tr>
-<td>
+                <tr height="21">
+                  <td width="8%"><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>
+<td width="92%">
  <a href="util_standby-now.cgi">Standby</a>
  <a href="util_reset-now.cgi">Reset</a>
 
