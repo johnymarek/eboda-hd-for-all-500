@@ -9,27 +9,30 @@ if ($pg == "") {
    $pg_title = "Link";
 } else {
   $pg_title = $pg;
+  $pg = preg_replace('/[^A-Za-z0-9_]/','_',$pg);
 }
 ?>
 <?php echo "<?xml version='1.0' ?>"; ?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
-<mediaDisplay name="threePartsView" 
-	itemBackgroundColor="0:0:0" 
-	backgroundColor="0:0:0" 
-	sideLeftWidthPC="0" 
-	itemImageXPC="5" 
-	itemXPC="20" 
-	itemYPC="20" 
-	itemWidthPC="65" 
-	capWidthPC="70" 
-	unFocusFontColor="101:101:101" 
-	focusFontColor="255:255:255" 
+<mediaDisplay name="threePartsView"
+	itemBackgroundColor="0:0:0"
+	backgroundColor="0:0:0"
+	sideLeftWidthPC="0"
+	itemImageXPC="5"
+	itemXPC="20"
+	itemYPC="20"
+	itemWidthPC="65"
+	capWidthPC="70"
+	unFocusFontColor="101:101:101"
+	focusFontColor="255:255:255"
+	showHeader="no"
+	showDefaultInfo="no"
 	popupXPC = "40"
   popupYPC = "55"
   popupWidthPC = "22.3"
   popupHeightPC = "5.5"
   popupFontSize = "13"
-	popupBorderColor="28:35:51" 
+	popupBorderColor="28:35:51"
 	popupForegroundColor="255:255:255"
  	popupBackgroundColor="28:35:51"
 	idleImageWidthPC="10"
@@ -42,19 +45,17 @@ if ($pg == "") {
         <idleImage>image/POPUP_LOADING_06.png</idleImage>
         <idleImage>image/POPUP_LOADING_07.png</idleImage>
         <idleImage>image/POPUP_LOADING_08.png</idleImage>
-		<backgroundDisplay>
+ 		<backgroundDisplay>
 			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
 			image/mele/backgd.jpg
-			</image>  
+			</image>
 		</backgroundDisplay>
-		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
-		image/mele/rss_title.jpg
-		</image>
-		<text  align="center" offsetXPC=25 offsetYPC=8 widthPC=63 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
-  <script>getPageInfo("pageTitle");</script>
+  	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="18" fontSize="24" backgroundColor="10:105:150" foregroundColor="100:200:255">
+		  <script>getPageInfo("pageTitle");</script>
 		</text>
- <text align="center" redraw="yes" lines="4" offsetXPC=10 offsetYPC=90 widthPC=75 heightPC=15 fontSize=15 backgroundColor=0:0:0 foregroundColor=120:120:120>Apasati 2 pentru download
-                </text>
+  	<text  redraw="yes" align="center" offsetXPC="0" offsetYPC="90" widthPC="100" heightPC="8" fontSize="17" backgroundColor="10:105:150" foregroundColor="100:200:255">
+    Apasati 2 pentru download
+		</text>
 <onUserInput>
 	userInput = currentUserInput();
 
@@ -146,6 +147,39 @@ function divxden($string) {
   }
   return $link;
 }
+function zeroFill($a,$b) {
+    if ($a >= 0) {
+        return bindec(decbin($a>>$b)); //simply right shift for positive number
+    }
+    $bin = decbin($a>>$b);
+    $bin = substr($bin, $b); // zero fill on the left side
+    $o = bindec($bin);
+    return $o;
+}
+function crunch($arg1,$arg2) {
+  $local4 = strlen($arg2);
+  while ($local5 < $local4) {
+   $local3 = ord(substr($arg2,$local5));
+   $arg1=$arg1^$local3;
+   $local3=$local3%32;
+   $arg1 = ((($arg1 << $local3) & 0xFFFFFFFF) | zeroFill($arg1,(32 - $local3)));
+   $local5++;
+  }
+  return $arg1;
+}
+function peteava($movie) {
+  $seedfile=file_get_contents("http://content.peteava.ro/seed/seed.txt");
+  $t1=explode("=",$seedfile);
+  $seed=$t1[1];
+  if ($seed == "") {
+     return "";
+  }
+  $s = hexdec($seed);
+  $local3 = crunch($s,$movie);
+  $local3 = crunch($local3,"0");
+  $local3 = crunch($local3,"1fe71d22");
+  return dechex($local3);
+}
 /** end divxden function **/
 /**####################################**/
 /** Here we start.......**/
@@ -175,6 +209,9 @@ foreach($videos as $video) {
            $titledownload = substr($titledownload, 0, -4);
         } else {
           $ext = "flv";
+        }
+		if ($pg <> "") {
+           $titledownload = $pg;
         }
      echo '
      <item>
@@ -212,6 +249,9 @@ foreach($videos as $video) {
            $titledownload = substr($titledownload, 0, -4);
         } else {
           $ext = "flv";
+        }
+		if ($pg <> "") {
+           $titledownload = $pg;
         }
     	echo '
         <item>
@@ -280,6 +320,9 @@ foreach($videos as $video) {
            $titledownload = substr($titledownload, 0, -4);
         } else {
           $ext = "flv";
+        }
+		if ($pg <> "") {
+           $titledownload = $pg;
         }
     	echo '
         <item>
@@ -351,6 +394,9 @@ foreach($videos as $video) {
         } else {
           $ext = "flv";
         }
+		if ($pg <> "") {
+           $titledownload = $pg;
+        }
     	echo '
         <item>
     	<title>'.$title.'</title>
@@ -381,7 +427,12 @@ foreach($videos as $video) {
      //_standard.mp4
      if (strpos($link, '_standard.mp4') !== false) {
         $title = $link;
-		$link = "http://content.peteava.ro/video/".$link;
+        $token = peteava($link);
+        if ($token <> "") {
+          $link =  "http://content.peteava.ro/video/".$link."?start=0&token=".$token."1fe71d22";
+        } else {
+		  $link = "http://content.peteava.ro/video/".$link;
+        }
      }
      if (strpos($link, 'http://') !== false){
 		$link1 = $baseurl.$link;
@@ -392,6 +443,9 @@ foreach($videos as $video) {
            $titledownload = substr($titledownload, 0, -4);
         } else {
           $ext = "flv";
+        }
+		if (($pg <> "") && (strpos($link,"serialepe.net") === false)) {
+           $titledownload = $pg;
         }
     	echo '
         <item>
@@ -406,6 +460,12 @@ foreach($videos as $video) {
     	$srt1 = str_between($video,'captions.file=','&');
     	$t1=explode('"',$srt1);
     	$srt = $t1[0];
+    	if (strpos($srt,"http") === false) {
+          //www.veziserialeonline.info
+          if (strpos($filelink,"veziserialeonline") !==false) {
+             $srt = "http://www.veziserialeonline.info".$srt;
+          }
+        }
     	if ($srt <> "") {
     	echo '
     	<item>
@@ -439,6 +499,9 @@ foreach($videos as $video) {
         } else {
           $ext = "flv";
         }
+		if ($pg <> "") {
+           $titledownload = $pg;
+        }
      echo '
      <item>
      <title>'.$title.'</title>
@@ -471,6 +534,9 @@ foreach($videos as $video) {
            $titledownload = substr($titledownload, 0, -4);
         } else {
           $ext = "flv";
+        }
+		if ($pg <> "") {
+           $titledownload = $pg;
         }
      echo '
      <item>
@@ -579,6 +645,9 @@ foreach($videos as $video) {
         } else {
           $ext = "flv";
         }
+		if ($pg <> "") {
+           $titledownload = $pg;
+        }
   	  echo '
       <item>
   	  <title>'.$title.'</title>
@@ -618,6 +687,9 @@ if (strpos($html, '4shared.com/embed') !== false) {
         } else {
           $ext = "flv";
         }
+		if ($pg <> "") {
+           $titledownload = $pg;
+        }
     	echo '
         <item>
     	<title>'.$title.'</title>
@@ -649,6 +721,9 @@ if (strpos($html, '4shared.com') !== false) {
            $titledownload = substr($titledownload, 0, -4);
         } else {
           $ext = "flv";
+        }
+		if ($pg <> "") {
+           $titledownload = $pg;
         }
     	echo '
         <item>
@@ -716,6 +791,9 @@ if (strpos($html, 'googleplayer.swf') !== false) {
         } else {
           $ext = "flv";
         }
+		if ($pg <> "") {
+           $titledownload = $pg;
+        }
     	echo '
         <item>
     	<title>'.$title.'</title>
@@ -748,6 +826,9 @@ if (strpos($html, 'filebox.ro/get_video') !== false) {
         } else {
           $ext = "flv";
         }
+		if ($pg <> "") {
+           $titledownload = $pg;
+        }
     	echo '
         <item>
     	<title>'.$title.'</title>
@@ -771,7 +852,12 @@ if (strpos($html, 'peteava.ro/embed') !== false) {
 		$link = "http://www.peteava.ro/embed/".$t[0];
 		$h = file_get_contents($link);
 		$id = str_between($h,"stream.php&file=","&");
-		$link="http://content.peteava.ro/video/".$id;
+        $token = peteava($id);
+        if ($token <> "") {
+          $link =  "http://content.peteava.ro/video/".$id."?start=0&token=".$token."1fe71d22";
+        } else {
+		  $link = "http://content.peteava.ro/video/".$id;
+        }
 		$server = str_between($link,"http://","/");
 		$title = $server." - ".$id;
 		if (($id <> "") && strcmp($link,$lastlink)) {
@@ -783,6 +869,9 @@ if (strpos($html, 'peteava.ro/embed') !== false) {
            $titledownload = substr($titledownload, 0, -4);
         } else {
           $ext = "flv";
+        }
+		if ($pg <> "") {
+           $titledownload = $pg;
         }
     	echo '
         <item>
@@ -841,6 +930,9 @@ if (strpos($html, 'embed.trilulilu.ro') !== false) {
            $titledownload = substr($titledownload, 0, -4);
         } else {
           $ext = "flv";
+        }
+		if ($pg <> "") {
+           $titledownload = $pg;
         }
     	echo '
         <item>
@@ -901,6 +993,9 @@ foreach($videos as $video) {
         } else {
           $ext = "flv";
         }
+		if ($pg <> "") {
+           $titledownload = $pg;
+        }
     	echo '
         <item>
     	<title>'.$title.'</title>
@@ -935,6 +1030,9 @@ foreach($videos as $video) {
         } else {
           $ext = "flv";
         }
+		if ($pg <> "") {
+           $titledownload = $pg;
+        }
     	echo '
         <item>
     	<title>'.$title.'</title>
@@ -963,6 +1061,9 @@ if (strpos($html, 'flashvars="playlistfile=') !== false) {
            $titledownload = substr($titledownload, 0, -4);
         } else {
           $ext = "flv";
+        }
+		if ($pg <> "") {
+           $titledownload = $pg;
         }
     	echo '
         <item>
@@ -995,6 +1096,9 @@ if (strpos($html, 'encodeURIComponent') !== false) {
         } else {
           $ext = "flv";
         }
+		if ($pg <> "") {
+           $titledownload = $pg;
+        }
     	echo '
         <item>
     	<title>'.$title.'</title>
@@ -1025,6 +1129,9 @@ if (strpos($html, 'jurnaltv.ro') !== false) {
         } else {
           $ext = "flv";
         }
+		if ($pg <> "") {
+           $titledownload = $pg;
+        }
     	echo '
         <item>
     	<title>'.$title.'</title>
@@ -1051,6 +1158,9 @@ if (strpos($html, 'stagevu.ro') !== false) {
            $titledownload = substr($titledownload, 0, -4);
         } else {
           $ext = "flv";
+        }
+		if ($pg <> "") {
+           $titledownload = $pg;
         }
     	echo '
         <item>
@@ -1079,6 +1189,9 @@ if (strpos($html, 'stagevu.com') !== false) {
         } else {
           $ext = "flv";
         }
+		if ($pg <> "") {
+           $titledownload = $pg;
+        }
     	echo '
         <item>
     	<title>'.$title.'</title>
@@ -1091,7 +1204,12 @@ if (strpos($html, 'stagevu.com') !== false) {
   	 $lastlink = $link;
     }
 }
-// utils
+   echo '
+   <item>
+   <title>Download Manager</title>
+   <link>http://127.0.0.1:82/scripts/util/level.php</link>
+   </item>
+   ';
     $link = "http://127.0.0.1:82/scripts/util/util1.cgi";
   	echo '
     <item>
@@ -1105,12 +1223,6 @@ if (strpos($html, 'stagevu.com') !== false) {
    <item>
    <title>Redenumire fisiere descarcate</title>
    <link>'.$link.'</link>
-   </item>
-   ';
-   echo '
-   <item>
-   <title>Download Manager</title>
-   <link>http://127.0.0.1:82/scripts/util/level.php</link>
    </item>
    ';
 ?>

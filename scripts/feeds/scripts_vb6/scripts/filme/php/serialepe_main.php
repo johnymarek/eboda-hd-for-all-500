@@ -8,31 +8,28 @@
   setRefreshTime(-1);
   itemCount = getPageInfo("itemCount");
 </onRefresh>
-<mediaDisplay name="photoView" 
-	fontSize="16" 
+<mediaDisplay name="photoView"
+	fontSize="16"
 	rowCount="7"
 	columnCount="3"
 	sideColorBottom="10:105:150"
 	sideColorTop="10:105:150"
 	itemYPC="25"
-	itemXPC="8"
-	capYPC="25"
-	capXPC="8"
-	itemGapXPC="1" 
-	itemGapYPC="1"     
+	itemXPC="5"
+	itemGapXPC="1"
+	itemGapYPC="1"
 	rollItems="yes"
-	drawItemText="yes" 
-	itemOffsetXPC="8"
-	itemHeightPC="8"
+	drawItemText="yes"
+	itemOffsetXPC="5"
 	itemImageWidthPC="0.1"
 	itemImageHeightPC="0.1"
-	imageBorderPC="1.5"        
+	imageBorderPC="1.5"
 	forceFocusOnItem="yes"
 	itemCornerRounding="yes"
 	idleImageWidthPC="10"
 	idleImageHeightPC="10"
 	sideTopHeightPC=20
-	bottomYPC=90
+	bottomYPC=80
 	sliding=yes
 	showHeader=no
 	showDefaultInfo=no
@@ -109,9 +106,9 @@ function str_between($string, $start, $end){
 }
 $host = "http://127.0.0.1:82";
 
-$html = file_get_contents("http://www.serialepe.net/p/seriale-online-gratis-subtitrate.html");
-$html = str_between($html,"<h2 class='title'>Seriale Online</h2>","</ul>");
-$videos = explode('<li>', $html);
+$html = file_get_contents("http://www.serialepe.net/");
+//$html = str_between($html,"<h2 class='title'>Seriale Online</h2>","</ul>");
+$videos = explode('<li class="cat-item cat-item', $html);
 unset($videos[0]);
 $videos = array_values($videos);
 $img = "/scripts/image/movies.png";
@@ -120,11 +117,15 @@ foreach($videos as $video) {
   $t2 = explode('"', $t1[1]);
   $link = $t2[0];
 
-  $t1 = explode('">', $video);
-  $t2 = explode('<', $t1[1]);
-  $title = trim($t2[0]);
+  $t3 = explode('">', $t1[1]);
+  $t4 = explode('<', $t3[1]);
+  $title = trim($t4[0]);
   
-	if ($link <> "") {
+  $t1 = explode('title="',$video);
+  $t2= explode('"',$t1[1]);
+  $description = $t2[0];
+  
+	if (($link <> "") && (strpos($description,"all posts filed") === false)) {
 		$link = $host."/scripts/filme/php/serialepe.php?file=".$link.",".urlencode($title);
 	  echo '
 	  <item>

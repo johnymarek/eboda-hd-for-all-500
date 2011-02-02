@@ -8,31 +8,28 @@
   setRefreshTime(-1);
   itemCount = getPageInfo("itemCount");
 </onRefresh>
-<mediaDisplay name="photoView" 
-	fontSize="16" 
+<mediaDisplay name="photoView"
+	fontSize="16"
 	rowCount="7"
 	columnCount="3"
 	sideColorBottom="10:105:150"
 	sideColorTop="10:105:150"
 	itemYPC="25"
-	itemXPC="8"
-	capYPC="25"
-	capXPC="8"
-	itemGapXPC="1" 
-	itemGapYPC="1"     
+	itemXPC="5"
+	itemGapXPC="1"
+	itemGapYPC="1"
 	rollItems="yes"
-	drawItemText="yes" 
-	itemOffsetXPC="8"
-	itemHeightPC="8"
+	drawItemText="yes"
+	itemOffsetXPC="5"
 	itemImageWidthPC="0.1"
 	itemImageHeightPC="0.1"
-	imageBorderPC="1.5"        
+	imageBorderPC="1.5"
 	forceFocusOnItem="yes"
 	itemCornerRounding="yes"
 	idleImageWidthPC="10"
 	idleImageHeightPC="10"
 	sideTopHeightPC=20
-	bottomYPC=90
+	bottomYPC=80
 	sliding=yes
 	showHeader=no
 	showDefaultInfo=no
@@ -115,9 +112,12 @@ echo '
 	<title>'.$tit.'</title>
 	';
 $html = file_get_contents($link);
-$html = str_between($html,"<div class='post-body'>","<div id='related-posts'>");
+$html1 = str_between($html,"ista episoadelor",'<div style="clear: both;">');
+if ($html1 == "") {
+   $html1 = str_between($html,'<div class="post-wrapper">','<div id="commentwrap">');
+}
 $n=1;
-$seasons = explode('<table align="center"',$html);
+$seasons = explode('<table',$html1);
 unset($seasons[0]);
 $seasons = array_values($seasons);
 foreach($seasons as $season) {
@@ -133,11 +133,11 @@ foreach($videos as $video) {
 
   $t1 = explode('">', $video);
   $t2 = explode('<', $t1[1]);
-  $title = trim($t2[0]);
-  $title = $n.".".$title;
+  $title1 = trim($t2[0]);
+  $title = $n.".".$title1;
 
-	if (($link <> "") && ($title <> "")){
-		$link = "http://127.0.0.1:82/scripts/filme/php/filme_link.php?".$link;
+	if (($link <> "") && ($title1 <> "")){
+		$link = "http://127.0.0.1:82/scripts/filme/php/filme_link.php?".$link.",".urlencode($title1);
     echo '
     <item>
     <title>'.$title.'</title>
