@@ -179,15 +179,17 @@ unset($videos[0]);
 $videos = array_values($videos);
 
 foreach($videos as $video) {
-//  titlu  
-  $v1 = explode('title="', $video);
-  $v2 = explode('>',$v1[2]);
-  $v3 = explode('<',$v2[1]);
-  $titlu = $v3[0];
+
 //  link  
   $v1 = explode('href="', $video);
-  $v2 = explode('#', $v1[1]);
-  $link = $v2[0];  
+  $v2 = explode('"', $v1[1]);
+  $link = $v2[0];
+  $l=explode("link=",$link);
+  $link=$l[1];
+//  titlu
+  $v3 = explode('>',$v1[1]);
+  $v4 = explode('<',$v3[1]);
+  $titlu = $v4[0];
 //  imagine  
   $v1 = explode('src="', $video);
   $v2 = explode('"', $v1[1]);
@@ -197,6 +199,7 @@ foreach($videos as $video) {
   $v2 = explode('</p>', $v1[1]);
   $descriere = $v2[0];  
 	$descriere = preg_replace("/(<\/?)(\w+)([^>]*>)/e","",$descriere);
+	$descriere = str_replace("&nbsp;","",$descriere);
 	if($link!="") {
 		$link = "http://127.0.0.1:82/scripts/filme/php/filme_link.php?".$link.",".urlencode($titlu);
 		echo'

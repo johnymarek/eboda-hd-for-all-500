@@ -190,7 +190,7 @@ foreach($videos as $video) {
   $t4 = explode("<",$t3[1]);
   $title = $t4[0];
 
-	$link = 'http://127.0.0.1:82/scripts/filme/php/filme_link.php?'.$link;
+	$link = 'http://127.0.0.1:82/scripts/filme/php/filme_link.php?'.$link.",".urlencode($title);
 	echo '
   <item>
     <link>'.$link.'</link>

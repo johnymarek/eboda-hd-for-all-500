@@ -170,10 +170,11 @@ $videos = array_values($videos);
 foreach($videos as $video) {
     $t1 = explode('href="', $video);
     $t2 = explode('"', $t1[1]);
-    $link = "http://127.0.0.1:82/scripts/filme/php/filme_link.php?".$t2[0];
+
     $t3 = explode(">",$t1[1]);
     $t4 = explode("<",$t3[1]);
     $title = $t4[0];
+    $link = "http://127.0.0.1:82/scripts/filme/php/filme_link.php?".$t2[0].",".urlencode($title);
     echo '
     <item>
     <title>'.$title.'</title>

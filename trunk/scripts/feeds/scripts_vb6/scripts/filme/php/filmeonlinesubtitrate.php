@@ -173,23 +173,27 @@ function str_between($string, $start, $end){
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
 	return substr($string,$ini,$len); 
 }
-$videos = explode('<div class="post', $html);
+$videos = explode('<div class="oneblog">', $html);
 
 unset($videos[0]);
 $videos = array_values($videos);
 //http://www.link-scurt.info/go.php?url=http://www.filmeonlinesubtitrate.ro/actiune/detective-dee-2010
 foreach($videos as $video) {
-  $t1 = explode('url=', $video);
+  $t1 = explode('href="', $video);
   $t2 = explode('"', $t1[1]);
   $link = $t2[0];
+  
+  $t3=explode('>',$t1[1]);
+  $t4=explode('<',$t3[1]);
+  $title=trim($t4[0]);
 
-  $t1 = explode(' src="', $video);
+  $t1 = explode('src="', $video);
   $t2 = explode('"', $t1[1]);
   $image = $t2[0];
 
-  $t1 = explode('title="', $video);
-  $t2 = explode('"', $t1[1]);
-  $title  = str_replace("online gratis cu subtitrare in limba romana","",$t2[0]);
+  //$t1 = explode('title="', $video);
+  //$t2 = explode('"', $t1[1]);
+  $title  = str_replace("online gratis cu subtitrare in limba romana","",$title);
   $title  = str_replace("Vezi Filmul","",$title);
   $title  = str_replace("Vezi Online Filmul","",$title);
   $title  = str_replace("gratis cu subtitrare in limba romana","",$title);

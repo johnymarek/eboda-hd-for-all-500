@@ -146,7 +146,8 @@ foreach($videos as $video) {
 		$t4=explode("<",$t3[1]);
 		$title=trim($t4[0]);
 		$title=str_replace("&nbsp;","",$title);
-	}		
+	}
+    $title=str_replace("&nbsp;","",$title);
 	if ((strpos($link, $serial) !== false) && ($link <> $queryArr[0]) && ($title <> "")){
 		$link="http://127.0.0.1:82/scripts/filme/php/filme_link.php?".$link;
     echo '

@@ -220,10 +220,12 @@ foreach($videos as $video) {
   $t2 = explode('"', $t1[1]);
   $image = $t2[0];
 
-  $t1 = explode('class="bn">', $video);
-  $t2 = explode('<', $t1[1]);
+  $t1 = explode('class="b', $video);
+  $t0 = explode(">",$t1[1]);
+  $t2 = explode('<', $t0[1]);
   $title = $t2[0];
   $title = trim($title);
+  /**
   if ($title == "") {
   //class="bo">
   $t1 = explode('class="bo">', $video);
@@ -231,6 +233,7 @@ foreach($videos as $video) {
   $title = $t2[0];
   $title = trim($title);
   }
+  **/
   if ($title <> "") {
   $link = "http://127.0.0.1:83/cgi-bin/translate?stream,HD:1,http://vimeo.com/".$link;
 	echo'

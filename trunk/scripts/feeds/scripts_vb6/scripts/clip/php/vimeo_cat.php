@@ -126,6 +126,11 @@ $img = "/scripts/clip/image/vimeo.jpg";
 	    <script>"<?php echo $host."/scripts/clip/php/vimeo1.php?query=,"; ?>" + urlEncode(keyword) + "," + urlEncode(keyword);</script>
 	  </link>
 	</searchLink1>
+	<searchLink2>
+	  <link>
+	    <script>"<?php echo $host."/scripts/clip/php/vimeo_tag.php?query=,"; ?>" + urlEncode(keyword) + ",Video%20Tag:" + urlEncode(keyword);</script>
+	  </link>
+	</searchLink2>
 	<item_template>
 		<mediaDisplay  name="threePartsView" idleImageWidthPC="10" idleImageHeightPC="10">
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
@@ -143,7 +148,16 @@ $img = "/scripts/clip/image/vimeo.jpg";
 <channel>
 	<title>Vimeo - Categories</title>
 	<menu>main menu</menu>
-
+		<item>
+			<title>Cautare dupa video tag</title>
+			<onClick>
+				keyword = getInput();
+				if (keyword != null)
+				{
+	       jumpToLink("searchLink2");
+				}
+			</onClick>
+		</item>
 		<item>
 			<title>Afisare canal... (nume exact)</title>
 			<onClick>

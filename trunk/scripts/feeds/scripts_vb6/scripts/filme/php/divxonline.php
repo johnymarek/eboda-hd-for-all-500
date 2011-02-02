@@ -202,6 +202,8 @@ foreach($videos as $video) {
   $descriere = preg_replace("/(<\/?)([^>]*>)/e","",$descriere);
   //$descriere = preg_replace("/(<\/?)(\w+)([^>]*>)/e","",$descriere);
   $descriere = str_replace("<","",$descriere);
+  $descriere = substr($descriere,0,300);
+  $descriere = substr($descriere,0,-strlen(strrchr($descriere," ")))."...";
 	if ($link <> "") {
 		$link = 'http://127.0.0.1:82/scripts/filme/php/filme_link.php?'.$link.','.urlencode($title);
 	echo'

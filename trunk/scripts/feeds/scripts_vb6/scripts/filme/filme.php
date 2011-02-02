@@ -146,6 +146,27 @@ $host = "http://127.0.0.1:82";
 </item>
 
 <item>
+<title>serialeonline.tv</title>
+<link><?php echo $host; ?>/scripts/filme/php/serialeonline_main.php</link>
+<annotation>http://www.serialeonline.tv/</annotation>
+<mediaDisplay name="threePartsView"/>
+</item>
+
+<item>
+<title>www.veziserialeonline.info</title>
+<link><?php echo $host; ?>/scripts/filme/php/veziserialeonline_main.php</link>
+<annotation>http://www.veziserialeonline.info/tv-shows</annotation>
+<mediaDisplay name="threePartsView"/>
+</item>
+
+<item>
+<title>www.990.ro</title>
+<link><?php echo $host; ?>/scripts/filme/990.php</link>
+<annotation>http://www.990.ro</annotation>
+<mediaDisplay name="threePartsView"/>
+</item>
+
+<item>
 <title>www.onlinemoca.com</title>
 <link><?php echo $host; ?>/scripts/filme/php/onlinemoca_main.php</link>
 <annotation>http://www.onlinemoca.com/</annotation>
@@ -156,13 +177,6 @@ $host = "http://127.0.0.1:82";
 <title>cinemaxx.ro</title>
 <link><?php echo $host; ?>/scripts/filme/php/cinemaxx_main.php</link>
 <annotation>http://cinemaxx.ro/</annotation>
-<mediaDisplay name="threePartsView"/>
-</item>
-
-<item>
-<title>www.filmeonline24.com</title>
-<link><?php echo $host; ?>/scripts/filme/php/filmeonline24_main.php</link>
-<annotation>http://www.filmeonline24.com/</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
 
@@ -188,13 +202,6 @@ $host = "http://127.0.0.1:82";
 </item>
 
 <item>
-<title>www.990.ro</title>
-<link><?php echo $host; ?>/scripts/filme/990.php</link>
-<annotation>http://www.990.ro</annotation>
-<mediaDisplay name="threePartsView"/>
-</item>
-
-<item>
 <title>filmeonlinenoi.com</title>
 <link><?php echo $host; ?>/scripts/filme/php/filmeonlinenoi_main.php</link>
 <annotation>http://filmeonlinenoi.com/</annotation>
@@ -216,9 +223,16 @@ $host = "http://127.0.0.1:82";
 </item>
 
 <item>
-<title>vezifilme.ro</title>
-<link><?php echo $host; ?>/scripts/filme/php/vezifilme_main.php</link>
-<annotation>http://www.vezifilme.ro/</annotation>
+<title>onlythefilm.com</title>
+<link><?php echo $host; ?>/scripts/filme/php/onlythefilm.php</link>
+<annotation>http://www.onlythefilm.com</annotation>
+<mediaDisplay name="threePartsView"/>
+</item>
+
+<item>
+<title>divxonline.biz</title>
+<link><?php echo $host; ?>/scripts/filme/php/divxonline_main.php</link>
+<annotation>http://divxonline.biz</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
 
@@ -276,23 +290,16 @@ $host = "http://127.0.0.1:82";
 </item>
 
 <item>
-<title>serialeonline.tv</title>
-<link><?php echo $host; ?>/scripts/filme/php/serialeonline_main.php</link>
-<annotation>http://www.serialeonline.tv/</annotation>
+<title>vezifilme.ro</title>
+<link><?php echo $host; ?>/scripts/filme/php/vezifilme_main.php</link>
+<annotation>http://www.vezifilme.ro/</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
 
 <item>
-<title>onlythefilm.com</title>
-<link><?php echo $host; ?>/scripts/filme/php/onlythefilm.php</link>
-<annotation>http://www.onlythefilm.com</annotation>
-<mediaDisplay name="threePartsView"/>
-</item>
-
-<item>
-<title>divxonline.biz</title>
-<link><?php echo $host; ?>/scripts/filme/php/divxonline_main.php</link>
-<annotation>http://divxonline.biz</annotation>
+<title>www.filmeonline24.com</title>
+<link><?php echo $host; ?>/scripts/filme/php/filmeonline24_main.php</link>
+<annotation>http://www.filmeonline24.com/</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
 

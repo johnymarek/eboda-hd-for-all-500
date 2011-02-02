@@ -38,9 +38,9 @@
 		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
 		image/mele/rss_title.jpg
 		</image>
-		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+		<text  align="center" offsetXPC=25 offsetYPC=8 widthPC=63 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
   <script>getPageInfo("pageTitle");</script>
-		</text>			
+		</text>
 </mediaDisplay>
 <channel>
 <?php
@@ -49,9 +49,42 @@ function str_between($string, $start, $end){
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
 	return substr($string,$ini,$len); 
 }
+function zeroFill($a,$b) {
+    if ($a >= 0) {
+        return bindec(decbin($a>>$b)); //simply right shift for positive number
+    }
+    $bin = decbin($a>>$b);
+    $bin = substr($bin, $b); // zero fill on the left side
+    $o = bindec($bin);
+    return $o;
+}
+function crunch($arg1,$arg2) {
+  $local4 = strlen($arg2);
+  while ($local5 < $local4) {
+   $local3 = ord(substr($arg2,$local5));
+   $arg1=$arg1^$local3;
+   $local3=$local3%32;
+   $arg1 = ((($arg1 << $local3) & 0xFFFFFFFF) | zeroFill($arg1,(32 - $local3)));
+   $local5++;
+  }
+  return $arg1;
+}
+function peteava($movie) {
+  $seedfile=file_get_contents("http://content.peteava.ro/seed/seed.txt");
+  $t1=explode("=",$seedfile);
+  $seed=$t1[1];
+  if ($seed == "") {
+     return "";
+  }
+  $s = hexdec($seed);
+  $local3 = crunch($s,$movie);
+  $local3 = crunch($local3,"0");
+  $local3 = crunch($local3,"1fe71d22");
+  return dechex($local3);
+}
 $baseurl = "http://127.0.0.1:83/cgi-bin/translate?stream,Content-type:video/x-flv,";
 $link = $_GET["file"];
-$t=explode(",",$link);
+$t1=explode(",",$link);
 $link = $t1[0];
 $pg = urldecode($t1[1]);
 if ($pg == "") {
@@ -60,7 +93,12 @@ if ($pg == "") {
 echo "<title>".$pg."</title>";
 $html = file_get_contents($link);
 $id = str_between($html,"stream.php&file=","&");
-$link="http://content.peteava.ro/video/".$id;
+$token = peteava($id);
+if ($token <> "") {
+  $link =  "http://content.peteava.ro/video/".$id."?start=0&token=".$token."1fe71d22";
+} else {
+  $link = "http://content.peteava.ro/video/".$id;
+}
 $server = str_between($link,"http://","/");
 $title = $server." - ".$id; 
 $link = $baseurl.$link;

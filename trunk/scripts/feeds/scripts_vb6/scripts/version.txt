@@ -1,5 +1,5 @@
-parent: 30:253ca50ebbcf tip
- fix prahovahd, filme
+parent: 35:86c7eee4a584 tip
+ Add veziserialeonline, mici corectii
 branch: default
 commit: (clean)
 update: (current)
