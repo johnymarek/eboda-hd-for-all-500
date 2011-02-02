@@ -35,7 +35,15 @@ then
 fi
 
 
-if [ ${VERSION} = "500a" -o ${VERSION} = "500minia" -o ${VERSION} = "500" -o ${VERSION} = "500mini" -o ${VERSION} = "500plus" ]
+if [ ${VERSION} = "PV73200" ]
+then
+    USE_EBODA_INSTALL="no";
+    SIMPLE_VERSION="500mini"
+    TEA="YES";
+fi
+
+
+if [ ${VERSION} = "500a" -o ${VERSION} = "500minia" -o ${VERSION} = "500" -o ${VERSION} = "500mini" -o ${VERSION} = "500plus" -o ${VERSION} = "PV73200" ]
 then
     echo Patching firmware variant ${VERSION}
 else
@@ -291,7 +299,7 @@ cd ${dir}
 if [ ${VERSION} = "500minia" ]
 then
     echo patching DvdPlayer
-    bspatch usr/local/bin/DvdPlayer usr/local/bin/DvdPlayer.patched ${SVN_REPO}/src/500mini/DvdPlayer.bspatch
+    bspatch usr/local/bin/DvdPlayer usr/local/bin/DvdPlayer.patched ${SVN_REPO}/src/500mini/DvdPlayer.bspatch_sdk${SDK}
     mv usr/local/bin/DvdPlayer.patched usr/local/bin/DvdPlayer 
     chmod +x usr/local/bin/DvdPlayer
 fi
@@ -323,12 +331,11 @@ then
     rm ../../squashfs1.img
     mksquashfs3 * ../../squashfs1.img -b 65536
     cd  ..
-    # this is out because e-boda firmware is not encripted and we use that install_a
-    # if [ $TEA = "YES" ]
-    # then
-    # 	tea -e -i ../squashfs1.img -o ../squashfs1.upg -k 12345678195454322338264935438139
-    # 	rm ../squashfs1.img
-    # fi
+    if [ $TEA = "YES" -a $USE_EBODA_INSTALL = "no" ]
+    then
+    	tea -e -i ../squashfs1.img -o ../squashfs1.upg -k 12345678195454322338264935438139
+    	rm ../squashfs1.img
+    fi
     cd ..
 fi
 
@@ -543,7 +550,7 @@ cd ..
 
 
 
-if [ USE_EBODA_INSTALL = "yes" ]
+if [ $USE_EBODA_INSTALL = "yes" ]
 then
 #copy eboda installer
     rm install_a
