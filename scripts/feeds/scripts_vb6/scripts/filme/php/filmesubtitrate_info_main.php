@@ -115,24 +115,6 @@ function str_title($string){
 }
 $host = "http://127.0.0.1:82";
 $html = file_get_contents("http://www.seriale.filmesubtitrate.info/p/seriale-online-subtitrate-in-romana.html");
-$html1=str_between($html,'Seriale Noi!!!','<table border="0" cellpadding="2" cellspacing="0" style="width: 370px;">');
-$videos=explode('href="',$html1);
-unset($videos[0]);
-$videos=array_values($videos);
-foreach($videos as $video) {
-	$t1=explode('"',$video);
-	$link=trim($t1[0]);
-	$t3=explode(">",$video);
-	$t4=explode("<",$t3[1]);
-	$title=str_title($t4[0]);
-	$link = $host."/scripts/filme/php/filmesubtitrate_info.php?query=".$link.",".urlencode($title);
-	echo '
-		<item>
-		<title>Nou! '.$title.'</title>
-		<link>'.$link.'</link>
-		</item>
-	';
-}	
 $html = str_between($html,'<table border="0" cellpadding="2" cellspacing="0" style="width: 370px;">','</table');
 $cats = explode('<td valign="top" width="370">', $html);
 unset($cats[0]);

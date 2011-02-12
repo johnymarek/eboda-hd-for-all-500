@@ -56,7 +56,7 @@ function str_between($string, $start, $end){
 $id = $_GET["file"];
 $link = "http://www.zalaa.com/embed/".$id."/divx";
 $html = file_get_contents($link);
-$link = str_between($html,'param name="src" value="','"');
+$link = "http".str_between($html,'param value="http','"');
 $server = str_between($link,"http://","/");
 $title = $server." - ".substr(strrchr($link,"/"),1); 
 	if ($link <> "") {		

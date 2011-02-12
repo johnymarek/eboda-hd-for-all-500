@@ -182,14 +182,18 @@ foreach($videos as $video) {
   $t1 = explode('href="', $video);
   $t2 = explode('"', $t1[1]);
   $link = $t2[0];
-  
+  if (strpos($link,"=") !== false) {
+     $t3 = explode('=', $link);
+     $link = $t3[1];
+  }
   $t3=explode('>',$t1[1]);
   $t4=explode('<',$t3[1]);
   $title=trim($t4[0]);
 
-  $t1 = explode('src="', $video);
+  $t1 = explode('thumbnail" src="', $video);
   $t2 = explode('"', $t1[1]);
   $image = $t2[0];
+  $image = "image/movies.png";
 
   //$t1 = explode('title="', $video);
   //$t2 = explode('"', $t1[1]);

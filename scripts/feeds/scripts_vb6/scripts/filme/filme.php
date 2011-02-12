@@ -167,6 +167,13 @@ $host = "http://127.0.0.1:82";
 </item>
 
 <item>
+<title>deseneanimate.tv</title>
+<link><?php echo $host; ?>/scripts/filme/php/deseneanimate_main.php?query=1,</link>
+<annotation>http://deseneanimate.tv</annotation>
+<mediaDisplay name="threePartsView"/>
+</item>
+
+<item>
 <title>www.onlinemoca.com</title>
 <link><?php echo $host; ?>/scripts/filme/php/onlinemoca_main.php</link>
 <annotation>http://www.onlinemoca.com/</annotation>
@@ -304,9 +311,29 @@ $host = "http://127.0.0.1:82";
 </item>
 
 <item>
+<title>www.crutu-razvan.ro</title>
+<link><?php echo $host; ?>/scripts/filme/php/crutu-razvan.php?query=1,</link>
+<annotation>http://www.crutu-razvan.ro</annotation>
+<mediaDisplay name="threePartsView"/>
+</item>
+<item>
 <title>zalaa.com - divx (fara subtitrare)</title>
 <link><?php echo $host; ?>/scripts/filme/php/zalaa.php</link>
 <annotation>http://www.zalaa.com/videos</annotation>
+<mediaDisplay name="threePartsView"/>
+</item>
+
+<item>
+<title>www.starmaxmovie.com - seriale (fara subtitrare)</title>
+<link><?php echo $host; ?>/scripts/filme/php/starmaxmovie_main.php</link>
+<annotation>http://www.starmaxmovie.com</annotation>
+<mediaDisplay name="threePartsView"/>
+</item>
+
+<item>
+<title>10starmovies.com - (fara subtitrare)</title>
+<link><?php echo $host; ?>/scripts/filme/php/10starmovies_main.php</link>
+<annotation>http://10starmovies.com/Tv-Shows/</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
 

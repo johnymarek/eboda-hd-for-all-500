@@ -131,7 +131,7 @@ function divxden($string) {
   if ($hash <> "") {
     $link = "http://".$s.".divxden.com:182"."/d/".$hash."/".$z;
     $AgetHeaders = @get_headers($link);
-    if (!preg_match("|200|", $AgetHeaders[0])) {
+    if (preg_match("|text/html|", $AgetHeaders[3])) {
     $link = "http://".$s.".vidxden.com:182"."/d/".$hash."/".$z;
 	   $AgetHeaders = @get_headers($link);
         if (!preg_match("|200|", $AgetHeaders[0])) {
@@ -178,7 +178,7 @@ function peteava($movie) {
   $local3 = crunch($s,$movie);
   $local3 = crunch($local3,"0");
   $local3 = crunch($local3,"1fe71d22");
-  return dechex($local3);
+  return strtolower(dechex($local3));
 }
 /** end divxden function **/
 /**####################################**/
@@ -418,7 +418,13 @@ $videos = array_values($videos);
 foreach($videos as $video) {
   $t1 = explode('ile=', $video);
   $t2 = explode('&', $t1[1]);
-  $link = urldecode($t2[0]);
+  $t3 = explode("'",$t2[0]);
+  $link = urldecode($t3[0]);
+  if (strpos($link,"wp-content") !==false) {  //serialepe.net !!!!!!!!
+    $t2=explode("&",$t1[2]);
+    $t3=explode("'",$t2[0]);
+    $link = urldecode($t3[0]);
+  }
   $link = str_prep($link);
   $server = str_between($link,"http://","/");
   $title = $server." - ".substr(strrchr($link,"/"),1);
@@ -466,7 +472,8 @@ foreach($videos as $video) {
              $srt = "http://www.veziserialeonline.info".$srt;
           }
         }
-    	if ($srt <> "") {
+        $pct = substr($srt, -4, 1);
+    	if (($srt <> "") && ($pct == ".")) {
     	echo '
     	<item>
     	<title>Subtitrare</title>

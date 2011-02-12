@@ -80,7 +80,7 @@ function peteava($movie) {
   $local3 = crunch($s,$movie);
   $local3 = crunch($local3,"0");
   $local3 = crunch($local3,"1fe71d22");
-  return dechex($local3);
+  return strtolower(dechex($local3));
 }
 $baseurl = "http://127.0.0.1:83/cgi-bin/translate?stream,Content-type:video/x-flv,";
 $link = $_GET["file"];

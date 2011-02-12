@@ -1,11 +1,11 @@
-<?php
-echo "<?xml version='1.0' encoding='UTF8' ?>";
+#!/usr/local/bin/Resource/www/cgi-bin/php
+<?php echo "<?xml version='1.0' encoding='UTF8' ?>";
+$host = "http://127.0.0.1/cgi-bin";
 $query = $_GET["query"];
 if($query) {
    $queryArr = explode(',', $query);
-   $page = $queryArr[0];
-   $search = $queryArr[1];
-   $tit = urldecode($queryArr[2]);
+   $link = $queryArr[0];
+   $tit = urldecode($queryArr[1]);
 }
 ?>
 <rss version="2.0">
@@ -22,7 +22,7 @@ if($query) {
 <mediaDisplay name="threePartsView"
 	sideLeftWidthPC="0"
 	sideRightWidthPC="0"
-
+	
 	headerImageWidthPC="0"
 	selectMenuOnRight="no"
 	autoSelectMenu="no"
@@ -31,11 +31,11 @@ if($query) {
 	itemImageWidthPC="0"
 	itemXPC="8"
 	itemYPC="25"
-	itemWidthPC="75"
+	itemWidthPC="50"
 	itemHeightPC="8"
 	capXPC="8"
 	capYPC="25"
-	capWidthPC="80"
+	capWidthPC="50"
 	capHeightPC="64"
 	itemBackgroundColor="0:0:0"
 	itemPerPage="8"
@@ -47,7 +47,7 @@ if($query) {
 	imageFocus=""
 	sliding="no"
 >
-
+		
   	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		  <script>getPageInfo("pageTitle");</script>
 		</text>
@@ -55,16 +55,12 @@ if($query) {
   	<text redraw="yes" offsetXPC="85" offsetYPC="12" widthPC="10" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
 		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
 		</text>
-
-		<!--<text align="justify" redraw="yes"
-          lines="10" fontSize=17
-		      offsetXPC=55 offsetYPC=55 widthPC=40 heightPC=42
-		      backgroundColor=0:0:0 foregroundColor=200:200:200>
-			<script>print(annotation); annotation;</script>
+  	<text  redraw="yes" align="center" offsetXPC="0" offsetYPC="90" widthPC="100" heightPC="8" fontSize="17" backgroundColor="10:105:150" foregroundColor="100:200:255">
+		  <script>print(annotation); annotation;</script>
 		</text>
-		<image  redraw="yes" offsetXPC=66 offsetYPC=22.5 widthPC=15 heightPC=30>
-		<script>print(img); img;</script>
-		</image>-->
+		<image  redraw="yes" offsetXPC=60 offsetYPC=35 widthPC=30 heightPC=30>
+		image/movies.png
+		</image>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_01.png </idleImage>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_02.png </idleImage>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_03.png </idleImage>
@@ -79,11 +75,10 @@ if($query) {
 				<script>
 					idx = getQueryItemIndex();
 					focus = getFocusItemIndex();
-					if(focus==idx)
+					if(focus==idx) 
 					{
 					  location = getItemInfo(idx, "location");
 					  annotation = getItemInfo(idx, "annotation");
-					  img = getItemInfo(idx,"image");
 					}
 					getItemInfo(idx, "title");
 				</script>
@@ -111,22 +106,22 @@ if($query) {
 			</text>
 
 		</itemDisplay>
-
+		
   <onUserInput>
     <script>
       ret = "false";
       userInput = currentUserInput();
       majorContext = getPageInfo("majorContext");
-
+      
       print("*** majorContext=",majorContext);
       print("*** userInput=",userInput);
-
+      
       ret;
     </script>
   </onUserInput>
-
+		
 	</mediaDisplay>
-
+	
 	<item_template>
 		<mediaDisplay  name="threePartsView" idleImageWidthPC="10" idleImageHeightPC="10">
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
@@ -138,6 +133,7 @@ if($query) {
         <idleImage>image/POPUP_LOADING_07.png</idleImage>
         <idleImage>image/POPUP_LOADING_08.png</idleImage>
 		</mediaDisplay>
+
 	</item_template>
 <channel>
 	<title><?php echo $tit; ?></title>
@@ -145,82 +141,43 @@ if($query) {
 
 
 <?php
-//http://www.serialeonline.tv/category/how-i-met-your-mother/sezonul-1-how-i-met-your-mother/page/2/
-//http://www.serialeonline.tv/?cat=62&paged=1
-//$link = "http://www.serialeonline.tv/?cat=".$search."&paged=".$page;
-if ($page == 1) {
-  $link = $search;
-} else {
-  $link = $search."page/".$page."/";
+function str_between($string, $start, $end){ 
+	$string = " ".$string; $ini = strpos($string,$start); 
+	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
+	return substr($string,$ini,$len); 
 }
+//http://www.starmaxmovie.com/videos.php?vid=dd4f45f2d
+//http://www.starmaxmovie.com/videos.php?vid=e4ba98077
+//e4ba98077
 $html = file_get_contents($link);
-if($page > 1) { ?>
-
-<item>
-<?php
-$sThisFile = 'http://127.0.0.1:82'.$_SERVER['SCRIPT_NAME'];
-$url = $sThisFile."?query=".($page-1).",";
-if($search) {
-  $url = $url.$search.",".urlencode($tit);
-}
-?>
-<title>Previous Page</title>
-<link><?php echo $url;?></link>
-<annotation>Pagina anterioara</annotation>
-<image>/scripts/image/left.jpg</image>
-<mediaDisplay name="threePartsView"/>
-</item>
-
-
-<?php } ?>
-
-<?php
-function str_between($string, $start, $end){
-	$string = " ".$string; $ini = strpos($string,$start);
-	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini;
-	return substr($string,$ini,$len);
-}
-
-$image = "/scripts/image/movies.png";
-$videos = explode('<div class="post-', $html);
+$html = str_between($html,'<ul class="video-info">','</ul>');
+$image = "image/movies.png";
+$videos = explode('<li', $html);
 unset($videos[0]);
 $videos = array_values($videos);
-foreach($videos as $video) {
+
+foreach($videos as $video) {		
   $t1 = explode('href="', $video);
   $t2 = explode('"', $t1[1]);
   $link = $t2[0];
-  
-  $t3 = explode(">",$t1[1]);
-  $t4 = explode("<",$t3[1]);
-  $title = $t4[0];
-
-	$link = 'http://127.0.0.1:82/scripts/filme/php/filme_link.php?'.$link.",".urlencode($title);
-	echo '
-  <item>
-    <link>'.$link.'</link>
-    <title>'.$title.'</title>
-    <annotation>'.$title.'</annotation>
-    <image>'.$image.'</image>
-    <media:thumbnail url="'.$image.'" />
-    <mediaDisplay name="threePartsView"/>
-  </item>';
+  $t2 = explode('>', $t1[1]);
+  $t3 = explode('<',$t2[1]);
+  $title = $t3[0];
+  $t = $tit." - ".$title;
+	if ($link <> "") {
+		$link = $host."/scripts/filme/php/starmaxmovie.php?query=1,".$link.",".urlencode($t);
+  	echo '
+  	<item>
+  	<title>'.$title.'</title>
+  	<link>'.$link.'</link>
+  	<annotation>'.$title.'</annotation>
+	<mediaDisplay name="threePartsView"/>
+  	</item>
+  	';
+   }
 }
-?>
 
-<item>
-<?php
-$sThisFile = 'http://127.0.0.1:82'.$_SERVER['SCRIPT_NAME'];
-$url = $sThisFile."?query=".($page+1).",";
-if($search) {
-  $url = $url.$search.",".urlencode($tit);
-}
 ?>
-<title>Next Page</title>
-<link><?php echo $url;?></link>
-<annotation>Pagina urmatoare</annotation>
-<image>/scripts/image/right.jpg</image>
-<mediaDisplay name="threePartsView"/>
-</item>
 
 </channel>
 </rss>
