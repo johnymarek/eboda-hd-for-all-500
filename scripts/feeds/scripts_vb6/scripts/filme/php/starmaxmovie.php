@@ -1,6 +1,5 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php echo "<?xml version='1.0' encoding='UTF8' ?>";
-$host = "http://127.0.0.1/cgi-bin";
+$host = "http://127.0.0.1:82";
 $query = $_GET["query"];
 if($query) {
    $queryArr = explode(',', $query);
@@ -122,7 +121,7 @@ if($query) {
 
 	if( userInput == "two")
 	{
-		topUrl = "http://127.0.0.1/cgi-bin/scripts/util/download.cgi?link=" + getItemInfo(getFocusItemIndex(),"download") + ";name=" + getItemInfo(getFocusItemIndex(),"name");
+		topUrl = "http://127.0.0.1:82/scripts/util/download.cgi?link=" + getItemInfo(getFocusItemIndex(),"download") + ";name=" + getItemInfo(getFocusItemIndex(),"name");
 		dlok = loadXMLFile(topUrl);
 	}
 		else
@@ -147,7 +146,7 @@ if($query) {
 		</mediaDisplay>
 	</item_template>
 <destination>
-	<link>http://127.0.0.1/cgi-bin/scripts/util/level.php
+	<link>http://127.0.0.1:82/scripts/util/level.php
 	</link>
 </destination>
 <channel>
@@ -179,14 +178,14 @@ if($search) {
 <title>Previous Page</title>
 <link><?php echo $url;?></link>
 <annotation>Pagina anterioara</annotation>
-<image>image/left.jpg</image>
+<image>/scripts/image/left.jpg</image>
 <mediaDisplay name="threePartsView"/>
 </item>
 
 
 <?php } ?>
 <?php
-$baseurl = "http://127.0.0.1/cgi-bin/translate?stream,Content-type:video/x-flv,";
+$baseurl = "http://127.0.0.1:83/scripts/cgi-bin/translate?stream,Content-type:video/x-flv,";
 $videos = explode('<div class="video_i">', $html);
 unset($videos[0]);
 $videos = array_values($videos);
@@ -232,7 +231,7 @@ if($search) {
 <title>Next Page</title>
 <link><?php echo $url;?></link>
 <annotation>Pagina urmatoare</annotation>
-<image>image/right.jpg</image>
+<image>/scripts/image/right.jpg</image>
 <mediaDisplay name="threePartsView"/>
 </item>
 

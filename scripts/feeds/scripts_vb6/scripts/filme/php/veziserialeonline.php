@@ -1,4 +1,3 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php
 echo "<?xml version='1.0' encoding='UTF8' ?>";
 $query = $_GET["file"];
@@ -169,7 +168,7 @@ function str_between($string, $start, $end){
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
 	return substr($string,$ini,$len); 
 }
-$host = "http://127.0.0.1/cgi-bin";
+$host = "http://127.0.0.1:82";
 $videos = explode('<li class="post-', $html);
 
 unset($videos[0]);
@@ -188,7 +187,7 @@ foreach($videos as $video) {
     $data = $title;
     if ($link <> "") {
        $down = $tit." ".$title;
-       $link = 'http://127.0.0.1/cgi-bin/scripts/filme/php/filme_link.php?'.$link.','.urlencode($down);
+       $link = 'http://127.0.0.1:82/scripts/filme/php/filme_link.php?'.$link.','.urlencode($down);
 
   echo '
   <item>

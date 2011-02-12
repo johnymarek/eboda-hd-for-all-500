@@ -1,4 +1,3 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php echo "<?xml version='1.0' encoding='UTF8' ?>"; ?>
 <rss version="2.0">
 <onEnter>
@@ -155,7 +154,7 @@ ret;
 	<title>10starmovies.com</title>
 	<menu>main menu</menu>
 <?php
-  $host = "http://127.0.0.1/cgi-bin";
+  $host = "http://127.0.0.1:82";
   $image = "image/movies.png";
   $content = file_get_contents("http://10starmovies.com/Tv-Shows/");
   $newlines = array("\t","\n","\r","\x20\x20","\0","\x0B");

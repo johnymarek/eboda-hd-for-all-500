@@ -1,4 +1,3 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 <HTML>
 <HEAD>
 <script type="text/JavaScript">
@@ -44,7 +43,7 @@ if (isset($link)) {
       $ext = "flv";
    }
    $titledownload = preg_replace('/[^A-Za-z0-9_]/','_',$titledownload);
-$link = 'http://127.0.0.1/cgi-bin/scripts/util/download.cgi?link='.$link.';name='.$titledownload.'.'.$ext;
+$link = 'http://127.0.0.1:82/scripts/util/download.cgi?link='.$link.';name='.$titledownload.'.'.$ext;
 $handle = fopen($link,'r');
 fclose($handle);
 sleep(3);
@@ -52,31 +51,31 @@ sleep(3);
 } elseif ($action == "manage") {
   $go = $_GET["go"];
   if ($go=="start") {
-     //http://127.0.0.1/cgi-bin/scripts/util/manag.cgi?link='.$link.';name='.$t1[0].';go=start
+     //http://127.0.0.1:82/scripts/util/manag.cgi?link='.$link.';name='.$t1[0].';go=start
      $link = $_GET["link"];
      $name = $_GET["name"];
-     $link = "http://127.0.0.1/cgi-bin/scripts/util/manag.cgi?link=".$link.";name=".$name.";go=start";
+     $link = "http://127.0.0.1:82/scripts/util/manag.cgi?link=".$link.";name=".$name.";go=start";
      $handle = fopen($link,'r');
      fclose($handle);
      sleep(3);
   } elseif ($go=="stop") {
-     //http://127.0.0.1/cgi-bin/scripts/util/manag.cgi?pid='.$pid[0].';name='.$t1[0].';go=stop
+     //http://127.0.0.1:82/scripts/util/manag.cgi?pid='.$pid[0].';name='.$t1[0].';go=stop
      $pid = $_GET["pid"];
      $name = $_GET["name"];
-     $link = "http://127.0.0.1/cgi-bin/scripts/util/manag.cgi?pid=".$pid.";name=".$name.";go=stop";
+     $link = "http://127.0.0.1:82/scripts/util/manag.cgi?pid=".$pid.";name=".$name.";go=stop";
      $handle = fopen($link,'r');
      fclose($handle);
      sleep(3);
   } elseif ($go=="delete") {
-    //http://127.0.0.1/cgi-bin/scripts/util/manag.cgi?name='.$t1[0].';go=delete
+    //http://127.0.0.1:82/scripts/util/manag.cgi?name='.$t1[0].';go=delete
     $name = $_GET["name"];
-    $link = "http://127.0.0.1/cgi-bin/scripts/util/manag.cgi?name=".$name.";go=delete";
+    $link = "http://127.0.0.1:82/scripts/util/manag.cgi?name=".$name.";go=delete";
     $handle = fopen($link,'r');
     fclose($handle);
     sleep(3);
   }
 } elseif ($action == "all") {
-  $link = "http://127.0.0.1/cgi-bin/scripts/util/stop_exua.cgi";
+  $link = "http://127.0.0.1:82/scripts/util/stop_exua.cgi";
   $handle = fopen($link,'r');
   fclose($handle);
   sleep(3);

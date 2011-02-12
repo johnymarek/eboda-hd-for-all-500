@@ -1,6 +1,5 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php
-$host = "http://127.0.0.1/cgi-bin";
+$host = "http://127.0.0.1:82";
 $query = $_GET["file"];
 $queryarr = explode(",",$query);
 $serieLink = $queryarr[0];

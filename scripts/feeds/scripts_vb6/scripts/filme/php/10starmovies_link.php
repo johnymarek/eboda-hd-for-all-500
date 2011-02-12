@@ -1,4 +1,3 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php
 $query = $_GET["file"];
 $queryarr = explode(",",$query);
@@ -55,14 +54,14 @@ $pg = preg_replace('/[^A-Za-z0-9_]/','_',$serieTitle);
 
 	if( userInput == "two")
 	{
-		topUrl = "http://127.0.0.1/cgi-bin/scripts/util/download.cgi?link=" + getItemInfo(getFocusItemIndex(),"download") + ";name=" + getItemInfo(getFocusItemIndex(),"name");
+		topUrl = "http://127.0.0.1:82/scripts/util/download.cgi?link=" + getItemInfo(getFocusItemIndex(),"download") + ";name=" + getItemInfo(getFocusItemIndex(),"name");
 		dlok = loadXMLFile(topUrl);
 	}
 
 </onUserInput>
 </mediaDisplay>
 <destination>
-	<link>http://127.0.0.1/cgi-bin/scripts/util/level.php
+	<link>http://127.0.0.1:82/scripts/util/level.php
 	</link>
 </destination>
 <channel>
@@ -74,8 +73,8 @@ function str_between($string, $start, $end){
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini;
 	return substr($string,$ini,$len);
 }
-$host = "http://127.0.0.1/cgi-bin";
-$baseurl = "http://127.0.0.1/cgi-bin/translate?stream,Content-type:video/x-flv,";
+$host = "http://127.0.0.1:82";
+$baseurl = "http://127.0.0.1:83/scripts/cgi-bin/translate?stream,Content-type:video/x-flv,";
 $content = file_get_contents($episodeLink);
 $newlines = array("\t","\n","\r","\x20\x20","\0","\x0B");
 $input = str_replace($newlines, "", $content);
@@ -131,7 +130,7 @@ foreach($videos as $video) {
     $megavideo_id=$t2[0];
     $t1=explode("v=",$megavideo_id);
     $mega_id=$t1[1];
-    $link1 = "http://127.0.0.1/cgi-bin/scripts/php1/mega.php?id=".$mega_id;
+    $link1 = "http://127.0.0.1:82/scripts/php1/mega.php?id=".$mega_id;
    	echo '
     <item>
    	<title>megavideo link-'.$mega_id.'-(click for links)</title>
@@ -182,10 +181,10 @@ foreach($videos as $video) {
    echo '
    <item>
    <title>Download Manager</title>
-   <link>http://127.0.0.1/cgi-bin/scripts/util/level.php</link>
+   <link>http://127.0.0.1:82/scripts/util/level.php</link>
    </item>
    ';
-    $link = "http://127.0.0.1/cgi-bin/scripts/util/util1.cgi";
+    $link = "http://127.0.0.1:82/scripts/util/util1.cgi";
   	echo '
     <item>
   	<title>Stop download</title>
@@ -193,7 +192,7 @@ foreach($videos as $video) {
   	<enclosure type="text/txt" url="'.$link.'"/>
   	</item>
       ';
-   $link = "http://127.0.0.1/cgi-bin/scripts/util/ren.php";
+   $link = "http://127.0.0.1:82/scripts/util/ren.php";
    echo '
    <item>
    <title>Redenumire fisiere descarcate</title>

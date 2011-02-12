@@ -1,4 +1,3 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php echo "<?xml version='1.0' encoding='UTF8' ?>"; ?>
 <rss version="2.0">
 <onEnter>
@@ -160,7 +159,7 @@ if($search) {
 <title>Previous Page</title>
 <link><?php echo $url;?></link>
 <annotation>Pagina anterioara</annotation>
-<image>image/left.jpg</image>
+<image>/scripts/image/left.jpg</image>
 <mediaDisplay name="threePartsView"/>
 </item>
 
@@ -196,7 +195,7 @@ foreach($videos as $video) {
     $title = trim(str_replace("Film Online Subtitrat","",$title));
     $t = explode("Film",$title);
     $title = trim($t[0]);
-    $link = 'http://127.0.0.1/cgi-bin/scripts/filme/php/filme_link.php?'.$link.','.urlencode($title);
+    $link = 'http://127.0.0.1:82/scripts/filme/php/filme_link.php?'.$link.','.urlencode($title);
 
     echo '
     <item>
@@ -223,7 +222,7 @@ if($search) {
 <title>Next Page</title>
 <link><?php echo $url;?></link>
 <annotation>Pagina urmatoare</annotation>
-<image>image/right.jpg</image>
+<image>/scripts/image/right.jpg</image>
 <mediaDisplay name="threePartsView"/>
 </item>
 

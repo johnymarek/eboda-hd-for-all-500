@@ -67,7 +67,7 @@ function str_between($string, $start, $end){
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
 	return substr($string,$ini,$len); 
 }
-$image = "/usr/local/etc/www/cgi-bin/scripts/clip/image/youclubvideo.png";
+$image = "/scripts/clip/image/youclubvideo.png";
 $videos = explode('<div class="media_element_pic">', $html);
 unset($videos[0]);
 $videos = array_values($videos);
