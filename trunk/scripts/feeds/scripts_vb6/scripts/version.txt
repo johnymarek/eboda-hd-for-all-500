@@ -1,5 +1,5 @@
-parent: 35:86c7eee4a584 tip
- Add veziserialeonline, mici corectii
+parent: 38:d5fbab1dde27 tip
+ patch filme_link pentru serialepe + interfata web download manager
 branch: default
-commit: (clean)
+commit: 1 modified
 update: (current)

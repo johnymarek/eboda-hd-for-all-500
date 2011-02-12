@@ -149,7 +149,7 @@ foreach($videos as $video) {
 	}
     $title=str_replace("&nbsp;","",$title);
 	if ((strpos($link, $serial) !== false) && ($link <> $queryArr[0]) && ($title <> "")){
-		$link="http://127.0.0.1:82/scripts/filme/php/filme_link.php?".$link;
+		$link="http://127.0.0.1:82/scripts/filme/php/filme_link.php?".$link.",".urlencode($title);
     echo '
     <item>
     <title>'.$title.'</title>
