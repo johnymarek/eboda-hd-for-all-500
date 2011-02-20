@@ -49,6 +49,12 @@ $host = "http://127.0.0.1:82";
 
     <title>TV Live - pe tari</title>
 
+<item>
+<title>TV ESTERE</title>
+<link>http://127.0.0.1:82/scripts/tv/tv_estere.php</link>
+<media:thumbnail url="image/tv_radio.png" />
+</item>
+
     <item>
 <title>Moldova</title>
 <link>http://hdforall.freehostia.com/tv/moldova_tv.rss</link>

@@ -170,7 +170,13 @@ if($search) {
 
 <?php } ?>
 <?php
-$videos = explode('<div class="post-', $html);
+function str_between($string, $start, $end){
+	$string = " ".$string; $ini = strpos($string,$start);
+	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini;
+	return substr($string,$ini,$len);
+}
+$html = str_between($html,'<div id="slider">','<!--End Slider-->');
+$videos = explode('<div', $html);
 unset($videos[0]);
 $videos = array_values($videos);
 
@@ -186,9 +192,10 @@ foreach($videos as $video) {
   $t2 = explode('"', $t1[1]);
   $image = $t2[0];
 
-  $t1 = explode('title="', $video);
-  $t2 = explode('"', $t1[1]);
-  $title = str_replace("Vizioneaza Filmul","",$t2[0]);
+  //$t1 = explode('title="', $video);
+  //$t2 = explode('"', $t1[1]);
+  $title=str_between($video,"strong&gt;","&lt;/strong");
+  $title = str_replace("Vizioneaza Filmul","",$title);
   $title = str_replace("online Gratis","",$title);
   $title = str_replace("Vizionare Filmul","",$title);
   $title = str_replace("Online Gratis","",$title);
@@ -198,6 +205,7 @@ foreach($videos as $video) {
 //  descriere  
   $v1 = explode('<p>', $video);
   $v2 = explode('</p>', $v1[1]);
+  /**
   $descriere = $v2[0];  
 	$descriere = preg_replace("/(<\/?)(\w+)([^>]*>)/e","",$descriere);
 	$descriere = str_replace("Server 1","",$descriere);
@@ -208,6 +216,8 @@ foreach($videos as $video) {
 	if ($descriere == "") {
 		$descriere = $title;
 	}
+	**/
+	$descriere = $title;
 $pos = strpos($image, '.jpg');
 if ($pos !== false) {
     $link = 'http://127.0.0.1:82/scripts/filme/php/filme_link.php?'.$link.','.urlencode($title);

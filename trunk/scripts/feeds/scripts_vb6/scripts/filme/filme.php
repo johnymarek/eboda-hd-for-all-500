@@ -100,18 +100,36 @@ $host = "http://127.0.0.1:82";
 
 		</itemDisplay>
 		
-  <onUserInput>
-    <script>
-      ret = "false";
-      userInput = currentUserInput();
-      majorContext = getPageInfo("majorContext");
-      
-      print("*** majorContext=",majorContext);
-      print("*** userInput=",userInput);
-      
-      ret;
-    </script>
-  </onUserInput>
+<onUserInput>
+<script>
+ret = "false";
+userInput = currentUserInput();
+
+if (userInput == "pagedown" || userInput == "pageup")
+{
+  idx = Integer(getFocusItemIndex());
+  if (userInput == "pagedown")
+  {
+    idx -= -8;
+    if(idx &gt;= itemCount)
+      idx = itemCount-1;
+  }
+  else
+  {
+    idx -= 8;
+    if(idx &lt; 0)
+      idx = 0;
+  }
+
+  print("new idx: "+idx);
+  setFocusItemIndex(idx);
+	setItemFocus(0);
+  redrawDisplay();
+  "true";
+}
+ret;
+</script>
+</onUserInput>
 		
 	</mediaDisplay>
 	
@@ -156,6 +174,20 @@ $host = "http://127.0.0.1:82";
 <title>www.veziserialeonline.info</title>
 <link><?php echo $host; ?>/scripts/filme/php/veziserialeonline_main.php</link>
 <annotation>http://www.veziserialeonline.info/tv-shows</annotation>
+<mediaDisplay name="threePartsView"/>
+</item>
+
+<item>
+<title>seriale.subtitrate.info</title>
+<link><?php echo $host; ?>/scripts/filme/php/seriale_subtitrate_info_main.php</link>
+<annotation>http://seriale.subtitrate.info/index.php?menu=tv-shows</annotation>
+<mediaDisplay name="threePartsView"/>
+</item>
+
+<item>
+<title>www.cinemaro.ro</title>
+<link><?php echo $host; ?>/scripts/filme/php/cinemaro_main.php</link>
+<annotation>http://www.cinemaro.ro</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
 
@@ -316,13 +348,14 @@ $host = "http://127.0.0.1:82";
 <annotation>http://www.crutu-razvan.ro</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
+<!--
 <item>
 <title>zalaa.com - divx (fara subtitrare)</title>
 <link><?php echo $host; ?>/scripts/filme/php/zalaa.php</link>
 <annotation>http://www.zalaa.com/videos</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
-
+-->
 <item>
 <title>www.starmaxmovie.com - seriale (fara subtitrare)</title>
 <link><?php echo $host; ?>/scripts/filme/php/starmaxmovie_main.php</link>

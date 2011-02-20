@@ -53,8 +53,8 @@
 		      backgroundColor=0:0:0 foregroundColor=200:200:200>
 			<script>print(annotation); annotation;</script>
 		</text>
-		<image  redraw="yes" offsetXPC=68 offsetYPC=22.5 widthPC=15 heightPC=30>
-		<script>print(img); img;</script>
+		<image offsetXPC=60 offsetYPC=22.5 widthPC=30 heightPC=25>
+  http://www.cinemaro.ro/templates/default/images/logo.gif
 		</image>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_01.png </idleImage>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_02.png </idleImage>
@@ -72,9 +72,7 @@
 					focus = getFocusItemIndex();
 					if(focus==idx) 
 					{
-					  location = getItemInfo(idx, "location");
 					  annotation = getItemInfo(idx, "annotation");
-					  img = getItemInfo(idx,"image");
 					}
 					getItemInfo(idx, "title");
 				</script>
@@ -103,18 +101,36 @@
 
 		</itemDisplay>
 		
-  <onUserInput>
-    <script>
-      ret = "false";
-      userInput = currentUserInput();
-      majorContext = getPageInfo("majorContext");
-      
-      print("*** majorContext=",majorContext);
-      print("*** userInput=",userInput);
-      
-      ret;
-    </script>
-  </onUserInput>
+<onUserInput>
+<script>
+ret = "false";
+userInput = currentUserInput();
+
+if (userInput == "pagedown" || userInput == "pageup")
+{
+  idx = Integer(getFocusItemIndex());
+  if (userInput == "pagedown")
+  {
+    idx -= -8;
+    if(idx &gt;= itemCount)
+      idx = itemCount-1;
+  }
+  else
+  {
+    idx -= 8;
+    if(idx &lt; 0)
+      idx = 0;
+  }
+
+  print("new idx: "+idx);
+  setFocusItemIndex(idx);
+	setItemFocus(0);
+  redrawDisplay();
+  "true";
+}
+ret;
+</script>
+</onUserInput>
 		
 	</mediaDisplay>
 	
@@ -132,119 +148,48 @@
 
 	</item_template>
 <channel>
-	<title>filmeonlinegratis.ro</title>
+	<title>www.cinemaro.ro</title>
 	<menu>main menu</menu>
 
-
 <?php
-$query = $_GET["query"];
-if($query) {
-   $queryArr = explode(',', $query);
-   $page = $queryArr[0];
-   $search = $queryArr[1];
+function str_between($string, $start, $end){ 
+	$string = " ".$string; $ini = strpos($string,$start); 
+	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
+	return substr($string,$ini,$len); 
 }
-//http://www.filmeonlinegratis.ro/page/3
-if($page) {
-	$html = file_get_contents($search."/page/".$page);
-} else {
-  $page = 1;
-	$html = file_get_contents($search);
-}
+$host = "http://127.0.0.1:82";
+$image = "http://www.cinemaro.ro/templates/default/images/logo.gif";
+$html = file_get_contents("http://www.cinemaro.ro/");
+$html = str_between($html,'<ul id="ul_categories">','</div>');
 
-
-if($page > 1) { ?>
-
-<item>
-<?php
-$sThisFile = 'http://127.0.0.1:82'.$_SERVER['SCRIPT_NAME'];
-$url = $sThisFile."?query=".($page-1).",";
-if($search) { 
-  $url = $url.$search; 
-}
-?>
-<title>Previous Page</title>
-<link><?php echo $url;?></link>
-<annotation>Pagina anterioara</annotation>
-<image>/scripts/image/left.jpg</image>
-<mediaDisplay name="threePartsView"/>
-</item>
-
-
-<?php } ?>
-<?php
-if (strpos($html,'<div id="zv') !==false) {
-   $videos = explode('<div id="zv', $html);
-} else {
-  $videos = explode('<div class="oneblog">',$html);
-}
+$videos = explode('<li>', $html);
 
 unset($videos[0]);
 $videos = array_values($videos);
+
 foreach($videos as $video) {
-	if (strpos($video, 'info/?') !== false) {
-		$t1 = explode('info/?', $video);
-	} else {
-		$t1 = explode('href="',$video);
-	}
-	$t2 = explode('"', $t1[1]);
-	$link = $t2[0];
-	$link = str_replace(' ','%20',$link);
-	$link = str_replace('[','%5B',$link);
-	$link = str_replace(']','%5D',$link); 
-	
-	$t1 = explode(' src="', $video);
-	$t2 = explode('"', $t1[1]);
-	$image = $t2[0];
-	
-	$t1 = explode('title="', $video);
-	$t2 = explode('"', $t1[1]);
-	$title = htmlspecialchars_decode($t2[0]);
-	$title = str_replace("Vezi live online","",$title);
-	$title = str_replace("cu subtitrare in limba romana","",$title);
-	$title = str_replace("Vezi gratis filmul","",$title);
-	$title = str_replace("online cu subtitrare","",$title);
-	$title = trim($title);
+    $t1=explode('href="',$video);
+    $t2=explode('"',$t1[1]);
+    $link=$t2[0];
+    $t3=explode(">",$t1[1]);
+    $t4=explode("<",$t3[1]);
+    $title=$t4[0];
 
-//  descriere  
-  $v1 = explode('<p>', $video);
-  $v2 = explode('</p>', $v1[1]);
-  $descriere = $v2[0];  
-	$descriere = preg_replace("/(<\/?)(\w+)([^>]*>)/e","",$descriere);
-	if ($descriere == "") {
-		$descriere = $title;
-	}
-	$pos = strpos($image, '.jpg');
-	if ($pos !== false) {
-    $link = 'http://127.0.0.1:82/scripts/filme/php/filme_link.php?'.$link.','.urlencode($title);
-    echo '
-    <item>
-    <title>'.$title.'</title>
-    <link>'.$link.'</link>	
-    <annotation>'.$descriere.'</annotation>
-    <image>'.$image.'</image>
-    <media:thumbnail url="'.$image.'" />
-    <mediaDisplay name="threePartsView"/>
-    </item>
-    ';
-  }
+    if (($link <> "") && strpos($link,"sezon")===false) {
+		$link = $host.'/scripts/filme/php/cinemaro_sez.php?file='.$link.",".urlencode($title);
+
+  echo '
+  <item>
+  <title>'.$title.'</title>
+  <link>'.$link.'</link>
+  <media:thumbnail url="'.$image.'" />
+  <mediaDisplay name="threePartsView"/>
+  </item>
+  ';
+}
 }
 
 ?>
-
-<item>
-<?php
-$sThisFile = 'http://127.0.0.1:82'.$_SERVER['SCRIPT_NAME'];
-$url = $sThisFile."?query=".($page+1).",";
-if($search) { 
-  $url = $url.$search; 
-}
-?>
-<title>Next Page</title>
-<link><?php echo $url;?></link>
-<annotation>Pagina urmatoare</annotation>
-<image>/scripts/image/right.jpg</image>
-<mediaDisplay name="threePartsView"/>
-</item>
 
 </channel>
 </rss>
