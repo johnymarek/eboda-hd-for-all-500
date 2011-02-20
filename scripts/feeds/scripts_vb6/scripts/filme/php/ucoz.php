@@ -186,6 +186,10 @@ foreach($videos as $video) {
 	$t2 = explode('"', $t1[1]);
 	$link = $t2[0];
 	$n = strlen($link);
+    if (strpos($link,"?") !==false) {
+       $l=explode("?",$link);
+       $link=$l[1];
+    }
 	
 	$t1 = explode('img src="', $video);
 	$t2 = explode('"', $t1[1]);

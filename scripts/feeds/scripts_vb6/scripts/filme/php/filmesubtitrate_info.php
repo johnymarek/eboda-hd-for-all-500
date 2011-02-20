@@ -127,6 +127,7 @@ if ($pos >= 1) {
 }
 //10-things
 if ($serial=="10") $serial="10-things";
+if ($serial=="greys") $serial="grey";
 $videos=explode('<li',$html);
 unset($videos[0]);
 $videos=array_values($videos);

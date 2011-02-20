@@ -1,5 +1,5 @@
-parent: 38:d5fbab1dde27 tip
- patch filme_link pentru serialepe + interfata web download manager
+parent: 41:4414646a9823 tip
+ noi servere la filme, mici fix-uri
 branch: default
 commit: 1 modified
 update: (current)

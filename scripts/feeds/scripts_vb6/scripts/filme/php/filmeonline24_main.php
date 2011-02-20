@@ -152,6 +152,7 @@ $img = "/scripts/image/movies.png";
   <annotation>Filme noi</annotation>
   </item>
   ';
+/**
 $videos = explode('li class="cat-item', $html);
 unset($videos[0]);
 $videos = array_values($videos);
@@ -173,6 +174,7 @@ foreach($videos as $video) {
   </item>
   ';
 }
+**/
 ?>
 </channel>
 </rss>

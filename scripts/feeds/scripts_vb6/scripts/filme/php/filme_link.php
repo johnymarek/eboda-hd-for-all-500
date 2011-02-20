@@ -4,6 +4,7 @@ $filelink=$_ENV["QUERY_STRING"];
 $t1=explode(",",$filelink);
 $filelink = $t1[0];
 $filelink = str_replace("*",",",$filelink);
+$filelink = str_replace("@","&",$filelink); //seriale.subtitrate.info
 $pg = urldecode($t1[1]);
 if ($pg == "") {
    $pg_title = "Link";
@@ -91,6 +92,110 @@ function str_prep($string){
   return $string;
 }
 /** divxden.com,vidxden.com,vidbux.com**/
+function vix($string) {
+$server = str_between($string,"http://","/");
+if (strpos($string,"wootly") === false) {
+  if (strpos($string,"embed") === false) {
+    $l1 = str_between($string,'.com/','/');
+    $link = "http://".$server."/embed-".$l1."-width-653-height-362.html";
+  } else {
+    $link = $string;
+  }
+  $h = file_get_contents($link);
+} else {
+  $id= substr(strrchr($string,"/"),1);
+  $post="op=download1&usr_login=&id=".$id."&fname=&referer=&method_free=Continue+To+Video";
+  if (function_exists('curl_init')) {
+  $ch = curl_init($string);
+  curl_setopt ($ch, CURLOPT_POST, 1);
+  curl_setopt ($ch, CURLOPT_POSTFIELDS, $post);
+  curl_setopt($ch, CURLOPT_FOLLOWLOCATION  ,1);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER  ,1);  // RETURN THE CONTENTS OF THE CALL
+  $h = curl_exec($ch);
+  curl_close ($ch);
+  } else {
+  //wget solution
+  exec("rm -f /tmp/vix");
+  $c="/sbin/wget --post-data '".$post."' ".$string." -O /tmp/vix";
+  exec($c);
+  $h=file_get_contents("/tmp/vix");
+  }
+}
+
+$g=ord("g");
+$f=explode("return p}",$h);
+$e=explode("'.split",$f[1]);
+$t=$e[0];
+$a=explode(";",$t);
+if (strpos($string,"vidbux") !== false) {
+   $t1=explode("'",$a[4]);
+} else {
+  $t1=explode("'",$a[5]);
+}
+//3=4://0.3.2:o/d/n/8.m
+$link= $t1[3];
+$s1=explode("/",$link);
+
+$s2=explode(".",$s1[2]);
+$server1=ord($s2[0]);
+if ($server1 < 58) {
+  $server1=$s2[0];
+} else {
+  $server1=$server1-$g + 16;
+}
+$host=ord($s2[1]);
+if ($host < 58) {
+  $host=$s2[1];
+} else {
+  $host=$host-$g + 16;
+}
+$s3=explode(":",$s2[2]);
+$com=ord($s3[0]);
+if ($com < 58) {
+  $com=$s3[0];
+} else {
+  $com=$com-$g + 16;
+}
+$port=ord($s3[1]);
+if ($port < 58) {
+  $port=$s3[1];
+} else {
+  $port=$port-$g + 16;
+}
+$key= ord($s1[4]);
+if ($key < 58) {
+  $key=$s1[4];
+} else {
+  $key=$key-$g + 16;
+}
+if ($key=="") return "";
+if (strpos($string,"vidbux") !== false) {
+   $a1=explode("'",$a[8]);
+} else {
+  $a1=explode("'",$a[11]);
+}
+$t1=explode("|",$a1[2]);
+$videos=explode(".",$s1[5]);
+foreach($videos as $video) {
+  $ns=explode("-",$video);
+  $mys="";
+  foreach ($ns as $n) {
+    $n1=ord($n);
+    if ($n1 < 58) {
+      $n1=$n;
+    } else {
+      $n1=$n1-$g+16;
+    }
+    $mys=$mys.$t1[$n1]."-";
+  }
+  $mys=rtrim($mys,"-");
+  $myss=$myss.".".$mys;
+}
+$myss=rtrim($myss,".");
+$myss=ltrim($myss,".");
+$l = "http://".$t1[$server1].".".$t1[$host].".".$t1[$com].":".$t1[$port]."/d/".$t1[$key]."/".$myss;
+return $l;
+}
 function divxden($string) {
   $server = str_between($string,"http://","/");
   if (strpos($string,"embed") === false) {
@@ -298,15 +403,31 @@ foreach($videos as $video) {
 	  $link1 = str_between($baza,'addVariable("file","','"');
 	  if ($link1 == "") {
 	     $link1 = str_between($baza,'param name="src" value="','"');
-         }
-	     $title = $server." - ".substr(strrchr($link1,"/"),1);
+      }
+      if ($link1 == "") {
+         $link1=str_between($baza,'flashvars.file="','"');
+      }
+      $title = $server." - ".substr(strrchr($link1,"/"),1);
     } elseif (strpos($link,'stickonline') !== false) {
       $baza = file_get_contents($link);
       $link1 = str_between($baza,"file=","&");
       $title = $server." - ".substr(strrchr($link1,"/"),1);
-    } elseif ((strpos($link, 'divxden.com') !== false) ||(strpos($link, 'vidxden.com') !== false) ||(strpos($link, 'vidbux.com') !== false)) {
-      $link1 = divxden($link);
+    } elseif ((strpos($link, 'divxden.com') !== false) ||(strpos($link, 'vidxden.com') !== false) ||(strpos($link, 'vidbux.com') !== false) ||(strpos($link, 'wootly.com') !== false)) {
+      $link1 = vix($link);
       $server = str_between($link1,"http://","/");
+      $title = $server." - ".substr(strrchr($link1,"/"),1);
+    } elseif (strpos($link,'movreel') !==false) {
+      $link = "http://movreel.com/embed/".substr(strrchr($link,"/"),1);
+      $baza = file_get_contents($link);
+      $link1=str_between($baza,'<param name="src" value="','"');
+      $title = $server." - ".substr(strrchr($link1,"/"),1);
+    } elseif (strpos($link, 'loombo.com') !== false) {
+      $l1=substr(strrchr($link,"/"),1);
+      //http://loombo.com/embed-nztor3f4stri-640x318.html
+      $link = "http://loombo.com/embed-".$l1."-640x318.html";
+      $baza = file_get_contents($link);
+      $link1 = str_between($baza,"addParam('flashvars','file=","'");
+      $server = str_between($link,"http://","/");
       $title = $server." - ".substr(strrchr($link1,"/"),1);
     } else {
       $link1 = "";
@@ -375,11 +496,30 @@ foreach($videos as $video) {
 	  $link1 = str_between($baza,'addVariable("file","','"');
 	  if ($link1 == "") {
 	     $link1 = str_between($baza,'param name="src" value="','"');
-         }
-	     $title = $server." - ".substr(strrchr($link1,"/"),1);
+      }
+      if ($link1 == "") {
+         $link1=str_between($baza,'flashvars.file="','"');
+      }
+      $title = $server." - ".substr(strrchr($link1,"/"),1);
     } elseif (strpos($link,'stickonline') !== false) {
       $baza = file_get_contents($link);
       $link1 = str_between($baza,"file=","&");
+      $title = $server." - ".substr(strrchr($link1,"/"),1);
+    } elseif (strpos($link,'movreel') !==false) {
+      $link = "http://movreel.com/embed/".substr(strrchr($link,"/"),1);
+      $baza = file_get_contents($link);
+      $link1=str_between($baza,'<param name="src" value="','"');
+      $title = $server." - ".substr(strrchr($link1,"/"),1);
+    } elseif ((strpos($link, 'divxden.com') !== false) ||(strpos($link, 'vidxden.com') !== false) ||(strpos($link, 'vidbux.com') !== false) ||(strpos($link, 'wootly.com') !== false)) {
+      $link1=vix($link);
+      $title = $server." - ".substr(strrchr($link1,"/"),1);
+    } elseif (strpos($link, 'loombo.com') !== false) {
+      $l1=substr(strrchr($link,"/"),1);
+      //http://loombo.com/embed-nztor3f4stri-640x318.html
+      $link = "http://loombo.com/embed-".$l1."-640x318.html";
+      $baza = file_get_contents($link);
+      $link1 = str_between($baza,"addParam('flashvars','file=","'");
+      $server = str_between($link,"http://","/");
       $title = $server." - ".substr(strrchr($link1,"/"),1);
     } else {
 		$link1="";
@@ -463,6 +603,22 @@ foreach($videos as $video) {
     	</item>
     	';
     	$lastlink = $link;
+    	$link2 = str_replace("s2.serialepe.net","s3.serialepe.net",$link);
+    	if ($link2 <> $link) {
+          $titledownload1 = str_replace("s2.serialepe","s3.serialepe",$titledownload);
+          $link1 = $baseurl.$link2;
+          $server = str_between($link2,"http://","/");
+          $title = $server." - ".substr(strrchr($link2,"/"),1);
+    	echo '
+        <item>
+    	<title>'.$title.'</title>
+    	<link>'.$link1.'</link>
+    	<download>'.$link.'</download>
+    	<name>'.$titledownload1.'.'.$ext.'</name>
+    	<enclosure type="video/flv" url="'.$link1.'"/>
+    	</item>
+    	';
+    	}
     	$srt1 = str_between($video,'captions.file=','&');
     	$t1=explode('"',$srt1);
     	$srt = $t1[0];
@@ -481,6 +637,16 @@ foreach($videos as $video) {
         <name>'.$titledownload.'.srt</name>
     	</item>
     	';
+    	$srt2 = str_replace("s2.serialepe.net","s3.serialepe.net",$srt);
+    	if ($srt2 <> $srt) {
+    	echo '
+    	<item>
+    	<title>Subtitrare (s3)</title>
+    	<download>'.$srt2.'</download>
+        <name>'.$titledownload1.'.srt</name>
+    	</item>
+    	';
+    	}
     	}
     }
   }
@@ -566,6 +732,7 @@ if (strpos($html,"IFRAME") !== false) {
 $videos = explode("<iframe", $html);
 unset($videos[0]);
 foreach($videos as $video) {
+   $srt = "";
    $video = str_replace("'",'"',$video);
    $video = str_replace("SRC","src",$video);
    $t1 = explode('src="', $video);
@@ -592,6 +759,9 @@ foreach($videos as $video) {
      if ($link == "") {
         $link = str_between($baza,'param name="src" value="','"');
      }
+      if ($link == "") {
+         $link=str_between($baza,'flashvars.file="','"');
+      }
      $server = str_between($link,"http://","/");
      $title = $server." - ".substr(strrchr($link,"/"),1);
    } elseif (strpos($link, 'vkontakte.ru') !== false){
@@ -626,8 +796,8 @@ foreach($videos as $video) {
      $link = str_between($baza,"file=","&");
      $server = str_between($link,"http://","/");
      $title = $server." - ".substr(strrchr($link,"/"),1);
-   } elseif ((strpos($link, 'divxden.com') !== false) ||(strpos($link, 'vidxden.com') !== false) ||(strpos($link, 'vidbux.com') !== false)) {
-     $link = divxden($link);
+   } elseif ((strpos($link, 'divxden.com') !== false) ||(strpos($link, 'vidxden.com') !== false) ||(strpos($link, 'vidbux.com') !== false) ||(strpos($link, 'wootly.com') !== false)) {
+     $link = vix($link);
      $server = str_between($link,"http://","/");
      $title = $server." - ".substr(strrchr($link,"/"),1);
    } elseif (strpos($link,'kiwi.kz') !==false){
@@ -638,6 +808,18 @@ foreach($videos as $video) {
          $link = str_between($link,"file=","&");
        } // end if
      } // end foreach
+   } elseif (strpos($link,"rofilm.info") !==false) {
+     //http://rofilm.info/Media/kazzoskaku.php?link=2116&km=Grey/Greys S07E01.srt
+     $baza = file_get_contents($link);
+     $t1=explode('value="file=',$baza);
+     $t2=explode("&",$t1[1]);
+     $link = $t2[0];
+     $server = str_between($link,"http://","/");
+     $title = $server." - ".substr(strrchr($link,"/"),1);
+     $t1=explode('captions.file=',$baza);
+     $t2=explode("&",$t1[1]);
+     $srt=$t2[0];
+     $srt = str_replace(" ","%20",$srt);
    } else {
      $link = "";
    }
@@ -666,6 +848,15 @@ foreach($videos as $video) {
         ';
   	$lastlink = $link;
    }
+  	if ($srt <> "") {
+    	echo '
+    	<item>
+    	<title>Subtitrare</title>
+    	<download>'.$srt.'</download>
+        <name>'.$titledownload.'.srt</name>
+    	</item>
+    	';
+  	}
 } //foreach
 //www.4shared.com/embed/264489980/d9d252d8
 if (strpos($html, '4shared.com/embed') !== false) {

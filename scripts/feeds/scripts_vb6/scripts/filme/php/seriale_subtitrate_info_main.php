@@ -53,7 +53,7 @@
 		      backgroundColor=0:0:0 foregroundColor=200:200:200>
 			<script>print(annotation); annotation;</script>
 		</text>
-		<image  redraw="yes" offsetXPC=68 offsetYPC=22.5 widthPC=15 heightPC=30>
+		<image  redraw="yes" offsetXPC=60 offsetYPC=22.5 widthPC=30 heightPC=25>
 		<script>print(img); img;</script>
 		</image>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_01.png </idleImage>
@@ -103,18 +103,36 @@
 
 		</itemDisplay>
 		
-  <onUserInput>
-    <script>
-      ret = "false";
-      userInput = currentUserInput();
-      majorContext = getPageInfo("majorContext");
-      
-      print("*** majorContext=",majorContext);
-      print("*** userInput=",userInput);
-      
-      ret;
-    </script>
-  </onUserInput>
+<onUserInput>
+<script>
+ret = "false";
+userInput = currentUserInput();
+
+if (userInput == "pagedown" || userInput == "pageup")
+{
+  idx = Integer(getFocusItemIndex());
+  if (userInput == "pagedown")
+  {
+    idx -= -8;
+    if(idx &gt;= itemCount)
+      idx = itemCount-1;
+  }
+  else
+  {
+    idx -= 8;
+    if(idx &lt; 0)
+      idx = 0;
+  }
+
+  print("new idx: "+idx);
+  setFocusItemIndex(idx);
+	setItemFocus(0);
+  redrawDisplay();
+  "true";
+}
+ret;
+</script>
+</onUserInput>
 		
 	</mediaDisplay>
 	
@@ -132,119 +150,84 @@
 
 	</item_template>
 <channel>
-	<title>filmeonlinegratis.ro</title>
+	<title>seriale.subtitrate.info</title>
 	<menu>main menu</menu>
 
-
 <?php
-$query = $_GET["query"];
-if($query) {
-   $queryArr = explode(',', $query);
-   $page = $queryArr[0];
-   $search = $queryArr[1];
+function ascii2entities($string){
+    for($i=128;$i<=255;$i++){
+        $entity = htmlentities(chr($i), ENT_QUOTES, 'cp1252');
+        $temp = substr($entity, 0, 1);
+        $temp .= substr($entity, -1, 1);
+        if ($temp != '&;'){
+            $string = str_replace(chr($i), '', $string);
+        }
+        else{
+            $string = str_replace(chr($i), $entity, $string);
+        }
+    }
+    return $string;
 }
-//http://www.filmeonlinegratis.ro/page/3
-if($page) {
-	$html = file_get_contents($search."/page/".$page);
-} else {
-  $page = 1;
-	$html = file_get_contents($search);
+function str_between($string, $start, $end){ 
+	$string = " ".$string; $ini = strpos($string,$start); 
+	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
+	return substr($string,$ini,$len); 
 }
-
-
-if($page > 1) { ?>
-
-<item>
-<?php
-$sThisFile = 'http://127.0.0.1:82'.$_SERVER['SCRIPT_NAME'];
-$url = $sThisFile."?query=".($page-1).",";
-if($search) { 
-  $url = $url.$search; 
-}
-?>
-<title>Previous Page</title>
-<link><?php echo $url;?></link>
-<annotation>Pagina anterioara</annotation>
-<image>/scripts/image/left.jpg</image>
-<mediaDisplay name="threePartsView"/>
-</item>
-
-
-<?php } ?>
-<?php
-if (strpos($html,'<div id="zv') !==false) {
-   $videos = explode('<div id="zv', $html);
-} else {
-  $videos = explode('<div class="oneblog">',$html);
-}
+$host = "http://127.0.0.1:82";
+$html = file_get_contents("http://seriale.subtitrate.info/index.php?menu=tv-shows");
+$videos = explode('<li class="post-', $html);
 
 unset($videos[0]);
 $videos = array_values($videos);
+
 foreach($videos as $video) {
-	if (strpos($video, 'info/?') !== false) {
-		$t1 = explode('info/?', $video);
-	} else {
-		$t1 = explode('href="',$video);
-	}
-	$t2 = explode('"', $t1[1]);
-	$link = $t2[0];
-	$link = str_replace(' ','%20',$link);
-	$link = str_replace('[','%5B',$link);
-	$link = str_replace(']','%5D',$link); 
-	
-	$t1 = explode(' src="', $video);
-	$t2 = explode('"', $t1[1]);
-	$image = $t2[0];
-	
-	$t1 = explode('title="', $video);
-	$t2 = explode('"', $t1[1]);
-	$title = htmlspecialchars_decode($t2[0]);
-	$title = str_replace("Vezi live online","",$title);
-	$title = str_replace("cu subtitrare in limba romana","",$title);
-	$title = str_replace("Vezi gratis filmul","",$title);
-	$title = str_replace("online cu subtitrare","",$title);
-	$title = trim($title);
+    $t1=explode('href="',$video);
+    $t2=explode('"',$t1[2]);
+    $link=$t2[0];
 
-//  descriere  
-  $v1 = explode('<p>', $video);
-  $v2 = explode('</p>', $v1[1]);
-  $descriere = $v2[0];  
-	$descriere = preg_replace("/(<\/?)(\w+)([^>]*>)/e","",$descriere);
-	if ($descriere == "") {
-		$descriere = $title;
-	}
-	$pos = strpos($image, '.jpg');
-	if ($pos !== false) {
-    $link = 'http://127.0.0.1:82/scripts/filme/php/filme_link.php?'.$link.','.urlencode($title);
-    echo '
-    <item>
-    <title>'.$title.'</title>
-    <link>'.$link.'</link>	
-    <annotation>'.$descriere.'</annotation>
-    <image>'.$image.'</image>
-    <media:thumbnail url="'.$image.'" />
-    <mediaDisplay name="threePartsView"/>
-    </item>
-    ';
-  }
+    $t1 = explode('src="', $video);
+    $t2 = explode('"', $t1[1]);
+    $image = $t2[0];
+
+    $t1 = explode('title="', $video);
+    $t2 = explode('"', $t1[1]);
+    $title = trim($t2[0]);
+
+    $data = trim(str_between($video,'<div class="entry-summary" style="height:150px;">','</div>'));
+    $data = preg_replace("/(<\/?)([^>]*>)/e","",$data);
+    $data = str_replace("&#351;","s",$data);
+    $data = str_replace("&#259;","a",$data);
+    $data = str_replace("&#355;","t",$data);
+    $data = trim(str_replace("&nbsp;","",$data));
+    $data = htmlentities($data);
+     $data = str_replace("&ordm;","s",$data);
+     $data = str_replace("&Ordm;","S",$data);
+     $data = str_replace("&thorn;","t",$data);
+     $data = str_replace("&Thorn;","T",$data);
+     $data = str_replace("&icirc;","i",$data);
+     $data = str_replace("&Icirc;","I",$data);
+     $data = str_replace("&atilde;","a",$data);
+     $data = str_replace("&Atilde;","I",$data);
+     $data = str_replace("&acirc;","a",$data);
+     $data = str_replace("&Acirc;","A",$data);
+
+    if ($link <> "") {
+		$link = $host.'/scripts/filme/php/seriale_subtitrate_info.php?file='.$link.",".urlencode($title);
+
+  echo '
+  <item>
+  <title>'.$title.'</title>
+  <link>'.$link.'</link>
+  <image>'.$image.'</image>	
+  <annotation>'.$data.'</annotation>
+  <media:thumbnail url="'.$image.'" />
+  <mediaDisplay name="threePartsView"/>
+  </item>
+  ';
+}
 }
 
 ?>
-
-<item>
-<?php
-$sThisFile = 'http://127.0.0.1:82'.$_SERVER['SCRIPT_NAME'];
-$url = $sThisFile."?query=".($page+1).",";
-if($search) { 
-  $url = $url.$search; 
-}
-?>
-<title>Next Page</title>
-<link><?php echo $url;?></link>
-<annotation>Pagina urmatoare</annotation>
-<image>/scripts/image/right.jpg</image>
-<mediaDisplay name="threePartsView"/>
-</item>
 
 </channel>
 </rss>
