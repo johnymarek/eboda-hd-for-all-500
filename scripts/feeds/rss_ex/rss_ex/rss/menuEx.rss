@@ -22,34 +22,35 @@
 -->
 
 <onEnter>
-  translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
-  cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
-  if(cgiconf != null)
+  rssconf = readStringFromFile(getStoragePath("key")+"translate.dat");
+  if(rssconf == null)
   {
-    value = getStringArrayAt(cgiconf, 0);
-    if(value != null &amp;&amp; value != "")
-    {
-      translate_base_url = value;
-      print("cgi.conf=",value);
-    }
+    arr = null;
+    arr = pushBackStringArray(arr, "http://127.0.0.1:84/cgi-bin/translate?");
+    writeStringToFile(getStoragePath("key")+"translate.dat", arr);
   }
 
+    translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
   screenXp = 4;
   screenYp = 3;
-  rssconf = readStringFromFile("/usr/local/etc/translate/etc/rss.conf");
+  rssconf = readStringFromFile(getStoragePath("key")+"translate.dat");
   print("rssconf:",rssconf);
   if(rssconf != null)
   {
     value = getStringArrayAt(rssconf, 0);
     if(value != null &amp;&amp; value != "")
-      screenXp = Integer(value);
+      translate_base_url = value;
     value = getStringArrayAt(rssconf, 1);
+    if(value != null &amp;&amp; value != "")
+      screenXp = Integer(value);
+    value = getStringArrayAt(rssconf, 2);
     if(value != null &amp;&amp; value != "")
       screenYp = Integer(value);
   }
-  print("rssconf:",screenXp,screenYp);
+  print("rssconf:",translate_base_url,screenXp,screenYp);
 
-    startitem = "middle";
+
+    startitem = "";
 		
   columnCount=3;
   print(getFocusItemIndex());
@@ -66,8 +67,8 @@
   if(startitem == "middle")
     setFocusItemIndex(middleItem);
   else
-  if(startitem == "right")
-    setFocusItemIndex(middleItem);
+  if(startitem == "last")
+    setFocusItemIndex(itemCount);
   redrawDisplay();
 </onRefresh>
 
@@ -226,6 +227,84 @@
       print("*** majorContext=",majorContext);
       print("*** userInput=",userInput);
       
+      if(userInput == "down" || userInput == "D")
+      {
+          doModalRSS(translate_base_url+"app,Start:first;File:etc/menu/recent-index.xspf,collection/simplemenu");
+          ret = "true";
+      }
+      else if(userInput == "one" || userInput == "1")
+      {
+        if(itemCount &gt;= 1)
+        {
+          setFocusItemIndex(0);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "two" || userInput == "2")
+      {
+        if(itemCount &gt;= 2)
+        {
+          setFocusItemIndex(1);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "three" || userInput == "3")
+      {
+        if(itemCount &gt;= 3)
+        {
+          setFocusItemIndex(2);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "four" || userInput == "4")
+      {
+        if(itemCount &gt;= 4)
+        {
+          setFocusItemIndex(3);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "five" || userInput == "5")
+      {
+        if(itemCount &gt;= 5)
+        {
+          setFocusItemIndex(4);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "six" || userInput == "6")
+      {
+        if(itemCount &gt;= 6)
+        {
+          setFocusItemIndex(5);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "seven" || userInput == "7")
+      {
+        if(itemCount &gt;= 7)
+        {
+          setFocusItemIndex(6);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "eight" || userInput == "8")
+      {
+        if(itemCount &gt;= 8)
+        {
+          setFocusItemIndex(7);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "nine" || userInput == "9")
+      {
+        if(itemCount &gt;= 9)
+        {
+          setFocusItemIndex(8);
+          redrawDisplay();
+        }
+      }
+      
       ret;
     </script>
   </onUserInput>
@@ -246,7 +325,7 @@
   <item>
 <link>rss_file://../etc/translate/rss/etc-menu-video.rss</link>
     <title>Internet Video</title>
-    <annotation>RuTube, YouTube, Tvigle, Ivi, Internet TV</annotation>
+    <annotation>RuTube, YouTube, Tvigle, Ivi, OneHD, Internet TV</annotation>
     <image>../etc/translate/rss/image/menu/video.png</image>
     <mediaDisplay name="photoView"/>
   </item>
@@ -260,7 +339,7 @@
   <item>
 <link>rss_file://../etc/translate/rss/etc-menu-app.rss</link>
     <title>Applications</title>
-    <annotation>Media Stream Renderer, XSPF Browser, Settings</annotation>
+    <annotation>Media Stream Renderer, XSPF Browser, Most Recent Links, Settings</annotation>
     <image>../etc/translate/rss/image/menu/app.png</image>
     <mediaDisplay name="photoView"/>
   </item>

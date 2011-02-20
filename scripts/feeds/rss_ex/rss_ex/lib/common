@@ -4,8 +4,6 @@
 
 TRANSLATE=${TRANSLATE:-/usr/local/etc/translate}
 
-RSSCONF=$TRANSLATE/etc/rss.conf
-
 printhdflag2conf()
 {
   case $1 in
@@ -23,17 +21,20 @@ printhdflag2conf()
 
 if [ -f $TRANSLATE/etc/translate.conf ]; then
   . $TRANSLATE/etc/translate.conf
-  if [ -f $RSSCONF ]; then
-    :
-  else
-    echo 4 > $RSSCONF
+fi
+
+RSSCONF=${RSSCONF:-/usr/local/etc/dvdplayer/translate.dat}
+TRANSLATE_CGI=${TRANSLATE_CGI:-"http://127.0.0.1:84/cgi-bin/translate?"}
+
+if [ ! -f $RSSCONF ]; then
+    echo $TRANSLATE_CGI > $RSSCONF
+    echo 4 >> $RSSCONF
     echo 3 >> $RSSCONF
     printhdflag2conf $YOUTUBE_HD
     printhdflag2conf $VIMEO_HD
     printhdflag2conf $TVIGLE_HD
     printhdflag2conf $IVI_HD
     printhdflag2conf $ZOOMBY_HD
-  fi
 fi
 
 BASEPATH=${BASEPATH:-$TRANSLATE}
@@ -252,7 +253,7 @@ printContent()
 
 get_xml_text()
 {
-  sed -n "/$1/p" $TMPFILE | sed -n '1p' | sed "s/.*<$1>\(.*\)<\/$1>.*/\1/"
+  sed -n "/$1/p" $TMPFILE | sed -n '1p' | sed "s/.*<$1>\(.*\)<\/$1>.*/\1/" | sed 's/<!\[CDATA\[//g;s/\]\]>//g;'
   return 0
 }
 

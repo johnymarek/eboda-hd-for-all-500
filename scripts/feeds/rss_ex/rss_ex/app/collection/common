@@ -25,7 +25,7 @@ local CHANNELFILE=$TMPFILE.channel
 get_opt "File"
 local FILE="$opt"
 
-[ -z "$FILE" -a "$SUBNAME" = "menu" ] && FILE="$MAINMENU"
+[ -z "$FILE" -a "$SUBNAME" = "menuex" ] && FILE="$MAINMENU"
 
 [ -z "$FILE" ] && return 0
 
@@ -40,17 +40,6 @@ fi
 COLUMNCOUNT="columnCount=$opt"
 
 get_opt "Start"
-case $opt in
-  first)
-    opt=left
-    ;;
-  last)
-    opt=right
-    ;;
-  *)
-    opt=middle
-  ;;
-esac
 STARTITEM="  startitem = \"$opt\";"
 
 get_opt "Lines"
@@ -74,6 +63,8 @@ else
 fi
 
 (
+  export TRANSLATE_CGI;
+  export BASEPATH;
   export ANNOTATIONSIZE;
   export CHANNELFILE; 
   export COLUMNCOUNT; 

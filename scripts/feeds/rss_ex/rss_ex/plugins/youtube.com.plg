@@ -35,7 +35,7 @@ if echo "${arg_url}" | grep -qs '\(www\.\)*youtube\.com/\(v/\|watch?\).*$'; then
   local TIMELIFE=60
   
   get_opt "HD"
-    [ -z "$opt" ] && opt=`sed -n '3p' $RSSCONF 2>/dev/null`
+    [ -z "$opt" ] && opt=`sed -n '4p' $RSSCONF 2>/dev/null`
     [ -z "$opt" ] && opt=$YOUTUBE_HD
   case $opt in
     yes|Yes|YES|1)

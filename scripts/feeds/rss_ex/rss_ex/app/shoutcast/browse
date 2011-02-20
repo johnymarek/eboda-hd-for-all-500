@@ -32,6 +32,7 @@ echo "  genreHaschildren = \"true\";" >> $INITSCRIPT
 echo "  genreName = \"Radio Genres\";" >> $INITSCRIPT
 
 (
+  export BASEPATH;
   export INITSCRIPT;
   template2rss browse.xml | printContent "application/rss+xml"
   rm -f "$INITSCRIPT"

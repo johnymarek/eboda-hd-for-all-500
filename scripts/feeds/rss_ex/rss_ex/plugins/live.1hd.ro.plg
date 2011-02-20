@@ -20,7 +20,7 @@
 # Translate CGI module
 # 'live.1hd.ro' plug-in
 #
-# version: 1.1 13.01.2011 12:27:20
+# version: 1.2 31.01.2011 0:13
 #
 # http://live.1hd.ro/playlist.php
 #
@@ -35,35 +35,64 @@ if echo "${arg_url}" | grep -q -s 'live\.*\(1hd\|prahovahd\)\.ro/playlist.*\.php
 
   if [ -f $PLAYLISTFILE ]; then
     awk '
-        BEGIN {
-          counter=2000;
-          skip=0;
-        }
-        { 
-          if(skip == 0) { 
-            gsub(/&/, "&amp;"); print $0; 
-          } 
-        }
-        /<playlist/ {
-          if(skip == 0) {
-            print "<title>OneHD</title>"
-          }
-        }
-        /<location>/ {
-          if(skip == 0) {
-            print "<meta rel=\"translate\">Rtmp-options:-v</meta>"
-          }
-        }
-        /<\/track>/ {
+      BEGIN {
+        counter = 2000;
+      }
+      /<playlist/ {
+        print
+        print "<title>OneHD</title>"
+        next
+      }
+      /<track>/ {
+        location = ""
+        streamer = ""
+        title = ""
+        next
+      }
+      /<title>/ {
+        gsub(/&/, "&amp;")
+        match($0, /<title>([^<]+)<\/title>/, arr)
+        title = arr[1]
+        next
+      }
+      /<location>/ {
+        match($0, /<location>([^<]+)<\/location>/, arr)
+        location = arr[1]
+        next
+      }
+      /<meta rel="streamer">/ {
+        match($0, /<meta[^>]+>([^<]+)<\/meta>/, arr)
+        streamer = arr[1]
+        next
+      }
+      /<meta rel=/ {
+        next
+      }
+      /<\/track>/ {
+        url = streamer location;
+        if(!(url in cache))
+        {
           counter--;
           if(counter <= 0)
           {
-            skip = 1;
+            print "</trackList>"
+            print "</playlist>"
+            exit
           }
+          cache[url] = title;
+          print "<track>";
+          print "  <location>" location "</location>"
+          print "  <title>" title "</title>"
+          print "  <meta rel=\"streamer\">" streamer "</meta>"
+          print "  <meta rel=\"translate\">Rtmp-options:-v</meta>"
+          print "</track>";
         }
-        /(<\/trackList>|<\/playlist>)/ {
-          if(skip != 0) print $0; 
-        }
+        next
+      }
+      { 
+        gsub(/&/, "&amp;")
+        print 
+      }
     ' $PLAYLISTFILE > $PLAYLISTFILE.tmp
     mv -f $PLAYLISTFILE.tmp $PLAYLISTFILE
 

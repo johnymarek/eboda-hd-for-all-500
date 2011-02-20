@@ -100,10 +100,10 @@
       print("*** majorContext=",majorContext);
       print("*** userInput=",userInput);
 
-      if (userInput == "pagedown" || userInput == "pageup")
+      if (userInput == "pagedown" || userInput == "pageup" || userInput == "PG" || userInput == "PD")
       {
         idx = Integer(getFocusItemIndex());
-        if (userInput == "pagedown")
+        if (userInput == "pagedown" || userInput == "PD")
         {
           idx -= -5;
           if(idx &gt;= itemSize)
@@ -120,7 +120,7 @@
         redrawDisplay();
         ret = "true";
       }
-      else if(majorContext == "items" &amp;&amp; userInput == "right")
+      else if(majorContext == "items" &amp;&amp; (userInput == "right" || userInput == "R"))
       {
 /*
         idx = getFocusItemIndex();
@@ -155,32 +155,24 @@
 </onExit>
 
 <onEnter>
-  translateBaseURL = "http://127.0.0.1:84/cgi-bin/translate?";
-  cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
-  if(cgiconf != null)
-  {
-    value = getStringArrayAt(cgiconf, 0);
-    if(value != null &amp;&amp; value != "")
-    {
-      translate_base_url = value;
-      print("cgi.conf=",value);
-    }
-  }
-
+  translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
   screenXp = 4;
   screenYp = 3;
-  rssconf = readStringFromFile("/usr/local/etc/translate/etc/rss.conf");
+  rssconf = readStringFromFile(getStoragePath("key")+"translate.dat");
   print("rssconf:",rssconf);
   if(rssconf != null)
   {
     value = getStringArrayAt(rssconf, 0);
     if(value != null &amp;&amp; value != "")
-      screenXp = Integer(value);
+      translate_base_url = value;
     value = getStringArrayAt(rssconf, 1);
+    if(value != null &amp;&amp; value != "")
+      screenXp = Integer(value);
+    value = getStringArrayAt(rssconf, 2);
     if(value != null &amp;&amp; value != "")
       screenYp = Integer(value);
   }
-  print("rssconf:",screenXp,screenYp);
+  print("rssconf:",translate_base_url,screenXp,screenYp);
 
 /*
     	pageLogo = "http://rutube.ru/i/logo.png";
@@ -197,7 +189,7 @@
   feedUrl = getStringArrayAt(arr, 0);
   pageTitle = getStringArrayAt(arr, 1);
 
-  feedUrl = translateBaseURL + "app/rss/rutube.ru," + "http://rutube.ru/cgi-bin/xmlapi.cgi?rt_mode=categories";
+  feedUrl = translate_base_url + "app/rss/rutube.ru," + "http://rutube.ru/cgi-bin/xmlapi.cgi?rt_mode=categories";
 */
 
   feedUrl = "http://rutube.ru/cgi-bin/xmlapi.cgi?utf=1&amp;rt_mode=categories";
@@ -234,7 +226,7 @@
 	print("Item Size = ", itemS);
 
 	title = "Все категории";
-	url = url = translateBaseURL + "app/rss/rutube.ru," + "http://rutube.ru/cgi-bin/xmlapi.cgi?utf=1&amp;rt_mode=movies&amp;rt_category=0";
+	url = translate_base_url + "app/rss/rutube.ru," + "http://rutube.ru/cgi-bin/xmlapi.cgi?utf=1&amp;rt_mode=movies&amp;rt_category=0";
     	titleArray  = pushBackStringArray(titleArray, title);
     	urlArray    = pushBackStringArray(urlArray, url);
 	itemSize = 1 + itemS;
@@ -245,7 +237,7 @@
     	{
     	  title = getXMLText("response","categories","category",count);
     	  cat_id = getXMLAttribute("response","categories","category",count,"id");
-	  url = translateBaseURL + "app/rss/rutube.ru," + "http://rutube.ru/cgi-bin/xmlapi.cgi?utf=1&amp;rt_mode=movies&amp;rt_category=" + cat_id;
+	  url = translate_base_url + "app/rss/rutube.ru," + "http://rutube.ru/cgi-bin/xmlapi.cgi?utf=1&amp;rt_mode=movies&amp;rt_category=" + cat_id;
 
     	  titleArray  = pushBackStringArray(titleArray, title);
     	  urlArray    = pushBackStringArray(urlArray, url);
@@ -329,6 +321,14 @@
 		  arr = null;
 		  arr = pushBackStringArray(arr, url);
 		  arr = pushBackStringArray(arr, title);
+		  rt_page = 0;
+		  sort_by = "date";
+		  rt_term = "today";
+		  rt_count = 20;
+		  arr = pushBackStringArray(arr, rt_page);
+		  arr = pushBackStringArray(arr, sort_by);
+		  arr = pushBackStringArray(arr, rt_term);
+		  arr = pushBackStringArray(arr, rt_count);
 		  print("arr=",arr);
 		  print("storagePath=",storagePath);
 		  writeStringToFile(storagePath, arr);

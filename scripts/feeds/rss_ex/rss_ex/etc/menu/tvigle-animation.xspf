@@ -4,14 +4,20 @@
   <image>../etc/translate/rss/image/tvigle.png</image>
   <trackList>
 <track>
+  <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2175,tvigle/multi</link>
+  <title>Три богатыря</title>
+  <annotation>Приключения троих легендарных богатырей: Алеши Поповича, Добрыни Никитича и Ильи Муромца.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2175/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2093,tvigle/multi</link>
-  <title>Охрустенный квест</title>
-  <annotation>Мега-охрустенный квест от создателей мульта  Тетрис против Контры . Зажигай вместе с популярными героями охрустенного сериала Versus! Играй бесплатно прямо сейчас!</annotation>
+  <title>Flash-игра Охрустенный квест</title>
+  <annotation>Мега-охрустенный квест от создателей мульта Тетрис против Контры . Зажигай вместе с популярными героями охрустенного сериала Versus! Играй бесплатно прямо сейчас!</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/2093/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2152,tvigle/multi</link>
-  <title>Disney Classics</title>
+  <title>Мультфильмы Disney Classics</title>
   <annotation>Disney представляет коллекцию своих лучших мультфильмов.</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/2152/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
@@ -60,19 +66,17 @@
 </track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2118,tvigle/multi</link>
   <title>Aqua Teen Hunger Force</title>
-  <annotation>Легендарный мультипликационный сериал о приключениях говорящих продуктов. </annotation>
+  <annotation>Легендарный мультипликационный сериал о приключениях говорящих продуктов.</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/2118/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2114,tvigle/multi</link>
   <title>Весёлая карусель</title>
-  <annotation>Карусель, карусель начинает рассказ. &#13;
-Это сказки, песни и веселье! &#13;
-Карусель, карусель   это радость для нас, &#13;
-прокатись на нашей карусели!</annotation>
+  <annotation>Карусель, карусель начинает рассказ. Это сказки, песни и веселье! Карусель, карусель это радость для нас, прокатись на нашей карусели!</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/2114/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
-</track><track>
+</track>
+<track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2120,tvigle/multi</link>
   <title>Металлопокалипсис</title>
   <annotation>Мультипликационная история о похождениях скандинаво-американской группы Dethklok.</annotation>
@@ -81,23 +85,22 @@
 </track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2098,tvigle/multi</link>
   <title>38 попугаев</title>
-  <annotation>Забавные истории четырех друзей   болтливой Мартышки, застенчивого Слоненка, эксцентричного Попугая и задумчивого Удава.</annotation>
+  <annotation>Забавные истории четырех друзей болтливой Мартышки, застенчивого Слоненка, эксцентричного Попугая и задумчивого Удава.</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/2098/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2119,tvigle/multi</link>
   <title>Братья Вентура</title>
-  <annotation>Американский мультипликационный сериал о приключениях Дина и Хенка, их отца, доктора Тадеуша  Расти  Вентуры, и их телохранителя, секретного агента Брока Самсона.</annotation>
+  <annotation>Американский мультипликационный сериал о приключениях Дина и Хенка, их отца, доктора Тадеуша Расти Вентуры, и их телохранителя, секретного агента Брока Самсона.</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/2119/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2086,tvigle/multi</link>
   <title>Крок   Мир детства</title>
-  <annotation>Международный фестиваль анимационного кино  КРОК .</annotation>
+  <annotation>Международный фестиваль анимационного кино КРОК .</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/2086/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
-</track>
-<track>
+</track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2099,tvigle/multi</link>
   <title>Ну, погоди!</title>
   <annotation>Самый популярный мультсериал. Веселые погони волка за зайцем.</annotation>
@@ -112,7 +115,7 @@
 </track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2100,tvigle/multi</link>
   <title>Трое из Простоквашино</title>
-  <annotation>Трилогия по мотивам повести Эдуарда Успенского  Дядя Фёдор, пёс и кот .</annotation>
+  <annotation>Трилогия по мотивам повести Эдуарда Успенского Дядя Фёдор, пёс и кот .</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/2100/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>
@@ -145,7 +148,8 @@
   <annotation>Популярный мультипликационный фильм о приключениях очень современного попугая.</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/2115/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
-</track><track>
+</track>
+<track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:1785,tvigle/multi</link>
   <title>UmaNetto</title>
   <annotation>Компании UmaNetto на работу требуется новая секретарша. После длительного кастинга, который проводят Андрей Падлыч и Казановский, на работу принимают Катю Очкарёву.</annotation>
@@ -172,23 +176,22 @@
 </track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:663,tvigle/multi</link>
   <title>Три брата акробата</title>
-  <annotation>Мульт   победитель в номинации  Мультипликация  на престижном flash-конкурсе Flash Awards 2009.</annotation>
+  <annotation>Мульт победитель в номинации Мультипликация на престижном flash-конкурсе Flash Awards 2009.</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/663/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:1789,tvigle/multi</link>
   <title>Х [Икс]</title>
-  <annotation>Популярный аниме-сериал в жанре драмы и мистики. Главный герой Камуи должен сделать непростой выбор: выступить либо на стороне Драконов Земли, которые стремятся разрушить мир, либо на стороне Драконов Небес   защитников людей.</annotation>
+  <annotation>Популярный аниме-сериал в жанре драмы и мистики. Главный герой Камуи должен сделать непростой выбор: выступить либо на стороне Драконов Земли, которые стремятся разрушить мир, либо на стороне Драконов Небес защитников людей.</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/1789/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:1791,tvigle/multi</link>
   <title>Смирительная рубашка</title>
-  <annotation> Смирительные рубашки    уникальные боевые маги, призванные уничтожить монстров   обратную сторону успешной разработки ученых.</annotation>
+  <annotation>Смирительные рубашки уникальные боевые маги, призванные уничтожить монстров обратную сторону успешной разработки ученых.</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/1791/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
-</track>
-<track>
+</track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:49,tvigle/multi</link>
   <title>Снежики</title>
   <annotation>Веселые Снежики всегда вместе и всегда в хорошем настроении!</annotation>
@@ -218,7 +221,8 @@
   <annotation>Абсурд и сюрреальность, ужас и эйфория.</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/51/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
-</track><track>
+</track>
+<track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:1445,tvigle/multi</link>
   <title>Футбол по-украински</title>
   <annotation>Особенности национального футбола.</annotation>

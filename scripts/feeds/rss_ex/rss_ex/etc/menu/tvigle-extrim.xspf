@@ -60,7 +60,7 @@
 </track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:1289,tvigle/multi</link>
   <title>1. Red Bull Flugtag 2009.</title>
-  <annotation>1. Red Bull Flugtag 2009.   особый день в году, когда любому по плечу взлететь и эффектно упасть в воду с шестиметровой высоты.</annotation>
+  <annotation>1. Red Bull Flugtag 2009. особый день в году, когда любому по плечу взлететь и эффектно упасть в воду с шестиметровой высоты.</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/1289/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>
@@ -72,14 +72,8 @@
 </track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:1715,tvigle/multi</link>
   <title>Олимпиада</title>
-  <annotation>Комментарии из первых рук о спортивных соревнованиях в Ванкувере. </annotation>
+  <annotation>Комментарии из первых рук о спортивных соревнованиях в Ванкувере.</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/1715/list.jpg?2</image>
-  <meta rel="mediaDisplay">photoView</meta>
-</track><track>
-  <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:1554,tvigle/multi</link>
-  <title>Ажиотаж</title>
-  <annotation>Фильм о фрирайде.</annotation>
-  <image>http://photo.tvigle.ru/resource/rf/cnl/1554/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track>
   </trackList>

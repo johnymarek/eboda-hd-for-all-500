@@ -22,34 +22,27 @@
 -->
 
 <onEnter>
-  translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
-  cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
-  if(cgiconf != null)
-  {
-    value = getStringArrayAt(cgiconf, 0);
-    if(value != null &amp;&amp; value != "")
-    {
-      translate_base_url = value;
-      print("cgi.conf=",value);
-    }
-  }
-
+    translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
   screenXp = 4;
   screenYp = 3;
-  rssconf = readStringFromFile("/usr/local/etc/translate/etc/rss.conf");
+  rssconf = readStringFromFile(getStoragePath("key")+"translate.dat");
   print("rssconf:",rssconf);
   if(rssconf != null)
   {
     value = getStringArrayAt(rssconf, 0);
     if(value != null &amp;&amp; value != "")
-      screenXp = Integer(value);
+      translate_base_url = value;
     value = getStringArrayAt(rssconf, 1);
+    if(value != null &amp;&amp; value != "")
+      screenXp = Integer(value);
+    value = getStringArrayAt(rssconf, 2);
     if(value != null &amp;&amp; value != "")
       screenYp = Integer(value);
   }
-  print("rssconf:",screenXp,screenYp);
+  print("rssconf:",translate_base_url,screenXp,screenYp);
 
-    startitem = "middle";
+
+    startitem = "";
 		
   columnCount=3;
   print(getFocusItemIndex());
@@ -66,8 +59,11 @@
   if(startitem == "middle")
     setFocusItemIndex(middleItem);
   else
-  if(startitem == "right")
-    setFocusItemIndex(middleItem);
+  if(startitem == "last")
+    setFocusItemIndex(itemCount);
+  else
+  if(startitem &gt; 0 &amp;&amp; startitem &lt;= itemCount)
+    setFocusItemIndex(startitem-1);
   redrawDisplay();
 </onRefresh>
 
@@ -226,6 +222,99 @@
       print("*** majorContext=",majorContext);
       print("*** userInput=",userInput);
       
+      if(userInput == "one" || userInput == "1")
+      {
+        if(itemCount &gt;= 1)
+        {
+          setFocusItemIndex(0);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "two" || userInput == "2")
+      {
+        if(itemCount &gt;= 2)
+        {
+          setFocusItemIndex(1);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "three" || userInput == "3")
+      {
+        if(itemCount &gt;= 3)
+        {
+          setFocusItemIndex(2);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "four" || userInput == "4")
+      {
+        if(itemCount &gt;= 4)
+        {
+          setFocusItemIndex(3);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "five" || userInput == "5")
+      {
+        if(itemCount &gt;= 5)
+        {
+          setFocusItemIndex(4);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "six" || userInput == "6")
+      {
+        if(itemCount &gt;= 6)
+        {
+          setFocusItemIndex(5);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "seven" || userInput == "7")
+      {
+        if(itemCount &gt;= 7)
+        {
+          setFocusItemIndex(6);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "eight" || userInput == "8")
+      {
+        if(itemCount &gt;= 8)
+        {
+          setFocusItemIndex(7);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "nine" || userInput == "9")
+      {
+        if(itemCount &gt;= 9)
+        {
+          setFocusItemIndex(8);
+          redrawDisplay();
+        }
+      }
+      else if (userInput == "pagedown" || userInput == "pageup" || userInput == "PD" || userInput == "PG")
+      {
+        itemSize = getPageInfo("itemCount");
+        idx = Integer(getFocusItemIndex());
+        if (userInput == "pagedown")
+        {
+          idx -= -columnCount;
+          if(idx &gt;= itemSize)
+            idx = itemSize-1;
+        }
+        else
+        {
+          idx -= columnCount;
+          if(idx &lt; 0)
+            idx = 0;
+        }
+        setFocusItemIndex(idx);
+        setItemFocus(idx);
+        redrawDisplay();
+        ret = "true";
+      }
       ret;
     </script>
   </onUserInput>
@@ -246,21 +335,14 @@
   <item>
 <link><script>translate_base_url+"app,Channel:2123,tvigle/multi";</script></link>
     <title>Остров 312</title>
-    <annotation>Премьера первого российского 3-D клипа группы  Город 312  на композицию  Помоги мне . Скоро на Tvigle.ru</annotation>
+    <annotation>Премьера первого российского 3-D клипа группы Город 312 на композицию Помоги мне . Скоро на Tvigle.ru</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/2123/list.jpg?2</image>
-    <mediaDisplay name="photoView"/>
-  </item>
-  <item>
-<link><script>translate_base_url+"app,Channel:1980,tvigle/multi";</script></link>
-    <title>Видеоклипы</title>
-    <annotation>Новые videoклипы современных музыкантов.</annotation>
-    <image>http://photo.tvigle.ru/resource/rf/cnl/1980/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
   <item>
 <link><script>translate_base_url+"app,Channel:1406,tvigle/multi";</script></link>
     <title>Би-2</title>
-    <annotation>Видеоклипы и концертные выступления группы  Би-2 .</annotation>
+    <annotation>Видеоклипы и концертные выступления группы Би-2 .</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/1406/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
@@ -323,21 +405,21 @@
   <item>
 <link><script>translate_base_url+"app,Channel:1887,tvigle/multi";</script></link>
     <title>Ляпис Трубецкой</title>
-    <annotation>Клипы и живые выступления группы  Ляпис Трубецкой .</annotation>
+    <annotation>Клипы и живые выступления группы Ляпис Трубецкой .</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/1887/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
   <item>
 <link><script>translate_base_url+"app,Channel:1108,tvigle/multi";</script></link>
     <title>Тараканы</title>
-    <annotation>Клипы и концертные выступления группы  Тараканы .</annotation>
+    <annotation>Клипы и концертные выступления группы Тараканы .</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/1108/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
   <item>
 <link><script>translate_base_url+"app,Channel:1769,tvigle/multi";</script></link>
     <title>Ранетки</title>
-    <annotation>Интервью, клипы и живые выступления группы  Ранетки .</annotation>
+    <annotation>Интервью, клипы и живые выступления группы Ранетки .</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/1769/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
@@ -351,7 +433,7 @@
   <item>
 <link><script>translate_base_url+"app,Channel:1326,tvigle/multi";</script></link>
     <title>Сурганова и Оркестр</title>
-    <annotation>Клипы и концертные выступления группы  Сурганова и Оркестр .</annotation>
+    <annotation>Клипы и концертные выступления группы Сурганова и Оркестр .</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/1326/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
@@ -372,21 +454,21 @@
   <item>
 <link><script>translate_base_url+"app,Channel:1158,tvigle/multi";</script></link>
     <title>Танцы Минус</title>
-    <annotation>Видеоклипы и концертные выступления группы  Танцы Минус .</annotation>
+    <annotation>Видеоклипы и концертные выступления группы Танцы Минус .</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/1158/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
   <item>
 <link><script>translate_base_url+"app,Channel:2157,tvigle/multi";</script></link>
     <title>Нежный возраст</title>
-    <annotation>Приключения группы  Нежный возраст  в Европе.</annotation>
+    <annotation>Приключения группы Нежный возраст в Европе.</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/2157/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
   <item>
 <link><script>translate_base_url+"app,Channel:1823,tvigle/multi";</script></link>
     <title>BUNNY</title>
-    <annotation>Группа BUNNY   канадско московский рок тонкой выделки.</annotation>
+    <annotation>Группа BUNNY канадско московский рок тонкой выделки.</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/1823/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
@@ -400,14 +482,14 @@
   <item>
 <link><script>translate_base_url+"app,Channel:1655,tvigle/multi";</script></link>
     <title>Разыскиваются</title>
-    <annotation>OnMusicStage.com дает возможность музыкантам проявить себя  живьем    настоящие эмоции и неподдельный драйв в концертном  бункере .</annotation>
+    <annotation>OnMusicStage.com дает возможность музыкантам проявить себя живьем настоящие эмоции и неподдельный драйв в концертном бункере .</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/1655/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
   <item>
 <link><script>translate_base_url+"app,Channel:679,tvigle/multi";</script></link>
     <title>ВИАГРА</title>
-    <annotation>Видеоклипы и концертные выступления группы  ВИАГРА .</annotation>
+    <annotation>Видеоклипы и концертные выступления группы ВИАГРА .</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/679/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
@@ -449,14 +531,14 @@
   <item>
 <link><script>translate_base_url+"app,Channel:1981,tvigle/multi";</script></link>
     <title>Кукрыниксы</title>
-    <annotation>Клипы и живые выступления популярной русской рок группы  Кукрыниксы .</annotation>
+    <annotation>Клипы и живые выступления популярной русской рок группы Кукрыниксы .</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/1981/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
   <item>
 <link><script>translate_base_url+"app,Channel:1803,tvigle/multi";</script></link>
     <title>Ботаника</title>
-    <annotation>Клипы и живые выступления группы  Ботаника .</annotation>
+    <annotation>Клипы и живые выступления группы Ботаника .</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/1803/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
@@ -484,28 +566,28 @@
   <item>
 <link><script>translate_base_url+"app,Channel:1541,tvigle/multi";</script></link>
     <title>BIOPSYHOZ</title>
-    <annotation>Видеоклипы и концертные выступления группы  BIOPSYHOZ .</annotation>
+    <annotation>Видеоклипы и концертные выступления группы BIOPSYHOZ .</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/1541/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
   <item>
 <link><script>translate_base_url+"app,Channel:1982,tvigle/multi";</script></link>
     <title>Бутырка</title>
-    <annotation>Видеоклипы и живые выступления группы  Бутырка .</annotation>
+    <annotation>Видеоклипы и живые выступления группы Бутырка .</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/1982/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
   <item>
 <link><script>translate_base_url+"app,Channel:1983,tvigle/multi";</script></link>
     <title>Тутси</title>
-    <annotation>Видеоклипы популярной группы  Тутси .</annotation>
+    <annotation>Видеоклипы популярной группы Тутси .</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/1983/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
   <item>
 <link><script>translate_base_url+"app,Channel:1847,tvigle/multi";</script></link>
     <title>PODIUM</title>
-    <annotation>Клипы, интервью и живые выступления группы  PODIUM .</annotation>
+    <annotation>Клипы, интервью и живые выступления группы PODIUM .</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/1847/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
@@ -533,14 +615,14 @@
   <item>
 <link><script>translate_base_url+"app,Channel:810,tvigle/multi";</script></link>
     <title>Hoba live</title>
-    <annotation>Михаил Владимиров и  Hoba live .</annotation>
+    <annotation>Михаил Владимиров и Hoba live .</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/810/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
   <item>
 <link><script>translate_base_url+"app,Channel:1147,tvigle/multi";</script></link>
     <title>Слайд</title>
-    <annotation>Группа  Слайд . Клипы и концертные video.</annotation>
+    <annotation>Группа Слайд . Клипы и концертные video.</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/1147/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
@@ -554,7 +636,7 @@
   <item>
 <link><script>translate_base_url+"app,Channel:1312,tvigle/multi";</script></link>
     <title>ZNAKI</title>
-    <annotation>Видеоклипы и концертные выступления молодой группы  ZNAKI .</annotation>
+    <annotation>Видеоклипы и концертные выступления молодой группы ZNAKI .</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/1312/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
@@ -568,57 +650,22 @@
   <item>
 <link><script>translate_base_url+"app,Channel:1332,tvigle/multi";</script></link>
     <title>Тихий Джа</title>
-    <annotation>Видеоклипы и концертные выступления группы  Тихий Джа .</annotation>
+    <annotation>Видеоклипы и концертные выступления группы Тихий Джа .</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/1332/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
   <item>
 <link><script>translate_base_url+"app,Channel:1368,tvigle/multi";</script></link>
     <title>Soloway</title>
-    <annotation>Видеоклипы и концертные выступления группы  Zband .</annotation>
+    <annotation>Видеоклипы и концертные выступления группы Zband .</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/1368/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
   <item>
 <link><script>translate_base_url+"app,Channel:1306,tvigle/multi";</script></link>
     <title>Notstar</title>
-    <annotation>Видеоклипы и концертные выступления группы  Амели .</annotation>
+    <annotation>Видеоклипы и концертные выступления группы Амели .</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/1306/list.jpg?2</image>
-    <mediaDisplay name="photoView"/>
-  </item>
-  <item>
-<link><script>translate_base_url+"app,Channel:28,tvigle/multi";</script></link>
-    <title>Русский рок</title>
-    <annotation>Коллекция клипов и живых выступлений музыкантов отечественной рок-сцены для ценителей настоящего драйва.</annotation>
-    <image>http://photo.tvigle.ru/resource/rf/cnl/28/list.jpg?2</image>
-    <mediaDisplay name="photoView"/>
-  </item>
-  <item>
-<link><script>translate_base_url+"app,Channel:30,tvigle/multi";</script></link>
-    <title>Поп музыка</title>
-    <annotation>Видеоклипы современных популярных артистов.</annotation>
-    <image>http://photo.tvigle.ru/resource/rf/cnl/30/list.jpg?2</image>
-    <mediaDisplay name="photoView"/>
-  </item>
-  <item>
-<link><script>translate_base_url+"app,Channel:33,tvigle/multi";</script></link>
-    <title>Хип Хоп</title>
-    <annotation>Музыка и тексты суровых парней на самые актуальные темы.</annotation>
-    <image>http://photo.tvigle.ru/resource/rf/cnl/33/list.jpg?2</image>
-    <mediaDisplay name="photoView"/>
-  </item>
-  <item>
-<link><script>translate_base_url+"app,Channel:29,tvigle/multi";</script></link>
-    <title>Альтернатива</title>
-    <annotation>AMATORY,  СЛОТ ,  Тараканы ,  Бригадный подряд  и другие представители альтернативной музыки.</annotation>
-    <image>http://photo.tvigle.ru/resource/rf/cnl/29/list.jpg?2</image>
-    <mediaDisplay name="photoView"/>
-  </item>
-  <item>
-<link><script>translate_base_url+"app,Channel:37,tvigle/multi";</script></link>
-    <title>Шансон</title>
-    <annotation>Клипы и живые выступления знаменитостей, королей и легенд русского шансона.</annotation>
-    <image>http://photo.tvigle.ru/resource/rf/cnl/37/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
 </channel>

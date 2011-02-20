@@ -12,6 +12,13 @@
       <meta rel="mediaDisplay">onePartView</meta>
     </track>
     <track>
+      <link>http://127.0.0.1:84/cgi-bin/translate?app,File:etc/playlists/tv-estere.xspf,collection/medialist</link>
+      <title>tv estere</title>
+      <annotation>Зарубежное телевидение</annotation>
+      <image>../etc/translate/rss/image/menu/internettv.png</image>
+      <meta rel="mediaDisplay">onePartView</meta>
+    </track>
+    <track>
       <link>http://127.0.0.1:84/cgi-bin/translate?app,File:etc/playlists/video-prahovahd_sd.xspf,collection/medialist</link>
       <title>OneHD / SD</title>
       <annotation>ONE HD - Online Network Entertainment - Romania. Prima televiziune online HD. Качественные концертные записи на любой вкус. (SD качество, min 0.5Mbit/sec)</annotation>
@@ -20,7 +27,7 @@
     </track>
     <track>
       <link>http://127.0.0.1:84/cgi-bin/translate?app,File:etc/playlists/video-prahovahd.xspf,collection/medialist</link>
-      <title>OneHD / HD</title>
+      <title>OneHD</title>
       <annotation>ONE HD - Online Network Entertainment - Romania. Prima televiziune online HD. Качественные концертные записи на любой вкус. (HD качество, min 2Mbit/sec)</annotation>
       <image>http://www.1hd.ro/images/hd.png</image>
       <meta rel="mediaDisplay">onePartView</meta>

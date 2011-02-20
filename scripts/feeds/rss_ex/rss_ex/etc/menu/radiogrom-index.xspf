@@ -27,7 +27,7 @@
     </track>
     <track>
       <link>http://127.0.0.1:84/cgi-bin/translate?app,File:etc/playlists/radiogrom-russia.xspf,collection/medialist</link>
-      <title>Россия AM-FM</title>
+      <title>Russia AM-FM</title>
       <annotation>AM-FM Radioстанции России. Вещание через интернет слушать онлайн Radio онлайн</annotation>
       <image>../etc/translate/rss/image/menu/internetradio.png</image>
       <meta rel="mediaDisplay">onePartView</meta>

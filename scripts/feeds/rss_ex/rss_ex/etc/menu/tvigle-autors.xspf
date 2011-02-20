@@ -5,7 +5,7 @@
   <trackList>
 <track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:792,tvigle/multi</link>
-  <title>Лучшие авторы Tvigle.ru  2008</title>
+  <title>Лучшие авторы Tvigle.ru</title>
   <annotation/>
   <image>http://photo.tvigle.ru/resource/rf/cnl/792/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
@@ -75,7 +75,8 @@
   <annotation/>
   <image>http://photo.tvigle.ru/resource/rf/cnl/657/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
-</track><track>
+</track>
+<track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:1657,tvigle/multi</link>
   <title>MAD Sports TV</title>
   <annotation/>
@@ -93,8 +94,7 @@
   <annotation/>
   <image>http://photo.tvigle.ru/resource/rf/cnl/714/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
-</track>
-<track>
+</track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:1096,tvigle/multi</link>
   <title>nana</title>
   <annotation/>
@@ -133,7 +133,7 @@
 </track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:1369,tvigle/multi</link>
   <title>Soloway</title>
-  <annotation>Видеоклипы и концертные выступления группы  Zband .</annotation>
+  <annotation>Видеоклипы и концертные выступления группы Zband .</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/1369/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>
@@ -148,7 +148,8 @@
   <annotation/>
   <image>http://photo.tvigle.ru/resource/rf/cnl/660/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
-</track><track>
+</track>
+<track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:658,tvigle/multi</link>
   <title>mihalna</title>
   <annotation/>
@@ -184,8 +185,7 @@
   <annotation/>
   <image>http://photo.tvigle.ru/resource/rf/cnl/637/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
-</track>
-<track>
+</track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:617,tvigle/multi</link>
   <title>amf </title>
   <annotation/>
@@ -221,7 +221,8 @@
   <annotation/>
   <image>http://photo.tvigle.ru/resource/rf/cnl/710/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
-</track><track>
+</track>
+<track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:621,tvigle/multi</link>
   <title>cherkashin</title>
   <annotation/>
@@ -275,8 +276,7 @@
   <annotation/>
   <image>http://photo.tvigle.ru/resource/rf/cnl/638/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
-</track>
-<track>
+</track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:659,tvigle/multi</link>
   <title>YureTC</title>
   <annotation/>
@@ -294,7 +294,8 @@
   <annotation/>
   <image>http://photo.tvigle.ru/resource/rf/cnl/1236/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
-</track><track>
+</track>
+<track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:716,tvigle/multi</link>
   <title>frushaucoz</title>
   <annotation/>

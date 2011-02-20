@@ -26,19 +26,11 @@
 	sideLeftWidthPC="0"
 	sideColorRight="0:0:0"
 	headerImageWidthPC="0"
-	headerXPC="16"
-	headerYPC="3"
-	headerWidthPC="0"
 	itemImageXPC="29"
 	itemImageYPC="18"
 	itemXPC="42"
 	itemYPC="18"
 	itemWidthPC="52"
-	capXPC="94"
-	capYPC="17"
-	capHeightPC="10"
-	headerCapXPC="90"
-	headerCapYPC="10"
 	headerCapWidthPC="0"
 	backgroundColor="0:0:0"
 	itemBackgroundColor="0:0:0"
@@ -92,10 +84,10 @@
       print("*** majorContext=",majorContext);
       print("*** userInput=",userInput);
 
-      if (userInput == "pagedown" || userInput == "pageup")
+      if (userInput == "pagedown" || userInput == "pageup" || userInput == "PG" || userInput == "PD")
       {
         idx = Integer(getFocusItemIndex());
-        if (userInput == "pagedown")
+        if (userInput == "pagedown" || userInput == "PD")
         {
           idx -= -5;
           if(idx &gt;= itemSize)
@@ -112,7 +104,7 @@
         redrawDisplay();
         ret = "true";
       }
-      else if(majorContext == "items" &amp;&amp; userInput == "right")
+      else if(majorContext == "items" &amp;&amp; (userInput == "right" || userInput == "R"))
       {
         idx = getFocusItemIndex();
         url = getStringArrayAt(urlArray, idx);
@@ -134,7 +126,7 @@
 
         print("description",description);
         
-        act = doModalRss("rss_file://../etc/translate/app/ivi/ivi_entry.xml");
+        act = doModalRss(translate_base_url + "app/ivi/index,entry");
         ret = "true";
       }
       ret;
@@ -151,32 +143,7 @@
 <onEnter>
   cachePath = getStoragePath("key");
 
-  translateBaseURL = "http://127.0.0.1:84/cgi-bin/translate?";
-  cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
-  if(cgiconf != null)
-  {
-    value = getStringArrayAt(cgiconf, 0);
-    if(value != null &amp;&amp; value != "")
-    {
-      translate_base_url = value;
-      print("cgi.conf=",value);
-    }
-  }
-
-  screenXp = 4;
-  screenYp = 3;
-  rssconf = readStringFromFile("/usr/local/etc/translate/etc/rss.conf");
-  print("rssconf:",rssconf);
-  if(rssconf != null)
-  {
-    value = getStringArrayAt(rssconf, 0);
-    if(value != null &amp;&amp; value != "")
-      screenXp = Integer(value);
-    value = getStringArrayAt(rssconf, 1);
-    if(value != null &amp;&amp; value != "")
-      screenYp = Integer(value);
-  }
-  print("rssconf:",screenXp,screenYp);
+  <!--`cat "$BASEPATH/app/include/rssconf.script"`-->
 
 	pageLogo = "../etc/translate/rss/image/menu/ivi.png";
 
@@ -314,7 +281,7 @@
       idx   = getFocusItemIndex();
       url   = getStringArrayAt(urlArray, idx);
       playTitle = url;
-      urlToPlay = translateBaseURL+"info,,"+url;
+      urlToPlay = translate_base_url+"info,,"+url;
       dlok = loadXMLFile(urlToPlay);
       if(dlok != null)
       {
@@ -323,6 +290,8 @@
         
         if(error == 0)
         {
+<!--`cat "$BASEPATH/app/include/add.history_video.script"`-->
+
     	    value = getXMLAttribute("info","stream","url");
     	    if(value != null)
     	     url = value;

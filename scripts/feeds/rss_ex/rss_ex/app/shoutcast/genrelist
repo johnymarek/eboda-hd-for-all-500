@@ -31,8 +31,10 @@ let tsttime=`date +%s`-$TIMELIFE
 
 local REFRESHCACHE=yes
 if [ -f "$CHANNELFILE" ]; then
-  if [ `date +%s -r "$CHANNELFILE"` -gt $tsttime ]; then
-    REFRESHCACHE=
+  if [ "`ls -s "$CHANNELFILE" | awk '{print $1}'`" != "0" ]; then
+    if [ `date +%s -r "$CHANNELFILE"` -gt $tsttime ]; then
+      REFRESHCACHE=
+    fi
   fi
 fi
 
@@ -57,6 +59,7 @@ fi
 
 if [ -f "$CHANNELFILE" ]; then
   (
+    export BASEPATH;
     export CHANNELFILE;
     template2rss genrelist.xml | printContent "application/rss+xml"
   )

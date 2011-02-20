@@ -143,20 +143,24 @@
 <!--
 !-->
 	<onEnter>
-    screenXp = 4;
-    screenYp = 3;
-    rssconf = readStringFromFile("/usr/local/etc/translate/etc/rss.conf");
-    print("rssconf:",rssconf);
-    if(rssconf != null)
-    {
-      value = getStringArrayAt(rssconf, 0);
-      if(value != null &amp;&amp; value != "")
-        screenXp = Integer(value);
-      value = getStringArrayAt(rssconf, 1);
-      if(value != null &amp;&amp; value != "")
-        screenYp = Integer(value);
-    }
-    print("rssconf:",screenXp,screenYp);
+  translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
+  screenXp = 4;
+  screenYp = 3;
+  rssconf = readStringFromFile(getStoragePath("key")+"translate.dat");
+  print("rssconf:",rssconf);
+  if(rssconf != null)
+  {
+    value = getStringArrayAt(rssconf, 0);
+    if(value != null &amp;&amp; value != "")
+      translate_base_url = value;
+    value = getStringArrayAt(rssconf, 1);
+    if(value != null &amp;&amp; value != "")
+      screenXp = Integer(value);
+    value = getStringArrayAt(rssconf, 2);
+    if(value != null &amp;&amp; value != "")
+      screenYp = Integer(value);
+  }
+  print("rssconf:",translate_base_url,screenXp,screenYp);
   
     youtubeApiBaseURL = "http://gdata.youtube.com/feeds/api/standardfeeds/";
     cachePath = getStoragePath("key");
@@ -224,25 +228,25 @@
 		<media:thumbnail url="../etc/translate/rss/image/youtube.gif" width="120" height="90" />
 
 		<item>
-			<title>Самые популярные</title>
+			<title>Most Popular</title>
 			<feed_name>most_popular</feed_name>
 			<media:thumbnail url="../etc/translate/rss/image/youtube.gif" width="120" height="90" />
 		</item>
 
 		<item>
-			<title>Лидеры просмотров</title>
+			<title>Most Viewed</title>
 			<feed_name>most_viewed</feed_name>
 			<media:thumbnail url="../etc/translate/rss/image/youtube.gif" width="120" height="90" />
 		</item>
 
 		<item>
-			<title>Лидеры обсуждений</title>
+			<title>Most Discussed</title>
 			<feed_name>most_discussed</feed_name>
 			<media:thumbnail url="../etc/translate/rss/image/youtube.gif" width="120" height="90" />
 		</item>
 		
 		<item>
-			<title>Лучшие оценки</title>
+			<title>Top Rated</title>
 			<feed_name>top_rated</feed_name>
 			<media:thumbnail url="../etc/translate/rss/image/youtube.gif" width="120" height="90" />
 		</item>
@@ -254,7 +258,7 @@
 		</item>
 
 		<item>
-			<title>Лидеры по ответам</title>
+			<title>Most Responded</title>
 			<feed_name>most_responded</feed_name>
 			<media:thumbnail url="../etc/translate/rss/image/youtube.gif" width="120" height="90" />
 		</item>

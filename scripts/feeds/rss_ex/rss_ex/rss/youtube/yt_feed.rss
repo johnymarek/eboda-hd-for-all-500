@@ -29,13 +29,11 @@
 	headerXPC="16"
 	headerYPC="3"
 	headerWidthPC="0"
-	itemImageXPC="32"
+	itemImageXPC="27"
 	itemImageYPC="18"
-	itemXPC="39"
+	itemXPC="40"
 	itemYPC="18"
-	capXPC="88"
-	capYPC="17"
-	capHeightPC="10"
+	itemWidthPC="54"
 	headerCapXPC="90"
 	headerCapYPC="10"
 	headerCapWidthPC="0"
@@ -84,8 +82,8 @@
   <text offsetXPC=85 offsetYPC=90 widthPC=11 heightPC=5 fontSize=14 backgroundColor=8:8:16 foregroundColor=100:100:100>
     <script>
     if(time=="today") "Сегодня"; else
-    if(time=="this_week") "За неделю"; else
-    if(time=="this_month") "За месяц"; else
+    if(time=="this_week") "This Week"; else
+    if(time=="this_month") "This Month"; else
     "";
     </script>
   </text>
@@ -219,20 +217,24 @@
 </onRefresh>
 
 <onEnter>
+  translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
   screenXp = 4;
   screenYp = 3;
-  rssconf = readStringFromFile("/usr/local/etc/translate/etc/rss.conf");
+  rssconf = readStringFromFile(getStoragePath("key")+"translate.dat");
   print("rssconf:",rssconf);
   if(rssconf != null)
   {
     value = getStringArrayAt(rssconf, 0);
     if(value != null &amp;&amp; value != "")
-      screenXp = Integer(value);
+      translate_base_url = value;
     value = getStringArrayAt(rssconf, 1);
+    if(value != null &amp;&amp; value != "")
+      screenXp = Integer(value);
+    value = getStringArrayAt(rssconf, 2);
     if(value != null &amp;&amp; value != "")
       screenYp = Integer(value);
   }
-  print("rssconf:",screenXp,screenYp);
+  print("rssconf:",translate_base_url,screenXp,screenYp);
 
   cachePath = getStoragePath("key");
   optionsArray = readStringFromFile(cachePath + "youtubeOptions.dat");
@@ -253,18 +255,6 @@
   
   page = 1;
   maxResults = 20;
-
-  translateBaseURL = "http://127.0.0.1:84/cgi-bin/translate?";
-  cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
-  if(cgiconf != null)
-  {
-    value = getStringArrayAt(cgiconf, 0);
-    if(value != null &amp;&amp; value != "")
-    {
-      translateBaseURL = value;
-      print("cgi.conf=",value);
-    }
-  }
 
   storagePath = getStoragePath("tmp");
   storagePath = storagePath + "youtubeRSS.dat";
@@ -315,7 +305,7 @@
 </submenu>
 
 <submenu>
-  <title>За сегодня</title>
+  <title>Today</title>
   <onClick>
     time = "today";
     titleArray = null;
@@ -328,7 +318,7 @@
 </submenu>
 
 <submenu>
-  <title>За неделю</title>
+  <title>This Week</title>
   <onClick>
     time = "this_week";
     titleArray = null;
@@ -341,7 +331,7 @@
 </submenu>
 
 <submenu>
-  <title>За месяц</title>
+  <title>This Month</title>
   <onClick>
     time = "this_month";
     titleArray = null;
@@ -354,7 +344,7 @@
 </submenu>
 
 <submenu>
-  <title>За все время</title>
+  <title>All Time</title>
   <onClick>
     time = "all_time";
     titleArray = null;
@@ -397,11 +387,19 @@
     idx = getFocusItemIndex();
     url = getStringArrayAt(urlArray, idx);
 
-    infoUrl = translateBaseURL+"info,HD:"+hd+","+urlEncode(url);
+    infoUrl = translate_base_url+"info,HD:"+hd+","+urlEncode(url);
 
     dlok = loadXMLFile(infoUrl);
     if (dlok != null)
     {
+      historyPath = getStoragePath("key")+"translate.history_video.m3u";
+      historydat = readStringFromFile(historyPath);
+      if(historydat == null)
+        historydat = pushBackStringArray(historydat, "#EXTM3U");
+      historydat = pushBackStringArray(historydat, "#EXTINF:-1,"+getStringArrayAt(titleArray, idx));
+      historydat = pushBackStringArray(historydat, url);
+      writeStringToFile(historyPath, historydat);
+
 	    value = getXMLAttribute("info","stream","type");
 	    if(value != null)
 	     type = value;

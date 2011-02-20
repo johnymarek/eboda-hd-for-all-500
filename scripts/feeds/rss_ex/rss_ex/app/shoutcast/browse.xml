@@ -21,47 +21,10 @@
 #
 -->
 
-<sub_createOutlineLink>
-  if(genreId != "")
-  {
-    currentLink = translate_base_url+"app,Id:"+urlEncode(genreId)+",shoutcast/genres";
-  }
-  else
-  {
-    currentLink = translate_base_url+"app,,shoutcast/genres";
-  }
-  currentTitle = genreName;
-</sub_createOutlineLink>
-
 <onEnter>
 <!--`cat "$INITSCRIPT"`-->
 
-  translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
-  cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
-  if(cgiconf != null)
-  {
-    value = getStringArrayAt(cgiconf, 0);
-    if(value != null &amp;&amp; value != "")
-    {
-      translate_base_url = value;
-      print("cgi.conf=",value);
-    }
-  }
-
-  screenXp = 4;
-  screenYp = 3;
-  rssconf = readStringFromFile("/usr/local/etc/translate/etc/rss.conf");
-  print("rssconf:",rssconf);
-  if(rssconf != null)
-  {
-    value = getStringArrayAt(rssconf, 0);
-    if(value != null &amp;&amp; value != "")
-      screenXp = Integer(value);
-    value = getStringArrayAt(rssconf, 1);
-    if(value != null &amp;&amp; value != "")
-      screenYp = Integer(value);
-  }
-  print("rssconf:",screenXp,screenYp);
+  <!--`cat "$BASEPATH/app/include/rssconf.script"`-->
 
   error_info  = "";
   itemSize    = 0;
@@ -79,6 +42,18 @@
   history = -1;
   executeScript("sub_refreshList");
 </onEnter>
+
+<sub_createOutlineLink>
+  if(genreId != "")
+  {
+    currentLink = translate_base_url+"app,Id:"+urlEncode(genreId)+",shoutcast/genres";
+  }
+  else
+  {
+    currentLink = translate_base_url+"app,,shoutcast/genres";
+  }
+  currentTitle = genreName;
+</sub_createOutlineLink>
 
 <sub_refreshList>
   print("sub_refreshList start");
@@ -200,11 +175,11 @@
     <script>
     ret = "false";
     userInput = currentUserInput();
-    if(userInput == "right")
+    if(userInput == "right" || userInput == "R")
     {
       ret = "true";
     }
-    else if (userInput == "return" || userInput == "left")
+    else if (userInput == "return" || userInput == "left" || userInput == "L" || userInput == "RET")
     {
       if(history &gt;= 0)
       {

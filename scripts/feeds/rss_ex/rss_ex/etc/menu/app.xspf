@@ -19,6 +19,13 @@
       <meta rel="mediaDisplay">threePartsView</meta>
     </track>
     <track>
+      <link>http://127.0.0.1:84/cgi-bin/translate?app,Start:1;File:etc/menu/recent-index.xspf,collection/simplemenu</link>
+      <title>Most Recent Links</title>
+      <annotation>Наиболее часто используемые ссылки</annotation>
+      <image>../etc/translate/rss/image/menu/recent.png</image>
+      <meta rel="mediaDisplay">onePartView</meta>
+    </track>
+    <track>
       <link>rss_file://../etc/translate/rss/xspf/settings.rss</link>
       <title>Settings</title>
       <annotation>RSS Ex Settings</annotation>

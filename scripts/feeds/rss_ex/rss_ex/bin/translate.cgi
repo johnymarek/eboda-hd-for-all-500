@@ -278,7 +278,7 @@ check_av_stream()
           if [ "$type" == "text/html" -o -z "$type" ]; then
             if echo "${stream_url}" | grep -q -s ".*[^a-zA-Z0-9]rss[^a-zA-Z0-9]*.*"; then
               type=application/xml
-            elif echo "${stream_url}" | grep -q -s "^http://.*/udp/[0-9\.:]*$"; then
+            elif echo "${stream_url}" | grep -q -s "^http://.*/\(udp\|rtp\)/[0-9\.:]*$"; then
               type=video/x-msvideo
             fi
           fi
@@ -550,7 +550,7 @@ check_stream()
       protocol='file'
       stream_class='directory'
     ;;
-    text/xml|application/xml|application/rss|application/rss+xml)
+    text/xml|application/xml|application/rss*)
       stream_class='rss'
     ;;
     *)
@@ -569,18 +569,20 @@ check_playlist()
   local resolve=$opt
   local playlist_file="$TEMP/temp.track"
   arg_url=$stream_url
-  command_playlist > $playlist_file
+  command_playlist | sed '1,2d;s/<track>/\n<track>/g;s/></>\n</g' > $playlist_file
   local count=`sed -n '/<track>/p' $playlist_file | sed -n '$='`
   if [ "$count" == "1" -o "$resolve" == "1" ]; then
-    local location=`sed -n '/<location>/p' $playlist_file | sed -n '1p' | sed 's/^.*<location><!\[CDATA\[//;s/\]\]><\/location>.*$//'`
-    local title=`sed -n '/<title>/p' $playlist_file | sed -n '1p' | sed 's/^.*<title><!\[CDATA\[//;s/\]\]><\/title>.*$//'`
-    local creator=`sed -n '/<creator>/p' $playlist_file | sed -n '1p' | sed 's/^.*<creator><!\[CDATA\[//;s/\]\]><\/creator>.*$//'`
+    local buf=`awk -f getxml.awk -f getfirstitem.awk "$playlist_file"`
+    local location=`echo "$buf" | sed -n '1p'`
+    local title=`echo "$buf" | sed -n '2p'`
+    local creator=`echo "$buf" | sed -n '3p'`
     if [ "$location" != "$stream_url" ]; then
       stream_url=''
       stream_type=''
       arg_url=$location
       check_stream
       icy_name=${icy_name:-"$title"}
+      [ -n "$creator" ] && icy_name="$creator - $icy_name"
       ms_title=${ms_title:-"$title"}
       ms_author=${ms_author:-"$creator"}
     fi
@@ -604,7 +606,7 @@ command_playlist()
   if echo "${arg_url}" | grep -q -s ".*://"; then
     playlist_file="$TEMP/temp.playlist"
     rm -f $playlist_file
-    protocol=`echo "$arg_url" | sed -e 's/:\/\/.*$//`
+    protocol=`echo "$arg_url" | sed -e 's/:\/\/.*$//'`
     buf="`$MSDL --debug --useragent "${USERAGENT}" -o "$playlist_file" -p "$protocol" --no-treat-metafile "${arg_url}" 2>&1`"
 #    type=`echo "$buf" | sed -n '/^content type/p' | sed -n '$p' | awk '{print $3}'`
     type=${stream_type:-`echo "$buf" | sed -n '/^[cC]ontent[ -][tT]ype/p' | sed -n '$p' | awk '{ match($0, /[ ;:]+([a-z]+\/[a-z\-]+)[ ;]*.*$/, arr); print arr[1]}'`}
@@ -718,156 +720,168 @@ command_info()
     escaped_url="`echo $escaped_url | sed 's/ /%20/g'`"
   fi 
   echo "<stream url=\"$escaped_url\" type=\"$stream_type\" class=\"$stream_class\" protocol=\"$protocol\" server=\"$server_type\" server_url=\"$stream_status_url\" />"
-  if [ "$stream_class" == "audio" -o "$stream_class"  == "video" ]; then
-    echo "<status>"
-	  
-	  meta_server_status=
-	  meta_stream_status=
-	  meta_stream_bitrate=
-	  meta_stream_title=
-	  meta_stream_genre=
-	  meta_content_type=
-	  meta_listeners=
-	  meta_listener_peak=
-	  meta_average_listener_time=
-	  meta_current_song=
-	  meta_stream_description=
-	  
-	  if [ -n "$stream_status_url" -a -f "$TMPFILE" ]; then
-
-      if grep -q -s -i "charset=utf-8" ${TMPFILE}; then
-        :
-      else
-        $TOUTF8 <${TMPFILE} >${TMPFILE}.utf8 && mv -f ${TMPFILE}.utf8 ${TMPFILE}
-      fi
-      
-      case $server_type in
-        shoutcast)
-      	  meta_server_status=`get_shoutcast_item 'Server Status'`
-      	  meta_stream_status=`get_shoutcast_item 'Stream Status'`
-      	  meta_stream_bitrate=`echo "$value" | sed 's/.*is up at //' | awk '{print $1}'`
-      	  meta_stream_title=`get_shoutcast_item 'Stream Title'`
-      	  meta_stream_genre=`get_shoutcast_item 'Stream Genre'`
-      	  meta_content_type=`get_shoutcast_item 'Content Type'`
-      	  meta_listeners=`echo "$value" | sed 's/.*with //' | awk '{print $1}'`
-      	  meta_listener_peak=`get_shoutcast_item 'Listener Peak'`
-      	  meta_average_listener_time=`get_shoutcast_item 'Average Listen Time'`
-      	  meta_current_song=`get_shoutcast_item 'Current Song'`
-      	  meta_stream_description=''
-      	;;
-        icecast)
-      	  mount_point=`echo "$stream_url" | sed 's/\//\n/g' | sed -n '$p' | sed 's/ *$//'` 
-      	  if grep -q -s "/${mount_point}" ${TMPFILE}; then
-            sed -e 's/<[^<>]*>/\n/g' ${TMPFILE} | sed 's/^ *//' | sed '/^ *$/d' | sed 's/&amp;/&/g;s/&nbsp;/ /g;s/&lt;/</g;s/&gt;/>/g' | sed "1,/[Mm]ount [Pp]oint.*${mount_point}/d" | sed '/[mM]ount [pP]oint/,$d' | sed '/upport icecast development/,$d' > ${TMPFILE}.$$
-      	    mv -f $TMPFILE.$$ $TMPFILE
-        	  meta_server_status=''
-        	  meta_stream_status=`get_icecast_item 'Mount started'`
-        	  meta_stream_bitrate=`get_icecast_item 'Bitrate'`
-        	  meta_stream_title=`get_icecast_item 'Stream Title'`
-        	  meta_stream_genre=`get_icecast_item 'Stream Genre'`
-        	  meta_content_type=`get_icecast_item 'Content Type'`
-        	  meta_listeners=`get_icecast_item 'Current Listeners'`
-        	  meta_listener_peak=`get_icecast_item 'Peak Listeners'`
-        	  meta_average_listener_time=''
-        	  meta_current_song=`get_icecast_item 'Current Song'`
+  case $stream_class in
+    audio|video)
+      echo "<status>"
+  	  
+  	  meta_server_status=
+  	  meta_stream_status=
+  	  meta_stream_bitrate=
+  	  meta_stream_title=
+  	  meta_stream_genre=
+  	  meta_content_type=
+  	  meta_listeners=
+  	  meta_listener_peak=
+  	  meta_average_listener_time=
+  	  meta_current_song=
+  	  meta_stream_description=
+  	  
+  	  if [ -n "$stream_status_url" -a -f "$TMPFILE" ]; then
+  
+        if grep -q -s -i "charset=utf-8" ${TMPFILE}; then
+          :
+        else
+          $TOUTF8 <${TMPFILE} >${TMPFILE}.utf8 && mv -f ${TMPFILE}.utf8 ${TMPFILE}
+        fi
+        
+        case $server_type in
+          shoutcast)
+        	  meta_server_status=`get_shoutcast_item 'Server Status'`
+        	  meta_stream_status=`get_shoutcast_item 'Stream Status'`
+        	  meta_stream_bitrate=`echo "$value" | sed 's/.*is up at //' | awk '{print $1}'`
+        	  meta_stream_title=`get_shoutcast_item 'Stream Title'`
+        	  meta_stream_genre=`get_shoutcast_item 'Stream Genre'`
+        	  meta_content_type=`get_shoutcast_item 'Content Type'`
+        	  meta_listeners=`echo "$value" | sed 's/.*with //' | awk '{print $1}'`
+        	  meta_listener_peak=`get_shoutcast_item 'Listener Peak'`
+        	  meta_average_listener_time=`get_shoutcast_item 'Average Listen Time'`
+        	  meta_current_song=`get_shoutcast_item 'Current Song'`
         	  meta_stream_description=''
-        	fi
-        ;;
-        station.ru)
-          meta_current_song=`echo "$host_response" | sed 's/<[^<>]*>//g;s/|/-/'`
-        ;;
-      esac
-    fi
-
-	  if echo "$stream_status_url" | grep -qsi "^icyx://"; then
-	    meta_current_song=`awk -v streamurl="$stream_url" -v statusurl="$stream_status_url" '
-	      BEGIN {
-	        match(statusurl, /^icyx:\/\/(.*):(.*)$/, arr);
-	        host_ip = arr[1];
-	        host_port = arr[2];
-	        match(streamurl, /^([^:]*):\/\/([^\/]*)(.*)$/, arr);
-	        host = arr[2];
-	        path = arr[3];
-
-          if (path == "")  path = "/";
-
-          HttpService = "/inet/tcp/0/" host_ip "/" host_port
-          ORS = "\n\n"
-          print "GET " path " HTTP/1.0" "\nHost: " host "\nAccept: */*" "\nIcy-MetaData: 1" |& HttpService
-          ORS = "\n"
-          RS = "\r?\n\r?\n"
-          HttpService |& getline Header
-          if(match(Header, /icy-metaint: *([0-9]*)/, arr))
-          {
-            metaint = strtonum(arr[1]);
-            RS = "\0"
-            counter = 0;
-            while(counter < metaint)
+        	;;
+          icecast)
+        	  mount_point=`echo "$stream_url" | sed 's/\//\n/g' | sed -n '$p' | sed 's/ *$//'` 
+        	  if grep -q -s "/${mount_point}" ${TMPFILE}; then
+              sed -e 's/<[^<>]*>/\n/g' ${TMPFILE} | sed 's/^ *//' | sed '/^ *$/d' | sed 's/&amp;/&/g;s/&nbsp;/ /g;s/&lt;/</g;s/&gt;/>/g' | sed "1,/[Mm]ount [Pp]oint.*${mount_point}/d" | sed '/[mM]ount [pP]oint/,$d' | sed '/upport icecast development/,$d' > ${TMPFILE}.$$
+        	    mv -f $TMPFILE.$$ $TMPFILE
+          	  meta_server_status=''
+          	  meta_stream_status=`get_icecast_item 'Mount started'`
+          	  meta_stream_bitrate=`get_icecast_item 'Bitrate'`
+          	  meta_stream_title=`get_icecast_item 'Stream Title'`
+          	  meta_stream_genre=`get_icecast_item 'Stream Genre'`
+          	  meta_content_type=`get_icecast_item 'Content Type'`
+          	  meta_listeners=`get_icecast_item 'Current Listeners'`
+          	  meta_listener_peak=`get_icecast_item 'Peak Listeners'`
+          	  meta_average_listener_time=''
+          	  meta_current_song=`get_icecast_item 'Current Song'`
+          	  meta_stream_description=''
+          	fi
+          ;;
+          station.ru)
+            meta_current_song=`echo "$host_response" | sed 's/<[^<>]*>//g;s/|/-/'`
+          ;;
+        esac
+      fi
+  
+  	  if echo "$stream_status_url" | grep -qsi "^icyx://"; then
+  	    meta_current_song=`awk -v streamurl="$stream_url" -v statusurl="$stream_status_url" '
+  	      BEGIN {
+  	        match(statusurl, /^icyx:\/\/(.*):(.*)$/, arr);
+  	        host_ip = arr[1];
+  	        host_port = arr[2];
+  	        match(streamurl, /^([^:]*):\/\/([^\/]*)(.*)$/, arr);
+  	        host = arr[2];
+  	        path = arr[3];
+  
+            if (path == "")  path = "/";
+  
+            HttpService = "/inet/tcp/0/" host_ip "/" host_port
+            ORS = "\n\n"
+            print "GET " path " HTTP/1.0" "\nHost: " host "\nAccept: */*" "\nIcy-MetaData: 1" |& HttpService
+            ORS = "\n"
+            RS = "\r?\n\r?\n"
+            HttpService |& getline Header
+            if(match(Header, /icy-metaint: *([0-9]*)/, arr))
             {
-              HttpService |& getline
-              counter = counter + length($0) + 1
-            }
-            if(metaint != counter + 1)
-            {
-              split($0, a, "\x27;"); 
-              if(match(a[1], /^.*StreamTitle=\x27(.*)/, arr))
+              metaint = strtonum(arr[1]);
+              RS = "\0"
+              counter = 0;
+              while(counter < metaint)
               {
-                print arr[1];
+                HttpService |& getline
+                counter = counter + length($0) + 1
+              }
+              if(metaint != counter + 1)
+              {
+                split($0, a, "\x27;"); 
+                if(match(a[1], /^.*StreamTitle=\x27(.*)/, arr))
+                {
+                  print arr[1];
+                }
               }
             }
-          }
-          close(HttpService)
-	      }
-	    '`
-	    if echo "$meta_current_song" | $TOUTF8 -t; then
-		    meta_current_song=`echo "$meta_current_song" | $XCODE -s | $TOUTF8`
-	    fi
-	  fi
-
-    case $protocol in
-      http|rtmp)
-        meta_stream_title=${meta_stream_title:-"$icy_name"}
-        meta_stream_genre=${meta_stream_genre:-"$icy_genre"}
-        meta_stream_bitrate=${meta_stream_bitrate:-"$icy_br"}
-        meta_stream_description=${meta_stream_description:-"$icy_description"}
-      ;;
-      mmst|mmsh|rtsp)
-        if [ -n "$ms_author" -a -n "$ms_title" ]; then
-          if [ "$ms_author" != "$ms_title" ]; then
-            meta_stream_title="$ms_title / $ms_author"
+            close(HttpService)
+  	      }
+  	    '`
+  	    if echo "$meta_current_song" | $TOUTF8 -t; then
+  		    meta_current_song=`echo "$meta_current_song" | $XCODE -s | $TOUTF8`
+  	    fi
+  	  fi
+  
+      case $protocol in
+        http|rtmp)
+          meta_stream_title=${meta_stream_title:-"$icy_name"}
+          meta_stream_genre=${meta_stream_genre:-"$icy_genre"}
+          meta_stream_bitrate=${meta_stream_bitrate:-"$icy_br"}
+          meta_stream_description=${meta_stream_description:-"$icy_description"}
+        ;;
+        mmst|mmsh|rtsp)
+          if [ -n "$ms_author" -a -n "$ms_title" ]; then
+            if [ "$ms_author" != "$ms_title" ]; then
+              meta_stream_title="$ms_title / $ms_author"
+            else
+              meta_stream_title="$ms_title"
+            fi
           else
-            meta_stream_title="$ms_title"
+            meta_stream_title="$ms_title$ms_author"
           fi
-        else
-          meta_stream_title="$ms_title$ms_author"
-        fi
-      ;;
-    esac
-
-    if echo "$meta_stream_title" | $TOUTF8 -t; then
-	meta_stream_title=`echo "$meta_stream_title" | $XCODE -s | $TOUTF8`
-    fi
-    if echo "$meta_stream_genre" | $TOUTF8 -t; then
-	meta_stream_genre=`echo "$meta_stream_genre" | $XCODE -s | $TOUTF8`
-    fi
-    if echo "$meta_stream_description" | $TOUTF8 -t; then
-	meta_stream_description=`echo "$meta_stream_description" | $XCODE -s | $TOUTF8`
-    fi
-    
-    	  print_status_item 'server-status' "${meta_server_status}"
-	  print_status_item 'stream-status' "$meta_stream_status"
-	  print_status_item 'listener-peak' "$meta_listener_peak"
-	  print_status_item 'average-listener-time' "$meta_average_listener_time"
-	  print_status_item 'stream-title' "$meta_stream_title"
-	  print_status_item 'content-type' "$meta_content_type"
-	  print_status_item 'stream-genre' "$meta_stream_genre"
-	  print_status_item 'current-song' "$meta_current_song"
-	  print_status_item 'stream-bitrate' "$meta_stream_bitrate"
-	  print_status_item 'stream-description' "$meta_stream_description"
-	  print_status_item 'listeners' "$meta_listeners"
-    echo "</status>"
-    rm -f ${TMPFILE}
-  fi
+        ;;
+      esac
+  
+      if echo "$meta_stream_title" | $TOUTF8 -t; then
+  	meta_stream_title=`echo "$meta_stream_title" | $XCODE -s | $TOUTF8`
+      fi
+      if echo "$meta_stream_genre" | $TOUTF8 -t; then
+  	meta_stream_genre=`echo "$meta_stream_genre" | $XCODE -s | $TOUTF8`
+      fi
+      if echo "$meta_stream_description" | $TOUTF8 -t; then
+  	meta_stream_description=`echo "$meta_stream_description" | $XCODE -s | $TOUTF8`
+      fi
+      
+      	  print_status_item 'server-status' "${meta_server_status}"
+  	  print_status_item 'stream-status' "$meta_stream_status"
+  	  print_status_item 'listener-peak' "$meta_listener_peak"
+  	  print_status_item 'average-listener-time' "$meta_average_listener_time"
+  	  print_status_item 'stream-title' "$meta_stream_title"
+  	  print_status_item 'content-type' "$meta_content_type"
+  	  print_status_item 'stream-genre' "$meta_stream_genre"
+  	  print_status_item 'current-song' "$meta_current_song"
+  	  print_status_item 'stream-bitrate' "$meta_stream_bitrate"
+  	  print_status_item 'stream-description' "$meta_stream_description"
+  	  print_status_item 'listeners' "$meta_listeners"
+      echo "</status>"
+      rm -f ${TMPFILE}
+    ;;
+    playlist)
+      if echo "$icy_name" | $TOUTF8 -t; then
+  	    icy_name=`echo "$icy_name" | $XCODE -s | $TOUTF8`
+      fi
+      if [ -n "$icy_name" ]; then
+        echo "<status>"
+        print_status_item 'stream-title' "$icy_name"
+        echo "</status>"
+      fi
+    ;;
+  esac
   echo "</info>"
   return 0
 }

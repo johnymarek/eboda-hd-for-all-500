@@ -171,20 +171,24 @@
 <!--
 !-->
 	<onEnter>
-    screenXp = 4;
-    screenYp = 3;
-    rssconf = readStringFromFile("/usr/local/etc/translate/etc/rss.conf");
-    print("rssconf:",rssconf);
-    if(rssconf != null)
-    {
-      value = getStringArrayAt(rssconf, 0);
-      if(value != null &amp;&amp; value != "")
-        screenXp = Integer(value);
-      value = getStringArrayAt(rssconf, 1);
-      if(value != null &amp;&amp; value != "")
-        screenYp = Integer(value);
-    }
-    print("rssconf:",screenXp,screenYp);
+  translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
+  screenXp = 4;
+  screenYp = 3;
+  rssconf = readStringFromFile(getStoragePath("key")+"translate.dat");
+  print("rssconf:",rssconf);
+  if(rssconf != null)
+  {
+    value = getStringArrayAt(rssconf, 0);
+    if(value != null &amp;&amp; value != "")
+      translate_base_url = value;
+    value = getStringArrayAt(rssconf, 1);
+    if(value != null &amp;&amp; value != "")
+      screenXp = Integer(value);
+    value = getStringArrayAt(rssconf, 2);
+    if(value != null &amp;&amp; value != "")
+      screenYp = Integer(value);
+  }
+  print("rssconf:",translate_base_url,screenXp,screenYp);
   
     youtubeCategoriesURL = "http://gdata.youtube.com/schemas/2007/categories.cat";
     youtubeApiCategoryBaseURL = "http://gdata.youtube.com/feeds/api/videos/-/";

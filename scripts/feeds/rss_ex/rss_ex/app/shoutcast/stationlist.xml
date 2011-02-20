@@ -21,17 +21,7 @@
 #
 -->
 <onEnter>
-  translate_base_url    = "http://127.0.0.1:84/cgi-bin/translate?";
-  cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
-  if(cgiconf != null)
-  {
-    value = getStringArrayAt(cgiconf, 0);
-    if(value != null &amp;&amp; value != "")
-    {
-      translate_base_url = value;
-      print("cgi.conf=",value);
-    }
-  }
+  <!--`cat "$BASEPATH/app/include/rssconf.script"`-->
   cancelIdle();
 </onEnter>
 
@@ -154,11 +144,11 @@
     minorContext = getPageInfo("minorContext");
     userInput = currentUserInput();
     
-    if (userInput == "pagedown" || userInput == "pageup")
+    if (userInput == "pagedown" || userInput == "pageup" || userInput == "PG" || userInput == "PD")
     {
       itemSize = getPageInfo("itemCount");
       idx = Integer(getFocusItemIndex());
-      if (userInput == "pagedown")
+      if (userInput == "pagedown" || userInput == "PD")
       {
         idx -= -9;
         if(idx &gt;= itemSize)
@@ -175,7 +165,7 @@
       redrawDisplay();
       ret = "true";
     }
-    else if (majorContext == "items" &amp;&amp; userInput == "enter") {
+    else if (userInput == "enter" || userInput == "ENTR") {
       idx = getFocusItemIndex();
       station_id = getItemInfo(idx, "id");
       executeScript("sub_Play");

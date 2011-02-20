@@ -29,13 +29,11 @@
 	headerXPC="16"
 	headerYPC="3"
 	headerWidthPC="0"
-	itemImageXPC="32"
+	itemImageXPC="27"
 	itemImageYPC="18"
-	itemXPC="39"
+	itemXPC="40"
 	itemYPC="18"
-	capXPC="88"
-	capYPC="17"
-	capHeightPC="10"
+	itemWidthPC="54"
 	headerCapXPC="90"
 	headerCapYPC="10"
 	headerCapWidthPC="0"
@@ -182,20 +180,24 @@
 </mediaDisplay>
 
 <onEnter>
+  translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
   screenXp = 4;
   screenYp = 3;
-  rssconf = readStringFromFile("/usr/local/etc/translate/etc/rss.conf");
+  rssconf = readStringFromFile(getStoragePath("key")+"translate.dat");
   print("rssconf:",rssconf);
   if(rssconf != null)
   {
     value = getStringArrayAt(rssconf, 0);
     if(value != null &amp;&amp; value != "")
-      screenXp = Integer(value);
+      translate_base_url = value;
     value = getStringArrayAt(rssconf, 1);
+    if(value != null &amp;&amp; value != "")
+      screenXp = Integer(value);
+    value = getStringArrayAt(rssconf, 2);
     if(value != null &amp;&amp; value != "")
       screenYp = Integer(value);
   }
-  print("rssconf:",screenXp,screenYp);
+  print("rssconf:",translate_base_url,screenXp,screenYp);
 
   cachePath = getStoragePath("key");
   optionsArray = readStringFromFile(cachePath + "youtubeOptions.dat");
@@ -216,18 +218,6 @@
 
   page = 1;
   maxResults = 20;
-
-  translateBaseURL = "http://127.0.0.1:84/cgi-bin/translate?";
-  cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
-  if(cgiconf != null)
-  {
-    value = getStringArrayAt(cgiconf, 0);
-    if(value != null &amp;&amp; value != "")
-    {
-      translateBaseURL = value;
-      print("cgi.conf=",value);
-    }
-  }
 
   storagePath = getStoragePath("tmp");
   storagePath = storagePath + "youtubeRSS.dat";
@@ -362,8 +352,9 @@
 <submenu>
   <title>Search</title>
   <onClick>
-		keyword = getInput();
-		if (keyword!=null)
+		keyword = doModalRss("rss_file://../etc/translate/rss/youtube/key/keyboard.rss");
+	  /* keyword= getInput(); */
+		if (keyword!=null &amp;&amp; keyword!="")
 		{
       history += 1;
       historyUrl = pushBackStringArray(historyUrl, feedUrl);
@@ -378,7 +369,7 @@
 
       if(youtubeRegion == "RU")
       {
-        dlok = loadXMLFile(translateBaseURL+"translit,,"+urlEncode(keyword));
+        dlok = loadXMLFile(translate_base_url+"translit,,"+urlEncode(keyword));
         if (dlok != null)
         {
           value = getXMLText("string");
@@ -447,11 +438,19 @@
       idx = getFocusItemIndex();
       url   = getStringArrayAt(urlArray, idx);
       
-      infoUrl = translateBaseURL+"info,HD:"+hd+","+urlEncode(url);
+      infoUrl = translate_base_url+"info,HD:"+hd+","+urlEncode(url);
 
       dlok = loadXMLFile(infoUrl);
       if (dlok != null)
       {
+        historyPath = getStoragePath("key")+"translate.history_video.m3u";
+        historydat = readStringFromFile(historyPath);
+        if(historydat == null)
+          historydat = pushBackStringArray(historydat, "#EXTM3U");
+        historydat = pushBackStringArray(historydat, "#EXTINF:-1,"+getStringArrayAt(titleArray, idx));
+        historydat = pushBackStringArray(historydat, url);
+        writeStringToFile(historyPath, historydat);
+
   	    value = getXMLAttribute("info","stream","type");
   	    if(value != null)
   	     type = value;

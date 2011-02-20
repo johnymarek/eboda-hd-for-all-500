@@ -51,7 +51,7 @@ rutube_video()
             stream_type='video/x-flv'
             server_type='rutube'
             stream_url=`awk -f getxml.awk -f ${PLUGINS_DIR}rutube.ru.response.awk "$TMPFILE" | sed -n '1p'`
-            protocol=`echo "$stream_url" | sed -e 's/:\/\/.*$//`
+            protocol=`echo "$stream_url" | sed -e 's/:\/\/.*$//'`
             # http://tradiz.org/Rutube/Skachivanie-s-rutuberu-po-rtmp-ssylkam
             local rtmp_swfurl="http://rutube.ru/player.swf"
             if echo "$stream_url" | grep -qs "_definst_"; then
@@ -67,11 +67,11 @@ rutube_video()
 }
 
 if echo "${arg_url}" | grep -q -s "video\.rutube\.ru/[0-9a-f]*$"; then 
-  video_id=`echo "$arg_url" | sed -e 's/.*\///;s/&.*//`
+  video_id=`echo "$arg_url" | sed -e 's/.*\///;s/&.*//'`
   rutube_video
   return $RC_OK
 elif echo "${arg_url}" | grep -q -s "\(www\.\)*rutube\.ru.*[&?]v=[0-9a-f]*$"; then 
-  video_id=`echo "$arg_url" | sed -e 's/.*[?&]v=//;s/&.*//`
+  video_id=`echo "$arg_url" | sed -e 's/.*[?&]v=//;s/&.*//'`
   rutube_video
   return $RC_OK
 elif echo "${arg_url}" | grep -q -s "\(www\.\)*rutube\.ru/tv/.*$"; then 
@@ -81,7 +81,7 @@ elif echo "${arg_url}" | grep -q -s "\(www\.\)*rutube\.ru/tv/.*$"; then
     server_type='rutube'
     video_id=`grep "playMovie('play'" ${TMPFILE} | sed "s/.*\/online\///;s/\.flv?.*//"`
     stream_url="http://webcaster.rutube.ru:8000/${video_id}?format=flv"
-    protocol=`echo "$stream_url" | sed -e 's/:\/\/.*$//`
+    protocol=`echo "$stream_url" | sed -e 's/:\/\/.*$//'`
     icy_name=`grep 'meta name="description"' ${TMPFILE} | sed 's/.*t="//;s/".*//' | $XCODE -s +k | $TOUTF8`
     rm -f $TMPFILE
   fi

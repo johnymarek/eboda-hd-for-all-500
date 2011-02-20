@@ -23,31 +23,27 @@
 
 <onEnter>
   translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
-  cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
-  if(cgiconf != null)
-  {
-    value = getStringArrayAt(cgiconf, 0);
-    if(value != null &amp;&amp; value != "")
-    {
-      translate_base_url = value;
-      print("cgi.conf=",value);
-    }
-  }
-
   screenXp = 4;
   screenYp = 3;
-  rssconf = readStringFromFile("/usr/local/etc/translate/etc/rss.conf");
+  fullscreen = 0;
+  rssconf = readStringFromFile(getStoragePath("key")+"translate.dat");
   print("rssconf:",rssconf);
   if(rssconf != null)
   {
     value = getStringArrayAt(rssconf, 0);
     if(value != null &amp;&amp; value != "")
-      screenXp = Integer(value);
+      translate_base_url = value;
     value = getStringArrayAt(rssconf, 1);
     if(value != null &amp;&amp; value != "")
+      screenXp = Integer(value);
+    value = getStringArrayAt(rssconf, 2);
+    if(value != null &amp;&amp; value != "")
       screenYp = Integer(value);
+    value = getStringArrayAt(rssconf, 8);
+    if(value != null &amp;&amp; value != "")
+      fullscreen = Integer(value);
   }
-  print("rssconf:",screenXp,screenYp);
+  print("rssconf:",translate_base_url,screenXp,screenYp);
 
   renderer_cmd_file   = "/tmp/xspf_renderer.dat";
   renderer_status_file= "/tmp/xspf_renderer.status";
@@ -65,6 +61,14 @@
     stream_type     = getStringArrayAt(arr, 4);
     stream_title    = getStringArrayAt(arr, 5);
     no_renderer     = getStringArrayAt(arr, 6);
+
+    historyPath = getStoragePath("key")+"translate.history_video.m3u";
+    historydat = readStringFromFile(historyPath);
+    if(historydat == null)
+      historydat = pushBackStringArray(historydat, "#EXTM3U");
+    historydat = pushBackStringArray(historydat, "#EXTINF:-1,"+stream_title);
+    historydat = pushBackStringArray(historydat, request_url);
+    writeStringToFile(historyPath, historydat);
   }
   else
   {
@@ -84,7 +88,10 @@
     arr = pushBackStringArray(arr, request_url);
     writeStringToFile(renderer_status_file, arr);
   }
-  playItemURL(url, 0, "mediaDisplay", "previewWindow");
+  if(fullscreen == 0)
+    playItemURL(url, 0, "mediaDisplay", "previewWindow");
+  else
+    playItemURL(url, 0);
   stream_elapsed = "Wait...";
   check_counter = 15;
   refresh_time = 100;
@@ -271,7 +278,8 @@
 	<idleImage idleImageYPC="45" idleImageHeightPC="10">../etc/translate/rss/image/POPUP_LOADING_07.png<idleImageWidthPC><script>10 * screenYp / screenXp;</script></idleImageWidthPC><idleImageXPC><script>45 + 10 * (1 - screenYp / screenXp) / 2;</script></idleImageXPC></idleImage>
 	<idleImage idleImageYPC="45" idleImageHeightPC="10">../etc/translate/rss/image/POPUP_LOADING_08.png<idleImageWidthPC><script>10 * screenYp / screenXp;</script></idleImageWidthPC><idleImageXPC><script>45 + 10 * (1 - screenYp / screenXp) / 2;</script></idleImageXPC></idleImage>
 
-  <previewWindow windowColor="0:0:0" offsetXPC="0" widthPC="100" offsetYPC="0" heightPC="100"></previewWindow>	
+  <previewWindow windowColor="0:0:0" offsetXPC="0" widthPC="100" offsetYPC="0" heightPC="100">
+  </previewWindow>	
 
 	<infoDisplay offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="100">
 
@@ -322,7 +330,7 @@
 		input = currentUserInput();
 		print("**** input=",input);
 		ret = "false";
-    if (input == "display")
+    if (input == "display" || userInput == "DISPLAY")
 		{
 		  first_appearance = -1;
 		  show_info = 1 - show_info;
@@ -331,7 +339,7 @@
 		  refresh_time = 10;
 		}
 		else
-    if (input == "enter")
+    if (input == "enter" || userInput == "ENTR")
 		{
 	    postMessage("video_play");
       stream_status = 1;

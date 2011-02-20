@@ -24,7 +24,7 @@
 </track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:73,tvigle/multi</link>
   <title>Техника йоги</title>
-  <annotation>Йога   древняя практика достижения гармонии с собой и окружающим миром.</annotation>
+  <annotation>Йога древняя практика достижения гармонии с собой и окружающим миром.</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/73/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>
@@ -66,7 +66,7 @@
 </track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:1580,tvigle/multi</link>
   <title>Астропрогноз</title>
-  <annotation> Звездный мост  с Еленой Жаровой.</annotation>
+  <annotation>Звездный мост с Еленой Жаровой.</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/1580/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>
@@ -74,12 +74,6 @@
   <title>Новогодний стиль</title>
   <annotation>Прически и макияж для новогоднего пати от ведущих стилистов.</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/1575/list.jpg?2</image>
-  <meta rel="mediaDisplay">photoView</meta>
-</track><track>
-  <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:224,tvigle/multi</link>
-  <title>На диете</title>
-  <annotation>Наша героиня в поисках идеальной диеты.</annotation>
-  <image>http://photo.tvigle.ru/resource/rf/cnl/224/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track>
   </trackList>

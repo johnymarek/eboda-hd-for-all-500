@@ -23,31 +23,23 @@
 
 <onEnter>
   translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
-  cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
-  if(cgiconf != null)
-  {
-    value = getStringArrayAt(cgiconf, 0);
-    if(value != null &amp;&amp; value != "")
-    {
-      translate_base_url = value;
-      print("cgi.conf=",value);
-    }
-  }
-
   screenXp = 4;
   screenYp = 3;
-  rssconf = readStringFromFile("/usr/local/etc/translate/etc/rss.conf");
+  rssconf = readStringFromFile(getStoragePath("key")+"translate.dat");
   print("rssconf:",rssconf);
   if(rssconf != null)
   {
     value = getStringArrayAt(rssconf, 0);
     if(value != null &amp;&amp; value != "")
-      screenXp = Integer(value);
+      translate_base_url = value;
     value = getStringArrayAt(rssconf, 1);
+    if(value != null &amp;&amp; value != "")
+      screenXp = Integer(value);
+    value = getStringArrayAt(rssconf, 2);
     if(value != null &amp;&amp; value != "")
       screenYp = Integer(value);
   }
-  print("rssconf:",screenXp,screenYp);
+  print("rssconf:",translate_base_url,screenXp,screenYp);
 
   renderer_cmd_file   = "/tmp/xspf_renderer.dat";
   renderer_status_file= "/tmp/xspf_renderer.status";
@@ -274,7 +266,9 @@
 <sub_Load_playlist>
   streamArray = null;
   streamArray = pushBackStringArray(streamArray, stream_url);
-  streamArray = pushBackStringArray(streamArray, stream_url);
+  if(stream_title == "" || stream_title == null)
+    stream_title = stream_url;
+  streamArray = pushBackStringArray(streamArray, stream_title);
   streamArray = pushBackStringArray(streamArray, "");
   streamArray = pushBackStringArray(streamArray, "");
   streamArray = pushBackStringArray(streamArray, "playlist");
@@ -373,7 +367,7 @@
 		input = currentUserInput();
 		print("**** input=",input);
 		ret = "false";
-    if (input == "enter")
+    if (input == "enter" || userInput == "ENTR")
 		{
 		  if(arr_url != "" &amp;&amp; arr_url != null)
 		  {
@@ -390,7 +384,7 @@
       ret = "true";
 		}
 		else
-    if (input == "right")
+    if (input == "right" || userInput == "R")
 		{
       ret = "true";
 		}

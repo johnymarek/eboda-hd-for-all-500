@@ -169,12 +169,12 @@
       print("*** majorContext=",majorContext);
       print("*** userInput=",userInput);
 
-      if (userInput == "pagedown" || userInput == "pageup")
+      if (userInput == "pagedown" || userInput == "pageup" || userInput == "PG" || userInput == "PD")
       {
         if(status == 1 || currentIndex != -1)
         {
           idx   = currentIndex;
-          if(userInput == "pagedown")
+          if(userInput == "pagedown" || userInput == "PD")
           {
             
             idx -= -1;
@@ -211,7 +211,7 @@
             if(repeat == "One")
               flac_until = getStringArrayAt(untilArray, idx);
             meta = "Flac-skip:"+flac_skip+";Flac-until:"+flac_until;
-            urlToPlay = translateBaseURL+"flac,"+meta+","+urlEncode(url);
+            urlToPlay = translate_base_url+"flac,"+meta+","+urlEncode(url);
             mode = 2;
             setRefreshTime(100);
             redrawDisplay();
@@ -223,6 +223,14 @@
           {
             postMessage("down");
           }
+          else if(userInput == "PD")
+          {
+            postMessage("D");
+          }
+          else if(userInput == "PG")
+          {
+            postMessage("U");
+          }
           else
           {
             postMessage("up");
@@ -230,7 +238,7 @@
         }
         ret = "true";
       }
-      else if(majorContext == "items" &amp;&amp; userInput == "right")
+      else if(majorContext == "items" &amp;&amp; (userInput == "right" || userInput == "R"))
       {
         ret = "true";
       }
@@ -273,38 +281,30 @@
 </onExit>
 
 <onEnter>
-  translateBaseURL = "http://127.0.0.1:84/cgi-bin/translate?";
-  cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
-  if(cgiconf != null)
-  {
-    value = getStringArrayAt(cgiconf, 0);
-    if(value != null &amp;&amp; value != "")
-    {
-      translate_base_url = value;
-      print("cgi.conf=",value);
-    }
-  }
-
+  translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
   screenXp = 4;
   screenYp = 3;
-  rssconf = readStringFromFile("/usr/local/etc/translate/etc/rss.conf");
+  rssconf = readStringFromFile(getStoragePath("key")+"translate.dat");
   print("rssconf:",rssconf);
   if(rssconf != null)
   {
     value = getStringArrayAt(rssconf, 0);
     if(value != null &amp;&amp; value != "")
-      screenXp = Integer(value);
+      translate_base_url = value;
     value = getStringArrayAt(rssconf, 1);
+    if(value != null &amp;&amp; value != "")
+      screenXp = Integer(value);
+    value = getStringArrayAt(rssconf, 2);
     if(value != null &amp;&amp; value != "")
       screenYp = Integer(value);
   }
-  print("rssconf:",screenXp,screenYp);
+  print("rssconf:",translate_base_url,screenXp,screenYp);
 
   storagePath = getStoragePath("tmp");
   storagePath  = storagePath + "stream.dat";
   arr = readStringFromFile(storagePath);
   print("******* Initialize: "+arr);
-  feedUrl = translateBaseURL + "playlist,," + urlEncode(getStringArrayAt(arr, 0));
+  feedUrl = translate_base_url + "playlist,," + urlEncode(getStringArrayAt(arr, 0));
   pageTitle = getStringArrayAt(arr, 1);
   print("feedUrl=",feedUrl);
   
@@ -458,7 +458,7 @@
         }
         if(randomArray == null)
         {
-          dlok = loadXMLFile(translateBaseURL+"random,"+itemSize+","+currentIndex);
+          dlok = loadXMLFile(translate_base_url+"random,"+itemSize+","+currentIndex);
           if (dlok != null)
           {
             randomArray = null;
@@ -505,7 +505,7 @@
         if(repeat == "One" || repeat == "Random")
           flac_until = getStringArrayAt(untilArray, idx);
         meta = "Flac-skip:"+flac_skip+";Flac-until:"+flac_until;
-        urlToPlay = translateBaseURL+"flac,"+meta+","+urlEncode(url);
+        urlToPlay = translate_base_url+"flac,"+meta+","+urlEncode(url);
         playItemURL(urlToPlay, 0, "mediaDisplay", "previewWindow");
         startPlaying = 0;
         mode = 0;
@@ -588,7 +588,7 @@
 		  {
 		    if(repeat == "Random")
 		    {
-          dlok = loadXMLFile(translateBaseURL+"random,"+itemSize+","+idx);
+          dlok = loadXMLFile(translate_base_url+"random,"+itemSize+","+idx);
           if (dlok != null)
           {
             randomArray = null;
@@ -624,7 +624,7 @@
         if(repeat == "One" || repeat == "Random")
           flac_until = getStringArrayAt(untilArray, idx);
         meta = "Flac-skip:"+flac_skip+";Flac-until:"+flac_until;
-        urlToPlay = translateBaseURL+"flac,"+meta+","+urlEncode(url);
+        urlToPlay = translate_base_url+"flac,"+meta+","+urlEncode(url);
         playItemURL(urlToPlay, 0, "mediaDisplay", "previewWindow");
         startPlaying = 0;
         mode = 0;

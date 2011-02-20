@@ -22,34 +22,27 @@
 -->
 
 <onEnter>
-  translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
-  cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
-  if(cgiconf != null)
-  {
-    value = getStringArrayAt(cgiconf, 0);
-    if(value != null &amp;&amp; value != "")
-    {
-      translate_base_url = value;
-      print("cgi.conf=",value);
-    }
-  }
-
+    translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
   screenXp = 4;
   screenYp = 3;
-  rssconf = readStringFromFile("/usr/local/etc/translate/etc/rss.conf");
+  rssconf = readStringFromFile(getStoragePath("key")+"translate.dat");
   print("rssconf:",rssconf);
   if(rssconf != null)
   {
     value = getStringArrayAt(rssconf, 0);
     if(value != null &amp;&amp; value != "")
-      screenXp = Integer(value);
+      translate_base_url = value;
     value = getStringArrayAt(rssconf, 1);
+    if(value != null &amp;&amp; value != "")
+      screenXp = Integer(value);
+    value = getStringArrayAt(rssconf, 2);
     if(value != null &amp;&amp; value != "")
       screenYp = Integer(value);
   }
-  print("rssconf:",screenXp,screenYp);
+  print("rssconf:",translate_base_url,screenXp,screenYp);
 
-    startitem = "middle";
+
+    startitem = "";
 		
   columnCount=3;
   print(getFocusItemIndex());
@@ -66,8 +59,11 @@
   if(startitem == "middle")
     setFocusItemIndex(middleItem);
   else
-  if(startitem == "right")
-    setFocusItemIndex(middleItem);
+  if(startitem == "last")
+    setFocusItemIndex(itemCount);
+  else
+  if(startitem &gt; 0 &amp;&amp; startitem &lt;= itemCount)
+    setFocusItemIndex(startitem-1);
   redrawDisplay();
 </onRefresh>
 
@@ -226,6 +222,99 @@
       print("*** majorContext=",majorContext);
       print("*** userInput=",userInput);
       
+      if(userInput == "one" || userInput == "1")
+      {
+        if(itemCount &gt;= 1)
+        {
+          setFocusItemIndex(0);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "two" || userInput == "2")
+      {
+        if(itemCount &gt;= 2)
+        {
+          setFocusItemIndex(1);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "three" || userInput == "3")
+      {
+        if(itemCount &gt;= 3)
+        {
+          setFocusItemIndex(2);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "four" || userInput == "4")
+      {
+        if(itemCount &gt;= 4)
+        {
+          setFocusItemIndex(3);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "five" || userInput == "5")
+      {
+        if(itemCount &gt;= 5)
+        {
+          setFocusItemIndex(4);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "six" || userInput == "6")
+      {
+        if(itemCount &gt;= 6)
+        {
+          setFocusItemIndex(5);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "seven" || userInput == "7")
+      {
+        if(itemCount &gt;= 7)
+        {
+          setFocusItemIndex(6);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "eight" || userInput == "8")
+      {
+        if(itemCount &gt;= 8)
+        {
+          setFocusItemIndex(7);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "nine" || userInput == "9")
+      {
+        if(itemCount &gt;= 9)
+        {
+          setFocusItemIndex(8);
+          redrawDisplay();
+        }
+      }
+      else if (userInput == "pagedown" || userInput == "pageup" || userInput == "PD" || userInput == "PG")
+      {
+        itemSize = getPageInfo("itemCount");
+        idx = Integer(getFocusItemIndex());
+        if (userInput == "pagedown")
+        {
+          idx -= -columnCount;
+          if(idx &gt;= itemSize)
+            idx = itemSize-1;
+        }
+        else
+        {
+          idx -= columnCount;
+          if(idx &lt; 0)
+            idx = 0;
+        }
+        setFocusItemIndex(idx);
+        setItemFocus(idx);
+        redrawDisplay();
+        ret = "true";
+      }
       ret;
     </script>
   </onUserInput>
@@ -244,15 +333,22 @@
   </script><channel>
   <title>Tvigle - Анимация</title>
   <item>
+<link><script>translate_base_url+"app,Channel:2175,tvigle/multi";</script></link>
+    <title>Три богатыря</title>
+    <annotation>Приключения троих легендарных богатырей: Алеши Поповича, Добрыни Никитича и Ильи Муромца.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/2175/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
 <link><script>translate_base_url+"app,Channel:2093,tvigle/multi";</script></link>
-    <title>Охрустенный квест</title>
-    <annotation>Мега-охрустенный квест от создателей мульта  Тетрис против Контры . Зажигай вместе с популярными героями охрустенного сериала Versus! Играй бесплатно прямо сейчас!</annotation>
+    <title>Flash-игра Охрустенный квест</title>
+    <annotation>Мега-охрустенный квест от создателей мульта Тетрис против Контры . Зажигай вместе с популярными героями охрустенного сериала Versus! Играй бесплатно прямо сейчас!</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/2093/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
   <item>
 <link><script>translate_base_url+"app,Channel:2152,tvigle/multi";</script></link>
-    <title>Disney Classics</title>
+    <title>Мультфильмы Disney Classics</title>
     <annotation>Disney представляет коллекцию своих лучших мультфильмов.</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/2152/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
@@ -309,17 +405,14 @@
   <item>
 <link><script>translate_base_url+"app,Channel:2118,tvigle/multi";</script></link>
     <title>Aqua Teen Hunger Force</title>
-    <annotation>Легендарный мультипликационный сериал о приключениях говорящих продуктов. </annotation>
+    <annotation>Легендарный мультипликационный сериал о приключениях говорящих продуктов.</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/2118/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
   <item>
 <link><script>translate_base_url+"app,Channel:2114,tvigle/multi";</script></link>
     <title>Весёлая карусель</title>
-    <annotation>Карусель, карусель начинает рассказ. &#13;
-Это сказки, песни и веселье! &#13;
-Карусель, карусель   это радость для нас, &#13;
-прокатись на нашей карусели!</annotation>
+    <annotation>Карусель, карусель начинает рассказ. Это сказки, песни и веселье! Карусель, карусель это радость для нас, прокатись на нашей карусели!</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/2114/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
@@ -333,21 +426,21 @@
   <item>
 <link><script>translate_base_url+"app,Channel:2098,tvigle/multi";</script></link>
     <title>38 попугаев</title>
-    <annotation>Забавные истории четырех друзей   болтливой Мартышки, застенчивого Слоненка, эксцентричного Попугая и задумчивого Удава.</annotation>
+    <annotation>Забавные истории четырех друзей болтливой Мартышки, застенчивого Слоненка, эксцентричного Попугая и задумчивого Удава.</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/2098/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
   <item>
 <link><script>translate_base_url+"app,Channel:2119,tvigle/multi";</script></link>
     <title>Братья Вентура</title>
-    <annotation>Американский мультипликационный сериал о приключениях Дина и Хенка, их отца, доктора Тадеуша  Расти  Вентуры, и их телохранителя, секретного агента Брока Самсона.</annotation>
+    <annotation>Американский мультипликационный сериал о приключениях Дина и Хенка, их отца, доктора Тадеуша Расти Вентуры, и их телохранителя, секретного агента Брока Самсона.</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/2119/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
   <item>
 <link><script>translate_base_url+"app,Channel:2086,tvigle/multi";</script></link>
     <title>Крок   Мир детства</title>
-    <annotation>Международный фестиваль анимационного кино  КРОК .</annotation>
+    <annotation>Международный фестиваль анимационного кино КРОК .</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/2086/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
@@ -368,7 +461,7 @@
   <item>
 <link><script>translate_base_url+"app,Channel:2100,tvigle/multi";</script></link>
     <title>Трое из Простоквашино</title>
-    <annotation>Трилогия по мотивам повести Эдуарда Успенского  Дядя Фёдор, пёс и кот .</annotation>
+    <annotation>Трилогия по мотивам повести Эдуарда Успенского Дядя Фёдор, пёс и кот .</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/2100/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
@@ -438,21 +531,21 @@
   <item>
 <link><script>translate_base_url+"app,Channel:663,tvigle/multi";</script></link>
     <title>Три брата акробата</title>
-    <annotation>Мульт   победитель в номинации  Мультипликация  на престижном flash-конкурсе Flash Awards 2009.</annotation>
+    <annotation>Мульт победитель в номинации Мультипликация на престижном flash-конкурсе Flash Awards 2009.</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/663/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
   <item>
 <link><script>translate_base_url+"app,Channel:1789,tvigle/multi";</script></link>
     <title>Х [Икс]</title>
-    <annotation>Популярный аниме-сериал в жанре драмы и мистики. Главный герой Камуи должен сделать непростой выбор: выступить либо на стороне Драконов Земли, которые стремятся разрушить мир, либо на стороне Драконов Небес   защитников людей.</annotation>
+    <annotation>Популярный аниме-сериал в жанре драмы и мистики. Главный герой Камуи должен сделать непростой выбор: выступить либо на стороне Драконов Земли, которые стремятся разрушить мир, либо на стороне Драконов Небес защитников людей.</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/1789/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
   <item>
 <link><script>translate_base_url+"app,Channel:1791,tvigle/multi";</script></link>
     <title>Смирительная рубашка</title>
-    <annotation> Смирительные рубашки    уникальные боевые маги, призванные уничтожить монстров   обратную сторону успешной разработки ученых.</annotation>
+    <annotation>Смирительные рубашки уникальные боевые маги, призванные уничтожить монстров обратную сторону успешной разработки ученых.</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/1791/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>

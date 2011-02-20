@@ -22,31 +22,22 @@
 -->
 
 <mediaDisplay name=threePartsView
-	sideColorLeft="0:0:0"
 	sideLeftWidthPC="0"
 	sideColorRight="0:0:0"
 	headerImageWidthPC="0"
-	headerXPC="16"
-	headerYPC="3"
 	headerWidthPC="0"
-	itemImageXPC="22"
+	itemImageXPC="17"
 	itemImageYPC="18"
-	itemXPC="35"
+	itemXPC="30"
 	itemYPC="18"
-	capXPC="88"
-	capYPC="17"
-	capHeightPC="10"
-	headerCapXPC="90"
-	headerCapYPC="10"
+	itemWidthPC="55"
 	headerCapWidthPC="0"
 	backgroundColor="0:0:0"
 	itemBackgroundColor="0:0:0"
 	showHeader=no
-    selectMenuOnRight=no
-    forceFocusOnItem=yes
-    forceFocusOnMenu=no
 	showDefaultInfo=yes
 	infoYPC=90
+	fontSize=16
 >
 	<idleImage idleImageYPC="45" idleImageHeightPC="10">../etc/translate/rss/image/POPUP_LOADING_01.png<idleImageWidthPC><script>10 * screenYp / screenXp;</script></idleImageWidthPC><idleImageXPC><script>45 + 10 * (1 - screenYp / screenXp) / 2;</script></idleImageXPC></idleImage>
 	<idleImage idleImageYPC="45" idleImageHeightPC="10">../etc/translate/rss/image/POPUP_LOADING_02.png<idleImageWidthPC><script>10 * screenYp / screenXp;</script></idleImageWidthPC><idleImageXPC><script>45 + 10 * (1 - screenYp / screenXp) / 2;</script></idleImageXPC></idleImage>
@@ -94,10 +85,10 @@
       print("*** majorContext=",majorContext);
       print("*** userInput=",userInput);
 
-      if (userInput == "pagedown" || userInput == "pageup")
+      if (userInput == "pagedown" || userInput == "pageup" || userInput == "PD" || userInput == "PG")
       {
         idx = Integer(getFocusItemIndex());
-        if (userInput == "pagedown")
+        if (userInput == "pagedown" || userInput == "PD")
         {
           idx -= -5;
           if(idx &gt;= itemSize)
@@ -114,7 +105,7 @@
         redrawDisplay();
         ret = "true";
       }
-      else if(majorContext == "items" &amp;&amp; userInput == "right")
+      else if(majorContext == "items" &amp;&amp; (userInput == "right" || userInput == "R"))
       {
         idx = getFocusItemIndex();
         url = feedUrl;
@@ -150,48 +141,25 @@
 
 <onEnter>
   cachePath = getStoragePath("key");
-  optionsArray = readStringFromFile(cachePath + "youtubeOptions.dat");
-  if(optionsArray == null)
-  {
-    youtubeRegion = readStringFromFile(cachePath + "youtubeRegion.dat");
-    if(youtubeRegion == null)
-      youtubeRegion = "EN";
-    hd = 1;
-    username = " ";
-  }
-  else
-  {
-    youtubeRegion = getStringArrayAt(optionsArray, 0);
-    hd = getStringArrayAt(optionsArray, 1);
-    username = getStringArrayAt(optionsArray, 2);
-  }
 
-  translateBaseURL = "http://127.0.0.1:84/cgi-bin/translate?";
-  cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
-  if(cgiconf != null)
-  {
-    value = getStringArrayAt(cgiconf, 0);
-    if(value != null &amp;&amp; value != "")
-    {
-      translate_base_url = value;
-      print("cgi.conf=",value);
-    }
-  }
-
+  translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
   screenXp = 4;
   screenYp = 3;
-  rssconf = readStringFromFile("/usr/local/etc/translate/etc/rss.conf");
+  rssconf = readStringFromFile(getStoragePath("key")+"translate.dat");
   print("rssconf:",rssconf);
   if(rssconf != null)
   {
     value = getStringArrayAt(rssconf, 0);
     if(value != null &amp;&amp; value != "")
-      screenXp = Integer(value);
+      translate_base_url = value;
     value = getStringArrayAt(rssconf, 1);
+    if(value != null &amp;&amp; value != "")
+      screenXp = Integer(value);
+    value = getStringArrayAt(rssconf, 2);
     if(value != null &amp;&amp; value != "")
       screenYp = Integer(value);
   }
-  print("rssconf:",screenXp,screenYp);
+  print("rssconf:",translate_base_url,screenXp,screenYp);
 
   storagePath = getStoragePath("tmp");
   storagePath  = storagePath + "stream.dat";
@@ -346,10 +314,10 @@
       url   = getStringArrayAt(urlArray, idx);
       playTitle = url;
       type  = getStringArrayAt(typeArray, idx);
-      meta  = "HD:"+hd;
+      meta  = "";
       if(type != null &amp;&amp; type != "")
-        meta += ";Content-type:"+type;
-      urlToPlay = translateBaseURL+"info,"+meta+","+url;
+        meta = "Content-type:"+type;
+      urlToPlay = translate_base_url+"info,"+meta+","+url;
       dlok = loadXMLFile(urlToPlay);
       if(dlok != null)
       {
@@ -378,34 +346,61 @@
     	    if(value != null)
     	     protocol = value;
 
-          meta  = "HD:"+hd;
+          value = getXMLText("info","status","stream-title");
+    	    if(value != null)
+    	     stream_title = value;
+    	     
+          meta  = "";
           if(type != null &amp;&amp; type != "")
-            meta += ";Content-type:"+type;
-          translateStreamURL = translateBaseURL+"stream,"+meta+","+url;
-          
-          print(translateStreamURL);
-          print(url);
-          print(type);
-          print(class);
-          print(protocol);
-          print(soft);
+            meta = "Content-type:"+type;
+          translateStreamURL = translate_base_url+"stream,"+meta+","+url;
           
           if(class == "video")
           {
-            if(protocol == "http")
+            historyPath = getStoragePath("key")+"translate.history_video.m3u";
+            historydat = readStringFromFile(historyPath);
+            if(historydat == null)
+              historydat = pushBackStringArray(historydat, "#EXTM3U");
+            historydat = pushBackStringArray(historydat, "#EXTINF:-1,"+getStringArrayAt(titleArray, idx));
+            historydat = pushBackStringArray(historydat, url);
+            writeStringToFile(historyPath, historydat);
+
+            if(protocol == "file" || (protocol == "http" &amp;&amp; soft != "_translate_"))
               playItemURL(url, 0);
             else
               playItemURL(translateStreamURL, 0);
           }
           else if(class == "audio")
           {
-            if(protocol == "http" &amp;&amp; soft != "shoutcast")
+            historyPath = getStoragePath("key")+"translate.history_audio.m3u";
+            historydat = readStringFromFile(historyPath);
+            if(historydat == null)
+              historydat = pushBackStringArray(historydat, "#EXTM3U");
+            historydat = pushBackStringArray(historydat, "#EXTINF:-1,"+getStringArrayAt(titleArray, idx));
+            historydat = pushBackStringArray(historydat, url);
+            writeStringToFile(historyPath, historydat);
+
+            if(protocol == "file" || (protocol == "http" &amp;&amp; (soft != "shoutcast" || soft != "_translate_")))
               playItemURL(url, 0, "mediaDisplay", "previewWindow");
             else
               playItemURL(translateStreamURL, 0, "mediaDisplay", "previewWindow");
+            mode = 0;
+            setRefreshTime(1000);
           }
-          mode = 0;
-          setRefreshTime(1000);
+          else if(class == "playlist")
+          {
+            streamArray = null;
+            streamArray = pushBackStringArray(streamArray, url);
+            if(stream_title == "" || stream_title == null)
+              stream_title = url;
+            streamArray = pushBackStringArray(streamArray, title);
+            streamArray = pushBackStringArray(streamArray, "");
+            streamArray = pushBackStringArray(streamArray, "");
+            streamArray = pushBackStringArray(streamArray, "playlist");
+            streamArray = pushBackStringArray(streamArray, "1");
+            writeStringToFile(getStoragePath("tmp")+"playlist.dat", streamArray);
+            doModalRss("rss_file://../etc/translate/rss/xspf/xspfBrowser.rss");
+          }
   		  }
   		  else
   		  {

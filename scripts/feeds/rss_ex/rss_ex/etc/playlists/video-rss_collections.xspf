@@ -25,6 +25,7 @@
 <meta rel="stream_type">application/xml</meta>
 <meta rel="stream_protocol">http</meta>
 </track>
+<!--
       <track>
          <annotation>Все video: бесплатно смотреть кино, сериалы, программы, мультфильмы и клипы в хорошем качестве без регистрации: Популярное video</annotation>
          <title>Самое популярное video от ivi.ru</title>
@@ -46,6 +47,7 @@
 <meta rel="stream_type">application/xml</meta>
 <meta rel="stream_protocol">http</meta>
 </track>
+-->
       <track>
          <annotation>RSS-лента Tvigle Media</annotation>
          <title>Tvigle Media</title>
@@ -83,6 +85,46 @@
     <image>../etc/translate/rss/image/menu/rss.png</image>
     <location>http://127.0.0.1:84/cgi-bin/translate?app/rss/channels.rutube.ru</location>
 <meta rel="stream_url">http://127.0.0.1:84/cgi-bin/translate?app/rss/channels.rutube.ru</meta>
+<meta rel="stream_class">rss</meta>
+<meta rel="stream_type">application/xml</meta>
+<meta rel="stream_protocol">http</meta>
+</track>
+      <track>
+         <annotation>Смотреть фильмы онлайн, фильмы онлайн без регистрации, хорошие фильмы онлайн (бесплатно) - LineCinema.ru</annotation>
+         <title>LineCinema.ru</title>
+         <image>../etc/translate/rss/image/menu/rss.png</image>
+         <location>http://127.0.0.1:84/cgi-bin/translate?app/rss/mediafeed,http://www.linecinema.org/rss.xml</location>
+<meta rel="stream_url">http://127.0.0.1:84/cgi-bin/translate?app/rss/mediafeed,http://www.linecinema.org/rss.xml</meta>
+<meta rel="stream_class">rss</meta>
+<meta rel="stream_type">application/xml</meta>
+<meta rel="stream_protocol">http</meta>
+</track>
+      <track>
+         <annotation>Все сериалы мира онлайн! - Kino-Dom.tv</annotation>
+         <title>Kino-Dom.tv</title>
+         <image>../etc/translate/rss/image/menu/rss.png</image>
+         <location>http://127.0.0.1:84/cgi-bin/translate?app/rss/mediafeed,http://kino-dom.tv/rss.xml</location>
+<meta rel="stream_url">http://127.0.0.1:84/cgi-bin/translate?app/rss/mediafeed,http://kino-dom.tv/rss.xml</meta>
+<meta rel="stream_class">rss</meta>
+<meta rel="stream_type">application/xml</meta>
+<meta rel="stream_protocol">http</meta>
+</track>
+      <track>
+         <annotation>Смотреть аниме онлайн, мультфильмы онлайн, смотреть бесплатно - AniMult.tv</annotation>
+         <title>AniMult.tv</title>
+         <image>../etc/translate/rss/image/menu/rss.png</image>
+         <location>http://127.0.0.1:84/cgi-bin/translate?app/rss/mediafeed,http://animult.tv/rss.xml</location>
+<meta rel="stream_url">http://127.0.0.1:84/cgi-bin/translate?app/rss/mediafeed,http://animult.tv/rss.xml</meta>
+<meta rel="stream_class">rss</meta>
+<meta rel="stream_type">application/xml</meta>
+<meta rel="stream_protocol">http</meta>
+</track>
+      <track>
+         <annotation>Фильмы онлайн | Filmix</annotation>
+         <title>Filmix.net</title>
+         <image>../etc/translate/rss/image/menu/rss.png</image>
+         <location>http://127.0.0.1:84/cgi-bin/translate?app/rss/mediafeed,http://filmix.net/rss.xml</location>
+<meta rel="stream_url">http://127.0.0.1:84/cgi-bin/translate?app/rss/mediafeed,http://filmix.net/rss.xml</meta>
 <meta rel="stream_class">rss</meta>
 <meta rel="stream_type">application/xml</meta>
 <meta rel="stream_protocol">http</meta>

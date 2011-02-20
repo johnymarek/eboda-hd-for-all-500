@@ -27,7 +27,8 @@ if [ -x "$XSLTPROC" ]; then
 fi
 
 (
+  export BASEPATH;
   export CHANNELFILE; 
-  template2rss ivi_index.xml | printContent "application/rss+xml"
+  template2rss ivi_${arg_opt:-index}.xml | printContent "application/rss+xml"
   rm -f $CHANNELFILE
 )
