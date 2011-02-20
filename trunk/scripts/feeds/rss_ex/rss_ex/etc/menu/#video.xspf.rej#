@@ -1,0 +1,33 @@
+
+--- etc/menu/video.xspf	(revision 461)
++++ etc/menu/video.xspf	(revision 482)
+@@ -19,7 +19,7 @@
+       <meta rel="mediaDisplay">onePartView</meta>
+     </track>
+     <track>
+-      <link>http://127.0.0.1:84/cgi-bin/translate?app,Start:first;File:etc/menu/tvigle-index.xspf,collection/simplemenu</link>
++      <link>http://127.0.0.1:84/cgi-bin/translate?app,Size:2;Start:first;File:etc/menu/tvigle-index.xspf,collection/simplemenu</link>
+       <title>Tvigle</title>
+       <annotation>Tvigle Media — медиакомпания нового поколения, производитель и дистрибьютор профессионального развлекательного videoконтента для New Media: интернета, мобильных сетей, цифровых телеканалов.</annotation>
+       <image>../etc/translate/rss/image/menu/tvigle.png</image>
+@@ -33,6 +33,20 @@
+       <meta rel="mediaDisplay">onePartView</meta>
+     </track>
+     <track>
++      <link>rss_file://../etc/translate/rss/music_ivi/index.rss</link>
++      <title>Ivi MUSIC</title>
++      <annotation>Смотрите онлайн новые videoклипы популярных российских и зарубежных исполнителей бесплатно и без регистрации. Все музыкальные новинки на music.ivi.ru!</annotation>
++      <image>../etc/translate/rss/image/menu/ivi.png</image>
++      <meta rel="mediaDisplay">onePartView</meta>
++    </track>
++    <track>
++      <link>http://127.0.0.1:84/cgi-bin/translate?app/onehd/index</link>
++      <title>OneHD</title>
++      <annotation>ONE HD - Online Network Entertainment - Romania. Bun venit pe site-ul ONE HD! - Prima televiziune online HD. Качественные концертные записи на любой вкус.</annotation>
++      <image>../etc/translate/rss/image/menu/onehd.png</image>
++      <meta rel="mediaDisplay">photoView</meta>
++    </track>
++    <track>
+       <link>http://127.0.0.1:84/cgi-bin/translate?app,File:etc/menu/tv-other.xspf,collection/menulist</link>
+       <title>Other</title>
+       <annotation>Different lists of the Internet-TV</annotation>

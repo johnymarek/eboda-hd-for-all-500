@@ -32,13 +32,13 @@ server_type='google'
 
 if echo "${arg_url}" | grep -q -s 'video\.google\.com/.*docid=..*$'; then 
 
-  local video_id=`echo "$arg_url" | sed -e 's/.*[?&]docid=//;s/[&#].*//g`
+  local video_id=`echo "$arg_url" | sed -e 's/.*[?&]docid=//;s/[&#].*//g'`
 
   host_response=`$MSDL -q -o ${TMPFILE} -p http --useragent "${USERAGENT}" "http://video.google.com/docinfo?{\"docid\":\"$video_id\",\"source\":1,\"autoplay\":true,\"hl\":\"ru\",\"title_len\":128,\"desc_len\":1024}" 2>&1`
   
   if [ -f ${TMPFILE} ]; then
     stream_url=`sed 's/.*"streamer_url":"//;s/","docid.*//' ${TMPFILE} | unidecode`
-    protocol=`echo "$stream_url" | sed -e 's/:\/\/.*$//`
+    protocol=`echo "$stream_url" | sed -e 's/:\/\/.*$//'`
     icy_name=`sed 's/.*"short_title":"//;s/","short_.*//;s/\\\"/"/g' ${TMPFILE}`
     rm -f $TMPFILE
   fi

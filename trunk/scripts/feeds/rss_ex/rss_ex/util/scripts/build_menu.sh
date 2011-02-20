@@ -4,7 +4,7 @@
 #
 
 BASEPATH=/usr/local/etc/translate
-TRANSLATE_CGI=`sed -n '1p' $BASEPATH/etc/cgi.conf`
+. $BASEPATH/etc/translate.conf
 
 if [ -z "$1" -o -z "$2" ]; then
   echo "Usage: $0 <link_url> <rss_file_name>"
@@ -16,7 +16,7 @@ wget -q -O  - $1 | awk -v basepath="$BASEPATH" -v translate_cgi="$TRANSLATE_CGI"
     if(match($0, /<link>(.*)<\/link>/, arr))
     {
       url=arr[1];
-      if(match(url, /.*,(collection|moskvafm)\//) || match(url, /translate\?app\/ivi\/index/, arr))
+      if(match(url, /.*,(collection|moskvafm)\//) || match(url, /\?app\/ivi\/index/, arr))
       {
         file="";
         if(match(url, /File:([^,;]*)[,;]/, arr))
@@ -27,7 +27,7 @@ wget -q -O  - $1 | awk -v basepath="$BASEPATH" -v translate_cgi="$TRANSLATE_CGI"
         {
           file=arr[1];
         }
-        else if(match(url, /translate\?app\/ivi\/index/, arr))
+        else if(match(url, /\?app\/ivi\/index/, arr))
         {
           file="app/ivi/index";
         }
@@ -43,6 +43,17 @@ wget -q -O  - $1 | awk -v basepath="$BASEPATH" -v translate_cgi="$TRANSLATE_CGI"
       else if(url ~ translate_cgi)
       {
         print "<link><script>translate_base_url+\"" substr(url, length(translate_cgi)+1) "\";</script></link>"
+      }
+      else
+        print;
+    }
+    else
+    if(match($0, /<(location|stream_url)>(.*)<\/(location|stream_url)>/, arr))
+    {
+      url=arr[2];
+      if(url ~ translate_cgi)
+      {
+        print "<" arr[1] "><script>translate_base_url+\"" substr(url, length(translate_cgi)+1) "\";</script></" arr[3] ">"
       }
       else
         print;

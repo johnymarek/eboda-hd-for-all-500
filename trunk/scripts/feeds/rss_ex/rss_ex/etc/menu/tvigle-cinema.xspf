@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<playlist xmlns="http://xspf.org/ns/0/" version="1">
+  <title>Tvigle - Сборники</title>
+  <image>../etc/translate/rss/image/tvigle.png</image>
+  <trackList>
+<track>
+  <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2061,tvigle/multi</link>
+  <title>Лучшее в коллекции Tvigle</title>
+  <annotation>Коллекция лучших фильмов по версии Tvigle.ru</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2061/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2036,tvigle/multi</link>
+  <title>Шерлок Холмс и доктор Ватсон</title>
+  <annotation>Экранизация цикла рассказов о гениальном сыщике Шерлоке Холмсе и его друге докторе Ватсоне.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2036/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2051,tvigle/multi</link>
+  <title>В июне 1941-го</title>
+  <annotation>За несколько дней до начала войны лейтенант Буров прибыл служить на западной границе СССР...</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2051/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2049,tvigle/multi</link>
+  <title>Собачье сердце</title>
+  <annotation>Экранизация одноименной повести Михаила Афанасьевича Булгакова.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2049/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:1701,tvigle/multi</link>
+  <title>Фильмы ужасов. Selection</title>
+  <annotation>Леденящие душу ужастики.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/1701/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track>
+  </trackList>
+</playlist>

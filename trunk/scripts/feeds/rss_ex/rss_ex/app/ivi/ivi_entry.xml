@@ -140,7 +140,7 @@
   {
     setRefreshTime(-1);
     
-    dlok = loadXMLFile(translateBaseURL+"app/ivi/entry,"+storagePath+"entry.htm");
+    dlok = loadXMLFile(translate_base_url+"app/ivi/entry,"+storagePath+"entry.htm");
     if (dlok != null)
     {
   	  description  = getXMLText("entry","content");
@@ -170,35 +170,10 @@
 </onRefresh>
 
 <onEnter>
-  screenXp = 4;
-  screenYp = 3;
-  rssconf = readStringFromFile("/usr/local/etc/translate/etc/rss.conf");
-  print("rssconf:",rssconf);
-  if(rssconf != null)
-  {
-    value = getStringArrayAt(rssconf, 0);
-    if(value != null &amp;&amp; value != "")
-      screenXp = Integer(value);
-    value = getStringArrayAt(rssconf, 1);
-    if(value != null &amp;&amp; value != "")
-      screenYp = Integer(value);
-  }
-  print("rssconf:",screenXp,screenYp);
+  <!--`cat "$BASEPATH/app/include/rssconf.script"`-->
 
   cachePath = getStoragePath("key");
   
-  translateBaseURL = "http://127.0.0.1:84/cgi-bin/translate?";
-  cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
-  if(cgiconf != null)
-  {
-    value = getStringArrayAt(cgiconf, 0);
-    if(value != null &amp;&amp; value != "")
-    {
-      translateBaseURL = value;
-      print("cgi.conf=",value);
-    }
-  }
-
   storagePath = getStoragePath("tmp");
   arr = readStringFromFile(storagePath + "entry.dat");
   url = getStringArrayAt(arr, 0);
@@ -214,12 +189,12 @@
 </onEnter>
 
 <submenu>
-  <title>Проиграть</title>
+  <title>Play</title>
   <onClick>
     mode = 1;
 
 	  playItemURL(-1, 1);
-    urlToPlay = translateBaseURL+"info,,"+url;
+    urlToPlay = translate_base_url+"info,,"+url;
     dlok = loadXMLFile(urlToPlay);
     if(dlok != null)
     {
@@ -228,6 +203,8 @@
       
       if(error == 0)
       {
+<!--`cat "$BASEPATH/app/include/add.history_video.script" | sed 's/getStringArrayAt(titleArray, idx)/pageTitle/'`-->
+
   	    value = getXMLAttribute("info","stream","url");
   	    if(value != null)
   	    {

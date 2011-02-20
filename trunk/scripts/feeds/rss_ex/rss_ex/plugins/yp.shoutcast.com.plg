@@ -28,7 +28,7 @@
 
 if echo "${arg_url}" | grep -q -s '\.*shoutcast\.com/.*?id=[0-9].*$'; then 
 
-  local station_id=`echo "$arg_url" | sed -e 's/.*[?&]id=//;s/&.*//`
+  local station_id=`echo "$arg_url" | sed -e 's/.*[?&]id=//;s/&.*//'`
 
   host_response=`$MSDL -q -o ${TMPFILE} -p http --useragent "${USERAGENT}" $arg_url 2>&1`
   

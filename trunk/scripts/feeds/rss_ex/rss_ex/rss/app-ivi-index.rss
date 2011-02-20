@@ -75,26 +75,19 @@
 		</text>
 	
 	<itemDisplay>
-		<image offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="100">
-			<script>
-				focus = getFocusItemIndex();
-				idx = getQueryItemIndex();
-				if (focus == idx)
-				{
-					"../etc/translate/rss/image/IMAGE_NEWRSS_MENU_BTFOC.bmp";
-				}
-				else
-				{
-					"";
-				}
-			</script>
-		</image>
-		<text offsetXPC="0" offsetYPC="25" widthPC="100" heightPC="50" fontSize="17" backgroundColor="-1:-1:-1" foregroundColor="200:200:200">
+		<text offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="100" fontSize="17" backgroundColor="0:0:0" foregroundColor="250:250:250">
 			<script>
 			  idx = getQueryItemIndex();
 			  focus = getFocusItemIndex();
 		    getItemInfo(idx, "title");
 			</script>
+		  <backgroundColor>
+  			<script>
+  			  idx = getQueryItemIndex();
+  			  focus = getFocusItemIndex();
+  		    if(idx==focus) "200:0:63"; else "0:0:0";
+  			</script>
+		  </backgroundColor>
 		  <offsetXPC>
 		    <script>
 		      idx = getQueryItemIndex();
@@ -122,11 +115,11 @@
       print("*** majorContext=",majorContext);
       print("*** userInput=",userInput);
 
-      if (userInput == "pagedown" || userInput == "pageup")
+      if (userInput == "pagedown" || userInput == "pageup" || userInput == "PG" || userInput == "PD")
       {
         itemSize = getPageInfo("itemCount");
         idx = Integer(getFocusItemIndex());
-        if (userInput == "pagedown")
+        if (userInput == "pagedown" || userInput == "PD")
         {
           idx -= -9;
           if(idx &gt;= itemSize)
@@ -169,9 +162,9 @@
        writeStringToFile(storagePath + "stream.dat", arr);
 	     focus = getFocusItemIndex();
 	     if(getItemInfo(focus, "feedPath") == "/")
-	       linkurl = "rss_file://../etc/translate/app/ivi/ivi_feed_main.xml";
+	       linkurl = translate_base_url + "app/ivi/index,feed_main";
 	     else
-	       linkurl = "rss_file://../etc/translate/app/ivi/ivi_feed.xml";
+	       linkurl = translate_base_url + "app/ivi/index,feed";
        doModalRss(linkurl);
 	  </script>
 	</onClick> 
@@ -183,32 +176,25 @@
 <onEnter>
   itemCount = getPageInfo("itemCount");
 
-  translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
-  cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
-  if(cgiconf != null)
-  {
-    value = getStringArrayAt(cgiconf, 0);
-    if(value != null &amp;&amp; value != "")
-    {
-      translate_base_url = value;
-      print("cgi.conf=",value);
-    }
-  }
-
+    translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
   screenXp = 4;
   screenYp = 3;
-  rssconf = readStringFromFile("/usr/local/etc/translate/etc/rss.conf");
+  rssconf = readStringFromFile(getStoragePath("key")+"translate.dat");
   print("rssconf:",rssconf);
   if(rssconf != null)
   {
     value = getStringArrayAt(rssconf, 0);
     if(value != null &amp;&amp; value != "")
-      screenXp = Integer(value);
+      translate_base_url = value;
     value = getStringArrayAt(rssconf, 1);
+    if(value != null &amp;&amp; value != "")
+      screenXp = Integer(value);
+    value = getStringArrayAt(rssconf, 2);
     if(value != null &amp;&amp; value != "")
       screenYp = Integer(value);
   }
-  print("rssconf:",screenXp,screenYp);
+  print("rssconf:",translate_base_url,screenXp,screenYp);
+
   
   storagePath = getStoragePath("tmp");
 </onEnter>

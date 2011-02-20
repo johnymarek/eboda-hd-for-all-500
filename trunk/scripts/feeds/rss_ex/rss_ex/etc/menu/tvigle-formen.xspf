@@ -18,13 +18,13 @@
 </track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:7,tvigle/multi</link>
   <title>Мультистриптиз</title>
-  <annotation/>
+  <annotation>Юморной мультфильм про чемпионат мира по стриптизу.</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/7/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2076,tvigle/multi</link>
   <title>Не спи один</title>
-  <annotation>Если ты захочешь   ты сможешь соблазнить любую девушку, которая тебе нравится.</annotation>
+  <annotation>Если ты захочешь ты сможешь соблазнить любую девушку, которая тебе нравится.</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/2076/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>

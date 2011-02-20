@@ -35,10 +35,13 @@ let tsttime=`date +%s`-$TIMELIFE
 
 local REFRESHCACHE=yes
 if [ -f "$GENRESXML" ]; then
-  if [ `date +%s -r "$GENRESXML"` -gt $tsttime ]; then
-    REFRESHCACHE=
+  if [ "`ls -s "$GENRESXML" | awk '{print $1}'`" != "0" ]; then
+    if [ `date +%s -r "$GENRESXML"` -gt $tsttime ]; then
+      REFRESHCACHE=
+    fi
   fi
 fi
+
 
 if [ $REFRESHCACHE ]; then
   local RESPONSE=

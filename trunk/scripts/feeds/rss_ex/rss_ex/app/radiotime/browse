@@ -46,6 +46,7 @@ if [ -f "$OPML" ]; then
   echo "  opmlUrl = \"$LINK\";" >> $INITSCRIPT
 
   (
+    export BASEPATH;
     export INITSCRIPT;
     template2rss browse.xml | printContent "application/rss+xml"
     rm -f "$INITSCRIPT"

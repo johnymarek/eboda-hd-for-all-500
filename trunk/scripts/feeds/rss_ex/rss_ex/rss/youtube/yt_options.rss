@@ -89,12 +89,12 @@
 	  if(hd == 1)
 	  {
 	    print("Yes");
-	    "Да";
+	    "Yes";
 	  }
 	  else
 	  {
 	    print("No");
-	    "Нет";
+	    "No";
 	  }
 	  </script>
 	</text>
@@ -203,37 +203,42 @@
     
   writeStringToFile(optionsPath, arr);
   
-  optionsArray = readStringFromFile("/usr/local/etc/translate/etc/rss.conf");
+  optionsArray = readStringFromFile(getStoragePath("key")+"translate.dat");
 
   arr = null;
   
   arr = pushBackStringArray(arr, getStringArrayAt(optionsArray, 0));
   arr = pushBackStringArray(arr, getStringArrayAt(optionsArray, 1));
+  arr = pushBackStringArray(arr, getStringArrayAt(optionsArray, 2));
   arr = pushBackStringArray(arr, hd);
-  arr = pushBackStringArray(arr, getStringArrayAt(optionsArray, 3));
   arr = pushBackStringArray(arr, getStringArrayAt(optionsArray, 4));
   arr = pushBackStringArray(arr, getStringArrayAt(optionsArray, 5));
   arr = pushBackStringArray(arr, getStringArrayAt(optionsArray, 6));
+  arr = pushBackStringArray(arr, getStringArrayAt(optionsArray, 7));
   
-  writeStringToFile("/usr/local/etc/translate/etc/rss.conf", arr);
+  writeStringToFile(getStoragePath("key")+"translate.dat", arr);
 
 </onExit>
 
 <onEnter>
+  translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
   screenXp = 4;
   screenYp = 3;
-  rssconf = readStringFromFile("/usr/local/etc/translate/etc/rss.conf");
+  rssconf = readStringFromFile(getStoragePath("key")+"translate.dat");
   print("rssconf:",rssconf);
   if(rssconf != null)
   {
     value = getStringArrayAt(rssconf, 0);
     if(value != null &amp;&amp; value != "")
-      screenXp = Integer(value);
+      translate_base_url = value;
     value = getStringArrayAt(rssconf, 1);
+    if(value != null &amp;&amp; value != "")
+      screenXp = Integer(value);
+    value = getStringArrayAt(rssconf, 2);
     if(value != null &amp;&amp; value != "")
       screenYp = Integer(value);
   }
-  print("rssconf:",screenXp,screenYp);
+  print("rssconf:",translate_base_url,screenXp,screenYp);
 
   pageTitle = "Options";
   cachePath = getStoragePath("key");
@@ -262,26 +267,26 @@
   
   regionCount = 20;
   
-  regionArray = pushBackStringArray(regionArray, "Глобальный");
-  regionArray = pushBackStringArray(regionArray, "Австралия");
-  regionArray = pushBackStringArray(regionArray, "Бразилия");
-  regionArray = pushBackStringArray(regionArray, "Великобритания");
-  regionArray = pushBackStringArray(regionArray, "Германия");
-  regionArray = pushBackStringArray(regionArray, "Голландия");
-  regionArray = pushBackStringArray(regionArray, "Гонконг");
-  regionArray = pushBackStringArray(regionArray, "Ирландия");
-  regionArray = pushBackStringArray(regionArray, "Испания");
-  regionArray = pushBackStringArray(regionArray, "Италия");
-  regionArray = pushBackStringArray(regionArray, "Канада");
-  regionArray = pushBackStringArray(regionArray, "Мексика");
-  regionArray = pushBackStringArray(regionArray, "Новая Зеландия");
-  regionArray = pushBackStringArray(regionArray, "Польша");
-  regionArray = pushBackStringArray(regionArray, "Россия");
-  regionArray = pushBackStringArray(regionArray, "США");
-  regionArray = pushBackStringArray(regionArray, "Тайвань");
-  regionArray = pushBackStringArray(regionArray, "Франция");
-  regionArray = pushBackStringArray(regionArray, "Южная Корея");
-  regionArray = pushBackStringArray(regionArray, "Япония");
+  regionArray = pushBackStringArray(regionArray, "Global");
+  regionArray = pushBackStringArray(regionArray, "Australia");
+  regionArray = pushBackStringArray(regionArray, "Brazil");
+  regionArray = pushBackStringArray(regionArray, "Great Britain");
+  regionArray = pushBackStringArray(regionArray, "Germany");
+  regionArray = pushBackStringArray(regionArray, "Holland");
+  regionArray = pushBackStringArray(regionArray, "Hong Kong");
+  regionArray = pushBackStringArray(regionArray, "Ireland");
+  regionArray = pushBackStringArray(regionArray, "Spain");
+  regionArray = pushBackStringArray(regionArray, "Italy");
+  regionArray = pushBackStringArray(regionArray, "Canada");
+  regionArray = pushBackStringArray(regionArray, "Mexico");
+  regionArray = pushBackStringArray(regionArray, "New Zealand");
+  regionArray = pushBackStringArray(regionArray, "Poland");
+  regionArray = pushBackStringArray(regionArray, "Russia");
+  regionArray = pushBackStringArray(regionArray, "USA");
+  regionArray = pushBackStringArray(regionArray, "Taiwan");
+  regionArray = pushBackStringArray(regionArray, "France");
+  regionArray = pushBackStringArray(regionArray, "South Korea");
+  regionArray = pushBackStringArray(regionArray, "Japan");
 
   regionSymbolArray = pushBackStringArray(regionSymbolArray, " ");
   regionSymbolArray = pushBackStringArray(regionSymbolArray, "AU");

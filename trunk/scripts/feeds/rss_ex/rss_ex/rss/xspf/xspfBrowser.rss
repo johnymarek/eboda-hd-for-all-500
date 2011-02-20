@@ -198,12 +198,12 @@
       print("*** majorContext=",majorContext);
       print("*** userInput=",userInput);
 
-      if (userInput == "pagedown" || userInput == "pageup")
+      if (userInput == "pagedown" || userInput == "pageup" || userInput == "PD" || userInput == "PG")
       {
         if(playIndex == -1 || playContext != currentPwd)
         {
           idx = getFocusItemIndex();
-          if (userInput == "pagedown")
+          if (userInput == "pagedown" || userInput == "PD")
           {
             idx -= -10;
             if(idx &gt;= itemSize)
@@ -226,7 +226,7 @@
           {
             while(1)
             {
-              if (userInput == "pagedown")
+              if (userInput == "pagedown" || userInput == "PD")
               {
                 idx -= -1;
                 if(idx &gt;= itemSize)
@@ -251,7 +251,7 @@
             }
             while(1)
             {
-              if (userInput == "pagedown")
+              if (userInput == "pagedown" || userInput == "PD")
               {
                 randomIndex -= -1;
                 if(randomIndex &gt;= itemSize)
@@ -277,11 +277,11 @@
         }
         ret = "true";
       }
-      else if(majorContext == "items" &amp;&amp; userInput == "right")
+      else if(majorContext == "items" &amp;&amp; (userInput == "right" || userInput == "R"))
       {
         ret = "true";
       }
-      else if (userInput == "return" || userInput == "left")
+      else if (userInput == "return" || userInput == "left" || userInput == "RET" || userInput == "L")
       {
         if(history &gt;= 0)
         {
@@ -346,32 +346,24 @@
   storagePath_stream      = storagePath + "stream.dat";
   storagePath_streamInfo  = storagePath + "streamInfo.dat";
 
-  translateBaseURL = "http://127.0.0.1:84/cgi-bin/translate?";
-  cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
-  if(cgiconf != null)
-  {
-    value = getStringArrayAt(cgiconf, 0);
-    if(value != null &amp;&amp; value != "")
-    {
-      translate_base_url = value;
-      print("cgi.conf=",value);
-    }
-  }
-
+  translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
   screenXp = 4;
   screenYp = 3;
-  rssconf = readStringFromFile("/usr/local/etc/translate/etc/rss.conf");
+  rssconf = readStringFromFile(getStoragePath("key")+"translate.dat");
   print("rssconf:",rssconf);
   if(rssconf != null)
   {
     value = getStringArrayAt(rssconf, 0);
     if(value != null &amp;&amp; value != "")
-      screenXp = Integer(value);
+      translate_base_url = value;
     value = getStringArrayAt(rssconf, 1);
+    if(value != null &amp;&amp; value != "")
+      screenXp = Integer(value);
+    value = getStringArrayAt(rssconf, 2);
     if(value != null &amp;&amp; value != "")
       screenYp = Integer(value);
   }
-  print("rssconf:",screenXp,screenYp);
+  print("rssconf:",translate_base_url,screenXp,screenYp);
 
   arr = readStringFromFile(storagePath_playlist);
   
@@ -682,7 +674,7 @@
     
     print("PWD: ",currentPwd);
     
-    url = translateBaseURL + currentCommand + "," + currentOptions + "," + urlEncode(currentPwd);
+    url = translate_base_url + currentCommand + "," + currentOptions + "," + urlEncode(currentPwd);
     
     print("Browse:",url);
     
@@ -704,7 +696,7 @@
     	    if(currentProtocol == "http" || currentProtocol == "file")
     	      playlistLogo = currentPwd + "cover.jpg";
     	    else
-    	      playlistLogo = translateBaseURL + "stream,Content-type:image/jpeg," + urlEncode(currentPwd + "cover.jpg");
+    	      playlistLogo = translate_base_url + "stream,Content-type:image/jpeg," + urlEncode(currentPwd + "cover.jpg");
     	   }
     	}
   	  else
@@ -750,7 +742,7 @@
       error = 0;
       errorInfo = "";
       
-      translateUrl = translateBaseURL + "stream," + options + "," + urlEncode(url);
+      translateUrl = translate_base_url + "stream," + options + "," + urlEncode(url);
       
       print(class);
       print(protocol);
@@ -763,7 +755,7 @@
       
       if(class == "auto" || class == "" || (protocol != "file" &amp;&amp; protocol != "ftp"))
       {
-        infoUrl = translateBaseURL + "info," + options + "," + urlEncode(url);
+        infoUrl = translate_base_url + "info," + options + "," + urlEncode(url);
         
         print("Info:",infoUrl);
         
@@ -810,7 +802,7 @@
       	     server_url = value;
       	     if(soft == "icecast" || soft == "shoutcast")
       	     {
-        	      statusUrl = translateBaseURL+"status,"+server_url+","+urlEncode(url);
+        	      statusUrl = translate_base_url+"status,"+server_url+","+urlEncode(url);
         	   }
       	    }
       	     
@@ -840,7 +832,7 @@
             else
               streamoptions = streamoptions + ";" + options;
   
-      	    translateUrl = translateBaseURL + "stream," + streamoptions + "," + urlEncode(url);
+      	    translateUrl = translate_base_url + "stream," + streamoptions + "," + urlEncode(url);
     
             streamArray = null;
              
@@ -909,6 +901,14 @@
         {
           executeScript("sub_stopPlayback");
           
+            historyPath = getStoragePath("key")+"translate.history_video.m3u";
+            historydat = readStringFromFile(historyPath);
+            if(historydat == null)
+              historydat = pushBackStringArray(historydat, "#EXTM3U");
+            historydat = pushBackStringArray(historydat, "#EXTINF:-1,"+getStringArrayAt(titleArray, idx));
+            historydat = pushBackStringArray(historydat, url);
+            writeStringToFile(historyPath, historydat);
+
           if(image == "")
             image = playlistLogo;
             
@@ -918,7 +918,7 @@
           {
             pageLogo = image;
           }
-          if(protocol == "file" || protocol == "http")
+          if(protocol == "file" || (protocol == "http" &amp;&amp; soft != "_translate_"))
           {
             urlToPlay = url;
           }
@@ -938,7 +938,15 @@
         {
           executeScript("sub_stopPlayback");
         
-          if(protocol == "file" || (protocol == "http" &amp;&amp; soft != "shoutcast"))
+            historyPath = getStoragePath("key")+"translate.history_audio.m3u";
+            historydat = readStringFromFile(historyPath);
+            if(historydat == null)
+              historydat = pushBackStringArray(historydat, "#EXTM3U");
+            historydat = pushBackStringArray(historydat, "#EXTINF:-1,"+getStringArrayAt(titleArray, idx));
+            historydat = pushBackStringArray(historydat, url);
+            writeStringToFile(historyPath, historydat);
+
+          if(protocol == "file" || (protocol == "http" &amp;&amp; (soft != "shoutcast" || soft != "_translate_")))
           {
             urlToPlay = url;
           }
@@ -1073,7 +1081,7 @@
 
 <sub_initRandom>
   print("sub_initRandom start");
-  dlok = loadXMLFile(translateBaseURL+"random,"+itemSize+","+playIndex);
+  dlok = loadXMLFile(translate_base_url+"random,"+itemSize+","+playIndex);
   if (dlok != null)
   {
     randomArray = null;
@@ -1217,6 +1225,7 @@
 	  executeScript("sub_clickItem");
     null;
 	</onClick>
+  <media:thumbnail>"";</media:thumbnail>
 </item_template>
 
 <playerLink>

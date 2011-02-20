@@ -262,20 +262,24 @@
 </onRefresh>
 
 <onEnter>
+  translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
   screenXp = 4;
   screenYp = 3;
-  rssconf = readStringFromFile("/usr/local/etc/translate/etc/rss.conf");
+  rssconf = readStringFromFile(getStoragePath("key")+"translate.dat");
   print("rssconf:",rssconf);
   if(rssconf != null)
   {
     value = getStringArrayAt(rssconf, 0);
     if(value != null &amp;&amp; value != "")
-      screenXp = Integer(value);
+      translate_base_url = value;
     value = getStringArrayAt(rssconf, 1);
+    if(value != null &amp;&amp; value != "")
+      screenXp = Integer(value);
+    value = getStringArrayAt(rssconf, 2);
     if(value != null &amp;&amp; value != "")
       screenYp = Integer(value);
   }
-  print("rssconf:",screenXp,screenYp);
+  print("rssconf:",translate_base_url,screenXp,screenYp);
 
   cachePath = getStoragePath("key");
   optionsArray = readStringFromFile(cachePath + "youtubeOptions.dat");
@@ -315,18 +319,6 @@
   if(youtubeRegion=="JP") lr="ja"; else
     lr=null;
   
-  translateBaseURL = "http://127.0.0.1:84/cgi-bin/translate?";
-  cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
-  if(cgiconf != null)
-  {
-    value = getStringArrayAt(cgiconf, 0);
-    if(value != null &amp;&amp; value != "")
-    {
-      translateBaseURL = value;
-      print("cgi.conf=",value);
-    }
-  }
-
   storagePath = getStoragePath("tmp");
   storagePath = storagePath + "youtubeRSS.dat";
   arr = readStringFromFile(storagePath);
@@ -339,15 +331,23 @@
 </onEnter>
 
 <submenu>
-  <title>Проиграть</title>
+  <title>Play</title>
   <onClick>
     mode = 1;
 
-    infoUrl = translateBaseURL+"info,HD:"+hd+","+urlEncode(url);
+    infoUrl = translate_base_url+"info,HD:"+hd+","+urlEncode(url);
 
     dlok = loadXMLFile(infoUrl);
     if (dlok != null)
     {
+      historyPath = getStoragePath("key")+"translate.history_video.m3u";
+      historydat = readStringFromFile(historyPath);
+      if(historydat == null)
+        historydat = pushBackStringArray(historydat, "#EXTM3U");
+      historydat = pushBackStringArray(historydat, "#EXTINF:-1,"+pageTitle);
+      historydat = pushBackStringArray(historydat, url);
+      writeStringToFile(historyPath, historydat);
+
 	    value = getXMLAttribute("info","stream","type");
 	    if(value != null)
 	     type = value;
@@ -367,12 +367,12 @@
 </submenu>
 
 <submenu>
-  <title>Похожие video</title>
+  <title>Similar video</title>
   <onClick>
 	if (relatedUrl != "")
 	{
    url = relatedUrl+"?";
-   title = "Похожие video: "+title;
+   title = "Similar video: "+title;
    
    arr = null;
    arr = pushBackStringArray(arr, url);
@@ -390,12 +390,12 @@
 </submenu>
 
 <submenu>
-  <title>Видеответы</title>
+  <title>Video responses</title>
   <onClick>
 	if (relatedUrl != "")
 	{
    url = responsesUrl+"?";
-   title = "Видеответы: "+title;
+   title = "Video responses: "+title;
    
    arr = null;
    arr = pushBackStringArray(arr, url);
@@ -412,7 +412,7 @@
 </submenu>
 
 <submenu>
-  <title>Список тегов</title>
+  <title>Tag List</title>
   <onClick>
 	if (relatedUrl != "")
 	{
@@ -420,7 +420,7 @@
    tag = doModalRss("rss_file://../etc/translate/rss/youtube/yt_tags.rss");
    if(tag != null)
    {
-     title = "Тег: "+tag;
+     title = "Tag: "+tag;
      youtubeApiCategoryBaseURL = "http://gdata.youtube.com/feeds/api/videos/-/";
      url = youtubeApiCategoryBaseURL + urlEncode(tag) + "?";
      if(lr != null)

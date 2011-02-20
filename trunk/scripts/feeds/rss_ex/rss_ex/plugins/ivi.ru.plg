@@ -33,7 +33,7 @@
 if echo "${arg_url}" | grep -q -s '\(www\.\|france\.\)*ivi\.ru/\(video/view/\|movie\.php\)?id=.*$'; then 
 
   get_opt "HD"
-  [ -z "$opt" ] && opt=`sed -n '6p' $RSSCONF 2>/dev/null`
+  [ -z "$opt" ] && opt=`sed -n '7p' $RSSCONF 2>/dev/null`
   [ -z "$opt" ] && opt=$IVI_HD
   case $opt in
     yes|Yes|YES|1)
@@ -55,7 +55,7 @@ if echo "${arg_url}" | grep -q -s '\(www\.\|france\.\)*ivi\.ru/\(video/view/\|mo
       stream_type='video/x-flv'
       server_type='ivi'
       stream_url=`sed "s/.*files\": \[//;s/\].*//;s/}, *{/}\n{/g" ${TMPFILE} | awk "/FLV-${hdc}/"' {match($2, /\"(.*)\".*$/, arr); print arr[1];}'`
-      protocol=`echo "$stream_url" | sed -e 's/:\/\/.*$//`
+      protocol=`echo "$stream_url" | sed -e 's/:\/\/.*$//'`
       icy_name=`sed 's/.*"title": "//;s/".*//g' ${TMPFILE} | unitohtml | $XCODE -s -l | $TOUTF8`
       rm -f $TMPFILE
     fi

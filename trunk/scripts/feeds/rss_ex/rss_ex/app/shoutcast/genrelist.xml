@@ -22,20 +22,7 @@
 -->
 
 <onEnter>
-  screenXp = 4;
-  screenYp = 3;
-  rssconf = readStringFromFile("/usr/local/etc/translate/etc/rss.conf");
-  print("rssconf:",rssconf);
-  if(rssconf != null)
-  {
-    value = getStringArrayAt(rssconf, 0);
-    if(value != null &amp;&amp; value != "")
-      screenXp = Integer(value);
-    value = getStringArrayAt(rssconf, 1);
-    if(value != null &amp;&amp; value != "")
-      screenYp = Integer(value);
-  }
-  print("rssconf:",screenXp,screenYp);
+  <!--`cat "$BASEPATH/app/include/rssconf.script"`-->
 
   pageTitle = "Free Internet Radio Stations";
 </onEnter>
@@ -98,11 +85,11 @@
     ret = "false";
     userInput = currentUserInput();
     
-    if (userInput == "pagedown" || userInput == "pageup")
+    if (userInput == "pagedown" || userInput == "pageup" || userInput == "PG" || userInput == "PD")
     {
       itemSize = getPageInfo("itemCount");
       idx = Integer(getFocusItemIndex());
-      if (userInput == "pagedown")
+      if (userInput == "pagedown" || userInput == "PD")
       {
         idx -= -40;
         if(idx &gt;= itemSize)

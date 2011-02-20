@@ -22,34 +22,27 @@
 -->
 
 <onEnter>
-  translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
-  cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
-  if(cgiconf != null)
-  {
-    value = getStringArrayAt(cgiconf, 0);
-    if(value != null &amp;&amp; value != "")
-    {
-      translate_base_url = value;
-      print("cgi.conf=",value);
-    }
-  }
-
+    translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
   screenXp = 4;
   screenYp = 3;
-  rssconf = readStringFromFile("/usr/local/etc/translate/etc/rss.conf");
+  rssconf = readStringFromFile(getStoragePath("key")+"translate.dat");
   print("rssconf:",rssconf);
   if(rssconf != null)
   {
     value = getStringArrayAt(rssconf, 0);
     if(value != null &amp;&amp; value != "")
-      screenXp = Integer(value);
+      translate_base_url = value;
     value = getStringArrayAt(rssconf, 1);
+    if(value != null &amp;&amp; value != "")
+      screenXp = Integer(value);
+    value = getStringArrayAt(rssconf, 2);
     if(value != null &amp;&amp; value != "")
       screenYp = Integer(value);
   }
-  print("rssconf:",screenXp,screenYp);
+  print("rssconf:",translate_base_url,screenXp,screenYp);
 
-    startitem = "middle";
+
+    startitem = "";
 		
   columnCount=3;
   print(getFocusItemIndex());
@@ -66,8 +59,11 @@
   if(startitem == "middle")
     setFocusItemIndex(middleItem);
   else
-  if(startitem == "right")
-    setFocusItemIndex(middleItem);
+  if(startitem == "last")
+    setFocusItemIndex(itemCount);
+  else
+  if(startitem &gt; 0 &amp;&amp; startitem &lt;= itemCount)
+    setFocusItemIndex(startitem-1);
   redrawDisplay();
 </onRefresh>
 
@@ -226,6 +222,99 @@
       print("*** majorContext=",majorContext);
       print("*** userInput=",userInput);
       
+      if(userInput == "one" || userInput == "1")
+      {
+        if(itemCount &gt;= 1)
+        {
+          setFocusItemIndex(0);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "two" || userInput == "2")
+      {
+        if(itemCount &gt;= 2)
+        {
+          setFocusItemIndex(1);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "three" || userInput == "3")
+      {
+        if(itemCount &gt;= 3)
+        {
+          setFocusItemIndex(2);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "four" || userInput == "4")
+      {
+        if(itemCount &gt;= 4)
+        {
+          setFocusItemIndex(3);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "five" || userInput == "5")
+      {
+        if(itemCount &gt;= 5)
+        {
+          setFocusItemIndex(4);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "six" || userInput == "6")
+      {
+        if(itemCount &gt;= 6)
+        {
+          setFocusItemIndex(5);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "seven" || userInput == "7")
+      {
+        if(itemCount &gt;= 7)
+        {
+          setFocusItemIndex(6);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "eight" || userInput == "8")
+      {
+        if(itemCount &gt;= 8)
+        {
+          setFocusItemIndex(7);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "nine" || userInput == "9")
+      {
+        if(itemCount &gt;= 9)
+        {
+          setFocusItemIndex(8);
+          redrawDisplay();
+        }
+      }
+      else if (userInput == "pagedown" || userInput == "pageup" || userInput == "PD" || userInput == "PG")
+      {
+        itemSize = getPageInfo("itemCount");
+        idx = Integer(getFocusItemIndex());
+        if (userInput == "pagedown")
+        {
+          idx -= -columnCount;
+          if(idx &gt;= itemSize)
+            idx = itemSize-1;
+        }
+        else
+        {
+          idx -= columnCount;
+          if(idx &lt; 0)
+            idx = 0;
+        }
+        setFocusItemIndex(idx);
+        setItemFocus(idx);
+        redrawDisplay();
+        ret = "true";
+      }
       ret;
     </script>
   </onUserInput>
@@ -244,6 +333,13 @@
   </script><channel>
   <title>Tvigle - Сериалы</title>
   <item>
+<link><script>translate_base_url+"app,Channel:2167,tvigle/multi";</script></link>
+    <title>Город Хищниц</title>
+    <annotation>Комедийный сериал о жизни сорокалетней женщины после развода.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/2167/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
 <link><script>translate_base_url+"app,Channel:2151,tvigle/multi";</script></link>
     <title>Отчаянные домохозяйки. Первый сезон</title>
     <annotation>Первый сезон многосерийной комедийной драмы о жизни подруг-домохозяек, проживающих на улице Вистерия-Лэйн в выдуманном американском городе Фэйрвью.</annotation>
@@ -258,9 +354,16 @@
     <mediaDisplay name="photoView"/>
   </item>
   <item>
+<link><script>translate_base_url+"app,Channel:2171,tvigle/multi";</script></link>
+    <title>Отчаянные домохозяйки. Третий сезон</title>
+    <annotation>Третий сезон многосерийной комедийной драмы о жизни подруг-домохозяек, проживающих на улице Вистерия-Лэйн в выдуманном американском городе Фэйрвью.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/2171/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
 <link><script>translate_base_url+"app,Channel:2162,tvigle/multi";</script></link>
     <title>Атлантида</title>
-    <annotation>Любая семья   это маленькая страна, загадочная и непознанная Атлантида...</annotation>
+    <annotation>Любая семья это маленькая страна, загадочная и непознанная Атлантида...</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/2162/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
@@ -272,6 +375,55 @@
     <mediaDisplay name="photoView"/>
   </item>
   <item>
+<link><script>translate_base_url+"app,Channel:2091,tvigle/multi";</script></link>
+    <title>Пелагия и белый бульдог</title>
+    <annotation>Фильм по бестселлеру Бориса Акунина о приключениях сыщицы-монахини Пелагии.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/2091/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:2165,tvigle/multi";</script></link>
+    <title>Дурдом</title>
+    <annotation>В бывшей усадьбе графа Макарова, где располагается нынче больница, произошло убийство...</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/2165/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:2176,tvigle/multi";</script></link>
+    <title>Евлампия Романова. Следствие ведет дилетант</title>
+    <annotation>Детективный сериал по одноименной серии романов Yesрьи Донцовой о приключениях Евлампии Романовой.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/2176/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:2177,tvigle/multi";</script></link>
+    <title>Иван Подушкин: Джентльмен сыска</title>
+    <annotation>Иван Подушкин - личный секретарь пожилой миллионерши, вообразившей себя Ниро Вульфом. И бедный Подушкин вынужден стать ее Арчи Гудвином.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/2177/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:2178,tvigle/multi";</script></link>
+    <title>Молоды и счастливы</title>
+    <annotation>Приключения молодой и талантливой провинциалки в Москве.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/2178/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:2181,tvigle/multi";</script></link>
+    <title>Миф об идеальном мужчине</title>
+    <annotation>Детективная история по мотивам романа Татьяны Устиновой.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/2181/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:2182,tvigle/multi";</script></link>
+    <title>Новый русский романс</title>
+    <annotation>Фильм о взрослой любви.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/2182/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
 <link><script>translate_base_url+"app,Channel:1828,tvigle/multi";</script></link>
     <title>Вся правда о Еве</title>
     <annotation>Новый модный интернет сериал в духе черной комедии, снятый специально для женщин.</annotation>
@@ -279,10 +431,31 @@
     <mediaDisplay name="photoView"/>
   </item>
   <item>
+<link><script>translate_base_url+"app,Channel:2166,tvigle/multi";</script></link>
+    <title>Умножающий печаль</title>
+    <annotation>Экранизация криминального романа Георгия Вайнера.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/2166/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:2164,tvigle/multi";</script></link>
+    <title>Вербное воскресенье</title>
+    <annotation>Это история о взаимоотношениях тоталитарной власти и простого человека, о правде и торжестве справедливости.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/2164/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
 <link><script>translate_base_url+"app,Channel:1685,tvigle/multi";</script></link>
     <title>Тридцатилетние</title>
     <annotation>Жизнь поколения 30-летних в историях из жизни четырех семейных пар и их друзей.</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/1685/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:2163,tvigle/multi";</script></link>
+    <title>Личное дело капитана Рюмина</title>
+    <annotation>Дело, которым занимается капитан Рюмин, станет его личным делом. Ведь фигурантами окажутся не только близкие ему люди, но и он сам.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/2163/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
   <item>
@@ -302,14 +475,14 @@
   <item>
 <link><script>translate_base_url+"app,Channel:1684,tvigle/multi";</script></link>
     <title>Люди Шпака</title>
-    <annotation>Команда Шпакова   или Шпака, как все называют этого добродушного толстяка, это команда милиционеров-неудачников. Они неминуемо проваливают любую операцию.</annotation>
+    <annotation>Команда Шпакова или Шпака, как все называют этого добродушного толстяка, это команда милиционеров-неудачников. Они неминуемо проваливают любую операцию.</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/1684/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
   <item>
 <link><script>translate_base_url+"app,Channel:2003,tvigle/multi";</script></link>
     <title>Мастер и Маргарита</title>
-    <annotation>Экранизация романа Михаила Афанасьевича Булгакова  Мастер и Маргарита .</annotation>
+    <annotation>Экранизация романа Михаила Афанасьевича Булгакова Мастер и Маргарита .</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/2003/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
@@ -365,7 +538,7 @@
   <item>
 <link><script>translate_base_url+"app,Channel:2004,tvigle/multi";</script></link>
     <title>Большая прогулка</title>
-    <annotation>Талантливый работник телевидения Яна мечтает сделать собственную программу. Но прежде чем продюсеры позволят ей осуществить мечту, Яне необходимо  засветиться  на голубом экране.</annotation>
+    <annotation>Талантливый работник телевидения Яна мечтает сделать собственную программу. Но прежде чем продюсеры позволят ей осуществить мечту, Яне необходимо засветиться на голубом экране.</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/2004/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
@@ -393,7 +566,7 @@
   <item>
 <link><script>translate_base_url+"app,Channel:1861,tvigle/multi";</script></link>
     <title>Ликвидация</title>
-    <annotation>Лето 1946 года. Маршал Жуков в опале. Он отправлен в ссылку в Одессу, где банда  Степные волки  грабит военные склады, а всем заправляет немецкий шпион  Академик , которого никто не знает в лицо. И только начальник угрозыска Давид Гоцман и Георгий Жуков могут спасти город.</annotation>
+    <annotation>Лето 1946 года. Маршал Жуков в опале. Он отправлен в ссылку в Одессу, где банда Степные волки грабит военные склады, а всем заправляет немецкий шпион Академик , которого никто не знает в лицо. И только начальник угрозыска Yesвид Гоцман и Георгий Жуков могут спасти город.</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/1861/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>

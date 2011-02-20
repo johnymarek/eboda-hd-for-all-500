@@ -107,33 +107,25 @@
 
 </mediaDisplay>
 
-	<onEnter>
-    translateBaseURL = "http://127.0.0.1:84/cgi-bin/translate?";
-    cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
-    if(cgiconf != null)
-    {
-      value = getStringArrayAt(cgiconf, 0);
-      if(value != null &amp;&amp; value != "")
-      {
-        translateBaseURL = value;
-        print("cgi.conf=",value);
-      }
-    }
-  
-    screenXp = 4;
-    screenYp = 3;
-    rssconf = readStringFromFile("/usr/local/etc/translate/etc/rss.conf");
-    print("rssconf:",rssconf);
-    if(rssconf != null)
-    {
-      value = getStringArrayAt(rssconf, 0);
-      if(value != null &amp;&amp; value != "")
-        screenXp = Integer(value);
-      value = getStringArrayAt(rssconf, 1);
-      if(value != null &amp;&amp; value != "")
-        screenYp = Integer(value);
-    }
-    print("rssconf:",screenXp,screenYp);
+<onEnter>
+  translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
+  screenXp = 4;
+  screenYp = 3;
+  rssconf = readStringFromFile(getStoragePath("key")+"translate.dat");
+  print("rssconf:",rssconf);
+  if(rssconf != null)
+  {
+    value = getStringArrayAt(rssconf, 0);
+    if(value != null &amp;&amp; value != "")
+      translate_base_url = value;
+    value = getStringArrayAt(rssconf, 1);
+    if(value != null &amp;&amp; value != "")
+      screenXp = Integer(value);
+    value = getStringArrayAt(rssconf, 2);
+    if(value != null &amp;&amp; value != "")
+      screenYp = Integer(value);
+  }
+  print("rssconf:",translate_base_url,screenXp,screenYp);
   
     storagePath = getStoragePath("tmp") + "youtubeRSS.dat";
     pageTitle = "Broadcast Yourself ™";
@@ -169,7 +161,7 @@
 				redrawDisplay();
 			}
 		}
-	</onEnter>
+</onEnter>
 	
 	<searchLink>
   	<mediaDisplay name="threePartsView">
@@ -207,8 +199,9 @@
         if(youtubeRegion != null &amp;&amp; youtubeRegion != " " &amp;&amp; youtubeRegion != "")
         {
           youtubeApiBaseURL += youtubeRegion;
+          youtubeApiBaseURL += "/";
         }
-        url = youtubeApiBaseURL+"/recently_featured?";
+        url = youtubeApiBaseURL+"recently_featured?";
         title = getItemInfo(getFocusItemIndex(), "title");
         
         arr = null;
@@ -271,10 +264,50 @@
 		</item>
 
 		<item>
+			<title>Subscriptions</title>
+			<onClick>
+        optionsPath = getStoragePath("key") + "youtubeOptions.dat";
+        optionsArray = readStringFromFile(optionsPath);
+        if(optionsArray == null)
+        {
+          hd = 1;
+          username = " ";
+        }
+        else
+        {
+          youtubeRegion = getStringArrayAt(optionsArray, 0);
+          hd = getStringArrayAt(optionsArray, 1);
+          username = getStringArrayAt(optionsArray, 2);
+        }
+			 s = sprintf("'%s'",username);
+			 print(s);
+				if (username != null &amp;&amp; username != " ")
+				{
+	       url = "http://gdata.youtube.com/feeds/api/users/" + urlEncode(username)+"/newsubscriptionvideos?";
+	       title = "Subscriptions: "+username;
+	       
+	       arr = null;
+         arr = pushBackStringArray(arr, url);
+         arr = pushBackStringArray(arr, title);
+         print("arr=",arr);
+         print("storagePath=",storagePath);
+	       
+	       writeStringToFile(storagePath, arr);
+	       jumpToLink("searchLink");
+				}
+				else
+				{
+				  null;
+				}
+			</onClick>
+		</item>
+
+		<item>
 			<title>Search for video</title>
 			<onClick>
-				keyword= getInput();
-				if (keyword!=null)
+				keyword = doModalRss("rss_file://../etc/translate/rss/youtube/key/keyboard.rss");
+			  /* keyword= getInput(); */
+				if (keyword!=null &amp;&amp; keyword!="")
 				{
           optionsPath = getStoragePath("key") + "youtubeOptions.dat";
           optionsArray = readStringFromFile(optionsPath);
@@ -311,7 +344,7 @@
     
           if(youtubeRegion == "RU")
           {
-            dlok = loadXMLFile(translateBaseURL+"translit,,"+urlEncode(keyword));
+            dlok = loadXMLFile(translate_base_url+"translit,,"+urlEncode(keyword));
             if (dlok != null)
             {
               value = getXMLText("string");

@@ -22,32 +22,7 @@
 -->
 
 <onEnter>
-  translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
-  cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
-  if(cgiconf != null)
-  {
-    value = getStringArrayAt(cgiconf, 0);
-    if(value != null &amp;&amp; value != "")
-    {
-      translate_base_url = value;
-      print("cgi.conf=",value);
-    }
-  }
-
-  screenXp = 4;
-  screenYp = 3;
-  rssconf = readStringFromFile("/usr/local/etc/translate/etc/rss.conf");
-  print("rssconf:",rssconf);
-  if(rssconf != null)
-  {
-    value = getStringArrayAt(rssconf, 0);
-    if(value != null &amp;&amp; value != "")
-      screenXp = Integer(value);
-    value = getStringArrayAt(rssconf, 1);
-    if(value != null &amp;&amp; value != "")
-      screenYp = Integer(value);
-  }
-  print("rssconf:",screenXp,screenYp);
+  <!--`cat "$BASEPATH/app/include/rssconf.script"`-->
 
   storagePath             = getStoragePath("tmp");
   storagePath_stream      = storagePath + "stream.dat";
@@ -340,6 +315,7 @@
         jumpToLink("itemLink");
       }
     </onClick>
+    <media:thumbnail>"";</media:thumbnail>
   </item_template>	
 
   <videoDispatcher>

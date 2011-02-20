@@ -1,0 +1,91 @@
+#!/bin/sh
+#
+#   http://code.google.com/media-translate/
+#   Copyright (C) 2010  Serge A. Timchenko
+#   Copyright (C) 2011  nnb
+#
+#   This program is free software: you can redistribute it and/or modify
+#   it under the terms of the GNU General Public License as published by
+#   the Free Software Foundation, either version 3 of the License, or
+#   (at your option) any later version.
+#
+#   This program is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#   along with this program. If not, see <http://www.gnu.org/licenses/>.
+#
+
+# Translate CGI module
+# 'linecinema.org' plug-in
+#
+# version: 1.0 02.02.2011 12:07:55
+#
+# http://www.linecinema.org/newsz/pryklyuchenyya-online/504294-poteryannoe-buduschee-the-lost-future-2010-dvdrip-onlayn.html
+#
+
+#debug_file=/tmp/nnb.log
+#echo linecinema.org >$debug_file
+#echo ${arg_cmd} >>$debug_file
+#echo ${arg_url} >>$debug_file
+
+do_work()
+{
+  host_response=`$MSDL -q -o ${TMPFILE} -p http --useragent "${USERAGENT}" "${arg_url}" 2>&1`
+  if [ -f ${TMPFILE} ]; then
+    local file=`grep 'flashvars="&' ${TMPFILE} | sed -n '1p' | sed 's/^.*file=//;s/&.*$//'`
+    if echo $file | grep -qs "http://"; then
+        :
+    else
+        file="`echo "${arg_url}" | sed 's/\(http:\/\/[^/]*\)\/.*/\1/'`$file"
+    fi
+    
+#    echo $file >>$debug_file
+    
+    if echo "${file}" | grep -qsi ".flv"; then
+        stream_type='video/x-flv'
+        stream_url="$file"
+        protocol=`echo "$stream_url" | sed -e 's/:\/\/.*$//'`
+    elif echo "${file}" | grep -qsi ".xml"; then
+        local PLAYLIST=$CACHEPATH/temp.xspf
+        rm -f $PLAYLIST
+        $MSDL -q -o - -p http --useragent "${USERAGENT}" "${file}" 2>/dev/null | sed 's/<track>/\n<track>/g;s/></>\n</g' > $PLAYLIST
+        #$WGET -q -O ${PLAYLIST} --header "User-Agent: ${USERAGENT}" "${file}" 2>/dev/null
+        stream_url=${PLAYLIST}
+        stream_type='application/xspf+xml'
+        protocol='file'
+    else
+        return $RC_FAIL
+    fi
+    
+    case $1 in
+        filmix)
+            icy_name=`grep "\<h1\>" ${TMPFILE} | sed 's/^.*<h1>//;s/<\/h1>.*$//'`
+            server_type=_translate_
+            ;;
+        *)
+            icy_name=`grep "<title>" ${TMPFILE} | sed 's/^.*<title>//;s/&raquo;.*<\/title>//'`
+            ;;
+    esac
+    icy_name=`unescapeXML "$icy_name"`
+    rm -f $TMPFILE
+    
+    return $RC_OK
+  fi
+  return $RC_FAIL
+}
+
+if echo "${arg_url}" | grep -q -s '\(www\.\)*linecinema\.org/.*\.html$'; then
+  do_work
+  return $?
+elif echo "${arg_url}" | grep -q -s '\(www\.\)*\(animult\|kino-dom\|filin\)\.tv/.*\.html$'; then
+  do_work
+  return $?
+elif echo "${arg_url}" | grep -q -s '\(www\.\)*filmix\.net/.*\.html$'; then
+  do_work filmix
+  return $?
+fi
+
+return $RC_FAIL

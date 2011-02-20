@@ -22,34 +22,27 @@
 -->
 
 <onEnter>
-  translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
-  cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
-  if(cgiconf != null)
-  {
-    value = getStringArrayAt(cgiconf, 0);
-    if(value != null &amp;&amp; value != "")
-    {
-      translate_base_url = value;
-      print("cgi.conf=",value);
-    }
-  }
-
+    translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
   screenXp = 4;
   screenYp = 3;
-  rssconf = readStringFromFile("/usr/local/etc/translate/etc/rss.conf");
+  rssconf = readStringFromFile(getStoragePath("key")+"translate.dat");
   print("rssconf:",rssconf);
   if(rssconf != null)
   {
     value = getStringArrayAt(rssconf, 0);
     if(value != null &amp;&amp; value != "")
-      screenXp = Integer(value);
+      translate_base_url = value;
     value = getStringArrayAt(rssconf, 1);
+    if(value != null &amp;&amp; value != "")
+      screenXp = Integer(value);
+    value = getStringArrayAt(rssconf, 2);
     if(value != null &amp;&amp; value != "")
       screenYp = Integer(value);
   }
-  print("rssconf:",screenXp,screenYp);
+  print("rssconf:",translate_base_url,screenXp,screenYp);
 
-    startitem = "middle";
+
+    startitem = "";
 		
 </onEnter>
 
@@ -64,8 +57,11 @@
   if(startitem == "middle")
     setFocusItemIndex(middleItem);
   else
-  if(startitem == "right")
-    setFocusItemIndex(middleItem);
+  if(startitem == "last")
+    setFocusItemIndex(itemCount);
+  else
+  if(startitem &gt; 0 &amp;&amp; startitem &lt;= itemCount)
+    setFocusItemIndex(startitem-1);
   redrawDisplay();
 </onRefresh>
 
@@ -185,6 +181,104 @@
       print("*** majorContext=",majorContext);
       print("*** userInput=",userInput);
       
+      if(userInput == "one" || userInput == "1")
+      {
+        if(itemCount &gt;= 1)
+        {
+          setFocusItemIndex(0);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "two" || userInput == "2")
+      {
+        if(itemCount &gt;= 2)
+        {
+          setFocusItemIndex(1);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "three" || userInput == "3")
+      {
+        if(itemCount &gt;= 3)
+        {
+          setFocusItemIndex(2);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "four" || userInput == "4")
+      {
+        if(itemCount &gt;= 4)
+        {
+          setFocusItemIndex(3);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "five" || userInput == "5")
+      {
+        if(itemCount &gt;= 5)
+        {
+          setFocusItemIndex(4);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "six" || userInput == "6")
+      {
+        if(itemCount &gt;= 6)
+        {
+          setFocusItemIndex(5);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "seven" || userInput == "7")
+      {
+        if(itemCount &gt;= 7)
+        {
+          setFocusItemIndex(6);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "eight" || userInput == "8")
+      {
+        if(itemCount &gt;= 8)
+        {
+          setFocusItemIndex(7);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "nine" || userInput == "9")
+      {
+        if(itemCount &gt;= 9)
+        {
+          setFocusItemIndex(8);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "right" || userInput == "R") 
+      {
+        ret = "true";
+      }
+      else if (userInput == "pagedown" || userInput == "pageup" || userInput == "PD" || userInput == "PG")
+      {
+        itemSize = getPageInfo("itemCount");
+        idx = Integer(getFocusItemIndex());
+        if (userInput == "pagedown")
+        {
+          idx -= -8;
+          if(idx &gt;= itemSize)
+            idx = itemSize-1;
+        }
+        else
+        {
+          idx -= 8;
+          if(idx &lt; 0)
+            idx = 0;
+        }
+        setFocusItemIndex(idx);
+        setItemFocus(idx);
+        redrawDisplay();
+        ret = "true";
+      }
+
       ret;
     </script>
   </onUserInput>
@@ -218,7 +312,7 @@
   </item>
   <item>
 <link>rss_file://../etc/translate/rss/etc-playlists-radiogrom-russia.rss</link>
-    <title>Россия AM-FM</title>
+    <title>Russia AM-FM</title>
     <annotation>AM-FM Radioстанции России. Вещание через интернет слушать онлайн Radio онлайн</annotation>
     <image>../etc/translate/rss/image/menu/internetradio.png</image>
     <mediaDisplay name="onePartView"/>

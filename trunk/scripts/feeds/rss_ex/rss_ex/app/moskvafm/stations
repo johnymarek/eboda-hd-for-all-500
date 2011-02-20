@@ -41,6 +41,7 @@ else
 fi
 
 (
+  export BASEPATH;
   export CHANNELFILE; 
   export COLUMNCOUNT; 
   export STARTITEM;

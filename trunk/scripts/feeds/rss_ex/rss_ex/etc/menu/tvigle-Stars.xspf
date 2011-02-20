@@ -6,7 +6,7 @@
 <track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2124,tvigle/multi</link>
   <title>Остров 312</title>
-  <annotation>Премьера первого российского 3-D клипа группы  Город 312  на композицию  Помоги мне . Скоро на Tvigle.ru</annotation>
+  <annotation>Премьера первого российского 3-D клипа группы Город 312 на композицию Помоги мне . Скоро на Tvigle.ru</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/2124/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>
@@ -54,7 +54,7 @@
 </track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:1408,tvigle/multi</link>
   <title>Ранетки</title>
-  <annotation>Интервью, клипы и живые выступления группы  Ранетки .</annotation>
+  <annotation>Интервью, клипы и живые выступления группы Ранетки .</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/1408/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>
@@ -75,7 +75,8 @@
   <annotation>Звезды шоу бизнеса расскажут о своих авто.</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/1305/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
-</track><track>
+</track>
+<track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:1442,tvigle/multi</link>
   <title>In Style</title>
   <annotation>Всё о звездах, вещах и красивой жизни.</annotation>
@@ -93,8 +94,7 @@
   <annotation/>
   <image>http://photo.tvigle.ru/resource/rf/cnl/188/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
-</track>
-<track>
+</track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:1692,tvigle/multi</link>
   <title>Звездные страсти</title>
   <annotation>Звезды шоу бизнеса расскажут о своих традициях на День Святого Валентина.</annotation>

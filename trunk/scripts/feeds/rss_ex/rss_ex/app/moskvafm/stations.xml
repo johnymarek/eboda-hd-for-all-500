@@ -22,32 +22,7 @@
 -->
 
 <onEnter>
-  translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
-  cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
-  if(cgiconf != null)
-  {
-    value = getStringArrayAt(cgiconf, 0);
-    if(value != null &amp;&amp; value != "")
-    {
-      translate_base_url = value;
-      print("cgi.conf=",value);
-    }
-  }
-
-  screenXp = 4;
-  screenYp = 3;
-  rssconf = readStringFromFile("/usr/local/etc/translate/etc/rss.conf");
-  print("rssconf:",rssconf);
-  if(rssconf != null)
-  {
-    value = getStringArrayAt(rssconf, 0);
-    if(value != null &amp;&amp; value != "")
-      screenXp = Integer(value);
-    value = getStringArrayAt(rssconf, 1);
-    if(value != null &amp;&amp; value != "")
-      screenYp = Integer(value);
-  }
-  print("rssconf:",screenXp,screenYp);
+  <!--`cat "$BASEPATH/app/include/rssconf.script"`-->
 
   storagePath             = getStoragePath("tmp");
   storagePath_stream      = storagePath + "stream.dat";
@@ -66,8 +41,11 @@
   if(startitem == "middle")
     setFocusItemIndex(middleItem);
   else
-  if(startitem == "right")
+  if(startitem == "last")
     setFocusItemIndex(middleItem);
+  else
+  if(startitem &gt; 0 &amp;&amp; startitem &lt;= itemCount)
+    setFocusItemIndex(startitem-1);
   redrawDisplay();
 </onRefresh>
 
@@ -234,7 +212,7 @@
       print("*** majorContext=",majorContext);
       print("*** userInput=",userInput);
       
-      if(userInput == "enter")
+      if(userInput == "enter" || userInput == "ENTR")
       {
         showIdle();
         focus = getFocusItemIndex();

@@ -21,56 +21,10 @@
 #
 -->
 
-<sub_createOutlineLink>
-  if(opmlType == "link")
-  {
-    currentLink = translate_base_url+"app,Link:"+urlEncode(opmlUrl)+",radiotime/outline";
-  }
-  else
-  if(opmlType == "")
-  {
-    if(opmlKey != "")
-    {
-      currentLink = translate_base_url+"app,Key:"+urlEncode(opmlKey)+";Link:"+urlEncode(opmlUrl)+",radiotime/outline";
-    }
-    else
-    if(opmlText != "")
-    {
-      currentLink = translate_base_url+"app,Text:"+urlEncode(opmlText)+";Link:"+urlEncode(opmlUrl)+",radiotime/outline";
-    }
-  }
-  currentTitle = opmlText;
-</sub_createOutlineLink>
-
 <onEnter>
 <!--`cat "$INITSCRIPT"`-->
 
-  translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
-  cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
-  if(cgiconf != null)
-  {
-    value = getStringArrayAt(cgiconf, 0);
-    if(value != null &amp;&amp; value != "")
-    {
-      translate_base_url = value;
-      print("cgi.conf=",value);
-    }
-  }
-
-  screenXp = 4;
-  screenYp = 3;
-  rssconf = readStringFromFile("/usr/local/etc/translate/etc/rss.conf");
-  print("rssconf:",rssconf);
-  if(rssconf != null)
-  {
-    value = getStringArrayAt(rssconf, 0);
-    if(value != null &amp;&amp; value != "")
-      screenXp = Integer(value);
-    value = getStringArrayAt(rssconf, 1);
-    if(value != null &amp;&amp; value != "")
-      screenYp = Integer(value);
-  }
-  print("rssconf:",screenXp,screenYp);
+  <!--`cat "$BASEPATH/app/include/rssconf.script"`-->
 
   storagePath             = getStoragePath("tmp");
   storagePath_stream      = storagePath + "stream.dat";
@@ -93,6 +47,27 @@
   history = -1;
   executeScript("sub_refreshList");
 </onEnter>
+
+<sub_createOutlineLink>
+  if(opmlType == "link")
+  {
+    currentLink = translate_base_url+"app,Link:"+urlEncode(opmlUrl)+",radiotime/outline";
+  }
+  else
+  if(opmlType == "")
+  {
+    if(opmlKey != "")
+    {
+      currentLink = translate_base_url+"app,Key:"+urlEncode(opmlKey)+";Link:"+urlEncode(opmlUrl)+",radiotime/outline";
+    }
+    else
+    if(opmlText != "")
+    {
+      currentLink = translate_base_url+"app,Text:"+urlEncode(opmlText)+";Link:"+urlEncode(opmlUrl)+",radiotime/outline";
+    }
+  }
+  currentTitle = opmlText;
+</sub_createOutlineLink>
 
 <sub_refreshList>
   print("sub_refreshList start");
@@ -225,11 +200,11 @@
     <script>
     ret = "false";
     userInput = currentUserInput();
-    if(userInput == "right")
+    if(userInput == "right" || userInput == "R")
     {
       ret = "true";
     }
-    else if (userInput == "return" || userInput == "left")
+    else if (userInput == "return" || userInput == "left" || userInput == "L" || userInput == "RET")
     {
       if(history &gt;= 0)
       {
@@ -249,6 +224,27 @@
         ret = "true";
       }
     }
+      else if (userInput == "pagedown" || userInput == "pageup" || userInput == "PD" || userInput == "PG")
+      {
+        itemSize = getPageInfo("itemCount");
+        idx = Integer(getFocusItemIndex());
+        if (userInput == "pagedown")
+        {
+          idx -= -5;
+          if(idx &gt;= itemSize)
+            idx = itemSize-1;
+        }
+        else
+        {
+          idx -= 5;
+          if(idx &lt; 0)
+            idx = 0;
+        }
+        setFocusItemIndex(idx);
+        setItemFocus(idx);
+        redrawDisplay();
+        ret = "true";
+      }
     ret;
     </script>
     </onUserInput>

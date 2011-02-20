@@ -35,6 +35,7 @@ if [ -f "$OPML" ]; then
   fi
 
   (
+    export BASEPATH;
     export CHANNELFILE;
     template2rss index.xml | printContent "application/rss+xml"
     rm -f "$CHANNELFILE"

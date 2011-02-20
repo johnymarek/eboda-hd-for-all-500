@@ -4,6 +4,12 @@
   <image>../etc/translate/rss/image/tvigle.png</image>
   <trackList>
 <track>
+  <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2167,tvigle/multi</link>
+  <title>Город Хищниц</title>
+  <annotation>Комедийный сериал о жизни сорокалетней женщины после развода.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2167/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2151,tvigle/multi</link>
   <title>Отчаянные домохозяйки. Первый сезон</title>
   <annotation>Первый сезон многосерийной комедийной драмы о жизни подруг-домохозяек, проживающих на улице Вистерия-Лэйн в выдуманном американском городе Фэйрвью.</annotation>
@@ -16,9 +22,15 @@
   <image>http://photo.tvigle.ru/resource/rf/cnl/2158/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>
+  <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2171,tvigle/multi</link>
+  <title>Отчаянные домохозяйки. Третий сезон</title>
+  <annotation>Третий сезон многосерийной комедийной драмы о жизни подруг-домохозяек, проживающих на улице Вистерия-Лэйн в выдуманном американском городе Фэйрвью.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2171/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2162,tvigle/multi</link>
   <title>Атлантида</title>
-  <annotation>Любая семья   это маленькая страна, загадочная и непознанная Атлантида...</annotation>
+  <annotation>Любая семья это маленькая страна, загадочная и непознанная Атлантида...</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/2162/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>
@@ -28,16 +40,77 @@
   <image>http://photo.tvigle.ru/resource/rf/cnl/2103/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>
+  <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2091,tvigle/multi</link>
+  <title>Пелагия и белый бульдог</title>
+  <annotation>Фильм по бестселлеру Бориса Акунина о приключениях сыщицы-монахини Пелагии.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2091/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2165,tvigle/multi</link>
+  <title>Дурдом</title>
+  <annotation>В бывшей усадьбе графа Макарова, где располагается нынче больница, произошло убийство...</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2165/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2176,tvigle/multi</link>
+  <title>Евлампия Романова. Следствие ведет дилетант</title>
+  <annotation>Детективный сериал по одноименной серии романов Yesрьи Донцовой о приключениях Евлампии Романовой.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2176/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2177,tvigle/multi</link>
+  <title>Иван Подушкин: Джентльмен сыска</title>
+  <annotation>Иван Подушкин - личный секретарь пожилой миллионерши, вообразившей себя Ниро Вульфом. И бедный Подушкин вынужден стать ее Арчи Гудвином.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2177/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2178,tvigle/multi</link>
+  <title>Молоды и счастливы</title>
+  <annotation>Приключения молодой и талантливой провинциалки в Москве.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2178/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2181,tvigle/multi</link>
+  <title>Миф об идеальном мужчине</title>
+  <annotation>Детективная история по мотивам романа Татьяны Устиновой.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2181/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track>
+<track>
+  <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2182,tvigle/multi</link>
+  <title>Новый русский романс</title>
+  <annotation>Фильм о взрослой любви.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2182/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:1828,tvigle/multi</link>
   <title>Вся правда о Еве</title>
   <annotation>Новый модный интернет сериал в духе черной комедии, снятый специально для женщин.</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/1828/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>
+  <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2166,tvigle/multi</link>
+  <title>Умножающий печаль</title>
+  <annotation>Экранизация криминального романа Георгия Вайнера.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2166/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2164,tvigle/multi</link>
+  <title>Вербное воскресенье</title>
+  <annotation>Это история о взаимоотношениях тоталитарной власти и простого человека, о правде и торжестве справедливости.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2164/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:1685,tvigle/multi</link>
   <title>Тридцатилетние</title>
   <annotation>Жизнь поколения 30-летних в историях из жизни четырех семейных пар и их друзей.</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/1685/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2163,tvigle/multi</link>
+  <title>Личное дело капитана Рюмина</title>
+  <annotation>Дело, которым занимается капитан Рюмин, станет его личным делом. Ведь фигурантами окажутся не только близкие ему люди, но и он сам.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2163/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2082,tvigle/multi</link>
@@ -54,13 +127,13 @@
 </track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:1684,tvigle/multi</link>
   <title>Люди Шпака</title>
-  <annotation>Команда Шпакова   или Шпака, как все называют этого добродушного толстяка, это команда милиционеров-неудачников. Они неминуемо проваливают любую операцию.</annotation>
+  <annotation>Команда Шпакова или Шпака, как все называют этого добродушного толстяка, это команда милиционеров-неудачников. Они неминуемо проваливают любую операцию.</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/1684/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2003,tvigle/multi</link>
   <title>Мастер и Маргарита</title>
-  <annotation>Экранизация романа Михаила Афанасьевича Булгакова  Мастер и Маргарита .</annotation>
+  <annotation>Экранизация романа Михаила Афанасьевича Булгакова Мастер и Маргарита .</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/2003/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>
@@ -75,7 +148,8 @@
   <annotation>В начале войны немцы забрасывают в СССР своего диверсанта. Шпион попадает в руки НКВД. При попытке побега диверсант погибает. Чтобы найти остальных шпионов, участвующих в операции, чекистам приходится обратиться к брату-близнецу преступника.</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/1858/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
-</track><track>
+</track>
+<track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2006,tvigle/multi</link>
   <title>Ермоловы</title>
   <annotation>Тяжкое проклятие несчастливой любви долгие годы висит над родом Ермоловых. Вслед за несколькими поколениями своих предков, настало время испытать этот тяжелый рок бизнесмену Сергею.</annotation>
@@ -93,8 +167,7 @@
   <annotation>1941 год. Павел Жилин попадает на службу в погранвойска незадолго перед гитлеровским нашествием.</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/1859/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
-</track>
-<track>
+</track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2009,tvigle/multi</link>
   <title>Офицеры</title>
   <annotation>Их отцы и деды сражались в гражданскую войну, воевали в Испании, прошли Великую Отечественную. На долю их потомков выпала служба в Афганистане.</annotation>
@@ -109,7 +182,7 @@
 </track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2004,tvigle/multi</link>
   <title>Большая прогулка</title>
-  <annotation>Талантливый работник телевидения Яна мечтает сделать собственную программу. Но прежде чем продюсеры позволят ей осуществить мечту, Яне необходимо  засветиться  на голубом экране.</annotation>
+  <annotation>Талантливый работник телевидения Яна мечтает сделать собственную программу. Но прежде чем продюсеры позволят ей осуществить мечту, Яне необходимо засветиться на голубом экране.</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/2004/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>
@@ -133,7 +206,7 @@
 </track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:1861,tvigle/multi</link>
   <title>Ликвидация</title>
-  <annotation>Лето 1946 года. Маршал Жуков в опале. Он отправлен в ссылку в Одессу, где банда  Степные волки  грабит военные склады, а всем заправляет немецкий шпион  Академик , которого никто не знает в лицо. И только начальник угрозыска Давид Гоцман и Георгий Жуков могут спасти город.</annotation>
+  <annotation>Лето 1946 года. Маршал Жуков в опале. Он отправлен в ссылку в Одессу, где банда Степные волки грабит военные склады, а всем заправляет немецкий шпион Академик , которого никто не знает в лицо. И только начальник угрозыска Yesвид Гоцман и Георгий Жуков могут спасти город.</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/1861/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>

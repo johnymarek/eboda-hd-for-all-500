@@ -36,7 +36,7 @@ if echo "${arg_url}" | grep -q -s '\(www\.\)*vimeo\.com.*/\(moogaloop.swf?clip_i
   local hdc=
   
   get_opt "HD"
-  [ -z "$opt" ] && opt=`sed -n '4p' $RSSCONF 2>/dev/null`
+  [ -z "$opt" ] && opt=`sed -n '5p' $RSSCONF 2>/dev/null`
   [ -z "$opt" ] && opt=$VIMEO_HD
   case $opt in
     yes|Yes|YES|1)

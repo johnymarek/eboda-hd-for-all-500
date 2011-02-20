@@ -12,7 +12,7 @@
 </track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2065,tvigle/multi</link>
   <title>30 секунд о...</title>
-  <annotation>Persona Grata:  Я расскажу о мире за 30 секунд! </annotation>
+  <annotation>Persona Grata: Я расскажу о мире за 30 секунд!</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/2065/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>
@@ -24,7 +24,7 @@
 </track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2067,tvigle/multi</link>
   <title>Свои тараканы</title>
-  <annotation>Persona Grata:  Если бы все тараканы в моей голове превратились в светлячков, то я был бы лампочкой! </annotation>
+  <annotation>Persona Grata: Если бы все тараканы в моей голове превратились в светлячков, то я был бы лампочкой!</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/2067/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>
@@ -75,10 +75,11 @@
   <annotation>Новости сети в игровой форме.</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/1511/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
-</track><track>
+</track>
+<track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:1392,tvigle/multi</link>
   <title>ЖТВ</title>
-  <annotation>ЖТВ    В закладки!</annotation>
+  <annotation>ЖТВ В закладки!</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/1392/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>
@@ -93,8 +94,7 @@
   <annotation>Проект Льва Новоженова.</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/1092/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
-</track>
-<track>
+</track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:60,tvigle/multi</link>
   <title>Cheneration 90</title>
   <annotation>Лихие 90 е вспоминает Роман Керимов.</annotation>
@@ -103,7 +103,7 @@
 </track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2002,tvigle/multi</link>
   <title>Internet. Измени сознание</title>
-  <annotation>Видеоблог V международной конференции  Internet. Измени сознание . В Пекине с  26 по 30 мая 2010 года были замечены все создатели последних трендов в области интернет-рекламы. Что они все здесь делали? Мы покажем!</annotation>
+  <annotation>Видеоблог V международной конференции Internet. Измени сознание . В Пекине с 26 по 30 мая 2010 года были замечены все создатели последних трендов в области интернет-рекламы. Что они все здесь делали? Мы покажем!</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/2002/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>
@@ -121,7 +121,7 @@
 </track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:1359,tvigle/multi</link>
   <title>A ONE. Большая рыба</title>
-  <annotation> Большая рыба  с Юрием Грымовым.</annotation>
+  <annotation>Большая рыба с Юрием Грымовым.</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/1359/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>

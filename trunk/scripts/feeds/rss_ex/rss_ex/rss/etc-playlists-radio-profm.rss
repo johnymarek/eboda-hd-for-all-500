@@ -22,32 +22,25 @@
 -->
 
 <onEnter>
-  translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
-  cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
-  if(cgiconf != null)
-  {
-    value = getStringArrayAt(cgiconf, 0);
-    if(value != null &amp;&amp; value != "")
-    {
-      translate_base_url = value;
-      print("cgi.conf=",value);
-    }
-  }
-
+    translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
   screenXp = 4;
   screenYp = 3;
-  rssconf = readStringFromFile("/usr/local/etc/translate/etc/rss.conf");
+  rssconf = readStringFromFile(getStoragePath("key")+"translate.dat");
   print("rssconf:",rssconf);
   if(rssconf != null)
   {
     value = getStringArrayAt(rssconf, 0);
     if(value != null &amp;&amp; value != "")
-      screenXp = Integer(value);
+      translate_base_url = value;
     value = getStringArrayAt(rssconf, 1);
+    if(value != null &amp;&amp; value != "")
+      screenXp = Integer(value);
+    value = getStringArrayAt(rssconf, 2);
     if(value != null &amp;&amp; value != "")
       screenYp = Integer(value);
   }
-  print("rssconf:",screenXp,screenYp);
+  print("rssconf:",translate_base_url,screenXp,screenYp);
+
 
   storagePath             = getStoragePath("tmp");
   storagePath_stream      = storagePath + "stream.dat";
@@ -55,7 +48,7 @@
     
   error_info          = "";
 
-    startitem = "middle";
+    startitem = "";
 		
 </onEnter>
 
@@ -70,8 +63,11 @@
   if(startitem == "middle")
     setFocusItemIndex(middleItem);
   else
-  if(startitem == "right")
-    setFocusItemIndex(middleItem);
+  if(startitem == "last")
+    setFocusItemIndex(itemCount);
+  else
+  if(startitem &gt; 0 &amp;&amp; startitem &lt;= itemCount)
+    setFocusItemIndex(startitem-1);
   redrawDisplay();
 </onRefresh>
 
@@ -201,7 +197,7 @@
       print("*** majorContext=",majorContext);
       print("*** userInput=",userInput);
       
-      if(userInput == "enter")
+      if(userInput == "enter" || userInput == "ENTR")
       {
         showIdle();
         focus = getFocusItemIndex();
@@ -258,6 +254,31 @@
         }
         
         cancelIdle();
+        ret = "true";
+      }
+      else if(userInput == "right" || userInput == "R") 
+      {
+        ret = "true";
+      }
+      else if (userInput == "pagedown" || userInput == "pageup" || userInput == "PD" || userInput == "PG")
+      {
+        itemSize = getPageInfo("itemCount");
+        idx = Integer(getFocusItemIndex());
+        if (userInput == "pagedown")
+        {
+          idx -= -8;
+          if(idx &gt;= itemSize)
+            idx = itemSize-1;
+        }
+        else
+        {
+          idx -= 8;
+          if(idx &lt; 0)
+            idx = 0;
+        }
+        setFocusItemIndex(idx);
+        setItemFocus(idx);
+        redrawDisplay();
         ret = "true";
       }
 
@@ -457,7 +478,7 @@
   </script><channel>
   <title>ProFM</title>
   <item>
-    <link>http://stream.profm.ro:8012/profm.mp3</link>
+    <location>http://stream.profm.ro:8012/profm.mp3</location>
     <title>ProFM</title>
     <image>http://storage0.dms.mpinteractiv.ro/media/1/641/8218/2444770/2/logo-profm.png</image>
     <stream_url>http://stream.profm.ro:8012/profm.mp3</stream_url>
@@ -470,7 +491,7 @@
     <stream_bitrate>128</stream_bitrate>
   </item>
   <item>
-    <link>http://stream.profm.ro:8032/dancefm.mp3</link>
+    <location>http://stream.profm.ro:8032/dancefm.mp3</location>
     <title>ProFM Dance</title>
     <image>http://storage0.dms.mpinteractiv.ro/media/1/641/8218/2434348/2/profm-dance.png</image>
     <stream_url>http://stream.profm.ro:8032/dancefm.mp3</stream_url>
@@ -483,7 +504,7 @@
     <stream_bitrate>128</stream_bitrate>
   </item>
   <item>
-    <link>http://stream.profm.ro:8349/profmdiverse.mp3</link>
+    <location>http://stream.profm.ro:8349/profmdiverse.mp3</location>
     <title>ProFM Guns'n'Roses</title>
     <image/>
     <stream_url>http://stream.profm.ro:8349/profmdiverse.mp3</stream_url>
@@ -496,7 +517,7 @@
     <stream_bitrate>128</stream_bitrate>
   </item>
   <item>
-    <link>http://stream.profm.ro:8332/profmrogen.mp3</link>
+    <location>http://stream.profm.ro:8332/profmrogen.mp3</location>
     <title>ProFM Romania, Gen</title>
     <image>http://web3.protv.ro/assets/infopro/profm_gen.png</image>
     <stream_url>http://stream.profm.ro:8332/profmrogen.mp3</stream_url>
@@ -509,7 +530,7 @@
     <stream_bitrate>128</stream_bitrate>
   </item>
   <item>
-    <link>http://stream.profm.ro:8360/profmmichaeljackson.mp3</link>
+    <location>http://stream.profm.ro:8360/profmmichaeljackson.mp3</location>
     <title>ProFM Michael Jackson</title>
     <image>http://web3.protv.ro/assets/infopro/profm-mj.png</image>
     <stream_url>http://stream.profm.ro:8360/profmmichaeljackson.mp3</stream_url>
@@ -522,7 +543,7 @@
     <stream_bitrate>128</stream_bitrate>
   </item>
   <item>
-    <link>http://stream.profm.ro:8042/alternativ.mp3</link>
+    <location>http://stream.profm.ro:8042/alternativ.mp3</location>
     <title>ProFM Alternative</title>
     <image>http://storage0.dms.mpinteractiv.ro/media/1/641/8218/2434346/2/logo-profm-alternative-final.png</image>
     <stream_url>http://stream.profm.ro:8042/alternativ.mp3</stream_url>
@@ -535,7 +556,7 @@
     <stream_bitrate>128</stream_bitrate>
   </item>
   <item>
-    <link>http://stream.profm.ro:8052/black.mp3</link>
+    <location>http://stream.profm.ro:8052/black.mp3</location>
     <title>ProFM Black</title>
     <image>http://storage0.dms.mpinteractiv.ro/media/1/641/8218/2434349/2/logo-profm-black-final.png</image>
     <stream_url>http://stream.profm.ro:8052/black.mp3</stream_url>
@@ -548,7 +569,7 @@
     <stream_bitrate>128</stream_bitrate>
   </item>
   <item>
-    <link>http://stream.profm.ro:8082/clasic.mp3</link>
+    <location>http://stream.profm.ro:8082/clasic.mp3</location>
     <title>ProFM Classic</title>
     <image>http://storage0.dms.mpinteractiv.ro/media/1/641/8218/2753564/2/logo-profm-classic.png</image>
     <stream_url>http://stream.profm.ro:8082/clasic.mp3</stream_url>
@@ -561,7 +582,7 @@
     <stream_bitrate>128</stream_bitrate>
   </item>
   <item>
-    <link>http://stream.profm.ro:8112/gold.mp3</link>
+    <location>http://stream.profm.ro:8112/gold.mp3</location>
     <title>ProFM Gold</title>
     <image>http://storage0.dms.mpinteractiv.ro/media/1/641/8218/2434351/2/logo-profm-gold-final.png</image>
     <stream_url>http://stream.profm.ro:8112/gold.mp3</stream_url>
@@ -574,7 +595,7 @@
     <stream_bitrate>128</stream_bitrate>
   </item>
   <item>
-    <link>http://stream.profm.ro:8062/reggae.mp3</link>
+    <location>http://stream.profm.ro:8062/reggae.mp3</location>
     <title>ProFM Reggae</title>
     <image>http://storage0.dms.mpinteractiv.ro/media/1/641/8218/3200387/2/logo-profm-reggae.png</image>
     <stream_url>http://stream.profm.ro:8062/reggae.mp3</stream_url>
@@ -587,7 +608,7 @@
     <stream_bitrate>128</stream_bitrate>
   </item>
   <item>
-    <link>http://stream.profm.ro:8122/80s.mp3</link>
+    <location>http://stream.profm.ro:8122/80s.mp3</location>
     <title>ProFM `80s</title>
     <image>http://storage0.dms.mpinteractiv.ro/media/1/641/8218/3232556/2/logo-profm-80s.png</image>
     <stream_url>http://stream.profm.ro:8122/80s.mp3</stream_url>
@@ -600,7 +621,7 @@
     <stream_bitrate>128</stream_bitrate>
   </item>
   <item>
-    <link>http://stream.profm.ro:8092/90s.mp3</link>
+    <location>http://stream.profm.ro:8092/90s.mp3</location>
     <title>ProFM `90s</title>
     <image>http://storage0.dms.mpinteractiv.ro/media/1/641/8218/2782751/2/logo-profm-90s.png</image>
     <stream_url>http://stream.profm.ro:8092/90s.mp3</stream_url>
@@ -613,7 +634,7 @@
     <stream_bitrate>128</stream_bitrate>
   </item>
   <item>
-    <link>http://stream.profm.ro:8072/love.mp3</link>
+    <location>http://stream.profm.ro:8072/love.mp3</location>
     <title>ProFM Love</title>
     <image>http://storage0.dms.mpinteractiv.ro/media/1/641/8218/2545543/2/logo-profm-love.png</image>
     <stream_url>http://stream.profm.ro:8072/love.mp3</stream_url>
@@ -626,7 +647,7 @@
     <stream_bitrate>128</stream_bitrate>
   </item>
   <item>
-    <link>http://stream.profm.ro:8132/sofa.mp3</link>
+    <location>http://stream.profm.ro:8132/sofa.mp3</location>
     <title>ProFM Sofa</title>
     <image>http://storage0.dms.mpinteractiv.ro/media/1/641/8218/3247041/2/logo-profm-sofa.png</image>
     <stream_url>http://stream.profm.ro:8132/sofa.mp3</stream_url>
@@ -639,7 +660,7 @@
     <stream_bitrate>128</stream_bitrate>
   </item>
   <item>
-    <link>http://stream.profm.ro:8142/rock.mp3</link>
+    <location>http://stream.profm.ro:8142/rock.mp3</location>
     <title>ProFM Rock</title>
     <image>http://storage0.dms.mpinteractiv.ro/media/1/641/8218/3386952/2/logo-profm-rock.png</image>
     <stream_url>http://stream.profm.ro:8142/rock.mp3</stream_url>
@@ -652,7 +673,7 @@
     <stream_bitrate>128</stream_bitrate>
   </item>
   <item>
-    <link>http://stream.profm.ro:8152/blues.mp3</link>
+    <location>http://stream.profm.ro:8152/blues.mp3</location>
     <title>ProFM Rhythm&amp;Blues</title>
     <image>http://storage0.dms.mpinteractiv.ro/media/1/641/8218/2434353/1/logo-profm-rhythm-blues.png</image>
     <stream_url>http://stream.profm.ro:8152/blues.mp3</stream_url>
@@ -665,7 +686,7 @@
     <stream_bitrate>128</stream_bitrate>
   </item>
   <item>
-    <link>http://stream.profm.ro:8162/latino.mp3</link>
+    <location>http://stream.profm.ro:8162/latino.mp3</location>
     <title>ProFM Latino</title>
     <image>http://storage0.dms.mpinteractiv.ro/media/1/641/8218/3666212/1/profm-latino.png</image>
     <stream_url>http://stream.profm.ro:8162/latino.mp3</stream_url>
@@ -678,7 +699,7 @@
     <stream_bitrate>128</stream_bitrate>
   </item>
   <item>
-    <link>http://stream.profm.ro:8212/jazz.mp3</link>
+    <location>http://stream.profm.ro:8212/jazz.mp3</location>
     <title>ProFM Jazz</title>
     <image>http://web3.protv.ro/assets/infopro/profm-jazz.png</image>
     <stream_url>http://stream.profm.ro:8212/jazz.mp3</stream_url>
@@ -691,7 +712,7 @@
     <stream_bitrate>128</stream_bitrate>
   </item>
   <item>
-    <link>http://stream.profm.ro:8222/oldies.mp3</link>
+    <location>http://stream.profm.ro:8222/oldies.mp3</location>
     <title>ProFM Oldies</title>
     <image>http://web3.protv.ro/assets/infopro/profm-oldies.png</image>
     <stream_url>http://stream.profm.ro:8222/oldies.mp3</stream_url>
@@ -704,7 +725,7 @@
     <stream_bitrate>128</stream_bitrate>
   </item>
   <item>
-    <link>http://stream.profm.ro:8232/chillout.mp3</link>
+    <location>http://stream.profm.ro:8232/chillout.mp3</location>
     <title>ProFM ChillOut</title>
     <image>http://web3.protv.ro/assets/infopro/profm-chill.png</image>
     <stream_url>http://stream.profm.ro:8232/chillout.mp3</stream_url>
@@ -717,7 +738,7 @@
     <stream_bitrate>128</stream_bitrate>
   </item>
   <item>
-    <link>http://stream.profm.ro:8242/profmro.mp3</link>
+    <location>http://stream.profm.ro:8242/profmro.mp3</location>
     <title>ProFM RO</title>
     <image>http://web3.protv.ro/assets/infopro/profm-ro.png</image>
     <stream_url>http://stream.profm.ro:8242/profmro.mp3</stream_url>
@@ -730,7 +751,7 @@
     <stream_bitrate>128</stream_bitrate>
   </item>
   <item>
-    <link>http://stream.profm.ro:8252/hot.mp3</link>
+    <location>http://stream.profm.ro:8252/hot.mp3</location>
     <title>ProFM HOT</title>
     <image>http://web3.protv.ro/assets/infopro/profm-hot.png</image>
     <stream_url>http://stream.profm.ro:8252/hot.mp3</stream_url>
@@ -743,7 +764,7 @@
     <stream_bitrate>128</stream_bitrate>
   </item>
   <item>
-    <link>http://stream.profm.ro:8312/house.mp3</link>
+    <location>http://stream.profm.ro:8312/house.mp3</location>
     <title>ProFM HOUSE</title>
     <image>http://www.profm.ro/images/profm-house.png</image>
     <stream_url>http://stream.profm.ro:8312/house.mp3</stream_url>
@@ -756,7 +777,7 @@
     <stream_bitrate>128</stream_bitrate>
   </item>
   <item>
-    <link>http://stream.profm.ro:8322/classicrock.mp3</link>
+    <location>http://stream.profm.ro:8322/classicrock.mp3</location>
     <title>ProFM Classic Rock</title>
     <image>http://www.profm.ro/images/profm-classicrock.png</image>
     <stream_url>http://stream.profm.ro:8322/classicrock.mp3</stream_url>
@@ -769,7 +790,7 @@
     <stream_bitrate>128</stream_bitrate>
   </item>
   <item>
-    <link>http://stream.profm.ro:8410/campus.mp3</link>
+    <location>http://stream.profm.ro:8410/campus.mp3</location>
     <title>ProFM Campus Bucuresti</title>
     <image/>
     <stream_url>http://stream.profm.ro:8410/campus.mp3</stream_url>
@@ -782,7 +803,7 @@
     <stream_bitrate>128</stream_bitrate>
   </item>
   <item>
-    <link>http://82.77.127.233:80/campus.mp3</link>
+    <location>http://82.77.127.233:80/campus.mp3</location>
     <title>ProFM Campus Cluj</title>
     <image/>
     <stream_url>http://82.77.127.233:80/campus.mp3</stream_url>
@@ -795,7 +816,7 @@
     <stream_bitrate>128</stream_bitrate>
   </item>
   <item>
-    <link>http://193.226.19.85:80/campus.mp3</link>
+    <location>http://193.226.19.85:80/campus.mp3</location>
     <title>ProFM Campus Tg. Mures</title>
     <image/>
     <stream_url>http://193.226.19.85:80/campus.mp3</stream_url>
@@ -808,7 +829,7 @@
     <stream_bitrate>128</stream_bitrate>
   </item>
   <item>
-    <link>http://stream.profm.ro:8262/kids.mp3</link>
+    <location>http://stream.profm.ro:8262/kids.mp3</location>
     <title>ProFM Kids</title>
     <image>http://web3.protv.ro/assets/infopro/profm-kids.png</image>
     <stream_url>http://stream.profm.ro:8262/kids.mp3</stream_url>
