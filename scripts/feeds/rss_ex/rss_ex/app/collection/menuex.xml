@@ -209,6 +209,7 @@
       
       if(userInput == "down" || userInput == "D")
       {
+          showIdle();
           doModalRSS(translate_base_url+"app,Start:first;File:etc/menu/recent-index.xspf,collection/simplemenu");
           ret = "true";
       }
@@ -295,6 +296,9 @@
 		<link>
 		  <script>getItemInfo(getQueryItemIndex(), "location");</script>
 		</link>
+		<onClick>
+      showIdle();
+		</onClick>
 	</item_template>
 
 

@@ -49,6 +49,7 @@
   forceFocusOnMenu=no
 	showDefaultInfo=yes
 	infoYPC=90
+	fontSize=16
 >
 	<idleImage idleImageYPC="45" idleImageHeightPC="10">../etc/translate/rss/image/POPUP_LOADING_01.png<idleImageWidthPC><script>10 * screenYp / screenXp;</script></idleImageWidthPC><idleImageXPC><script>45 + 10 * (1 - screenYp / screenXp) / 2;</script></idleImageXPC></idleImage>
 	<idleImage idleImageYPC="45" idleImageHeightPC="10">../etc/translate/rss/image/POPUP_LOADING_02.png<idleImageWidthPC><script>10 * screenYp / screenXp;</script></idleImageWidthPC><idleImageXPC><script>45 + 10 * (1 - screenYp / screenXp) / 2;</script></idleImageXPC></idleImage>
@@ -346,16 +347,20 @@
       setRefreshTime(1);
     }
     null;
-  </onClick>
-</submenu>
+   </onClick>
+ </submenu>
+ 
+<search>
+ <mediaDisplay name=photoView />
+</search>
 
-<submenu>
-  <title>Search</title>
-  <onClick>
-		keyword = doModalRss("rss_file://../etc/translate/rss/youtube/key/keyboard.rss");
-	  /* keyword= getInput(); */
-		if (keyword!=null &amp;&amp; keyword!="")
-		{
+ <submenu>
+   <title>Search</title>
+   <onClick>
+		keyword = doModalRss("rss_file://../etc/translate/rss/youtube/key/keyboard.rss","mediaDisplay","search",0);
+ 	  /* keyword= getInput(); */
+ 		if (keyword!=null &amp;&amp; keyword!="")
+ 		{
       history += 1;
       historyUrl = pushBackStringArray(historyUrl, feedUrl);
       historyTitle = pushBackStringArray(historyTitle, pageTitle);
@@ -380,19 +385,12 @@
 
       title = "Search: "+regionKeyword;
       
-      arr = null;
-      arr = pushBackStringArray(arr, url);
-      arr = pushBackStringArray(arr, title);
-      arr = pushBackStringArray(arr, regionKeyword);
-      print("arr=",arr);
-      print("storagePath=",storagePath);
-      
-      writeStringToFile(storagePath, arr);
-      
-      print("******* reInitialize: "+arr);
+      arr = readStringFromFile(storagePath);
+      feedUrl = getStringArrayAt(arr, 0);
+      feedUrl += "orderby=relevance&amp;vq=" + urlEncode(regionKeyword) + "&amp;";
+    
       pageTitle = title;
       
-      feedUrl += "orderby=relevance&amp;vq=" + urlEncode(regionKeyword) + "&amp;";
       print("keyword=",keyword);
       print("feedUrl=",feedUrl);
 

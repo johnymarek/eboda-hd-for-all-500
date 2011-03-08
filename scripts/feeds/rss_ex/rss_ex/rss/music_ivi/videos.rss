@@ -385,7 +385,10 @@ menuPerPage=9
           print(protocol);
           print(soft);
 
-          playItemURL(translateStreamURL, 0);
+          if(protocol == "file" || (protocol == "http" &amp;&amp; soft != "_translate_"))
+            playItemURL(url, 0);
+          else
+            playItemURL(translateStreamURL, 0);
           mode = 0;
           setRefreshTime(1000);
         }

@@ -272,6 +272,10 @@ check_av_stream()
     
     # autodetect stream type
     
+    if echo $buf | grep -qs "FINISHED"; then
+      type=${type:-'application/octet-stream'}
+    fi
+    
     case $protocol in
       http|ftp|file)
         if [ "$protocol" == "http" ]; then
@@ -567,12 +571,13 @@ check_playlist()
 {
   get_opt "Resolve-playlist"
   local resolve=$opt
+  [ "$resolve" == "0" ] && return 0;
   local playlist_file="$TEMP/temp.track"
   arg_url=$stream_url
   command_playlist | sed '1,2d;s/<track>/\n<track>/g;s/></>\n</g' > $playlist_file
   local count=`sed -n '/<track>/p' $playlist_file | sed -n '$='`
   if [ "$count" == "1" -o "$resolve" == "1" ]; then
-    local buf=`awk -f getxml.awk -f getfirstitem.awk "$playlist_file"`
+    local buf=`awk -f getxml.awk -f getfirstitem.awk "$playlist_file" | sed '/^$/d'`
     local location=`echo "$buf" | sed -n '1p'`
     local title=`echo "$buf" | sed -n '2p'`
     local creator=`echo "$buf" | sed -n '3p'`
@@ -777,7 +782,7 @@ command_info()
           	fi
           ;;
           station.ru)
-            meta_current_song=`echo "$host_response" | sed 's/<[^<>]*>//g;s/|/-/'`
+            meta_current_song=`echo "$host_response" | awk '/"Artist"/{match($0, /"Artist":"([^"]+)".*"Song":"([^"]+)"/, arr);print arr[1] " - " arr[2];}'`
           ;;
         esac
       fi
@@ -1232,11 +1237,29 @@ case ${arg_cmd} in
     get_opt "Charset"
     charset=$opt
 
-    [ -z "$stream_type" ] && check_stream
-
+    if [ -z "$stream_type" ]; then
+    	local TIMELIFE=${STREAM_INFO_TIMELIFE:-60}
+		  local CACHEFILE=$CACHEPATH/stream.`echo $arg_url | sed 's/[^0-9a-zA-Z]/_/g'`
+		  local tsttime
+		  let tsttime=`date +%s`-$TIMELIFE
+		  if [ -f $CACHEFILE ]; then
+		    if [ `date +%s -r $CACHEFILE` -gt $tsttime ]; then
+		      stream_url=`sed -ne "1p" $CACHEFILE`
+		      stream_type=`sed -ne "2p" $CACHEFILE`
+		      arg_opt=`sed -ne "3p" $CACHEFILE`
+		    fi
+		  fi
+		  if [ -z "$stream_type" ]; then
+		  	check_stream
+        echo $stream_url > $CACHEFILE
+        echo $stream_type >> $CACHEFILE
+        echo $arg_opt >> $CACHEFILE
+		  fi
+    fi
+    
     echo "Content-type: $stream_type"
     echo
-    if [ "$protocol" == "rtmp" ]; then
+    if echo "$stream_url" | grep -qs "^rtmp"; then
       get_opt "Rtmp-options"
       killall -q $RTMPDUMP 2>&1
       exec nice $RTMPDUMP -q -o - -b 60000 -r "$stream_url" $opt
@@ -1312,7 +1335,7 @@ case ${arg_cmd} in
   ;;
   app/*)
     if [ -f $TRANSLATE/$arg_cmd ]; then
-	. $TRANSLATE/$arg_cmd
+        . $TRANSLATE/$arg_cmd
     fi
   ;;
   scan|*)

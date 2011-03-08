@@ -46,7 +46,7 @@
 	showHeader=no
 menuXPC=7
 menuYPC=15
-menuWidthPC=15
+menuWidthPC=16
 menuHeightPC=8
 menuPerPage=9
     selectMenuOnRight=no
@@ -269,6 +269,34 @@ menuPerPage=9
        setRefreshTime(-1);
        elapsedTime = "";
        playTitle = "";
+       
+       setFocusItemIndex(index);
+       setItemFocus(index);
+       
+       if(repeat == 1)
+       {
+        index -= -1;
+        if(index == itemSize)
+        {
+          index = 0;
+        }
+        if(index != last)
+        {
+         executeScript("play");
+        }
+       }
+       else if(repeat == 2)
+       {
+          if(randomArray != null &amp;&amp; index == getStringArrayAt(randomArray, randomIndex))
+          {
+            randomIndex -= -1;
+            if(randomIndex &lt; itemSize)
+            {
+              index = getStringArrayAt(randomArray, randomIndex);
+              executeScript("play");
+            }
+          }
+       }
        redrawDisplay();
     }
     else
@@ -322,9 +350,15 @@ menuPerPage=9
 		<link>rss_file://../etc/translate/rss/xspf/streamPlayer.rss</link>
 		 -->
     <onClick>
+      repeat = 0;
+      index   = getFocusItemIndex();
+      executeScript("play");
+		</onClick>
+  </item_template>
+
+<play>
       playItemURL(-1, 1);
-      idx   = getFocusItemIndex();
-      url   = getStringArrayAt(urlArray, idx);
+      url   = getStringArrayAt(urlArray, index);
       playTitle = url;
       urlToPlay = translate_base_url+"info,,"+url;
       dlok = loadXMLFile(urlToPlay);
@@ -335,13 +369,16 @@ menuPerPage=9
 
         if(error == 0)
         {
-          historyPath = getStoragePath("key")+"translate.history_video.m3u";
-          historydat = readStringFromFile(historyPath);
-          if(historydat == null)
-            historydat = pushBackStringArray(historydat, "#EXTM3U");
-          historydat = pushBackStringArray(historydat, "#EXTINF:-1,"+getStringArrayAt(titleArray, idx));
-          historydat = pushBackStringArray(historydat, url);
-          writeStringToFile(historyPath, historydat);
+          if(repeat == 0)
+          {
+            historyPath = getStoragePath("key")+"translate.history_video.m3u";
+            historydat = readStringFromFile(historyPath);
+            if(historydat == null)
+              historydat = pushBackStringArray(historydat, "#EXTM3U");
+            historydat = pushBackStringArray(historydat, "#EXTINF:-1,"+getStringArrayAt(titleArray, index));
+            historydat = pushBackStringArray(historydat, url);
+            writeStringToFile(historyPath, historydat);
+          }
 
     	    value = getXMLAttribute("info","stream","type");
     	    if(value != null)
@@ -362,7 +399,7 @@ menuPerPage=9
     	    value = getXMLAttribute("info","stream","protocol");
     	    if(value != null)
     	     protocol = value;
-
+    	     
           translateStreamURL = translate_base_url+"stream,,"+url;
 
           print(translateStreamURL);
@@ -371,19 +408,56 @@ menuPerPage=9
           print(class);
           print(protocol);
           print(soft);
-
-          playItemURL(translateStreamURL, 0);
+          
+          if(protocol == "file" || (protocol == "http" &amp;&amp; soft != "_translate_"))
+            playItemURL(url, 0);
+          else
+            playItemURL(translateStreamURL, 0);
           mode = 0;
-          setRefreshTime(1000);
+          setRefreshTime(100);
         }
         else
         {
          null;
         }
       }
-		</onClick>
-  </item_template>
+</play>
+<submenu>
+ <title>Все</title>
+ <onClick>
+   repeat = 1;
+   index   = getFocusItemIndex();
+   last = index; 
+   executeScript("play");
+   null;
+ </onClick>
+</submenu>
 
+<submenu>
+ <title>Произвольно</title>
+ <onClick>
+    repeat = 2;
+    index   = getFocusItemIndex();
+    dlok = loadXMLFile(translate_base_url+"random,"+itemSize+","+index);
+    if (dlok != null)
+    {
+      randomArray = null;
+    	count = 0;
+    	while(1)
+    	{
+    		value = getXMLText("randomList","item",count);
+  	  	randomArray  = pushBackStringArray(randomArray, value);
+  	  	count += 1;
+  	  	if(count == itemSize)
+  	  	  break;
+    	}
+    }
+    randomIndex = 0;
+    index = getStringArrayAt(randomArray, randomIndex);
+    executeScript("play");
+    null;
+ </onClick>
+</submenu>
 <!--
 <submenu>
  <title>Forward</title>

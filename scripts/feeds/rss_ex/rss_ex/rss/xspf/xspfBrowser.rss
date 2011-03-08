@@ -38,7 +38,6 @@
 	itemBackgroundColor="0:0:0"
 	itemPerPage="10"
   itemGap="0"
-	bottomYPC="90"
 	infoYPC="90"
 	infoXPC="90"
 	backgroundColor="0:0:0"
@@ -97,10 +96,11 @@
     <script>errorInfo;</script>
   </text>
 
-  <text redraw="yes" offsetXPC="0" offsetYPC="84" heightPC="2" fontSize="10" backgroundColor="0:100:155" foregroundColor="0:200:255">
-		<widthPC><script>print(loadingProgress); Integer(loadingProgress);</script></widthPC>
+  <text redraw="yes" offsetXPC="0" offsetYPC="84" heightPC="2" fontSize="10" backgroundColor="0:100:155" foregroundColor="0:100:155">
+    <script>sprintf("%s",loadingProgress);</script>
+		<widthPC><script>print(loadingProgress); loadingProgress;</script></widthPC>
 	</text>
-	
+
   <text redraw="yes" offsetXPC="10" offsetYPC="86" widthPC="10" heightPC="5" fontSize="20" backgroundColor="0:0:0" foregroundColor="100:100:100">
     <script>elapsedTime;</script>
   </text>
@@ -116,6 +116,16 @@
     <script>repeat;</script>
   </text>
 
+  <text redraw="yes" offsetXPC="10" offsetYPC="92" heightPC="2" fontSize="10" backgroundColor="0:100:155" foregroundColor="0:100:155">
+    <script>sprintf("%s",playingProgress);</script>
+		<widthPC><script>print(playingProgress); playingProgress*10/100;</script></widthPC>
+	</text>
+
+  <text redraw="yes" offsetXPC="10" offsetYPC="92.5" heightPC="1" fontSize="10" backgroundColor="0:20:25" foregroundColor="0:20:25">
+    <script>sprintf("%s",playingProgress);</script>
+		<offsetXPC><script>10+playingProgress*10/100;</script></offsetXPC>
+		<widthPC><script>10-playingProgress*10/100;</script></widthPC>
+	</text>
 
 	<itemDisplay>
 		<image offsetXPC="8" offsetYPC="0" widthPC="92" heightPC="100">
@@ -422,6 +432,7 @@
 
   history = -1;
   loadingProgress = 0;
+  playingProgress = 0;
   executeScript("sub_refreshList");
 </onEnter>
 
@@ -435,7 +446,7 @@
 	count=startItem;
 	while(length != 0)
 	{
-	  loadingProgress = Integer(count * 100 / length);
+	  loadingProgress = count * 100 / length;
 	  location = getXMLText("playlist","trackList","track",count,"location");
 		title = getXMLText("playlist","trackList","track",count,"title");
 		if(title == null)
@@ -687,6 +698,10 @@
       protocolArray = null;
       optionArray = null;
       imageArray = null;
+      
+      value = getXMLText("playlist","title");
+      if(currentCommand == "playlist" &amp;&amp; value != null &amp;&amp; value != "")
+        pageTitle = value;
       
   	  if(currentImage == "")
   	  {
@@ -1077,6 +1092,7 @@
   title_2     = "";
   info_2      = "";
   statusCheck = 0;
+  playingProgress = 0;
 </sub_onStop>
 
 <sub_initRandom>
@@ -1111,6 +1127,9 @@
     playbackStatus  = getPlaybackStatus();
     playElapsed     = getStringArrayAt(playbackStatus, 0);
     playStatus      = getStringArrayAt(playbackStatus, 3);
+    playTime        = getStringArrayAt(playbackStatus, 1);
+    if(playTime &gt; 0)
+      playingProgress = playElapsed * 100 / playTime;
   
     print("playbackStatus: ",playbackStatus);
   

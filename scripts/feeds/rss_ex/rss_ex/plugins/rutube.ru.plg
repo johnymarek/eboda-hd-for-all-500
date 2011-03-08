@@ -25,6 +25,7 @@
 #
 # http://rutube.ru/tv/o2tv.html
 # http://rutube.ru/tracks/1088305.html?v=1c21315933044e39fdd57808ac5e3958
+# http://video.rutube.ru/online/2250784.flv
 #
 
 local video_id=
@@ -69,6 +70,12 @@ rutube_video()
 if echo "${arg_url}" | grep -q -s "video\.rutube\.ru/[0-9a-f]*$"; then 
   video_id=`echo "$arg_url" | sed -e 's/.*\///;s/&.*//'`
   rutube_video
+  return $RC_OK
+elif echo "${arg_url}" | grep -q -s "video\.rutube\.ru/online/.*$"; then 
+  video_id=`echo "$arg_url" | sed -e 's/.*online\///;s/\..*$//'`
+  stream_url="http://webcaster.rutube.ru:8000/${video_id}?format=flv"
+  stream_type='video/x-flv'
+  server_type='rutube'
   return $RC_OK
 elif echo "${arg_url}" | grep -q -s "\(www\.\)*rutube\.ru.*[&?]v=[0-9a-f]*$"; then 
   video_id=`echo "$arg_url" | sed -e 's/.*[?&]v=//;s/&.*//'`

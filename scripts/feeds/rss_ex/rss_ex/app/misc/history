@@ -64,6 +64,9 @@ if [ -f "$FILE" ]; then
         url[$0] = 0;
         tit[$0] = title;
       }
+      else if(tit[$0] == "") {
+        tit[$0] = title;
+      }
       if(url[$0] < threshold)
       {
         url[$0]++;

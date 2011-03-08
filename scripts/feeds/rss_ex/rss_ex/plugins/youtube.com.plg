@@ -21,16 +21,17 @@
 # Translate CGI module
 # 'youtube.com' plug-in
 #
-# version: 2.0 09.12.2010 22:42
+# version: 2.2 04.03.2011 6:41
 #
 # http://www.youtube.com/v/JZtcw6GIxTY
 # http://www.youtube.com/watch?v=JZtcw6GIxTY
+# http://m.youtube.com/watch?gl=RU&client=mv-google&hl=ru&v=V-_YxX94cQ8
 #
 # options:
 #   HD:[0|1]
 
 
-if echo "${arg_url}" | grep -qs '\(www\.\)*youtube\.com/\(v/\|watch?\).*$'; then 
+if echo "${arg_url}" | grep -qs 'youtube\.com.*\(/v/\|/watch?\).*$'; then 
 
   local TIMELIFE=60
   
@@ -66,7 +67,8 @@ if echo "${arg_url}" | grep -qs '\(www\.\)*youtube\.com/\(v/\|watch?\).*$'; then
   if [ -z "$fmt_url_map" ]; then   
       host_response=`$MSDL -q -o ${TMPFILE} -p http --useragent "${USERAGENT}" http://www.youtube.com/watch?v=$video_id 2>&1`
       if [ -f ${TMPFILE} ]; then
-        fmt_url_map=`grep -i 'clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' ${TMPFILE} | awk '{match($0, /&fmt_url_map=([^&]*)&/, arr);print arr[1];}' | urldecode`
+        fmt_url_map=`grep -i 'fmt_url_map=' ${TMPFILE} | sed '1p'`
+        fmt_url_map=`unescapeXML "$fmt_url_map" | awk '{match($0, /&fmt_url_map=([^&]*)&/, arr);print arr[1];}' | urldecode`
         hd_param=`sed -ne "/'IS_HD_AVAILABLE': /p" ${TMPFILE} | sed -e "s/.*'IS_HD_AVAILABLE': //;s/,.*//"`
         icy_name=`grep 'meta name="title"' ${TMPFILE} | sed 's/.*t="//;s/".*//'`
         icy_name=`unescapeXML "$icy_name"`

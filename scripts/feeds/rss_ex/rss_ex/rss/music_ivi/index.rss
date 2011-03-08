@@ -29,13 +29,16 @@
 	headerImageWidthPC="0"
 	headerWidthPC="0"
 	itemXPC="30"
-	itemYPC="28"
+	itemYPC="25"
 	itemWidthPC="40"
 	backgroundColor="0:0:0"
 	showHeader=no
 	showDefaultInfo=yes
 	infoYPC=90
 	fontSize=18
+	imageFocus=""
+	imageUnFocus=""
+	imageParentFocus=""
 >
 	<idleImage idleImageYPC="45" idleImageHeightPC="10">../etc/translate/rss/image/POPUP_LOADING_01.png<idleImageWidthPC><script>10 * screenYp / screenXp;</script></idleImageWidthPC><idleImageXPC><script>45 + 10 * (1 - screenYp / screenXp) / 2;</script></idleImageXPC></idleImage>
 	<idleImage idleImageYPC="45" idleImageHeightPC="10">../etc/translate/rss/image/POPUP_LOADING_02.png<idleImageWidthPC><script>10 * screenYp / screenXp;</script></idleImageWidthPC><idleImageXPC><script>45 + 10 * (1 - screenYp / screenXp) / 2;</script></idleImageXPC></idleImage>
@@ -73,6 +76,13 @@
 			  focus = getFocusItemIndex();
 		    getItemInfo(idx, "title");
 			</script>
+		  <foregroundColor>
+  			<script>
+  			  idx = getQueryItemIndex();
+  			  focus = getFocusItemIndex();
+  		    if(idx==focus) "255:255:255"; else "150:150:150";
+  			</script>
+		  </foregroundColor>
 		  <backgroundColor>
   			<script>
   			  idx = getQueryItemIndex();
@@ -157,6 +167,10 @@
   <item>
    <title>Исполнители</title>
    <link>rss_file://../etc/translate/rss/music_ivi/artists.rss</link>
+  </item>
+  <item>
+   <title>Плейлисты</title>
+   <link>rss_file://../etc/translate/rss/music_ivi/playlists.rss</link>
   </item>
 </channel>
 </rss>

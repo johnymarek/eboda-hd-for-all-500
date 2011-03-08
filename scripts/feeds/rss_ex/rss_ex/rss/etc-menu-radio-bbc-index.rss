@@ -285,6 +285,12 @@
 		
 	</mediaDisplay>
 	
+	<item_template>
+		<onClick>
+      showIdle();
+		</onClick>
+	</item_template>
+
 <script>
     channelImage = "";
   </script><channel>

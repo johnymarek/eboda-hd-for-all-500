@@ -152,6 +152,7 @@
     	}
     	else
     	{
+    	 stream_image = "../etc/translate/rss/image/sound_wave.jpg";
     	 stream_status_url = "_empty_";
     	 track_image = request_image;
     	}
@@ -380,7 +381,13 @@
 	</image>
 
 	<text redraw="yes" offsetXPC="6" offsetYPC="74" widthPC="60" heightPC="5" fontSize="16" backgroundColor="-1:-1:-1" foregroundColor="255:255:150">
-		<script>stream_current_song;</script>
+		<script>
+		  if(stream_current_song != "")
+		    tips = "Press '0' or 'Down' to search related videos on YouTube."; 
+		  else
+		    tips = "";
+		  stream_current_song;
+		</script>
 	</text>
 	<text redraw="yes" offsetXPC="6" offsetYPC="79" widthPC="60" heightPC="5" fontSize="16" backgroundColor="-1:-1:-1" foregroundColor="255:255:255">
 		<script>stream_genre;</script>
@@ -414,6 +421,10 @@
 	</text>
 	<text redraw="yes" offsetXPC="81" offsetYPC="75" widthPC="13" heightPC="10" fontSize="22" backgroundColor="-1:-1:-1" foregroundColor="255:255:255">
 		<script>stream_elapsed;</script>
+	</text>
+
+	<text align="right" redraw="yes" offsetXPC="7" offsetYPC="91" widthPC="86" heightPC="5" fontSize="12" backgroundColor="0:0:0" foregroundColor="150:150:150">
+		<script>tips;</script>
 	</text>
 
 	<onUserInput>

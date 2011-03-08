@@ -325,6 +325,9 @@
 		<link>
 		  <script>getItemInfo(getQueryItemIndex(), "location");</script>
 		</link>
+		<onClick>
+      showIdle();
+		</onClick>
 	</item_template>
 
 

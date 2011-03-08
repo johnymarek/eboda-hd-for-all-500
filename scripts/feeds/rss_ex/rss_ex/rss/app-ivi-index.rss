@@ -41,6 +41,9 @@
 	showHeader="no"
 	showDefaultInfo="no"
 	sliding="yes"
+	imageFocus=""
+	imageUnFocus=""
+	imageParentFocus=""
 >
 
 	<idleImage idleImageYPC="45" idleImageHeightPC="10">../etc/translate/rss/image/POPUP_LOADING_01.png<idleImageWidthPC><script>10 * screenYp / screenXp;</script></idleImageWidthPC><idleImageXPC><script>45 + 10 * (1 - screenYp / screenXp) / 2;</script></idleImageXPC></idleImage>
@@ -81,6 +84,13 @@
 			  focus = getFocusItemIndex();
 		    getItemInfo(idx, "title");
 			</script>
+		  <foregroundColor>
+  			<script>
+  			  idx = getQueryItemIndex();
+  			  focus = getFocusItemIndex();
+  		    if(idx==focus) "255:255:255"; else "150:150:150";
+  			</script>
+		  </foregroundColor>
 		  <backgroundColor>
   			<script>
   			  idx = getQueryItemIndex();

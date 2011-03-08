@@ -8,42 +8,42 @@
          <title>OneHD - Live! Concert</title>
          <image>../etc/translate/rss/image/menu/internettv.png</image>
          <location>http://live.1hd.ro/playlist.php</location>
-         <meta rel="autoplay">0</meta>
+         <meta rel="autoplay">1</meta>
       </track>
       <track>
          <annotation>Jazz</annotation>
          <title>OneHD - Live! Jazz</title>
          <image>../etc/translate/rss/image/menu/internettv.png</image>
          <location>http://live.1hd.ro/playlistj.php</location>
-         <meta rel="autoplay">0</meta>
+         <meta rel="autoplay">1</meta>
       </track>
       <track>
          <annotation>Classics</annotation>
          <title>OneHD - Live! Classics</title>
          <image>../etc/translate/rss/image/menu/internettv.png</image>
          <location>http://live.1hd.ro/playlistc.php</location>
-         <meta rel="autoplay">0</meta>
+         <meta rel="autoplay">1</meta>
       </track>
       <track>
          <annotation>Dance</annotation>
          <title>OneHD - Live! Dance</title>
          <image>../etc/translate/rss/image/menu/internettv.png</image>
          <location>http://live.1hd.ro/playlistd.php</location>
-         <meta rel="autoplay">0</meta>
+         <meta rel="autoplay">1</meta>
       </track>
       <track>
          <annotation>Rock</annotation>
          <title>OneHD - Live! Rock</title>
          <image>../etc/translate/rss/image/menu/internettv.png</image>
          <location>http://live.1hd.ro/playlistr.php</location>
-         <meta rel="autoplay">0</meta>
+         <meta rel="autoplay">1</meta>
       </track>
       <track>
          <annotation>Pop</annotation>
          <title>OneHD - Live! Pop</title>
          <image>../etc/translate/rss/image/menu/internettv.png</image>
          <location>http://live.1hd.ro/playlistp.php</location>
-         <meta rel="autoplay">0</meta>
+         <meta rel="autoplay">1</meta>
       </track>
    </trackList>
 </playlist>

@@ -271,6 +271,12 @@
   </onUserInput>
 		
 	</mediaDisplay>
+
+	<item_template>
+		<onClick>
+      showIdle();
+		</onClick>
+	</item_template>
 	
 <script>
     channelImage = "../etc/translate/rss/image/tvigle.png";

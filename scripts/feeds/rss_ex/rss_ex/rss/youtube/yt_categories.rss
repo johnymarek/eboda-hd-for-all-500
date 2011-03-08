@@ -37,7 +37,7 @@
 	itemImageYPC="18"
 	itemImageHeightPC="0"
 	itemImageWidthPC="0"
-	itemXPC="20"
+	itemXPC="30"
 	itemYPC="18"
 	capXPC="20"
 	capYPC="17"
@@ -45,13 +45,14 @@
 	capHeightPC="7"
 	itemBackgroundColor="0:0:0"
 	itemHeightPC="8"
-	itemWidthPC="60"
+	itemWidthPC="40"
 	itemPerPage="8"
 	bottomYPC="90"
 	backgroundColor="0:0:0"
 	showHeader=no
 	showDefaultInfo=yes
 	infoYPC=90
+	fontSize=18
 	>
   <text offsetXPC=5 offsetYPC=0 widthPC=100 heightPC=15 fontSize=20 backgroundColor=8:8:16 foregroundColor=200:200:200>
     <script>pageTitle;</script>

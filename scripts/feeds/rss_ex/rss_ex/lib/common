@@ -230,12 +230,20 @@ template2rss()
 
 escapeXML()
 {
-  echo -n "$1" | sed 's/&/&amp;/g;s/>/&gt;/g;s/</&lt;/g;s/"/&quot;/g;'
+	if [ -z "$1" ]; then 
+		sed 's/&/&amp;/g;s/>/&gt;/g;s/</&lt;/g;s/"/&quot;/g;'
+	else
+	  echo -n "$1" | sed 's/&/&amp;/g;s/>/&gt;/g;s/</&lt;/g;s/"/&quot;/g;'
+	fi
 }
 
 unescapeXML()
 {
-  echo -n "$1" | sed 's/&gt;/>/g;s/&lt;/</g;s/&quot;/"/g;s/&amp;/\&/g;'
+	if [ -z "$1" ]; then 
+		sed 's/&gt;/>/g;s/&lt;/</g;s/&quot;/"/g;s/&amp;/\&/g;'
+	else
+  	echo -n "$1" | sed 's/&gt;/>/g;s/&lt;/</g;s/&quot;/"/g;s/&amp;/\&/g;'
+  fi
 }
 
 printContent()
