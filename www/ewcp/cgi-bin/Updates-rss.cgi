@@ -49,6 +49,7 @@ do
     DISK_VERSION=${VERSION}
     
     ${quietwget} ${masterhost_url}/${component}-version.txt -O ${component}-version-new.txt
+    $sync
 #    [ $? == 0 ] || nice_exit 1 1
     
     [ -f ./${component}-version-new.txt ] && . ./${component}-version-new.txt

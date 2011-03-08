@@ -119,6 +119,7 @@ check_update()
     DISK_SERIAL=${SERIAL}
 
     ${wget} ${masterhost_url}/${component}-version.txt -O ${component}-version-new.txt
+    $sync
     [ $? == 0 ] || nice_exit 1 $2  
 
     [ -f ./${component}-version-new.txt ] && . ./${component}-version-new.txt
@@ -139,6 +140,7 @@ perform_update()
     component=$1
 
     ${wget} ${masterhost_url}/${component}-latest.zip -O ${component}-latest.zip
+    $sync
     [ $? == 0 ] || nice_exit 2 $2
     
     rm -rf ${component}/*
@@ -147,12 +149,16 @@ perform_update()
     rm ${component}-latest.zip
     
     mv ${component}-version-new.txt ${component}-version.txt
-    
+    $sync
+
     if [ ${component} = "ewcp3" -o ${component} = "cb3pp3" ]
     then 
 	cp $storage/ewcp/S99ewcp /cb3pp/etc/init.d/S99ewcp
+	$sync	
 	sh /cb3pp/etc/init.d/S99ewcp
     fi
+
+    echo "Update finished !!!"
 
 }
 
