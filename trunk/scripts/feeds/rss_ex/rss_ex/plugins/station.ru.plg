@@ -37,16 +37,16 @@ if echo "${arg_url}" | grep -q -s '\(www\.\)*station\.ru/RadioStation.aspx?id=[0
   local host_response=`$MSDL -q -o ${TMPFILE} -p http --useragent "${USERAGENT}" "${arg_url}" 2>&1`
   
   if [ -f ${TMPFILE} ]; then
-    arg_url=`grep "url = '" "$TMPFILE" | sed "s/.* '//;s/'.*//"`;
-    local station_id=`echo "$arg_url" | sed 's/.*media=//'`
-    local station_title=`awk '/Radioстанция/{getline; printf "%s", $0}' "$TMPFILE"`;
+    stream_url=`grep "url = '" "$TMPFILE" | sed "s/.* '//;s/'.*//"`;
+    local station_id=`echo "$stream_url" | sed 's/.*media=//'`
+    local station_title=`awk '/id="currentStationName"/{getline; match($0, /^ *([^<]+)/, arr); printf "%s", arr[1];}' "$TMPFILE"`;
     rm -f "$TMPFILE"
-    check_av_stream
+    arg_opt="Resolve-playlist:1"
     check_playlist
     ms_title="$station_title"
     ms_author="station.ru"
     icy_name="$station_title"
-    stream_status_url="http://station.ru/GetSongJS.aspx?id=$station_id"
+    stream_status_url="http://station.ru/services/StationService.svc/json/GetCurrentStationTrack?stationId=$station_id"
     $MSDL -q -o ${TMPFILE} -p http --useragent "${USERAGENT}" "${stream_status_url}" 2>&1
   fi
   return $RC_OK

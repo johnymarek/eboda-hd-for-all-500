@@ -59,6 +59,20 @@
 		  <script>getPageInfo("pageTitle");</script>
 		</text>
 
+		<image offsetXPC=5 offsetYPC=2 widthPC=21 heightPC=16>
+		  <script>channelImage;</script>
+      <widthPC>
+        <script>
+          21 * screenYp / screenXp;
+        </script>
+      </widthPC>
+      <offsetXPC>
+        <script>
+          5 + 21 * (1 - screenYp / screenXp) / 2;
+        </script>
+      </offsetXPC>
+		</image>
+
   	<text redraw="yes" offsetXPC="82" offsetYPC="12" widthPC="13" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
 		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
 		</text>
@@ -289,6 +303,8 @@
     if(value != null &amp;&amp; value != "")
       fullscreen = value;
   }
+  
+  channelImage = "../etc/translate/rss/image/menu/settings.png";
 </onEnter>
 
 

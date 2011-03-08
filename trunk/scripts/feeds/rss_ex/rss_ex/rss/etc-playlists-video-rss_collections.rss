@@ -498,6 +498,26 @@
     <stream_protocol>http</stream_protocol>
   </item>
   <item>
+    <annotation>Смотрите онлайн новые videoклипы популярных российских и зарубежных исполнителей бесплатно и без регистрации. Все музыкальные новинки на music.ivi.ru!</annotation>
+    <title>music.ivi.ru - Лидеры дня</title>
+    <image>../etc/translate/rss/image/menu/rss.png</image>
+<location><script>translate_base_url+"app/rss/music.ivi.ru,http://music.ivi.ru/static/rss/lead.xml";</script></location>
+<stream_url><script>translate_base_url+"app/rss/music.ivi.ru,http://music.ivi.ru/static/rss/lead.xml";</script></stream_url>
+    <stream_class>rss</stream_class>
+    <stream_type>application/xml</stream_type>
+    <stream_protocol>http</stream_protocol>
+  </item>
+  <item>
+    <annotation>Смотрите онлайн новые videoклипы популярных российских и зарубежных исполнителей бесплатно и без регистрации. Все музыкальные новинки на music.ivi.ru!</annotation>
+    <title>music.ivi.ru - Новинки</title>
+    <image>../etc/translate/rss/image/menu/rss.png</image>
+<location><script>translate_base_url+"app/rss/music.ivi.ru,http://music.ivi.ru/static/rss/novetly.xml";</script></location>
+<stream_url><script>translate_base_url+"app/rss/music.ivi.ru,http://music.ivi.ru/static/rss/novetly.xml";</script></stream_url>
+    <stream_class>rss</stream_class>
+    <stream_type>application/xml</stream_type>
+    <stream_protocol>http</stream_protocol>
+  </item>
+  <item>
     <annotation>RSS-лента Tvigle Media</annotation>
     <title>Tvigle Media</title>
     <image>../etc/translate/rss/image/menu/rss.png</image>
@@ -573,6 +593,56 @@
     <image>../etc/translate/rss/image/menu/rss.png</image>
 <location><script>translate_base_url+"app/rss/mediafeed,http://filmix.net/rss.xml";</script></location>
 <stream_url><script>translate_base_url+"app/rss/mediafeed,http://filmix.net/rss.xml";</script></stream_url>
+    <stream_class>rss</stream_class>
+    <stream_type>application/xml</stream_type>
+    <stream_protocol>http</stream_protocol>
+  </item>
+  <item>
+    <annotation>Rock Television - Cult&amp;Rare: Recent Video</annotation>
+    <title>Rock Television - Recent Video</title>
+    <image>../etc/translate/rss/image/menu/rss.png</image>
+<location><script>translate_base_url+"app/rss/cultandrare.rocktelevision.com,http://cultandrare.rocktelevision.com/DesktopModules/UltraVideoGallery/feed.aspx?type=RecentVideos";</script></location>
+<stream_url><script>translate_base_url+"app/rss/cultandrare.rocktelevision.com,http://cultandrare.rocktelevision.com/DesktopModules/UltraVideoGallery/feed.aspx?type=RecentVideos";</script></stream_url>
+    <stream_class>rss</stream_class>
+    <stream_type>application/xml</stream_type>
+    <stream_protocol>http</stream_protocol>
+  </item>
+  <item>
+    <annotation>Rock Television - Cult&amp;Rare: Most Viewed</annotation>
+    <title>Rock Television - Most Viewed</title>
+    <image>../etc/translate/rss/image/menu/rss.png</image>
+<location><script>translate_base_url+"app/rss/cultandrare.rocktelevision.com,http://cultandrare.rocktelevision.com/DesktopModules/UltraVideoGallery/feed.aspx?type=MostViewed";</script></location>
+<stream_url><script>translate_base_url+"app/rss/cultandrare.rocktelevision.com,http://cultandrare.rocktelevision.com/DesktopModules/UltraVideoGallery/feed.aspx?type=MostViewed";</script></stream_url>
+    <stream_class>rss</stream_class>
+    <stream_type>application/xml</stream_type>
+    <stream_protocol>http</stream_protocol>
+  </item>
+  <item>
+    <annotation>Rock Television - Cult&amp;Rare: SuperUser Account</annotation>
+    <title>Rock Television - SuperUser Account</title>
+    <image>../etc/translate/rss/image/menu/rss.png</image>
+<location><script>translate_base_url+"app/rss/cultandrare.rocktelevision.com,http://cultandrare.rocktelevision.com/DesktopModules/UltraVideoGallery/Feed.aspx?UserId=1";</script></location>
+<stream_url><script>translate_base_url+"app/rss/cultandrare.rocktelevision.com,http://cultandrare.rocktelevision.com/DesktopModules/UltraVideoGallery/Feed.aspx?UserId=1";</script></stream_url>
+    <stream_class>rss</stream_class>
+    <stream_type>application/xml</stream_type>
+    <stream_protocol>http</stream_protocol>
+  </item>
+  <item>
+    <annotation>YouRock by RockTelevision - The first large comunity of the independent rock videos: Recent Video</annotation>
+    <title>YouRock by RockTelevision - Recent Video</title>
+    <image>../etc/translate/rss/image/menu/rss.png</image>
+<location><script>translate_base_url+"app/rss/cultandrare.rocktelevision.com,http://yourock.rocktelevision.com/DesktopModules/UltraVideoGallery/feed.aspx?type=RecentVideos";</script></location>
+<stream_url><script>translate_base_url+"app/rss/cultandrare.rocktelevision.com,http://yourock.rocktelevision.com/DesktopModules/UltraVideoGallery/feed.aspx?type=RecentVideos";</script></stream_url>
+    <stream_class>rss</stream_class>
+    <stream_type>application/xml</stream_type>
+    <stream_protocol>http</stream_protocol>
+  </item>
+  <item>
+    <annotation>YouRock by RockTelevision - The first large comunity of the independent rock videos: Most Viewed</annotation>
+    <title>YouRock by RockTelevision - Most Viewed</title>
+    <image>../etc/translate/rss/image/menu/rss.png</image>
+<location><script>translate_base_url+"app/rss/cultandrare.rocktelevision.com,http://yourock.rocktelevision.com/DesktopModules/UltraVideoGallery/feed.aspx?type=MostViewed";</script></location>
+<stream_url><script>translate_base_url+"app/rss/cultandrare.rocktelevision.com,http://yourock.rocktelevision.com/DesktopModules/UltraVideoGallery/feed.aspx?type=MostViewed";</script></stream_url>
     <stream_class>rss</stream_class>
     <stream_type>application/xml</stream_type>
     <stream_protocol>http</stream_protocol>

@@ -266,6 +266,12 @@
 		
 	</mediaDisplay>
 	
+	<item_template>
+		<onClick>
+      showIdle();
+		</onClick>
+	</item_template>
+
 <!--`cat "$CHANNELFILE"`-->
 
 </rss>

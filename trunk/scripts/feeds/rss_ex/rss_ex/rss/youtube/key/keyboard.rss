@@ -35,9 +35,24 @@
 	<text redraw="no" align="left" offsetXPC="5" offsetYPC="0" widthPC="90" heightPC="15" fontSize="30" backgroundColor="-1:-1:-1" foregroundColor="200:200:200">
 		<script>getPageInfo("pageTitle");</script>
 	</text>
-	<image offsetXPC=82 offsetYPC=3 widthPC=15 heightPC=10>../etc/translate/rss/image/YouTubeLogo.jpg</image>
+  <image offsetXPC=82 offsetYPC=3 widthPC=15 heightPC=10>
+    ../etc/translate/rss/image/YouTubeLogo.jpg
+    <widthPC>
+      <script>
+        300 / 152 * 10 * screenYp / screenXp;
+      </script>
+    </widthPC>
+    <offsetXPC>
+      <script>
+        95 - 300 / 152 * 10 * screenYp / screenXp;
+      </script>
+    </offsetXPC>
+	</image>
 	<text redraw="yes" align="left" offsetXPC="10" offsetYPC="18" widthPC="80" heightPC="8" fontSize="18" backgroundColor="28:35:51" foregroundColor="200:200:200">
 		<script>inputText + "_";</script>
+		<foregroundColor>
+		  <script>if(firstUse == 1) "80:80:80"; else "200:200:200";</script>
+		</foregroundColor>
 	</text>
 	<text redraw="no" align="center" offsetXPC="10" offsetYPC="80" widthPC="80" heightPC="5" fontSize="16" backgroundColor="-1:-1:-1" foregroundColor="140:140:140">&gt;&gt;| - пробел, |&lt;&lt; - стереть, # или play или stop - завершение набора</text>
 	<text redraw="no" align="center" offsetXPC="10" offsetYPC="85" widthPC="80" heightPC="5" fontSize="16" backgroundColor="-1:-1:-1" foregroundColor="140:140:140">info - раскладка клавиатуры. Также работают цифровые кнопки</text>
@@ -82,7 +97,8 @@
 			else if(userInput == "pagedown" || userInput == "PD")
 				inputNumber = " ";
 			else if(userInput == "pageup" || userInput == "PG")
-			{
+		  {
+        firstUse = 0;		  
 				if(inputTextCount &gt; 0)
 				{
 					inputTextCount -= 1;
@@ -102,7 +118,10 @@
 			}
 			else if(userInput == "video_play" || userInput == "video_stop")
 			{
-        writeStringToFile(getStoragePath("key")+"youtube_search.dat", inputText);
+			  saveString = null;
+			  saveString  = pushBackStringArray(saveString, inputTextCount);
+			  saveString  = pushBackStringArray(saveString, inputTextArray);
+        writeStringToFile(getStoragePath("key")+"youtube_search.dat", saveString);
 				setReturnString(inputText);
 				postMessage("return");
 				ret = "true";
@@ -122,11 +141,27 @@
 				
 			if (inputNumber != null)
 			{
-				inputText += inputNumber;
-				inputTextArray  = pushBackStringArray(inputTextArray, inputNumber);
-				inputTextCount += 1;
-				redrawDisplay();
-				ret = "true";
+			  if(firstUse == 1)
+			  {
+			    if(inputNumber == " ")
+			      inputNumber = "";
+			    else
+			    {
+			      inputText = "";
+    	      inputTextArray = null;
+    	      inputTextCount = 0;
+			    }
+    		  firstUse = 0;
+    		  redrawDisplay();
+			  }
+			  if(inputNumber != "")
+			  {
+  				inputText += inputNumber;
+  				inputTextArray  = pushBackStringArray(inputTextArray, inputNumber);
+  				inputTextCount -= -1;
+  				redrawDisplay();
+  				ret = "true";
+  			}
 			}
 			ret;
 		</script>
@@ -134,6 +169,25 @@
 </mediaDisplay>
 
 <onEnter>
+  translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
+  screenXp = 4;
+  screenYp = 3;
+  rssconf = readStringFromFile(getStoragePath("key")+"translate.dat");
+  print("rssconf:",rssconf);
+  if(rssconf != null)
+  {
+    value = getStringArrayAt(rssconf, 0);
+    if(value != null &amp;&amp; value != "")
+      translate_base_url = value;
+    value = getStringArrayAt(rssconf, 1);
+    if(value != null &amp;&amp; value != "")
+      screenXp = Integer(value);
+    value = getStringArrayAt(rssconf, 2);
+    if(value != null &amp;&amp; value != "")
+      screenYp = Integer(value);
+  }
+  print("rssconf:",translate_base_url,screenXp,screenYp);
+
   optionsPath = getStoragePath("key") + "youtubeOptions.dat";
   optionsArray = readStringFromFile(optionsPath);
   if(optionsArray == null)
@@ -173,11 +227,27 @@
 	 itemTitleArray = readStringFromFile("../etc/translate/rss/youtube/key/dictionary_"+itemLocale+".str");
 	}
   itemSize = getStringArrayAt(itemTitleArray, 0);
-	inputTextArray = null;
 	inputTextCount = 0;
-  inputText = readStringFromFile(getStoragePath("key")+"youtube_search.dat");
-	if (inputText == null)
-		inputText = "";
+	inputTextArray = null;
+  inputText = "";
+  saveString = readStringFromFile(getStoragePath("key")+"youtube_search.dat");
+  if(saveString != null)
+  {
+    inputTextCount = getStringArrayAt(saveString, 0);
+		counter = 0;
+		while(1)
+		{
+			if(counter &gt;= inputTextCount)
+				break;
+		  ch = getStringArrayAt(saveString, counter+1);
+			inputText += ch;
+			inputTextArray = pushBackStringArray(inputTextArray, ch);
+			counter += 1;
+		}
+  }
+  firstUse = 0;
+  if(inputText != "")
+    firstUse = 1;
 	setFocusItemIndex(0);
 	redrawDisplay();
 </onEnter>
@@ -194,9 +264,16 @@
 		}
 		else
 		{
+		  if(firstUse == 1)
+		  {
+	      inputText = "";
+	      inputTextArray = null;
+	      inputTextCount = 0;
+  		  firstUse = 0;
+		  }
 			inputText += itemTitle;
 			inputTextArray  = pushBackStringArray(inputTextArray, itemTitle);
-			inputTextCount += 1;
+			inputTextCount -= -1;
 			redrawDisplay();
 		}
 		null;

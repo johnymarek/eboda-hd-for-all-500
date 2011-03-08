@@ -32,7 +32,7 @@ if echo "${arg_url}" | grep -q -s 'live\.*\(1hd\|prahovahd\)\.ro/playlist.*\.php
 
   local PHPSESSID=`$MSDL --debug -o /dev/null -p http --useragent "${USERAGENT}" "http://live.1hd.ro/" 2>&1 | awk '/Set-Cookie/ {match($0, /PHPSESSID=([^; ]+)[; ]/, arr); print arr[1]}'`
   $WGET -q --header "User-Agent: ${USERAGENT}" --header "Cookie: PHPSESSID=${PHPSESSID}" -O $PLAYLISTFILE "${arg_url}" 2>/dev/null
-
+  
   if [ -f $PLAYLISTFILE ]; then
     awk '
       BEGIN {
@@ -99,6 +99,7 @@ if echo "${arg_url}" | grep -q -s 'live\.*\(1hd\|prahovahd\)\.ro/playlist.*\.php
     stream_type='application/xspf+xml'
     stream_url=$PLAYLISTFILE
     protocol='file'
+    arg_opt='Resolve-playlist:0'
   fi
   return $RC_OK
 fi

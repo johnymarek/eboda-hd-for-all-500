@@ -595,10 +595,9 @@
     <stream_url>mmsh://broadcast03.station.ru/station01</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>station.ru</stream_soft>
-    <stream_server>http://station.ru/GetSongJS.aspx?id=station01</stream_server>
+    <stream_server>http://station.ru/services/StationService.svc/json/GetCurrentStationTrack?stationId=station01</stream_server>
     <stream_type>audio/x-ms-wma</stream_type>
     <stream_protocol>mmsh</stream_protocol>
-    <stream_title>station.ru</stream_title>
   </item>
   <item>
     <location>http://station.ru/RadioStation.aspx?id=1731</location>
@@ -608,10 +607,9 @@
     <stream_url>mmsh://broadcast03.station.ru/station08</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>station.ru</stream_soft>
-    <stream_server>http://station.ru/GetSongJS.aspx?id=station08</stream_server>
+    <stream_server>http://station.ru/services/StationService.svc/json/GetCurrentStationTrack?stationId=station08</stream_server>
     <stream_type>audio/x-ms-wma</stream_type>
     <stream_protocol>mmsh</stream_protocol>
-    <stream_title>station.ru</stream_title>
   </item>
   <item>
     <location>http://station.ru/RadioStation.aspx?id=1732</location>
@@ -621,10 +619,9 @@
     <stream_url>mmsh://broadcast03.station.ru/hadkandi</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>station.ru</stream_soft>
-    <stream_server>http://station.ru/GetSongJS.aspx?id=hadkandi</stream_server>
+    <stream_server>http://station.ru/services/StationService.svc/json/GetCurrentStationTrack?stationId=hadkandi</stream_server>
     <stream_type>audio/x-ms-wma</stream_type>
     <stream_protocol>mmsh</stream_protocol>
-    <stream_title>station.ru</stream_title>
   </item>
   <item>
     <location>http://station.ru/RadioStation.aspx?id=1733</location>
@@ -634,10 +631,9 @@
     <stream_url>mmsh://broadcast03.station.ru/mksweet</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>station.ru</stream_soft>
-    <stream_server>http://station.ru/GetSongJS.aspx?id=mksweet</stream_server>
+    <stream_server>http://station.ru/services/StationService.svc/json/GetCurrentStationTrack?stationId=mksweet</stream_server>
     <stream_type>audio/x-ms-wma</stream_type>
     <stream_protocol>mmsh</stream_protocol>
-    <stream_title>station.ru</stream_title>
   </item>
   <item>
     <location>http://station.ru/RadioStation.aspx?id=1736</location>
@@ -647,10 +643,9 @@
     <stream_url>mmsh://broadcast03.station.ru/station03</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>station.ru</stream_soft>
-    <stream_server>http://station.ru/GetSongJS.aspx?id=station03</stream_server>
+    <stream_server>http://station.ru/services/StationService.svc/json/GetCurrentStationTrack?stationId=station03</stream_server>
     <stream_type>audio/x-ms-wma</stream_type>
     <stream_protocol>mmsh</stream_protocol>
-    <stream_title>station.ru</stream_title>
   </item>
   <item>
     <location>http://station.ru/RadioStation.aspx?id=2466</location>
@@ -660,10 +655,9 @@
     <stream_url>mmsh://broadcast03.station.ru/fmcafe</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>station.ru</stream_soft>
-    <stream_server>http://station.ru/GetSongJS.aspx?id=fmcafe</stream_server>
+    <stream_server>http://station.ru/services/StationService.svc/json/GetCurrentStationTrack?stationId=fmcafe</stream_server>
     <stream_type>audio/x-ms-wma</stream_type>
     <stream_protocol>mmsh</stream_protocol>
-    <stream_title>station.ru</stream_title>
   </item>
   <item>
     <location>http://station.ru/RadioStation.aspx?id=1730</location>
@@ -673,10 +667,9 @@
     <stream_url>mmsh://broadcast03.station.ru/station2000</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>station.ru</stream_soft>
-    <stream_server>http://station.ru/GetSongJS.aspx?id=station2000</stream_server>
+    <stream_server>http://station.ru/services/StationService.svc/json/GetCurrentStationTrack?stationId=station2000</stream_server>
     <stream_type>audio/x-ms-wma</stream_type>
     <stream_protocol>mmsh</stream_protocol>
-    <stream_title>station.ru</stream_title>
   </item>
   <item>
     <location>http://station.ru/RadioStation.aspx?id=1742</location>
@@ -686,10 +679,9 @@
     <stream_url>mmsh://broadcast03.station.ru/station14</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>station.ru</stream_soft>
-    <stream_server>http://station.ru/GetSongJS.aspx?id=station14</stream_server>
+    <stream_server>http://station.ru/services/StationService.svc/json/GetCurrentStationTrack?stationId=station14</stream_server>
     <stream_type>audio/x-ms-wma</stream_type>
     <stream_protocol>mmsh</stream_protocol>
-    <stream_title>station.ru</stream_title>
   </item>
   <item>
     <location>http://station.ru/RadioStation.aspx?id=1996</location>
@@ -699,10 +691,9 @@
     <stream_url>mmsh://broadcast03.station.ru/zg</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>station.ru</stream_soft>
-    <stream_server>http://station.ru/GetSongJS.aspx?id=zg</stream_server>
+    <stream_server>http://station.ru/services/StationService.svc/json/GetCurrentStationTrack?stationId=zg</stream_server>
     <stream_type>audio/x-ms-wma</stream_type>
     <stream_protocol>mmsh</stream_protocol>
-    <stream_title>station.ru</stream_title>
   </item>
   <item>
     <location>http://station.ru/RadioStation.aspx?id=7629</location>
@@ -712,10 +703,9 @@
     <stream_url>mmsh://broadcast03.station.ru/mixer</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>station.ru</stream_soft>
-    <stream_server>http://station.ru/GetSongJS.aspx?id=mixer</stream_server>
+    <stream_server>http://station.ru/services/StationService.svc/json/GetCurrentStationTrack?stationId=mixer</stream_server>
     <stream_type>audio/x-ms-wma</stream_type>
     <stream_protocol>mmsh</stream_protocol>
-    <stream_title>station.ru</stream_title>
   </item>
   <item>
     <location>http://station.ru/RadioStation.aspx?id=1739</location>
@@ -725,10 +715,9 @@
     <stream_url>mmsh://broadcast03.station.ru/station16</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>station.ru</stream_soft>
-    <stream_server>http://station.ru/GetSongJS.aspx?id=station16</stream_server>
+    <stream_server>http://station.ru/services/StationService.svc/json/GetCurrentStationTrack?stationId=station16</stream_server>
     <stream_type>audio/x-ms-wma</stream_type>
     <stream_protocol>mmsh</stream_protocol>
-    <stream_title>station.ru</stream_title>
   </item>
   <item>
     <location>http://station.ru/RadioStation.aspx?id=1737</location>
@@ -738,10 +727,9 @@
     <stream_url>mmsh://broadcast03.station.ru/station04</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>station.ru</stream_soft>
-    <stream_server>http://station.ru/GetSongJS.aspx?id=station04</stream_server>
+    <stream_server>http://station.ru/services/StationService.svc/json/GetCurrentStationTrack?stationId=station04</stream_server>
     <stream_type>audio/x-ms-wma</stream_type>
     <stream_protocol>mmsh</stream_protocol>
-    <stream_title>station.ru</stream_title>
   </item>
   <item>
     <location>http://station.ru/RadioStation.aspx?id=1729</location>
@@ -751,10 +739,9 @@
     <stream_url>mmsh://broadcast03.station.ru/rainbow</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>station.ru</stream_soft>
-    <stream_server>http://station.ru/GetSongJS.aspx?id=rainbow</stream_server>
+    <stream_server>http://station.ru/services/StationService.svc/json/GetCurrentStationTrack?stationId=rainbow</stream_server>
     <stream_type>audio/x-ms-wma</stream_type>
     <stream_protocol>mmsh</stream_protocol>
-    <stream_title>station.ru</stream_title>
   </item>
   <item>
     <location>http://station.ru/RadioStation.aspx?id=1738</location>
@@ -764,10 +751,9 @@
     <stream_url>mmsh://broadcast03.station.ru/station10</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>station.ru</stream_soft>
-    <stream_server>http://station.ru/GetSongJS.aspx?id=station10</stream_server>
+    <stream_server>http://station.ru/services/StationService.svc/json/GetCurrentStationTrack?stationId=station10</stream_server>
     <stream_type>audio/x-ms-wma</stream_type>
     <stream_protocol>mmsh</stream_protocol>
-    <stream_title>station.ru</stream_title>
   </item>
   <item>
     <location>http://station.ru/RadioStation.aspx?id=1740</location>
@@ -777,10 +763,9 @@
     <stream_url>mmsh://broadcast03.station.ru/station12</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>station.ru</stream_soft>
-    <stream_server>http://station.ru/GetSongJS.aspx?id=station12</stream_server>
+    <stream_server>http://station.ru/services/StationService.svc/json/GetCurrentStationTrack?stationId=station12</stream_server>
     <stream_type>audio/x-ms-wma</stream_type>
     <stream_protocol>mmsh</stream_protocol>
-    <stream_title>station.ru</stream_title>
   </item>
   <item>
     <location>http://station.ru/RadioStation.aspx?id=1741</location>
@@ -790,10 +775,9 @@
     <stream_url>mmsh://broadcast03.station.ru/station13</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>station.ru</stream_soft>
-    <stream_server>http://station.ru/GetSongJS.aspx?id=station13</stream_server>
+    <stream_server>http://station.ru/services/StationService.svc/json/GetCurrentStationTrack?stationId=station13</stream_server>
     <stream_type>audio/x-ms-wma</stream_type>
     <stream_protocol>mmsh</stream_protocol>
-    <stream_title>station.ru</stream_title>
   </item>
   <item>
     <location>http://station.ru/RadioStation.aspx?id=1735</location>
@@ -803,10 +787,9 @@
     <stream_url>mmsh://broadcast03.station.ru/station02</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>station.ru</stream_soft>
-    <stream_server>http://station.ru/GetSongJS.aspx?id=station02</stream_server>
+    <stream_server>http://station.ru/services/StationService.svc/json/GetCurrentStationTrack?stationId=station02</stream_server>
     <stream_type>audio/x-ms-wma</stream_type>
     <stream_protocol>mmsh</stream_protocol>
-    <stream_title>station.ru</stream_title>
   </item>
   <item>
     <location>http://station.ru/RadioStation.aspx?id=1997</location>
@@ -816,10 +799,9 @@
     <stream_url>mmsh://broadcast03.station.ru/biologia</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>station.ru</stream_soft>
-    <stream_server>http://station.ru/GetSongJS.aspx?id=biologia</stream_server>
+    <stream_server>http://station.ru/services/StationService.svc/json/GetCurrentStationTrack?stationId=biologia</stream_server>
     <stream_type>audio/x-ms-wma</stream_type>
     <stream_protocol>mmsh</stream_protocol>
-    <stream_title>station.ru</stream_title>
   </item>
   <item>
     <location>http://station.ru/RadioStation.aspx?id=1726</location>
@@ -829,10 +811,9 @@
     <stream_url>mmsh://broadcast03.station.ru/station06</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>station.ru</stream_soft>
-    <stream_server>http://station.ru/GetSongJS.aspx?id=station06</stream_server>
+    <stream_server>http://station.ru/services/StationService.svc/json/GetCurrentStationTrack?stationId=station06</stream_server>
     <stream_type>audio/x-ms-wma</stream_type>
     <stream_protocol>mmsh</stream_protocol>
-    <stream_title>station.ru</stream_title>
   </item>
   <item>
     <location>http://station.ru/RadioStation.aspx?id=1744</location>
@@ -842,10 +823,9 @@
     <stream_url>mmsh://broadcast03.station.ru/station09</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>station.ru</stream_soft>
-    <stream_server>http://station.ru/GetSongJS.aspx?id=station09</stream_server>
+    <stream_server>http://station.ru/services/StationService.svc/json/GetCurrentStationTrack?stationId=station09</stream_server>
     <stream_type>audio/x-ms-wma</stream_type>
     <stream_protocol>mmsh</stream_protocol>
-    <stream_title>station.ru</stream_title>
   </item>
   <item>
     <location>http://station.ru/RadioStation.aspx?id=1743</location>
@@ -855,10 +835,9 @@
     <stream_url>mmsh://broadcast03.station.ru/station15</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>station.ru</stream_soft>
-    <stream_server>http://station.ru/GetSongJS.aspx?id=station15</stream_server>
+    <stream_server>http://station.ru/services/StationService.svc/json/GetCurrentStationTrack?stationId=station15</stream_server>
     <stream_type>audio/x-ms-wma</stream_type>
     <stream_protocol>mmsh</stream_protocol>
-    <stream_title>station.ru</stream_title>
   </item>
   <item>
     <location>http://station.ru/RadioStation.aspx?id=1998</location>
@@ -868,10 +847,9 @@
     <stream_url>mmsh://broadcast03.station.ru/uroki_russkogo</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>station.ru</stream_soft>
-    <stream_server>http://station.ru/GetSongJS.aspx?id=uroki_russkogo</stream_server>
+    <stream_server>http://station.ru/services/StationService.svc/json/GetCurrentStationTrack?stationId=uroki_russkogo</stream_server>
     <stream_type>audio/x-ms-wma</stream_type>
     <stream_protocol>mmsh</stream_protocol>
-    <stream_title>station.ru</stream_title>
   </item>
   <item>
     <location>http://station.ru/RadioStation.aspx?id=11369</location>
@@ -881,10 +859,9 @@
     <stream_url>mmsh://broadcast03.station.ru/station05</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>station.ru</stream_soft>
-    <stream_server>http://station.ru/GetSongJS.aspx?id=station05</stream_server>
+    <stream_server>http://station.ru/services/StationService.svc/json/GetCurrentStationTrack?stationId=station05</stream_server>
     <stream_type>audio/x-ms-wma</stream_type>
     <stream_protocol>mmsh</stream_protocol>
-    <stream_title>station.ru</stream_title>
   </item>
   <item>
     <location>http://station.ru/RadioStation.aspx?id=17729</location>
@@ -894,10 +871,9 @@
     <stream_url>mmsh://broadcast03.station.ru/utrennie_zhavoronki</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>station.ru</stream_soft>
-    <stream_server>http://station.ru/GetSongJS.aspx?id=utrennie_zhavoronki</stream_server>
+    <stream_server>http://station.ru/services/StationService.svc/json/GetCurrentStationTrack?stationId=utrennie_zhavoronki</stream_server>
     <stream_type>audio/x-ms-wma</stream_type>
     <stream_protocol>mmsh</stream_protocol>
-    <stream_title>station.ru</stream_title>
   </item>
   <item>
     <location>http://station.ru/RadioStation.aspx?id=56002</location>
@@ -907,10 +883,9 @@
     <stream_url>mmsh://broadcast03.station.ru/station07</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>station.ru</stream_soft>
-    <stream_server>http://station.ru/GetSongJS.aspx?id=station07</stream_server>
+    <stream_server>http://station.ru/services/StationService.svc/json/GetCurrentStationTrack?stationId=station07</stream_server>
     <stream_type>audio/x-ms-wma</stream_type>
     <stream_protocol>mmsh</stream_protocol>
-    <stream_title>station.ru</stream_title>
   </item>
 </channel>
 

@@ -55,8 +55,8 @@
 
 	<mediaDisplay name=photoView 
 	  centerXPC=7 
-		centerYPC=25
-		centerHeightPC=70
+		centerYPC=23
+		centerHeightPC=68
 		columnCount=5
 	  rowCount=2
 		menuBorderColor="55:55:55"
@@ -95,6 +95,10 @@
   	<text redraw="yes" offsetXPC="82" offsetYPC="12" widthPC="13" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
 		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
 		</text>
+
+  	<text align="right" redraw="yes" offsetXPC="7" offsetYPC="91" widthPC="86" heightPC="5" fontSize="12" backgroundColor="0:0:0" foregroundColor="150:150:150">
+  		<script>tips;</script>
+  	</text>
 
   	<idleImage idleImageYPC="45" idleImageHeightPC="10">../etc/translate/rss/image/POPUP_LOADING_01.png<idleImageWidthPC><script>10 * screenYp / screenXp;</script></idleImageWidthPC><idleImageXPC><script>45 + 10 * (1 - screenYp / screenXp) / 2;</script></idleImageXPC></idleImage>
   	<idleImage idleImageYPC="45" idleImageHeightPC="10">../etc/translate/rss/image/POPUP_LOADING_02.png<idleImageWidthPC><script>10 * screenYp / screenXp;</script></idleImageWidthPC><idleImageXPC><script>45 + 10 * (1 - screenYp / screenXp) / 2;</script></idleImageXPC></idleImage>
@@ -146,8 +150,16 @@
 					  if(annotation == "" || annotation == null)
 					    annotation = getItemInfo(idx, "stream_genre");
 					}
-					if(item_type == 0) getItemInfo(idx, "image");
-					else               getItemInfo(idx, "cover");
+					if(item_type == 0)
+					{
+					 tips = "Нажмите 'info' для просмотра обложек."; 
+					 getItemInfo(idx, "image");
+					}
+					else
+					{               
+					 tips = "Нажмите 'info' для просмотра скриншотов."; 
+					 getItemInfo(idx, "cover");
+					}
 				</script>
 			 <widthPC>
 			   <script>

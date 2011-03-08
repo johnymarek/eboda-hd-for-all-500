@@ -17,6 +17,11 @@
       <location>http://www.radiogrom.com/online/piter_fm/avtoradio_online.html</location>
       <title>- 88,4 FM - Авторадио </title>
     
+<meta rel="stream_url">mmsh://213.172.6.133:8844/</meta>
+<meta rel="stream_class">audio</meta>
+<meta rel="stream_server">_empty_</meta>
+<meta rel="stream_type">audio/x-ms-wma</meta>
+<meta rel="stream_protocol">mmsh</meta>
 </track>
     <track>
       <location>http://www.radiogrom.com/online/piter_fm/radio_zenit_online.html</location>
@@ -95,6 +100,13 @@
       <location>http://www.radiogrom.com/online/piter_fm/monte_carlo_online.html</location>
       <title>- 105,9 FM - Radio Монте-Карло </title>
     
+<meta rel="stream_url">http://stream4.radiostyle.ru:8004/rmc</meta>
+<meta rel="stream_class">audio</meta>
+<meta rel="stream_soft">icecast</meta>
+<meta rel="stream_type">audio/mpeg</meta>
+<meta rel="stream_protocol">http</meta>
+<meta rel="stream_genre">Various</meta>
+<meta rel="stream_bitrate">128</meta>
 </track>
     <track>
       <location>http://www.radiogrom.com/online/piter_fm/radio_record_online.html</location>

@@ -30,10 +30,10 @@
 	headerXPC="16"
 	headerYPC="3"
 	headerWidthPC="0"
-	itemImageXPC="22"
-	itemImageYPC="18"
+	itemImageWidthPC="0"
 	itemXPC="35"
 	itemYPC="18"
+	itemWidthPC="30"
 	capXPC="88"
 	capYPC="17"
 	capHeightPC="10"
@@ -291,6 +291,7 @@
 </onRefresh>
 
   <item_template>
+   <media:thumbnail>"";</media:thumbnail>
    <displayTitle>
       <script>
 	getStringArrayAt(titleArray , -1);
