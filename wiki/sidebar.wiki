@@ -1,7 +1,8 @@
 #summary This is our project sidebar
 
 
-  * [Building_your_own_firmware Building your own firmware] 
+  * [Building_your_own_firmware Building your own SDK2 firmware] 
+  * [Building_SDK3_firmware Building your own SDK3 firmware] 
   * [Web_Interface Web Interface ] 
   * Firmware
     * Oldies (but goldies)
