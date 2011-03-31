@@ -47,12 +47,18 @@
 	<menu>main menu</menu>
 
 <?php
+function str_between($string, $start, $end){
+	$string = " ".$string; $ini = strpos($string,$start);
+	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini;
+	return substr($string,$ini,$len);
+}
 $link = $_GET["file"];
-    $html = file_get_contents($link);
-    $t1 = explode('<!-- download -->', $html);
-    $t2 = explode('<a href="', $t1[1]);
-    $t3 = explode('"',$t2[1]);
-    $link = $t3[0];
+//http://fck-c02.tnaflix.com/dev2/0/000/038/0000038046.fid?key=037500ecc3e6e659f307efe8f17c37be&src=tna&start=undefined
+//http://fck-c05.tnaflix.com/dev5/0/000/162/0000162467.fid?key=a889bdee8af9c78ede27de4a1d6016bb&src=tna
+$html = file_get_contents($link);
+$link = urldecode(str_between($html,"so.addVariable('config', '","'"));
+$html = file_get_contents($link);
+$link=str_between($html,"<file>","</file>");
     
     echo '<item>';
     echo '<title>Link</title>';

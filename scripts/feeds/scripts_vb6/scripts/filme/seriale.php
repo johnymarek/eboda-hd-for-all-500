@@ -155,14 +155,14 @@ ret;
 <annotation>http://www.serialepe.net/p/seriale-online-gratis-subtitrate.html</annotation>
 <mediaDisplay name="photoView"/>
 </item>
-<!--
+
 <item>
 <title>filmesubtitrate.info</title>
 <link><?php echo $host; ?>/scripts/filme/php/filmesubtitrate_info_main.php</link>
 <annotation>http://www.seriale.filmesubtitrate.info/p/seriale-online-subtitrate-in-romana.html</annotation>
 <mediaDisplay name="photoView"/>
 </item>
--->
+
 <item>
 <title>serialeonline.tv</title>
 <link><?php echo $host; ?>/scripts/filme/php/serialeonline_main.php</link>
@@ -178,9 +178,9 @@ ret;
 </item>
 
 <item>
-<title>www.serialetvonline.info</title>
-<link><?php echo $host; ?>/scripts/filme/php/serialetvonline_main.php</link>
-<annotation>http://www.serialetvonline.info/tv-shows</annotation>
+<title>www.serialulmeu.ro</title>
+<link><?php echo $host; ?>/scripts/filme/php/serialulmeu_main.php</link>
+<annotation>http://www.serialulmeu.ro/</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
 
@@ -209,6 +209,13 @@ ret;
 <title>www.990.ro</title>
 <link><?php echo $host; ?>/scripts/filme/990.php</link>
 <annotation>http://www.990.ro</annotation>
+<mediaDisplay name="threePartsView"/>
+</item>
+
+<item>
+<title>serialeonline.biz</title>
+<link><?php echo $host; ?>/scripts/filme/php/serialeonline_biz.php?query=1,</link>
+<annotation>http://serialeonline.biz/seriale-online</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
 

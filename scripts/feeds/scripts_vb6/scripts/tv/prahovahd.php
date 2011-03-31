@@ -134,43 +134,36 @@ $host = "http://127.0.0.1:82";
 
 <item>
 <title>OneHD - Live! Concert</title>
-<link><?php echo $host; ?>/scripts/tv/php/prahovahd_playlist.php?cat=0</link>
+<onClick>playItemURL("http://127.0.0.1:83/cgi-bin/translate?stream,Content-type:video/mp4,rtmp://93.114.43.3:1935/live/onehd", 10);</onClick>
 <media:thumbnail url="/scripts/tv/image/onehd.png" />
 </item>
 
 <item>
 <title>OneHD - Live! Jazz</title>
-<link><?php echo $host; ?>/scripts/tv/php/prahovahd_playlist.php?cat=1</link>
-<media:thumbnail url="/scripts/tv/image/onehd.png" />
+<onClick>playItemURL("http://127.0.0.1:83/cgi-bin/translate?stream,Content-type:video/mp4,rtmp://93.114.43.3:1935/live/jazz", 10);</onClick>
 </item>
 
 <item>
 <title>OneHD - Live! Classics</title>
-<link><?php echo $host; ?>/scripts/tv/php/prahovahd_playlist.php?cat=2</link>
+<onClick>playItemURL("http://127.0.0.1:83/cgi-bin/translate?stream,Content-type:video/mp4,rtmp://93.114.43.3:1935/live/classics", 10);</onClick>
 <media:thumbnail url="/scripts/tv/image/onehd.png" />
 </item>
 
 <item>
 <title>OneHD - Live! Dance</title>
-<link><?php echo $host; ?>/scripts/tv/php/prahovahd_playlist.php?cat=3</link>
+<onClick>playItemURL("http://127.0.0.1:83/cgi-bin/translate?stream,Content-type:video/mp4,rtmp://93.114.43.3:1935/live/dance", 10);</onClick>
 <media:thumbnail url="/scripts/tv/image/onehd.png" />
 </item>
 
 <item>
 <title>OneHD - Live! Rock</title>
-<link><?php echo $host; ?>/scripts/tv/php/prahovahd_playlist.php?cat=4</link>
+<onClick>playItemURL("http://127.0.0.1:83/cgi-bin/translate?stream,Content-type:video/mp4,rtmp://93.114.43.3:1935/live/rock", 10);</onClick>
 <media:thumbnail url="/scripts/tv/image/onehd.png" />
 </item>
 
 <item>
 <title>OneHD - Live! Pop</title>
-<link><?php echo $host; ?>/scripts/tv/php/prahovahd_playlist.php?cat=5</link>
-<media:thumbnail url="/scripts/tv/image/onehd.png" />
-</item>
-
-<item>
-<title>OneHD - playlist</title>
-<link><?php echo $host; ?>/scripts/tv/php/prahovahd.php</link>
+<onClick>playItemURL("http://127.0.0.1:83/cgi-bin/translate?stream,Content-type:video/mp4,rtmp://93.114.43.3:1935/live/pop", 10);</onClick>
 <media:thumbnail url="/scripts/tv/image/onehd.png" />
 </item>
 

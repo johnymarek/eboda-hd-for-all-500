@@ -117,6 +117,7 @@ if ($pageimage=="") {
 if ($pageimage=="") {
 	$pageimage="/scripts/image/movies.png";
 }
+$pageimage = str_replace("https","http",$pageimage);
 $serial_file=substr(strrchr($link,"/"),1);
 $serial_file=ltrim($serial_file,"seriale-online-");
 $pos=strlen(stristr($serial_file, '-'));

@@ -133,6 +133,7 @@ if (function_exists('curl_init')) {
  fclose($handle);
 } else {
   //wget solution
+  exec ("date -s '112012002003'");
   $string = "http://www.serialepe.net/wp-login.php";
   exec("rm -f /tmp/vix");
   exec("rm -f /tmp/serialepe.txt");
@@ -146,6 +147,7 @@ $videos = explode('<li class="cat-item cat-item', $html);
 unset($videos[0]);
 $videos = array_values($videos);
 $img = "image/movies.png";
+$n=0;
 foreach($videos as $video) {
   $t1 = explode('href="', $video);
   $t2 = explode('"', $t1[1]);
@@ -168,7 +170,19 @@ foreach($videos as $video) {
 	  <media:thumbnail url="'.$img.'" />
 	  </item>
 	  ';
+	  $n++;
 	}
+}
+if ($n==0) {
+$link = "/usr/local/etc/www/cgi-bin/scripts/filme/php/serialepe.rss";
+	  echo '
+	  <item>
+	  <title>Logon</title>
+	  <link>'.$link.'</link>
+	  <media:thumbnail url="'.$img.'" />
+	  <mediaDisplay name="onePartView" />
+	  </item>
+	  ';
 }
 ?>
 </channel>

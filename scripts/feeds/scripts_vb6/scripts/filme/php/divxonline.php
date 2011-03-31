@@ -177,7 +177,7 @@ function str_between($string, $start, $end){
 	return substr($string,$ini,$len); 
 }
 $image = "/scripts/image/movies.png";
-$videos = explode('<div class="three">', $html);
+$videos = explode('<div class="base shortstory">', $html);
 
 unset($videos[0]);
 $videos = array_values($videos);
@@ -196,7 +196,7 @@ foreach($videos as $video) {
   $image = $t2[0];
 
 //  descriere  
-  $v1 = explode('Descriere:', $video);
+  $v1 = explode('<div class="movie-description dpad">', $video);
   $v2 = explode('</div>', $v1[1]);
   $descriere = $v2[0];
   $descriere = preg_replace("/(<\/?)([^>]*>)/e","",$descriere);

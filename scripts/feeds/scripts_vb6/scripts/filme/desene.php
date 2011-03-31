@@ -171,8 +171,15 @@ ret;
 </item>
 
 <item>
-<title>desenele-copilariei.net</title>
+<title>desene-animate.info</title>
 <link><?php echo $host; ?>/scripts/filme/php/desenele-copilariei_main.php</link>
+<annotation>http://desene-animate.info/</annotation>
+<mediaDisplay name="threePartsView"/>
+</item>
+
+<item>
+<title>desenele-copilariei.net</title>
+<link><?php echo $host; ?>/scripts/filme/php/desenele-copilariei_main_o.php</link>
 <annotation>http://desenele-copilariei.net</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>

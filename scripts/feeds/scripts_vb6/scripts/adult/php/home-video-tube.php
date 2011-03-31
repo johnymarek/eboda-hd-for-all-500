@@ -214,9 +214,10 @@ foreach($videos as $video) {
     $t2 = explode('"', $t1[1]);
     $image = $t2[0];
 
-    $t1 = explode('<h2>', $video);
-    $t2 = explode('</h2>', $t1[1]);
-    $title = htmlspecialchars_decode($t2[0]);
+    $t1 = explode('<h2', $video);
+    $t3 = explode(">",$t1[1]);
+    $t2 = explode('<', $t3[1]);
+    $title = htmlspecialchars_decode(trim($t2[0]));
 
 		$link = $host.'/scripts/adult/php/home-video-tube_link.php?file='.$link;
     $data = "Durata: ".trim(str_between($video,'<p>',"<"));

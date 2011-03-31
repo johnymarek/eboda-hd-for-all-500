@@ -397,6 +397,116 @@ $host = "http://127.0.0.1:82";
 
 <channel>
   <title>TV Romania</title>
+<!-- Dolce TV -->
+<item>
+<title>Dolce Sport</title>
+  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/dolcesport</location>
+  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/dolcesport</stream_url>
+  <stream_class>video</stream_class>
+</item>
+<item>
+<title>Antena 2</title>
+  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/antena2</location>
+  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/antena2</stream_url>
+  <stream_class>video</stream_class>
+</item>
+<item>
+<title>Antena 3</title>
+  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/antena_3</location>
+  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/antena_3</stream_url>
+  <stream_class>video</stream_class>
+</item>
+<item>
+<title>Realitatea</title>
+  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/realitatea</location>
+  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/realitatea</stream_url>
+  <stream_class>video</stream_class>
+</item>
+<item>
+<title>B1</title>
+  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/b1</location>
+  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/b1</stream_url>
+  <stream_class>video</stream_class>
+</item>
+<item>
+<title>TVR 1</title>
+  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvr1</location>
+  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvr1</stream_url>
+  <stream_class>video</stream_class>
+</item>
+<item>
+<title>TVR 2</title>
+  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvr2</location>
+  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvr2</stream_url>
+  <stream_class>video</stream_class>
+</item>
+<item>
+<title>TVR 3</title>
+  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvr3</location>
+  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvr3</stream_url>
+  <stream_class>video</stream_class>
+</item>
+<item>
+<title>TVR Cultural</title>
+  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvrcultural</location>
+  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvrcultural</stream_url>
+  <stream_class>video</stream_class>
+</item>
+<item>
+<title>TVR Info</title>
+  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvrinfo</location>
+  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvrinfo</stream_url>
+  <stream_class>video</stream_class>
+</item>
+<item>
+<title>TVR i</title>
+  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvr</location>
+  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvr</stream_url>
+  <stream_class>video</stream_class>
+</item>
+<item>
+<title>TVR HD</title>
+  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvrhd</location>
+  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvrhd</stream_url>
+  <stream_class>video</stream_class>
+</item>
+<item>
+<title>OTV</title>
+  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/otv</location>
+  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/otv</stream_url>
+  <stream_class>video</stream_class>
+</item>
+<item>
+<title>UTV</title>
+  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/utv</location>
+  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/utv</stream_url>
+  <stream_class>video</stream_class>
+</item>
+<item>
+<title>Mynele</title>
+  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/mynele</location>
+  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/mynele</stream_url>
+  <stream_class>video</stream_class>
+</item>
+<item>
+<title>Money TV</title>
+  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/money</location>
+  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/money</stream_url>
+  <stream_class>video</stream_class>
+</item>
+<item>
+<title>Euronews</title>
+  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/euronews</location>
+  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/euronews</stream_url>
+  <stream_class>video</stream_class>
+</item>
+<item>
+<title>Etno</title>
+  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/etno</location>
+  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/etno</stream_url>
+  <stream_class>video</stream_class>
+</item>
+<!-- end Dolce TV -->
   <item>
     <title>Neptun TV</title>
     <ext>ro</ext>

@@ -33,6 +33,12 @@ $host = "http://127.0.0.1:82";
 	      <media:thumbnail url="/scripts/trailer/image/cinemax.jpg"/>
 				<mediaDisplay name="threePartsView"/>
 	</item>
+    <item>
+      <title>filme2011.ro</title>
+	      <link><?php echo $host; ?>/scripts/trailer/php/filme2011.php?query=1,</link>
+	      <media:thumbnail url="/scripts/image/trailerb.png"/>
+	      <mediaDisplay name="threePartsView"/>
+ 	</item>
 <item>
 <title>movienews.ro - trailers</title>
 <link>http://movienews.ro/trailers/feed/</link>

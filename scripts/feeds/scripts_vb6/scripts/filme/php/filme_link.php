@@ -222,6 +222,24 @@ $myss=ltrim($myss,".");
 $l = "http://".$t1[$server1].".".$t1[$host].".".$t1[$com].":".$t1[$port]."/d/".$t1[$key]."/".$myss;
 return $l;
 }
+function nukeshare($string) {
+  //http://www.nukeshare.com:182/d/nj27226jmwazz6v7wqdn2huhhxat7dxdqwwnkdokhrvvlkemhmkryx5f/video.flv
+  $h = file_get_contents($string);
+  $h = str_between($h,"s1|addVariable|","split");
+  $a = explode("|",$h);
+  for ($i=0;$i<30;$i++) {
+      if ((strlen($a[$i]) >= 39) && (strpos($a[$i],"_") === false)) {
+           $hash = $a[$i];
+           break;
+      }
+  }
+  if ($hash <> "") {
+    $link="http://www.nukeshare.com:182/d/".$hash."/video.flv";
+  } else {
+    $link="";
+  }
+  return $link;
+}
 function divxden($string) {
   $server = str_between($string,"http://","/");
   if (strpos($string,"embed") === false) {
@@ -566,6 +584,27 @@ if (strpos($filelink, 'onlinemoca') !== false) {
       $link1 = str_between($baza,"addParam('flashvars','file=","'");
       $server = str_between($link,"http://","/");
       $title = $server." - ".substr(strrchr($link1,"/"),1);
+    } elseif (strpos($link, 'mainfile.net') !== false) {
+      //http://mainfile.net/40pvl60th70s/cowry-mami.flv.htm
+      $baza = file_get_contents($link);
+      $oid=str_between($baza,'name="id" value="','"');
+      $orand=str_between($baza,'name="rand" value="','"');
+      //op=download2&id=40pvl60th70s&rand=1xctoajg&method_free=&method_premium=&down_direct=1
+      $post="op=download2&id=".$oid."&rand=".$orand."&method_free=&method_premium=&down_direct=1";
+      if (function_exists('curl_init')) {
+         $ch = curl_init($link);
+         sleep(10);
+         curl_setopt ($ch, CURLOPT_POST, 1);
+         curl_setopt ($ch, CURLOPT_POSTFIELDS, $post);
+         curl_setopt($ch, CURLOPT_FOLLOWLOCATION  ,1);
+         curl_setopt($ch, CURLOPT_REFERER, $link);
+         curl_setopt($ch, CURLOPT_RETURNTRANSFER  ,1);  // RETURN THE CONTENTS OF THE CALL
+         $h = curl_exec($ch);
+         curl_close ($ch);
+      }
+      $link1=str_between($h,'flashvars="file=','"');
+      $server = str_between($link,"http://","/");
+      $title = $server." - ".substr(strrchr($link1,"/"),1);
     } elseif (strpos($link, 'rapidfiles.ws') !== false) {
       //http://www.rapidfiles.ws/evsza53dh7sv/X-Men_20United_20CD2.flv.htm
       $baza = file_get_contents($link);
@@ -682,7 +721,7 @@ foreach($videos as $video) {
         <item>
     	<title>'.$title.'</title>
     	<link>'.$link1.'</link>
-    	<download>'.$link.'</download>
+    	<download>'.$link2.'</download>
     	<name>'.$titledownload1.'.'.$ext.'</name>
     	<enclosure type="video/flv" url="'.$link1.'"/>
     	</item>
@@ -698,7 +737,7 @@ foreach($videos as $video) {
           $srt="http://".$s.$srt;
         }
         $pct = substr($srt, -4, 1);
-    	if (($srt <> "") && ($pct == ".")) {
+    	if (($srt <> "") && ($pct == ".") && (strpos($srt,".srt") !==false)) {
     	echo '
     	<item>
     	<title>Subtitrare</title>
@@ -927,6 +966,10 @@ foreach($videos as $video) {
      $f=explode("//",$link);
      $f=$f[1];
      $title = $server." - ".substr(strrchr($f,"/"),1);
+   } elseif (strpos($link,"nukeshare.com") !==false) {
+     $link = nukeshare($link);
+     $server = str_between($link,"http://","/");
+     $title = $server." - ".substr(strrchr($link,"/"),1);
    } else {
      $link = "";
    }
@@ -955,7 +998,7 @@ foreach($videos as $video) {
         ';
   	$lastlink = $link;
    }
-  	if ($srt <> "") {
+  	if (($srt <> "") && (strpos($srt,".srt") !==false)) {
     	echo '
     	<item>
     	<title>Subtitrare</title>
@@ -1050,7 +1093,8 @@ unset($videos[0]);
 $videos = array_values($videos);
 $n = 1;
 foreach($videos as $video) {
-    $link = str_between($video,'value="','"');
+    $link = str_between($video,'value="http','"');
+    $link="http".$link;
 	if (strpos($link,"megavideo") !== false) {
 		if (strpos($link,"mv_player.swf") === false) {
 			$file = get_headers($link);

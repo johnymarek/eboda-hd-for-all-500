@@ -160,33 +160,8 @@ function str_between($string, $start, $end){
 	return substr($string,$ini,$len); 
 }
 $host = "http://127.0.0.1:82";
-/**
-$title="Filme";
-$link="http://desenele-copilariei.net/categorie/filme";
-$link = $host.'/scripts/filme/php/desenele-copilariei.php?query=1,'.$link.",".urlencode($title);
-  echo '
-  <item>
-  <title>Filme</title>
-  <link>'.$link.'</link>
-  <annotation>Filme</annotation>
-  <mediaDisplay name="threePartsView"/>
-  </item>
-  ';
-$title="Povesti";
-$link="http://desenele-copilariei.net/categorie/povesti-audio-si-video";
-$link = $host.'/scripts/filme/php/desenele-copilariei.php?query=1,'.$link.",".urlencode($title);
-  echo '
-  <item>
-  <title>Povesti</title>
-  <link>'.$link.'</link>
-  <annotation>Povesti audio si video</annotation>
-  <mediaDisplay name="threePartsView"/>
-  </item>
-  ';
-**/
-$html = file_get_contents("http://desenele-copilariei.net/");
-$html=str_between($html,'<h2>Desene','</ul>');
-$videos = explode('<li class="cat-item', $html);
+$html = file_get_contents("http://desene-animate.info/");
+$videos = explode('<span class="text-gri">', $html);
 
 unset($videos[0]);
 $videos = array_values($videos);
@@ -194,20 +169,12 @@ $videos = array_values($videos);
 foreach($videos as $video) {
     $t1=explode('href="',$video);
     $t2=explode('"',$t1[1]);
-    $link=$t2[0];
+    $link="http://desene-animate.info/".$t2[0];
 
     $t3 = explode('>', $t1[1]);
     $t4 = explode('<', $t3[1]);
     $title = $t4[0];
 
-    $t1 = explode('title="', $video);
-    $t2 = explode('"', $t1[1]);
-    $data = trim($t2[0]);
-    if (strpos($data,"View all posts") !== false) {
-       $data=$title;
-    }
-    $data = preg_replace("/(<\/?)([^>]*>)/e","",$data);
-    $data = str_replace("&nbsp;","",$data);
     if ($link <> "") {
 		$link = $host.'/scripts/filme/php/desenele-copilariei.php?query=1,'.$link.",".urlencode($title);
 
@@ -215,7 +182,7 @@ foreach($videos as $video) {
   <item>
   <title>'.$title.'</title>
   <link>'.$link.'</link>
-  <annotation>'.$data.'</annotation>
+  <annotation>'.$title.'</annotation>
   <mediaDisplay name="threePartsView"/>
   </item>
   ';

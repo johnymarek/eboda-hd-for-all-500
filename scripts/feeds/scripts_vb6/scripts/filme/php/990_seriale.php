@@ -177,7 +177,16 @@ foreach($videos as $video) {
     $link = str_replace("download","",$link);
     $link = str_replace("seriale2","player-seriale",$link);
     $link = str_replace(",","*",$link);
-    if ($link <> "") {
+    //http://www.990.ro/player-seriale-88-7216-Stargate-Atlantis-Poarta-stelara-Atlantis-online-Rising-.html
+    //http://www.990.ro/player-seriale-redirect-serial.php?id=88&idul=7216&v=1
+    //http://www.990.ro/player-seriale-redirect-serial.php?id=88&idul=7217&v=1
+    $link = ltrim($link,"player-seriale-");
+    $t1=explode("-",$link);
+    $id=$t1[0];
+    $idul=$t1[1];
+    $link="player-seriale-redirect-serial.php?id=".$id."@idul=".$idul."@v=1";
+    //echo $link;
+    if ($id <> "") {
 	    $link = "http://www.990.ro/".$link;        
 			$title = str_between($video,"<td>","</td>")." - ".$title1;
 	    $link = 'http://127.0.0.1:82/scripts/filme/php/filme_link.php?'.$link;

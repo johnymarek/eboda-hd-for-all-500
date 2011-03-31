@@ -179,13 +179,17 @@ if($search) {
 $videos = explode("<td width='35%' rowspan='2'>", $html);
 unset($videos[0]);
 $videos = array_values($videos);
-
+//mai vedem, 3 variante.....
 foreach($videos as $video) {
     $t1 = explode('<a href="', $video);
     $t2 = explode('"', $t1[1]);
     $link = $t2[0];
     $link = str_replace("-download","",$link);
     $link = str_replace("filme","player-filme",$link);
+    $link = ltrim($link,"player-filme");
+    $t1=explode("-",$link);
+    $id=$t1[0];
+    $link="player-filme-redirect-film.php?id=".$id."@v=1";
     $link = trim("http://www.990.ro/".$link);
     
     $t3 = explode('title="',$video);
@@ -196,6 +200,8 @@ foreach($videos as $video) {
     $t2 = explode('"', $t1[1]);
     $image = "http://www.990.ro/".$t2[0];
 
+    $link="player-filme-redirect-film.php?id=".$id."@v=1";
+    $link = trim("http://www.990.ro/".$link);
     $link = 'http://127.0.0.1:82/scripts/filme/php/filme_link.php?'.$link.','.urlencode($title);
     echo '
     <item>
