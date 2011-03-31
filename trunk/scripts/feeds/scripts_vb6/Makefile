@@ -8,7 +8,7 @@ deliver: pack
 	googlecode_upload.py -s scripts -p eboda-hd-for-all-500 scripts4-version.txt -u cipibad -w ${PASS}
 
 
-pack:
+scripts4-latest.zip:
 	find scripts | grep -v .svn |  grep -v ~$ | zip -9 scripts4-latest.zip -@
 
 

@@ -125,7 +125,7 @@ $html = file_get_contents($link);
 $streamer=str_between($html,"so.addVariable('streamer','","'");
 $file=str_between($html,"so.addVariable('file','","'");
 $link=$streamer.$file;
-$link = "http://127.0.0.1/cgi-bin/translate?stream,Content-type:video/mp4,".$link;
+$link = "http://127.0.0.1:83/scripts/cgi-bin/translate?stream,Content-type:video/mp4,".$link;
     echo '
     <item>
     <title>'.$tit.'</title>

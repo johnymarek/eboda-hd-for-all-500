@@ -50,7 +50,7 @@ $host = "http://127.0.0.1:82";
 
 <item>
 <title>Vremea in Romania</title>
-<link>/usr/local/etc/www/cgi-bin/scripts/news/Romania.rss</link>
+<link>/scripts/news/Romania.rss</link>
 <media:thumbnail url="image/mele/weather.png" />
 </item>
 

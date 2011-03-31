@@ -174,7 +174,7 @@ foreach($videos as $video) {
 	}
 }
 if ($n==0) {
-$link = "/usr/local/etc/www/cgi-bin/scripts/filme/php/serialepe.rss";
+$link = "/scripts/filme/php/serialepe.rss";
 	  echo '
 	  <item>
 	  <title>Logon</title>

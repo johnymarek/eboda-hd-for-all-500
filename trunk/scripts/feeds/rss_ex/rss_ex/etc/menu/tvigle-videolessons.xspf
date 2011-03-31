@@ -10,7 +10,7 @@
   <image>http://photo.tvigle.ru/resource/rf/cnl/2096/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>
-  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:2191,tvigle/multi</link>
+  <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2191,tvigle/multi</link>
   <title>Уроки декора</title>
   <annotation>Предлагаем вашему вниманию уроки по реставрации и декорированию предметов интерьера, мебели и многого другого.</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/2191/list.jpg?2</image>
@@ -22,7 +22,7 @@
   <image>http://photo.tvigle.ru/resource/rf/cnl/1864/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>
-  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:2195,tvigle/multi</link>
+  <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2195,tvigle/multi</link>
   <title>Ремонт велосипеда</title>
   <annotation>25 советов, которые нужно знать для самостоятельного ремонта велосипеда.</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/2195/list.jpg?2</image>

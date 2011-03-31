@@ -1,0 +1,30 @@
+--- filme/php/divxonline_main.php	Sun Mar 06 20:32:13 2011 +0200
++++ filme/php/divxonline_main.php	Thu Mar 31 22:27:16 2011 +0300
+@@ -141,18 +141,19 @@
+ 	return substr($string,$ini,$len); 
+ }
+ $html = file_get_contents("http://divxonline.biz/");
+-$html = str_between($html,"<h3>Filme Online</h3>","</div>" );
++$html = str_between($html,"<h4>Categori</h4>","</ul>" );
+ $image = "image/movies.png";
+-$videos = explode('<a href="', $html);
++$videos = explode('<li', $html);
+ unset($videos[0]);
+ $videos = array_values($videos);
+ 
+-foreach($videos as $video) {		
+-    $t1 = explode('"', $video);
+-    $link = "http://divxonline.biz".$t1[0];
+-    $t1 = explode('title="', $video);
+-    $t2 = explode('"', $t1[1]);
+-    $title = $t2[0];
++foreach($videos as $video) {
++    $t0 = explode("href='",$video);
++    $t1 = explode("'", $t0[1]);
++    $link = $t1[0];
++    $t2 = explode('>', $t0[1]);
++    $t3 = explode('<', $t2[1]);
++    $title = $t3[0];
+ 		if ($link <> "") {
+ 			$link = $host."/scripts/filme/php/divxonline.php?query=,".$link;
+     	echo '

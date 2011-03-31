@@ -4,7 +4,7 @@
   <image>../etc/translate/rss/image/tvigle.png</image>
   <trackList>
 <track>
-  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:1689,tvigle/multi</link>
+  <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:1689,tvigle/multi</link>
   <title>Кино про любовь</title>
   <annotation>То, что стоит посмотреть перед бурным ... сном</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/1689/list.jpg?2</image>
@@ -40,7 +40,7 @@
   <image>http://photo.tvigle.ru/resource/rf/cnl/1701/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>
-  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:2197,tvigle/multi</link>
+  <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2197,tvigle/multi</link>
   <title>День защитника Отечества</title>
   <annotation>Коллекция фильмов про настоящих героев.</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/2197/list.jpg?2</image>
