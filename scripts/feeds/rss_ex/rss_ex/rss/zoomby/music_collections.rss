@@ -137,7 +137,7 @@
 
 <onEnter>
   print("zoomby_index::onEnter start");
-  translate_base_url  = "http://127.0.0.1/cgi-bin/translate?";
+  translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
   screenXp = 4;
   screenYp = 3;
   rssconf = readStringFromFile(getStoragePath("key")+"translate.dat");
@@ -229,7 +229,7 @@
    <location>http://www.zoomby.ru/music/collections/italian</location>
   </item>
   <item>
-   <title>Мексиканская музыка</title>
+   <title>Mexicoнская музыка</title>
    <location>http://www.zoomby.ru/music/collections/mexican</location>
   </item>
   <item>

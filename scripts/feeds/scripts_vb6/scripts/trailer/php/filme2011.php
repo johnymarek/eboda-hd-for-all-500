@@ -1,13 +1,4 @@
-<?php
-echo "<?xml version='1.0' encoding='UTF8' ?>";
-$query = $_GET["query"];
-if($query) {
-   $queryArr = explode(',', $query);
-   $page = $queryArr[0];
-   $search = $queryArr[1];
-   $tit = urldecode($queryArr[2]);
-}
-?>
+<?php echo "<?xml version='1.0' encoding='UTF8' ?>"; ?>
 <rss version="2.0">
 <onEnter>
   startitem = "middle";
@@ -22,7 +13,7 @@ if($query) {
 <mediaDisplay name="threePartsView"
 	sideLeftWidthPC="0"
 	sideRightWidthPC="0"
-
+	
 	headerImageWidthPC="0"
 	selectMenuOnRight="no"
 	autoSelectMenu="no"
@@ -47,7 +38,7 @@ if($query) {
 	imageFocus=""
 	sliding="no"
 >
-
+		
   	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		  <script>getPageInfo("pageTitle");</script>
 		</text>
@@ -55,14 +46,13 @@ if($query) {
   	<text redraw="yes" offsetXPC="85" offsetYPC="12" widthPC="10" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
 		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
 		</text>
-
-		<text align="center" redraw="yes"
+		<text align="justify" redraw="yes"
           lines="10" fontSize=17
 		      offsetXPC=55 offsetYPC=55 widthPC=40 heightPC=42
 		      backgroundColor=0:0:0 foregroundColor=200:200:200>
 			<script>print(annotation); annotation;</script>
 		</text>
-		<image  redraw="yes" offsetXPC=60 offsetYPC=22.5 widthPC=30 heightPC=30>
+		<image  redraw="yes" offsetXPC=66 offsetYPC=22.5 widthPC=15 heightPC=30>
 		<script>print(img); img;</script>
 		</image>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_01.png </idleImage>
@@ -79,7 +69,7 @@ if($query) {
 				<script>
 					idx = getQueryItemIndex();
 					focus = getFocusItemIndex();
-					if(focus==idx)
+					if(focus==idx) 
 					{
 					  location = getItemInfo(idx, "location");
 					  annotation = getItemInfo(idx, "annotation");
@@ -91,7 +81,7 @@ if($query) {
   				<script>
   					idx = getQueryItemIndex();
   					focus = getFocusItemIndex();
-  			    if(focus==idx) "16"; else "14";
+  			    if(focus==idx) "14"; else "14";
   				</script>
 				</fontSize>
 			  <backgroundColor>
@@ -111,40 +101,22 @@ if($query) {
 			</text>
 
 		</itemDisplay>
-
-<onUserInput>
-<script>
-ret = "false";
-userInput = currentUserInput();
-
-if (userInput == "pagedown" || userInput == "pageup")
-{
-  idx = Integer(getFocusItemIndex());
-  if (userInput == "pagedown")
-  {
-    idx -= -8;
-    if(idx &gt;= itemCount)
-      idx = itemCount-1;
-  }
-  else
-  {
-    idx -= 8;
-    if(idx &lt; 0)
-      idx = 0;
-  }
-
-  print("new idx: "+idx);
-  setFocusItemIndex(idx);
-	setItemFocus(0);
-  redrawDisplay();
-  "true";
-}
-ret;
-</script>
-</onUserInput>
-
+		
+  <onUserInput>
+    <script>
+      ret = "false";
+      userInput = currentUserInput();
+      majorContext = getPageInfo("majorContext");
+      
+      print("*** majorContext=",majorContext);
+      print("*** userInput=",userInput);
+      
+      ret;
+    </script>
+  </onUserInput>
+		
 	</mediaDisplay>
-
+	
 	<item_template>
 		<mediaDisplay  name="threePartsView" idleImageWidthPC="10" idleImageHeightPC="10">
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
@@ -156,43 +128,110 @@ ret;
         <idleImage>image/POPUP_LOADING_07.png</idleImage>
         <idleImage>image/POPUP_LOADING_08.png</idleImage>
 		</mediaDisplay>
+
 	</item_template>
 <channel>
-	<title><?php echo $tit; ?></title>
+	<title>filme2011.ro</title>
 	<menu>main menu</menu>
+
+
 <?php
-function str_between($string, $start, $end){
-	$string = " ".$string; $ini = strpos($string,$start);
-	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini;
-	return substr($string,$ini,$len);
+$query = $_GET["query"];
+if($query) {
+   $queryArr = explode(',', $query);
+   $page = $queryArr[0];
+   $search = $queryArr[1];
 }
-$html = file_get_contents($search);
-$videos = explode("<a class='titlulink'", $html);
-$image="/scripts/filme/image/desene.png";
+//http://www.filme2011.ro/
+//http://www.filme2011.ro/page/3/
+if ($page==1) {
+  $html = file_get_contents("http://www.filme2011.ro/");
+} else {
+  $html = file_get_contents("http://www.filme2011.ro/page/".$page."/");
+}
+if($page > 1) { ?>
+
+<item>
+<?php
+$sThisFile = 'http://127.0.0.1:82'.$_SERVER['SCRIPT_NAME'];
+$url = $sThisFile."?query=".($page-1).",";
+if($search) { 
+  $url = $url.$search; 
+}
+?>
+<title>Previous Page</title>
+<link><?php echo $url;?></link>
+<annotation>Pagina anterioara</annotation>
+<image>/scripts/image/left.jpg</image>
+<mediaDisplay name="threePartsView"/>
+</item>
+
+
+<?php } ?>
+
+<?php
+function str_between($string, $start, $end){ 
+	$string = " ".$string; $ini = strpos($string,$start); 
+	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
+	return substr($string,$ini,$len); 
+}
+
+$videos = explode('<div class="post-', $html);
+
 unset($videos[0]);
 $videos = array_values($videos);
-foreach($videos as $video) {
-  $t1 = explode('href="', $video);
-  $t2 = explode('"', $t1[1]);
-  $link = "http://desene-animate.info/".$t2[0];
-  
-  $t3 = explode(">",$t1[1]);
-  $t4 = explode("<",$t3[1]);
-  $title = $t4[0];
-  $title = $tit." ".$title;
 
-	$link = 'http://127.0.0.1:82/scripts/filme/php/filme_link.php?'.$link.",".urlencode($title);
-	echo '
-  <item>
-    <link>'.$link.'</link>
+foreach($videos as $video) {
+    $t1 = explode('href="', $video);
+    $t2 = explode('"', $t1[1]);
+    //http://mlabs.info/apps/ads/http://www.filme2011.ro/bad-teacher-2011/#
+    $link = $t2[0]."#";
+    $link = str_replace("http://mlabs.info/apps/ads/","",$link);
+
+    $t1 = explode('src="', $video);
+    $t2 = explode('"', $t1[1]);
+    $image = $t2[0];
+
+    $t1=explode('title="',$video);
+    $t2=explode(">",$t1[1]);
+    $t3=explode("<",$t2[1]);
+    $title = $t3[0];
+    
+    $descriere=str_between($video,'rel="category tag">','<a rel="nofollow"');
+    $descriere = str_replace("<br />"," ",$descriere);
+	$descriere = preg_replace("/(<\/?)(\w+)([^>]*>)/e"," ",$descriere);
+	$descriere = str_replace("&nbsp;","",$descriere);
+
+    $link = 'http://127.0.0.1:82/scripts/filme/php/filme_link.php?'.$link.','.urlencode($title);
+
+    echo '
+    <item>
     <title>'.$title.'</title>
-    <annotation>'.$title.'</annotation>
+    <link>'.$link.'</link>	
+    <annotation>'.$descriere.'</annotation>
     <image>'.$image.'</image>
     <media:thumbnail url="'.$image.'" />
     <mediaDisplay name="threePartsView"/>
-  </item>';
+    </item>
+    ';
+}
+
+?>
+
+<item>
+<?php
+$sThisFile = 'http://127.0.0.1:82'.$_SERVER['SCRIPT_NAME'];
+$url = $sThisFile."?query=".($page+1).",";
+if($search) { 
+  $url = $url.$search; 
 }
 ?>
+<title>Next Page</title>
+<link><?php echo $url;?></link>
+<annotation>Pagina urmatoare</annotation>
+<image>/scripts/image/right.jpg</image>
+<mediaDisplay name="threePartsView"/>
+</item>
 
 </channel>
 </rss>

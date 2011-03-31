@@ -160,26 +160,59 @@ ret;
 <channel>
 	<title><?php echo $tit; ?></title>
 	<menu>main menu</menu>
+
+
+<?php
+//http://desenele-copilariei.net/categorie/romana/andersen-povestitorul
+//http://desenele-copilariei.net/categorie/romana/andersen-povestitorul/page/2
+if ($page == 1) {
+  $link = $search;
+} else {
+  $link = $search."/page/".$page;
+}
+$html = file_get_contents($link);
+if($page > 1) { ?>
+
+<item>
+<?php
+$sThisFile = 'http://127.0.0.1:82'.$_SERVER['SCRIPT_NAME'];
+$url = $sThisFile."?query=".($page-1).",";
+if($search) {
+  $url = $url.$search.",".urlencode($tit);
+}
+?>
+<title>Previous Page</title>
+<link><?php echo $url;?></link>
+<annotation>Pagina anterioara</annotation>
+<image>/scripts/image/left.jpg</image>
+<mediaDisplay name="threePartsView"/>
+</item>
+
+
+<?php } ?>
+
 <?php
 function str_between($string, $start, $end){
 	$string = " ".$string; $ini = strpos($string,$start);
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini;
 	return substr($string,$ini,$len);
 }
-$html = file_get_contents($search);
-$videos = explode("<a class='titlulink'", $html);
-$image="/scripts/filme/image/desene.png";
+
+$videos = explode('<div class="postthumb">', $html);
 unset($videos[0]);
 $videos = array_values($videos);
 foreach($videos as $video) {
   $t1 = explode('href="', $video);
   $t2 = explode('"', $t1[1]);
-  $link = "http://desene-animate.info/".$t2[0];
+  $link = $t2[0];
   
-  $t3 = explode(">",$t1[1]);
+  $t3 = explode(">",$t1[2]);
   $t4 = explode("<",$t3[1]);
   $title = $t4[0];
-  $title = $tit." ".$title;
+  
+  $t1=explode('src="',$video);
+  $t2=explode('"',$t1[1]);
+  $image=$t2[0];
 
 	$link = 'http://127.0.0.1:82/scripts/filme/php/filme_link.php?'.$link.",".urlencode($title);
 	echo '
@@ -193,6 +226,21 @@ foreach($videos as $video) {
   </item>';
 }
 ?>
+
+<item>
+<?php
+$sThisFile = 'http://127.0.0.1:82'.$_SERVER['SCRIPT_NAME'];
+$url = $sThisFile."?query=".($page+1).",";
+if($search) {
+  $url = $url.$search.",".urlencode($tit);
+}
+?>
+<title>Next Page</title>
+<link><?php echo $url;?></link>
+<annotation>Pagina urmatoare</annotation>
+<image>/scripts/image/right.jpg</image>
+<mediaDisplay name="threePartsView"/>
+</item>
 
 </channel>
 </rss>

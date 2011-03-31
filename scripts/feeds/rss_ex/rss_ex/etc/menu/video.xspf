@@ -42,7 +42,7 @@
     <track>
       <link>rss_file://../etc/translate/rss/zoomby/music_index.rss</link>
       <title>Zoomby MUSIC</title>
-      <annotation>Смотрите музыкальные видеоклипы на zoomby.ru!</annotation>
+      <annotation>Смотрите музыкальные videoклипы на zoomby.ru!</annotation>
       <image>../etc/translate/rss/image/menu/zoomby.png</image>
       <meta rel="mediaDisplay">onePartView</meta>
     </track>

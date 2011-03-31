@@ -151,7 +151,7 @@ menuPerPage=9
 
 <onEnter>
   print("misic_ivi_ru_videos::onEnter start");
-  translate_base_url  = "http://127.0.0.1/cgi-bin/translate?";
+  translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
   screenXp = 4;
   screenYp = 3;
   rssconf = readStringFromFile(getStoragePath("key")+"translate.dat");
@@ -404,7 +404,7 @@ menuPerPage=9
   </item_template>
 
 <submenu>
- <title>Вперед</title>
+ <title>Forward</title>
  <onClick>
    print("page=",page);
    if( page &lt; numberOfPages )
@@ -419,7 +419,7 @@ menuPerPage=9
 </submenu>
 
 <submenu>
- <title>Назад</title>
+ <title>Back</title>
  <onClick>
    print("page=",page);
    if( page &gt; 1 )
@@ -495,7 +495,7 @@ menuPerPage=9
 </submenu>
 
 <submenu>
- <title>За сегодня</title>
+ <title>Today</title>
  <onClick>
    rt_term = "today";
    mode = 1;
@@ -504,7 +504,7 @@ menuPerPage=9
 </submenu>
 
 <submenu>
- <title>За неделю</title>
+ <title>This Week</title>
  <onClick>
    rt_term = "this_week";
    mode = 1;
@@ -513,7 +513,7 @@ menuPerPage=9
 </submenu>
 
 <submenu>
- <title>За месяц</title>
+ <title>This Month</title>
  <onClick>
    rt_term = "this_month";
    mode = 1;

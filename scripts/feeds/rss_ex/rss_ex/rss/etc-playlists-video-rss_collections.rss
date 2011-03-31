@@ -498,8 +498,8 @@
     <stream_protocol>http</stream_protocol>
   </item>
   <item>
-    <annotation>Все видео: бесплатно смотреть кино, сериалы, программы, мультфильмы и клипы в хорошем качестве без регистрации: Новое видео</annotation>
-    <title>Самое популярное видео от ivi.ru</title>
+    <annotation>Все video: бесплатно смотреть кино, сериалы, программы, мультфильмы и клипы в хорошем качестве без регистрации: Новое video</annotation>
+    <title>Самое популярное video от ivi.ru</title>
     <image>../etc/translate/rss/image/menu/rss.png</image>
     <location>http://www.ivi.ru/rss/best</location>
     <stream_url>http://www.ivi.ru/rss/best</stream_url>
@@ -508,8 +508,8 @@
     <stream_protocol>http</stream_protocol>
   </item>
   <item>
-    <annotation>Все видео: бесплатно смотреть кино, сериалы, программы, мультфильмы и клипы в хорошем качестве без регистрации: Новое видео</annotation>
-    <title>Рекомендованное видео от ivi.ru</title>
+    <annotation>Все video: бесплатно смотреть кино, сериалы, программы, мультфильмы и клипы в хорошем качестве без регистрации: Новое video</annotation>
+    <title>Рекомендованное video от ivi.ru</title>
     <image>../etc/translate/rss/image/menu/rss.png</image>
     <location>http://www.ivi.ru/rss/recommend</location>
     <stream_url>http://www.ivi.ru/rss/recommend</stream_url>
