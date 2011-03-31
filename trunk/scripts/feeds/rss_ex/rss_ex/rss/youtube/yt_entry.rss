@@ -313,7 +313,7 @@
   if(youtubeRegion=="PL") lr="pl"; else
   if(youtubeRegion=="RU") lr="ru"; else
   if(youtubeRegion=="US") lr="en"; else
-  if(youtubeRegion=="TW") lr="zh-Hans"; else
+  if(youtubeRegion=="TW") lr="zh-Hant"; else
   if(youtubeRegion=="FR") lr="fr"; else
   if(youtubeRegion=="KR") lr="ko"; else
   if(youtubeRegion=="JP") lr="ja"; else

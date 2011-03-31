@@ -22,7 +22,7 @@
 -->
 
 <onEnter>
-    translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
+    translate_base_url  = "http://127.0.0.1/cgi-bin/translate?";
   screenXp = 4;
   screenYp = 3;
   rssconf = readStringFromFile(getStoragePath("key")+"translate.dat");
@@ -287,6 +287,10 @@
         cancelIdle();
         ret = "true";
       }
+      else if(userInput == "down" || userInput == "D")
+      {
+        ret = "true";
+      }
 
       ret;
     </script>
@@ -485,8 +489,8 @@
   <title>Moskva.FM</title>
   <item>
     <location>mms://live.rfn.ru/radiorussia</location>
-    <title>Radio России</title>
-    <annotation>Государственная радиовещательная компания «Radio России» – главная государственная радиостанция страны</annotation>
+    <title>Радио России</title>
+    <annotation>Государственная радиовещательная компания «Радио России» – главная государственная радиостанция страны</annotation>
     <image>http://img.moskva.fm/img/stations/msk/66_44.gif</image>
     <url>http://www.moskva.fm/stations/FM_66.44</url>
     <id>2106</id>
@@ -500,8 +504,8 @@
   </item>
   <item>
     <location>http://streamall.rambler.ru/svoboda32.mp3</location>
-    <title>Radio Свобода</title>
-    <annotation>В эфире с 6:00 до 24:00</annotation>
+    <title>Радио Свобода</title>
+    <annotation>В эфире с 6:00 до 24:00 (закрыта в июле 2010)</annotation>
     <image>http://img.moskva.fm/img/stations/msk/68_30.gif</image>
     <url>http://www.moskva.fm/stations/FM_68.30</url>
     <id>2104</id>
@@ -533,7 +537,7 @@
   <item>
     <location>http://streamall.rambler.ru:80/ultra128.mp3</location>
     <title>Ultra</title>
-    <annotation>ULTRA - территория лучшей зарубежной альтернативной музыки!</annotation>
+    <annotation>ULTRA - территория лучшей зарубежной альтернативной музыки! (закрыта в октябре 2010)</annotation>
     <image>http://img.moskva.fm/img/stations/msk/70_19.gif</image>
     <url>http://www.moskva.fm/stations/FM_70.19</url>
     <id>2102</id>
@@ -565,7 +569,7 @@
     <stream_bitrate>64</stream_bitrate>
   </item>
   <item>
-    <location>mms://87.242.72.62/cityfm</location>
+    <location>http://radiogrom.com/online/moskva_fm/city_fm_online.m3u</location>
     <title>Сити-FM</title>
     <annotation>Московское информационное радио</annotation>
     <image>http://img.moskva.fm/img/stations/msk/87_9.gif</image>
@@ -573,11 +577,13 @@
     <id>4006</id>
     <fm>87.9</fm>
     <name>87_9</name>
-    <stream_url>mms://87.242.72.62/cityfm</stream_url>
+    <stream_url>http://79.143.70.114:8000/cityfm-64k.aac</stream_url>
     <stream_class>audio</stream_class>
-    <stream_server>_empty_</stream_server>
-    <stream_type>audio/x-ms-wma</stream_type>
-    <stream_protocol>rtsp</stream_protocol>
+    <stream_soft>icecast</stream_soft>
+    <stream_type>audio/aacp</stream_type>
+    <stream_protocol>http</stream_protocol>
+    <stream_genre>CityFM news</stream_genre>
+    <stream_bitrate>64</stream_bitrate>
   </item>
   <item>
     <location>http://webcast1.emg.fm:55655/retro128.mp3</location>
@@ -598,7 +604,7 @@
     <stream_bitrate>128</stream_bitrate>
   </item>
   <item>
-    <location>mmsh://stream01.rambler.ru:80/umorfm128</location>
+    <location>http://radiogrom.com/online/moskva_fm/umor_fm_online.m3u</location>
     <title>Юмор FM</title>
     <annotation>Радуйся жизни!</annotation>
     <image>http://img.moskva.fm/img/stations/msk/88_7.gif</image>
@@ -606,15 +612,15 @@
     <id>4012</id>
     <fm>88.7</fm>
     <name>88_7</name>
-    <stream_url>mmsh://stream01.rambler.ru:80/umorfm128</stream_url>
+    <stream_url>mms://mms.online.ru/c2_4_128</stream_url>
     <stream_class>audio</stream_class>
     <stream_server>_empty_</stream_server>
     <stream_type>audio/x-ms-wma</stream_type>
-    <stream_protocol>mmsh</stream_protocol>
+    <stream_protocol>rtsp</stream_protocol>
   </item>
   <item>
     <location>http://streamall.rambler.ru:/jazz128.mp3</location>
-    <title>Radio Jazz</title>
+    <title>Радио Jazz</title>
     <annotation>Самое стильное радио в городе</annotation>
     <image>http://img.moskva.fm/img/stations/msk/89_1.gif</image>
     <url>http://www.moskva.fm/stations/FM_89.1</url>
@@ -631,7 +637,7 @@
   <item>
     <location>http://w01-cn01.akadostream.ru:8108/megapolisfm128.mp3</location>
     <title>Мегаполис FM</title>
-    <annotation>Radio для современных, активных и обеспеченных людей.</annotation>
+    <annotation>Радио для современных, активных и обеспеченных людей.</annotation>
     <image>http://img.moskva.fm/img/stations/msk/89_5.gif</image>
     <url>http://www.moskva.fm/stations/FM_89.5</url>
     <id>2013</id>
@@ -664,7 +670,7 @@
     <stream_bitrate>128</stream_bitrate>
   </item>
   <item>
-    <location>mmsh://stream03.rambler.ru:80/autoradio128?WMContentBitrate=180000</location>
+    <location>http://radiogrom.com/online/moskva_fm/avtoradio_online_33.m3u</location>
     <title>Авторадио</title>
     <annotation>Первое автомобильное радио</annotation>
     <image>http://img.moskva.fm/img/stations/msk/90_3.gif</image>
@@ -672,14 +678,14 @@
     <id>4013</id>
     <fm>90.3</fm>
     <name>90_3</name>
-    <stream_url>mmsh://stream03.rambler.ru:80/autoradio128?WMContentBitrate=180000</stream_url>
+    <stream_url>mmsh://94.23.194.126/v3_1_22?st=043245100125266732820090917</stream_url>
     <stream_class>audio</stream_class>
     <stream_server>_empty_</stream_server>
     <stream_type>audio/x-ms-wma</stream_type>
     <stream_protocol>mmsh</stream_protocol>
   </item>
   <item>
-    <location>mms://87.242.72.62/relaxfm</location>
+    <location>http://radiogrom.com/online/moskva_fm/relax_fm_online_3.m3u</location>
     <title>Relax FM</title>
     <annotation>Спокойная волна</annotation>
     <image>http://img.moskva.fm/img/stations/msk/90_8.gif</image>
@@ -687,11 +693,13 @@
     <id>4014</id>
     <fm>90.8</fm>
     <name>90_8</name>
-    <stream_url>mms://87.242.72.62/relaxfm</stream_url>
+    <stream_url>http://217.29.51.162:8000/radio-64k.aac</stream_url>
     <stream_class>audio</stream_class>
-    <stream_server>_empty_</stream_server>
-    <stream_type>audio/x-ms-wma</stream_type>
-    <stream_protocol>rtsp</stream_protocol>
+    <stream_soft>icecast</stream_soft>
+    <stream_type>audio/aacp</stream_type>
+    <stream_protocol>http</stream_protocol>
+    <stream_genre>RelaxFM</stream_genre>
+    <stream_bitrate>64</stream_bitrate>
   </item>
   <item>
     <location>http://streamall.rambler.ru:80/echo128.mp3</location>
@@ -711,7 +719,7 @@
   </item>
   <item>
     <location>mmsh://live.rfn.ru/rcult</location>
-    <title>Radio Культура</title>
+    <title>Радио Культура</title>
     <annotation>Государственная телевизионная и радиовещательная компания</annotation>
     <image>http://img.moskva.fm/img/stations/msk/91_6.gif</image>
     <url>http://www.moskva.fm/stations/FM_91.6</url>
@@ -725,25 +733,24 @@
     <stream_protocol>mmsh</stream_protocol>
   </item>
   <item>
-    <location>http://govoritmoskva.ru:8000/gm-fm-128</location>
+    <location>http://radiogrom.com/online/moskva_fm/govorit_moskva_online_2.m3u</location>
     <title>Говорит Москва</title>
-    <annotation>Radio большого города</annotation>
+    <annotation>Радио большого города</annotation>
     <image>http://img.moskva.fm/img/stations/msk/92_0.gif</image>
     <url>http://www.moskva.fm/stations/FM_92.0</url>
     <id>4016</id>
     <fm>92.0</fm>
     <name>92_0</name>
-    <stream_url>http://govoritmoskva.ru:8000/gm-fm-128</stream_url>
+    <stream_url>http://stream04.rambler.ru:80/govoritmoskva64.mp3</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>icecast</stream_soft>
     <stream_type>audio/mpeg</stream_type>
     <stream_protocol>http</stream_protocol>
-    <stream_genre>various</stream_genre>
-    <stream_bitrate>128</stream_bitrate>
+    <stream_bitrate>64</stream_bitrate>
   </item>
   <item>
     <location>http://radiogrom.com/online/moskva_fm/dacha_fm_online.m3u</location>
-    <title>Radio Yesча</title>
+    <title>Радио Дача</title>
     <annotation>Удачное радио!</annotation>
     <image>http://img.moskva.fm/img/stations/msk/92_4.gif</image>
     <url>http://www.moskva.fm/stations/FM_92.4</url>
@@ -760,7 +767,7 @@
   </item>
   <item>
     <location>mmsh://online.carnivalfm.ru:1234</location>
-    <title>Radio Карнавал</title>
+    <title>Радио Карнавал</title>
     <annotation>Мировые хиты</annotation>
     <image>http://img.moskva.fm/img/stations/msk/92_8.gif</image>
     <url>http://www.moskva.fm/stations/FM_92.8</url>
@@ -774,24 +781,24 @@
     <stream_protocol>mmsh</stream_protocol>
   </item>
   <item>
-    <location>http://www.sportfm.ru:8000/sportfm-128</location>
-    <title>Radio Спорт</title>
+    <location>http://radiogrom.com/online/moskva_fm/sport_fm_online.m3u</location>
+    <title>Радио Спорт</title>
     <annotation>Главное спортивное радио страны</annotation>
     <image>http://img.moskva.fm/img/stations/msk/93_2.gif</image>
     <url>http://www.moskva.fm/stations/FM_93.2</url>
     <id>4019</id>
     <fm>93.2</fm>
     <name>93_2</name>
-    <stream_url>http://www.sportfm.ru:8000/sportfm-128</stream_url>
+    <stream_url>http://90.156.211.132:8000/sportfm-128</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>icecast</stream_soft>
     <stream_type>audio/mpeg</stream_type>
     <stream_protocol>http</stream_protocol>
     <stream_genre>various</stream_genre>
-    <stream_bitrate>128</stream_bitrate>
+    <stream_bitrate>96</stream_bitrate>
   </item>
   <item>
-    <location>mmsh://stream01.rambler.ru:80/komersant</location>
+    <location>http://radiogrom.com/online/moskva_fm/kommersant_fm_moskva_online.m3u</location>
     <title>КоммерсантъFM</title>
     <annotation>Все, что происходит сейчас</annotation>
     <image>http://img.moskva.fm/img/stations/msk/93_6.gif</image>
@@ -799,7 +806,7 @@
     <id>2020</id>
     <fm>93.6</fm>
     <name>93_6</name>
-    <stream_url>mmsh://stream01.rambler.ru:80/komersant</stream_url>
+    <stream_url>mmsh://stream03.rambler.ru:80/komersant?WMContentBitrate=150000</stream_url>
     <stream_class>audio</stream_class>
     <stream_server>_empty_</stream_server>
     <stream_type>audio/x-ms-wma</stream_type>
@@ -808,7 +815,7 @@
   <item>
     <location/>
     <title>Newtone FM</title>
-    <annotation>Прямо в голову! (закрыто 9 марта 2010)</annotation>
+    <annotation>Прямо в голову! (закрыта 9 марта 2010)</annotation>
     <image>http://img.moskva.fm/img/stations/msk/93_61.gif</image>
     <url>http://www.moskva.fm/stations/FM_93.61</url>
     <id>2021</id>
@@ -817,23 +824,22 @@
   </item>
   <item>
     <location>http://online.pionerfm.ru:8000/pionerfm</location>
-    <title>Пионер FM</title>
+    <title>Не очень взрослое радио</title>
     <annotation>Не очень взрослое радио</annotation>
     <image>http://img.moskva.fm/img/stations/msk/94_0.gif</image>
     <url>http://www.moskva.fm/stations/FM_94.0</url>
-    <id>2110</id>
+    <id>2112</id>
     <fm>94.0</fm>
     <name>94_0</name>
     <stream_url>http://online.pionerfm.ru:8000/pionerfm</stream_url>
     <stream_class>audio</stream_class>
-    <stream_soft>icecast</stream_soft>
     <stream_type>audio/mpeg</stream_type>
     <stream_protocol>http</stream_protocol>
     <stream_genre>MUSIC</stream_genre>
     <stream_bitrate>128</stream_bitrate>
   </item>
   <item>
-    <location>http://station.ru/RadioStation.aspx?id=1745</location>
+    <location>http://radiogrom.com/online/moskva_fm/dobrie_pesni_online.m3u</location>
     <title>Добрые песни</title>
     <annotation>Максимально позитивные эмоции</annotation>
     <image>http://img.moskva.fm/img/stations/msk/94_4.gif</image>
@@ -841,23 +847,17 @@
     <id>2105</id>
     <fm>94.4</fm>
     <name>94_4</name>
-    <stream_url>mmsh://broadcast03.station.ru/dobryepesni</stream_url>
-    <stream_class>audio</stream_class>
-    <stream_soft>station.ru</stream_soft>
-    <stream_server>http://station.ru/GetSongJS.aspx?id=dobryepesni</stream_server>
-    <stream_type>audio/x-ms-wma</stream_type>
-    <stream_protocol>mmsh</stream_protocol>
   </item>
   <item>
-    <location>http://radiogrom.com/online/moskva_fm/radio-ru.fm-online.m3u</location>
+    <location>http://188.127.243.169/ru-192.m3u</location>
     <title>RU.FM</title>
     <annotation>Рунет плюс радио</annotation>
-    <image>http://css.moskva.fm/img/stations/msk/94_8_85x85.png</image>
+    <image>http://css.moskva.fm/img/stations/msk/94_8.png</image>
     <url>http://www.moskva.fm/stations/FM_94.8</url>
     <id>4020</id>
     <fm>94.8</fm>
     <name>94_8</name>
-    <stream_url>http://ru.fm:8000/promo</stream_url>
+    <stream_url>http://188.127.243.169:80/ru-192</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>icecast</stream_soft>
     <stream_type>audio/mpeg</stream_type>
@@ -868,8 +868,8 @@
   <item>
     <location/>
     <title>Моя Семья</title>
-    <annotation>Для тех, кого любим! (закрыто 15 ноября 2010)</annotation>
-    <image>http://css.moskva.fm/img/stations/msk/moya-semya_85x85.png</image>
+    <annotation>Для тех, кого любим! (закрыта 15 ноября 2010)</annotation>
+    <image>http://css.moskva.fm/img/stations/msk/94_81.png</image>
     <url>http://www.moskva.fm/stations/FM_94.8</url>
     <id>4020</id>
     <fm>94.8</fm>
@@ -894,7 +894,7 @@
   </item>
   <item>
     <location>http://89.208.99.16:8088/zvezda_128</location>
-    <title>Radio Звезда</title>
+    <title>Радио Звезда</title>
     <annotation>Телерадиокомпания Вооруженных Сил Российской Федерации</annotation>
     <image>http://img.moskva.fm/img/stations/msk/95_6.gif</image>
     <url>http://www.moskva.fm/stations/FM_95.6</url>
@@ -928,7 +928,7 @@
   <item>
     <location/>
     <title>Вояж FM</title>
-    <annotation>Золотые 90-е (закрыто в июле 2010)</annotation>
+    <annotation>Золотые 90-е (закрыта в июле 2010)</annotation>
     <image>http://img.moskva.fm/img/stations/msk/96_0.gif</image>
     <url>http://www.moskva.fm/stations/FM_96.0</url>
     <id>2109</id>
@@ -961,7 +961,7 @@
     <id>2017</id>
     <fm>96.8</fm>
     <name>96_8</name>
-    <stream_url>http://w01-cn01.akadostream.ru:8114/detifm192.mp3</stream_url>
+    <stream_url>http://w03-cn03.akadostream.ru:8114/detifm192.mp3</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>icecast</stream_soft>
     <stream_type>audio/mpeg</stream_type>
@@ -983,7 +983,7 @@
     <stream_type>audio/mpeg</stream_type>
     <stream_protocol>http</stream_protocol>
     <stream_genre>Russian</stream_genre>
-    <stream_bitrate>192</stream_bitrate>
+    <stream_bitrate>96</stream_bitrate>
   </item>
   <item>
     <location>mmsh://live.rfn.ru/vesti_fm</location>
@@ -1001,19 +1001,24 @@
     <stream_protocol>mmsh</stream_protocol>
   </item>
   <item>
-    <location>mmsh://stream03.rambler.ru/kinofm</location>
-    <title>Кино FM</title>
-    <annotation>98 FM - 98 хитов</annotation>
-    <image>http://img.moskva.fm/img/stations/msk/98_0.gif</image>
-    <url>http://www.moskva.fm/stations/FM_98.0</url>
+    <location/>
+    <title>Kino FM</title>
+    <annotation>98 FM - 98 хитов (зфкрыта в декабре 2010)</annotation>
+    <image>http://img.moskva.fm/img/stations/msk/98_01.gif</image>
+    <url>http://www.moskva.fm/stations/FM_98.01</url>
     <id>2018</id>
     <fm>98.0</fm>
+    <name>98_01</name>
+  </item>
+  <item>
+    <location>http://radiogrom.com/online/moskva_fm/98_8_fm_online.m3u</location>
+    <title>Шоколад FM</title>
+    <annotation>Всё в нём</annotation>
+    <image>http://img.moskva.fm/img/stations/msk/98_0.gif</image>
+    <url>http://www.moskva.fm/stations/FM_98.0</url>
+    <id>2022</id>
+    <fm>98.0</fm>
     <name>98_0</name>
-    <stream_url>mmsh://stream03.rambler.ru/kinofm</stream_url>
-    <stream_class>audio</stream_class>
-    <stream_server>_empty_</stream_server>
-    <stream_type>audio/x-ms-wma</stream_type>
-    <stream_protocol>mmsh</stream_protocol>
   </item>
   <item>
     <location>http://webcast2.emg.fm:55655/fresh128.mp3</location>
@@ -1034,15 +1039,25 @@
     <stream_bitrate>128</stream_bitrate>
   </item>
   <item>
-    <location>mmsh://mms.online.ru/v4_1_22</location>
-    <title>Radio Алла</title>
-    <annotation>Все звезды на "Radio Алла"!</annotation>
-    <image>http://img.moskva.fm/img/stations/msk/98_8.gif</image>
+    <location/>
+    <title>Радио Алла</title>
+    <annotation>Все звезды на "Радио Алла"! (закрыта в январе 2011)</annotation>
+    <image>http://img.moskva.fm/img/stations/msk/98_81.gif</image>
     <url>http://www.moskva.fm/stations/FM_98.8</url>
     <id>4011</id>
     <fm>98.8</fm>
+    <name>98_81</name>
+  </item>
+  <item>
+    <location>http://radiogrom.com/online/moskva_fm/radio_romantika_online.m3u</location>
+    <title>Радио Романтика</title>
+    <annotation>Все звезды на "Радио Романтика"!</annotation>
+    <image>http://img.moskva.fm/img/stations/msk/98_8.gif</image>
+    <url>http://www.moskva.fm/stations/FM_98.8</url>
+    <id>4026</id>
+    <fm>98.8</fm>
     <name>98_8</name>
-    <stream_url>mmsh://mms.online.ru/v4_1_22</stream_url>
+    <stream_url>mmsh://mms.online.ru/v4_1_22?st=018489700123667805420090310</stream_url>
     <stream_class>audio</stream_class>
     <stream_server>_empty_</stream_server>
     <stream_type>audio/x-ms-wma</stream_type>
@@ -1050,7 +1065,7 @@
   </item>
   <item>
     <location>mmsh://live.rfn.ru/orfey/</location>
-    <title>Radio Орфей</title>
+    <title>Радио Орфей</title>
     <annotation>Классическая музыка</annotation>
     <image>http://img.moskva.fm/img/stations/msk/99_2.gif</image>
     <url>http://www.moskva.fm/stations/FM_99.2</url>
@@ -1078,7 +1093,7 @@
     <stream_type>audio/mpeg</stream_type>
     <stream_protocol>http</stream_protocol>
     <stream_genre>CLASSIC ROCK</stream_genre>
-    <stream_bitrate>64</stream_bitrate>
+    <stream_bitrate>128</stream_bitrate>
   </item>
   <item>
     <location>http://radiogrom.com/online/moskva_fm/silver_rain_online_2.m3u</location>
@@ -1115,7 +1130,7 @@
   </item>
   <item>
     <location>http://radiogrom.com/online/moskva_fm/classic_fm_online.m3u</location>
-    <title>Radio Classic</title>
+    <title>Радио Classic</title>
     <annotation>Красивая музыка красивых людей</annotation>
     <image>http://img.moskva.fm/img/stations/msk/100_9.gif</image>
     <url>http://www.moskva.fm/stations/FM_100.9</url>
@@ -1135,13 +1150,13 @@
     <stream_url>mmsh://broadcast03.station.ru/dfm</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>station.ru</stream_soft>
-    <stream_server>http://station.ru/GetSongJS.aspx?id=dfm</stream_server>
+    <stream_server>http://station.ru/services/StationService.svc/json/GetCurrentStationTrack?stationId=dfm</stream_server>
     <stream_type>audio/x-ms-wma</stream_type>
     <stream_protocol>mmsh</stream_protocol>
   </item>
   <item>
     <location>http://streamall.rambler.ru:80/nashe128.mp3</location>
-    <title>Наше Radio</title>
+    <title>Наше Радио</title>
     <annotation>Наша музыка</annotation>
     <image>http://img.moskva.fm/img/stations/msk/101_7.gif</image>
     <url>http://www.moskva.fm/stations/FM_101.7</url>
@@ -1159,7 +1174,7 @@
   <item>
     <location>http://station.ru/RadioStation.aspx?id=1721</location>
     <title>Монте-Карло</title>
-    <annotation>Radio для искушенных</annotation>
+    <annotation>Радио для искушенных</annotation>
     <image>http://img.moskva.fm/img/stations/msk/102_1.gif</image>
     <url>http://www.moskva.fm/stations/FM_102.1</url>
     <id>2004</id>
@@ -1168,7 +1183,7 @@
     <stream_url>mmsh://broadcast03.station.ru/montecarlo</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>station.ru</stream_soft>
-    <stream_server>http://station.ru/GetSongJS.aspx?id=montecarlo</stream_server>
+    <stream_server>http://station.ru/services/StationService.svc/json/GetCurrentStationTrack?stationId=montecarlo</stream_server>
     <stream_type>audio/x-ms-wma</stream_type>
     <stream_protocol>mmsh</stream_protocol>
   </item>
@@ -1181,7 +1196,7 @@
     <id>2005</id>
     <fm>102.5</fm>
     <name>102_5</name>
-    <stream_url>http://streamall.rambler.ru:80/popsa64.mp3</stream_url>
+    <stream_url>http://stream09.rambler.ru:80/popsa64.mp3</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>icecast</stream_soft>
     <stream_type>audio/mpeg</stream_type>
@@ -1207,7 +1222,7 @@
   </item>
   <item>
     <location>mmsh://stream03.rambler.ru/radiomayak</location>
-    <title>Radio Маяк</title>
+    <title>Радио Маяк</title>
     <annotation>Жизнь продолжается!</annotation>
     <image>http://img.moskva.fm/img/stations/msk/103_4.gif</image>
     <url>http://www.moskva.fm/stations/FM_103.4</url>
@@ -1232,7 +1247,7 @@
     <stream_url>mmsh://broadcast03.station.ru/maximum</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>station.ru</stream_soft>
-    <stream_server>http://station.ru/GetSongJS.aspx?id=maximum</stream_server>
+    <stream_server>http://station.ru/services/StationService.svc/json/GetCurrentStationTrack?stationId=maximum</stream_server>
     <stream_type>audio/x-ms-wma</stream_type>
     <stream_protocol>mmsh</stream_protocol>
   </item>
@@ -1253,8 +1268,8 @@
   </item>
   <item>
     <location>http://webcast.emg.fm:55655/radiosept128.mp3</location>
-    <title>Radio 7</title>
-    <annotation>Radio на семи холмах</annotation>
+    <title>Радио 7</title>
+    <annotation>Радио на семи холмах</annotation>
     <image>http://img.moskva.fm/img/stations/msk/104_7.gif</image>
     <options>Protocol:http</options>
     <url>http://www.moskva.fm/stations/FM_104.7</url>
@@ -1266,7 +1281,7 @@
     <stream_soft>icecast</stream_soft>
     <stream_type>audio/mpeg</stream_type>
     <stream_protocol>http</stream_protocol>
-    <stream_genre>Rock</stream_genre>
+    <stream_genre>Pop</stream_genre>
     <stream_bitrate>128</stream_bitrate>
   </item>
   <item>
@@ -1278,7 +1293,7 @@
     <id>2010</id>
     <fm>105.2</fm>
     <name>105_2</name>
-    <stream_url>http://streamall.rambler.ru:80/next64.mp3</stream_url>
+    <stream_url>http://stream08.rambler.ru:80/next64.mp3</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>icecast</stream_soft>
     <stream_type>audio/mpeg</stream_type>
@@ -1287,7 +1302,7 @@
   </item>
   <item>
     <location>http://station.ru/RadioStation.aspx?id=1723</location>
-    <title>Русское Radio</title>
+    <title>Русское Радио</title>
     <annotation>Музыка для души</annotation>
     <image>http://img.moskva.fm/img/stations/msk/105_7.gif</image>
     <url>http://www.moskva.fm/stations/FM_105.7</url>
@@ -1297,7 +1312,7 @@
     <stream_url>mmsh://broadcast03.station.ru/rusradio</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>station.ru</stream_soft>
-    <stream_server>http://station.ru/GetSongJS.aspx?id=rusradio</stream_server>
+    <stream_server>http://station.ru/services/StationService.svc/json/GetCurrentStationTrack?stationId=rusradio</stream_server>
     <stream_type>audio/x-ms-wma</stream_type>
     <stream_protocol>mmsh</stream_protocol>
   </item>
@@ -1347,7 +1362,7 @@
     <stream_url>mmsh://broadcast03.station.ru/rsn</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>station.ru</stream_soft>
-    <stream_server>http://station.ru/GetSongJS.aspx?id=rsn</stream_server>
+    <stream_server>http://station.ru/services/StationService.svc/json/GetCurrentStationTrack?stationId=rsn</stream_server>
     <stream_type>audio/x-ms-wma</stream_type>
     <stream_protocol>mmsh</stream_protocol>
   </item>
@@ -1363,14 +1378,14 @@
     <stream_url>mmsh://broadcast03.station.ru/hitfm</stream_url>
     <stream_class>audio</stream_class>
     <stream_soft>station.ru</stream_soft>
-    <stream_server>http://station.ru/GetSongJS.aspx?id=hitfm</stream_server>
+    <stream_server>http://station.ru/services/StationService.svc/json/GetCurrentStationTrack?stationId=hitfm</stream_server>
     <stream_type>audio/x-ms-wma</stream_type>
     <stream_protocol>mmsh</stream_protocol>
   </item>
   <item>
     <location>http://streamall.rambler.ru/mv128.mp3</location>
     <title>Милицейская волна</title>
-    <annotation>Radio МВД РФ</annotation>
+    <annotation>Радио МВД РФ</annotation>
     <image>http://img.moskva.fm/img/stations/msk/107_8.gif</image>
     <url>http://www.moskva.fm/stations/FM_107.8</url>
     <id>4004</id>

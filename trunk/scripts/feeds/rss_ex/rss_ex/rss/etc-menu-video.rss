@@ -371,6 +371,13 @@
     <mediaDisplay name="onePartView"/>
   </item>
   <item>
+    <link>rss_file://../etc/translate/rss/zoomby/music_index.rss</link>
+    <title>Zoomby MUSIC</title>
+    <annotation>Смотрите музыкальные видеоклипы на zoomby.ru!</annotation>
+    <image>../etc/translate/rss/image/menu/zoomby.png</image>
+    <mediaDisplay name="onePartView"/>
+  </item>
+  <item>
 <link><script>translate_base_url+"app/onehd/index";</script></link>
     <title>OneHD</title>
     <annotation>ONE HD - Online Network Entertainment - Romania. Bun venit pe site-ul ONE HD! - Prima televiziune online HD. Качественные концертные записи на любой вкус.</annotation>

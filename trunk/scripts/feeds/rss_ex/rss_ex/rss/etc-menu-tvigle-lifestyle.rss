@@ -419,6 +419,13 @@
     <image>http://photo.tvigle.ru/resource/rf/cnl/1575/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:224,tvigle/multi";</script></link>
+    <title>На диете</title>
+    <annotation>Наша героиня в поисках идеальной диеты.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/224/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
 </channel>
 
 

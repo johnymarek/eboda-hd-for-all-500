@@ -1,4 +1,4 @@
-﻿<?xml version='1.0' encoding="UTF8" ?>
+﻿<?xml version='1.0' encoding="utf-8-with-signature" ?>
 <rss version="2.0">
 
 <!--
@@ -493,6 +493,26 @@
     <image>../etc/translate/rss/image/menu/rss.png</image>
     <location>http://www.ivi.ru/rss/new</location>
     <stream_url>http://www.ivi.ru/rss/new</stream_url>
+    <stream_class>rss</stream_class>
+    <stream_type>application/xml</stream_type>
+    <stream_protocol>http</stream_protocol>
+  </item>
+  <item>
+    <annotation>Все видео: бесплатно смотреть кино, сериалы, программы, мультфильмы и клипы в хорошем качестве без регистрации: Новое видео</annotation>
+    <title>Самое популярное видео от ivi.ru</title>
+    <image>../etc/translate/rss/image/menu/rss.png</image>
+    <location>http://www.ivi.ru/rss/best</location>
+    <stream_url>http://www.ivi.ru/rss/best</stream_url>
+    <stream_class>rss</stream_class>
+    <stream_type>application/xml</stream_type>
+    <stream_protocol>http</stream_protocol>
+  </item>
+  <item>
+    <annotation>Все видео: бесплатно смотреть кино, сериалы, программы, мультфильмы и клипы в хорошем качестве без регистрации: Новое видео</annotation>
+    <title>Рекомендованное видео от ivi.ru</title>
+    <image>../etc/translate/rss/image/menu/rss.png</image>
+    <location>http://www.ivi.ru/rss/recommend</location>
+    <stream_url>http://www.ivi.ru/rss/recommend</stream_url>
     <stream_class>rss</stream_class>
     <stream_type>application/xml</stream_type>
     <stream_protocol>http</stream_protocol>
