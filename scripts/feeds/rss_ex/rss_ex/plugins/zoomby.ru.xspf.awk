@@ -61,6 +61,8 @@ BEGIN {
 				print "<track>"
 	  		print "<title>" title "</title>"
 	  		print "<location>" url "</location>"
+	  		match(url, /.*\/([^\.]+)\.[^.]+$/, arr);
+	  		print "<image>http://static.zoomby.ru/images/music/" arr[1] ".jpg</image>"
 	  		print "<meta rel='translate'>Content-type:video/mp4</meta>"
 				print "</track>"
 		  	delete VIDEO;

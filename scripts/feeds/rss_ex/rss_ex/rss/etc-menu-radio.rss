@@ -401,6 +401,13 @@ Thank you for travelling with Bluemars Spaceways.</annotation>
     <mediaDisplay name="photoView"/>
   </item>
   <item>
+<link>rss_file://../etc/translate/rss/etc-playlists-radio-jazzradio.rss</link>
+    <title>JAZZRADIO</title>
+    <annotation>Enjoy great jazz music</annotation>
+    <image>../etc/translate/rss/image/menu/jazzradio.png</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
 <link>rss_file://../etc/translate/rss/etc-menu-radio-other.rss</link>
     <title>Other</title>
     <annotation>Разные списки интернет-радиостанций</annotation>

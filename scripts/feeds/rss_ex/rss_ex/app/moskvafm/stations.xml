@@ -267,6 +267,10 @@
         cancelIdle();
         ret = "true";
       }
+      else if(userInput == "down" || userInput == "D")
+      {
+        ret = "true";
+      }
 
       ret;
     </script>

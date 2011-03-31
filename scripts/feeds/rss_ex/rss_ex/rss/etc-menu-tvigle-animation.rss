@@ -343,6 +343,13 @@
     <mediaDisplay name="photoView"/>
   </item>
   <item>
+<link><script>translate_base_url+"app,Channel:2202,tvigle/multi";</script></link>
+    <title>Маша и медведь</title>
+    <annotation>Новое прочтение любимой детской сказки про Машу и Медведя.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/2202/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
 <link><script>translate_base_url+"app,Channel:2093,tvigle/multi";</script></link>
     <title>Flash-игра Охрустенный квест</title>
     <annotation>Мега-охрустенный квест от создателей мульта Тетрис против Контры . Зажигай вместе с популярными героями охрустенного сериала Versus! Играй бесплатно прямо сейчас!</annotation>
@@ -392,6 +399,13 @@
     <mediaDisplay name="photoView"/>
   </item>
   <item>
+<link><script>translate_base_url+"app,Channel:2185,tvigle/multi";</script></link>
+    <title>Приключения Алисы</title>
+    <annotation>Мультипликационные фильмы по мотивам сказки Льюиса Кэрролла Алиса в Стране Чудес и Алиса в Зазеркалье .</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/2185/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
 <link><script>translate_base_url+"app,Channel:2154,tvigle/multi";</script></link>
     <title>Спорт. Спорт. Спорт.</title>
     <annotation>Забавные истории из жизни спортсменов.</annotation>
@@ -420,6 +434,13 @@
     <mediaDisplay name="photoView"/>
   </item>
   <item>
+<link><script>translate_base_url+"app,Channel:2187,tvigle/multi";</script></link>
+    <title>Приключения капитана Врунгеля</title>
+    <annotation>Мультипликационный сериал по одноименному роману Андрея Некрасова.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/2187/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
 <link><script>translate_base_url+"app,Channel:2120,tvigle/multi";</script></link>
     <title>Металлопокалипсис</title>
     <annotation>Мультипликационная история о похождениях скандинаво-американской группы Dethklok.</annotation>
@@ -431,6 +452,13 @@
     <title>38 попугаев</title>
     <annotation>Забавные истории четырех друзей болтливой Мартышки, застенчивого Слоненка, эксцентричного Попугая и задумчивого Удава.</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/2098/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:2188,tvigle/multi";</script></link>
+    <title>Доктор Айболит</title>
+    <annotation>Серия мультфильмов о докторе Айболите по сказке и стихам Корнея Чуковского.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/2188/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
   <item>
@@ -536,20 +564,6 @@
     <title>Три брата акробата</title>
     <annotation>Мульт победитель в номинации Мультипликация на престижном flash-конкурсе Flash Awards 2009.</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/663/list.jpg?2</image>
-    <mediaDisplay name="photoView"/>
-  </item>
-  <item>
-<link><script>translate_base_url+"app,Channel:1789,tvigle/multi";</script></link>
-    <title>Х [Икс]</title>
-    <annotation>Популярный аниме-сериал в жанре драмы и мистики. Главный герой Камуи должен сделать непростой выбор: выступить либо на стороне Драконов Земли, которые стремятся разрушить мир, либо на стороне Драконов Небес защитников людей.</annotation>
-    <image>http://photo.tvigle.ru/resource/rf/cnl/1789/list.jpg?2</image>
-    <mediaDisplay name="photoView"/>
-  </item>
-  <item>
-<link><script>translate_base_url+"app,Channel:1791,tvigle/multi";</script></link>
-    <title>Смирительная рубашка</title>
-    <annotation>Смирительные рубашки уникальные боевые маги, призванные уничтожить монстров обратную сторону успешной разработки ученых.</annotation>
-    <image>http://photo.tvigle.ru/resource/rf/cnl/1791/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
   <item>

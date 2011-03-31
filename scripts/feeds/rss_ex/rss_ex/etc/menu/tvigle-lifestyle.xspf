@@ -76,5 +76,12 @@
   <image>http://photo.tvigle.ru/resource/rf/cnl/1575/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track>
+<track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:224,tvigle/multi</link>
+  <title>На диете</title>
+  <annotation>Наша героиня в поисках идеальной диеты.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/224/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track>
   </trackList>
 </playlist>

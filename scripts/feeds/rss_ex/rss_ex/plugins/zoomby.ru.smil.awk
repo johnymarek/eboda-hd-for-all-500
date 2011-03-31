@@ -32,7 +32,7 @@ BEGIN {
       {
       	base = XATTR["rtmp"];
       	if(XATTR["content_id"] != "")
-      	  base = XATTR["content_id"] "/";
+      	  base = base XATTR["content_id"] "/";
       	title = XATTR["title"];
       	if(XATTR["descr"] != "")
       		title = title " / " XATTR["descr"];

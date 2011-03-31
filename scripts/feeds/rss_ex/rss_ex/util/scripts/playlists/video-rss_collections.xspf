@@ -151,5 +151,55 @@
 <meta rel="stream_type">application/xml</meta>
 <meta rel="stream_protocol">http</meta>
 </track>
+      <track>
+         <annotation>Rock Television - Cult&amp;Rare: Recent Video</annotation>
+         <title>Rock Television - Recent Video</title>
+         <image>../etc/translate/rss/image/menu/rss.png</image>
+         <location>http://127.0.0.1/cgi-bin/translate?app/rss/cultandrare.rocktelevision.com,http://cultandrare.rocktelevision.com/DesktopModules/UltraVideoGallery/feed.aspx?type=RecentVideos</location>
+<meta rel="stream_url">http://127.0.0.1/cgi-bin/translate?app/rss/cultandrare.rocktelevision.com,http://cultandrare.rocktelevision.com/DesktopModules/UltraVideoGallery/feed.aspx?type=RecentVideos</meta>
+<meta rel="stream_class">rss</meta>
+<meta rel="stream_type">application/xml</meta>
+<meta rel="stream_protocol">http</meta>
+</track>
+      <track>
+         <annotation>Rock Television - Cult&amp;Rare: Most Viewed</annotation>
+         <title>Rock Television - Most Viewed</title>
+         <image>../etc/translate/rss/image/menu/rss.png</image>
+         <location>http://127.0.0.1/cgi-bin/translate?app/rss/cultandrare.rocktelevision.com,http://cultandrare.rocktelevision.com/DesktopModules/UltraVideoGallery/feed.aspx?type=MostViewed</location>
+<meta rel="stream_url">http://127.0.0.1/cgi-bin/translate?app/rss/cultandrare.rocktelevision.com,http://cultandrare.rocktelevision.com/DesktopModules/UltraVideoGallery/feed.aspx?type=MostViewed</meta>
+<meta rel="stream_class">rss</meta>
+<meta rel="stream_type">application/xml</meta>
+<meta rel="stream_protocol">http</meta>
+</track>
+      <track>
+         <annotation>Rock Television - Cult&amp;Rare: SuperUser Account</annotation>
+         <title>Rock Television - SuperUser Account</title>
+         <image>../etc/translate/rss/image/menu/rss.png</image>
+         <location>http://127.0.0.1/cgi-bin/translate?app/rss/cultandrare.rocktelevision.com,http://cultandrare.rocktelevision.com/DesktopModules/UltraVideoGallery/Feed.aspx?UserId=1</location>
+<meta rel="stream_url">http://127.0.0.1/cgi-bin/translate?app/rss/cultandrare.rocktelevision.com,http://cultandrare.rocktelevision.com/DesktopModules/UltraVideoGallery/Feed.aspx?UserId=1</meta>
+<meta rel="stream_class">rss</meta>
+<meta rel="stream_type">application/xml</meta>
+<meta rel="stream_protocol">http</meta>
+</track>
+      <track>
+         <annotation>YouRock by RockTelevision - The first large comunity of the independent rock videos: Recent Video</annotation>
+         <title>YouRock by RockTelevision - Recent Video</title>
+         <image>../etc/translate/rss/image/menu/rss.png</image>
+         <location>http://127.0.0.1/cgi-bin/translate?app/rss/cultandrare.rocktelevision.com,http://yourock.rocktelevision.com/DesktopModules/UltraVideoGallery/feed.aspx?type=RecentVideos</location>
+<meta rel="stream_url">http://127.0.0.1/cgi-bin/translate?app/rss/cultandrare.rocktelevision.com,http://yourock.rocktelevision.com/DesktopModules/UltraVideoGallery/feed.aspx?type=RecentVideos</meta>
+<meta rel="stream_class">rss</meta>
+<meta rel="stream_type">application/xml</meta>
+<meta rel="stream_protocol">http</meta>
+</track>
+      <track>
+         <annotation>YouRock by RockTelevision - The first large comunity of the independent rock videos: Most Viewed</annotation>
+         <title>YouRock by RockTelevision - Most Viewed</title>
+         <image>../etc/translate/rss/image/menu/rss.png</image>
+         <location>http://127.0.0.1/cgi-bin/translate?app/rss/cultandrare.rocktelevision.com,http://yourock.rocktelevision.com/DesktopModules/UltraVideoGallery/feed.aspx?type=MostViewed</location>
+<meta rel="stream_url">http://127.0.0.1/cgi-bin/translate?app/rss/cultandrare.rocktelevision.com,http://yourock.rocktelevision.com/DesktopModules/UltraVideoGallery/feed.aspx?type=MostViewed</meta>
+<meta rel="stream_class">rss</meta>
+<meta rel="stream_type">application/xml</meta>
+<meta rel="stream_protocol">http</meta>
+</track>
    </trackList>
 </playlist>

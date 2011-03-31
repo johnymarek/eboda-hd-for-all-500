@@ -481,43 +481,43 @@
     <annotation>Prima televiziune online HD</annotation>
     <title>OneHD - Live! Concert</title>
     <image>../etc/translate/rss/image/menu/internettv.png</image>
-    <location>http://live.1hd.ro/playlist.php</location>
-    <autoplay>1</autoplay>
+    <location>rtmp://93.114.43.3:1935/live/onehd</location>
+    <translate>Rtmp-options:-v</translate>
   </item>
   <item>
     <annotation>Jazz</annotation>
     <title>OneHD - Live! Jazz</title>
     <image>../etc/translate/rss/image/menu/internettv.png</image>
-    <location>http://live.1hd.ro/playlistj.php</location>
-    <autoplay>1</autoplay>
+    <location>rtmp://93.114.43.3:1935/live/jazz</location>
+    <translate>Rtmp-options:-v</translate>
   </item>
   <item>
     <annotation>Classics</annotation>
     <title>OneHD - Live! Classics</title>
     <image>../etc/translate/rss/image/menu/internettv.png</image>
-    <location>http://live.1hd.ro/playlistc.php</location>
-    <autoplay>1</autoplay>
+    <location>rtmp://93.114.43.3:1935/live/classics</location>
+    <translate>Rtmp-options:-v</translate>
   </item>
   <item>
     <annotation>Dance</annotation>
     <title>OneHD - Live! Dance</title>
     <image>../etc/translate/rss/image/menu/internettv.png</image>
-    <location>http://live.1hd.ro/playlistd.php</location>
-    <autoplay>1</autoplay>
+    <location>rtmp://93.114.43.3:1935/live/dance</location>
+    <translate>Rtmp-options:-v</translate>
   </item>
   <item>
     <annotation>Rock</annotation>
     <title>OneHD - Live! Rock</title>
     <image>../etc/translate/rss/image/menu/internettv.png</image>
-    <location>http://live.1hd.ro/playlistr.php</location>
-    <autoplay>1</autoplay>
+    <location>rtmp://93.114.43.3:1935/live/rock</location>
+    <translate>Rtmp-options:-v</translate>
   </item>
   <item>
     <annotation>Pop</annotation>
     <title>OneHD - Live! Pop</title>
     <image>../etc/translate/rss/image/menu/internettv.png</image>
-    <location>http://live.1hd.ro/playlistp.php</location>
-    <autoplay>1</autoplay>
+    <location>rtmp://93.114.43.3:1935/live/pop</location>
+    <translate>Rtmp-options:-v</translate>
   </item>
 </channel>
 

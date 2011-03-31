@@ -70,6 +70,13 @@ Thank you for travelling with Bluemars Spaceways.</annotation>
       <meta rel="mediaDisplay">photoView</meta>
     </track>
     <track>
+      <link>http://127.0.0.1/cgi-bin/translate?app,Size:5;File:etc/playlists/radio-jazzradio.xspf,collection/media</link>
+      <title>JAZZRADIO</title>
+      <annotation>Enjoy great jazz music</annotation>
+      <image>../etc/translate/rss/image/menu/jazzradio.png</image>
+      <meta rel="mediaDisplay">photoView</meta>
+    </track>
+    <track>
       <link>http://127.0.0.1:84/cgi-bin/translate?app,File:etc/menu/radio-other.xspf,collection/menulist</link>
       <title>Other</title>
       <annotation>Разные списки интернет-радиостанций</annotation>

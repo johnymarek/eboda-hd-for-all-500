@@ -343,10 +343,24 @@
     <mediaDisplay name="photoView"/>
   </item>
   <item>
+<link><script>translate_base_url+"app,Channel:2191,tvigle/multi";</script></link>
+    <title>Уроки декора</title>
+    <annotation>Предлагаем вашему вниманию уроки по реставрации и декорированию предметов интерьера, мебели и многого другого.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/2191/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
 <link><script>translate_base_url+"app,Channel:1864,tvigle/multi";</script></link>
     <title>Учимся вязать спицами</title>
     <annotation>Видеоуроки вязания спицами для начинающих.</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/1864/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:2195,tvigle/multi";</script></link>
+    <title>Ремонт велосипеда</title>
+    <annotation>25 советов, которые нужно знать для самостоятельного ремонта велосипеда.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/2195/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
   <item>

@@ -10,6 +10,12 @@
   <image>http://photo.tvigle.ru/resource/rf/cnl/2153/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>
+  <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2203,tvigle/multi</link>
+  <title>Маша и медведь</title>
+  <annotation>Новое прочтение любимой детской сказки про Машу и Медведя.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2203/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2134,tvigle/multi</link>
   <title>Ну, погоди!</title>
   <annotation>Самый популярный мультсериал. Веселые погони волка за зайцем.</annotation>
@@ -58,6 +64,12 @@
   <image>http://photo.tvigle.ru/resource/rf/cnl/2133/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>
+  <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2194,tvigle/multi</link>
+  <title>Приключения капитана Врунгеля</title>
+  <annotation>Мультипликационный сериал по одноименному роману Андрея Некрасова.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2194/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2130,tvigle/multi</link>
   <title>Винни-Пух</title>
   <annotation>Первый советский мультфильм-экранизация по одноименной сказке Алана Александра Милна.</annotation>
@@ -81,6 +93,12 @@
   <title>Белка и Стрелка</title>
   <annotation>Спасут ли мир две дворняги?</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/2141/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:2192,tvigle/multi</link>
+  <title>Доктор Айболит</title>
+  <annotation>Серия мультфильмов о докторе Айболите по сказке и стихам Корнея Чуковского.</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2192/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2128,tvigle/multi</link>
@@ -125,6 +143,13 @@
   <image>http://photo.tvigle.ru/resource/rf/cnl/2127/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
 </track><track>
+  <link>http://127.0.0.1/cgi-bin/translate?app,Channel:2193,tvigle/multi</link>
+  <title>Приключения Алисы</title>
+  <annotation>Мультипликационные фильмы по мотивам сказки Льюиса Кэрролла Алиса в Стране Чудес и Алиса в Зазеркалье .</annotation>
+  <image>http://photo.tvigle.ru/resource/rf/cnl/2193/list.jpg?2</image>
+  <meta rel="mediaDisplay">photoView</meta>
+</track>
+<track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2142,tvigle/multi</link>
   <title>Три брата акробата</title>
   <annotation>Мульт победитель в номинации Мультипликация на престижном flash-конкурсе Flash Awards 2009.</annotation>

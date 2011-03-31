@@ -1,10 +1,12 @@
 #!/bin/sh
 
 FORCE=0
+FILELISTPATH=../../../etc/playlists
 
 case $1 in
     --force)
 	FORCE=1
+	shift
     ;;
     --help)
         echo "Usage: $0 [--force]"
@@ -12,25 +14,30 @@ case $1 in
     ;;
 esac
 
+if [ -f "$1" ]; then
+    awk -v FORCEINFO=$FORCE -v SKIPTITLE=0 -f ../resolveinfo.awk $1 | sed '/^$/d' > $FILELISTPATH/$1
+else
+
 for f in radio-*.xspf
     do
-	awk -v FORCEINFO=$FORCE -v SKIPTITLE=0 -f ../resolveinfo.awk $f | sed '/^$/d' > ../../../etc/playlists/$f
+	awk -v FORCEINFO=$FORCE -v SKIPTITLE=0 -f ../resolveinfo.awk $f | sed '/^$/d' > $FILELISTPATH/$f
     done
     
 for f in radiogrom*.xspf
     do
-	awk -v FORCEINFO=$FORCE -v SKIPTITLE=1 -f ../resolveinfo.awk $f | sed '/^$/d' > ../../../etc/playlists/$f
+	awk -v FORCEINFO=$FORCE -v SKIPTITLE=1 -f ../resolveinfo.awk $f | sed '/^$/d' > $FILELISTPATH/$f
     done
     
 for f in audio-*.xspf
     do
-	awk -v FORCEINFO=$FORCE -v SKIPTITLE=1 -f ../resolveinfo.awk $f | sed '/^$/d' > ../../../etc/playlists/$f
+	awk -v FORCEINFO=$FORCE -v SKIPTITLE=1 -f ../resolveinfo.awk $f | sed '/^$/d' > $FILELISTPATH/$f
     done
 
 for f in tv*.xspf
     do
-	awk -v FORCEINFO=$FORCE -v SKIPTITLE=1 -f ../resolveinfo.awk $f | sed '/^$/d' > ../../../etc/playlists/$f
+	awk -v FORCEINFO=$FORCE -v SKIPTITLE=1 -f ../resolveinfo.awk $f | sed '/^$/d' > $FILELISTPATH/$f
     done
     
-awk -v FORCEINFO=$FORCE -v SKIPTITLE=1 -f ../resolveinfo.awk moskva_fm.xspf | sed '/^$/d' > ../../../etc/playlists/moskva_fm.xspf
-    
+awk -v FORCEINFO=$FORCE -v SKIPTITLE=1 -f ../resolveinfo.awk moskva_fm.xspf | sed '/^$/d' > $FILELISTPATH/moskva_fm.xspf
+
+fi

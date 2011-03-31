@@ -47,7 +47,6 @@
 <meta rel="stream_type">application/xml</meta>
 <meta rel="stream_protocol">http</meta>
 </track>
-<!--
       <track>
          <annotation>Все video: бесплатно смотреть кино, сериалы, программы, мультфильмы и клипы в хорошем качестве без регистрации: Популярное video</annotation>
          <title>Самое популярное video от ivi.ru</title>
@@ -69,7 +68,6 @@
 <meta rel="stream_type">application/xml</meta>
 <meta rel="stream_protocol">http</meta>
 </track>
--->
       <track>
          <annotation>RSS-лента Tvigle Media</annotation>
          <title>Tvigle Media</title>

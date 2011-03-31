@@ -385,17 +385,17 @@
     <mediaDisplay name="photoView"/>
   </item>
   <item>
-<link><script>translate_base_url+"app,Channel:1827,tvigle/multi";</script></link>
-    <title>Вся правда о Еве</title>
-    <annotation>Новый модный интернет сериал в духе черной комедии, снятый специально для женщин.</annotation>
-    <image>http://photo.tvigle.ru/resource/rf/cnl/1827/list.jpg?2</image>
-    <mediaDisplay name="photoView"/>
-  </item>
-  <item>
 <link><script>translate_base_url+"app,Channel:1354,tvigle/multi";</script></link>
     <title>Ах, женщины</title>
     <annotation>Две подруги постоянно попадают в смешные, нелепые ситуации.</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/1354/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:2209,tvigle/multi";</script></link>
+    <title>Маски-Шоу</title>
+    <annotation>Юмористический сериал в стиле немого кино.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/2209/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
   <item>
@@ -431,6 +431,13 @@
     <title>Lobanov Show</title>
     <annotation>Колкие пародии и злободневные шутки.</annotation>
     <image>http://photo.tvigle.ru/resource/rf/cnl/11/list.jpg?2</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link><script>translate_base_url+"app,Channel:1827,tvigle/multi";</script></link>
+    <title>Вся правда о Еве</title>
+    <annotation>Новый модный интернет сериал в духе черной комедии, снятый специально для женщин.</annotation>
+    <image>http://photo.tvigle.ru/resource/rf/cnl/1827/list.jpg?2</image>
     <mediaDisplay name="photoView"/>
   </item>
   <item>
