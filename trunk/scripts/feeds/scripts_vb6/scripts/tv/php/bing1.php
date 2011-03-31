@@ -37,7 +37,7 @@ function str_between($string, $start, $end){
 
 $file = $_GET["file"];
 $html = file_get_contents("http://www.bing.com/videos/browse/source/fox-sports-fox-soccer-fsc?q=browse:source/fox+sports%3afox_soccer_fsc");
-$videos = explode('<div class="info">', $html);
+$videos = explode('<li class="vxp_gallery_item"', $html);
 unset($videos[0]);
 $videos = array_values($videos);
 
@@ -46,8 +46,8 @@ foreach($videos as $video) {
     $t2 = explode('"', $t1[1]);
     $link = $t2[0];
     
-    $t3 = explode('>',$t1[1]);
-    $t4 = explode('<',$t3[1]);
+    $t3 = explode('title="',$video);
+    $t4 = explode('"',$t3[1]);
     $title = $t4[0];
 
     $image = "/scripts/tv/image/bing.jpg";

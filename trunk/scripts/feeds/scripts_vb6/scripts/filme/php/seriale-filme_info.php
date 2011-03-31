@@ -1,22 +1,22 @@
 <?php
-$host = "http://127.0.0.1:82";
-$query = $_GET["file"];
-$queryarr = explode(",",$query);
-$serieLink = $queryarr[0];
-$serieTitle = urldecode($queryarr[1]);
-$content = file_get_contents($serieLink . "about.html");
-$newlines = array("\t","\n","\r","\x20\x20","\0","\x0B");
-$input = str_replace($newlines, "", $content);
-
-//Get header image, description and cover
-$image = "image/movies.png";
-preg_match("/<div class\=\"header\-middle\" style\=\"background:url\((.*)\)\;(.*)<img src\=\"(.*)\"(.*)>(.*)<div style\=\"margin\-bottom\:10px\;\">(.*)<\/div>/U", $input, $div);
-if($div) {
-    $headerImage = $div[1];
-    $image = $div[3];
-    $description = $div[6];
-}
 echo "<?xml version='1.0' encoding='UTF8' ?>";
+$query = $_GET["file"];
+$queryArr = explode(',', $query);
+$link = $queryArr[0];
+$tit = urldecode($queryArr[1]);
+$html = file_get_contents($link);
+$t1=explode('<div class="firstposttitle">',$html);
+$t2=explode('src="',$t1[1]);
+$t3=explode('"',$t2[1]);
+$img=$t3[0];
+$t4=explode('Show summary:',$t1[1]);
+$t5=explode('</div>',$t4[1]);
+$data=trim($t5[0]);
+$data = preg_replace("/(<\/?)([^>]*>)/e","",$data);
+$data = str_replace("&#351;","s",$data);
+$data = str_replace("&#259;","a",$data);
+$data = str_replace("&#355;","t",$data);
+$data = trim(str_replace("&nbsp;","",$data));
 ?>
 <rss version="2.0">
 <onEnter>
@@ -32,7 +32,7 @@ echo "<?xml version='1.0' encoding='UTF8' ?>";
 <mediaDisplay name="threePartsView"
 	sideLeftWidthPC="0"
 	sideRightWidthPC="0"
-
+	
 	headerImageWidthPC="0"
 	selectMenuOnRight="no"
 	autoSelectMenu="no"
@@ -57,7 +57,7 @@ echo "<?xml version='1.0' encoding='UTF8' ?>";
 	imageFocus=""
 	sliding="no"
 >
-
+		
   	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		  <script>getPageInfo("pageTitle");</script>
 		</text>
@@ -66,14 +66,14 @@ echo "<?xml version='1.0' encoding='UTF8' ?>";
 		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
 		</text>
 
-		<text align="center" redraw="yes"
+		<text align="center" redraw="yes" 
           lines="10" fontSize=17
-		      offsetXPC=55 offsetYPC=55 widthPC=40 heightPC=42
+		      offsetXPC=55 offsetYPC=55 widthPC=40 heightPC=42 
 		      backgroundColor=0:0:0 foregroundColor=200:200:200>
-			<script>print(annotation); annotation;</script>
+   <?php echo $data; ?>
 		</text>
 		<image  redraw="yes" offsetXPC=60 offsetYPC=22.5 widthPC=30 heightPC=25>
-  <?php echo $image; ?>
+  <?php echo $img; ?>
 		</image>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_01.png </idleImage>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_02.png </idleImage>
@@ -89,7 +89,7 @@ echo "<?xml version='1.0' encoding='UTF8' ?>";
 				<script>
 					idx = getQueryItemIndex();
 					focus = getFocusItemIndex();
-					if(focus==idx)
+					if(focus==idx) 
 					{
 					  annotation = getItemInfo(idx, "annotation");
 					}
@@ -99,7 +99,7 @@ echo "<?xml version='1.0' encoding='UTF8' ?>";
   				<script>
   					idx = getQueryItemIndex();
   					focus = getFocusItemIndex();
-  			    if(focus==idx) "16"; else "14";
+  			    if(focus==idx) "14"; else "14";
   				</script>
 				</fontSize>
 			  <backgroundColor>
@@ -119,7 +119,7 @@ echo "<?xml version='1.0' encoding='UTF8' ?>";
 			</text>
 
 		</itemDisplay>
-
+		
 <onUserInput>
 <script>
 ret = "false";
@@ -150,9 +150,9 @@ if (userInput == "pagedown" || userInput == "pageup")
 ret;
 </script>
 </onUserInput>
-
+		
 	</mediaDisplay>
-
+	
 	<item_template>
 		<mediaDisplay  name="threePartsView" idleImageWidthPC="10" idleImageHeightPC="10">
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
@@ -167,40 +167,47 @@ ret;
 
 	</item_template>
 <channel>
-	<title><?php echo $serieTitle; ?></title>
+	<title><?php echo $tit; ?></title>
 	<menu>main menu</menu>
+
 <?php
-//--------------------------------------------------------------------------
-// GET SEASONS AND EPISODES
-$content = file_get_contents($serieLink. "sitemap.xml");
-$newlines = array("\t", "\n", "\r", "\x20\x20", "\0", "\x0B");
-$input = str_replace($newlines, "",$content);
-//$input = strstr($input, "<td valign=\"top\" width=\"33%\">");
-preg_match_all("/<loc>(.*)<\/loc>/siU", $input, $div);
-if ($div) {
-    $div = $div[1];
-    $links = array();
-    for ($i = count($div); $i >= 0; --$i) {
-        $value = $div[$i];
-        if (strpos($value, "Episode_")) {
-            preg_match_all("/(.*)_Online_Season_(.*)_Episode_(.*)_(.*)\.html/siU", $value, $links);
-            $seasonNum = $links[2];
-            $episodeNum = $links[3];
-            $episodeName = $links[4];
-            $title = "Episode ".$seasonNum[0]."-".$episodeNum[0]." ".str_replace("_"," ",$episodeName[0]);
-            $link = $host."/scripts/filme/php/10starmovies_link.php?file=".$value.",".urlencode($title);
-              echo '
+function str_between($string, $start, $end){ 
+	$string = " ".$string; $ini = strpos($string,$start); 
+	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
+	return substr($string,$ini,$len); 
+}
+$host = "http://127.0.0.1:82";
+$videos = explode('<div class="post">', $html);
+
+unset($videos[0]);
+$videos = array_values($videos);
+
+foreach($videos as $video) {
+    $t1=explode('href="',$video);
+    $t2=explode('"',$t1[1]);
+    $link=$t2[0];
+
+    $t1 = explode('src="', $video);
+    $t2 = explode('"', $t1[1]);
+    $image = $t2[0];
+
+    $title = trim(str_between($video,'rel="bookmark">','</a>'));
+    if ($link <> "") {
+       $down = $tit." ".$title;
+       $link = 'http://127.0.0.1:82/scripts/filme/php/filme_link.php?'.$link.','.urlencode($down);
+
+  echo '
   <item>
   <title>'.$title.'</title>
   <link>'.$link.'</link>
-  <annotation>'.str_replace("_"," ",$episodeName[0]).'</annotation>
   <media:thumbnail url="'.$image.'" />
   <mediaDisplay name="threePartsView"/>
   </item>
   ';
-        }
-    }
 }
+}
+
 ?>
+
 </channel>
 </rss>

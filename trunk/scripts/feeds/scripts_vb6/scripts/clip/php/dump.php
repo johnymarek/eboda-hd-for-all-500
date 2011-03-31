@@ -93,7 +93,7 @@ foreach($videos as $video) {
     $t2 = explode('"', $t1[1]);
     $title = $t2[0];
 
-		$link = 'http://127.0.0.1:82/scripts/cgi-bin/filme_link.phpi?'.$link;
+		$link = 'http://127.0.0.1:82/scripts/filme/php/filme_link.php?'.$link;
 
     echo '<item>';
     echo '<title>'.$title.'</title>';

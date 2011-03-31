@@ -105,13 +105,47 @@ function str_between($string, $start, $end){
 	return substr($string,$ini,$len); 
 }
 $host = "http://127.0.0.1:82";
-
-$html = file_get_contents("http://www.serialepe.net/");
+//necesita inregistrare pe site
+//serialepe.txt are o singura linie de forma
+//username@pass
+$filename = "/scripts/filme/php/serialepe.txt";
+$handle = fopen($filename, "r");
+$c = fread($handle, filesize($filename));
+fclose($handle);
+$a=explode("@",$c);
+$user=$a[0];
+$pass=trim($a[1]);
+$post="log=".$user."&pwd=".$pass."&rememberme=forever&wp-submit=Log+In&redirect_to=http%3A%2F%2Fwww.serialepe.net%2Fwp-admin%2F&testcookie=1";
+if (function_exists('curl_init')) {
+ $ch = curl_init("http://www.serialepe.net/wp-login.php");
+ curl_setopt($ch, CURLOPT_POST      ,1);
+ curl_setopt($ch, CURLOPT_POSTFIELDS    ,$post);
+ curl_setopt($ch, CURLOPT_FOLLOWLOCATION  ,1);
+ curl_setopt($ch, CURLOPT_HEADER      ,1);  // DO NOT RETURN HTTP HEADERS
+ curl_setopt($ch, CURLINFO_HEADER_OUT ,1);
+ curl_setopt($ch, CURLOPT_RETURNTRANSFER  ,1);  // RETURN THE CONTENTS OF THE CALL
+ $html = curl_exec($ch);
+ $a=explode("Set-Cookie: ",$html);
+ $b=explode("httponly", $a[5]);
+ $c=trim($b[0])." httponly";
+ $handle = fopen("/tmp/serialepe.txt", "w");
+ fwrite($handle,$c);
+ fclose($handle);
+} else {
+  //wget solution
+  $string = "http://www.serialepe.net/wp-login.php";
+  exec("rm -f /tmp/vix");
+  exec("rm -f /tmp/serialepe.txt");
+  $c="/sbin/wget -q --save-cookies /tmp/serialepe.txt --post-data '".$post."' ".$string." -O /tmp/vix";
+  exec($c);
+  $html=file_get_contents("/tmp/vix");
+}
+//$html = file_get_contents("http://www.serialepe.net/");
 //$html = str_between($html,"<h2 class='title'>Seriale Online</h2>","</ul>");
 $videos = explode('<li class="cat-item cat-item', $html);
 unset($videos[0]);
 $videos = array_values($videos);
-$img = "/scripts/image/movies.png";
+$img = "image/movies.png";
 foreach($videos as $video) {
   $t1 = explode('href="', $video);
   $t2 = explode('"', $t1[1]);

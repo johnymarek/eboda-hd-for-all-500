@@ -12,6 +12,26 @@ if ($pg == "") {
   $pg_title = $pg;
   $pg = preg_replace('/[^A-Za-z0-9_]/','_',$pg);
 }
+$onlinemoca=$t1[2];
+//play movie
+if (file_exists("/tmp/usbmounts/sda1/download")) {
+   $dir = "/tmp/usbmounts/sda1/download/";
+} elseif (file_exists("/tmp/usbmounts/sdb1/download")) {
+   $dir = "/tmp/usbmounts/sdb1/download/";
+} elseif (file_exists("/tmp/usbmounts/sdc1/download")) {
+   $dir = "/tmp/usbmounts/sdc1/download/";
+} elseif (file_exists("/tmp/usbmounts/sda2/download")) {
+   $dir = "/tmp/usbmounts/sda2/download/";
+} elseif (file_exists("/tmp/usbmounts/sdb2/download")) {
+   $dir = "/tmp/usbmounts/sdb2/download/";
+} elseif (file_exists("/tmp/usbmounts/sdc2/download")) {
+   $dir = "/tmp/usbmounts/sdc2/download/";
+} elseif (file_exists("/tmp/hdd/volumes/HDD1/download")) {
+   $dir = "/tmp/hdd/volumes/HDD1/download/";
+} else {
+     $dir = "";
+}
+// end
 ?>
 <?php echo "<?xml version='1.0' ?>"; ?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
@@ -55,7 +75,7 @@ if ($pg == "") {
 		  <script>getPageInfo("pageTitle");</script>
 		</text>
   	<text  redraw="yes" align="center" offsetXPC="0" offsetYPC="90" widthPC="100" heightPC="8" fontSize="17" backgroundColor="10:105:150" foregroundColor="100:200:255">
-    Apasati 2 pentru download
+    Apasati 2 pentru download, 3 pentru vizionare download
 		</text>
 <onUserInput>
 	userInput = currentUserInput();
@@ -65,6 +85,12 @@ if ($pg == "") {
 		topUrl = "http://127.0.0.1:82/scripts/util/download.cgi?link=" + getItemInfo(getFocusItemIndex(),"download") + ";name=" + getItemInfo(getFocusItemIndex(),"name");
 		dlok = loadXMLFile(topUrl);
 	}
+	else
+    if (userInput == "three")
+		{
+         url="<?php echo $dir; ?>" + getItemInfo(getFocusItemIndex(),"name");
+         playItemurl(url,10);
+		}
 
 </onUserInput>
 </mediaDisplay>
@@ -116,7 +142,7 @@ if (strpos($string,"wootly") === false) {
   } else {
   //wget solution
   exec("rm -f /tmp/vix");
-  $c="/sbin/wget --post-data '".$post."' ".$string." -O /tmp/vix";
+  $c="/sbin/wget -q --post-data '".$post."' ".$string." -O /tmp/vix";
   exec($c);
   $h=file_get_contents("/tmp/vix");
   }
@@ -291,7 +317,33 @@ function peteava($movie) {
 $lastlink = "abc";
 $baseurl = "http://127.0.0.1:83/cgi-bin/translate?stream,Content-type:video/x-flv,";
 $filelink = str_prep($filelink);
-$html = file_get_contents($filelink);
+if (strpos($filelink,"onlinemoca") === false) {
+if (strpos($filelink,"serialepe") !==false) {
+$filename = "/tmp/serialepe.txt";
+$handle = fopen($filename, "r");
+$c = fread($handle, filesize($filename));
+fclose($handle);
+if (!function_exists('curl_init')) {
+   $t=explode("wordpress_logged_in_",$c);
+   $t1=explode("\t",$t[1]);
+   $c = "wordpress_logged_in_".$t1[0]."=".trim($t1[1]).";";
+}
+
+$opts = array(
+  'http'=>array(
+    'method'=>"GET",
+    'header'=>"Accept-language: ro-ro,ro;q=0.8,en-us;q=0.6,en-gb;q=0.4,en;q=0.2\r\n" .
+              "Cookie: ".$c."\r\n"
+  )
+);
+  $context = stream_context_create($opts);
+  $html = file_get_contents($filelink, false, $context);
+} else {
+  $html = file_get_contents($filelink);
+}
+} else {
+  $html="";
+}
 /**################################filmeonlinesubtitrate.ro###############**/
 if (strpos($filelink, 'filmeonlinesubtitrate.ro') !== false) {
 $videos = explode('file:',$html);
@@ -461,16 +513,9 @@ foreach($videos as $video) {
 }
 /** END onlythefilm **/
 /**####################################onlinemoca###############**/
-//"Alege Una Din Variante","</table>");
-//"http://www.urlscurt.com/Short-Url/Short-Url4.php?link=http://www.novamov.com/video/2x11ff3e96jt5"
+//Prea multe link-uri, trimit doar un link!
 if (strpos($filelink, 'onlinemoca') !== false) {
-$videos = explode('link', $html);
-unset($videos[0]);
-$videos = array_values($videos);
-foreach($videos as $video) {
-    $v1 = explode('=', $video);
-	$v2 = explode('"', $v1[1]);
-	$link = $v2[0];
+	$link = $onlinemoca;
 	$server = str_between($link,"http://","/");
 	$title = $server;
 	$link = str_prep($link);
@@ -521,6 +566,31 @@ foreach($videos as $video) {
       $link1 = str_between($baza,"addParam('flashvars','file=","'");
       $server = str_between($link,"http://","/");
       $title = $server." - ".substr(strrchr($link1,"/"),1);
+    } elseif (strpos($link, 'rapidfiles.ws') !== false) {
+      //http://www.rapidfiles.ws/evsza53dh7sv/X-Men_20United_20CD2.flv.htm
+      $baza = file_get_contents($link);
+      $oid=str_between($baza,'name="id" value="','"');
+      $orand=str_between($baza,'name="rand" value="','"');
+      //op=download2&id=7v6kvio637yv&rand=6gus1ry5&method_free=&method_premium=&down_direct=1
+      $post="op=download2&id=".$oid."&rand=".$orand."&method_free=&method_premium=&down_direct=1";
+      if (function_exists('curl_init')) {
+         $ch = curl_init($link);
+         curl_setopt ($ch, CURLOPT_POST, 1);
+         curl_setopt ($ch, CURLOPT_POSTFIELDS, $post);
+         curl_setopt($ch, CURLOPT_FOLLOWLOCATION  ,1);
+         curl_setopt($ch, CURLOPT_RETURNTRANSFER  ,1);  // RETURN THE CONTENTS OF THE CALL
+         $h = curl_exec($ch);
+         curl_close ($ch);
+      } else {
+        //wget solution
+        exec("rm -f /tmp/vix");
+        $c="/sbin/wget -q --post-data '".$post."' ".$link." -O /tmp/vix";
+        exec($c);
+        $h=file_get_contents("/tmp/vix");
+      }
+      $link1=str_between($h,'flashvars="file=','"');
+      $server = str_between($link,"http://","/");
+      $title = $server." - ".substr(strrchr($link1,"/"),1);
     } else {
 		$link1="";
 	}
@@ -548,7 +618,6 @@ foreach($videos as $video) {
         ';
 		$lastlink = $link1;
     }   //lastlink
-}  //foreach
 }
 /** END onlinemoca **/
 /**################ flash... mediafile,file.....############**/
@@ -571,7 +640,7 @@ foreach($videos as $video) {
   if (($link <> "") && strcmp($link,$lastlink) && (!preg_match("/<|>/",$title))) {
      //peteava
      //_standard.mp4
-     if (strpos($link, '_standard.mp4') !== false) {
+     if (strpos($link, '_standard.') !== false) {
         $title = $link;
         $token = peteava($link);
         if ($token <> "") {
@@ -623,10 +692,10 @@ foreach($videos as $video) {
     	$t1=explode('"',$srt1);
     	$srt = $t1[0];
     	if (strpos($srt,"http") === false) {
-          //www.veziserialeonline.info
-          if (strpos($filelink,"veziserialeonline") !==false) {
-             $srt = "http://www.veziserialeonline.info".$srt;
-          }
+           ////www.veziserialeonline.info,www.seriale-filme.info
+          $s1=explode("/",$filelink);
+          $s=$s1[2];
+          $srt="http://".$s.$srt;
         }
         $pct = substr($srt, -4, 1);
     	if (($srt <> "") && ($pct == ".")) {
@@ -776,6 +845,18 @@ foreach($videos as $video) {
      }
      $server = str_between($link,"http://","/");
      $title = $server." - ".substr(strrchr($link,"/"),1);
+   } elseif (strpos($link, 'vk.com') !== false){
+     $baza = file_get_contents($link);
+     $host = str_between($baza,"var video_host = '","'");
+     $uid = str_between($baza,"var video_uid = '","'");
+     $vtag = str_between($baza,"var video_vtag = '","'");
+     $hd = str_between($baza,"var video_max_hd = '","'");
+     $link = $host."u".$uid."/video/".$vtag.".360.mp4";
+     if ($hd == "0") {
+        $link = $link = $host."u".$uid."/video/".$vtag.".240.mp4";
+     }
+     $server = str_between($link,"http://","/");
+     $title = $server." - ".substr(strrchr($link,"/"),1);
    } elseif (strpos($link, 'stagevu') !== false){
      $baza = file_get_contents($link);
      $link = str_between($baza,'param name="src" value="','"');
@@ -820,6 +901,32 @@ foreach($videos as $video) {
      $t2=explode("&",$t1[1]);
      $srt=$t2[0];
      $srt = str_replace(" ","%20",$srt);
+   } elseif (strpos($link,"serialetvonline.info") !==false) {
+     //http://www.serialetvonline.info/Media/rrr.php?kl=NTMromania/NextTopModelRomaniaS01E01
+     $baza = file_get_contents($link);
+     $link = str_between($baza,'"flashvars" value="file=','&');
+     $server = str_between($link,"http://","/");
+     $title = $server." - ".substr(strrchr($link,"/"),1);
+     $t1=explode('captions.file=',$baza);
+     $t2=explode("&",$t1[1]);
+     $srt=$t2[0];
+     $srt = str_replace(" ","%20",$srt);
+   } elseif (strpos($link,"zshare.net") !==false) {
+     //http://www.zshare.net/videoplayer/player.php?SID=dl033&FID=75535391&FN=private.practice.s03e21.hdtv.xvid-2hd.flv&iframewidth=648&iframeheight=415&width=640&height=370&H=75535391bd51dec1
+     //http://dl033.zshare.net/stream/815e798f1601021b3bef2faea7bf802a/75535391/1298517662/private.practice.s03e21.hdtv.xvid-2hd.flv//5194292060/?start=0
+     //NOT SURE ABOUT THIS !!!!
+     $a=explode("H=",$link);
+     $b=explode("&",$a[1]);
+     $v=$b[0];
+     $url="http://www.zshare.net/video/".$v."/";
+     $h = file_get_contents($url);
+     $link=str_between($h,'<iframe src="','"');
+     $baza = file_get_contents($link);
+     $link=str_between($baza,'file: "','"');
+     $server = str_between($link,"http://","/");
+     $f=explode("//",$link);
+     $f=$f[1];
+     $title = $server." - ".substr(strrchr($f,"/"),1);
    } else {
      $link = "";
    }

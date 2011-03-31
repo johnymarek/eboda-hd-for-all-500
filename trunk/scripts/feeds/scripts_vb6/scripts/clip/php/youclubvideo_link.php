@@ -38,18 +38,22 @@ $link = $_GET["file"];
 $link = str_replace(' ','%20',$link);
 $link = str_replace('[','%5B',$link);
 $link = str_replace(']','%5D',$link);
-$image = $host."/scripts/clip/image/youclubvideo.png";
+$image = "/scripts/clip/image/youclubvideo.png";
 $title = "Link";
 
 $html = file_get_contents($link);
 $link = str_between($html,'url: "','"');
+if ($link == "") {
+   $link = str_between($html,'skewd.xml&file=','&');
+}
+if ($link <> "") {
     echo '<item>';
     echo '<title>'.$title.'</title>';
     echo '<link>'.$link.'</link>';
     echo '<media:thumbnail url="'.$image.'" />';
     echo '<enclosure type="video/flv" url="'.$link.'"/>';	
     echo '</item>';
-
+}
   
 ?>
 

@@ -147,63 +147,7 @@ ret;
 
 	</item_template>
 <channel>
-	<title>Filme şi seriale Online</title>
-
-<item>
-<title>www.serialepe.net</title>
-<link><?php echo $host; ?>/scripts/filme/php/serialepe_main.php</link>
-<annotation>http://www.serialepe.net/p/seriale-online-gratis-subtitrate.html</annotation>
-<mediaDisplay name="photoView"/>
-</item>
-
-<item>
-<title>filmesubtitrate.info</title>
-<link><?php echo $host; ?>/scripts/filme/php/filmesubtitrate_info_main.php</link>
-<annotation>http://www.seriale.filmesubtitrate.info/p/seriale-online-subtitrate-in-romana.html</annotation>
-<mediaDisplay name="photoView"/>
-</item>
-
-<item>
-<title>serialeonline.tv</title>
-<link><?php echo $host; ?>/scripts/filme/php/serialeonline_main.php</link>
-<annotation>http://www.serialeonline.tv/</annotation>
-<mediaDisplay name="threePartsView"/>
-</item>
-
-<item>
-<title>www.veziserialeonline.info</title>
-<link><?php echo $host; ?>/scripts/filme/php/veziserialeonline_main.php</link>
-<annotation>http://www.veziserialeonline.info/tv-shows</annotation>
-<mediaDisplay name="threePartsView"/>
-</item>
-
-<item>
-<title>seriale.subtitrate.info</title>
-<link><?php echo $host; ?>/scripts/filme/php/seriale_subtitrate_info_main.php</link>
-<annotation>http://seriale.subtitrate.info/index.php?menu=tv-shows</annotation>
-<mediaDisplay name="threePartsView"/>
-</item>
-
-<item>
-<title>www.cinemaro.ro</title>
-<link><?php echo $host; ?>/scripts/filme/php/cinemaro_main.php</link>
-<annotation>http://www.cinemaro.ro</annotation>
-<mediaDisplay name="threePartsView"/>
-</item>
-
-<item>
-<title>www.990.ro</title>
-<link><?php echo $host; ?>/scripts/filme/990.php</link>
-<annotation>http://www.990.ro</annotation>
-<mediaDisplay name="threePartsView"/>
-</item>
-
-<item>
-<title>deseneanimate.tv</title>
-<link><?php echo $host; ?>/scripts/filme/php/deseneanimate_main.php?query=1,</link>
-<annotation>http://deseneanimate.tv</annotation>
-<mediaDisplay name="threePartsView"/>
-</item>
+	<title>Filme Online</title>
 
 <item>
 <title>www.onlinemoca.com</title>
@@ -348,25 +292,11 @@ ret;
 <annotation>http://www.crutu-razvan.ro</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
-<!--
-<item>
-<title>zalaa.com - divx (fara subtitrare)</title>
-<link><?php echo $host; ?>/scripts/filme/php/zalaa.php</link>
-<annotation>http://www.zalaa.com/videos</annotation>
-<mediaDisplay name="threePartsView"/>
-</item>
--->
-<item>
-<title>www.starmaxmovie.com - seriale (fara subtitrare)</title>
-<link><?php echo $host; ?>/scripts/filme/php/starmaxmovie_main.php</link>
-<annotation>http://www.starmaxmovie.com</annotation>
-<mediaDisplay name="threePartsView"/>
-</item>
 
 <item>
-<title>10starmovies.com - (fara subtitrare)</title>
-<link><?php echo $host; ?>/scripts/filme/php/10starmovies_main.php</link>
-<annotation>http://10starmovies.com/Tv-Shows/</annotation>
+<title>documentare.org - filme si seriale documentare</title>
+<link><?php echo $host; ?>/scripts/filme/php/documentare_main.php</link>
+<annotation>http://documentare.org</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
 

@@ -1,22 +1,5 @@
-<?php
+<?php echo "<?xml version='1.0' encoding='UTF8' ?>";
 $host = "http://127.0.0.1:82";
-$query = $_GET["file"];
-$queryarr = explode(",",$query);
-$serieLink = $queryarr[0];
-$serieTitle = urldecode($queryarr[1]);
-$content = file_get_contents($serieLink . "about.html");
-$newlines = array("\t","\n","\r","\x20\x20","\0","\x0B");
-$input = str_replace($newlines, "", $content);
-
-//Get header image, description and cover
-$image = "image/movies.png";
-preg_match("/<div class\=\"header\-middle\" style\=\"background:url\((.*)\)\;(.*)<img src\=\"(.*)\"(.*)>(.*)<div style\=\"margin\-bottom\:10px\;\">(.*)<\/div>/U", $input, $div);
-if($div) {
-    $headerImage = $div[1];
-    $image = $div[3];
-    $description = $div[6];
-}
-echo "<?xml version='1.0' encoding='UTF8' ?>";
 ?>
 <rss version="2.0">
 <onEnter>
@@ -41,11 +24,11 @@ echo "<?xml version='1.0' encoding='UTF8' ?>";
 	itemImageWidthPC="0"
 	itemXPC="8"
 	itemYPC="25"
-	itemWidthPC="45"
+	itemWidthPC="50"
 	itemHeightPC="8"
 	capXPC="8"
 	capYPC="25"
-	capWidthPC="45"
+	capWidthPC="50"
 	capHeightPC="64"
 	itemBackgroundColor="0:0:0"
 	itemPerPage="8"
@@ -61,19 +44,17 @@ echo "<?xml version='1.0' encoding='UTF8' ?>";
   	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		  <script>getPageInfo("pageTitle");</script>
 		</text>
-
-  	<text redraw="no" offsetXPC="85" offsetYPC="12" widthPC="10" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
+		<!--<image offsetXPC=5 offsetYPC=2 widthPC=20 heightPC=16>
+		  <script>channelImage;</script>
+		</image>-->
+  	<text redraw="yes" offsetXPC="85" offsetYPC="12" widthPC="10" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
 		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
 		</text>
-
-		<text align="center" redraw="yes"
-          lines="10" fontSize=17
-		      offsetXPC=55 offsetYPC=55 widthPC=40 heightPC=42
-		      backgroundColor=0:0:0 foregroundColor=200:200:200>
-			<script>print(annotation); annotation;</script>
+  	<text  redraw="yes" align="center" offsetXPC="0" offsetYPC="90" widthPC="100" heightPC="8" fontSize="17" backgroundColor="10:105:150" foregroundColor="100:200:255">
+		  <script>print(annotation); annotation;</script>
 		</text>
-		<image  redraw="yes" offsetXPC=60 offsetYPC=22.5 widthPC=30 heightPC=25>
-  <?php echo $image; ?>
+		<image  redraw="yes" offsetXPC=60 offsetYPC=35 widthPC=30 heightPC=30>
+  <script>channelImage;</script>
 		</image>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_01.png </idleImage>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_02.png </idleImage>
@@ -91,7 +72,8 @@ echo "<?xml version='1.0' encoding='UTF8' ?>";
 					focus = getFocusItemIndex();
 					if(focus==idx)
 					{
-					  annotation = getItemInfo(idx, "annotation");
+					  location = getItemInfo(idx, "location");
+					  annotation = getItemInfo(idx, "title");
 					}
 					getItemInfo(idx, "title");
 				</script>
@@ -166,40 +148,40 @@ ret;
 		</mediaDisplay>
 
 	</item_template>
+<script>
+    channelImage = "/scripts/adult/image/hardsextube.gif";
+  </script>
+
+
 <channel>
-	<title><?php echo $serieTitle; ?></title>
+	<title>hardsextube.com</title>
 	<menu>main menu</menu>
 <?php
-//--------------------------------------------------------------------------
-// GET SEASONS AND EPISODES
-$content = file_get_contents($serieLink. "sitemap.xml");
-$newlines = array("\t", "\n", "\r", "\x20\x20", "\0", "\x0B");
-$input = str_replace($newlines, "",$content);
-//$input = strstr($input, "<td valign=\"top\" width=\"33%\">");
-preg_match_all("/<loc>(.*)<\/loc>/siU", $input, $div);
-if ($div) {
-    $div = $div[1];
-    $links = array();
-    for ($i = count($div); $i >= 0; --$i) {
-        $value = $div[$i];
-        if (strpos($value, "Episode_")) {
-            preg_match_all("/(.*)_Online_Season_(.*)_Episode_(.*)_(.*)\.html/siU", $value, $links);
-            $seasonNum = $links[2];
-            $episodeNum = $links[3];
-            $episodeName = $links[4];
-            $title = "Episode ".$seasonNum[0]."-".$episodeNum[0]." ".str_replace("_"," ",$episodeName[0]);
-            $link = $host."/scripts/filme/php/10starmovies_link.php?file=".$value.",".urlencode($title);
-              echo '
-  <item>
-  <title>'.$title.'</title>
-  <link>'.$link.'</link>
-  <annotation>'.str_replace("_"," ",$episodeName[0]).'</annotation>
-  <media:thumbnail url="'.$image.'" />
-  <mediaDisplay name="threePartsView"/>
-  </item>
-  ';
-        }
-    }
+function str_between($string, $start, $end){ 
+	$string = " ".$string; $ini = strpos($string,$start); 
+	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
+	return substr($string,$ini,$len); 
+}
+$html = file_get_contents("http://www.hardsextube.com/categories/");
+$img = "image/movies.png";
+$html = str_between($html,'<div class="catfloat"','</table>');
+$videos = explode('href="', $html);
+unset($videos[0]);
+$videos = array_values($videos);
+foreach($videos as $video) {
+  	$t3 = explode(">",$video);
+  	$t4 = explode("<",$t3[1]);
+  	$title = trim($t4[0]);
+  	if ((strpos($video,"?search=") !== false) && ($title <> "")) {
+  	$link = str_replace(" ","%20",$title);
+   
+  	$link=$host."/scripts/adult/php/hardsextube.php?query=1,".trim(strtolower($link));
+  	echo '
+  	<item>
+  		<title>'.$title.'</title>
+  		<link>'.$link.'</link>
+  	</item>';
+  	}
 }
 ?>
 </channel>

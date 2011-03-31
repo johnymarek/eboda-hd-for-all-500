@@ -1,0 +1,6 @@
+#!/bin/sh
+cat <<EOF
+Content-type: video/mp4
+
+EOF
+exec /opt/bin/curl -s -H "X-Forwarded-For: 194.230.72.68" `echo $QUERY_STRING|sed "s_\&amp;_\&_g"`

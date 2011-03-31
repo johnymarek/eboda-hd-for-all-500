@@ -2,7 +2,7 @@
 $host = "http://127.0.0.1:82";
 ?>
 <rss version="2.0" xmlns:media="http://purl.org/dc/elements/1.1/" xmlns:dc="http://purl.org/dc/elements/1.1/">
-<mediaDisplay name="photoView" backgroundColor="0:0:0" sideColorBottom="220:0:0" sideColorTop="220:0:0" drawItemText="no" columnCount="7" rowCount="4" capWidthPC="70" imageBorderPC="1.5" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="10">
+<mediaDisplay name="photoView" backgroundColor="0:0:0" sideColorBottom="220:0:0" sideColorTop="220:0:0" drawItemText="no" columnCount="6" rowCount="4" capWidthPC="70" imageBorderPC="1.5" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="10">
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
         <idleImage>image/POPUP_LOADING_02.png</idleImage>
         <idleImage>image/POPUP_LOADING_03.png</idleImage>
@@ -20,7 +20,7 @@ $host = "http://127.0.0.1:82";
 <item>
 <title>Porn TV</title>
 <link><?php echo $host; ?>/scripts/adult/porn_tv.php</link>
-<media:thumbnail url="/scripts/image/adult.png"/>
+<media:thumbnail url="image/adult.png"/>
 </item>
 
 <item>
@@ -136,14 +136,14 @@ French Maid TV
 <media:thumbnail url="/scripts/adult/image/pornvisit.gif"/>
 <mediaDisplay name="threePartsView"/>
 </item>
-
+<!--
 <item>
 <title>eporner</title>
   <link><?php echo $host; ?>/scripts/adult/eporner.php</link>
 <media:thumbnail url="/scripts/adult/image/eporner.png"/>
 <mediaDisplay name="threePartsView"/>
 </item>
-
+-->
 <item>
 <title>snizzshare</title>
   <link><?php echo $host; ?>/scripts/adult/snizzshare.php</link>
@@ -185,14 +185,14 @@ French Maid TV
 <media:thumbnail url="/scripts/adult/image/timtube.jpg"/>
 <mediaDisplay name="threePartsView"/>
 </item>
-
+<!--
 <item>
 <title>drtuber</title>
   <link><?php echo $host; ?>/scripts/adult/drtuber.php</link>
 <media:thumbnail url="/scripts/adult/image/drtuber.png"/>
 <mediaDisplay name="threePartsView"/>
 </item>
-
+-->
 <item>
 <title>home-video-tube</title>
   <link><?php echo $host; ?>/scripts/adult/php/home-video-tube.php</link>

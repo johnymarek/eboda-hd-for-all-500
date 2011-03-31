@@ -1,22 +1,5 @@
-<?php
+<?php echo "<?xml version='1.0' encoding='UTF8' ?>";
 $host = "http://127.0.0.1:82";
-$query = $_GET["file"];
-$queryarr = explode(",",$query);
-$serieLink = $queryarr[0];
-$serieTitle = urldecode($queryarr[1]);
-$content = file_get_contents($serieLink . "about.html");
-$newlines = array("\t","\n","\r","\x20\x20","\0","\x0B");
-$input = str_replace($newlines, "", $content);
-
-//Get header image, description and cover
-$image = "image/movies.png";
-preg_match("/<div class\=\"header\-middle\" style\=\"background:url\((.*)\)\;(.*)<img src\=\"(.*)\"(.*)>(.*)<div style\=\"margin\-bottom\:10px\;\">(.*)<\/div>/U", $input, $div);
-if($div) {
-    $headerImage = $div[1];
-    $image = $div[3];
-    $description = $div[6];
-}
-echo "<?xml version='1.0' encoding='UTF8' ?>";
 ?>
 <rss version="2.0">
 <onEnter>
@@ -62,7 +45,7 @@ echo "<?xml version='1.0' encoding='UTF8' ?>";
 		  <script>getPageInfo("pageTitle");</script>
 		</text>
 
-  	<text redraw="no" offsetXPC="85" offsetYPC="12" widthPC="10" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
+  	<text redraw="yes" offsetXPC="85" offsetYPC="12" widthPC="10" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
 		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
 		</text>
 
@@ -73,7 +56,7 @@ echo "<?xml version='1.0' encoding='UTF8' ?>";
 			<script>print(annotation); annotation;</script>
 		</text>
 		<image  redraw="yes" offsetXPC=60 offsetYPC=22.5 widthPC=30 heightPC=25>
-  <?php echo $image; ?>
+		<script>print(img); img;</script>
 		</image>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_01.png </idleImage>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_02.png </idleImage>
@@ -91,7 +74,9 @@ echo "<?xml version='1.0' encoding='UTF8' ?>";
 					focus = getFocusItemIndex();
 					if(focus==idx)
 					{
+					  location = getItemInfo(idx, "location");
 					  annotation = getItemInfo(idx, "annotation");
+					  img = getItemInfo(idx,"image");
 					}
 					getItemInfo(idx, "title");
 				</script>
@@ -119,7 +104,6 @@ echo "<?xml version='1.0' encoding='UTF8' ?>";
 			</text>
 
 		</itemDisplay>
-
 <onUserInput>
 <script>
 ret = "false";
@@ -150,7 +134,6 @@ if (userInput == "pagedown" || userInput == "pageup")
 ret;
 </script>
 </onUserInput>
-
 	</mediaDisplay>
 
 	<item_template>
@@ -167,40 +150,111 @@ ret;
 
 	</item_template>
 <channel>
-	<title><?php echo $serieTitle; ?></title>
+	<title>Desene Animate</title>
 	<menu>main menu</menu>
+
+
 <?php
-//--------------------------------------------------------------------------
-// GET SEASONS AND EPISODES
-$content = file_get_contents($serieLink. "sitemap.xml");
-$newlines = array("\t", "\n", "\r", "\x20\x20", "\0", "\x0B");
-$input = str_replace($newlines, "",$content);
-//$input = strstr($input, "<td valign=\"top\" width=\"33%\">");
-preg_match_all("/<loc>(.*)<\/loc>/siU", $input, $div);
-if ($div) {
-    $div = $div[1];
-    $links = array();
-    for ($i = count($div); $i >= 0; --$i) {
-        $value = $div[$i];
-        if (strpos($value, "Episode_")) {
-            preg_match_all("/(.*)_Online_Season_(.*)_Episode_(.*)_(.*)\.html/siU", $value, $links);
-            $seasonNum = $links[2];
-            $episodeNum = $links[3];
-            $episodeName = $links[4];
-            $title = "Episode ".$seasonNum[0]."-".$episodeNum[0]." ".str_replace("_"," ",$episodeName[0]);
-            $link = $host."/scripts/filme/php/10starmovies_link.php?file=".$value.",".urlencode($title);
-              echo '
+$query = $_GET["query"];
+if($query) {
+   $queryArr = explode(',', $query);
+   $page = $queryArr[0];
+   $search = $queryArr[1];
+   $search = str_replace(".html","",$search);
+}
+//http://www.jocuricubarbie.info/desene_animate/tom-si-jerry-2.html
+if($page) {
+    if($search) {
+        $html = file_get_contents($search."-".$page.".html");
+    } else {
+        $html = file_get_contents($search."-".$page.".html");
+    }
+} else {
+    $page = 1;
+    if($search) {
+        $html = file_get_contents($search.".html");
+    } else {
+        $html = file_get_contents($search.".html");
+    }
+}
+
+if($page > 1) { ?>
+
+<item>
+<?php
+$sThisFile = 'http://127.0.0.1:82'.$_SERVER['SCRIPT_NAME'];
+$url = $sThisFile."?query=".($page-1).",";
+if($search) { 
+  $url = $url.$search; 
+}
+?>
+<title>Previous Page</title>
+<link><?php echo $url;?></link>
+<annotation>Pagina anterioara</annotation>
+<image>/scripts/image/left.jpg</image>
+<mediaDisplay name="threePartsView"/>
+</item>
+
+
+<?php } ?>
+
+<?php
+function str_between($string, $start, $end){ 
+	$string = " ".$string; $ini = strpos($string,$start); 
+	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
+	return substr($string,$ini,$len); 
+}
+
+$videos = explode('<div class="game_container_game_window">', $html);
+unset($videos[0]);
+$videos = array_values($videos);
+
+foreach($videos as $video) {
+    $t1 = explode('href="', $video);
+    $t2 = explode('"', $t1[1]);
+    $link =$t2[0];
+    $link=substr(strrchr($link,"/"),1);
+    $link="http://93.114.41.132/jocuricubarbie.info/cartoon/".str_replace(".html",".flv",$link);
+    //http://93.114.41.132/jocuricubarbie.info/cartoon/tom-si-jerry-povestea-spargatorului-de-nuci.flv
+
+    $t1 = explode('src="', $video);
+    $t2 = explode('"', $t1[1]);
+    $image = "http://www.jocuricubarbie.info".$t2[0];
+
+    $t1 = explode('title="', $video);
+    $t2 = explode('"', $t1[1]);
+    $title = $t2[0];
+
+  echo '
   <item>
   <title>'.$title.'</title>
-  <link>'.$link.'</link>
-  <annotation>'.str_replace("_"," ",$episodeName[0]).'</annotation>
+  <onClick>playItemURL("'.$link.'", 10);</onClick>
+  <image>'.$image.'</image>
+  <annotation>'.$title.'</annotation>
   <media:thumbnail url="'.$image.'" />
   <mediaDisplay name="threePartsView"/>
   </item>
   ';
-        }
-    }
+  }
+
+
+
+?>
+
+<item>
+<?php
+$sThisFile = 'http://127.0.0.1:82'.$_SERVER['SCRIPT_NAME'];
+$url = $sThisFile."?query=".($page+1).",";
+if($search) { 
+  $url = $url.$search; 
 }
 ?>
+<title>Next Page</title>
+<link><?php echo $url;?></link>
+<annotation>Pagina urmatoare</annotation>
+<image>/scripts/image/right.jpg</image>
+<mediaDisplay name="threePartsView"/>
+</item>
+
 </channel>
 </rss>

@@ -70,6 +70,7 @@ foreach($videos as $video) {
      $title = str_replace("&Icirc;","I",$title);
      $title = str_replace("&atilde;","a",$title);
      $title = str_replace("&Atilde;","I",$title);
+     $title = str_replace("&ordf;","S",$title);
      //$title = "titlu...";
 		$link = $host.'/scripts/tv/locale/1tvbacau_link.php?file='.$link;
 

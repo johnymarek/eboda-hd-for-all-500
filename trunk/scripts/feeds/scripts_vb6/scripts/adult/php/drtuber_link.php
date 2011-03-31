@@ -59,9 +59,10 @@ $link = str_replace('[','%5B',$link);
 $link = str_replace(']','%5D',$link);
 
 $title = "Link";
-
+//('config', '
 $html = file_get_contents($link);
-$link = "http://www.drtuber.com/media/player/config.php?vkey=".str_between($html,"vkey=","'");
+$link = urldecode("http://www.drtuber.com".str_between("('config', '","'"));
+//$link = "http://www.drtuber.com/media/player/config.php?vkey=".str_between($html,"vkey=","'");
 $html = file_get_contents($link);
 $link = str_between($html, '<file>', '</file>');
     echo '<item>';

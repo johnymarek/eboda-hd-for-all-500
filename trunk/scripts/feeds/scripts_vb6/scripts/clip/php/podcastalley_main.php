@@ -36,7 +36,7 @@ $html = file_get_contents("http://www.podcastalley.com/index.php");
 $videos = explode('<option', $html);
 unset($videos[0]);
 $videos = array_values($videos);
-$img = $host."/scripts/clip/image/podcastalley.gif";
+$img = "/scripts/clip/image/podcastalley.gif";
 foreach($videos as $video) {
     $t1 = explode('value="', $video);
     $t2 = explode('"', $t1[1]);
