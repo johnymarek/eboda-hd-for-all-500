@@ -213,6 +213,13 @@ ret;
 </item>
 
 <item>
+<title>filme-online-gratis.com</title>
+<link><?php echo $host; ?>/scripts/filme/php/filme-online-gratis_main.php</link>
+<annotation>http://filme-online-gratis.com/blog/</annotation>
+<mediaDisplay name="threePartsView"/>
+</item>
+
+<item>
 <title>divxonline.biz</title>
 <link><?php echo $host; ?>/scripts/filme/php/divxonline_main.php</link>
 <annotation>http://divxonline.biz</annotation>
@@ -278,18 +285,25 @@ ret;
 <annotation>http://www.vezifilme.ro/</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
-
+<!--
 <item>
 <title>www.filmeonline24.com</title>
 <link><?php echo $host; ?>/scripts/filme/php/filmeonline24_main.php</link>
 <annotation>http://www.filmeonline24.com/</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
-
+-->
 <item>
 <title>www.crutu-razvan.ro</title>
 <link><?php echo $host; ?>/scripts/filme/php/crutu-razvan.php?query=1,</link>
 <annotation>http://www.crutu-razvan.ro</annotation>
+<mediaDisplay name="threePartsView"/>
+</item>
+
+<item>
+<title>DolceTv - Filme Gratis (fara subtitrare)</title>
+<link><?php echo $host; ?>/scripts/filme/php/dolce.php</link>
+<annotation>http://www.dolcetv.ro</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
 

@@ -49,6 +49,12 @@ $host = "http://127.0.0.1:82";
 </item>
 
 <item>
+<title>Vremea in Romania</title>
+<link>/usr/local/etc/www/cgi-bin/scripts/news/Romania.rss</link>
+<media:thumbnail url="image/mele/weather.png" />
+</item>
+
+<item>
 <title>Curs Valutar</title>
 <link><?php echo $host; ?>/scripts/news/php/curs.php</link>
 <media:thumbnail url="/scripts/news/image/curs.png" />

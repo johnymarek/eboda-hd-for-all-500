@@ -196,7 +196,7 @@ $videos = array_values($videos);
 foreach($videos as $video) {
     $t1 = explode('<a href="', $video);
     $t2 = explode('"', $t1[1]);
-    $link = $host."/scripts/adult/php/tna_link.php?file=".$t2[0];
+    $link = $host."/scripts/adult/php/tna_link.php?file=http://www.tnaflix.com".$t2[0];
 
     $t1 = explode('src="', $video);
     $t2 = explode('"', $t1[1]);

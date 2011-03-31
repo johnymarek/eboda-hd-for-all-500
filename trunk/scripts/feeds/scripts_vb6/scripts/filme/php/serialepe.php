@@ -112,10 +112,13 @@ echo '
 	<title>'.$tit.'</title>
 	';
 $html = file_get_contents($link);
+/**
 $html1 = str_between($html,"ista episoadelor",'<div style="clear: both;">');
 if ($html1 == "") {
    $html1 = str_between($html,'<div class="post-wrapper">','<div id="commentwrap">');
 }
+**/
+$html1 = str_between($html,'<span class="post-title">','<div style="clear: both;">');
 $n=1;
 $seasons = explode('<table',$html1);
 unset($seasons[0]);

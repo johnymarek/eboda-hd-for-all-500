@@ -44,6 +44,12 @@ $title = "Link";
 $html = file_get_contents($link);
 $link = str_between($html,'url: "','"');
 if ($link == "") {
+   $link = str_between($html,"hd.file=","&");
+}
+if ($link == "") {
+   $link = str_between($html,"skin.swf&file=","&");
+}
+if ($link == "") {
    $link = str_between($html,'skewd.xml&file=','&');
 }
 if ($link <> "") {

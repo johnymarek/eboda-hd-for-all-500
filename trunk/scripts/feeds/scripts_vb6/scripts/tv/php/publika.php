@@ -28,7 +28,15 @@ $host = "http://127.0.0.1:82";
 	<menu>main menu</menu>
 
 <?php
-$html = file_get_contents("http://www.publika.md/");
+function str_between($string, $start, $end){
+	$string = " ".$string; $ini = strpos($string,$start);
+	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini;
+	return substr($string,$ini,$len);
+}
+ $html = file_get_contents("http://www.publika.md/");
+$html = str_between($html,'<div class="videoCarouselItems">',"</ul>");
+
+
 $image = "/scripts/tv/image/publika.jpg";
 $videos = explode('<li>', $html);
 
@@ -41,9 +49,21 @@ foreach($videos as $video) {
     
     $t1 = explode('title="', $video);
     $t2 = explode('"', $t1[1]);
-    $title = $t2[0];   
-		if ($link <> "") {
-		$link = $host.'/scripts/tv/php/publika_link.php?file='.$link;
+    $title = $t2[0];
+     $title = str_replace("&ordm;","s",$title);
+     $title = str_replace("&Ordm;","S",$title);
+     $title = str_replace("&thorn;","t",$title);
+     $title = str_replace("&Thorn;","T",$title);
+     $title = str_replace("&icirc;","i",$title);
+     $title = str_replace("&Icirc;","I",$title);
+     $title = str_replace("&atilde;","a",$title);
+     $title = str_replace("&Atilde;","I",$title);
+     $title = str_replace("&ordf;","S",$title);
+    $t1 = explode('src="',$video);
+    $t2 = explode('"',$t1[1]);
+    $image = $t2[0];
+    if ($link <> "") {
+    $link = $host.'/scripts/tv/php/publika_link.php?file='.$link;
 
     echo '<item>';
     echo '<title>'.$title.'</title>';

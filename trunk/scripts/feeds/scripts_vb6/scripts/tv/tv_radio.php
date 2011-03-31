@@ -56,6 +56,13 @@ $host = "http://127.0.0.1:82";
 </item>
 
 <item>
+<title>Radio On Line</title>
+<link>/usr/local/etc/www/cgi-bin/scripts/tv/radio.rss</link>
+<media:thumbnail url="../etc/translate/rss/image/radio_online.jpg" />
+<mediaDisplay name="photoView" />
+</item>
+
+<item>
 <title>Emisiuni Antena 1</title>
 <link><?php echo $host; ?>/scripts/tv/php/antena1_main.php</link>
 <media:thumbnail url="/scripts/tv/image/antena1.jpg" />
@@ -65,6 +72,12 @@ $host = "http://127.0.0.1:82";
 <title>Emisiuni Antena2</title>
 <link><?php echo $host; ?>/scripts/tv/php/antena2_main.php</link>
 <media:thumbnail url="/scripts/tv/image/antena2.jpg" />
+</item>
+
+<item>
+<title>Emisiuni Antena3</title>
+<link><?php echo $host; ?>/scripts/tv/php/ant3_main.php</link>
+<media:thumbnail url="/usr/local/etc/www/cgi-bin/scripts/tv/image/antena3.jpg" />
 </item>
 
 <item>

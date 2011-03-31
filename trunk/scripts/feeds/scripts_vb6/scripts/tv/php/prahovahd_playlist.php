@@ -92,72 +92,48 @@ function str_between($string, $start, $end){
 }
 $cat =  $_GET["cat"];
 switch ($cat) {
-    case 0:
-        $tit = "OneHD - Live! Concert";
-        $link = "http://live.1hd.ro/playlist.php";
-        break;
-    case 1:
-        $tit = "OneHD - Live! Jazz";
-        $link = "http://live.1hd.ro/playlistj.php";
-        break;
-    case 2:
-        $tit = "OneHD - Live! Classics";
-        $link = "http://live.1hd.ro/playlistc.php";
-        break;
-    case 3:
-        $tit = "OneHD - Live! Dance";
-        $link = "http://live.1hd.ro/playlistd.php";
-        break;
-    case 4:
-        $tit = "OneHD - Live! Rock";
-        $link = "http://live.1hd.ro/playlistr.php";
-        break;
-    case 5:
-        $tit = "OneHD - Live! Pop";
-        $link = "http://live.1hd.ro/playlistp.php";
-        break;
+     case 0:
+         $tit = "OneHD - Live! Concert";
+         $link = "http://live.1hd.ro";
+         break;
+     case 1:
+         $tit = "OneHD - Live! Jazz";
+         $link = "http://live.1hd.ro/jazz.php";
+         break;
+     case 2:
+         $tit = "OneHD - Live! Classics";
+         $link = "http://live.1hd.ro/classics.php";
+         break;
+     case 3:
+         $tit = "OneHD - Live! Dance";
+         $link = "http://live.1hd.ro/dance.php";
+         break;
+     case 4:
+         $tit = "OneHD - Live! Rock";
+         $link = "http://live.1hd.ro/rock.php";
+         break;
+     case 5:
+         $tit = "OneHD - Live! Pop";
+         $link = "http://live.1hd.ro/pop.php";
+         break;
 }
 echo '
   <title>'.$tit.'</title>
   ';
 
-$url="http://live.1hd.ro";
-$file = get_headers($url);
-foreach ($file as $key => $value)
-   {
-    if (strstr($value,"Set-Cookie"))
-     {
-      $cookie = ltrim($value,"Set-Cookie: ");
-     } // end if
-   } // end foreach
-// Create a stream
-$opts = array(
-  'http'=>array(
-    'method'=>"GET",
-    'header'=>"Accept-language: en\r\n" .
-              "Cookie: ".$cookie."\r\n"
-  )
-);
-$context = stream_context_create($opts);
-$html = file_get_contents($link, false, $context);
-$videos = explode('<track>', $html);
-unset($videos[0]);
-$videos = array_values($videos);
-foreach($videos as $video) {
-    $server = str_between($video,'<meta rel="streamer">','</meta>');
-    $link = $server.str_between($video,"<location>","</location>");
-    //$link = str_replace(' ','%20',$link);
-    //$link = "http://127.0.0.1/cgi-bin/rtmp?".$link;
-    $link = "http://127.0.0.1:83/cgi-bin/translate?stream,Content-type:video/mp4,".$link;
-    $title = str_between($video,"<title>","</title>");
+$html = file_get_contents($link);
+$streamer=str_between($html,"so.addVariable('streamer','","'");
+$file=str_between($html,"so.addVariable('file','","'");
+$link=$streamer.$file;
+$link = "http://127.0.0.1/cgi-bin/translate?stream,Content-type:video/mp4,".$link;
     echo '
     <item>
-    <title>'.$title.'</title>
+    <title>'.$tit.'</title>
     <link>'.$link.'</link>
     <enclosure type="video/mp4" url="'.$link.'"/>
     </item>
     ';
-}
+
 ?>
 </channel>
 </rss>

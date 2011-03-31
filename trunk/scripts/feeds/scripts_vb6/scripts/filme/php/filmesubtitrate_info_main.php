@@ -107,9 +107,12 @@ function str_title($string){
 	if ($pos == 0) {
 		$pos=strlen(stristr($string, 'online'));
 	}
+	if ($pos <> 0) {
 	$string=substr($string,0,-$pos);
+	}
 	$string=str_replace("&nbsp;","",$string);
 	$string=str_replace("-","",$string);
+	$string=str_replace("Subtitrat","",$string);
 	$string=trim($string);
 	return $string;
 }
@@ -131,12 +134,14 @@ foreach($cats as $cat) {
 		$t4=explode("<",$t3[1]);
 		$title=str_title($t4[0]);
 		$link = $host."/scripts/filme/php/filmesubtitrate_info.php?query=".$link.",".urlencode($title);
-		echo '
+        if (($title <> "") && (strpos($link,"html") !==false)) {
+        echo '
 			<item>
 			<title>'.$title.'</title>
 			<link>'.$link.'</link>
 			</item>
 		';
+		}
 	}
 }	
 ?>

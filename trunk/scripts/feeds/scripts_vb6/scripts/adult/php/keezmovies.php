@@ -185,17 +185,7 @@ function str_between($string, $start, $end){
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini;
 	return substr($string,$ini,$len);
 }
-//div class="videoblock home-thumbs
-//div class="videoblock  video-thumbs
-$pos = strpos($html, 'div class="videoblock home-thumbs');
-if ($pos === false) { 
-	$videos = explode('div class="videoblock  video-thumbs', $html);
-//<div class="videoblock  video-thumbs">
-}
-else {
-	$videos = explode('div class="videoblock home-thumbs', $html);
-}
-//$videos = explode('div class="videoblock  home-body-thumbs"', $html);
+$videos = explode('class="videoblock', $html);
 unset($videos[0]);
 $videos = array_values($videos);
 foreach($videos as $video) {

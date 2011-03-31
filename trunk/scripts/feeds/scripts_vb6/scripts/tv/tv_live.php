@@ -39,5 +39,16 @@ $host = "http://127.0.0.1:82";
 <media:thumbnail url="/scripts/image/tv_radio.png" />
 </item>
 
+<item>
+<title>TV Live - Muzica</title>
+<link><?php echo $host; ?>/scripts/tv/music_tv.php</link>
+<media:thumbnail url="image/tv_radio.png" />
+</item>
+
+<item>
+<title>TV Live - Canale Noi</title>
+<link><?php echo $host; ?>/scripts/tv/tv_new.php</link>
+<media:thumbnail url="image/tv_radio.png" />
+</item>
 </channel>
 </rss>                                                                                                                             

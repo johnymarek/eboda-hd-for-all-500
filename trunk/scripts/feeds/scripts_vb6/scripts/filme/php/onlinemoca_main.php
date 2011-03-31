@@ -146,6 +146,9 @@ foreach($videos as $video) {
 	$t1 = explode('href="',$video);
 	$t2 = explode('"',$t1[1]);
 	$link = trim($t2[0]);
+	if (strpos($link,"http") === false) {
+       $link="http://www.onlinemoca.com".$link;
+    }
 	$link = $host."/scripts/filme/php/onlinemoca.php?query=,".$link;
 	
 	$t3 = explode(">",$t1[1]);
