@@ -167,9 +167,23 @@ columnCount=3
   </item>
   <item>
     <link>http://127.0.0.1:82/scripts/filme/filme.php</link>
-    <title>Filme şi seriale subtitrate</title>
-    <annotation>Vedeţi aici filme şi seriale cu subtitrare...</annotation>
+    <title>Filme online subtitrate</title>
+    <annotation>Vedeţi aici filme online cu subtitrare...</annotation>
     <image>/scripts/image/movies.png</image>
+    <mediaDisplay name="threePartsView"/>
+  </item>
+  <item>
+    <link>http://127.0.0.1:82/scripts/filme/seriale.php</link>
+    <title>Seriale TV subtitrate</title>
+    <annotation>Vedeţi aici seriale TV cu subtitrare...</annotation>
+    <image>http://127.0.0.1:82/scripts/filme/image/series.png</image>
+    <mediaDisplay name="threePartsView"/>
+  </item>
+  <item>
+    <link>http://127.0.0.1:82/scripts/filme/desene.php</link>
+    <title>Pentru copii...</title>
+    <annotation>Pentru copii avem desene animate, povesti...</annotation>
+    <image>http://127.0.0.1:82/scripts/filme/image/desene.png</image>
     <mediaDisplay name="threePartsView"/>
   </item>
   <item>

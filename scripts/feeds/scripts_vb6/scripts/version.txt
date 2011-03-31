@@ -1,5 +1,5 @@
-parent: 41:4414646a9823 tip
- noi servere la filme, mici fix-uri
+parent: 51:89c9e9aa220a tip
+ fix
 branch: default
-commit: 1 modified
+commit: (clean)
 update: (current)

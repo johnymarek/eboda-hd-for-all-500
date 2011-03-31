@@ -10,7 +10,7 @@ function timedRefresh(timeoutPeriod) {
  <TITLE>Download via browser</TITLE>
  <link type='text/css' rel='stylesheet' href='/cube_web_management.css' />
 </HEAD>
-<body onload="JavaScript:timedRefresh(10000);">
+<body onload="JavaScript:timedRefresh(20000);">
 <h2>Download Manager</h2>
 <form action="browser.php" method="get">
 Link: <input type="text" SIZE=100 name="link" />
@@ -23,18 +23,22 @@ Link: <input type="text" SIZE=100 name="link" />
 <input type="hidden" name="action" value="all" />
 <input type="submit" value="Stop all - delete list" />
 </form></td>
-<td><form action="browser.php" method="get">
-<input type="submit" value="Refresh list" />
-</form></td>
 </tr>
 </table>
 <?php
 error_reporting(0);
 $action = $_GET["action"];
 if ($action == "download") {
-$link = $_GET["link"];
+$a = urldecode($_GET["link"]);
+$b=explode(",",$a);
+$link=$b[0];
+$titledownload=$b[1];
+$titledownload = preg_replace('/[^A-Za-z0-9_]/','_',$titledownload);
+$titledownload = substr($titledownload, 0, -4);
 if (isset($link)) {
+   if ($titledownload == "") {
    $titledownload = substr(strrchr($link,"/"),1);
+   }
    $pct = substr($titledownload, -4, 1);
    if ($pct == ".") {
       $ext = substr($titledownload, -3);

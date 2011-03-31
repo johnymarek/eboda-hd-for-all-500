@@ -1,4 +1,3 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php echo "<?xml version='1.0' encoding='UTF8' ?>"; ?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
 <mediaDisplay name="threePartsView"
@@ -52,6 +51,8 @@ function str_between($string, $start, $end){
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
 	return substr($string,$ini,$len); 
 }
+//http://s4.cdn2.eu.eporner.com/d681eaed087887ef07d698537a869fb8/4d73b1f200ab00/103790.mp4?start=0
+//http://www.eporner.com/download-key/f93582b7ab16a4bcae09376f4c6be6f4/103790/1.flv
 $link = $_GET["file"];
 
     $html = file_get_contents($link);
@@ -59,6 +60,7 @@ $link = $_GET["file"];
     $link = "http://www.eporner.com/config/".$id;
     $html = file_get_contents($link);
     $link = str_between($html,"<file>","</file>");
+    $link = "http://127.0.0.1:83/scripts/cgi-bin/translate?stream,,".$link;
     echo '<item>';
     echo '<title>Link</title>';
     echo '<link>'.$link.'</link>';

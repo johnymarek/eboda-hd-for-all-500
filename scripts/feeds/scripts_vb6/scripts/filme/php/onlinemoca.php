@@ -201,7 +201,7 @@ foreach($videos as $video) {
 	$descriere = preg_replace("/(<\/?)(\w+)([^>]*>)/e","",$descriere);
 	$descriere = str_replace("&nbsp;","",$descriere);
 	if($link!="") {
-		$link = "http://127.0.0.1:82/scripts/filme/php/filme_link.php?".$link.",".urlencode($titlu);
+		$link = "http://127.0.0.1:82/scripts/filme/php/onlinemoca_link.php?file=".$link.",".urlencode($titlu);
 		echo'
 		<item>
 		<title>'.$titlu.'</title>

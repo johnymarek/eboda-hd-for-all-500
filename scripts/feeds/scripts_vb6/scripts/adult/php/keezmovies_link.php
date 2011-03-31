@@ -48,14 +48,10 @@
 <?php
 $link = $_GET["file"];
     $html = file_get_contents($link);
-    $t1 = explode('value="options=', $html);
-    $t2 = explode('"', $t1[1]);
-    $link = $t2[0];
+    $t1=explode('video_url=',$html);
+    $t2=explode('&',$t1[1]);
+    $link = urldecode($t2[0]);
 
-    $html = file_get_contents($link);
-    $t1 = explode('<flv_url>', $html);
-    $t2 = explode('</flv_url>', $t1[1]);
-    $link = $t2[0];
     $link = str_replace("&","&amp;",$link);
     
     echo '<item>';

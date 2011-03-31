@@ -191,7 +191,7 @@ function str_between($string, $start, $end){
 	return substr($string,$ini,$len); 
 }
 
-$videos = explode('<div class="block">', $html);
+$videos = explode('<a class="vid_link"', $html);
 
 unset($videos[0]);
 $videos = array_values($videos);
@@ -211,7 +211,7 @@ foreach($videos as $video) {
 
 		$link = $host.'/scripts/adult/php/drtuber_link.php?file='.$link;
 
-    $data = "Durata: ".trim(str_between($video,'<span>',"<"));
+    $data = "Durata: ".trim(str_between($video,'<span class="vi_right">',"<"));
   echo '
   <item>
   <title>'.$title.'</title>

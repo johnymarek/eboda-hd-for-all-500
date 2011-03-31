@@ -1,22 +1,5 @@
-<?php
+<?php echo "<?xml version='1.0' encoding='UTF8' ?>";
 $host = "http://127.0.0.1:82";
-$query = $_GET["file"];
-$queryarr = explode(",",$query);
-$serieLink = $queryarr[0];
-$serieTitle = urldecode($queryarr[1]);
-$content = file_get_contents($serieLink . "about.html");
-$newlines = array("\t","\n","\r","\x20\x20","\0","\x0B");
-$input = str_replace($newlines, "", $content);
-
-//Get header image, description and cover
-$image = "image/movies.png";
-preg_match("/<div class\=\"header\-middle\" style\=\"background:url\((.*)\)\;(.*)<img src\=\"(.*)\"(.*)>(.*)<div style\=\"margin\-bottom\:10px\;\">(.*)<\/div>/U", $input, $div);
-if($div) {
-    $headerImage = $div[1];
-    $image = $div[3];
-    $description = $div[6];
-}
-echo "<?xml version='1.0' encoding='UTF8' ?>";
 ?>
 <rss version="2.0">
 <onEnter>
@@ -32,7 +15,7 @@ echo "<?xml version='1.0' encoding='UTF8' ?>";
 <mediaDisplay name="threePartsView"
 	sideLeftWidthPC="0"
 	sideRightWidthPC="0"
-
+	
 	headerImageWidthPC="0"
 	selectMenuOnRight="no"
 	autoSelectMenu="no"
@@ -41,11 +24,11 @@ echo "<?xml version='1.0' encoding='UTF8' ?>";
 	itemImageWidthPC="0"
 	itemXPC="8"
 	itemYPC="25"
-	itemWidthPC="45"
+	itemWidthPC="50"
 	itemHeightPC="8"
 	capXPC="8"
 	capYPC="25"
-	capWidthPC="45"
+	capWidthPC="50"
 	capHeightPC="64"
 	itemBackgroundColor="0:0:0"
 	itemPerPage="8"
@@ -57,23 +40,19 @@ echo "<?xml version='1.0' encoding='UTF8' ?>";
 	imageFocus=""
 	sliding="no"
 >
-
+		
   	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		  <script>getPageInfo("pageTitle");</script>
 		</text>
 
-  	<text redraw="no" offsetXPC="85" offsetYPC="12" widthPC="10" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
+  	<text redraw="yes" offsetXPC="85" offsetYPC="12" widthPC="10" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
 		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
 		</text>
-
-		<text align="center" redraw="yes"
-          lines="10" fontSize=17
-		      offsetXPC=55 offsetYPC=55 widthPC=40 heightPC=42
-		      backgroundColor=0:0:0 foregroundColor=200:200:200>
-			<script>print(annotation); annotation;</script>
+  	<text  redraw="yes" align="center" offsetXPC="0" offsetYPC="90" widthPC="100" heightPC="8" fontSize="17" backgroundColor="10:105:150" foregroundColor="100:200:255">
+		  <script>print(annotation); annotation;</script>
 		</text>
-		<image  redraw="yes" offsetXPC=60 offsetYPC=22.5 widthPC=30 heightPC=25>
-  <?php echo $image; ?>
+		<image  redraw="yes" offsetXPC=60 offsetYPC=35 widthPC=30 heightPC=30>
+		/scripts/filme/image/desene.png
 		</image>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_01.png </idleImage>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_02.png </idleImage>
@@ -89,8 +68,9 @@ echo "<?xml version='1.0' encoding='UTF8' ?>";
 				<script>
 					idx = getQueryItemIndex();
 					focus = getFocusItemIndex();
-					if(focus==idx)
+					if(focus==idx) 
 					{
+					  location = getItemInfo(idx, "location");
 					  annotation = getItemInfo(idx, "annotation");
 					}
 					getItemInfo(idx, "title");
@@ -119,7 +99,7 @@ echo "<?xml version='1.0' encoding='UTF8' ?>";
 			</text>
 
 		</itemDisplay>
-
+		
 <onUserInput>
 <script>
 ret = "false";
@@ -150,9 +130,9 @@ if (userInput == "pagedown" || userInput == "pageup")
 ret;
 </script>
 </onUserInput>
-
+		
 	</mediaDisplay>
-
+	
 	<item_template>
 		<mediaDisplay  name="threePartsView" idleImageWidthPC="10" idleImageHeightPC="10">
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
@@ -167,40 +147,41 @@ ret;
 
 	</item_template>
 <channel>
-	<title><?php echo $serieTitle; ?></title>
-	<menu>main menu</menu>
-<?php
-//--------------------------------------------------------------------------
-// GET SEASONS AND EPISODES
-$content = file_get_contents($serieLink. "sitemap.xml");
-$newlines = array("\t", "\n", "\r", "\x20\x20", "\0", "\x0B");
-$input = str_replace($newlines, "",$content);
-//$input = strstr($input, "<td valign=\"top\" width=\"33%\">");
-preg_match_all("/<loc>(.*)<\/loc>/siU", $input, $div);
-if ($div) {
-    $div = $div[1];
-    $links = array();
-    for ($i = count($div); $i >= 0; --$i) {
-        $value = $div[$i];
-        if (strpos($value, "Episode_")) {
-            preg_match_all("/(.*)_Online_Season_(.*)_Episode_(.*)_(.*)\.html/siU", $value, $links);
-            $seasonNum = $links[2];
-            $episodeNum = $links[3];
-            $episodeName = $links[4];
-            $title = "Episode ".$seasonNum[0]."-".$episodeNum[0]." ".str_replace("_"," ",$episodeName[0]);
-            $link = $host."/scripts/filme/php/10starmovies_link.php?file=".$value.",".urlencode($title);
-              echo '
-  <item>
-  <title>'.$title.'</title>
-  <link>'.$link.'</link>
-  <annotation>'.str_replace("_"," ",$episodeName[0]).'</annotation>
-  <media:thumbnail url="'.$image.'" />
-  <mediaDisplay name="threePartsView"/>
-  </item>
-  ';
-        }
-    }
-}
-?>
+	<title>Pentru copii...</title>
+
+<item>
+<title>deseneanimate.tv</title>
+<link><?php echo $host; ?>/scripts/filme/php/deseneanimate_main.php?query=1,</link>
+<annotation>http://deseneanimate.tv</annotation>
+<mediaDisplay name="threePartsView"/>
+</item>
+
+<item>
+<title>www.jocuricubarbie.info</title>
+<link><?php echo $host; ?>/scripts/filme/php/jocuricubarbie_main.php</link>
+<annotation>http://www.jocuricubarbie.info/desene_animate.html</annotation>
+<mediaDisplay name="threePartsView"/>
+</item>
+
+<item>
+<title>desene.veziserialeonline.info</title>
+<link><?php echo $host; ?>/scripts/filme/php/desene_veziserialeonline_main.php</link>
+<annotation>http://desene.veziserialeonline.info/tv-shows</annotation>
+<mediaDisplay name="threePartsView"/>
+</item>
+
+<item>
+<title>desenele-copilariei.net</title>
+<link><?php echo $host; ?>/scripts/filme/php/desenele-copilariei_main.php</link>
+<annotation>http://desenele-copilariei.net</annotation>
+<mediaDisplay name="threePartsView"/>
+</item>
+
+<item>
+<title>www.990.ro</title>
+<link><?php echo $host; ?>/scripts/filme/php/990_desene_main.php</link>
+<annotation>http://www.990.ro/desene-animate.html</annotation>
+<mediaDisplay name="threePartsView"/>
+</item>
 </channel>
 </rss>

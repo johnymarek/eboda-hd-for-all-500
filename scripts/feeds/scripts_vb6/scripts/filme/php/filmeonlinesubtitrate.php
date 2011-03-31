@@ -49,7 +49,7 @@
   	<text  redraw="yes" align="center" offsetXPC="0" offsetYPC="90" widthPC="100" heightPC="8" fontSize="17" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		  <script>print(annotation); annotation;</script>
 		</text>
-		<image  redraw="yes" offsetXPC=66 offsetYPC=30 widthPC=20 heightPC=40>
+		<image  redraw="yes" offsetXPC=62 offsetYPC=30 widthPC=30 heightPC=30>
 		<script>print(img); img;</script>
 		</image>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_01.png </idleImage>
@@ -178,6 +178,7 @@ $videos = explode('<div class="oneblog">', $html);
 unset($videos[0]);
 $videos = array_values($videos);
 //http://www.link-scurt.info/go.php?url=http://www.filmeonlinesubtitrate.ro/actiune/detective-dee-2010
+//http://www.link-scurt.info/?http://www.filmeonlinesubtitrate.ro/aventura/the-lost-future-2010
 foreach($videos as $video) {
   $t1 = explode('href="', $video);
   $t2 = explode('"', $t1[1]);
@@ -185,6 +186,9 @@ foreach($videos as $video) {
   if (strpos($link,"=") !== false) {
      $t3 = explode('=', $link);
      $link = $t3[1];
+  } elseif (strpos($link,"?") !==false) {
+    $t3=explode("?",$link);
+    $link=$t3[1];
   }
   $t3=explode('>',$t1[1]);
   $t4=explode('<',$t3[1]);
