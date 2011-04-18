@@ -1,6 +1,6 @@
 clean:
 	rm scripts4-latest.zip
-deliver: pack 
+deliver: scripts4-latest.zip
 
 
 	googlecode_upload.py -s scripts -p eboda-hd-for-all-500 scripts4-latest.zip -u cipibad -w ${PASS}

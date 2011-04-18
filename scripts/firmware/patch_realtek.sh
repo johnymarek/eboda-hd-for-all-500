@@ -8,7 +8,7 @@ function patch_firmware()
 
 if [ $# -ne 4 ]
 then
-    echo "4 arguments expected by function patch_firmware IMAGE_FILE, svn-repo absolute path, \[500|500a|500mini|500minia|500plus\], SDK version \[2|3\]"
+    echo "4 arguments expected by function patch_firmware IMAGE_FILE, svn-repo absolute path, \[500|500a|500i|500mini|500minia|500plus\], SDK version \[2|3\]"
     exit 1
 fi
 
@@ -27,6 +27,13 @@ then
     SIMPLE_VERSION="500"
 fi
 
+if [ ${VERSION} = "500i" ]
+then
+    USE_EBODA_INSTALL="yes";
+    TEA="NO";
+    SIMPLE_VERSION="500"
+fi
+
 if [ ${VERSION} = "500minia" ]
 then
     USE_EBODA_INSTALL="yes";
@@ -42,8 +49,22 @@ then
     TEA="YES";
 fi
 
+if [ ${VERSION} = "PV73100" ]
+then
+    USE_EBODA_INSTALL="no";
+    SIMPLE_VERSION="500"
+    TEA="YES";
+fi
 
-if [ ${VERSION} = "500a" -o ${VERSION} = "500minia" -o ${VERSION} = "500" -o ${VERSION} = "500mini" -o ${VERSION} = "500plus" -o ${VERSION} = "PV73200" ]
+if [ ${VERSION} = "MP3011" ]
+then
+    USE_EBODA_INSTALL="no";
+    SIMPLE_VERSION="500"
+    TEA="NO";
+fi
+
+
+if [ ${VERSION} = "500i" -o ${VERSION} = "500a" -o ${VERSION} = "500minia" -o ${VERSION} = "500" -o ${VERSION} = "500mini" -o ${VERSION} = "500plus" -o ${VERSION} = "PV73200" -o ${VERSION} = "PV73100"  -o ${VERSION} = "MP3011" ]
 then
     echo Patching firmware variant ${VERSION}
 else
@@ -51,7 +72,7 @@ else
     exit 1
 fi
 
-if [ ${SDK} = "2" -o ${SDK} = "3" ]
+if [ ${SDK} = "2" -o ${SDK} = "3" -o ${SDK} = "4" ]
 then
     echo Patching SDK version ${SDK}
 else
@@ -144,7 +165,7 @@ cd unpacked_root/
 if [ ${SDK} = "2" ]
 then
     unyaffs ../yaffs2_1.img
-elif [ ${SDK} = "3" ]
+elif [ ${SDK} = "3" -o ${SDK} = "4" ]
 then
     if [ $TEA = "YES" ]
     then
@@ -201,8 +222,15 @@ cp  ${SVN_REPO}/src/${SIMPLE_VERSION}/Resource/*.TTF usr/local/bin/Resource
 #cp  ${SVN_REPO}/src/${SIMPLE_VERSION}/image/* usr/local/bin/image 
 
 # awk
-cp  ${SVN_REPO}/src/bin/* usr/bin
-chmod +x usr/bin/*
+#CBA awk is OK in SDK 4, update no longer needed
+if [ $SDK -ne 4 ]
+then
+    echo overwriting awk
+    cp  ${SVN_REPO}/src/bin/* usr/bin
+    chmod +x usr/bin/*
+else
+    echo NOT overwriting awk
+fi
 
 # eboda web control panel
 dir=`pwd`
@@ -219,7 +247,16 @@ cp cb3pp4-version.txt ${dir}/
 cd $dir
 
 # IMS menu
-cp ${SVN_REPO}/src/${SIMPLE_VERSION}/menu/menu.rss_sdk${SDK} usr/local/bin/scripts/menu.rss
+if [ ${SDK} -ne 4 ]
+then
+    echo overwriting IMS menu
+    cp ${SVN_REPO}/src/${SIMPLE_VERSION}/menu/menu.rss_sdk${SDK} usr/local/bin/scripts/menu.rss
+else
+    cp usr/local/bin/scripts/menu.rss usr/local/bin/scripts/menu.orig.rss
+    cp ${SVN_REPO}/src/${SIMPLE_VERSION}/menu/menu.rss_sdk${SDK} usr/local/bin/scripts/menu.rss
+    echo "overwriting IMS menu(yet)"
+fi
+
 
 [ -d usr/local/bin/scripts/image ] || mkdir usr/local/bin/scripts/image
 cp ${SVN_REPO}/src/${SIMPLE_VERSION}/menu/image/* usr/local/bin/scripts/image/
@@ -296,10 +333,10 @@ cd ${dir}
 #patch DvdPlayer binary
 
 #bspatch oldfile newfile patchfile
-if [ ${VERSION} = "500minia" ]
+if [ ${VERSION} = "500minia" -o ${VERSION} = "500a" ]
 then
     echo patching DvdPlayer
-    bspatch usr/local/bin/DvdPlayer usr/local/bin/DvdPlayer.patched ${SVN_REPO}/src/500mini/DvdPlayer.bspatch_sdk${SDK}
+    bspatch usr/local/bin/DvdPlayer usr/local/bin/DvdPlayer.patched ${SVN_REPO}/src/${SIMPLE_VERSION}/DvdPlayer.bspatch_sdk${SDK}
     mv usr/local/bin/DvdPlayer.patched usr/local/bin/DvdPlayer 
     chmod +x usr/local/bin/DvdPlayer
 fi
@@ -326,7 +363,7 @@ then
     cd ..
     rm yaffs2_1.img
     mkyaffs2image unpacked_root yaffs2_1.img 
-elif [ ${SDK} = "3" ]
+elif [ ${SDK} = "3" -o ${SDK} = "4" ]
 then
     rm ../../squashfs1.img
     mksquashfs3 * ../../squashfs1.img -b 65536
@@ -538,6 +575,9 @@ chmod +x rccb3ppS
 echo '
 [ -f /usr/local/etc/rccb3ppS ] && sh /usr/local/etc/rccb3ppS &' >> rcS
 
+sed -i -e '1a\
+ifconfig eth0 192.168.1.2 netmask 255.255.255.0' rcS
+
 #packing back /usr/local/etc
 rm ../usr.local.etc.tar.bz2
 tar jcvf ../usr.local.etc.tar.bz2 *
@@ -554,11 +594,12 @@ if [ $USE_EBODA_INSTALL = "yes" ]
 then
 #copy eboda installer
     rm install_a
-    cp ${SVN_REPO}/src/${SIMPLE_VERSION}/install/install_a_sdk${SDK} install_a
+    cp ${SVN_REPO}/src/${SIMPLE_VERSION}/install/install_a_sdk3 install_a
 fi
 
 #patch size
 sed -i -e 's#<sizeBytesMin>0x3000000</sizeBytesMin>#<sizeBytesMin>0x0800000</sizeBytesMin>#g' configuration.xml
+sed -i -e 's#<sizeBytesMin>4194304</sizeBytesMin>#<sizeBytesMin>0x0800000</sizeBytesMin>#g' configuration.xml
 
 #patch img name
 sed -i -e 's#package2/squashfs1.upg#package2/squashfs1.img#g' configuration.xml  

@@ -18,6 +18,7 @@ lighttpd=false
 #php
 pcre=false
 php=false
+php53=true
 thttpd=false
 #end php
 
@@ -52,6 +53,7 @@ expat=false
 #begin transmission
 curl=false
 #openssl=false # also used for rtorrent
+libevent=false
 transmission=false
 #end transmission
 
@@ -61,7 +63,7 @@ smbd=false
 
 nginx=false
 
-msdl=true
+msdl=false
 mplayer=false
 
 strip=false
@@ -146,6 +148,7 @@ $expat && (  [ -f expat-2.0.0.tar.gz ] || $download_cmd http://sourceforge.net/p
 $pcre && (  [ -f pcre-6.7.tar.gz ] || $download_cmd http://sourceforge.net/projects/pcre/files/pcre/6.7/pcre-6.7.tar.gz/download )
 # php-5.0.5.tar.gz
 $php && (  [ -f php-5.2.13.tar.gz ] || $download_cmd http://www.php.net/distributions/php-5.2.13.tar.gz )
+$php53 && (  [ -f php-5.3.6.tar.gz ] || $download_cmd http://www.php.net/distributions/php-5.3.6.tar.gz )
 # lighttpd-1.4.28.tar.gz
 $lighttpd && (  [ -f lighttpd-1.4.28.tar.gz ] || $download_cmd http://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-1.4.28.tar.gz )
 $thttpd && (  [ -f thttpd-2.25b.tar.gz ] || $download_cmd http://www.acme.com/software/thttpd/thttpd-2.25b.tar.gz )
@@ -167,7 +170,9 @@ $ncurses && (  [ -f ncurses-5.7.tar.gz ] || $download_cmd http://ftp.gnu.org/gnu
 
 $rtorrent && (  [ -f rtorrent-0.8.6.tar.gz ] || $download_cmd http://libtorrent.rakshasa.no/downloads/rtorrent-0.8.6.tar.gz )
 
-$transmission && (  [ -f transmission-2.01.tar.bz2 ] || $download_cmd http://mirrors.m0k.org/transmission/files/transmission-2.01.tar.bz2 )
+$transmission && (  [ -f transmission-2.22.tar.bz2 ] || $download_cmd http://mirrors.m0k.org/transmission/files/transmission-2.22.tar.bz2 )
+
+$libevent && (  [ -f libevent-2.0.10-stable.tar.gz ] || $download_cmd http://monkey.org/~provos/libevent-2.0.10-stable.tar.gz )
 
 
 $btpd && ( [ -f btpd-btpd-v0.16-0-g950bfcb.tar.gz ] || $download_cmd http://github.com/btpd/btpd/tarball/v0.16 )
@@ -335,8 +340,9 @@ then
     cat >config.cache <<EOF
 ac_cv_func_getaddrinfo=yes
 EOF
-	patch < ../../patches/php/thttpd_2.25b.patch
-    CC=mipsel-linux-gcc ./configure --prefix=${cipibad} --host=mipsel-linux --disable-all --disable-cli --enable-fastcgi --enable-discard-path --disable-ipv6  --enable-session --cache-file=`pwd`/config.cache --enable-sockets --with-pcre-regex=/cb3pp/ --enable-shared=false --enable-static=true --with-thttpd=../thttpd-2.25b/
+	#thttpdnolonger used	patch < ../../patches/php/thttpd_2.25b.patch
+    CC=mipsel-linux-gcc ./configure --prefix=${cipibad} --host=mipsel-linux --disable-all --disable-cli --enable-fastcgi --enable-discard-path --disable-ipv6  --enable-session --enable-simplexml --cache-file=`pwd`/config.cache --enable-sockets --with-pcre-regex=/cb3pp/ --enable-shared=false --enable-static=true --enable-libxml --with-libxml-dir=/cb3pp/ --with-sqlite
+	#--with-thttpd=../thttpd-2.25b/
 
     $CLEAN && make clean
     make
@@ -348,6 +354,21 @@ EOF
 
 cp ${cipibad}/bin/php $target/bin
 # php ini !!
+
+fi
+
+if [ $php53 == true ]
+then
+    cd $compile
+    tar zxf $downloads/php-5.3.6.tar.gz
+    cd php-5.3.6
+#    cat >config.cache <<EOF
+#ac_cv_func_getaddrinfo=yes
+#EOF
+        #thttpdnolonger used    patch < ../../patches/php/thttpd_2.25b.patch
+    CROSS_COMPILE=1 CC=mipsel-linux-gcc CXX=mipsel-linux-g++ ./configure --prefix=${cipibad} --host=mipsel-linux --disable-all --disable-cli --enable-fastcgi --enable-discard-path --disable-ipv6  --enable-session --enable-simplexml --cache-file=`pwd`/config.cache --enable-sockets --with-pcre-regex=/cb3pp/ --enable-shared=false --enable-static=true --enable-libxml --with-libxml-dir=/cb3pp/ --with-sqlite3
+    $CLEAN && make clean
+    make
 
 fi
 
@@ -546,13 +567,32 @@ cp ${cipibad}/bin/rtorrent $target/bin
 
 fi
 
+if [ $libevent == true ]
+then
+    cd $compile
+    tar zxf $downloads/libevent-2.0.10-stable.tar.gz
+    cd libevent-*
+    ./configure --host=mipsel-linux --prefix=/cb3pp/ --disable-debug-mode
+    $CLEAN && make clean
+    make
+    make install
+
+#
+# transmission target
+#
+
+cp ${cipibad}/bin/transmission-daemon $target/bin
+
+fi
+
+
 
 if [ $transmission == true ]
 then
     cd $compile
-#    tar jxf $downloads/transmission-1.76.tar.bz2
-    cd transmission-1.76
-    PATH=$PATH:/cb3pp/bin/ LIBS="-L/cb3pp/lib" OPENSSL_CFLAGS="-I/cb3pp/include" OPENSSL_LIBS="-L/cb3pp/lib -lssl -lcrypto" LIBCURL_CFLAGS="-I/cb3pp/lib" LIBCURL_LIBS="-L/cb3pp/lib -lcurl" ./configure --prefix=${cipibad} --host=mipsel-linux --disable-nls
+    tar jxf $downloads/transmission-2.22.tar.bz2
+    cd transmission-*
+    LIBEVENT_CFLAGS="-I/cb3pp/include" LIBEVENT_LIBS="-L/cb3pp/lib -levent" CPPFLAGS="-DTR_EMBEDDED" PATH=$PATH:/cb3pp/bin/ OPENSSL_CFLAGS="-I/cb3pp/include" OPENSSL_LIBS="-L/cb3pp/lib -lssl -lcrypto" LIBCURL_CFLAGS="-I/cb3pp/lib" LIBCURL_LIBS="-L/cb3pp/lib -lcurl" ./configure --prefix=${cipibad} --host=mipsel-linux --disable-nls --disable-gtk --enable-daemon
     $CLEAN && make clean
     make
     make install
@@ -606,22 +646,22 @@ fi
 
 
 
-if [ $transmission == true ]
-then
-    cd $compile
-    tar jxf $downloads/transmission-2.01.tar.bz2
-    cd transmission-2.01
-    OPENSSL_CFLAGS="-I/cb3pp/include" OPENSSL_LIBS="-L/cb3pp/lib -lssl -lcrypto" CFLAGS="-I/cb3pp/include" LIBS="-L/cb3pp/lib" ./configure --prefix=${cipibad} --host=mipsel-linux --with-ssl=/cb3pp --with-curl=/cb3pp
-    $CLEAN && make clean
-    make
-    make install
-
+#if [ $transmission == true ]
+#then
+#    cd $compile
+#    tar jxf $downloads/transmission-2.01.tar.bz2
+#    cd transmission-2.01
+#    OPENSSL_CFLAGS="-I/cb3pp/include" OPENSSL_LIBS="-L/cb3pp/lib -lssl -lcrypto" CFLAGS="-I/cb3pp/include" LIBS="-L/cb3pp/lib" ./configure --prefix=${cipibad} --host=mipsel-linux --with-ssl=/cb3pp --with-curl=/cb3pp
+#    $CLEAN && make clean
+#    make
+#    make install
+#
 #
 # TODO ncurses target
 #
 
 
-fi
+#fi
 
 
 
