@@ -1,4 +1,3 @@
-
 #!/bin/sh
 
 
@@ -63,8 +62,15 @@ then
     TEA="NO";
 fi
 
+if [ ${VERSION} = "MP3012" ]
+then
+    USE_EBODA_INSTALL="no";
+    SIMPLE_VERSION="500plus"
+    TEA="NO";
+fi
 
-if [ ${VERSION} = "500i" -o ${VERSION} = "500a" -o ${VERSION} = "500minia" -o ${VERSION} = "500" -o ${VERSION} = "500mini" -o ${VERSION} = "500plus" -o ${VERSION} = "PV73200" -o ${VERSION} = "PV73100"  -o ${VERSION} = "MP3011" ]
+
+if [ ${VERSION} = "500i" -o ${VERSION} = "500a" -o ${VERSION} = "500minia" -o ${VERSION} = "500" -o ${VERSION} = "500mini" -o ${VERSION} = "500plus" -o ${VERSION} = "PV73200" -o ${VERSION} = "PV73100"  -o ${VERSION} = "MP3011" -o ${VERSION} = "MP3012" ]
 then
     echo Patching firmware variant ${VERSION}
 else
@@ -211,6 +217,37 @@ mkdir utilities
 sed -i -e '/^root/c\
 root::0:0:root:/usr/local/etc/root:/bin/sh' etc/passwd
 
+cat > etc/inittab <<EOF
+#If no inittab is found, it has the following default behavior
+::sysinit:/etc/init.d/rcS
+::askfirst:/bin/sh
+#If it detects that /dev/console is _not_ a serial console, it will also run
+# not needed
+# tty::askfirst:/bin/sh
+# Stuff to do before rebooting
+::shutdown:/etc/init.d/rcK
+::restart:/sbin/init
+EOF
+
+cat > etc/init.d/rcK <<EOF
+#!/bin/sh
+[ -f /usr/local/etc/rcK ] && /usr/local/etc/rcK>/dev/console
+/bin/umount -a -r
+/sbin/swapoff -a
+EOF
+
+chmod +x etc/init.d/rcK
+if [ ${SDK} -ne 4 ]
+then
+
+sed -i -e '/\/tmp\/package\/script\/samba-security/i\
+addmountpointtosambaconf movie /tmp/hdd/root/movie/\
+addmountpointtosambaconf music /tmp/hdd/root/music/' usr/local/bin/package/script/configsamba
+
+sed -i -e '/mountpoint=$(cat \/proc\/mounts|grep $l |cut -d" " -f 2)/c\
+mountpoint=$(cat /proc/mounts|grep $l | head -n 1 | cut -d" " -f 2)' usr/local/bin/package/script/configsamba
+
+fi
 
 # traducere + font
 #cp  ${SVN_REPO}/src/${SIMPLE_VERSION}/Resource/*.str usr/local/bin/Resource 
@@ -226,11 +263,16 @@ cp  ${SVN_REPO}/src/${SIMPLE_VERSION}/Resource/*.TTF usr/local/bin/Resource
 if [ $SDK -ne 4 ]
 then
     echo overwriting awk
-    cp  ${SVN_REPO}/src/bin/* usr/bin
-    chmod +x usr/bin/*
+    cp  ${SVN_REPO}/src/bin/awk usr/bin
+    chmod +x usr/bin/awk
 else
     echo NOT overwriting awk
 fi
+
+#use my init
+rm sbin/init
+cp ${SVN_REPO}/src/bin/busybox sbin/init
+chmod +x sbin/init
 
 # eboda web control panel
 dir=`pwd`
@@ -252,18 +294,20 @@ then
     echo overwriting IMS menu
     cp ${SVN_REPO}/src/${SIMPLE_VERSION}/menu/menu.rss_sdk${SDK} usr/local/bin/scripts/menu.rss
 else
-    cp usr/local/bin/scripts/menu.rss usr/local/bin/scripts/menu.orig.rss
+    cp usr/local/bin/scripts/menu.rss usr/local/bin/scripts/menu_orig.rss
     cp ${SVN_REPO}/src/${SIMPLE_VERSION}/menu/menu.rss_sdk${SDK} usr/local/bin/scripts/menu.rss
-    echo "overwriting IMS menu(yet)"
+    echo "overwriting IMS menu(try)"
 fi
 
 
 [ -d usr/local/bin/scripts/image ] || mkdir usr/local/bin/scripts/image
 cp ${SVN_REPO}/src/${SIMPLE_VERSION}/menu/image/* usr/local/bin/scripts/image/
 
+if [ ${SDK} -ne 4 ]
+then
 #Repair some weather stuff
-cp ${SVN_REPO}/src/${SIMPLE_VERSION}/map/* usr/local/bin/IMS_Modules/Weather/scripts/map/
-
+    cp ${SVN_REPO}/src/${SIMPLE_VERSION}/map/* usr/local/bin/IMS_Modules/Weather/scripts/map/
+fi
 
 #rss_ex
 
@@ -356,6 +400,10 @@ http4           84/udp          www4 www4-http  # HyperText Transfer Protocol\
 http5           85/tcp          www5 www5-http  # HyperText Transfer Protocol\
 http5           85/udp          www5 www5-http  # HyperText Transfer Protocol' etc/services
 
+sed -i -e '1a\
+[ -f /usr/local/etc/rcK ] && /usr/local/etc/rcK' usr/sbin/pppoe-stop
+
+
 
 #packaging root back
 if [ ${SDK} = "2" ]
@@ -394,7 +442,13 @@ mkdir root
 #rss_ex
 ln -s  /rss_ex translate
 
+#gracefully stop transmission
+#NOK with SDK4
 
+#[ -d dvdplayer/script ] || mkdir -p dvdplayer/script
+#ln -s /usr/local/etc/rcK dvdplayer/script/stop_livepause
+
+#better link at pppoe end script
 
 # keep this to be mine
 # later update to come for external images of xtreamer
@@ -439,7 +493,7 @@ storage="$storage/zapps"
 echo "storage=$storage" > /usr/local/etc/storage
 
 #check if overmount dirs present 
-[ -d ${storage}] || mkdir ${storage}
+[ -d ${storage} ] || mkdir ${storage}
 [ -d ${storage}/cb3pp ] || mkdir ${storage}/cb3pp
 [ -d ${storage}/scripts ] || mkdir ${storage}/scripts
 [ -d ${storage}/rss_ex ] || mkdir ${storage}/rss_ex
@@ -561,10 +615,10 @@ then
 
 fi
 
-cb3pp_startup=/cb3pp/etc/init.d/rcS
+cb3pp_startup=/cb3pp/etc/init.d/rcS 
 
 # standard startup
-[ -f $cb3pp_startup ] && /bin/sh $cb3pp_startup
+[ -f $cb3pp_startup ] && /bin/sh $cb3pp_startup $1
 
 fi
 #END CBA_CB3PP_STARTUP' > rccb3ppS
@@ -573,10 +627,23 @@ chmod +x rccb3ppS
 
 #addind my startup to standard startup procedure
 echo '
-[ -f /usr/local/etc/rccb3ppS ] && sh /usr/local/etc/rccb3ppS &' >> rcS
+[ -f /usr/local/etc/rccb3ppS ] && sh /usr/local/etc/rccb3ppS start &' >> rcS
 
-sed -i -e '1a\
-ifconfig eth0 192.168.1.2 netmask 255.255.255.0' rcS
+cat > rcK <<EOF
+#!/bin/sh
+[ -f /usr/local/etc/rccb3ppK ] && sh /usr/local/etc/rccb3ppK 
+EOF
+
+chmod +x rcK
+
+cat > rccb3ppK <<EOF
+#!/bin/sh
+
+# standard stop
+[ -f /cb3pp/etc/init.d/rcS ] && /bin/sh /cb3pp/etc/init.d/rcS stop
+EOF
+
+chmod +x rccb3ppK
 
 #packing back /usr/local/etc
 rm ../usr.local.etc.tar.bz2

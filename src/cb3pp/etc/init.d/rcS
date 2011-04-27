@@ -5,6 +5,11 @@
 # executing them in numerical order.
 #
 
+ACTION='start'
+if [ "X$1" == "Xstop" ]
+then
+    ACTION='stop'
+fi
 
 PATH=$PATH:/cb3pp/bin:/cb3pp/sbin
 export PATH
@@ -19,17 +24,20 @@ for i in /cb3pp/etc/init.d/S??* ;do
             (
                 trap - INT QUIT TSTP
                 set start
-                . $i
+                /sbin/sh $i $ACTION
             )
             ;;
         *)
             # No sh extension, so fork subprocess.
-            $i start
+            $i $ACTION
             ;;
     esac
 done
 
 #mount only if user already created ext2
 #[ -d /tmp/hdd/volumes/HDD1/ext2 ] || mkdir /tmp/hdd/volumes/HDD1/ext2                                                                                        
-[ -d /tmp/hdd/root ] && [ -d /tmp/hdd/volumes/HDD1/ext2 ] && mount -o bind /tmp/hdd/root /tmp/hdd/volumes/HDD1/ext2                                          
+[ -d /tmp/hdd/root/movie ] && [ -d /tmp/hdd/volumes/HDD1/movie ] && mount -o bind /tmp/hdd/root/movie /tmp/hdd/volumes/HDD1/movie
+[ -d /tmp/hdd/root/music ] && [ -d /tmp/hdd/volumes/HDD1/music ] && mount -o bind /tmp/hdd/root/music /tmp/hdd/volumes/HDD1/music
+#[ -d /tmp/hdd/root ] && [ -d /tmp/hdd/volumes/HDD1/ext2 ] && mount -o bind /tmp/hdd/root /tmp/hdd/volumes/HDD1/ext2                    
+
 
