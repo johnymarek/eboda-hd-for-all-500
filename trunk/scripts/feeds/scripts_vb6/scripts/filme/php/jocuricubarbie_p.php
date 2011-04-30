@@ -22,7 +22,7 @@
 -->
 
 <script>
-  translate_base_url  = "http://127.0.0.1:83/scripts/cgi-bin/translate?";
+  translate_base_url  = "http://127.0.0.1:83/cgi-bin/translate?";
   cgiconf = readStringFromFile("/scripts/etc/cgi.conf");
   if(cgiconf != null)
   {
@@ -161,7 +161,28 @@
 
       print("*** majorContext=",majorContext);
       print("*** userInput=",userInput);
+if (userInput == "pagedown" || userInput == "pageup")
+{
+  idx = Integer(getFocusItemIndex());
+  if (userInput == "pagedown")
+  {
+    idx -= -8;
+    if(idx &gt;= itemCount)
+      idx = itemCount-1;
+  }
+  else
+  {
+    idx -= 8;
+    if(idx &lt; 0)
+      idx = 0;
+  }
 
+  print("new idx: "+idx);
+  setFocusItemIndex(idx);
+	setItemFocus(0);
+  redrawDisplay();
+  ret = "true";
+}
       if(userInput == "enter")
       {
         showIdle();

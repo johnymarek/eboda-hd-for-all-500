@@ -99,18 +99,36 @@
 
 		</itemDisplay>
 		
-  <onUserInput>
-    <script>
-      ret = "false";
-      userInput = currentUserInput();
-      majorContext = getPageInfo("majorContext");
-      
-      print("*** majorContext=",majorContext);
-      print("*** userInput=",userInput);
-      
-      ret;
-    </script>
-  </onUserInput>
+<onUserInput>
+<script>
+ret = "false";
+userInput = currentUserInput();
+
+if (userInput == "pagedown" || userInput == "pageup")
+{
+  idx = Integer(getFocusItemIndex());
+  if (userInput == "pagedown")
+  {
+    idx -= -8;
+    if(idx &gt;= itemCount)
+      idx = itemCount-1;
+  }
+  else
+  {
+    idx -= 8;
+    if(idx &lt; 0)
+      idx = 0;
+  }
+
+  print("new idx: "+idx);
+  setFocusItemIndex(idx);
+	setItemFocus(0);
+  redrawDisplay();
+  "true";
+}
+ret;
+</script>
+</onUserInput>
 		
 	</mediaDisplay>
 	
@@ -207,12 +225,49 @@ foreach($videos as $video) {
     <item>
     <title>'.$title.'</title>
     <link>'.$link.'</link>	
-    <annotation>'.$title.'</annotation>
+    <annotation>'.$title.'(v1)</annotation>
     <image>'.$image.'</image>
     <media:thumbnail url="'.$image.'" />
     <mediaDisplay name="threePartsView"/>
     </item>
     ';
+/**
+   //Momentan doar un server....
+    $link1="http://www.990.ro/player-filme-redirect-film.php?id=".$id."&amp1;v=2";
+    $AgetHeaders = @get_headers($link1);
+    if (preg_match("|200|", $AgetHeaders[0])) {
+    $link="player-filme-redirect-film.php?id=".$id."@v=2";
+    $link = trim("http://www.990.ro/".$link);
+    $link = 'http://127.0.0.1:82/scripts/filme/php/filme_link.php?'.$link.','.urlencode($title);
+    echo '
+    <item>
+    <title>'.$title.'</title>
+    <link>'.$link.'</link>
+    <annotation>'.$title.'(v2)</annotation>
+    <image>'.$image.'</image>
+    <media:thumbnail url="'.$image.'" />
+    <mediaDisplay name="threePartsView"/>
+    </item>
+    ';
+    }
+    $link1="http://www.990.ro/player-filme-redirect-film.php?id=".$id."&amp1;v=3";
+    $AgetHeaders = @get_headers($link1);
+    if (preg_match("|200|", $AgetHeaders[0])) {
+    $link="player-filme-redirect-film.php?id=".$id."@v=3";
+    $link = trim("http://www.990.ro/".$link);
+    $link = 'http://127.0.0.1:82/scripts/filme/php/filme_link.php?'.$link.','.urlencode($title);
+    echo '
+    <item>
+    <title>'.$title.'</title>
+    <link>'.$link.'</link>
+    <annotation>'.$title.'(v3)</annotation>
+    <image>'.$image.'</image>
+    <media:thumbnail url="'.$image.'" />
+    <mediaDisplay name="threePartsView"/>
+    </item>
+    ';
+    }
+**/
 }
 
 ?>

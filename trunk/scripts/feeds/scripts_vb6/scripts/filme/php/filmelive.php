@@ -103,18 +103,36 @@
 
 		</itemDisplay>
 		
-  <onUserInput>
-    <script>
-      ret = "false";
-      userInput = currentUserInput();
-      majorContext = getPageInfo("majorContext");
-      
-      print("*** majorContext=",majorContext);
-      print("*** userInput=",userInput);
-      
-      ret;
-    </script>
-  </onUserInput>
+<onUserInput>
+<script>
+ret = "false";
+userInput = currentUserInput();
+
+if (userInput == "pagedown" || userInput == "pageup")
+{
+  idx = Integer(getFocusItemIndex());
+  if (userInput == "pagedown")
+  {
+    idx -= -8;
+    if(idx &gt;= itemCount)
+      idx = itemCount-1;
+  }
+  else
+  {
+    idx -= 8;
+    if(idx &lt; 0)
+      idx = 0;
+  }
+
+  print("new idx: "+idx);
+  setFocusItemIndex(idx);
+	setItemFocus(0);
+  redrawDisplay();
+  "true";
+}
+ret;
+</script>
+</onUserInput>
 		
 	</mediaDisplay>
 	
@@ -176,7 +194,7 @@ function str_between($string, $start, $end){
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
 	return substr($string,$ini,$len); 
 }
-$image = "/scripts/image/movies.png";
+$image = "image/movies.png";
 $videos = explode('id="post-', $html);
 
 unset($videos[0]);
@@ -189,7 +207,7 @@ foreach($videos as $video) {
   $link = $t3[1];
   
   $t1 = explode('src="', $video);
-  $t2 = explode('"', $t1[1]);
+  $t2 = explode('"', $t1[3]);
   $image = $t2[0];
 
   $t1 = explode('title="', $video);
@@ -197,6 +215,10 @@ foreach($videos as $video) {
   $t3 = explode(">",$t2[1]);
   $t4 = explode("<",$t3[1]);
   $title = $t4[0];
+  $title=str_replace("online","",$title);
+  $title=str_replace("subtitrat","",$title);
+  $title=str_replace("gratis","",$title);
+  $title=trim($title);
 //  descriere  
   $v1 = explode('<p>', $video);
   $v2 = explode('</p>', $v1[1]);

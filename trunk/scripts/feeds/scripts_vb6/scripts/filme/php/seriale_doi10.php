@@ -1,5 +1,10 @@
-<?php echo "<?xml version='1.0' encoding='UTF8' ?>";
-$host = "http://127.0.0.1:82";
+<?php
+echo "<?xml version='1.0' encoding='UTF8' ?>";
+$query = $_GET["file"];
+$queryArr = explode(',', $query);
+$link = $queryArr[0];
+$tit = urldecode($queryArr[1]);
+$html = file_get_contents($link);
 ?>
 <rss version="2.0">
 <onEnter>
@@ -24,11 +29,11 @@ $host = "http://127.0.0.1:82";
 	itemImageWidthPC="0"
 	itemXPC="8"
 	itemYPC="25"
-	itemWidthPC="50"
+	itemWidthPC="45"
 	itemHeightPC="8"
 	capXPC="8"
 	capYPC="25"
-	capWidthPC="50"
+	capWidthPC="45"
 	capHeightPC="64"
 	itemBackgroundColor="0:0:0"
 	itemPerPage="8"
@@ -45,14 +50,18 @@ $host = "http://127.0.0.1:82";
 		  <script>getPageInfo("pageTitle");</script>
 		</text>
 
-  	<text redraw="yes" offsetXPC="85" offsetYPC="12" widthPC="10" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
+  	<text redraw="no" offsetXPC="85" offsetYPC="12" widthPC="10" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
 		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
 		</text>
-  	<text  redraw="yes" align="center" offsetXPC="0" offsetYPC="90" widthPC="100" heightPC="8" fontSize="17" backgroundColor="10:105:150" foregroundColor="100:200:255">
-		  <script>print(annotation); annotation;</script>
+
+		<text align="center" redraw="yes" 
+          lines="10" fontSize=17
+		      offsetXPC=55 offsetYPC=65 widthPC=40 heightPC=42
+		      backgroundColor=0:0:0 foregroundColor=200:200:200>
+			<script>print(annotation); annotation;</script>
 		</text>
-		<image  redraw="yes" offsetXPC=60 offsetYPC=35 widthPC=30 heightPC=30>
-  http://www.jocuricubarbie.info/imagini/menu/jocuri-barbie-desene-animate-over.jpg
+		<image  redraw="yes" offsetXPC=66 offsetYPC=22.5 widthPC=20 heightPC=35>
+		<script>print(img); img;</script>
 		</image>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_01.png </idleImage>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_02.png </idleImage>
@@ -70,8 +79,8 @@ $host = "http://127.0.0.1:82";
 					focus = getFocusItemIndex();
 					if(focus==idx) 
 					{
-					  location = getItemInfo(idx, "location");
 					  annotation = getItemInfo(idx, "annotation");
+					  img = getItemInfo(idx,"image");
 					}
 					getItemInfo(idx, "title");
 				</script>
@@ -79,7 +88,7 @@ $host = "http://127.0.0.1:82";
   				<script>
   					idx = getQueryItemIndex();
   					focus = getFocusItemIndex();
-  			    if(focus==idx) "16"; else "14";
+  			    if(focus==idx) "14"; else "14";
   				</script>
 				</fontSize>
 			  <backgroundColor>
@@ -147,9 +156,8 @@ ret;
 
 	</item_template>
 <channel>
-	<title>Desene animate</title>
+	<title><?php echo $tit; ?></title>
 	<menu>main menu</menu>
-
 
 <?php
 function str_between($string, $start, $end){ 
@@ -157,39 +165,46 @@ function str_between($string, $start, $end){
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
 	return substr($string,$ini,$len); 
 }
-$html = file_get_contents("http://www.jocuricubarbie.info/desene_animate.html");
-	echo '
-	<item>
-		<title>Povesti</title>
-		<link>'.$host.'/scripts/filme/php/jocuricubarbie_p.php</link>
-		<annotation>Povesti... (audio)</annotation>
-		<mediaDisplay name="threePartsView"/>
-	</item>
-	';
-$html = str_between($html,'<ul class="Box">','</div');
-$videos = explode('<li', $html);
+$host = "http://127.0.0.1:82";
+$n=1;
+$seasons = explode('<table style="width: auto;" border="0" cellspacing="0" cellpadding="15" align="center">',$html);
+unset($seasons[0]);
+$seasons = array_values($seasons);
+foreach($seasons as $season) {
+$t1=explode('src="',$season);
+$t2=explode('"',$t1[1]);
+$img=$t2[0];
+$videos = explode('class="abc"', $season);
 unset($videos[0]);
 $videos = array_values($videos);
+foreach($videos as $video) {
+  $t1 = explode('href="', $video);
+  $t2 = explode('"', $t1[1]);
+  $link = $t2[0];
 
-foreach($videos as $video) {		
-    $t1 = explode('href="', $video);
-    $t2 = explode('"', $t1[1]);
-    $link = $t2[0];
-    $t1 = explode('title="', $video);
-    $t2 = explode('"', $t1[1]);
-    $title = $t2[0];
-		if ($link <> "") {
-			$link = $host."/scripts/filme/php/jocuricubarbie.php?query=,".$link;
-    	echo '
-    	<item>
-    		<title>'.$title.'</title>
-    		<link>'.$link.'</link>
-				<annotation>'.$title.'</annotation>
-				<mediaDisplay name="threePartsView"/>
-    	</item>
-    	';
-    }
+  $t3 = explode('>', $t1[1]);
+  $t4 = explode('<', $t3[1]);
+  $title1 = trim($t4[0]);
+  $title = $n.".".$title1;
+
+  if (($link <> "") && ($title1 <> "")){
+     $down=$tit."-".$title;
+     $link = "http://127.0.0.1:82/scripts/filme/php/filme_link.php?".$link.",".urlencode($down);
+  echo '
+  <item>
+  <title>'.$title.'</title>
+  <link>'.$link.'</link>
+  <image>'.$img.'</image>
+  <annotation>'.$title1.'</annotation>
+  <media:thumbnail url="'.$img.'" />
+  <mediaDisplay name="threePartsView"/>
+  </item>
+  ';
+  }
 }
+$n++;
+}
+?>
 
 ?>
 

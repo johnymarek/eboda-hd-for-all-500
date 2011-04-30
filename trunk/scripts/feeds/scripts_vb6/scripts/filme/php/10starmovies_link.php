@@ -74,7 +74,7 @@ function str_between($string, $start, $end){
 	return substr($string,$ini,$len);
 }
 $host = "http://127.0.0.1:82";
-$baseurl = "http://127.0.0.1:83/scripts/cgi-bin/translate?stream,Content-type:video/x-flv,";
+$baseurl = "http://127.0.0.1:83/cgi-bin/translate?stream,Content-type:video/x-flv,";
 $content = file_get_contents($episodeLink);
 $newlines = array("\t","\n","\r","\x20\x20","\0","\x0B");
 $input = str_replace($newlines, "", $content);

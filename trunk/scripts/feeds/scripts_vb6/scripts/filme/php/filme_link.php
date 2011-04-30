@@ -224,8 +224,11 @@ return $l;
 }
 function nukeshare($string) {
   //http://www.nukeshare.com:182/d/nj27226jmwazz6v7wqdn2huhhxat7dxdqwwnkdokhrvvlkemhmkryx5f/video.flv
-  $h = file_get_contents($string);
-  $h = str_between($h,"s1|addVariable|","split");
+  $h1 = file_get_contents($string);
+  $h = str_between($h1,"s1|addVariable|","split");
+  if ($h==""){
+     $h=str_between($h1,"|nukeshare|","split");
+  }
   $a = explode("|",$h);
   for ($i=0;$i<30;$i++) {
       if ((strlen($a[$i]) >= 39) && (strpos($a[$i],"_") === false)) {
@@ -534,6 +537,14 @@ foreach($videos as $video) {
 //Prea multe link-uri, trimit doar un link!
 if (strpos($filelink, 'onlinemoca') !== false) {
 	$link = $onlinemoca;
+	//http://adf.ly/1DIUC
+	if (strpos($link,"adf.ly") !==false) {
+	   $h1=file_get_contents($link);
+	   $link=str_between($h1,"var url = '","'");
+    } else {
+	  $t1=explode("link=",$link);
+	  $link=$t1[1];
+    }
 	$server = str_between($link,"http://","/");
 	$title = $server;
 	$link = str_prep($link);
@@ -970,6 +981,27 @@ foreach($videos as $video) {
      $link = nukeshare($link);
      $server = str_between($link,"http://","/");
      $title = $server." - ".substr(strrchr($link,"/"),1);
+   } elseif (strpos($link,"putlocker.com") !==false) {
+     //http://www.putlocker.com/embed/E6324D1B82F7A46D
+     //nu merge, ramane in studiu!!!!!
+     $id=substr(strrchr($link,"/"),1);
+     $h = file_get_contents($link);
+     $post="hash=".$hash."&confirm=Close+Ad+and+Watch+as+Free+User";
+     $hash=str_between($h,'<input type="hidden" value="','"');
+         $ch = curl_init($link);
+         curl_setopt ($ch, CURLOPT_POST, 1);
+         curl_setopt ($ch, CURLOPT_POSTFIELDS, $post);
+         curl_setopt($ch, CURLOPT_FOLLOWLOCATION  ,1);
+         curl_setopt($ch, CURLOPT_RETURNTRANSFER  ,1);  // RETURN THE CONTENTS OF THE CALL
+         $h = curl_exec($ch);
+         curl_close ($ch);
+     $url="http://www.putlocker.com/get_file.php?embed_stream=".$id;
+     $h = file_get_contents($url);
+     $t1=explode('media:content url="',$h);
+     $t2=explode('"',$t1[2]);
+     $link = $t2[0];
+     $server = str_between($link,"http://","/");
+     $title = $server." - ".substr(strrchr($link,"/"),1);
    } else {
      $link = "";
    }
@@ -1109,14 +1141,48 @@ foreach($videos as $video) {
   	      $v = explode("v=",$link);
   	      $id = $v[1];
         }
-		$title = "megavideo link";
-		$link1 = "http://127.0.0.1:82/scripts/php1/mega.php?id=".$id;
+
+   		if ($pg <> "") {
+           $titledownload = $pg;
+        } else {
+           $titledownload = $id;
+        }
+        $ext = "flv";
+        $link = "http://titooo.net23.net/megavideo/mvpremiumoriginal.php?video_id=".$id;
+        $link1 = $baseurl.$link;
+        $title = $n.".megavideo (premium) - file=".$id;
     	echo '
         <item>
     	<title>'.$title.'</title>
     	<link>'.$link1.'</link>
+    	<name>'.$titledownload.'.'.$ext.'</name>
+    	<download>'.$link.'</download>
+    	<enclosure type="video/flv" url="'.$link1.'"/>
     	</item>
-        ';
+    	';
+    	$link = "http://127.0.0.1:82/scripts/php1/megavideo.php?video_id=".$id;
+    	$title = $n.".megavideo (limit to 71 min.) - file=".$id;
+    	echo '
+        <item>
+    	<title>'.$title.'</title>
+    	<link>'.$link.'</link>
+    	<name>'.$titledownload.'.'.$ext.'</name>
+    	<download>'.$link.'</download>
+    	<enclosure type="video/flv" url="'.$link.'"/>
+    	</item>
+    	';
+		$link1 = "http://127.0.0.1:82/scripts/php1/mega.php?id=".$id;
+		$title = $n.".megavideo (premium flv) - file=".$id;
+    	echo '
+        <item>
+    	<title>'.$title.'</title>
+    	<link>'.$link1.'</link>
+    	<name>'.$titledownload.'.'.$ext.'</name>
+    	<download>'.$link1.'</download>
+    	<enclosure type="video/flv" url="'.$link1.'"/>
+    	</item>
+    	';
+        $n++;
      }
 }
 }
@@ -1147,6 +1213,8 @@ if (strpos($html, 'googleplayer.swf') !== false) {
         <item>
     	<title>'.$title.'</title>
     	<link>'.$link1.'</link>
+    	<name>'.$titledownload.'.'.$ext.'</name>
+    	<download>'.$link1.'</download>
     	<enclosure type="video/flv" url="'.$link1.'"/>
     	</item>
     	';
@@ -1312,10 +1380,53 @@ if (strpos($html, 'www.youtube.com/v/') !== false) {
 	  $title = $server." - ".substr(strrchr($link,"/"),1);
 	  if (($link <> "") && strcmp($link,$lastlink)) {
        $link1 = "http://127.0.0.1:83/cgi-bin/translate?stream,HD:1,http://www.youtube.com/watch?v=".$v_id;
+       $ext=".flv";
+   		if ($pg <> "") {
+           $titledownload = $pg;
+        } else {
+           $titledownload = $v_id;
+        }
        echo '
           <item>
     	  <title>'.$title.'</title>
     	  <link>'.$link1.'</link>
+    	  <name>'.$titledownload.'.'.$ext.'</name>
+    	  <download>'.$link1.'</download>
+    	  <enclosure type="video/flv" url="'.$link1.'"/>
+    	  </item>
+          ';
+       $lastlink = $link;
+       }
+     }
+  }
+}
+//embed
+if (strpos($html, 'www.youtube.com/embed/') !== false) {
+	$videos = explode("www.youtube.com/embed/", $html);
+	unset($videos[0]);
+	$videos = array_values($videos);
+	foreach($videos as $video) {
+	//$id = explode("&",$video);
+	$v_id = substr($video, 0, 11);
+	//$v_id = $id[0];
+    if(!preg_match('/[^0-9A-Za-z._.-]/',$v_id)) {
+	  $link = "http://www.youtube.com/v/".$v_id;
+	  $server = str_between($link,"http://","/");
+	  $title = $server." - ".substr(strrchr($link,"/"),1);
+	  if (($link <> "") && strcmp($link,$lastlink)) {
+       $link1 = "http://127.0.0.1:83/cgi-bin/translate?stream,HD:1,http://www.youtube.com/watch?v=".$v_id;
+       $ext=".flv";
+   		if ($pg <> "") {
+           $titledownload = $pg;
+        } else {
+           $titledownload = $v_id;
+        }
+       echo '
+          <item>
+    	  <title>'.$title.'</title>
+    	  <link>'.$link1.'</link>
+    	  <name>'.$titledownload.'.'.$ext.'</name>
+    	  <download>'.$link1.'</download>
     	  <enclosure type="video/flv" url="'.$link1.'"/>
     	  </item>
           ';
@@ -1553,6 +1664,7 @@ if (strpos($html, 'stagevu.com') !== false) {
   	 $lastlink = $link;
     }
 }
+// utils
    echo '
    <item>
    <title>Download Manager</title>
@@ -1562,18 +1674,11 @@ if (strpos($html, 'stagevu.com') !== false) {
     $link = "http://127.0.0.1:82/scripts/util/util1.cgi";
   	echo '
     <item>
-  	<title>Stop download</title>
+  	<title>Stop download (numai pentru metoda sageata dreapta-download)</title>
   	<link>'.$link.'</link>
   	<enclosure type="text/txt" url="'.$link.'"/>
   	</item>
       ';
-   $link = "http://127.0.0.1:82/scripts/util/ren.php";
-   echo '
-   <item>
-   <title>Redenumire fisiere descarcate</title>
-   <link>'.$link.'</link>
-   </item>
-   ';
 ?>
 </channel>
 </rss>

@@ -103,18 +103,36 @@
 
 		</itemDisplay>
 		
-  <onUserInput>
-    <script>
-      ret = "false";
-      userInput = currentUserInput();
-      majorContext = getPageInfo("majorContext");
-      
-      print("*** majorContext=",majorContext);
-      print("*** userInput=",userInput);
-      
-      ret;
-    </script>
-  </onUserInput>
+<onUserInput>
+<script>
+ret = "false";
+userInput = currentUserInput();
+
+if (userInput == "pagedown" || userInput == "pageup")
+{
+  idx = Integer(getFocusItemIndex());
+  if (userInput == "pagedown")
+  {
+    idx -= -8;
+    if(idx &gt;= itemCount)
+      idx = itemCount-1;
+  }
+  else
+  {
+    idx -= 8;
+    if(idx &lt; 0)
+      idx = 0;
+  }
+
+  print("new idx: "+idx);
+  setFocusItemIndex(idx);
+	setItemFocus(0);
+  redrawDisplay();
+  "true";
+}
+ret;
+</script>
+</onUserInput>
 		
 	</mediaDisplay>
 	
@@ -177,7 +195,7 @@ function str_between($string, $start, $end){
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
 	return substr($string,$ini,$len); 
 }
-$image = "/scripts/image/movies.png";
+$image = "image/movies.png";
 $videos = explode('<div id="post-', $html);
 
 unset($videos[0]);

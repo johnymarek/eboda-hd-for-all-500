@@ -13,7 +13,7 @@
 <mediaDisplay name="threePartsView"
 	sideLeftWidthPC="0"
 	sideRightWidthPC="0"
-	
+
 	headerImageWidthPC="0"
 	selectMenuOnRight="no"
 	autoSelectMenu="no"
@@ -38,7 +38,7 @@
 	imageFocus=""
 	sliding="no"
 >
-		
+
   	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		  <script>getPageInfo("pageTitle");</script>
 		</text>
@@ -47,13 +47,13 @@
 		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
 		</text>
 
-		<text align="center" redraw="yes" 
+		<text align="justify" redraw="yes"
           lines="10" fontSize=17
-		      offsetXPC=55 offsetYPC=55 widthPC=40 heightPC=42 
+		      offsetXPC=55 offsetYPC=55 widthPC=40 heightPC=42
 		      backgroundColor=0:0:0 foregroundColor=200:200:200>
 			<script>print(annotation); annotation;</script>
 		</text>
-		<image  redraw="yes" offsetXPC=68 offsetYPC=22.5 widthPC=15 heightPC=30>
+		<image  redraw="yes" offsetXPC=65 offsetYPC=22.5 widthPC=20 heightPC=30>
 		<script>print(img); img;</script>
 		</image>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_01.png </idleImage>
@@ -70,7 +70,7 @@
 				<script>
 					idx = getQueryItemIndex();
 					focus = getFocusItemIndex();
-					if(focus==idx) 
+					if(focus==idx)
 					{
 					  location = getItemInfo(idx, "location");
 					  annotation = getItemInfo(idx, "annotation");
@@ -102,22 +102,40 @@
 			</text>
 
 		</itemDisplay>
-		
-  <onUserInput>
-    <script>
-      ret = "false";
-      userInput = currentUserInput();
-      majorContext = getPageInfo("majorContext");
-      
-      print("*** majorContext=",majorContext);
-      print("*** userInput=",userInput);
-      
-      ret;
-    </script>
-  </onUserInput>
-		
+
+<onUserInput>
+<script>
+ret = "false";
+userInput = currentUserInput();
+
+if (userInput == "pagedown" || userInput == "pageup")
+{
+  idx = Integer(getFocusItemIndex());
+  if (userInput == "pagedown")
+  {
+    idx -= -8;
+    if(idx &gt;= itemCount)
+      idx = itemCount-1;
+  }
+  else
+  {
+    idx -= 8;
+    if(idx &lt; 0)
+      idx = 0;
+  }
+
+  print("new idx: "+idx);
+  setFocusItemIndex(idx);
+	setItemFocus(0);
+  redrawDisplay();
+  "true";
+}
+ret;
+</script>
+</onUserInput>
+
 	</mediaDisplay>
-	
+
 	<item_template>
 		<mediaDisplay  name="threePartsView" idleImageWidthPC="10" idleImageHeightPC="10">
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
@@ -129,7 +147,6 @@
         <idleImage>image/POPUP_LOADING_07.png</idleImage>
         <idleImage>image/POPUP_LOADING_08.png</idleImage>
 		</mediaDisplay>
-
 	</item_template>
 <channel>
 	<title>filmeonlinegratis.ro</title>
@@ -203,6 +220,7 @@ foreach($videos as $video) {
 	$title = str_replace("cu subtitrare in limba romana","",$title);
 	$title = str_replace("Vezi gratis filmul","",$title);
 	$title = str_replace("online cu subtitrare","",$title);
+	$title=str_replace(":","",$title);
 	$title = trim($title);
 
 //  descriere  

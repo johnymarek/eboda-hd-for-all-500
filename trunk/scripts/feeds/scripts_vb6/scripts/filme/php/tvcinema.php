@@ -5,10 +5,6 @@ $queryArr = explode(',', $query);
 $link = $queryArr[0];
 $tit = urldecode($queryArr[1]);
 $html = file_get_contents($link);
-$t1=explode('<div class="featured">',$html);
-$t2=explode('src="',$t1[1]);
-$t3=explode('"',$t2[1]);
-$img=$t3[0];
 ?>
 <rss version="2.0">
 <onEnter>
@@ -65,7 +61,7 @@ $img=$t3[0];
 			<script>print(annotation); annotation;</script>
 		</text>
 		<image  redraw="yes" offsetXPC=60 offsetYPC=22.5 widthPC=30 heightPC=25>
-  <?php echo $img; ?>
+		<script>print(img); img;</script>
 		</image>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_01.png </idleImage>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_02.png </idleImage>
@@ -84,6 +80,7 @@ $img=$t3[0];
 					if(focus==idx) 
 					{
 					  annotation = getItemInfo(idx, "annotation");
+					  img = getItemInfo(idx,"image");
 					}
 					getItemInfo(idx, "title");
 				</script>
@@ -91,7 +88,7 @@ $img=$t3[0];
   				<script>
   					idx = getQueryItemIndex();
   					focus = getFocusItemIndex();
-  			    if(focus==idx) "16"; else "14";
+  			    if(focus==idx) "14"; else "14";
   				</script>
 				</fontSize>
 			  <backgroundColor>
@@ -169,7 +166,7 @@ function str_between($string, $start, $end){
 	return substr($string,$ini,$len); 
 }
 $host = "http://127.0.0.1:82";
-$videos = explode('<li class="post-', $html);
+$videos = explode('<h2>', $html);
 
 unset($videos[0]);
 $videos = array_values($videos);
@@ -179,12 +176,15 @@ foreach($videos as $video) {
     $t2=explode('"',$t1[1]);
     $link=$t2[0];
 
-    $t1 = explode('src="', $video);
-    $t2 = explode('"', $t1[1]);
-    $image = $t2[0];
+    $t3 = explode('>', $t1[1]);
+    $t4 = explode('<', $t3[1]);
+    $title = trim($t4[0]);
 
-    $title = trim(str_between($video,'rel="bookmark">','</a>'));
-    $data = trim(str_between($video,'<div class="entry-summary" style="height:150px;">','</div>'));
+    $t1 = explode('src=', $video);
+    $t2 = explode('&', $t1[2]);
+    $image = $t2[0];
+    
+    $data = trim(str_between($video,'<p>','</p>'));
     $data = preg_replace("/(<\/?)([^>]*>)/e","",$data);
     $data = str_replace("&#351;","s",$data);
     $data = str_replace("&#259;","a",$data);
@@ -204,7 +204,7 @@ foreach($videos as $video) {
     if ($data == "") {
        $data = $title;
     }
-    if ($link <> "") {
+    if (($link <> "") && (strpos($link,"season") !==false)) {
        $down = $tit." ".$title;
        $link = 'http://127.0.0.1:82/scripts/filme/php/filme_link.php?'.$link.','.urlencode($down);
 
@@ -212,6 +212,7 @@ foreach($videos as $video) {
   <item>
   <title>'.$title.'</title>
   <link>'.$link.'</link>
+  <image>'.$image.'</image>
   <annotation>'.$data.'</annotation>
   <media:thumbnail url="'.$image.'" />
   <mediaDisplay name="threePartsView"/>

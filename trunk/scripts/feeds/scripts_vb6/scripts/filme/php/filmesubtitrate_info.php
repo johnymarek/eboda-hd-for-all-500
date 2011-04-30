@@ -115,7 +115,7 @@ if ($pageimage=="") {
 	$pageimage=str_between($html,'border="0" height="240" src="','?');
 }
 if ($pageimage=="") {
-	$pageimage="/scripts/image/movies.png";
+	$pageimage="image/movies.png";
 }
 $pageimage = str_replace("https","http",$pageimage);
 $serial_file=substr(strrchr($link,"/"),1);

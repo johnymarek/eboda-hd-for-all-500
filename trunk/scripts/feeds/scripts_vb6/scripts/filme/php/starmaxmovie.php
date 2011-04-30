@@ -185,7 +185,7 @@ if($search) {
 
 <?php } ?>
 <?php
-$baseurl = "http://127.0.0.1:83/scripts/cgi-bin/translate?stream,Content-type:video/x-flv,";
+$baseurl = "http://127.0.0.1:83/cgi-bin/translate?stream,Content-type:video/x-flv,";
 $videos = explode('<div class="video_i">', $html);
 unset($videos[0]);
 $videos = array_values($videos);

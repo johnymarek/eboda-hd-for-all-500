@@ -103,18 +103,36 @@
 
 		</itemDisplay>
 		
-  <onUserInput>
-    <script>
-      ret = "false";
-      userInput = currentUserInput();
-      majorContext = getPageInfo("majorContext");
-      
-      print("*** majorContext=",majorContext);
-      print("*** userInput=",userInput);
-      
-      ret;
-    </script>
-  </onUserInput>
+<onUserInput>
+<script>
+ret = "false";
+userInput = currentUserInput();
+
+if (userInput == "pagedown" || userInput == "pageup")
+{
+  idx = Integer(getFocusItemIndex());
+  if (userInput == "pagedown")
+  {
+    idx -= -8;
+    if(idx &gt;= itemCount)
+      idx = itemCount-1;
+  }
+  else
+  {
+    idx -= 8;
+    if(idx &lt; 0)
+      idx = 0;
+  }
+
+  print("new idx: "+idx);
+  setFocusItemIndex(idx);
+	setItemFocus(0);
+  redrawDisplay();
+  "true";
+}
+ret;
+</script>
+</onUserInput>
 		
 	</mediaDisplay>
 	
@@ -200,6 +218,10 @@ foreach($videos as $video) {
   $descriere = $v2[0];  
 	$descriere = preg_replace("/(<\/?)(\w+)([^>]*>)/e","",$descriere);
 	$descriere = str_replace("&nbsp;","",$descriere);
+	if (strlen($descriere)>=300) {
+       $descriere = substr($descriere,0,300);
+       $descriere = substr($descriere,0,-strlen(strrchr($descriere," ")))."...";
+       }
 	if($link!="") {
 		$link = "http://127.0.0.1:82/scripts/filme/php/onlinemoca_link.php?file=".$link.",".urlencode($titlu);
 		echo'
