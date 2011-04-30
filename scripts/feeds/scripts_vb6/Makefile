@@ -15,7 +15,7 @@ scripts4-latest.zip:
 
 patch2:
 	for i in ` find scripts -type f | grep -v .svn `; do \
-		sed -i -e "s#/scripts//scripts#/scripts#g" $$i;\
+		sed -i -e "s#127.0.0.1:83/scripts/#127.0.0.1:83/#g" $$i;\
 	done
 #		sed -i -e "s/#\/scripts\/\/scripts#>\/scripts#g//g" $$i;
 
