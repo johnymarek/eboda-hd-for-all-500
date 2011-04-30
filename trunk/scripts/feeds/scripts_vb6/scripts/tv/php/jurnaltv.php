@@ -42,7 +42,9 @@
   	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		  <script>getPageInfo("pageTitle");</script>
 		</text>
-
+  	<text align="left" offsetXPC="6" offsetYPC="15" widthPC="100" heightPC="4" fontSize="16" backgroundColor="10:105:150" foregroundColor="100:200:255">
+    Apasati 2 pentru download, 3 pentru download manager
+		</text>
   	<text redraw="yes" offsetXPC="85" offsetYPC="12" widthPC="10" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
 		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
 		</text>
@@ -130,6 +132,17 @@ if (userInput == "pagedown" || userInput == "pageup")
   redrawDisplay();
   "true";
 }
+	if( userInput == "two" || userInput == "2")
+	{
+		topUrl = "http://127.0.0.1:82/scripts/util/download.cgi?link=" + getItemInfo(getFocusItemIndex(),"download") + ";name=" + getItemInfo(getFocusItemIndex(),"name");
+		dlok = loadXMLFile(topUrl);
+		"true";
+	}
+if (userInput == "three" || userInput == "3")
+   {
+    jumpToLink("destination");
+    "true";
+}
 ret;
 </script>
 </onUserInput>
@@ -148,6 +161,10 @@ ret;
         <idleImage>image/POPUP_LOADING_08.png</idleImage>
 		</mediaDisplay>
 	</item_template>
+<destination>
+	<link>http://127.0.0.1:82/scripts/util/level.php
+	</link>
+</destination>
 <channel>
 	<title>jurnaltv.md</title>
 	<menu>main menu</menu>
@@ -214,14 +231,17 @@ foreach($videos as $video) {
 
   $descriere = preg_replace("/(<\/?)(\w+)([^>]*>)/e","",$descriere);
   $descriere = str_replace("&nbsp;","/",$descriere);
+  $name = preg_replace('/[^A-Za-z0-9_]/','_',$title).".flv";
 	echo'
 	<item>
 	<title>'.$title.'</title>
- <onClick>playItemURL("'.$link.'", 10);</onClick>
-  <annotation>'.$descriere.'</annotation>
-  <image>'.$image.'</image>
-  <media:thumbnail url="'.$image.'" />
-  <mediaDisplay name="threePartsView"/>
+    <onClick>playItemURL("'.$link.'", 10);</onClick>
+    <download>'.$link.'</download>
+    <name>'.$name.'</name>
+    <annotation>'.$descriere.'</annotation>
+    <image>'.$image.'</image>
+    <media:thumbnail url="'.$image.'" />
+    <mediaDisplay name="threePartsView"/>
 	</item>
 	';
 }

@@ -234,6 +234,11 @@ ret;
 <for>Bacau</for>
 </item>
 <item>
+<title>Baia Mare</title>
+<cur>ROXX0047</cur>
+<for>Baia%20Mare</for>
+</item>
+<item>
 <title>Botosani</title>
 <cur>ROXX0018</cur>
 <for>Botosani</for>
@@ -267,6 +272,11 @@ ret;
 <title>Calarasi</title>
 <cur>ROXX0032</cur>
 <for>Calarasi</for>
+</item>
+<item>
+<title>Campina</title>
+<cur>ROXX0005</cur>
+<for>Campina</for>
 </item>
 <item>
 <title>Caransebes</title>
@@ -364,6 +374,16 @@ ret;
 <for>Satu%20Mare</for>
 </item>
 <item>
+<title>Sase Martie</title>
+<cur>ROXX0045</cur>
+<for>Sase%20Martie</for>
+</item>
+<item>
+<title>Sebes</title>
+<cur>ROXX0044</cur>
+<for>Sebes</for>
+</item>
+<item>
 <title>Sibiu</title>
 <cur>ROXX0014</cur>
 <for>Sibiu</for>
@@ -384,9 +404,19 @@ ret;
 <for>Slobozia</for>
 </item>
 <item>
+<title>Suceava</title>
+<cur>ROXX0046</cur>
+<for>Suceava</for>
+</item>
+<item>
 <title>Sulina</title>
 <cur>ROXX0030</cur>
 <for>Sulina</for>
+</item>
+<item>
+<title>Talmaciu</title>
+<cur>ROXX0039</cur>
+<for>Talmaciu</for>
 </item>
 <item>
 <title>Targu Mures</title>

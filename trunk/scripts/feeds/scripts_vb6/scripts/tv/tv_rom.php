@@ -43,7 +43,7 @@ $host = "http://127.0.0.1:82";
 <mediaDisplay name="threePartsView"
 	sideLeftWidthPC="0"
 	sideRightWidthPC="0"
-	
+
 	headerImageWidthPC="0"
 	selectMenuOnRight="no"
 	autoSelectMenu="no"
@@ -52,11 +52,11 @@ $host = "http://127.0.0.1:82";
 	itemImageWidthPC="0"
 	itemXPC="8"
 	itemYPC="25"
-	itemWidthPC="48"
+	itemWidthPC="50"
 	itemHeightPC="8"
 	capXPC="8"
 	capYPC="25"
-	capWidthPC="48"
+	capWidthPC="50"
 	capHeightPC="64"
 	itemBackgroundColor="0:0:0"
 	itemPerPage="8"
@@ -68,7 +68,7 @@ $host = "http://127.0.0.1:82";
 	imageFocus=""
 	sliding="no"
 >
-		
+
   	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		  <script>getPageInfo("pageTitle");</script>
 		</text>
@@ -76,22 +76,9 @@ $host = "http://127.0.0.1:82";
   	<text redraw="yes" offsetXPC="85" offsetYPC="12" widthPC="10" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
 		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
 		</text>
-
-		<text align="justify" redraw="yes" 
-          lines="14" fontSize=14
-		      offsetXPC=55 offsetYPC=25 widthPC=40 heightPC=60 
-		      backgroundColor=10:80:120 foregroundColor=200:200:200>
-			<script>print(annotation); annotation;</script>
-		</text>
-		
-		<text align="center" redraw="yes" offsetXPC=55 offsetYPC=85 widthPC=40 heightPC=5 fontSize=13 backgroundColor=10:80:120 foregroundColor=0:0:0>
-			<script>print(location); location;</script>
-		</text>
-
-		<text align="center" redraw="yes" offsetXPC=55 offsetYPC=90 widthPC=40 heightPC=5 fontSize=13 backgroundColor=0:0:0 foregroundColor=200:80:80>
-			<script>if(streamurl==""||streamurl==null) "WARNING! No stream url."; else "";</script>
-		</text>
-
+		<image  redraw="yes" offsetXPC=60 offsetYPC=35 widthPC=30 heightPC=30>
+  image/tv_radio.png
+		</image>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_01.png </idleImage>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_02.png </idleImage>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_03.png </idleImage>
@@ -106,13 +93,10 @@ $host = "http://127.0.0.1:82";
 				<script>
 					idx = getQueryItemIndex();
 					focus = getFocusItemIndex();
-					if(focus==idx) 
+					if(focus==idx)
 					{
 					  location = getItemInfo(idx, "location");
 					  annotation = getItemInfo(idx, "annotation");
-					  if(annotation == "" || annotation == null)
-					    annotation = getItemInfo(idx, "stream_genre");
-					  streamurl = getItemInfo(idx, "stream_url");
 					}
 					getItemInfo(idx, "title");
 				</script>
@@ -140,74 +124,91 @@ $host = "http://127.0.0.1:82";
 			</text>
 
 		</itemDisplay>
-		
-  <onUserInput>
-    <script>
-      ret = "false";
-      userInput = currentUserInput();
-      majorContext = getPageInfo("majorContext");
-      
-      print("*** majorContext=",majorContext);
-      print("*** userInput=",userInput);
-      
-      if(userInput == "enter")
+
+<onUserInput>
+<script>
+ret = "false";
+userInput = currentUserInput();
+
+if (userInput == "pagedown" || userInput == "pageup")
+{
+  idx = Integer(getFocusItemIndex());
+  if (userInput == "pagedown")
+  {
+    idx -= -8;
+    if(idx &gt;= itemCount)
+      idx = itemCount-1;
+  }
+  else
+  {
+    idx -= 8;
+    if(idx &lt; 0)
+      idx = 0;
+  }
+
+  print("new idx: "+idx);
+  setFocusItemIndex(idx);
+	setItemFocus(0);
+  redrawDisplay();
+  "true";
+}
+if(userInput == "enter")
+{
+  showIdle();
+  focus = getFocusItemIndex();
+
+  request_title = getItemInfo(focus, "title");
+  request_url = getItemInfo(focus, "location");
+  request_options = getItemInfo(focus, "options");
+
+  stream_url = getItemInfo(focus, "stream_url");
+  stream_title = getItemInfo(focus, "stream_title");
+  stream_type = getItemInfo(focus, "stream_type");
+  stream_protocol = getItemInfo(focus, "stream_protocol");
+  stream_soft = getItemInfo(focus, "stream_soft");
+  stream_class = getItemInfo(focus, "stream_class");
+  stream_server = getItemInfo(focus, "stream_server");
+  stream_status_url = "";
+  stream_current_song = "";
+  stream_genre = getItemInfo(focus, "stream_genre");
+  stream_bitrate = getItemInfo(focus, "stream_bitrate");
+
+  if(stream_class == "" || stream_class == null)
+    stream_class = "unknown";
+
+  if(stream_url == "" || stream_url == null)
+    stream_url = request_url;
+
+  if(stream_server != "" &amp;&amp; stream_server != null)
+    stream_status_url = translate_base_url + "status," + urlEncode(stream_server) + "," + urlEncode(stream_url);
+
+  if(stream_title == "" || stream_title == null)
+    stream_title = request_title;
+
+  if(stream_url != "" &amp;&amp; stream_url != null)
+  {
+    if(stream_protocol == "file" || (stream_protocol == "http" &amp;&amp; stream_soft != "shoutcast"))
+    {
+      url = stream_url;
+    }
+    else
+    {
+      if(stream_type != null &amp;&amp; stream_type != "")
       {
-        showIdle();
-        focus = getFocusItemIndex();
-
-        request_title = getItemInfo(focus, "title");
-        request_url = getItemInfo(focus, "location");
-        request_options = getItemInfo(focus, "options");
-
-        stream_url = getItemInfo(focus, "stream_url");
-        stream_title = getItemInfo(focus, "stream_title");
-        stream_type = getItemInfo(focus, "stream_type");
-        stream_protocol = getItemInfo(focus, "stream_protocol");
-        stream_soft = getItemInfo(focus, "stream_soft");
-        stream_class = getItemInfo(focus, "stream_class");
-        stream_server = getItemInfo(focus, "stream_server");
-        stream_status_url = "";
-        stream_current_song = "";
-        stream_genre = getItemInfo(focus, "stream_genre");
-        stream_bitrate = getItemInfo(focus, "stream_bitrate");
-        
-        if(stream_class == "" || stream_class == null)
-          stream_class = "unknown";
-
-        if(stream_url == "" || stream_url == null)
-          stream_url = request_url;
-
-        if(stream_server != "" &amp;&amp; stream_server != null)
-          stream_status_url = translate_base_url + "status," + urlEncode(stream_server) + "," + urlEncode(stream_url);
-
-        if(stream_title == "" || stream_title == null)
-          stream_title = request_title;
-
-        if(stream_url != "" &amp;&amp; stream_url != null)
-        {
-          if(stream_protocol == "file" || (stream_protocol == "http" &amp;&amp; stream_soft != "shoutcast"))
-          {
-            url = stream_url;
-          }
-          else
-          {
-            if(stream_type != null &amp;&amp; stream_type != "")
-            {
-              request_options = "Content-type:"+stream_type+";"+request_options;
-            }
-            url = translate_base_url + "stream," + request_options + "," + urlEncode(stream_url);
-          }
-        
-          executeScript(stream_class+"Dispatcher");
-        }
-        
-        cancelIdle();
-        ret = "true";
+        request_options = "Content-type:"+stream_type+";"+request_options;
       }
+      url = translate_base_url + "stream," + request_options + "," + urlEncode(stream_url);
+    }
 
-      ret;
-    </script>
-  </onUserInput>
+    executeScript(stream_class+"Dispatcher");
+  }
+
+  cancelIdle();
+  ret = "true";
+}
+ret;
+</script>
+</onUserInput>
 		
 	</mediaDisplay>
 	
@@ -397,407 +398,93 @@ $host = "http://127.0.0.1:82";
 
 <channel>
   <title>TV Romania</title>
-<!-- Dolce TV -->
-<item>
-<title>Dolce Sport</title>
-  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/dolcesport</location>
-  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/dolcesport</stream_url>
-  <stream_class>video</stream_class>
-</item>
-<item>
-<title>Antena 2</title>
-  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/antena2</location>
-  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/antena2</stream_url>
-  <stream_class>video</stream_class>
-</item>
-<item>
-<title>Antena 3</title>
-  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/antena_3</location>
-  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/antena_3</stream_url>
-  <stream_class>video</stream_class>
-</item>
-<item>
-<title>Realitatea</title>
-  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/realitatea</location>
-  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/realitatea</stream_url>
-  <stream_class>video</stream_class>
-</item>
-<item>
-<title>B1</title>
-  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/b1</location>
-  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/b1</stream_url>
-  <stream_class>video</stream_class>
-</item>
-<item>
-<title>TVR 1</title>
-  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvr1</location>
-  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvr1</stream_url>
-  <stream_class>video</stream_class>
-</item>
-<item>
-<title>TVR 2</title>
-  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvr2</location>
-  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvr2</stream_url>
-  <stream_class>video</stream_class>
-</item>
-<item>
-<title>TVR 3</title>
-  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvr3</location>
-  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvr3</stream_url>
-  <stream_class>video</stream_class>
-</item>
-<item>
-<title>TVR Cultural</title>
-  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvrcultural</location>
-  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvrcultural</stream_url>
-  <stream_class>video</stream_class>
-</item>
-<item>
-<title>TVR Info</title>
-  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvrinfo</location>
-  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvrinfo</stream_url>
-  <stream_class>video</stream_class>
-</item>
-<item>
-<title>TVR i</title>
-  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvr</location>
-  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvr</stream_url>
-  <stream_class>video</stream_class>
-</item>
-<item>
-<title>TVR HD</title>
-  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvrhd</location>
-  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvrhd</stream_url>
-  <stream_class>video</stream_class>
-</item>
-<item>
-<title>OTV</title>
-  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/otv</location>
-  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/otv</stream_url>
-  <stream_class>video</stream_class>
-</item>
-<item>
-<title>UTV</title>
-  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/utv</location>
-  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/utv</stream_url>
-  <stream_class>video</stream_class>
-</item>
-<item>
-<title>Mynele</title>
-  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/mynele</location>
-  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/mynele</stream_url>
-  <stream_class>video</stream_class>
-</item>
-<item>
-<title>Money TV</title>
-  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/money</location>
-  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/money</stream_url>
-  <stream_class>video</stream_class>
-</item>
-<item>
-<title>Euronews</title>
-  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/euronews</location>
-  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/euronews</stream_url>
-  <stream_class>video</stream_class>
-</item>
-<item>
-<title>Etno</title>
-  <location>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/etno</location>
-  <stream_url>rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/etno</stream_url>
-  <stream_class>video</stream_class>
-</item>
-<!-- end Dolce TV -->
+<!--
   <item>
-    <title>Neptun TV</title>
-    <ext>ro</ext>
-    <protocol>mms</protocol>
-    <location>mms://77.36.61.4:8081/Neptun%20TV</location>
-    <stream_url>mms://77.36.61.4:8081/Neptun%20TV</stream_url>
+    <title>TVR International</title>
+    <location>rtmpe://fms8.mediadirect.ro:80/live/tvr?id=10668839/tvr</location>
+    <stream_url>rtmpe://fms8.mediadirect.ro:80/live/tvr?id=10668839/tvr</stream_url>
     <stream_class>video</stream_class>
-    <stream_soft/>
-    <stream_server/>
-    <stream_type>video/x-msvideo</stream_type>
-    <stream_protocol>mms</stream_protocol>
   </item>
-  <item>
-    <title>Kiss TV</title>
-    <ext>ro</ext>
-    <protocol>mms</protocol>
-    <location>mms://77.36.61.133:8071/Kiss%20TV</location>
-    <stream_url>mms://77.36.61.133:8071/Kiss%20TV</stream_url>
-    <stream_class>video</stream_class>
-    <stream_soft/>
-    <stream_server/>
-    <stream_type>video/x-msvideo</stream_type>
-    <stream_protocol>mms</stream_protocol>
-  </item>
-  <item>
-    <title>Alpha Media</title>
-    <ext>ro</ext>
-    <protocol>mms</protocol>
-    <location>mms://77.36.61.158:7061/Alpha%20Media</location>
-    <stream_url>mms://77.36.61.158:7061/Alpha%20Media</stream_url>
-    <stream_class>video</stream_class>
-    <stream_soft/>
-    <stream_server/>
-    <stream_type>video/x-msvideo</stream_type>
-    <stream_protocol>mms</stream_protocol>
-  </item>
-  <item>
-    <title>ELTH TV</title>
-    <ext>ro</ext>
-    <protocol>mms</protocol>
-    <location>mms://89.33.60.137:8081/ELTH%20TV</location>
-    <stream_url>mms://89.33.60.137:8081/ELTH%20TV</stream_url>
-    <stream_class>video</stream_class>
-    <stream_soft/>
-    <stream_server/>
-    <stream_type>video/x-msvideo</stream_type>
-    <stream_protocol>mms</stream_protocol>
-  </item>
-  <item>
-    <title>Fresh Art TV</title>
-    <ext>ro</ext>
-    <protocol>mms</protocol>
-    <location>mms://77.36.61.144:8081/Fresh%20Art%20TV</location>
-    <stream_url>mms://77.36.61.144:8081/Fresh%20Art%20TV</stream_url>
-    <stream_class>video</stream_class>
-    <stream_soft/>
-    <stream_server/>
-    <stream_type>video/x-msvideo</stream_type>
-    <stream_protocol>mms</stream_protocol>
-  </item>
-   <item>
-    <title>TV NGOs</title>
-    <ext>ro</ext>
-    <protocol>mms</protocol>
-    <location>mms://77.36.61.6:8081/TV%20NGOs</location>
-    <stream_url>mms://77.36.61.6:8081/TV%20NGOs</stream_url>
-    <stream_class>video</stream_class>
-    <stream_soft/>
-    <stream_server/>
-    <stream_type>video/x-msvideo</stream_type>
-    <stream_protocol>mms</stream_protocol>
-  </item>
-  <item>
-    <title>TV Natura</title>
-    <ext>ro</ext>
-    <protocol>mms</protocol>
-    <location>mms://77.36.61.4:8091/TV%20Natura</location>
-    <stream_url>mms://77.36.61.4:8091/TV%20Natura</stream_url>
-    <stream_class>video</stream_class>
-    <stream_soft/>
-    <stream_server/>
-    <stream_type>video/x-msvideo</stream_type>
-    <stream_protocol>mms</stream_protocol>
-  </item>
+
   <item>
     <title>TVR Info</title>
-    <ext>ro</ext>
-    <protocol>rtmpe</protocol>
-    <location>rtmpe://fms8.mediadirect.ro:1935/live/tvrinfo?id=1676684/tvrinfo</location>
-    <stream_url>rtmpe://fms8.mediadirect.ro:1935/live/tvrinfo?id=1676684/tvrinfo</stream_url>
+    <location>rtmpe://fms8.mediadirect.ro:80/live/tvrinfo?id=10668839/tvrinfo</location>
+    <stream_url>rtmpe://fms8.mediadirect.ro:80/live/tvrinfo?id=10668839/tvrinfo</stream_url>
     <stream_class>video</stream_class>
-    <stream_soft/>
-    <stream_server/>
-    <stream_type>video/x-msvideo</stream_type>
-    <stream_protocol>rtmpe</stream_protocol>
   </item>
-  <item>
-    <title>Tele Sport</title>
-    <ext>ro</ext>
-    <protocol>mms</protocol>
-    <location>mms://194.169.235.98/384x</location>
-    <stream_url>mms://194.169.235.98/384x</stream_url>
-    <stream_class>video</stream_class>
-    <stream_soft/>
-    <stream_server/>
-    <stream_type>video/x-msvideo</stream_type>
-    <stream_protocol>mms</stream_protocol>
-  </item>
+-->
   <item>
     <title>Antena 2</title>
-    <ext>ro</ext>
-    <protocol>mms</protocol>
     <location>mms://86.55.8.134/ant2</location>
     <stream_url>mms://86.55.8.134/ant2</stream_url>
     <stream_class>video</stream_class>
-    <stream_soft/>
-    <stream_server/>
-    <stream_type>video/x-msvideo</stream_type>
-    <stream_protocol>mms</stream_protocol>
-  </item>
-   <item>
-    <title>1 TV Neamt</title>
-    <ext>ro</ext>
-    <protocol>http</protocol>
-    <location>http://1tv.ambra.ro</location>
-    <stream_url>http://1tv.ambra.ro</stream_url>
-    <stream_class>video</stream_class>
-    <stream_soft/>
-    <stream_server/>
-    <stream_type>video/x-msvideo</stream_type>
-    <stream_protocol>http</stream_protocol>
   </item>
   <item>
     <title>Alfa Omega Tv</title>
-    <ext>ro</ext>
-    <protocol>mms</protocol>
-    <location>mms://ns.alfanet.ro/live</location>
-    <stream_url>mms://ns.alfanet.ro/live</stream_url>
+    <location>rtmp://91.216.75.210/alfa-live-source/live</location>
+    <stream_url>rtmp://91.216.75.210/alfa-live-source/live</stream_url>
     <stream_class>video</stream_class>
-    <stream_soft/>
-    <stream_server/>
-    <stream_type>video/x-msvideo</stream_type>
-    <stream_protocol>mms</stream_protocol>
-  </item>
-  <item>
-    <title>Alfa Omega Crestin Tv</title>
-    <ext>ro</ext>
-    <protocol>mms</protocol>
-    <location>mms://ns.alfanet.ro/CrestinTv</location>
-    <stream_url>mms://ns.alfanet.ro/CrestinTv</stream_url>
-    <stream_class>video</stream_class>
-    <stream_soft/>
-    <stream_server/>
-    <stream_type>video/x-msvideo</stream_type>
-    <stream_protocol>mms</stream_protocol>
-  </item>
-  <item>
-    <title>Alfa Omega Movies</title>
-    <ext>ro</ext>
-    <protocol>mms</protocol>
-    <location>mms://ns.alfanet.ro/AlfaOmegaMovies</location>
-    <stream_url>mms://ns.alfanet.ro/AlfaOmegaMovies</stream_url>
-    <stream_class>video</stream_class>
-    <stream_soft/>
-    <stream_server/>
-    <stream_type>video/x-msvideo</stream_type>
-    <stream_protocol>mms</stream_protocol>
-  </item>
-  <item>
-    <title>Alfa Omega Youth Tv</title>
-    <ext>ro</ext>
-    <protocol>mms</protocol>
-    <location>mms://ns.alfanet.ro/YouthTv</location>
-    <stream_url>mms://ns.alfanet.ro/YouthTv</stream_url>
-    <stream_class>video</stream_class>
-    <stream_soft/>
-    <stream_server/>
-    <stream_type>video/x-msvideo</stream_type>
-    <stream_protocol>mms</stream_protocol>
-  </item>
-  <item>
-    <title>TV M</title>
-    <ext>ro</ext>
-    <protocol>http</protocol>
-    <location>http://tvm.ambra.ro</location>
-    <stream_url>http://tvm.ambra.ro</stream_url>
-    <stream_class>video</stream_class>
-    <stream_soft/>
-    <stream_server/>
-    <stream_type>video/x-msvideo</stream_type>
-    <stream_protocol>http</stream_protocol>
-  </item>
-  <item>
-    <title>TV Samtel</title>
-    <ext>ro</ext>
-    <protocol>http</protocol>
-    <location>http://www.tv1samtel.ro:8080/stream.flv</location>
-    <stream_url>http://www.tv1samtel.ro:8080/stream.flv</stream_url>
-    <stream_class>video</stream_class>
-    <stream_soft/>
-    <stream_server/>
-    <stream_type>video/x-flv</stream_type>
-    <stream_protocol>http</stream_protocol>
   </item>
   <item>
     <title>Tele M</title>
-    <ext>ro</ext>
-    <protocol>http</protocol>
     <location>http://telem.telem.ro:8780/telem_live.flv</location>
     <stream_url>http://telem.telem.ro:8780/telem_live.flv</stream_url>
     <stream_class>video</stream_class>
-    <stream_soft/>
-    <stream_server/>
-    <stream_type>video/x-flv</stream_type>
-    <stream_protocol>http</stream_protocol>
   </item>
    <item>
     <title>Prahova TV</title>
-    <ext>ro</ext>
-    <protocol>http</protocol>
     <location>http://89.45.181.51:5000/test.flv</location>
     <stream_url>http://89.45.181.51:5000/test.flv</stream_url>
-    <stream_class>video</stream_class>
-    <stream_soft/>
-    <stream_server/>
-    <stream_type>video/x-flv</stream_type>
-    <stream_protocol>http</stream_protocol>
-  </item>
-  <item>
-    <title>Tele'M Botosani</title>
-    <ext>ro</ext>
-    <protocol>mms</protocol>
-    <location>mms://195.64.178.23/telem</location>
-    <stream_url>mms://195.64.178.23/telem</stream_url>
-    <stream_class>video</stream_class>
-    <stream_soft/>
-    <stream_server/>
-    <stream_type>video/x-msvideo</stream_type>
-    <stream_protocol>mms</stream_protocol>
-  </item>
-   <item>
-    <title>TV6 Bucuresti</title>
-    <ext>ro</ext>
-    <protocol>http</protocol>
-    <location>http://83.166.193.50:8800/flv-audio-video/</location>
-    <stream_url>http://83.166.193.50:8800/flv-audio-video/</stream_url>
-    <stream_class>video</stream_class>
-    <stream_soft/>
-    <stream_server/>
-    <stream_type>video/x-msvideo</stream_type>
-    <stream_protocol>http</stream_protocol>
-  </item>
-   <item>
-    <title>Baricada TV</title>
-    <ext>ro</ext>
-    <protocol>http</protocol>
-    <location>http://77.36.61.158:7231/Baricada%20TV</location>
-    <stream_url>http://77.36.61.158:7231/Baricada%20TV</stream_url>
-    <stream_class>video</stream_class>
-  </item>
-   <item>
-    <title>AU_Channel 7</title>
-    <ext>ro</ext>
-    <protocol>http</protocol>
-    <location>http://77.36.61.158:7131/AU_Channel%207</location>
-    <stream_url>http://77.36.61.158:7131/AU_Channel%207</stream_url>
     <stream_class>video</stream_class>
   </item>
    <item>
     <title>Publika TV</title>
-    <ext>ro</ext>
-    <protocol>http</protocol>
-    <location>http://77.36.61.36:8081/Publika%20TV</location>
-    <stream_url>http://77.36.61.36:8081/Publika%20TV</stream_url>
-    <stream_class>video</stream_class>
-  </item>
-   <item>
-    <title>DDTV</title>
-    <ext>ro</ext>
-    <protocol>http</protocol>
-    <location>http://77.36.61.132:8091/DDTV</location>
-    <stream_url>http://77.36.61.132:8091/DDTV</stream_url>
+    <location>mmsh://77.36.61.36:8081/Publika%20TV</location>
+    <stream_url>mmsh://77.36.61.36:8081/Publika%20TV</stream_url>
     <stream_class>video</stream_class>
   </item>
    <item>
     <title>Jurnal TV - Rep. Moldova</title>
-    <ext>ro</ext>
-    <protocol>http</protocol>
     <location>http://ch0.jurnaltv.md/channel0.flv</location>
     <stream_url>http://ch0.jurnaltv.md/channel0.flv</stream_url>
     <stream_class>video</stream_class>
-  </item>  
+  </item>
+<!-- New -->
+   <item>
+    <title>Arges TV</title>
+    <location>rtmp://flash61.ustream.tv:1935/ustreamVideo/5306442/streams/live</location>
+    <stream_url>rtmp://flash61.ustream.tv:1935/ustreamVideo/5306442/streams/live</stream_url>
+    <stream_class>video</stream_class>
+  </item>
+   <item>
+    <title>Light Channel</title>
+    <location>rtmp://fms.0x47.de/live/romanian</location>
+    <stream_url>rtmp://fms.0x47.de/live/romanian</stream_url>
+    <stream_class>video</stream_class>
+  </item>
+   <item>
+    <title>MegaTV - Braila</title>
+    <location>http://89.36.72.7:8080/</location>
+    <stream_url>http://89.36.72.7:8080/</stream_url>
+    <stream_class>video</stream_class>
+  </item>
+   <item>
+    <title>Muscel TV</title>
+    <location>http://musceltvlive.muscel.ro:8080/</location>
+    <stream_url>http://musceltvlive.muscel.ro:8080/</stream_url>
+    <stream_class>video</stream_class>
+  </item>
+   <item>
+    <title>NCN - Cluj</title>
+    <location>http://ncn.simpliq.net:8090/ncn.flv</location>
+    <stream_url>http://ncn.simpliq.net:8090/ncn.flv</stream_url>
+    <stream_class>video</stream_class>
+  </item>
+   <item>
+    <title>TV PLUS Suceava</title>
+    <location>http://85.186.146.34:8080</location>
+    <stream_url>http://85.186.146.34:8080</stream_url>
+    <stream_class>video</stream_class>
+  </item>
 </channel>
 </rss>

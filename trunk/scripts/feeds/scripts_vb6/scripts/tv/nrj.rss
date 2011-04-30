@@ -22,7 +22,7 @@
 -->
 
 <script>
-  translate_base_url  = "http://127.0.0.1:83/scripts/cgi-bin/translate?";
+  translate_base_url  = "http://127.0.0.1:83/cgi-bin/translate?";
   cgiconf = readStringFromFile("/scripts/etc/cgi.conf");
   if(cgiconf != null)
   {
@@ -448,9 +448,9 @@
   <title>Nrj Music</title>
     <item>
     <title>NRJ</title>
-    <location>http://player.nrj.fr/V4/nrj/webradios/index_V2.html?webradio=nrj</location>
+    <location>http://play.nrj.fr/nrj/nrj.html</location>
     <annotation>Écoute NRJ en direct. Une radio qui fait vibrer chaque jour avec une programmation qui conforte sa légitimité : Hit Music Only !</annotation>
-    <stream_url>mms://vipnrj.yacast.net/encodernrj</stream_url>
+    <stream_url>http://mp3.live.tv-radio.com/nrj/all/nrj_113225.mp3</stream_url>
     <stream_title>NRJ</stream_title>
     <image>http://media.nrj.fr/80x60/nrj_webradio.jpg</image>
     <stream_class>audio</stream_class>
@@ -459,9 +459,9 @@
     
     <item>
     <title>NRJ HITS</title>
-    <location>http://player.nrj.fr/V4/nrj/webradios/index_V2.html?webradio=hits</location>
+    <location>http://play.nrj.fr/nrj/nrj-hits.html</location>
     <annotation>Ecoute les plus gros hits du moment. HIT MUSIC ONLY sur la WEB RADIO NRJ HITS.</annotation>
-    <stream_url>mms://vipnrj.yacast.net/nrj_webradio01</stream_url>
+    <stream_url>http://mp3.live.tv-radio.com/nrj_hits/all/nrj_150726.mp3</stream_url>
     <stream_title>NRJ HITS</stream_title>
     <image>http://media.nrj.fr/80x60/logonrjhits_webradio22311.jpg</image>
     <stream_class>audio</stream_class>
@@ -470,9 +470,9 @@
     
     <item>
     <title>NRJ DANCE</title>
-    <location>http://player.nrj.fr/V4/nrj/webradios/index_V2.html?webradio=dance</location>
+    <location>http://play.nrj.fr/nrj/nrj-dance.html</location>
     <annotation>Ecoute les plus gros Hits Club en Non Stop:Guru Josh Project, David Guetta, Martin Solveig, Desaparecidos, Hakimakli, Axwell, John Dahlback, Arno Cost</annotation>
-    <stream_url>mms://vipnrj.yacast.net/nrj_webradio04</stream_url>
+    <stream_url>http://mp3.live.tv-radio.com/nrj_dance/all/nrj_151505.mp3</stream_url>
     <stream_title>NRJ DANCE</stream_title>
     <image>http://media.nrj.fr/80x60/logonrj-dance_webradio.jpg</image>
     <stream_class>audio</stream_class>
@@ -481,9 +481,9 @@
     
     <item>
     <title>NRJ PARTY</title>
-    <location>http://player.nrj.fr/V4/nrj/webradios/index_V2.html?webradio=party</location>
+    <location>http://play.nrj.fr/nrj/nrj-party.html</location>
     <annotation>Une soirée de folie avec la Web Radio NRJ Party.</annotation>
-    <stream_url>mms://vipnrj.yacast.net/nrj_webradio20</stream_url>
+    <stream_url>http://mp3.live.tv-radio.com/2051/nrj_party/nrj_190407.mp3</stream_url>
     <stream_title>NRJ PARTY</stream_title>
     <image>http://media.nrj.fr/80x60/2011/02/80x60-party_site81066.jpg</image>
     <stream_class>audio</stream_class>
@@ -492,9 +492,9 @@
     
     <item>
     <title>NRJ RNB</title>
-    <location>http://player.nrj.fr/V4/nrj/webradios/index_V2.html?webradio=rnb</location>
+    <location>http://play.nrj.fr/nrj/nrj-rnb.html</location>
     <annotation>Ecoute le meilleur du RNB avec une sélection de hits us et français. La Web radio NRJ RNB c’est du pur son en qualité haut débit.</annotation>
-    <stream_url>mms://vipnrj.yacast.net/nrj_webradio02</stream_url>
+    <stream_url>http://mp3.live.tv-radio.com/nrj_rnb/all/nrj_151038.mp3</stream_url>
     <stream_title>NRJ RNB</stream_title>
     <image>http://media.nrj.fr/80x60/logonrj-rnb_webradio.jpg</image>
     <stream_class>audio</stream_class>
@@ -503,9 +503,9 @@
     
     <item>
     <title>NRJ AT WORK</title>
-    <location>http://player.nrj.fr/V4/nrj/webradios/index_V2.html?webradio=atwork</location>
+    <location>http://play.nrj.fr/nrj/nrj-at-work.html</location>
     <annotation>Votre concentration de Hits en travaillant</annotation>
-    <stream_url>mms://vipnrj.yacast.net/nrj_webradio30</stream_url>
+    <stream_url>http://mp3.live.tv-radio.com/nrj_at_work/all/nrj_143400.mp3</stream_url>
     <stream_title>NRJ AT WORK</stream_title>
     <image>http://media.nrj.fr/80x60/2011/02/80x60-atwork_site16953.jpg</image>
     <stream_class>audio</stream_class>
@@ -514,9 +514,9 @@
     
     <item>
     <title>NRJ GIRL</title>
-    <location>http://player.nrj.fr/V4/nrj/webradios/index_V2.html?webradio=girl</location>
+    <location>http://play.nrj.fr/nrj/nrj-girl.html</location>
     <annotation>Tous les meilleurs artistes plébicités par les filles !  Une programmation musicale diverse et variée. Ex :  Christophe Mae, Coeur de Pirate, Justin Nozuka...</annotation>
-    <stream_url>mms://vipnrj.yacast.net/nrj_webradio06</stream_url>
+    <stream_url>http://mp3.live.tv-radio.com/nrj_girl/all/nrj_153716.mp3</stream_url>
     <stream_title>NRJ GIRL</stream_title>
     <image>http://media.nrj.fr/80x60/2011/02/80x60-girl_site56591.jpg</image>
     <stream_class>audio</stream_class>
@@ -525,9 +525,9 @@
     
     <item>
     <title>NRJ SHAKIRA</title>
-    <location>http://player.nrj.fr/V4/nrj/webradios/index_V2.html?webradio=shakira</location>
+    <location>http://play.nrj.fr/nrj/nrj-shakira.html</location>
     <annotation>Tous les hits de la Bomba Latina sont sur la Web Radio 100% Shakira</annotation>
-    <stream_url>mms://vipnrj.yacast.net/nrj_webradio31</stream_url>
+    <stream_url>http://mp3.live.tv-radio.com/nrj_shakira/all/nrj_144619.mp3</stream_url>
     <stream_title>NRJ SHAKIRA</stream_title>
     <image>http://media.nrj.fr/80x60/2011/02/80x60-shakira_site28536.jpg</image>
     <stream_class>audio</stream_class>
@@ -536,9 +536,9 @@
     
     <item>
     <title>NRJ RIHANNA</title>
-    <location>http://player.nrj.fr/V4/nrj/webradios/index_V2.html?webradio=rihanna</location>
+    <location>http://play.nrj.fr/nrj/nrj-rihanna.html</location>
     <annotation>RETROUVE LE MEILLEUR DE RIHANNA SUR LA WEB RADIO SPECIALE RIHANNA !</annotation>
-    <stream_url>mms://vipnrj.yacast.net/nrj_webradio21</stream_url>
+    <stream_url>http://mp3.live.tv-radio.com/nrj_rihanna/all/nrj_163955.mp3</stream_url>
     <stream_title>NRJ RIHANNA</stream_title>
     <image>http://media.nrj.fr/80x60/80x60-rihanna_webiphone84497.jpg</image>
     <stream_class>audio</stream_class>
@@ -547,9 +547,9 @@
     
     <item>
     <title>NRJ NEXT</title>
-    <location>http://player.nrj.fr/V4/nrj/webradios/index_V2.html?webradio=next</location>
+    <location>http://play.nrj.fr/nrj/nrj-next.html</location>
     <annotation>Les prochains hits de vos artistes favoris avec la Web Radio NRJ Next</annotation>
-    <stream_url>mms://vipnrj.yacast.net/nrj_webradio24</stream_url>
+    <stream_url>http://mp3.live.tv-radio.com/nrj_next/all/nrj_122336.mp3</stream_url>
     <stream_title>NRJ NEXT</stream_title>
     <image>http://media.nrj.fr/80x60/2011/02/80x60-next_site75458.jpg</image>
     <stream_class>audio</stream_class>
@@ -558,9 +558,9 @@
     
     <item>
     <title>NRJ IBIZA</title>
-    <location>http://player.nrj.fr/V4/nrj/webradios/index_V2.html?webradio=ibiza</location>
+    <location>http://play.nrj.fr/nrj/nrj-ibiza.html</location>
     <annotation>RETROUVE TOUS LES MEILLEURS HITS DE IBIZA DE CET ETE ET VIENS DANSER DESSUS</annotation>
-    <stream_url>mms://vipnrj.yacast.net/nrj_webradio23</stream_url>
+    <stream_url>http://mp3.live.tv-radio.com/nrj_ibiza/all/nrj_164849.mp3</stream_url>
     <stream_title>NRJ IBIZA</stream_title>
     <image>http://media.nrj.fr/80x60/80x60-ibiza_webradio24071.jpg</image>
     <stream_class>audio</stream_class>
@@ -569,9 +569,9 @@
     
     <item>
     <title>NRJ SHOP</title>
-    <location>http://player.nrj.fr/V4/nrj/webradios/index_V2.html?webradio=shop</location>
+    <location>http://play.nrj.fr/nrj/nrj-shop.html</location>
     <annotation>Toutes la journée faites vos courses</annotation>
-    <stream_url>mms://vipnrj.yacast.net/nrj_webradio27</stream_url>
+    <stream_url>http://mp3.live.tv-radio.com/nrj_shop/all/nrj_121822.mp3</stream_url>
     <stream_title>NRJ SHOP</stream_title>
     <image>http://media.nrj.fr/80x60/2011/02/80x60-shop_site35040.jpg</image>
     <stream_class>audio</stream_class>
@@ -580,9 +580,9 @@
     
     <item>
     <title>NRJ MICHAEL JACKSON</title>
-    <location>http://player.nrj.fr/V4/nrj/webradios/index_V2.html?webradio=mickaeljackson</location>
+    <location>http://play.nrj.fr/nrj/nrj-michael-jackson.html</location>
     <annotation>LE MEILLEUR DU ROI DE LA POP SUR UNE WEB RADIO SPECIALE MICHAEL JACKSON</annotation>
-    <stream_url>mms://vipnrj.yacast.net/nrj_webradio09</stream_url>
+    <stream_url>http://mp3.live.tv-radio.com/nrj_michael_jackson/all/nrj_154634.mp3</stream_url>
     <stream_title>NRJ MICHAEL JACKSON</stream_title>
     <image>http://media.nrj.fr/80x60/80x60-mj_webiphone82102.jpg</image>
     <stream_class>audio</stream_class>
@@ -591,9 +591,9 @@
     
     <item>
     <title>DISNEY CHANNEL WEB RADIO AVEC NRJ</title>
-    <location>http://player.nrj.fr/V4/nrj/webradios/index_V2.html?webradio=disney</location>
+    <location>http://play.nrj.fr/nrj/disney-channel-web-radio-avec-nrj.html</location>
     <annotation>Des Hits, des stars et des news Disney Channel. Hannah Montana, Miley Cyrus, Jonas Brothers...</annotation>
-    <stream_url>mms://vipnrj.yacast.net/nrj_webradio16</stream_url>
+    <stream_url>http://mp3.live.tv-radio.com/nrj_by_disney/all/nrj_152411.mp3</stream_url>
     <stream_title>DISNEY CHANNEL WEB RADIO AVEC NRJ</stream_title>
     <image>http://media.nrj.fr/80x60/logonrj-disney_webradio12708.jpg</image>
     <stream_class>audio</stream_class>
@@ -602,9 +602,9 @@
     
     <item>
     <title>NRJ POP</title>
-    <location>http://player.nrj.fr/V4/nrj/webradios/index_V2.html?webradio=pop</location>
+    <location>http://play.nrj.fr/nrj/nrj-pop.html</location>
     <annotation>NRJ POP la web radio qui diffuse uniquement des titres pop des plus cultes aux dernières news.</annotation>
-    <stream_url>mms://vipnrj.yacast.net/nrj_webradio03</stream_url>
+    <stream_url>http://mp3.live.tv-radio.com/nrj_pop/all/nrj_151240.mp3</stream_url>
     <stream_title>NRJ POP</stream_title>
     <image>http://media.nrj.fr/80x60/logonrj-pop_webradio.jpg</image>
     <stream_class>audio</stream_class>
@@ -613,9 +613,9 @@
     
     <item>
     <title>NRJ SOLEIL</title>
-    <location>http://player.nrj.fr/V4/nrj/webradios/index_V2.html?webradio=soleil</location>
+    <location>http://play.nrj.fr/nrj/nrj-soleil.html</location>
     <annotation>RETROUVE TOUS LES MEILLEURS HITS SOLEIL ET SUMMER SUR TA WEB RADIO NRJ</annotation>
-    <stream_url>mms://vipnrj.yacast.net/nrj_webradio10</stream_url>
+    <stream_url>http://mp3.live.tv-radio.com/nrj_soleil/all/nrj_155103.mp3</stream_url>
     <stream_title>NRJ SOLEIL</stream_title>
     <image>http://media.nrj.fr/80x60/80x60-soleil_webiphone31622.jpg</image>
     <stream_class>audio</stream_class>
@@ -624,9 +624,9 @@
     
     <item>
     <title>NRJ IN BED</title>
-    <location>http://player.nrj.fr/V4/nrj/webradios/index_V2.html?webradio=inbed</location>
+    <location>http://play.nrj.fr/nrj/nrj-in-bed.html</location>
     <annotation>Un ptit calin sous la couette ? Oui mais avec Nrj in Bed… Nrj in Bed…C’est Relax…</annotation>
-    <stream_url>mms://vipnrj.yacast.net/nrj_webradio25</stream_url>
+    <stream_url>http://mp3.live.tv-radio.com/nrj_in_bed/all/nrj_135650.mp3</stream_url>
     <stream_title>NRJ IN BED</stream_title>
     <image>http://media.nrj.fr/80x60/80x60-in-bed_webiphone37165.jpg</image>
     <stream_class>audio</stream_class>
@@ -635,9 +635,9 @@
     
     <item>
     <title>NRJ USHER</title>
-    <location>http://player.nrj.fr/V4/nrj/webradios/index_V2.html?webradio=usher</location>
+    <location>http://play.nrj.fr/nrj/nrj-usher.html</location>
     <annotation>La web radio spéciale Usher</annotation>
-    <stream_url>mms://vipnrj.yacast.net/nrj_webradio08</stream_url>
+    <stream_url>http://mp3.live.tv-radio.com/nrj_usher/all/nrj_142337.mp3</stream_url>
     <stream_title>NRJ USHER</stream_title>
     <image>http://media.nrj.fr/80x60/80x60-usher_webiphone91311.jpg</image>
     <stream_class>audio</stream_class>
@@ -646,9 +646,9 @@
     
     <item>
     <title>NRJ NEW YORK</title>
-    <location>http://player.nrj.fr/V4/nrj/webradios/index_V2.html?webradio=newyork</location>
+    <location>http://play.nrj.fr/nrj/nrj-new-york.html</location>
     <annotation>Les plus gros hits…avant qu’ils arrivent en France…tu les trouves sur Nrj New York. Nrj New York…Hit New York Only.</annotation>
-    <stream_url>mms://vipnrj.yacast.net/nrj_webradio26</stream_url>
+    <stream_url>http://mp3.live.tv-radio.com/nrj_new-york/all/nrj_140527.mp3</stream_url>
     <stream_title>NRJ NEW YORK</stream_title>
     <image>http://media.nrj.fr/80x60/80x60-new-tork_webiphone67001.jpg</image>
     <stream_class>audio</stream_class>
@@ -657,9 +657,9 @@
     
     <item>
     <title>NRJ ROCK</title>
-    <location>http://player.nrj.fr/V4/nrj/webradios/index_V2.html?webradio=rock</location>
+    <location>http://play.nrj.fr/nrj/nrj-rock.html</location>
     <annotation>Retrouve le pur son Rock sur NRJ ROCK avec Green Day, Gossip, Muse, Placebo, BB Brunes, Franz Ferdinand</annotation>
-    <stream_url>mms://vipnrj.yacast.net/nrj_webradio11</stream_url>
+    <stream_url>http://mp3.live.tv-radio.com/nrj_rock/all/nrj_161510.mp3</stream_url>
     <stream_title>NRJ ROCK</stream_title>
     <image>http://media.nrj.fr/80x60/logonrj-rock_webradio.jpg</image>
     <stream_class>audio</stream_class>
@@ -668,9 +668,9 @@
     
     <item>
     <title>NRJ FRIENDLY</title>
-    <location>http://player.nrj.fr/V4/nrj/webradios/index_V2.html?webradio=friendly</location>
+    <location>http://play.nrj.fr/nrj/nrj-friendly.html</location>
     <annotation>NRJ FRIENDLY TA WEB RADIO 100% GAY FRIENDLY</annotation>
-    <stream_url>mms://vipnrj.yacast.net/nrj_webradio22</stream_url>
+    <stream_url>http://mp3.live.tv-radio.com/nrj_friendly/all/nrj_164207.mp3</stream_url>
     <stream_title>NRJ FRIENDLY</stream_title>
     <image>http://media.nrj.fr/80x60/80x60-friendly_webradio87048.jpg</image>
     <stream_class>audio</stream_class>
@@ -679,9 +679,9 @@
     
     <item>
     <title>NRJ CLUBBIN'</title>
-    <location>http://player.nrj.fr/V4/nrj/webradios/index_V2.html?webradio=clubbin</location>
+    <location>http://play.nrj.fr/nrj/nrj-clubbin-.html</location>
     <annotation>NRJ CLUBBIN c’est le meilleur du son dancefloor et des mixes exlusif de djs. David Guetta- Florida- Pitbull- Balck Eyed Peas…</annotation>
-    <stream_url>mms://vipnrj.yacast.net/nrj_webradio05</stream_url>
+    <stream_url>http://mp3.live.tv-radio.com/nrj_clubbin/all/nrj_153250.mp3</stream_url>
     <stream_title>NRJ CLUBBIN'</stream_title>
     <image>http://media.nrj.fr/80x60/logonrj-clubbin_webradio.jpg</image>
     <stream_class>audio</stream_class>
@@ -690,9 +690,9 @@
     
     <item>
     <title>NRJ RAP FR</title>
-    <location>http://player.nrj.fr/V4/nrj/webradios/index_V2.html?webradio=rapfr</location>
+    <location>http://play.nrj.fr/nrj/nrj-rap-fr.html</location>
     <annotation>Tous les hits Rap et Hip Hop de la scène française sont sur la Web Radio 100% RAP FR</annotation>
-    <stream_url>mms://vipnrj.yacast.net/nrj_webradio33</stream_url>
+    <stream_url>http://mp3.live.tv-radio.com/nrj_rap_fr/all/nrj_145338.mp3</stream_url>
     <stream_title>NRJ RAP FR</stream_title>
     <image>http://media.nrj.fr/80x60/2011/02/80x60-rapfr_site15880.jpg</image>
     <stream_class>audio</stream_class>
@@ -701,9 +701,9 @@
     
     <item>
     <title>NRJ RAP US</title>
-    <location>http://player.nrj.fr/V4/nrj/webradios/index_V2.html?webradio=rapus</location>
+    <location>http://play.nrj.fr/nrj/nrj-rap-us.html</location>
     <annotation>Tous les hits Rap et Hip Hop venus des States</annotation>
-    <stream_url>mms://vipnrj.yacast.net/nrj_webradio32</stream_url>
+    <stream_url>http://mp3.live.tv-radio.com/nrj_rap_us/all/nrj_144854.mp3</stream_url>
     <stream_title>NRJ RAP US</stream_title>
     <image>http://media.nrj.fr/80x60/2011/02/80x60-rapus_site11013.jpg</image>
     <stream_class>audio</stream_class>
@@ -712,9 +712,9 @@
     
     <item>
     <title>NRJ FRENCH</title>
-    <location>http://player.nrj.fr/V4/nrj/webradios/index_V2.html?webradio=french</location>
+    <location>http://play.nrj.fr/nrj/nrj-french.html</location>
     <annotation>Ecoute les plus gros hits Français du moment sur NRJ FRENCH avec Tom Frager, Calogero, Zaho, Florent Mothe, Gregoire</annotation>
-    <stream_url>mms://vipnrj.yacast.net/nrj_webradio13</stream_url>
+    <stream_url>http://mp3.live.tv-radio.com/nrj_french/all/nrj_155913.mp3</stream_url>
     <stream_title>NRJ FRENCH</stream_title>
     <image>http://media.nrj.fr/80x60/logonrj-french_webradio.jpg</image>
     <stream_class>audio</stream_class>
@@ -723,9 +723,9 @@
     
     <item>
     <title>NRJ NOUVEAUTÉS</title>
-    <location>http://player.nrj.fr/V4/nrj/webradios/index_V2.html?webradio=nouveautes</location>
+    <location>http://play.nrj.fr/nrj/nrj-nouveautes.html</location>
     <annotation>Écoute les nouveaux titres des artistes internationaux et français. David Guetta- Tom Frager- Britney Spears...</annotation>
-    <stream_url>mms://vipnrj.yacast.net/nrj_webradio14</stream_url>
+    <stream_url>http://mp3.live.tv-radio.com/nrj_nouveaute/all/nrj_161209.mp3</stream_url>
     <stream_title>NRJ NOUVEAUTÉS</stream_title>
     <image>http://media.nrj.fr/80x60/nrj-nouveautes-_webradio40253.jpg</image>
     <stream_class>audio</stream_class>
@@ -734,9 +734,9 @@
     
     <item>
     <title>NRJ AVEC ITUNES</title>
-    <location>http://player.nrj.fr/V4/nrj/webradios/index_V2.html?webradio=itunes</location>
+    <location>http://play.nrj.fr/nrj/nrj-avec-itunes.html</location>
     <annotation>“NRJ avec iTunes” : écoutez les 50 titres les plus téléchargés en France, Angleterre, Allemagne, Etats-Unis et Australie. Découvrez les plus grands hits internationaux et certains titres encore inconnus en France</annotation>
-    <stream_url>mms://vipnrj.yacast.net/nrj_webradio07</stream_url>
+    <stream_url>http://mp3.live.tv-radio.com/nrj_itunes/all/nrj_153938.mp3</stream_url>
     <stream_title>NRJ AVEC ITUNES</stream_title>
     <image>http://media.nrj.fr/80x60/logonrj-itunes_webradio47555.jpg</image>
     <stream_class>audio</stream_class>
@@ -745,9 +745,9 @@
     
     <item>
     <title>NRJ MASTER MIX</title>
-    <location>http://player.nrj.fr/V4/nrj/webradios/index_V2.html?webradio=mastermix</location>
+    <location>http://play.nrj.fr/nrj/nrj-extravadance.html</location>
     <annotation>LES MIX DES MEILLEURS DJ’S SUR TA WEB RADIO NRJ MASTER MIX</annotation>
-    <stream_url>mms://vipnrj.yacast.net/nrj_webradio19</stream_url>
+    <stream_url>http://mp3.live.tv-radio.com/nrj_mastermix/all/nrj_163522.mp3</stream_url>
     <stream_title>NRJ MASTER MIX</stream_title>
     <image>http://media.nrj.fr/80x60/80x60-mastermix_webiphone42681.jpg</image>
     <stream_class>audio</stream_class>
@@ -756,9 +756,9 @@
     
     <item>
     <title>NRJ RUNNING</title>
-    <location>http://player.nrj.fr/V4/nrj/webradios/index_V2.html?webradio=running</location>
+    <location>http://play.nrj.fr/nrj/nrj-running.html</location>
     <annotation>NRJ RUNNING…TA WEB RADIO SPECIAL RUNNING</annotation>
-    <stream_url>mms://vipnrj.yacast.net/nrj_webradio18</stream_url>
+    <stream_url>http://mp3.live.tv-radio.com/nrj_running/all/nrj_162813.mp3</stream_url>
     <stream_title>NRJ RUNNING</stream_title>
     <image>http://media.nrj.fr/80x60/80x60-running_webradio24553.jpg</image>
     <stream_class>audio</stream_class>
@@ -767,9 +767,9 @@
     
     <item>
     <title>NRJ LOUNGE</title>
-    <location>http://player.nrj.fr/V4/nrj/webradios/index_V2.html?webradio=lounge</location>
+    <location>http://play.nrj.fr/nrj/nrj-lounge.html</location>
     <annotation>Ecoute la Web radio dédiée au bien  être. Une programmation douce et relaxante.</annotation>
-    <stream_url>mms://vipnrj.yacast.net/nrj_webradio15</stream_url>
+    <stream_url>http://mp3.live.tv-radio.com/nrj_lounge/all/nrj_151750.mp3</stream_url>
     <stream_title>NRJ LOUNGE</stream_title>
     <image>http://media.nrj.fr/80x60/logonrj-lounge_webradio.jpg</image>
     <stream_class>audio</stream_class>
@@ -778,9 +778,9 @@
     
     <item>
     <title>NRJ THE BLACK EYED PEAS</title>
-    <location>http://player.nrj.fr/V4/nrj/webradios/index_V2.html?webradio=bep</location>
+    <location>http://play.nrj.fr/nrj/nrj-the-black-eyed-peas.html</location>
     <annotation>La Web Radio spéciale The Black Eyed Peas, c'est sur NRJ !</annotation>
-    <stream_url>mms://vipnrj.yacast.net/nrj_webradio12</stream_url>
+    <stream_url>http://mp3.live.tv-radio.com/nrj_black_eyed_peas/all/nrj_161845.mp3</stream_url>
     <stream_title>NRJ THE BLACK EYED PEAS</stream_title>
     <image>http://media.nrj.fr/80x60/80x60-black-eyes-peas_webradio62431.jpg</image>
     <stream_class>audio</stream_class>
@@ -789,9 +789,9 @@
     
     <item>
     <title>NRJ LADY GAGA</title>
-    <location>http://player.nrj.fr/V4/nrj/webradios/index_V2.html?webradio=ladygaga</location>
+    <location>http://play.nrj.fr/nrj/nrj-lady-gaga.html</location>
     <annotation>LE MEILLEUR DES HITS DE LADY GAGA SUR TA WEB RADIO NRJ. NRJ LADY GAGA…HIT MUSIC ONLY</annotation>
-    <stream_url>mms://vipnrj.yacast.net/nrj_webradio17</stream_url>
+    <stream_url>http://mp3.live.tv-radio.com/nrj_lady_gaga/all/nrj_152704.mp3</stream_url>
     <stream_title>NRJ LADY GAGA</stream_title>
     <image>http://media.nrj.fr/80x60/80x60-lady-gaga_webradio22877.jpg</image>
     <stream_class>audio</stream_class>
