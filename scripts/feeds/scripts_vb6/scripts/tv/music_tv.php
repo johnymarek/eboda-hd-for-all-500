@@ -3,7 +3,7 @@ $host = "http://127.0.0.1:82";
 ?>
 <rss version="2.0">
 <script>
-  translate_base_url  = "http://127.0.0.1:83/scripts/cgi-bin/translate?";
+  translate_base_url  = "http://127.0.0.1:83/cgi-bin/translate?";
 
   storagePath             = getStoragePath("tmp");
   storagePath_stream      = storagePath + "stream.dat";
@@ -397,19 +397,47 @@ ret;
 	</item>
 	
 	<item>
-	<title>105 TV</title>
-	<stream_url>rtmp://fms.105.net:1935/live/105Test1</stream_url>
-	<annotation>105 TV</annotation>
-	<stream_class>video</stream_class>
-	</item>
-
-	<item>
 	<title>Virgin TV</title>
 	<stream_url>rtmp://fms.105.net:1935/live/virgin1</stream_url>
 	<annotation>Virgin TV</annotation>
 	<stream_class>video</stream_class>
 	</item>
+
+	<item>
+	<title>Top 40</title>
+	<stream_url>rtmp://fms.105.net:1935/live/charts1</stream_url>
+	<annotation>Top 40</annotation>
+	<stream_class>video</stream_class>
+	</item>
 	
+	<item>
+	<title>Italy TV</title>
+	<stream_url>rtmp://fms.105.net:1935/live/italytv1</stream_url>
+	<annotation>Italy TV</annotation>
+	<stream_class>video</stream_class>
+	</item>
+	
+	<item>
+	<title>Legend</title>
+	<stream_url>rtmp://fms.105.net:1935/live/legend1</stream_url>
+	<annotation>Legend</annotation>
+	<stream_class>video</stream_class>
+	</item>
+	
+	<item>
+	<title>Radio 105 TV</title>
+	<stream_url>rtmp://fms.105.net:1935/live/105Test1</stream_url>
+	<annotation>Radio 105 TV</annotation>
+	<stream_class>video</stream_class>
+	</item>
+
+	<item>
+	<title>Radio Monte Carlo</title>
+	<stream_url>rtmp://fms.105.net:1935/live/rmc1</stream_url>
+	<annotation>Radio Monte Carlo</annotation>
+	<stream_class>video</stream_class>
+	</item>
+		
 	<item>
 	<title>DeeJay TV</title>
 	<stream_url>http://wm.streaming.kataweb.it/reflector:40004</stream_url>
@@ -417,6 +445,13 @@ ret;
 	<stream_class>video</stream_class>
 	</item>
 
+	<item>
+	<title>1 Music</title>
+	<stream_url>rtmp://80.232.172.37/rtplive/vlc.sdp</stream_url>
+	<annotation>1 Music</annotation>
+	<stream_class>video</stream_class>
+	</item>
+	
 	<item>
 	<title>RTL102.5 TV</title>
 	<stream_url>mms://151.1.245.36/rtl102.5vs</stream_url>
@@ -494,5 +529,53 @@ ret;
 	<stream_class>video</stream_class>
 	</item>
 
+	<item>
+	<title>The Voice</title>
+	<stream_url>http://62.41.56.32/PUBLIC_votv_fi</stream_url>
+	<annotation>The Voice</annotation>
+	<stream_class>video</stream_class>
+	</item>
+
+	<item>
+	<title>Labelle TV</title>
+	<stream_url>rtsp://www.labelletv.com/labelletv</stream_url>
+	<annotation>Labelle TV</annotation>
+	<stream_class>video</stream_class>
+	</item>
+
+	<item>
+	<title>Mad TV Live TV from Greece</title>
+	<stream_url>rtsp://mediaserver.mad.tv/madtv</stream_url>
+	<annotation>Mad TV Live TV from Greece</annotation>
+	<stream_class>video</stream_class>
+	</item>
+
+	<item>
+	<title>Dance TV Live TV from Hungary</title>
+	<stream_url>http://stream02.gtk.hu/dance_tvd</stream_url>
+	<annotation>Dance TV Live TV from Hungary</annotation>
+	<stream_class>video</stream_class>
+	</item>
+	
+	<item>
+	<title>Ibiza on TV Live TV from Italy</title>
+	<stream_url>rtsp://81.174.67.45/ibizaontv</stream_url>
+	<annotation>Ibiza on TV Live TV from Italy</annotation>
+	<stream_class>video</stream_class>
+	</item>
+	
+	<item>
+	<title>Jungle TV Live TV from Macedonia</title>
+	<stream_url>rtsp://62.162.58.41/JUNGLE_TV</stream_url>
+	<annotation>Jungle TV Live TV from Macedonia</annotation>
+	<stream_class>video</stream_class>
+	</item>
+
+	<item>
+	<title>Directstar</title>
+	<stream_url>rtmp://85.17.84.196:80/rtpdirectstarlive/directstar-flash-750.sdp</stream_url>
+	<annotation>Directstar</annotation>
+	<stream_class>video</stream_class>
+	</item>
 </channel>
 </rss>

@@ -151,7 +151,9 @@ ret;
 
 	<item>
 	<title>Rai Quattro</title>
-	<onClick>playItemURL("http://127.0.0.1:82/cgi-bin/scripts/util/rai.cgi?http://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=75708", 10);</onClick>	</item>
+	<onClick>playItemURL("http://127.0.0.1:82/scripts/util/rai.cgi?http://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=75708", 10);</onClick>
+	<annotation>ARD</annotation>
+	</item>
 
 
 </channel>

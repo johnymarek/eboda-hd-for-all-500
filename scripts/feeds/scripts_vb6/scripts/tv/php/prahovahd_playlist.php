@@ -92,30 +92,30 @@ function str_between($string, $start, $end){
 }
 $cat =  $_GET["cat"];
 switch ($cat) {
-     case 0:
-         $tit = "OneHD - Live! Concert";
-         $link = "http://live.1hd.ro";
-         break;
-     case 1:
-         $tit = "OneHD - Live! Jazz";
-         $link = "http://live.1hd.ro/jazz.php";
-         break;
-     case 2:
-         $tit = "OneHD - Live! Classics";
-         $link = "http://live.1hd.ro/classics.php";
-         break;
-     case 3:
-         $tit = "OneHD - Live! Dance";
-         $link = "http://live.1hd.ro/dance.php";
-         break;
-     case 4:
-         $tit = "OneHD - Live! Rock";
-         $link = "http://live.1hd.ro/rock.php";
-         break;
-     case 5:
-         $tit = "OneHD - Live! Pop";
-         $link = "http://live.1hd.ro/pop.php";
-         break;
+    case 0:
+        $tit = "OneHD - Live! Concert";
+        $link = "http://live.1hd.ro";
+        break;
+    case 1:
+        $tit = "OneHD - Live! Jazz";
+        $link = "http://live.1hd.ro/jazz.php";
+        break;
+    case 2:
+        $tit = "OneHD - Live! Classics";
+        $link = "http://live.1hd.ro/classics.php";
+        break;
+    case 3:
+        $tit = "OneHD - Live! Dance";
+        $link = "http://live.1hd.ro/dance.php";
+        break;
+    case 4:
+        $tit = "OneHD - Live! Rock";
+        $link = "http://live.1hd.ro/rock.php";
+        break;
+    case 5:
+        $tit = "OneHD - Live! Pop";
+        $link = "http://live.1hd.ro/pop.php";
+        break;
 }
 echo '
   <title>'.$tit.'</title>
@@ -125,7 +125,7 @@ $html = file_get_contents($link);
 $streamer=str_between($html,"so.addVariable('streamer','","'");
 $file=str_between($html,"so.addVariable('file','","'");
 $link=$streamer.$file;
-$link = "http://127.0.0.1:83/scripts/cgi-bin/translate?stream,Content-type:video/mp4,".$link;
+$link = "http://127.0.0.1:83/cgi-bin/translate?stream,Content-type:video/mp4,".$link;
     echo '
     <item>
     <title>'.$tit.'</title>
@@ -133,7 +133,6 @@ $link = "http://127.0.0.1:83/scripts/cgi-bin/translate?stream,Content-type:video
     <enclosure type="video/mp4" url="'.$link.'"/>
     </item>
     ';
-
 ?>
 </channel>
 </rss>

@@ -195,7 +195,7 @@ if (strpos($link, "Stiri_ora_18:00_cu_Mihaela_Birzila") !== false) {
 	$ora = "18-45";
 	$emisiune = "La_ordinea_zilei";
 } elseif(strpos($link, "Conexiuni") !== false) {
-	$ora = "22-00";
+	$ora = "23-00";
 	$emisiune = "Conexiuni";
 } elseif(strpos($link, "Editie_Speciala") !== false) {
 	$ora = "14-30";
@@ -235,10 +235,10 @@ if (strpos($link, "Stiri_ora_18:00_cu_Mihaela_Birzila") !== false) {
 	$ora = "19-30";
 	$emisiune = "saptamana_financiara";
 } elseif(strpos($link, "Vorbe_grele_cu_Victor_Ciutacu") !== false) {
-	$ora = "23-00";
+	$ora = "22-00";
 	$emisiune = "Vorbe_grele_cu_Victor_Ciutacu";
 } elseif(strpos($link, "In_Premiera_cu_Carmen_Avram") !== false) {
-	$ora = "21-00";
+	$ora = "20-59";
 	$emisiune = "In_Premiera";
 } elseif(strpos($link, "Esential") !== false) {
 	$ora = "15-00";

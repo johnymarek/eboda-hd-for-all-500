@@ -1,4 +1,5 @@
 <?php echo "<?xml version='1.0' encoding='UTF8' ?>";
+error_reporting(0);
 $host = "http://127.0.0.1:82";
 ?>
 <rss version="2.0">
@@ -24,11 +25,11 @@ $host = "http://127.0.0.1:82";
 	itemImageWidthPC="0"
 	itemXPC="8"
 	itemYPC="25"
-	itemWidthPC="50"
+	itemWidthPC="30"
 	itemHeightPC="8"
 	capXPC="8"
 	capYPC="25"
-	capWidthPC="50"
+	capWidthPC="30"
 	capHeightPC="64"
 	itemBackgroundColor="0:0:0"
 	itemPerPage="8"
@@ -48,10 +49,13 @@ $host = "http://127.0.0.1:82";
   	<text redraw="yes" offsetXPC="85" offsetYPC="12" widthPC="10" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
 		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
 		</text>
-  	<text  redraw="yes" align="center" offsetXPC="0" offsetYPC="90" widthPC="100" heightPC="8" fontSize="17" backgroundColor="10:105:150" foregroundColor="100:200:255">
-		  <script>print(annotation); annotation;</script>
+		<text align="left" redraw="yes"
+          lines="12" fontSize=15
+		      offsetXPC=40 offsetYPC=40 widthPC=55 heightPC=48
+		      backgroundColor=0:0:0 foregroundColor=200:200:200>
+			<script>print(annotation); annotation;</script>
 		</text>
-		<image  redraw="yes" offsetXPC=60 offsetYPC=35 widthPC=30 heightPC=30>
+		<image  redraw="yes" offsetXPC=52 offsetYPC=20 widthPC=25 heightPC=25>
   /scripts/tv/image/onehd.png
 		</image>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_01.png </idleImage>
@@ -70,8 +74,8 @@ $host = "http://127.0.0.1:82";
 					focus = getFocusItemIndex();
 					if(focus==idx) 
 					{
-					  location = getItemInfo(idx, "location");
-					  annotation = getItemInfo(idx, "title");
+					  location = "http://127.0.0.1:82/scripts/tv/php/ph_prog.php?file=" + getItemInfo(idx, "location");
+					  annotation = getURL(location);
 					}
 					getItemInfo(idx, "title");
 				</script>
@@ -134,59 +138,70 @@ $host = "http://127.0.0.1:82";
 
 <item>
 <title>OneHD - Live! Concert</title>
+<location>http://live.1hd.ro/displaygrila2.php</location>
 <onClick>playItemURL("http://127.0.0.1:83/cgi-bin/translate?stream,Content-type:video/mp4,rtmp://93.114.43.3:1935/live/onehd", 10);</onClick>
 <media:thumbnail url="/scripts/tv/image/onehd.png" />
 </item>
 
 <item>
 <title>OneHD - Live! Jazz</title>
+<location>http://live.1hd.ro/displaygrila2j.php</location>
 <onClick>playItemURL("http://127.0.0.1:83/cgi-bin/translate?stream,Content-type:video/mp4,rtmp://93.114.43.3:1935/live/jazz", 10);</onClick>
+<media:thumbnail url="/scripts/tv/image/onehd.png" />
 </item>
 
 <item>
 <title>OneHD - Live! Classics</title>
+<location>http://live.1hd.ro/displaygrila2c.php</location>
 <onClick>playItemURL("http://127.0.0.1:83/cgi-bin/translate?stream,Content-type:video/mp4,rtmp://93.114.43.3:1935/live/classics", 10);</onClick>
 <media:thumbnail url="/scripts/tv/image/onehd.png" />
 </item>
 
 <item>
 <title>OneHD - Live! Dance</title>
+<location>http://live.1hd.ro/displaygrila2d.php</location>
 <onClick>playItemURL("http://127.0.0.1:83/cgi-bin/translate?stream,Content-type:video/mp4,rtmp://93.114.43.3:1935/live/dance", 10);</onClick>
 <media:thumbnail url="/scripts/tv/image/onehd.png" />
 </item>
 
 <item>
 <title>OneHD - Live! Rock</title>
+<location>http://live.1hd.ro/displaygrila2r.php</location>
 <onClick>playItemURL("http://127.0.0.1:83/cgi-bin/translate?stream,Content-type:video/mp4,rtmp://93.114.43.3:1935/live/rock", 10);</onClick>
 <media:thumbnail url="/scripts/tv/image/onehd.png" />
 </item>
 
 <item>
 <title>OneHD - Live! Pop</title>
+<location>http://live.1hd.ro/displaygrila2p.php</location>
 <onClick>playItemURL("http://127.0.0.1:83/cgi-bin/translate?stream,Content-type:video/mp4,rtmp://93.114.43.3:1935/live/pop", 10);</onClick>
 <media:thumbnail url="/scripts/tv/image/onehd.png" />
 </item>
 
 <item>
 <title>Divertisment</title>
+<location></location>
 <link><?php echo $host; ?>/scripts/tv/php/prahova.php?cat=Divertisment</link>
 <media:thumbnail url="/scripts/tv/image/onehd.png" />
 </item>
 
 <item>
 <title>Documentare</title>
+<location></location>
 <link><?php echo $host; ?>/scripts/tv/php/prahova.php?cat=Documentare</link>
 <media:thumbnail url="/scripts/tv/image/onehd.png" />
 </item>
 
 <item>
 <title>Emisiuni</title>
+<location></location>
 <link><?php echo $host; ?>/scripts/tv/php/prahova.php?cat=Emisiuni</link>
 <media:thumbnail url="/scripts/tv/image/onehd.png" />
 </item>
 
 <item>
 <title>Business</title>
+<location></location>
 <link><?php echo $host; ?>/scripts/tv/php/prahova.php?cat=Business</link>
 <media:thumbnail url="/scripts/tv/image/onehd.png" />
 </item>

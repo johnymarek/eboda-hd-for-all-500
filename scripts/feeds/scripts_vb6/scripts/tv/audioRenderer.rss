@@ -22,7 +22,7 @@
 -->
 
 <script>
-  translate_base_url  = "http://127.0.0.1:83/scripts/cgi-bin/translate?";
+  translate_base_url  = "http://127.0.0.1:83/cgi-bin/translate?";
   cgiconf = readStringFromFile("/scripts/etc/cgi.conf");
   if(cgiconf != null)
   {

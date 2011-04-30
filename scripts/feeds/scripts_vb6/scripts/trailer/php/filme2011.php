@@ -22,11 +22,11 @@
 	itemImageWidthPC="0"
 	itemXPC="8"
 	itemYPC="25"
-	itemWidthPC="45"
+	itemWidthPC="25"
 	itemHeightPC="8"
 	capXPC="8"
 	capYPC="25"
-	capWidthPC="45"
+	capWidthPC="25"
 	capHeightPC="64"
 	itemBackgroundColor="0:0:0"
 	itemPerPage="8"
@@ -39,20 +39,38 @@
 	sliding="no"
 >
 		
-  	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
-		  <script>getPageInfo("pageTitle");</script>
+  	<text redraw="yes" align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
+		  <script>print(film); film;</script>
 		</text>
 
   	<text redraw="yes" offsetXPC="85" offsetYPC="12" widthPC="10" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
 		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
 		</text>
+  	<text  redraw="yes" align="left" offsetXPC="52" offsetYPC="22.5" widthPC="43" heightPC="5" fontSize="17" backgroundColor="0:0:0" foregroundColor="200:200:200">
+		  <script>print(cat); cat;</script>
+		</text>
+  	<text  redraw="yes" align="left" offsetXPC="52" offsetYPC="28" widthPC="43" heightPC="5" fontSize="17" backgroundColor="0:0:0" foregroundColor="200:200:200">
+		  <script>print(regia); regia;</script>
+		</text>
+  	<text  redraw="yes" align="left" offsetXPC="52" offsetYPC="33.5" widthPC="43" heightPC="5" fontSize="17" backgroundColor="0:0:0" foregroundColor="200:200:200">
+		  <script>print(actor); actor;</script>
+		</text>
+  	<text  redraw="yes" align="left" offsetXPC="52" offsetYPC="39" widthPC="43" heightPC="5" fontSize="17" backgroundColor="0:0:0" foregroundColor="200:200:200">
+		  <script>print(durata); durata;</script>
+		</text>
+  	<text  redraw="yes" align="left" offsetXPC="52" offsetYPC="44.5" widthPC="43" heightPC="5" fontSize="17" backgroundColor="0:0:0" foregroundColor="200:200:200">
+		  <script>print(imdb); imdb;</script>
+		</text>
+  	<text  redraw="yes" align="left" offsetXPC="52" offsetYPC="50" widthPC="43" heightPC="5" fontSize="17" backgroundColor="0:0:0" foregroundColor="200:200:200">
+		  <script>print(premiera); premiera;</script>
+		</text>
 		<text align="justify" redraw="yes"
           lines="10" fontSize=17
-		      offsetXPC=55 offsetYPC=55 widthPC=40 heightPC=42
+		      offsetXPC=35 offsetYPC=57 widthPC=60 heightPC=42
 		      backgroundColor=0:0:0 foregroundColor=200:200:200>
 			<script>print(annotation); annotation;</script>
 		</text>
-		<image  redraw="yes" offsetXPC=66 offsetYPC=22.5 widthPC=15 heightPC=30>
+		<image  redraw="yes" offsetXPC=35 offsetYPC=22.5 widthPC=15 heightPC=30>
 		<script>print(img); img;</script>
 		</image>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_01.png </idleImage>
@@ -71,9 +89,15 @@
 					focus = getFocusItemIndex();
 					if(focus==idx) 
 					{
-					  location = getItemInfo(idx, "location");
 					  annotation = getItemInfo(idx, "annotation");
 					  img = getItemInfo(idx,"image");
+					  cat = getItemInfo(idx,"cat");
+					  regia = getItemInfo(idx,"regia");
+					  actor = getItemInfo(idx,"actor");
+					  durata = getItemInfo(idx,"durata");
+					  imdb = getItemInfo(idx,"imdb");
+					  premiera = getItemInfo(idx,"premiera");
+                      film = getItemInfo(idx,"title");
 					}
 					getItemInfo(idx, "title");
 				</script>
@@ -102,18 +126,36 @@
 
 		</itemDisplay>
 		
-  <onUserInput>
-    <script>
-      ret = "false";
-      userInput = currentUserInput();
-      majorContext = getPageInfo("majorContext");
-      
-      print("*** majorContext=",majorContext);
-      print("*** userInput=",userInput);
-      
-      ret;
-    </script>
-  </onUserInput>
+<onUserInput>
+<script>
+ret = "false";
+userInput = currentUserInput();
+
+if (userInput == "pagedown" || userInput == "pageup")
+{
+  idx = Integer(getFocusItemIndex());
+  if (userInput == "pagedown")
+  {
+    idx -= -8;
+    if(idx &gt;= itemCount)
+      idx = itemCount-1;
+  }
+  else
+  {
+    idx -= 8;
+    if(idx &lt; 0)
+      idx = 0;
+  }
+
+  print("new idx: "+idx);
+  setFocusItemIndex(idx);
+	setItemFocus(0);
+  redrawDisplay();
+  "true";
+}
+ret;
+</script>
+</onUserInput>
 		
 	</mediaDisplay>
 	
@@ -197,8 +239,21 @@ foreach($videos as $video) {
     $t3=explode("<",$t2[1]);
     $title = $t3[0];
     
-    $descriere=str_between($video,'rel="category tag">','<a rel="nofollow"');
-    $descriere = str_replace("<br />"," ",$descriere);
+    $d=str_between($video,'<div style="font-size:11px;">','<a rel="nofollow"');
+    $t1=explode("<br />",$d);
+    $cat=$t1[0];
+    $cat = trim(preg_replace("/(<\/?)(\w+)([^>]*>)/e"," ",$cat));
+    $regia=$t1[1];
+    $regia = trim(preg_replace("/(<\/?)(\w+)([^>]*>)/e"," ",$regia));
+    $actor=$t1[2];
+    $actor = trim(preg_replace("/(<\/?)(\w+)([^>]*>)/e"," ",$actor));
+    $durata=$t1[3];
+    $durata = trim(preg_replace("/(<\/?)(\w+)([^>]*>)/e"," ",$durata));
+    $imdb=$t1[4];
+    $imdb = trim(preg_replace("/(<\/?)(\w+)([^>]*>)/e"," ",$imdb));
+    $premiera=$t1[5];
+    $premiera = trim(preg_replace("/(<\/?)(\w+)([^>]*>)/e"," ",$premiera));
+    $descriere = $t1[6];
 	$descriere = preg_replace("/(<\/?)(\w+)([^>]*>)/e"," ",$descriere);
 	$descriere = str_replace("&nbsp;","",$descriere);
 
@@ -207,7 +262,13 @@ foreach($videos as $video) {
     echo '
     <item>
     <title>'.$title.'</title>
-    <link>'.$link.'</link>	
+    <link>'.$link.'</link>
+    <cat>'.$cat.'</cat>
+    <regia>'.$regia.'</regia>
+    <actor>'.$actor.'</actor>
+    <durata>'.$durata.'</durata>
+    <imdb>'.$imdb.'</imdb>
+    <premiera>'.$premiera.'</premiera>
     <annotation>'.$descriere.'</annotation>
     <image>'.$image.'</image>
     <media:thumbnail url="'.$image.'" />

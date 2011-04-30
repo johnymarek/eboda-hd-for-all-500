@@ -1,78 +1,337 @@
-﻿<?php echo "<?xml version='1.0' encoding='UTF8' ?>";
+<?php echo "<?xml version='1.0' encoding='UTF8' ?>";
 $host = "http://127.0.0.1:82";
 ?>
-<rss version="2.0" xmlns:media="http://purl.org/dc/elements/1.1/" xmlns:dc="http://purl.org/dc/elements/1.1/">
-<mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="20" idleImageHeightPC="26">
-	<idleImage>image/POPUP_LOADING_01.png</idleImage>
-	<idleImage>image/POPUP_LOADING_02.png</idleImage>
-	<idleImage>image/POPUP_LOADING_03.png</idleImage>
-	<idleImage>image/POPUP_LOADING_04.png</idleImage>
-	<idleImage>image/POPUP_LOADING_05.png</idleImage>
-	<idleImage>image/POPUP_LOADING_06.png</idleImage>
-	<idleImage>image/POPUP_LOADING_07.png</idleImage>
-	<idleImage>image/POPUP_LOADING_08.png</idleImage>
-		<backgroundDisplay>
-			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
-			image/mele/backgd.jpg
-			</image>  
-		</backgroundDisplay>
-		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
-		image/mele/rss_title.jpg
-		</image>
-		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
-		Posturi TV locale
-		</text>			
-</mediaDisplay>
+<rss version="2.0">
+<onEnter>
+  startitem = "middle";
+  setRefreshTime(1);
+</onEnter>
+
+<onRefresh>
+  setRefreshTime(-1);
+  itemCount = getPageInfo("itemCount");
+  middleItem = Integer(itemCount / 2);
+  redrawDisplay();
+</onRefresh>
+
+	<mediaDisplay name=photoView
+	  centerXPC=7
+		centerYPC=25
+		centerHeightPC=40
+columnCount=5
+	  rowCount=1
+		menuBorderColor="55:55:55"
+		sideColorBottom="0:0:0"
+		sideColorTop="0:0:0"
+	  backgroundColor="0:0:0"
+		imageBorderColor="0:0:0"
+		itemBackgroundColor="0:0:0"
+		itemGapXPC=0
+		itemGapYPC=1
+		sideTopHeightPC=22
+		bottomYPC=85
+		sliding=yes
+		showHeader=no
+		showDefaultInfo=no
+		idleImageWidthPC="10" idleImageHeightPC="10">
+
+  	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
+		  <script>getPageInfo("pageTitle");</script>
+		</text>
+
+  	<text redraw="yes" offsetXPC="85" offsetYPC="12" widthPC="10" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
+		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
+		</text>
+
+		<!--  lines="5" fontSize=15 -->
+		<text align="center" redraw="yes"
+  lines=3 fontSize=17
+		      offsetXPC=5 offsetYPC=65 widthPC=90 heightPC=20
+		      backgroundColor=0:0:0 foregroundColor=120:120:120>
+			<script>print(annotation); annotation;</script>
+		</text>
+
+		<text align="center" redraw="yes" offsetXPC=10 offsetYPC=85 widthPC=80 heightPC=10 fontSize=15 backgroundColor=0:0:0 foregroundColor=75:75:75>
+			<script>print(location); location;</script>
+		</text>
+        <idleImage>image/POPUP_LOADING_01.png</idleImage>
+        <idleImage>image/POPUP_LOADING_02.png</idleImage>
+        <idleImage>image/POPUP_LOADING_03.png</idleImage>
+        <idleImage>image/POPUP_LOADING_04.png</idleImage>
+        <idleImage>image/POPUP_LOADING_05.png</idleImage>
+        <idleImage>image/POPUP_LOADING_06.png</idleImage>
+        <idleImage>image/POPUP_LOADING_07.png</idleImage>
+        <idleImage>image/POPUP_LOADING_08.png</idleImage>
+		<itemDisplay>
+			<image>
+				<script>
+					idx = getQueryItemIndex();
+					focus = getFocusItemIndex();
+					if(focus==idx)
+					{
+					  location = getItemInfo(idx, "location");
+					  annotation = getItemInfo(idx, "annotation");
+					}
+					getItemInfo(idx, "image");
+				</script>
+			 <offsetXPC>
+			   <script>
+					idx = getQueryItemIndex();
+					focus = getFocusItemIndex();
+			    if(focus==idx) 0; else 12;
+			   </script>
+			 </offsetXPC>
+			 <offsetYPC>
+			   <script>
+					idx = getQueryItemIndex();
+					focus = getFocusItemIndex();
+			    if(focus==idx) 0; else 6;
+			   </script>
+			 </offsetYPC>
+			 <widthPC>
+			   <script>
+					idx = getQueryItemIndex();
+					focus = getFocusItemIndex();
+			    if(focus==idx) 100; else 75;
+			   </script>
+			 </widthPC>
+			 <heightPC>
+			   <script>
+					idx = getQueryItemIndex();
+					focus = getFocusItemIndex();
+			    if(focus==idx) 50; else 37;
+			   </script>
+			 </heightPC>
+			</image>
+
+			<text align="center" lines="4" offsetXPC=0 offsetYPC=55 widthPC=100 heightPC=45 backgroundColor=-1:-1:-1>
+				<script>
+					idx = getQueryItemIndex();
+					getItemInfo(idx, "title");
+				</script>
+				<fontSize>
+  				<script>
+  					idx = getQueryItemIndex();
+  					focus = getFocusItemIndex();
+  			    if(focus==idx) "18"; else "14";
+  				</script>
+				</fontSize>
+			  <foregroundColor>
+  				<script>
+  					idx = getQueryItemIndex();
+  					focus = getFocusItemIndex();
+  			    if(focus==idx) "255:255:255"; else "75:75:75";
+  				</script>
+			  </foregroundColor>
+			</text>
+
+		</itemDisplay>
+
+  <onUserInput>
+    <script>
+      ret = "false";
+      userInput = currentUserInput();
+      majorContext = getPageInfo("majorContext");
+
+      print("*** majorContext=",majorContext);
+      print("*** userInput=",userInput);
+
+      if(userInput == "one" || userInput == "1")
+      {
+        if(itemCount &gt;= 1)
+        {
+          setFocusItemIndex(0);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "two" || userInput == "2")
+      {
+        if(itemCount &gt;= 2)
+        {
+          setFocusItemIndex(1);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "three" || userInput == "3")
+      {
+        if(itemCount &gt;= 3)
+        {
+          setFocusItemIndex(2);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "four" || userInput == "4")
+      {
+        if(itemCount &gt;= 4)
+        {
+          setFocusItemIndex(3);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "five" || userInput == "5")
+      {
+        if(itemCount &gt;= 5)
+        {
+          setFocusItemIndex(4);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "six" || userInput == "6")
+      {
+        if(itemCount &gt;= 6)
+        {
+          setFocusItemIndex(5);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "seven" || userInput == "7")
+      {
+        if(itemCount &gt;= 7)
+        {
+          setFocusItemIndex(6);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "eight" || userInput == "8")
+      {
+        if(itemCount &gt;= 8)
+        {
+          setFocusItemIndex(7);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "nine" || userInput == "9")
+      {
+        if(itemCount &gt;= 9)
+        {
+          setFocusItemIndex(8);
+          redrawDisplay();
+        }
+      }
+      if(userInput == "zero" || userInput == "0")
+      {
+        if(itemCount &gt;= 10)
+        {
+          setFocusItemIndex(9);
+          redrawDisplay();
+        }
+      }
+      else if (userInput == "pagedown" || userInput == "pageup" || userInput == "PD" || userInput == "PG")
+      {
+        itemSize = getPageInfo("itemCount");
+        idx = Integer(getFocusItemIndex());
+        if (userInput == "pagedown")
+        {
+          idx -= -5;
+          if(idx &gt;= itemSize)
+            idx = itemSize-1;
+        }
+        else
+        {
+          idx -= 5;
+          if(idx &lt; 0)
+            idx = 0;
+        }
+        setFocusItemIndex(idx);
+        setItemFocus(idx);
+        redrawDisplay();
+        ret = "true";
+      }
+
+      ret;
+    </script>
+  </onUserInput>
+
+	</mediaDisplay>
+
+	<item_template>
+		<mediaDisplay  name="threePartsView" idleImageWidthPC="10" idleImageHeightPC="10">
+        <idleImage>image/POPUP_LOADING_01.png</idleImage>
+        <idleImage>image/POPUP_LOADING_02.png</idleImage>
+        <idleImage>image/POPUP_LOADING_03.png</idleImage>
+        <idleImage>image/POPUP_LOADING_04.png</idleImage>
+        <idleImage>image/POPUP_LOADING_05.png</idleImage>
+        <idleImage>image/POPUP_LOADING_06.png</idleImage>
+        <idleImage>image/POPUP_LOADING_07.png</idleImage>
+        <idleImage>image/POPUP_LOADING_08.png</idleImage>
+		</mediaDisplay>
+
+	</item_template>
   <channel>
 
     <title>Emisiuni posturi locale</title>
 
 <item>
-<title>Emisiuni tvt89</title>
+<title>tvt89</title>
 <link><?php echo $host; ?>/scripts/tv/locale/tvt89.php</link>
 <media:thumbnail url="/scripts/tv/image/tvt89.jpg" />
+<image>/scripts/tv/image/tvt89.jpg</image>
+<location>http://tvt89.bridgeman.ro/index.php</location>
+<annotation>tvt89 a fost prima staţie de televiziune privată din România şi a rămas în conştiinţa publicului din vestul ţării, drept primul canal tv prin care s-au manifestat liber zilele revoluţiei române.</annotation>
+
 </item>
 
 <item>
-<title>1tvbacau.ro</title>
+<title>1 TV Bacau</title>
 <link><?php echo $host; ?>/scripts/tv/locale/1tvbacau.php</link>
 <media:thumbnail url="/scripts/tv/image/1tvbacau.jpg" />
+<image>/scripts/tv/image/1tvbacau.jpg</image>
+<location>http://www.1tvbacau.ro/</location>
+<annotation>1 TV Bacau, post local de televiziune, prezintă evenimentele locale din ziua respectivă</annotation>
 </item>
 
 <item>
-<title>ctvmedia (Constanta)</title>
+<title>CTV media</title>
 <link><?php echo $host; ?>/scripts/tv/locale/ctvmedia.php</link>
 <media:thumbnail url="/scripts/tv/image/ctvmedia.jpg" />
+<image>/scripts/tv/image/ctvmedia.jpg</image>
+<location>http://www.ctvmedia.ro/</location>
+<annotation>CTV media, cel mai nou post de televiziune constantean</annotation>
 </item>
 
 <item>
-<title>TVSat (Buzau)</title>
+<title>TVSat</title>
 <link><?php echo $host; ?>/scripts/tv/locale/tvsatrm.php</link>
 <media:thumbnail url="/scripts/tv/image/tvsat.gif" />
+<image>/scripts/tv/image/tvsat.gif</image>
+<location>http://www.jurnal.tvsatrm.ro/</location>
+<annotation>Cele mai importante stiri din judetul Buzau. Jurnalul TVSat video, inregistrarile emisiunilor. TVSat Live!</annotation>
 </item>
-
+<!--
 <item>
-<title>InfoTV (Arad)</title>
+<title>Info TV</title>
 <link><?php echo $host; ?>/scripts/tv/locale/infotv.php</link>
 <media:thumbnail url="/scripts/tv/image/infotv.gif" />
+<image>/scripts/tv/image/infotv.gif</image>
+<location>http://www.infotv.ro/</location>
+<annotation>Info TV va ofera zilnic cele mai noi informatii din actualitatea locala Aradeana, incadrul jurnalului infotv. Emisiuni de actualitate, politica, social, cultura, sport, divertisment. Va oferim si micile informatii: meteo, curs valutar, tranzactii bursiere, anunturi.</annotation>
 </item>
-
+-->
 <item>
-<title>RadioTeleviziunea Severin</title>
-<link><?php echo $host; ?>/scripts/tv/locale/televiziuneaseverin.php</link>
+<title>RTS</title>
+<link><?php echo $host; ?>/scripts/php1/youtube_user.php?query=1,rtseverin</link>
 <media:thumbnail url="/scripts/tv/image/televiziuneaseverin.png" />
+<image>/scripts/tv/image/televiziuneaseverin.png</image>
+<location>http://www.televiziuneaseverin.ro/rts4/</location>
+<annotation>RTS - Radioteleviziunea Severin</annotation>
 </item>
 
 <item>
-<title>TeleM (Iasi)</title>
+<title>Tele'M</title>
 <link><?php echo $host; ?>/scripts/tv/locale/telem_main.php</link>
 <media:thumbnail url="/scripts/tv/image/telem.png" />
+<image>/scripts/tv/image/telem.png</image>
+<location>http://www.telem.ro/telem/</location>
+<annotation>Televiziunea Tele'M Iaşi - informaţia deşteaptă</annotation>
 </item>
 
 <item>
 <title>TV Bacau</title>
-<link><?php echo $host; ?>/scripts/tv/locale/tvbacau.php</link>
+<link><?php echo $host; ?>/scripts/php1/youtube_user.php?query=1,TPDesteptarea</link>
 <media:thumbnail url="/scripts/tv/image/tvbacau.gif" />
+<image>/scripts/tv/image/tvbacau.gif</image>
+<location>http://tvbacau.desteptarea.ro/</location>
+<annotation>Stiri locale din Bacau</annotation>
 </item>
 
 </channel>
