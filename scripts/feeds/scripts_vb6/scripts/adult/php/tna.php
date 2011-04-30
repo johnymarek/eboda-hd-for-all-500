@@ -44,7 +44,9 @@ $host = "http://127.0.0.1:82";
   	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		  <script>getPageInfo("pageTitle");</script>
 		</text>
-
+  	<text align="left" offsetXPC="6" offsetYPC="15" widthPC="100" heightPC="4" fontSize="16" backgroundColor="10:105:150" foregroundColor="100:200:255">
+    Apasati 2 pentru download, 3 pentru download manager
+		</text>
   	<text redraw="yes" offsetXPC="85" offsetYPC="12" widthPC="10" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
 		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
 		</text>
@@ -105,18 +107,51 @@ $host = "http://127.0.0.1:82";
 
 		</itemDisplay>
 
-  <onUserInput>
-    <script>
-      ret = "false";
-      userInput = currentUserInput();
-      majorContext = getPageInfo("majorContext");
+<onUserInput>
+<script>
+ret = "false";
+userInput = currentUserInput();
 
-      print("*** majorContext=",majorContext);
-      print("*** userInput=",userInput);
+if (userInput == "pagedown" || userInput == "pageup")
+{
+  idx = Integer(getFocusItemIndex());
+  if (userInput == "pagedown")
+  {
+    idx -= -8;
+    if(idx &gt;= itemCount)
+      idx = itemCount-1;
+  }
+  else
+  {
+    idx -= 8;
+    if(idx &lt; 0)
+      idx = 0;
+  }
 
-      ret;
-    </script>
-  </onUserInput>
+  print("new idx: "+idx);
+  setFocusItemIndex(idx);
+	setItemFocus(0);
+  redrawDisplay();
+  "true";
+}
+if (userInput == "two" || userInput == "2")
+	{
+     showIdle();
+     url=getItemInfo(getFocusItemIndex(),"download");
+     movie=getUrl(url);
+     cancelIdle();
+	 topUrl = "http://127.0.0.1:82/scripts/util/download.cgi?link=" + movie + ";name=" + getItemInfo(getFocusItemIndex(),"name");
+	 dlok = loadXMLFile(topUrl);
+	 "true";
+}
+if (userInput == "three" || userInput == "3")
+   {
+    jumpToLink("destination");
+    "true";
+}
+ret;
+</script>
+</onUserInput>
 
 	</mediaDisplay>
 
@@ -133,6 +168,10 @@ $host = "http://127.0.0.1:82";
 		</mediaDisplay>
 
 	</item_template>
+<destination>
+	<link>http://127.0.0.1:82/scripts/util/level.php
+	</link>
+</destination>
 <channel>
 	<title>TnaFlix</title>
 	<menu>main menu</menu>
@@ -210,10 +249,22 @@ foreach($videos as $video) {
     $t2 = explode(">",$t1[1]);
     $t3 = explode("<",$t2[1]);
     $data = "Durata: ".$t3[0];
-  echo '
-  <item>
-  <title>'.$title.'</title>
-  <link>'.$link.'</link>
+    $name = preg_replace('/[^A-Za-z0-9_]/','_',$title).".flv";
+
+    echo '
+    <item>
+    <title>'.$title.'</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="'.$link.'";
+    movie=getUrl(url);
+    cancelIdle();
+    playItemUrl(movie,10);
+    </script>
+    </onClick>
+    <download>'.$link.'</download>
+    <name>'.$name.'</name>
   <image>'.$image.'</image>
   <annotation>'.$data.'</annotation>
   <media:thumbnail url="'.$image.'" />

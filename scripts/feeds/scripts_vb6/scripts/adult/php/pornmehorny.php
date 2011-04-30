@@ -44,7 +44,9 @@ $host = "http://127.0.0.1:82";
   	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		  <script>getPageInfo("pageTitle");</script>
 		</text>
-
+  	<text align="left" offsetXPC="6" offsetYPC="15" widthPC="100" heightPC="4" fontSize="16" backgroundColor="10:105:150" foregroundColor="100:200:255">
+    Apasati 2 pentru download, 3 pentru download manager
+		</text>
   	<text redraw="yes" offsetXPC="85" offsetYPC="12" widthPC="10" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
 		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
 		</text>
@@ -131,6 +133,17 @@ if (userInput == "pagedown" || userInput == "pageup")
   redrawDisplay();
   "true";
 }
+if( userInput == "two" || userInput == "2")
+	{
+		topUrl = "http://127.0.0.1:82/scripts/util/download.cgi?link=" + getItemInfo(getFocusItemIndex(),"download") + ";name=" + getItemInfo(getFocusItemIndex(),"name");
+		dlok = loadXMLFile(topUrl);
+		"true";
+	}
+if (userInput == "three" || userInput == "3")
+   {
+    jumpToLink("destination");
+    "true";
+}
 ret;
 </script>
 </onUserInput>
@@ -149,6 +162,10 @@ ret;
 		</mediaDisplay>
 
 	</item_template>
+<destination>
+	<link>http://127.0.0.1:82/scripts/util/level.php
+	</link>
+</destination>
 <channel>
 	<title>pornmehorny.com</title>
 	<menu>main menu</menu>
@@ -221,10 +238,13 @@ foreach($videos as $video) {
     $t2 = explode('"', $t1[1]);
     $title = $t2[0];
     $data = "Durata: ".trim(str_between($video,'<div class="box_left">',"<"));
-  echo '
-  <item>
-  <title>'.$title.'</title>
-  <onClick>playItemURL("'.$link.'", 10);</onClick>
+  $name = preg_replace('/[^A-Za-z0-9_]/','_',$title).".mp4";
+	echo'
+	<item>
+	<title>'.$title.'</title>
+    <onClick>playItemURL("'.$link.'", 10);</onClick>
+    <download>'.$link.'</download>
+    <name>'.$name.'</name>
   <image>'.$image.'</image>
   <annotation>'.$data.'</annotation>
   <media:thumbnail url="'.$image.'" />
