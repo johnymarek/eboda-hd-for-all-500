@@ -1,5 +1,12 @@
 <?php echo "<?xml version='1.0' encoding='UTF8' ?>";
 $host = "http://127.0.0.1:82";
+$img = "/scripts/filme/image/peteava.png";
+$query = $_GET["file"];
+if($query) {
+   $queryArr = explode(',', $query);
+   $c = $queryArr[0];
+   $tit=urldecode($queryArr[1]);
+}
 ?>
 <rss version="2.0">
 <onEnter>
@@ -15,6 +22,7 @@ $host = "http://127.0.0.1:82";
 <mediaDisplay name="threePartsView"
 	sideLeftWidthPC="0"
 	sideRightWidthPC="0"
+
 	headerImageWidthPC="0"
 	selectMenuOnRight="no"
 	autoSelectMenu="no"
@@ -23,15 +31,15 @@ $host = "http://127.0.0.1:82";
 	itemImageWidthPC="0"
 	itemXPC="8"
 	itemYPC="25"
-	itemWidthPC="45"
+	itemWidthPC="50"
 	itemHeightPC="8"
 	capXPC="8"
 	capYPC="25"
-	capWidthPC="45"
+	capWidthPC="50"
 	capHeightPC="64"
 	itemBackgroundColor="0:0:0"
 	itemPerPage="8"
-    itemGap="0"
+  itemGap="0"
 	bottomYPC="90"
 	backgroundColor="0:0:0"
 	showHeader="no"
@@ -43,26 +51,15 @@ $host = "http://127.0.0.1:82";
   	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		  <script>getPageInfo("pageTitle");</script>
 		</text>
-  	<text align="left" offsetXPC="6" offsetYPC="15" widthPC="100" heightPC="4" fontSize="16" backgroundColor="10:105:150" foregroundColor="100:200:255">
-    Apasati 2 pentru download, 3 pentru download manager
-		</text>
+
   	<text redraw="yes" offsetXPC="85" offsetYPC="12" widthPC="10" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
 		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
 		</text>
-		<text align="justify" redraw="yes"
-          lines="8" fontSize=17
-		      offsetXPC=55 offsetYPC=58 widthPC=40 heightPC=38
-		      backgroundColor=0:0:0 foregroundColor=200:200:200>
-			<script>print(annotation); annotation;</script>
-		</text>
-  	<text  redraw="yes" align="center" offsetXPC="60" offsetYPC="52" widthPC="30" heightPC="5" fontSize="17" backgroundColor="10:105:150" foregroundColor="100:200:255">
-		  <script>print(pub); pub;</script>
-		</text>
   	<text  redraw="yes" align="center" offsetXPC="0" offsetYPC="90" widthPC="100" heightPC="8" fontSize="17" backgroundColor="10:105:150" foregroundColor="100:200:255">
-		  <script>print(titlu); titlu;</script>
+		  <script>print(annotation); annotation;</script>
 		</text>
-		<image  redraw="yes" offsetXPC=60 offsetYPC=25 widthPC=30 heightPC=25>
-  <script>print(img); img;</script>
+		<image  redraw="yes" offsetXPC=60 offsetYPC=35 widthPC=30 heightPC=30>
+  <?php echo $img; ?>
 		</image>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_01.png </idleImage>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_02.png </idleImage>
@@ -80,10 +77,8 @@ $host = "http://127.0.0.1:82";
 					focus = getFocusItemIndex();
 					if(focus==idx)
 					{
-                      img = getItemInfo(idx,"image");
-					  annotation = getItemInfo(idx, "annotation");
-					  pub = getItemInfo(idx, "pub");
-					  titlu = getItemInfo(idx, "title");
+					  location = getItemInfo(idx, "location");
+					  annotation = getItemInfo(idx, "title");
 					}
 					getItemInfo(idx, "title");
 				</script>
@@ -139,26 +134,10 @@ if (userInput == "pagedown" || userInput == "pageup")
   redrawDisplay();
   "true";
 }
-if (userInput == "two" || userInput == "2")
-	{
-     showIdle();
-     url="<?php echo $host; ?>" + "/scripts/clip/php/videonews_link.php?file=" + getItemInfo(getFocusItemIndex(),"download");
-     movie=getUrl(url);
-     cancelIdle();
-	 topUrl = "http://127.0.0.1:82/scripts/util/download.cgi?link=" + movie + ";name=" + getItemInfo(getFocusItemIndex(),"name");
-	 dlok = loadXMLFile(topUrl);
-	 "true";
-}
-if (userInput == "three" || userInput == "3")
-   {
-    jumpToLink("destination");
-    "true";
-}
 ret;
 </script>
 </onUserInput>
-
-	</mediaDisplay>
+</mediaDisplay>
 	<item_template>
 		<mediaDisplay  name="threePartsView" idleImageWidthPC="10" idleImageHeightPC="10">
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
@@ -172,65 +151,37 @@ ret;
 		</mediaDisplay>
 
 	</item_template>
-<destination>
-	<link>http://127.0.0.1:82/scripts/util/level.php
-	</link>
-</destination>
 <channel>
-	<title>videonews.ro - tv</title>
-	<menu>main menu</menu>
-
-
+<title><?php echo $tit; ?></title>
 <?php
-$html = file_get_contents("http://videonews.ro/action/videolist/tv/");
-$videos = explode('<td id="selVideoGallery" class="clsModifyItem">', $html);
+function str_between($string, $start, $end){
+	$string = " ".$string; $ini = strpos($string,$start);
+	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini;
+	return substr($string,$ini,$len);
+}
 
+$html = file_get_contents("http://www.peteava.ro/");
+$html=str_between($html,'var categories = new Array();','</script>');
+$videos = explode('categories[', $html);
 unset($videos[0]);
 $videos = array_values($videos);
 
 foreach($videos as $video) {
-    $t1 = explode('href="', $video);
-    $t2 = explode('"', $t1[1]);
-    $link = $t2[0];
-
-    $t1 = explode(' src="', $video);
-    $t2 = explode('"', $t1[1]);
-    $image = $t2[0];
-
-    $t1 = explode('a title="', $video);
-    $t2 = explode('"', $t1[1]);
-    $descriere = htmlspecialchars_decode($t2[0]);
-    $t3=explode('>',$t1[1]);
-    $t4=explode('<',$t3[1]);
-    $title= htmlspecialchars_decode($t4[0]);
-    
-    $t1=explode('"clsAddedDate">',$video);
-    $t2=explode('</p>',$t1[1]);
-    $pub=preg_replace("/(<\/?)(\w+)([^>]*>)/e","",$t2[0]);
-    $name = preg_replace('/[^A-Za-z0-9_]/','_',$title).".flv";
-
+  $t1=explode("]",$video);
+  $cat=$t1[0];
+  if ((strlen($cat)==3) && (substr($cat, 0, 1)==$c)) {
+    $t1=explode("'",$video);
+    $t2=explode("'",$t1[1]);
+    $title=$t2[0];
+    $link=$host."/scripts/filme/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/".$cat."/pagina/,".urlencode($title);
     echo '
     <item>
     <title>'.$title.'</title>
-    <onClick>
-    <script>
-    showIdle();
-    url="'.$host.'/scripts/clip/php/videonews_link.php?file='.$link.'";
-    movie=getUrl(url);
-    cancelIdle();
-    playItemUrl(movie,10);
-    </script>
-    </onClick>
-    <download>'.$link.'</download>
-    <name>'.$name.'</name>
-    <annotation>'.$descriere.'</annotation>
-    <image>'.$image.'</image>
-    <pub>'.$pub.'</pub>
-    <media:thumbnail url="'.$image.'" />
+    <link>'.$link.'</link>
     </item>
     ';
+  }
 }
-
 ?>
 </channel>
 </rss>

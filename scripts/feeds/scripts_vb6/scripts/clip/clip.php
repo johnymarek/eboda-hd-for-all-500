@@ -11,11 +11,6 @@ $host = "http://127.0.0.1:82";
   setRefreshTime(-1);
   itemCount = getPageInfo("itemCount");
   middleItem = Integer(itemCount / 2);
-  if(startitem == "middle")
-    setFocusItemIndex(middleItem);
-  else
-  if(startitem == "right")
-    setFocusItemIndex(middleItem);
   redrawDisplay();
 </onRefresh>
 
@@ -38,7 +33,7 @@ columnCount=5
 		sliding=yes
 		showHeader=no
 		showDefaultInfo=no
-		idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+		idleImageWidthPC="10" idleImageHeightPC="10">
 		
   	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		  <script>getPageInfo("pageTitle");</script>
@@ -137,10 +132,112 @@ columnCount=5
       ret = "false";
       userInput = currentUserInput();
       majorContext = getPageInfo("majorContext");
-      
+
       print("*** majorContext=",majorContext);
       print("*** userInput=",userInput);
-      
+
+      if(userInput == "one" || userInput == "1")
+      {
+        if(itemCount &gt;= 1)
+        {
+          setFocusItemIndex(0);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "two" || userInput == "2")
+      {
+        if(itemCount &gt;= 2)
+        {
+          setFocusItemIndex(1);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "three" || userInput == "3")
+      {
+        if(itemCount &gt;= 3)
+        {
+          setFocusItemIndex(2);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "four" || userInput == "4")
+      {
+        if(itemCount &gt;= 4)
+        {
+          setFocusItemIndex(3);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "five" || userInput == "5")
+      {
+        if(itemCount &gt;= 5)
+        {
+          setFocusItemIndex(4);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "six" || userInput == "6")
+      {
+        if(itemCount &gt;= 6)
+        {
+          setFocusItemIndex(5);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "seven" || userInput == "7")
+      {
+        if(itemCount &gt;= 7)
+        {
+          setFocusItemIndex(6);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "eight" || userInput == "8")
+      {
+        if(itemCount &gt;= 8)
+        {
+          setFocusItemIndex(7);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "nine" || userInput == "9")
+      {
+        if(itemCount &gt;= 9)
+        {
+          setFocusItemIndex(8);
+          redrawDisplay();
+        }
+      }
+      if(userInput == "zero" || userInput == "0")
+      {
+        if(itemCount &gt;= 10)
+        {
+          setFocusItemIndex(9);
+          redrawDisplay();
+        }
+      }
+      else if (userInput == "pagedown" || userInput == "pageup" || userInput == "PD" || userInput == "PG")
+      {
+        itemSize = getPageInfo("itemCount");
+        idx = Integer(getFocusItemIndex());
+        if (userInput == "pagedown")
+        {
+          idx -= -5;
+          if(idx &gt;= itemSize)
+            idx = itemSize-1;
+        }
+        else
+        {
+          idx -= 5;
+          if(idx &lt; 0)
+            idx = 0;
+        }
+        setFocusItemIndex(idx);
+        setItemFocus(idx);
+        redrawDisplay();
+        ret = "true";
+      }
+
       ret;
     </script>
   </onUserInput>
@@ -148,7 +245,7 @@ columnCount=5
 	</mediaDisplay>
 	
 	<item_template>
-		<mediaDisplay  name="threePartsView" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+		<mediaDisplay  name="threePartsView" idleImageWidthPC="10" idleImageHeightPC="10">
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
         <idleImage>image/POPUP_LOADING_02.png</idleImage>
         <idleImage>image/POPUP_LOADING_03.png</idleImage>
@@ -158,6 +255,7 @@ columnCount=5
         <idleImage>image/POPUP_LOADING_07.png</idleImage>
         <idleImage>image/POPUP_LOADING_08.png</idleImage>
 		</mediaDisplay>
+
 	</item_template>
 
 <channel>
@@ -186,7 +284,7 @@ columnCount=5
 	<location>http://youtube.com</location>
 	<search url="<?php echo $host; ?>/scripts/php1/youtube_user.php?query=1,%s" />
 	<image>/scripts/image/youtube.gif</image>
-	<media:thumbnail url="/scripts/image/youtube.gif" />
+	<media:thumbnail url="image/youtube.gif" />
 	<annotation>Căutare videoclipuri postate pe youtube de către....</annotation>
 </item>
 
@@ -210,7 +308,7 @@ columnCount=5
 
 <item>
 <title>peteava.ro</title>
-	<link><?php echo $host; ?>/scripts/clip/peteava.php</link>
+	<link><?php echo $host; ?>/scripts/clip/peteava_main.php</link>
 	<location>http://www.peteava.ro/</location>
 	<image>/scripts/clip/image/peteava.png</image>
 	<media:thumbnail url="/scripts/clip/image/peteava.png" />
@@ -228,10 +326,10 @@ columnCount=5
 
 <item>
 <title>VideoAlegeNet</title>
-	<link><?php echo $host; ?>/scripts/clip/video_alege_net.php</link>
+	<link><?php echo $host; ?>/scripts/clip/php/video_alege_net.php?query=0,http://video.alege.net/c-filme-noi-ro-</link>
 	<location>http://video.alege.net</location>
 	<image>/scripts/image/videoclip.png</image>
-	<media:thumbnail url="/scripts/image/videoclip.png" />
+	<media:thumbnail url="image/videoclip.png" />
 	<annotation>Azi va recomandam urmatoarele filme...</annotation>
 </item>
 
@@ -291,7 +389,7 @@ columnCount=5
 
 <item>
 <title>dump.ro</title>
-	<link><?php echo $host; ?>/scripts/clip/dump.php</link>
+	<link><?php echo $host; ?>/scripts/clip/php/dump.php</link>
 	<location>http://dump.ro/</location>
 	<image>/scripts/clip/image/dump.jpg</image>
 	<media:thumbnail url="/scripts/clip/image/dump.jpg" />
@@ -314,6 +412,27 @@ columnCount=5
 	<image>/scripts/clip/image/bestofyoutube.jpg</image>
 	<media:thumbnail url="/scripts/clip/image/bestofyoutube.jpg" />
 	<annotation>The best video clips from YouTube delivered directly to your iPod</annotation>
+    <mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageWidthPC="10" idleImageHeightPC="10">
+        <idleImage>image/POPUP_LOADING_01.png</idleImage>
+        <idleImage>image/POPUP_LOADING_02.png</idleImage>
+        <idleImage>image/POPUP_LOADING_03.png</idleImage>
+        <idleImage>image/POPUP_LOADING_04.png</idleImage>
+        <idleImage>image/POPUP_LOADING_05.png</idleImage>
+        <idleImage>image/POPUP_LOADING_06.png</idleImage>
+        <idleImage>image/POPUP_LOADING_07.png</idleImage>
+        <idleImage>image/POPUP_LOADING_08.png</idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
+               Best of YouTube
+		</text>
+    </mediaDisplay>
 </item>
 
 <item>
@@ -339,8 +458,8 @@ columnCount=5
     <link>rss_file://../etc/translate/rss/etc-menu-tvigle-index.rss</link>
     <location>http://www.tvigle.ru</location>
     <annotation>Tvigle Media — медиакомпания нового поколения, производитель и дистрибьютор профессионального развлекательного видеоконтента для New Media: интернета, мобильных сетей, цифровых телеканалов.</annotation>
-    <image>/scripts//scripts/image/tvigle.png</image>
-    <media:thumbnail url="/scripts//scripts/image/tvigle.png" />
+    <image>/scripts/image/tvigle.png</image>
+    <media:thumbnail url="/scripts/image/tvigle.png" />
     <mediaDisplay name="onePartView"/>
   </item>
 </channel>

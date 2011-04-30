@@ -1,11 +1,4 @@
 #!/usr/local/bin/Resource/www/cgi-bin/php
-<?php echo "<?xml version='1.0' ?>"; ?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
-
-<channel>
-	<title>dailymotion.com</title>
-	<menu>main menu</menu>
-
 <?php
 function str_between($string, $start, $end){ 
 	$string = " ".$string; $ini = strpos($string,$start); 
@@ -14,16 +7,26 @@ function str_between($string, $start, $end){
 }
 $link = $_GET["file"];
     $html = file_get_contents($link);
-    $t1 = explode('.addVariable("video", "', $html);
-    $t2 = explode('"', $t1[1]);
-    $link = $t2[0];
-    
-    echo '<item>';
-    echo '<title>Link</title>';
-    echo '<link>'.$link.'</link>';
-    echo '<enclosure type="video/flv" url="'.$link.'"/>';	
-    echo '</item>';
-
+    $t1 = explode('sdURL', $html);
+    $sd=urldecode($t1[1]);
+    $t1=explode('"',$sd);
+    $sd=$t1[2];
+    $sd=str_replace("\\","",$sd);
+    $n=explode("?",$sd);
+    $nameSD=$n[0];
+    $nameSD=substr(strrchr($nameSD,"/"),1);
+    $t1 = explode('hqURL', $html);
+    $hd=urldecode($t1[1]);
+    $t1=explode('"',$hd);
+    $hd=$t1[2];
+    $hd=str_replace("\\","",$hd);
+    $n=explode("?",$hd);
+    $nameHD=$n[0];
+    $nameHD=substr(strrchr($nameHD,"/"),1);
+    if ($hd <> "") {
+print $hd;
+    }
+    if (($sd <> "") && ($hd=="")) {
+print $sd;
+    }
 ?>
-</channel>
-</rss>
