@@ -245,7 +245,7 @@
   regionPath = cachePath + "youtubeRegion.dat";
   youtubeRegion = readStringFromFile(regionPath);
   if(youtubeRegion == null)
-    youtubeRegion = "EN";
+    youtubeRegion = " ";
   print(youtubeRegion);
 
   optionsPath = cachePath + "youtubeOptions.dat";

@@ -16,14 +16,14 @@
 </track>
       <track>
          <annotation>Все video: бесплатно смотреть кино, сериалы, программы, мультфильмы и клипы в хорошем качестве без регистрации: Новое video</annotation>
-<meta rel="stream_url">http://www.ivi.ru/rss/new</meta>
-<meta rel="stream_class">rss</meta>
-<meta rel="stream_type">application/xml</meta>
-<meta rel="stream_protocol">http</meta>
          <title>Новое video от ivi.ru</title>
          <image>../etc/translate/rss/image/menu/rss.png</image>
          <location>http://www.ivi.ru/rss/new</location>
       
+<meta rel="stream_url">http://www.ivi.ru/rss/new</meta>
+<meta rel="stream_class">rss</meta>
+<meta rel="stream_type">application/xml</meta>
+<meta rel="stream_protocol">http</meta>
 </track>
       <track>
          <annotation>Смотрите онлайн новые videoклипы популярных российских и зарубежных исполнителей бесплатно и без регистрации. Все музыкальные новинки на music.ivi.ru!</annotation>
@@ -49,26 +49,26 @@
 </track>
 <!--
       <track>
-          <annotation>Все video: бесплатно смотреть кино, сериалы, программы, мультфильмы и клипы в хорошем качестве без регистрации: Популярное video</annotation>
-          <title>Самое популярное video от ivi.ru</title>
-          <image>../etc/translate/rss/image/menu/rss.png</image>
-          <location>http://www.ivi.ru/rss/best</location>
-       
+         <annotation>Все video: бесплатно смотреть кино, сериалы, программы, мультфильмы и клипы в хорошем качестве без регистрации: Популярное video</annotation>
+         <title>Самое популярное video от ivi.ru</title>
+         <image>../etc/translate/rss/image/menu/rss.png</image>
+         <location>http://www.ivi.ru/rss/best</location>
+      
 <meta rel="stream_url">http://www.ivi.ru/rss/best</meta>
 <meta rel="stream_class">rss</meta>
 <meta rel="stream_type">application/xml</meta>
 <meta rel="stream_protocol">http</meta>
- </track>
-       <track>
-          <annotation>Все video: бесплатно смотреть кино, сериалы, программы, мультфильмы и клипы в хорошем качестве без регистрации: Рекомендуемое video</annotation>
-          <title>Рекомендованное video от ivi.ru</title>
-          <image>../etc/translate/rss/image/menu/rss.png</image>
-          <location>http://www.ivi.ru/rss/recommend</location>
+</track>
+      <track>
+         <annotation>Все video: бесплатно смотреть кино, сериалы, программы, мультфильмы и клипы в хорошем качестве без регистрации: Рекомендуемое video</annotation>
+         <title>Рекомендованное video от ivi.ru</title>
+         <image>../etc/translate/rss/image/menu/rss.png</image>
+         <location>http://www.ivi.ru/rss/recommend</location>
 <meta rel="stream_url">http://www.ivi.ru/rss/recommend</meta>
 <meta rel="stream_class">rss</meta>
 <meta rel="stream_type">application/xml</meta>
 <meta rel="stream_protocol">http</meta>
- </track>
+</track>
 -->
       <track>
          <annotation>RSS-лента Tvigle Media</annotation>

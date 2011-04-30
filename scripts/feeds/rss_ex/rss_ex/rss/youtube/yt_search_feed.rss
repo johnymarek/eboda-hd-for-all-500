@@ -206,7 +206,7 @@
   {
     youtubeRegion = readStringFromFile(cachePath + "youtubeRegion.dat");
     if(youtubeRegion == null)
-      youtubeRegion = "EN";
+      youtubeRegion = " ";
     hd = 1;
     username = " ";
   }
@@ -347,20 +347,20 @@
       setRefreshTime(1);
     }
     null;
-   </onClick>
- </submenu>
- 
+  </onClick>
+</submenu>
+
 <search>
  <mediaDisplay name=photoView />
 </search>
 
- <submenu>
-   <title>Search</title>
-   <onClick>
+<submenu>
+  <title>Search</title>
+  <onClick>
 		keyword = doModalRss("rss_file://../etc/translate/rss/youtube/key/keyboard.rss","mediaDisplay","search",0);
- 	  /* keyword= getInput(); */
- 		if (keyword!=null &amp;&amp; keyword!="")
- 		{
+	  /* keyword= getInput(); */
+		if (keyword!=null &amp;&amp; keyword!="")
+		{
       history += 1;
       historyUrl = pushBackStringArray(historyUrl, feedUrl);
       historyTitle = pushBackStringArray(historyTitle, pageTitle);

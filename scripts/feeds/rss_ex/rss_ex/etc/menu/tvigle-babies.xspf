@@ -75,7 +75,8 @@
   <annotation>Первый советский мультфильм-экранизация по одноименной сказке Алана Александра Милна.</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/2130/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
-</track><track>
+</track>
+<track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2144,tvigle/multi</link>
   <title>Сказки</title>
   <annotation>Сказки никогда не теряют своей актуальности.</annotation>
@@ -87,8 +88,7 @@
   <annotation>Забавные истории четырех друзей болтливой Мартышки, застенчивого Слоненка, эксцентричного Попугая и задумчивого Удава.</annotation>
   <image>http://photo.tvigle.ru/resource/rf/cnl/2135/list.jpg?2</image>
   <meta rel="mediaDisplay">photoView</meta>
-</track>
-<track>
+</track><track>
   <link>http://127.0.0.1:84/cgi-bin/translate?app,Channel:2141,tvigle/multi</link>
   <title>Белка и Стрелка</title>
   <annotation>Спасут ли мир две дворняги?</annotation>

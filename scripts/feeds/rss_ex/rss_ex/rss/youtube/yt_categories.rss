@@ -203,7 +203,7 @@
     {
       youtubeRegion = readStringFromFile(cachePath + "youtubeRegion.dat");
       if(youtubeRegion == null)
-        youtubeRegion = "EN";
+        youtubeRegion = " ";
       hd = 1;
       username = " ";
     }
