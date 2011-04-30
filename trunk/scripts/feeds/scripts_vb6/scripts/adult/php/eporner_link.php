@@ -60,7 +60,7 @@ $link = $_GET["file"];
     $link = "http://www.eporner.com/config/".$id;
     $html = file_get_contents($link);
     $link = str_between($html,"<file>","</file>");
-    $link = "http://127.0.0.1:83/scripts/cgi-bin/translate?stream,,".$link;
+    $link = "http://127.0.0.1:83/cgi-bin/translate?stream,,".$link;
     echo '<item>';
     echo '<title>Link</title>';
     echo '<link>'.$link.'</link>';

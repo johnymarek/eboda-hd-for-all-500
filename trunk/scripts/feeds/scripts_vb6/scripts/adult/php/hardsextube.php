@@ -44,7 +44,9 @@ $host = "http://127.0.0.1:82";
   	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		  <script>getPageInfo("pageTitle");</script>
 		</text>
-
+  	<text align="left" offsetXPC="6" offsetYPC="15" widthPC="100" heightPC="4" fontSize="16" backgroundColor="10:105:150" foregroundColor="100:200:255">
+    Apasati 2 pentru download, 3 pentru download manager
+		</text>
   	<text redraw="yes" offsetXPC="85" offsetYPC="12" widthPC="10" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
 		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
 		</text>
@@ -84,7 +86,7 @@ $host = "http://127.0.0.1:82";
   				<script>
   					idx = getQueryItemIndex();
   					focus = getFocusItemIndex();
-  			    if(focus==idx) "16"; else "14";
+  			    if(focus==idx) "14"; else "14";
   				</script>
 				</fontSize>
 			  <backgroundColor>
@@ -132,6 +134,21 @@ if (userInput == "pagedown" || userInput == "pageup")
   redrawDisplay();
   "true";
 }
+if (userInput == "two" || userInput == "2")
+	{
+     showIdle();
+     url=getItemInfo(getFocusItemIndex(),"download");
+     movie=getUrl(url);
+     cancelIdle();
+	 topUrl = "http://127.0.0.1:82/scripts/util/download.cgi?link=" + movie + ";name=" + getItemInfo(getFocusItemIndex(),"name");
+	 dlok = loadXMLFile(topUrl);
+	 "true";
+}
+if (userInput == "three" || userInput == "3")
+   {
+    jumpToLink("destination");
+    "true";
+}
 ret;
 </script>
 </onUserInput>
@@ -151,6 +168,10 @@ ret;
 		</mediaDisplay>
 
 	</item_template>
+<destination>
+	<link>http://127.0.0.1:82/scripts/util/level.php
+	</link>
+</destination>
 <channel>
 	<title>hardsextube.com</title>
 
@@ -164,6 +185,7 @@ if($query) {
 }
 $page1=$page-1;
 $html = file_get_contents("http://www.hardsextube.com/?p=Search[".$search."]/Submission_time/:".$page1);
+//http://www.hardsextube.com/?p=Search[Amateur]/Submission_time/:0
 
 if($page > 1) { ?>
 
@@ -191,7 +213,7 @@ function str_between($string, $start, $end){
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
 	return substr($string,$ini,$len); 
 }
-$videos = explode("<div  id='", $html);
+$videos = explode("<div id=", $html);
 
 unset($videos[0]);
 $videos = array_values($videos);
@@ -207,17 +229,34 @@ foreach($videos as $video) {
     $image = $t2[0];
 
     $t1 = explode('href="', $video);
-    $t2 = explode('>', $t1[2]);
-    $t3 = explode('<',$t2[1]);
+    $t2 = explode('">', $t1[2]);
+    $t3 = explode('</a>',$t2[1]);
     $title = trim($t3[0]);
+    $title = preg_replace("/(<\/?)(\w+)([^>]*>)/e","",$title);
+    if ($title=="") {
+       $title = str_between($video,"<b>","</b>");
+       $title = preg_replace("/(<\/?)(\w+)([^>]*>)/e","",$title);
+    }
 
     $data = trim(str_between($video,'<div style="float: left; width: 70px;">',"<"));
     if ($data <> "") {
     $data = "Durata: ".$data;
-  echo '
-  <item>
-  <title>'.$title.'</title>
-  <link>'.$link.'</link>
+    $name = preg_replace('/[^A-Za-z0-9_]/','_',$title).".flv";
+
+    echo '
+    <item>
+    <title>'.$title.'</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="'.$link.'";
+    movie=getUrl(url);
+    cancelIdle();
+    playItemUrl(movie,10);
+    </script>
+    </onClick>
+    <download>'.$link.'</download>
+    <name>'.$name.'</name>
   <image>'.$image.'</image>
   <annotation>'.$data.'</annotation>
   <media:thumbnail url="'.$image.'" />

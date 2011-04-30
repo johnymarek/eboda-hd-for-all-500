@@ -163,16 +163,16 @@ function str_between($string, $start, $end){
 	return substr($string,$ini,$len); 
 }
 $html = file_get_contents("http://www.hardsextube.com/categories/");
-$img = "/scripts/image/movies.png";
-$videos = explode('<div style="background: url(http://www.hardsextube.com/images/loading-mp.gif', $html);
+$img = "image/movies.png";
+$html = str_between($html,'<div class="catfloat"','</table>');
+$videos = explode('href="', $html);
 unset($videos[0]);
 $videos = array_values($videos);
 foreach($videos as $video) {
-    $t1 = explode('href="', $video);
-    $t2 = explode('"',$t1[3]);
-  	$t3 = explode(">",$t1[3]);
+  	$t3 = explode(">",$video);
   	$t4 = explode("<",$t3[1]);
   	$title = trim($t4[0]);
+  	if ((strpos($video,"?search=") !== false) && ($title <> "") && (strpos($video,"%B9") === false)) {
   	$link = str_replace(" ","%20",$title);
    
   	$link=$host."/scripts/adult/php/hardsextube.php?query=1,".trim(strtolower($link));
