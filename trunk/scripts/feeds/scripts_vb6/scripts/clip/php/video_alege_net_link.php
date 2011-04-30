@@ -1,12 +1,4 @@
 #!/usr/local/bin/Resource/www/cgi-bin/php
-﻿<?php echo "<?xml version='1.0' ?>"; ?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
-
-<channel>
-	<title>Video.Alege.Net</title>
-	<menu>main menu</menu>
-
-
 <?php
 function str_between($string, $start, $end){ 
 	$string = " ".$string; $ini = strpos($string,$start); 
@@ -14,19 +6,7 @@ function str_between($string, $start, $end){
 	return substr($string,$ini,$len); 
 }
 $link = $_GET["file"];
-
-
 $html = file_get_contents($link);
-$link = str_between($html, 'value="file=', '&');
-    echo '<item>';
-    echo '<title>Link</title>';
-    echo '<link>'.$link.'</link>';
-    echo '<enclosure type="video/flv" url="'.$link.'"/>';	
-    echo '</item>';
-
-  
+$link = str_between($html, 'file=', '&');
+print $link;
 ?>
-
-
-</channel>
-</rss>

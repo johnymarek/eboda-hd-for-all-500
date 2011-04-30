@@ -46,6 +46,14 @@ if($query) {
 	showDefaultInfo="no"
 	imageFocus=""
 	sliding="no"
+	popupXPC = "40"
+  popupYPC = "55"
+  popupWidthPC = "22.3"
+  popupHeightPC = "5.5"
+  popupFontSize = "13"
+	popupBorderColor="28:35:51"
+	popupForegroundColor="255:255:255"
+ 	popupBackgroundColor="28:35:51"
 >
 		
   	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
@@ -58,9 +66,12 @@ if($query) {
 
 		<text align="center" redraw="yes" 
           lines="10" fontSize=17
-		      offsetXPC=55 offsetYPC=55 widthPC=40 heightPC=42 
+		      offsetXPC=55 offsetYPC=55 widthPC=40 heightPC=35
 		      backgroundColor=0:0:0 foregroundColor=200:200:200>
 			<script>print(annotation); annotation;</script>
+		</text>
+  	<text  redraw="yes" align="center" offsetXPC="0" offsetYPC="90" widthPC="100" heightPC="8" fontSize="17" backgroundColor="10:105:150" foregroundColor="100:200:255">
+    Apasati 2 pentru download, 3 pentru download manager
 		</text>
 		<image  redraw="yes" offsetXPC=60 offsetYPC=22.5 widthPC=30 heightPC=25>
 		<script>print(img); img;</script>
@@ -112,18 +123,47 @@ if($query) {
 
 		</itemDisplay>
 		
-  <onUserInput>
-    <script>
-      ret = "false";
-      userInput = currentUserInput();
-      majorContext = getPageInfo("majorContext");
-      
-      print("*** majorContext=",majorContext);
-      print("*** userInput=",userInput);
-      
-      ret;
-    </script>
-  </onUserInput>
+<onUserInput>
+<script>
+ret = "false";
+userInput = currentUserInput();
+
+if (userInput == "pagedown" || userInput == "pageup")
+{
+  idx = Integer(getFocusItemIndex());
+  if (userInput == "pagedown")
+  {
+    idx -= -8;
+    if(idx &gt;= itemCount)
+      idx = itemCount-1;
+  }
+  else
+  {
+    idx -= 8;
+    if(idx &lt; 0)
+      idx = 0;
+  }
+
+  print("new idx: "+idx);
+  setFocusItemIndex(idx);
+	setItemFocus(0);
+  redrawDisplay();
+  "true";
+}
+	if( userInput == "two")
+	{
+		topUrl = "http://127.0.0.1:82/scripts/util/download.cgi?link=" + getItemInfo(getFocusItemIndex(),"download") + ";name=" + getItemInfo(getFocusItemIndex(),"name");
+		dlok = loadXMLFile(topUrl);
+		"true";
+	}
+if (userInput == "three" || userInput == "3")
+   {
+    jumpToLink("destination");
+    "true";
+}
+ret;
+</script>
+</onUserInput>
 		
 	</mediaDisplay>
 	
@@ -139,6 +179,10 @@ if($query) {
         <idleImage>image/POPUP_LOADING_08.png</idleImage>
 		</mediaDisplay>
 	</item_template>
+<destination>
+	<link>http://127.0.0.1:82/scripts/util/level.php
+	</link>
+</destination>
 <channel>
 	<title><?php echo $tit; ?></title>
 	<menu>main menu</menu>
@@ -194,10 +238,13 @@ foreach($videos as $video) {
   $title = trim($title);
   if ($title <> "") {
   $link = "http://127.0.0.1:83/cgi-bin/translate?stream,HD:1,http://vimeo.com/".$link;
+  $name = preg_replace('/[^A-Za-z0-9_]/','_',$title).".mp4";
 	echo'
 	<item>
 	<title>'.$title.'</title>
-	<onClick>playItemURL("'.$link.'", 10);</onClick>
+    <onClick>playItemURL("'.$link.'", 10);</onClick>
+    <download>'.$link.'</download>
+    <name>'.$name.'</name>
     <annotation>'.$title.'</annotation>
     <image>'.$image.'</image>
     <media:thumbnail url="'.$image.'" />
@@ -236,10 +283,13 @@ foreach($videos as $video) {
   **/
   if ($title <> "") {
   $link = "http://127.0.0.1:83/cgi-bin/translate?stream,HD:1,http://vimeo.com/".$link;
+  $name = preg_replace('/[^A-Za-z0-9_]/','_',$title).".mp4";
 	echo'
 	<item>
 	<title>'.$title.'</title>
-	<onClick>playItemURL("'.$link.'", 10);</onClick>
+    <onClick>playItemURL("'.$link.'", 10);</onClick>
+    <download>'.$link.'</download>
+    <name>'.$name.'</name>
     <annotation>'.$title.'</annotation>
     <image>'.$image.'</image>
     <media:thumbnail url="'.$image.'" />
