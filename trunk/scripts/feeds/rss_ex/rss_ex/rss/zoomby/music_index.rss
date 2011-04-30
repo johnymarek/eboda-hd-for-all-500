@@ -181,7 +181,7 @@
   writeStringToFile(storagePath, arr);
 
   pageLogo = "../etc/translate/rss/image/zoomby.jpg";
-  pageTitle = "ZOOMBY.RU/MUSIC"
+  pageTitle = "ZOOMBY.RU/MUSIC";
 
 </onEnter>
 

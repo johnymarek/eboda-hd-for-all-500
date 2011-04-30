@@ -23,16 +23,10 @@ local DATAPATH=$BASEPATH/app/music_ivi
 
 local PAGEFILE=$CACHEPATH/music_ivi.page
 local PAGEXML=$CACHEPATH/music_ivi.xml
-echo $DATAPATH >$debugfile
-echo $PAGEFILE >>$debugfile
-echo $PAGEXML >>$debugfile
-echo $arg_url >>$debugfile
 
 $MSDL -q -o "$PAGEFILE" -p http --useragent "$USERAGENT" "$arg_opt"
   if [ -f "$PAGEFILE" ]; then
    local pages=`grep "из \&nbsp;<strong>" $PAGEFILE | sed '1d' | sed 's/.*<strong>//;s/<\/strong>.*$//'`
-
-echo pages=$pages >>$debugfile
 
 cat > $PAGEXML <<EOF
 <?xml version="1.0" encoding="utf-8"?>

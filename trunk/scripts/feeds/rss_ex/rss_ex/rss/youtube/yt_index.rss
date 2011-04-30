@@ -184,13 +184,13 @@
 		<media:thumbnail url="../etc/translate/rss/image/youtube.gif" width="120" height="90" />
 
 		<item>
-			<title>Recently featured</title>
+			<title>Recently Featured</title>
 			<onClick>
         optionsPath = getStoragePath("key") + "youtubeOptions.dat";
         optionsArray = readStringFromFile(optionsPath);
         if(optionsArray == null)
         {
-          youtubeRegion = "EN";
+          youtubeRegion = " ";
         }
         else
         {
@@ -200,9 +200,8 @@
         if(youtubeRegion != null &amp;&amp; youtubeRegion != " " &amp;&amp; youtubeRegion != "")
         {
           youtubeApiBaseURL += youtubeRegion;
-          youtubeApiBaseURL += "/";
         }
-        url = youtubeApiBaseURL+"recently_featured?";
+        url = youtubeApiBaseURL+"/recently_featured?";
         title = getItemInfo(getFocusItemIndex(), "title");
         
         arr = null;
@@ -314,7 +313,7 @@
           optionsArray = readStringFromFile(optionsPath);
           if(optionsArray == null)
           {
-            youtubeRegion = "EN";
+            youtubeRegion = " ";
           }
           else
           {
