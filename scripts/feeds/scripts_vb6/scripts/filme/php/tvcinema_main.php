@@ -152,34 +152,67 @@ ret;
 <channel>
 	<title>tvcinema.info</title>
 	<menu>main menu</menu>
-
 <?php
+$query = $_GET["query"];
+if($query) {
+   $queryArr = explode(',', $query);
+   $page = $queryArr[0];
+   $search = $queryArr[1];
+}
+//http://tvcinema.info/tv-shows/2
+if($page) {
+	$html = file_get_contents("http://tvcinema.info/tv-shows/".$page);
+} else {
+	$page = 1;
+    $html = file_get_contents("http://tvcinema.info/tv-shows/1");
+}
+
+if($page > 1) { ?>
+
+<item>
+<?php
+$sThisFile = 'http://127.0.0.1:82'.$_SERVER['SCRIPT_NAME'];
+$url = $sThisFile."?query=".($page-1).",";
+if($search) {
+  $url = $url.$search;
+}
+?>
+<title>Previous Page</title>
+<link><?php echo $url;?></link>
+<annotation>Pagina anterioara</annotation>
+<image>/scripts/image/left.jpg</image>
+<mediaDisplay name="threePartsView"/>
+</item>
+
+
+<?php } ?>
+<?php
+
 function str_between($string, $start, $end){ 
 	$string = " ".$string; $ini = strpos($string,$start); 
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
 	return substr($string,$ini,$len); 
 }
 $host = "http://127.0.0.1:82";
-$html = file_get_contents("http://tvcinema.info/tv-shows");
-$videos = explode('<li class="post-', $html);
+$videos = explode('<h2><a href', $html);
 
 unset($videos[0]);
 $videos = array_values($videos);
 
 foreach($videos as $video) {
-    $t1=explode('href="',$video);
+    $t1=explode('="',$video);
     $t2=explode('"',$t1[1]);
     $link=$t2[0];
 
-    $t1 = explode('src="', $video);
-    $t2 = explode('"', $t1[1]);
+    $t3 = explode('>', $t1[1]);
+    $t4 = explode('<', $t3[1]);
+    $title = trim($t4[0]);
+
+    $t1 = explode('src=', $video);
+    $t2 = explode('&', $t1[2]);
     $image = $t2[0];
-
-    $t1 = explode('title="', $video);
-    $t2 = explode('"', $t1[1]);
-    $title = trim($t2[0]);
-
-    $data = trim(str_between($video,'<div class="entry-summary" style="height:150px;">','</div>'));
+    
+    $data = trim(str_between($video,'<p>','</p>'));
     $data = preg_replace("/(<\/?)([^>]*>)/e","",$data);
     $data = str_replace("&nbsp;","",$data);
     $data = str_replace(">","",$data);
@@ -211,6 +244,19 @@ foreach($videos as $video) {
 }
 
 ?>
-
+<item>
+<?php
+$sThisFile = 'http://127.0.0.1:82'.$_SERVER['SCRIPT_NAME'];
+$url = $sThisFile."?query=".($page+1).",";
+if($search) {
+  $url = $url.$search;
+}
+?>
+<title>Next Page</title>
+<link><?php echo $url;?></link>
+<annotation>Pagina urmatoare</annotation>
+<image>/scripts/image/right.jpg</image>
+<mediaDisplay name="threePartsView"/>
+</item>
 </channel>
 </rss>

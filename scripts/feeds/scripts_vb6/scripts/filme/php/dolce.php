@@ -175,13 +175,16 @@ if($page) {
   $page = 1;
 	$html = file_get_contents("http://www.dolcetv.ro/filme/index?p=1&s=1&&f=1");
 }
-$baseurl = "http://127.0.0.1:83/scripts/cgi-bin/translate?stream,Content-type:video/mp4,";
+$baseurl = "http://127.0.0.1:83/cgi-bin/translate?stream,Content-type:video/mp4,";
 $v1="rtmpe://fms8.mediadirect.ro:80/mediapro?id=10668839&publisher=2/mp4:";
 $v2="rtmpe://fms8.mediadirect.ro:80/cinemateca?id=10668839&publisher=2/mp4:";
+$v2="rtmpe://fms1.mediadirect.ro:1935/cinemateca?id=10668839&publisher=2/mp4:";
 
 //http://www.dolcetv.ro/filme/index?p=1&s=1&&f=1
 //rtmpe://fms8.mediadirect.ro:80/mediapro?id=10668839&publisher=2/mp4:The_Bells_of_Cockaigne_480p.mp4
 //rtmpe://fms8.mediadirect.ro:80/cinemateca?id=10668839&publisher=2/mp4:Bells_of_Cockaigne.mp4
+//rtmpe://fms1.mediadirect.ro:1935/cinemateca?id=10668839&publisher=2/mp4:Target_of_an_Assassin.mp4
+//rtmpe://fms8.mediadirect.ro:80/cinemateca?id=10668839&publisher=2/mp4:Target_of_an_Assassin.mp4
 if($page > 1) { ?>
 
 <item>
@@ -215,7 +218,7 @@ $videos = array_values($videos);
 
 foreach($videos as $video) {
 
-    $t1 = explode('alt="', $video);
+    $t1 = explode('src="', $video);
     $t2 = explode('"', $t1[1]);
     $image = $t2[0];
     //la mare ghici.....

@@ -52,7 +52,7 @@ $host = "http://127.0.0.1:82";
 		  <script>print(annotation); annotation;</script>
 		</text>
 		<image  redraw="yes" offsetXPC=60 offsetYPC=35 widthPC=30 heightPC=30>
-		/scripts/image/movies.png
+		image/movies.png
 		</image>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_01.png </idleImage>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_02.png </idleImage>
@@ -172,7 +172,7 @@ ret;
 
 <item>
 <title>filmehd.net</title>
-<link><?php echo $host; ?>/scripts/filme/php/filmehd_main.php</link>
+<link><?php echo $host; ?>/scripts/filme/php/filmehd.php?query=,http://filmehd.net</link>
 <annotation>http://filmehd.net/</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
@@ -206,8 +206,8 @@ ret;
 </item>
 
 <item>
-<title>onlythefilm.com</title>
-<link><?php echo $host; ?>/scripts/filme/php/onlythefilm.php</link>
+<title>themoviesbest.com</title>
+<link><?php echo $host; ?>/scripts/filme/php/themoviesbest_main.php</link>
 <annotation>http://www.onlythefilm.com</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
@@ -225,21 +225,21 @@ ret;
 <annotation>http://divxonline.biz</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
-
+<!--
 <item>
 <title>www.filme-online.ucoz.com</title>
 <link><?php echo $host; ?>/scripts/filme/php/ucoz_main.php</link>
 <annotation>http://www.filme-online.ucoz.com/</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
-
+-->
 <item>
 <title>Filme Romanesti - filmele-copilariei.blogspot.com</title>
 <link><?php echo $host; ?>/scripts/filme/php/filmele-copilariei_main.php</link>
 <annotation>http://filmele-copilariei.blogspot.com/</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
-
+<!--
 <item>
 <title>Filme Romanesti - blip.tv</title>
 <link>http://filmeromanesti.blip.tv/rss</link>
@@ -285,7 +285,7 @@ ret;
 <annotation>http://www.vezifilme.ro/</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
-<!--
+
 <item>
 <title>www.filmeonline24.com</title>
 <link><?php echo $host; ?>/scripts/filme/php/filmeonline24_main.php</link>
@@ -299,14 +299,14 @@ ret;
 <annotation>http://www.crutu-razvan.ro</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
-
+<!--
 <item>
 <title>DolceTv - Filme Gratis (fara subtitrare)</title>
 <link><?php echo $host; ?>/scripts/filme/php/dolce.php</link>
 <annotation>http://www.dolcetv.ro</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
-
+-->
 <item>
 <title>documentare.org - filme si seriale documentare</title>
 <link><?php echo $host; ?>/scripts/filme/php/documentare_main.php</link>

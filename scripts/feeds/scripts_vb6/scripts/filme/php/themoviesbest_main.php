@@ -52,7 +52,7 @@ $host = "http://127.0.0.1:82";
 		  <script>print(annotation); annotation;</script>
 		</text>
 		<image  redraw="yes" offsetXPC=60 offsetYPC=35 widthPC=30 heightPC=30>
-  http://www.jocuricubarbie.info/imagini/menu/jocuri-barbie-desene-animate-over.jpg
+		image/movies.png
 		</image>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_01.png </idleImage>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_02.png </idleImage>
@@ -147,51 +147,38 @@ ret;
 
 	</item_template>
 <channel>
-	<title>Desene animate</title>
+	<title>themoviesbest.com - categorii</title>
 	<menu>main menu</menu>
-
-
 <?php
 function str_between($string, $start, $end){ 
 	$string = " ".$string; $ini = strpos($string,$start); 
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
 	return substr($string,$ini,$len); 
 }
-$html = file_get_contents("http://www.jocuricubarbie.info/desene_animate.html");
-	echo '
-	<item>
-		<title>Povesti</title>
-		<link>'.$host.'/scripts/filme/php/jocuricubarbie_p.php</link>
-		<annotation>Povesti... (audio)</annotation>
-		<mediaDisplay name="threePartsView"/>
-	</item>
-	';
-$html = str_between($html,'<ul class="Box">','</div');
-$videos = explode('<li', $html);
+$host = "http://127.0.0.1:82";
+$html = file_get_contents("http://themoviesbest.com/");
+$videos = explode('li class="cat-item', $html);
 unset($videos[0]);
 $videos = array_values($videos);
-
-foreach($videos as $video) {		
-    $t1 = explode('href="', $video);
-    $t2 = explode('"', $t1[1]);
-    $link = $t2[0];
-    $t1 = explode('title="', $video);
-    $t2 = explode('"', $t1[1]);
-    $title = $t2[0];
-		if ($link <> "") {
-			$link = $host."/scripts/filme/php/jocuricubarbie.php?query=,".$link;
-    	echo '
-    	<item>
-    		<title>'.$title.'</title>
-    		<link>'.$link.'</link>
-				<annotation>'.$title.'</annotation>
-				<mediaDisplay name="threePartsView"/>
-    	</item>
-    	';
-    }
+foreach($videos as $video) {
+	$t1 = explode('href="',$video);
+	$t2 = explode('"',$t1[1]);
+	$link = trim($t2[0]);
+	$link = $host."/scripts/filme/php/themoviesbest.php?query=,".$link;
+	
+	$t3 = explode(">",$t1[1]);
+	$t4 = explode("<",$t3[1]);
+	$title = trim($t4[0]);
+	
+	echo '
+	<item>
+	<title>'.$title.'</title>
+	<link>'.$link.'</link>
+	<annotation>'.$title.'</annotation>
+	<mediaDisplay name="threePartsView"/>
+	</item>
+	';
 }
-
 ?>
-
 </channel>
 </rss>

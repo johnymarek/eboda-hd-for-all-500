@@ -1,6 +1,7 @@
 <?php echo "<?xml version='1.0' encoding='UTF8' ?>"; ?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rss version="2.0">
 <onEnter>
+  startitem = "middle";
   setRefreshTime(1);
 </onEnter>
 
@@ -8,32 +9,36 @@
   setRefreshTime(-1);
   itemCount = getPageInfo("itemCount");
 </onRefresh>
-<mediaDisplay name="photoView"
-	fontSize="16"
-	rowCount="7"
-	columnCount="3"
-	sideColorBottom="10:105:150"
-	sideColorTop="10:105:150"
+
+<mediaDisplay name="threePartsView"
+	sideLeftWidthPC="0"
+	sideRightWidthPC="0"
+
+	headerImageWidthPC="0"
+	selectMenuOnRight="no"
+	autoSelectMenu="no"
+	autoSelectItem="no"
+	itemImageHeightPC="0"
+	itemImageWidthPC="0"
+	itemXPC="8"
 	itemYPC="25"
-	itemXPC="5"
-	itemGapXPC="1"
-	itemGapYPC="1"
-	rollItems="yes"
-	drawItemText="yes"
-	itemOffsetXPC="5"
-	itemImageWidthPC="0.1"
-	itemImageHeightPC="0.1"
-	imageBorderPC="1.5"
-	forceFocusOnItem="yes"
-	itemCornerRounding="yes"
-	idleImageWidthPC="10"
-	idleImageHeightPC="10"
-	sideTopHeightPC=20
-	bottomYPC=80
-	sliding=yes
-	showHeader=no
-	showDefaultInfo=no
-	>
+	itemWidthPC="35"
+	itemHeightPC="8"
+	capXPC="8"
+	capYPC="25"
+	capWidthPC="35"
+	capHeightPC="64"
+	itemBackgroundColor="0:0:0"
+	itemPerPage="8"
+  itemGap="0"
+	bottomYPC="90"
+	backgroundColor="0:0:0"
+	showHeader="no"
+	showDefaultInfo="no"
+	imageFocus=""
+	sliding="no"
+>
+
   	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		  <script>getPageInfo("pageTitle");</script>
 		</text>
@@ -41,27 +46,58 @@
   	<text redraw="yes" offsetXPC="85" offsetYPC="12" widthPC="10" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
 		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
 		</text>
-  	<text  redraw="yes" align="center" offsetXPC="0" offsetYPC="85" widthPC="100" heightPC="10" fontSize="17" backgroundColor="10:105:150" foregroundColor="100:200:255">
-		  <script>print(annotation); annotation;</script>
+
+		<text align="justify" redraw="yes"
+          lines="18" fontSize=17
+		      offsetXPC=45 offsetYPC=25 widthPC=50 heightPC=72
+		      backgroundColor=0:0:0 foregroundColor=200:200:200>
+			<script>print(annotation); annotation;</script>
 		</text>
-        <idleImage>image/POPUP_LOADING_01.png</idleImage>
-        <idleImage>image/POPUP_LOADING_02.png</idleImage>
-        <idleImage>image/POPUP_LOADING_03.png</idleImage>
-        <idleImage>image/POPUP_LOADING_04.png</idleImage>
-        <idleImage>image/POPUP_LOADING_05.png</idleImage>
-        <idleImage>image/POPUP_LOADING_06.png</idleImage>
-        <idleImage>image/POPUP_LOADING_07.png</idleImage>
-        <idleImage>image/POPUP_LOADING_08.png</idleImage>
+		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_01.png </idleImage>
+		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_02.png </idleImage>
+		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_03.png </idleImage>
+		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_04.png </idleImage>
+		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_05.png </idleImage>
+		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_06.png </idleImage>
+		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_07.png </idleImage>
+		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_08.png </idleImage>
+
 		<itemDisplay>
+			<text align="left" lines="1" offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
 				<script>
 					idx = getQueryItemIndex();
 					focus = getFocusItemIndex();
-					if(focus==idx) 
+					if(focus==idx)
 					{
-					  annotation = getItemInfo(idx, "title");
+					  annotation = getItemInfo(idx, "annotation");
 					}
+					getItemInfo(idx, "title");
 				</script>
+				<fontSize>
+  				<script>
+  					idx = getQueryItemIndex();
+  					focus = getFocusItemIndex();
+  			    if(focus==idx) "14"; else "14";
+  				</script>
+				</fontSize>
+			  <backgroundColor>
+  				<script>
+  					idx = getQueryItemIndex();
+  					focus = getFocusItemIndex();
+  			    if(focus==idx) "10:80:120"; else "-1:-1:-1";
+  				</script>
+			  </backgroundColor>
+			  <foregroundColor>
+  				<script>
+  					idx = getQueryItemIndex();
+  					focus = getFocusItemIndex();
+  			    if(focus==idx) "255:255:255"; else "140:140:140";
+  				</script>
+			  </foregroundColor>
+			</text>
+
 		</itemDisplay>
+
 <onUserInput>
 <script>
 ret = "false";
@@ -72,17 +108,17 @@ if (userInput == "pagedown" || userInput == "pageup")
   idx = Integer(getFocusItemIndex());
   if (userInput == "pagedown")
   {
-    idx -= -21;
-    if(idx &gt;= itemSize)
-      idx = itemSize-1;
+    idx -= -8;
+    if(idx &gt;= itemCount)
+      idx = itemCount-1;
   }
   else
   {
-    idx -= 21;
+    idx -= 8;
     if(idx &lt; 0)
       idx = 0;
   }
-  
+
   print("new idx: "+idx);
   setFocusItemIndex(idx);
 	setItemFocus(0);
@@ -92,8 +128,21 @@ if (userInput == "pagedown" || userInput == "pageup")
 ret;
 </script>
 </onUserInput>
-      		
-</mediaDisplay>
+
+	</mediaDisplay>
+
+	<item_template>
+		<mediaDisplay  name="threePartsView" idleImageWidthPC="10" idleImageHeightPC="10">
+        <idleImage>image/POPUP_LOADING_01.png</idleImage>
+        <idleImage>image/POPUP_LOADING_02.png</idleImage>
+        <idleImage>image/POPUP_LOADING_03.png</idleImage>
+        <idleImage>image/POPUP_LOADING_04.png</idleImage>
+        <idleImage>image/POPUP_LOADING_05.png</idleImage>
+        <idleImage>image/POPUP_LOADING_06.png</idleImage>
+        <idleImage>image/POPUP_LOADING_07.png</idleImage>
+        <idleImage>image/POPUP_LOADING_08.png</idleImage>
+		</mediaDisplay>
+	</item_template>
 <channel>
 	<title>SerialePe.Net</title>
 	<menu>main menu</menu>
@@ -167,7 +216,9 @@ foreach($videos as $video) {
 	  <item>
 	  <title>'.$title.'</title>
 	  <link>'.$link.'</link>
+	  <annotation>'.$description.'</annotation>
 	  <media:thumbnail url="'.$img.'" />
+	  <mediaDisplay name="photoView"/>
 	  </item>
 	  ';
 	  $n++;
@@ -175,10 +226,13 @@ foreach($videos as $video) {
 }
 if ($n==0) {
 $link = "/scripts/filme/php/serialepe.rss";
+$description="Pentru a accesa acest site trebuie sa aveti un cont pe serialepe.net (e gratis). Completati user si pass in acest formular si apoi apasati return, return si apoi accesati din nou aceasta pagina. Daca user si pass sunt corecte veti vedea lista serialelor.";
+
 	  echo '
 	  <item>
 	  <title>Logon</title>
 	  <link>'.$link.'</link>
+	  <annotation>'.$description.'</annotation>
 	  <media:thumbnail url="'.$img.'" />
 	  <mediaDisplay name="onePartView" />
 	  </item>

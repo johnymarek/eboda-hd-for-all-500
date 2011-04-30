@@ -160,9 +160,9 @@ if($query) {
 //http://www.serialeonline.biz/seriale-online/1
 //http://www.serialeonline.biz/seriale-online/1
 if ($page==1) {
-  $html = file_get_contents("http://www.serialeonline.biz/seriale-online");
+  $html = file_get_contents("http://serialeonline.biz/seriale-online");
 } else {
-  $html = file_get_contents("http://www.serialeonline.biz/seriale-online/".$page);
+  $html = file_get_contents("http://serialeonline.biz/seriale-online/".$page);
 }
 if($page > 1) { ?>
 
@@ -192,7 +192,7 @@ function str_between($string, $start, $end){
 }
 $html = str_between($html,"Imagine serial","</tbody>");
 $videos = explode('<td>', $html);
-
+//http://serialeonline.biz/online/40141/Tabra-lui-Lazlo---Sfere-de-brnz
 unset($videos[0]);
 $videos = array_values($videos);
 
@@ -200,6 +200,7 @@ foreach($videos as $video) {
     $t1 = explode('href="', $video);
     $t2 = explode('"', $t1[1]);
     $link = $t2[0];
+    $link=str_replace("www.","",$link);
 
     $t1 = explode(' src="', $video);
     $t2 = explode('"', $t1[1]);

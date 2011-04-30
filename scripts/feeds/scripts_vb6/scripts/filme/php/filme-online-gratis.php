@@ -103,18 +103,36 @@
 
 		</itemDisplay>
 		
-  <onUserInput>
-    <script>
-      ret = "false";
-      userInput = currentUserInput();
-      majorContext = getPageInfo("majorContext");
-      
-      print("*** majorContext=",majorContext);
-      print("*** userInput=",userInput);
-      
-      ret;
-    </script>
-  </onUserInput>
+<onUserInput>
+<script>
+ret = "false";
+userInput = currentUserInput();
+
+if (userInput == "pagedown" || userInput == "pageup")
+{
+  idx = Integer(getFocusItemIndex());
+  if (userInput == "pagedown")
+  {
+    idx -= -8;
+    if(idx &gt;= itemCount)
+      idx = itemCount-1;
+  }
+  else
+  {
+    idx -= 8;
+    if(idx &lt; 0)
+      idx = 0;
+  }
+
+  print("new idx: "+idx);
+  setFocusItemIndex(idx);
+	setItemFocus(0);
+  redrawDisplay();
+  "true";
+}
+ret;
+</script>
+</onUserInput>
 		
 	</mediaDisplay>
 	
@@ -186,9 +204,14 @@ $videos = array_values($videos);
 
 foreach($videos as $video) {
   $t1 = explode('href="', $video);
-  $t2 = explode('?', $t1[1]);
-  $t3 = explode('"',$t2[1]);
-  $link = $t3[0];
+  if (strpos($t1[1],"?") !==false) {
+     $t2 = explode('?', $t1[1]);
+     $t3 = explode('"',$t2[1]);
+     $link = $t3[0];
+  } else {
+    $t2=explode('"',$t1[1]);
+    $link=$t2[0];
+  }
 
   $t1 = explode('src="', $video);
   $t2 = explode('"', $t1[1]);

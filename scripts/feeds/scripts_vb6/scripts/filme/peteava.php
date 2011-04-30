@@ -52,7 +52,7 @@ $host = "http://127.0.0.1:82";
 		  <script>print(annotation); annotation;</script>
 		</text>
 		<image  redraw="yes" offsetXPC=60 offsetYPC=35 widthPC=30 heightPC=30>
-		/scripts/image/movies.png
+		image/movies.png
 		</image>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_01.png </idleImage>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_02.png </idleImage>
@@ -100,18 +100,36 @@ $host = "http://127.0.0.1:82";
 
 		</itemDisplay>
 		
-  <onUserInput>
-    <script>
-      ret = "false";
-      userInput = currentUserInput();
-      majorContext = getPageInfo("majorContext");
-      
-      print("*** majorContext=",majorContext);
-      print("*** userInput=",userInput);
-      
-      ret;
-    </script>
-  </onUserInput>
+<onUserInput>
+<script>
+ret = "false";
+userInput = currentUserInput();
+
+if (userInput == "pagedown" || userInput == "pageup")
+{
+  idx = Integer(getFocusItemIndex());
+  if (userInput == "pagedown")
+  {
+    idx -= -8;
+    if(idx &gt;= itemCount)
+      idx = itemCount-1;
+  }
+  else
+  {
+    idx -= 8;
+    if(idx &lt; 0)
+      idx = 0;
+  }
+
+  print("new idx: "+idx);
+  setFocusItemIndex(idx);
+	setItemFocus(0);
+  redrawDisplay();
+  "true";
+}
+ret;
+</script>
+</onUserInput>
 		
 	</mediaDisplay>
 	
@@ -141,43 +159,43 @@ $host = "http://127.0.0.1:82";
 
 	<item>
 		<title>Filme</title>
-	<link><?php echo $host; ?>/scripts/filme/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/101/pagina/</link>
+	<link><?php echo $host; ?>/scripts/filme/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/101/pagina/,Filme</link>
 	<annotation>Filme</annotation>
 	</item>
 	
 	<item>
 		<title>Seriale</title>
-	<link><?php echo $host; ?>/scripts/filme/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/104/pagina/</link>
+	<link><?php echo $host; ?>/scripts/filme/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/104/pagina/,Seriale</link>
 	<annotation>Seriale</annotation>
 	</item>
 	
 	<item>
 		<title>Animaţie</title>
-	<link><?php echo $host; ?>/scripts/filme/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/102/pagina/</link>
+	<link><?php echo $host; ?>/scripts/filme/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/102/pagina/,Animatie</link>
 	<annotation>Animaţie</annotation>
 	</item>
 	
 		<item>
 		<title>Scurt-metraj</title>
-	<link><?php echo $host; ?>/scripts/filme/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/103/pagina/</link>
+	<link><?php echo $host; ?>/scripts/filme/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/103/pagina/,Scurt-metraj</link>
 	<annotation>Scurt-metraj</annotation>
 	</item>
 	
 		<item>
 		<title>TV</title>
-	<link><?php echo $host; ?>/scripts/filme/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/105/pagina/</link>
+	<link><?php echo $host; ?>/scripts/filme/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/105/pagina/,TV</link>
 	<annotation>TV</annotation>
 	</item>
 
 		<item>
 		<title>Muzică</title>
-	<link><?php echo $host; ?>/scripts/filme/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/100/pagina/</link>
+	<link><?php echo $host; ?>/scripts/filme/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/100/pagina/,Muzica</link>
 	<annotation>Muzică</annotation>
 	</item>
 
 		<item>
 		<title>Toate</title>
-	<link><?php echo $host; ?>/scripts/filme/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/1/pagina/</link>
+	<link><?php echo $host; ?>/scripts/filme/php/peteava.php?query=1,http://www.peteava.ro/browse/categoria/1/pagina/,Toate</link>
 	<annotation>Toate</annotation>
 	</item>
 	

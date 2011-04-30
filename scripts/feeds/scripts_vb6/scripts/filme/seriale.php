@@ -153,7 +153,7 @@ ret;
 <title>www.serialepe.net</title>
 <link><?php echo $host; ?>/scripts/filme/php/serialepe_main.php</link>
 <annotation>http://www.serialepe.net/p/seriale-online-gratis-subtitrate.html</annotation>
-<mediaDisplay name="photoView"/>
+<mediaDisplay name="threePartsView"/>
 </item>
 
 <item>
@@ -211,18 +211,25 @@ ret;
 <annotation>http://www.990.ro</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
-
+<!--
 <item>
 <title>serialeonline.biz</title>
 <link><?php echo $host; ?>/scripts/filme/php/serialeonline_biz.php?query=1,</link>
 <annotation>http://serialeonline.biz/seriale-online</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
+-->
+<item>
+<title>seriale.doi10.com</title>
+<link><?php echo $host; ?>/scripts/filme/php/seriale_doi10_main.php</link>
+<annotation>http://seriale.doi10.com/seriale</annotation>
+<mediaDisplay name="threePartsView"/>
+</item>
 
 <item>
-<title>tvcinema.info (fara subtitrare)</title>
-<link><?php echo $host; ?>/scripts/filme/php/tvcinema_main.php</link>
-<annotation>http://tvcinema.info/tv-shows</annotation>
+<title>www.serialetvonline.info</title>
+<link><?php echo $host; ?>/scripts/filme/php/serialetvonline_info_main.php</link>
+<annotation>http://www.serialetvonline.info/tv-shows</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
 
@@ -233,6 +240,13 @@ ret;
 <mediaDisplay name="threePartsView"/>
 </item>
 <!--
+<item>
+<title>tvcinema.info (fara subtitrare)</title>
+<link><?php echo $host; ?>/scripts/filme/php/tvcinema_main.php</link>
+<annotation>http://tvcinema.info/tv-shows</annotation>
+<mediaDisplay name="threePartsView"/>
+</item>
+
 <item>
 <title>10starmovies.com - (fara subtitrare)</title>
 <link><?php echo $host; ?>/scripts/filme/php/10starmovies_main.php</link>

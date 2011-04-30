@@ -193,6 +193,5 @@ foreach($videos as $video) {
   </item>';
 }
 ?>
-
 </channel>
 </rss>

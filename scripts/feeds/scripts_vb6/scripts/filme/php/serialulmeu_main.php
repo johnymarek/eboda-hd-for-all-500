@@ -155,10 +155,7 @@ ret;
 <channel>
 	<title>www.serialulmeu.ro</title>
 	<menu>main menu</menu>
-<item>
-<title>Episoade adaugate recent</title>
-<link><?php echo $host; ?>/scripts/filme/php/serialulmeu_noi.php</link>
-</item>
+
 <?php
 function str_between($string, $start, $end){
 	$string = " ".$string; $ini = strpos($string,$start);

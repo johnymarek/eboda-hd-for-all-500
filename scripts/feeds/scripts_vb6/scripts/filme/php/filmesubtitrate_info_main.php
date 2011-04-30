@@ -117,6 +117,9 @@ function str_title($string){
 	return $string;
 }
 $host = "http://127.0.0.1:82";
+//http://www.filmesubtitrate.info/seriale-online-subtitrate-in-romana
+//http://www.seriale.filmesubtitrate.info/p/seriale-online-subtitrate-in-romana.html
+//
 $html = file_get_contents("http://www.seriale.filmesubtitrate.info/p/seriale-online-subtitrate-in-romana.html");
 $html = str_between($html,'<table border="0" cellpadding="2" cellspacing="0" style="width: 370px;">','</table');
 $cats = explode('<td valign="top" width="370">', $html);

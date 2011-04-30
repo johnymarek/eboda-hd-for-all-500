@@ -52,7 +52,7 @@ $host = "http://127.0.0.1:82";
 		  <script>print(annotation); annotation;</script>
 		</text>
 		<image  redraw="yes" offsetXPC=60 offsetYPC=35 widthPC=30 heightPC=30>
-		/scripts/image/movies.png
+		image/movies.png
 		</image>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_01.png </idleImage>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_02.png </idleImage>
@@ -100,18 +100,36 @@ $host = "http://127.0.0.1:82";
 
 		</itemDisplay>
 		
-  <onUserInput>
-    <script>
-      ret = "false";
-      userInput = currentUserInput();
-      majorContext = getPageInfo("majorContext");
-      
-      print("*** majorContext=",majorContext);
-      print("*** userInput=",userInput);
-      
-      ret;
-    </script>
-  </onUserInput>
+<onUserInput>
+<script>
+ret = "false";
+userInput = currentUserInput();
+
+if (userInput == "pagedown" || userInput == "pageup")
+{
+  idx = Integer(getFocusItemIndex());
+  if (userInput == "pagedown")
+  {
+    idx -= -8;
+    if(idx &gt;= itemCount)
+      idx = itemCount-1;
+  }
+  else
+  {
+    idx -= 8;
+    if(idx &lt; 0)
+      idx = 0;
+  }
+
+  print("new idx: "+idx);
+  setFocusItemIndex(idx);
+	setItemFocus(0);
+  redrawDisplay();
+  "true";
+}
+ret;
+</script>
+</onUserInput>
 		
 	</mediaDisplay>
 	
@@ -135,37 +153,37 @@ $host = "http://127.0.0.1:82";
 <item>
 <title>Filme</title>
 <link><?php echo $host; ?>/scripts/filme/php/990_filme.php</link>
-<media:thumbnail url="/scripts/image/movies.png" />
+<media:thumbnail url="image/movies.png" />
 </item>
 
 <item>
 <title>Filme - dupa ani</title>
 <link><?php echo $host; ?>/scripts/filme/php/990_filme1.php</link>
-<media:thumbnail url="/scripts/image/movies.png" />
+<media:thumbnail url="image/movies.png" />
 </item>
 
 <item>
 <title>Filme - dupa gen</title>
 <link><?php echo $host; ?>/scripts/filme/php/990_filme2.php</link>
-<media:thumbnail url="/scripts/image/movies.png" />
+<media:thumbnail url="image/movies.png" />
 </item>
 
 <item>
 <title>Seriale</title>
 <link><?php echo $host; ?>/scripts/filme/php/990_seriale_main.php</link>
-<media:thumbnail url="/scripts/image/movies.png" />
+<media:thumbnail url="image/movies.png" />
 </item>
 
 <item>
 <title>Special</title>
 <link><?php echo $host; ?>/scripts/filme/php/990_special_main.php</link>
-<media:thumbnail url="/scripts/image/movies.png" />
+<media:thumbnail url="image/movies.png" />
 </item>
 
 <item>
 <title>Desene animate</title>
 <link><?php echo $host; ?>/scripts/filme/php/990_desene_main.php</link>
-<media:thumbnail url="/scripts/image/movies.png" />
+<media:thumbnail url="image/movies.png" />
 </item>
 
 </channel>

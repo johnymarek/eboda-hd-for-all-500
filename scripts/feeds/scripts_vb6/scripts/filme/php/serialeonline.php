@@ -112,18 +112,36 @@ if($query) {
 
 		</itemDisplay>
 
-  <onUserInput>
-    <script>
-      ret = "false";
-      userInput = currentUserInput();
-      majorContext = getPageInfo("majorContext");
+<onUserInput>
+<script>
+ret = "false";
+userInput = currentUserInput();
 
-      print("*** majorContext=",majorContext);
-      print("*** userInput=",userInput);
+if (userInput == "pagedown" || userInput == "pageup")
+{
+  idx = Integer(getFocusItemIndex());
+  if (userInput == "pagedown")
+  {
+    idx -= -8;
+    if(idx &gt;= itemCount)
+      idx = itemCount-1;
+  }
+  else
+  {
+    idx -= 8;
+    if(idx &lt; 0)
+      idx = 0;
+  }
 
-      ret;
-    </script>
-  </onUserInput>
+  print("new idx: "+idx);
+  setFocusItemIndex(idx);
+	setItemFocus(0);
+  redrawDisplay();
+  "true";
+}
+ret;
+</script>
+</onUserInput>
 
 	</mediaDisplay>
 
@@ -181,7 +199,7 @@ function str_between($string, $start, $end){
 	return substr($string,$ini,$len);
 }
 
-$image = "/scripts/image/movies.png";
+$image = "image/movies.png";
 $videos = explode('<div class="post-', $html);
 unset($videos[0]);
 $videos = array_values($videos);

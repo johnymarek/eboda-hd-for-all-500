@@ -110,18 +110,36 @@ $image=$t2[0];
 
 		</itemDisplay>
 		
-  <onUserInput>
-    <script>
-      ret = "false";
-      userInput = currentUserInput();
-      majorContext = getPageInfo("majorContext");
-      
-      print("*** majorContext=",majorContext);
-      print("*** userInput=",userInput);
-      
-      ret;
-    </script>
-  </onUserInput>
+<onUserInput>
+<script>
+ret = "false";
+userInput = currentUserInput();
+
+if (userInput == "pagedown" || userInput == "pageup")
+{
+  idx = Integer(getFocusItemIndex());
+  if (userInput == "pagedown")
+  {
+    idx -= -8;
+    if(idx &gt;= itemCount)
+      idx = itemCount-1;
+  }
+  else
+  {
+    idx -= 8;
+    if(idx &lt; 0)
+      idx = 0;
+  }
+
+  print("new idx: "+idx);
+  setFocusItemIndex(idx);
+	setItemFocus(0);
+  redrawDisplay();
+  "true";
+}
+ret;
+</script>
+</onUserInput>
 		
 	</mediaDisplay>
 	
@@ -156,15 +174,17 @@ function str_between($string, $start, $end){
 		<mediaDisplay name="threePartsView"/>
 	</item>
 	';
-$videos = explode('link=', $html);
+$html=str_between($html,'Alege Una Din Variante','<script');
+$videos = explode('href="', $html);
 unset($videos[0]);
 $videos = array_values($videos);
 
 foreach($videos as $video) {		
     $t1 = explode('"', $video);
     $link = $t1[0];
-    $t1 = explode('/', $link);
-    $title = $t1[2];
+    $t1 = explode('alt="', $video);
+    $t2 = explode('"',$t1[1]);
+    $title = $t2[0];
 		if ($link <> "") {
 			$link = $host."/scripts/filme/php/filme_link.php?onlinemoca,".urlencode($tit).",".$link;
     	echo '

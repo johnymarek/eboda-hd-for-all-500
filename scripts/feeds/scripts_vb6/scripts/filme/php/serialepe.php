@@ -141,6 +141,7 @@ foreach($videos as $video) {
 
 	if (($link <> "") && ($title1 <> "")){
 		$link = "http://127.0.0.1:82/scripts/filme/php/filme_link.php?".$link.",".urlencode($title1);
+		//$link = "http://127.0.0.1:82/scripts/filme/php/filme_link.php?".$link;
     echo '
     <item>
     <title>'.$title.'</title>
