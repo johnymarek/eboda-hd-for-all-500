@@ -1,0 +1,293 @@
+/*
+    xVoD CSS Stylesheet
+    Developed by Maicros
+    GNU/GPL Licensed
+*/
+
+body {
+    /* background: url("bg.jpg") repeat-y scroll center top #00006A; */
+    /* background: url("body-bg.gif") repeat-x scroll 0 104px #8E0202;*/
+    background-color:black;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 100%;
+    text-align: center;
+    margin:0;
+    padding:0;
+    color:#F5C5C5;
+}
+
+a{
+    color: #E91A1A;
+    outline: medium none;
+    font-size: 90%;
+    text-decoration: none;
+}
+
+a:hover{
+    color: white;
+    outline: medium none;
+    font-size: 90%;
+    text-decoration: underline;
+
+}
+
+h3{
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: normal;
+    text-indent: 18px;
+    padding: 5px 0px 5px 0px;
+    background: url("red/line-hor.gif") repeat-x scroll 0 100% transparent;
+}
+
+#container{
+    padding: 0;
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 0px 0px 15px;
+    overflow: hidden;
+    background: url("red/body-bg.gif") repeat-x scroll 0 104px #8E0202;
+}
+
+#header {
+    height: 104px;
+    padding: 0px;
+    margin-bottom: 20px;
+    position: relative;
+    color: white;
+}
+
+#headerbackground{
+    background: url("red/header.png") repeat-x scroll 0 100% transparent;
+    margin-left: -15px;
+    height: 121px;
+}
+
+#body-content{
+    padding-left: 0px;
+    overflow: hidden;
+}
+
+#body-content-left{
+    float:left;
+    width:25%;
+    text-align: center;
+    background: none repeat scroll 0 0 #330101;
+    padding-bottom: 50px;
+}
+
+#body-content-right{
+    float:right;
+    width:72%;
+    text-align:justify;
+    padding-right: 20px;
+    overflow: hidden;
+}
+
+#footer {
+    clear: left;
+    height: 25px;
+    padding: 6px 36px 6px 0;
+    margin: 20px 15px 10px 0px;
+    text-align: left;
+    color: white;
+    background-color: #330101;
+}
+
+#footer-content{
+    width: 100%;
+    text-align: right;
+    font-size: 80%;
+    padding-top: 5px;
+}
+
+
+/* ---- MENU STYLES --------------------------------------------------------- */
+#square-box {
+    background: url("red/list-bg.gif") repeat-x scroll 0 0 #610404;
+    border-color: #040351;
+    margin: 10px;
+    text-align:left;
+}
+
+#square-box ul {
+    list-style: none outside none;
+    padding: 0px 0px 5px 20px;
+    margin: 0px;
+}
+
+#square-box ul li {
+    padding: 0;
+    text-align:left;
+    /*font-weight: bold;*/
+    padding: 2px 0px 2px 0px;
+}
+
+#square-box ul li a {
+    text-decoration: none;
+}
+
+#square-box ul li a:hover {
+    text-decoration: underline;
+
+}
+
+
+#square-box #square-box-head {
+    border-bottom: 1px solid #980807;
+    color: #FFFFFF;
+    font-size: 85%;
+    font-weight: normal;
+    padding: 5px;
+    text-align:left;
+}
+
+/* ---- TABLE SYTLES ------------------------------------------------------
+------- roScripts - Table Design by Mihalcea Romeo - www.roscripts.com -------
+------------------------------------------------------------------------------ */
+
+.linkTable{
+    width: 100%;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.playlistTable {
+    border-collapse:collapse;
+    background:#EFF4FB url(red/teaser.gif) repeat-x;
+    border-left:1px solid #686868;
+    border-right:1px solid #686868;
+    font:0.7em/145% 'Trebuchet MS',helvetica,arial,verdana;
+    color: #333;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.playlistTable td {
+    padding:5px;
+}
+
+.playlistTable td a {
+    color: blue;
+    text-decoration: none;
+}
+
+.playlistTable td a:hover {
+    color: #E91A1A;
+    text-decoration: underline;
+}
+
+.playlistTable th {
+    padding:5px;
+}
+
+.playlistTable caption {
+    padding: 0 0 .5em 0;
+    text-align: left;
+    font-size: 1.4em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #333;
+    background: transparent;
+}
+
+.playlistTable table a {
+    color:#950000;
+    text-decoration:none;
+}
+
+.playlistTable table a:link {}
+
+.playlistTable table a:visited {
+    font-weight:normal;
+    color:#666;
+    text-decoration: line-through;
+}
+
+.playlistTable table a:hover {
+    border-bottom: 1px dashed #bbb;
+}
+
+.playlistTable thead th, tfoot th, tfoot td {
+    background:#333 url(red/llsh.gif) repeat-x;
+    color:#fff
+}
+
+.playlistTable tfoot td {
+    text-align:right
+}
+
+.playlistTable tbody th {
+    border-bottom: dotted 1px #333;
+}
+
+.playlistTable tbody td {
+    border-bottom: dotted 1px #333;
+    color:black;
+}
+
+.playlistTable tbody th {
+    white-space: nowrap;
+}
+
+.playlistTable tbody th a {
+    color:#333;
+}
+
+.playlistTable odd {}
+
+.playlistTable tbody tr:hover {
+    background:#D7E5F4;
+}
+
+
+
+
+
+
+
+
+
+
+.box {
+    background:url(red/box-bg.jpg) 0 0 repeat-y;
+    width:100%;
+    font-size:17px;
+    line-height:24px;
+}
+.box .top {
+    background:url(red/box-top.jpg) no-repeat 0 0;
+}
+.box .bot {
+    background:url(red/box-bot.jpg) no-repeat 0 100%;
+    width:100%;
+}
+.box .inner {
+    padding:1px 20px 38px 20px;
+}
+.box strong {
+    font-size:18px;
+}
+
+.box h2 { 
+    font-size:28px;
+    line-height:1em;
+    color:#2d0101;
+    position:relative;
+    overflow:hidden;
+    padding:0 0 13px 90px;
+    background:url(red/line-hor.gif) 0 100% repeat-x;
+    margin-bottom:24px;
+}
+.box h2 strong {
+    color:#fff;
+    display:block;
+    font-size:44px;
+}
+.box h2 img {
+    position:absolute;
+    left:0;
+    top:0;
+}

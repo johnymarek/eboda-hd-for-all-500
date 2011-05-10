@@ -1,0 +1,60 @@
+-myvod.tv it's broke on playonhd but it works from firefox...
+
+IMPORTANT:
+
+For now the only scrapers with download feature are 10starmovies, cinetube, hdbox, maroc, megavideolink and watchnewfilms.
+It's not recommended to download 2 files at the same time.
+
+
+
+HOW IT WORKS:
+
+1-Choose one of the sites mentioned below and select a movie, then click OK in the cover of the movie you want to download.
+2-Click OK in your prefered mirror (megavideo/megaupload, flv links or bitload links of kino.to)
+3-Click the key 2. The movie will start to be downloaded to movie folder of your hard drive
+
+
+TODO:
+
+Feature to stop the download without turning off the player.
+
+
+
+CHANGELOG:
+
+v1.04 (13-02-2011)
+Improved hd-box scraper thanks to exe, hdbox v04 (http://forum.xtreamer.net/topic/20388-xvod-hd-boxorg-scraper/page__view__findpost__p__179448)
+Links of loombo from 10starmovies fixed thanks to Mezzo
+
+v1.03 (10-02-2011)
+-Small fix related to the download screen of hdbox and 10starmovies
+
+v1.03 (09-04-2011)
+-A pop-up appear will appear on screen so you have to confirm if you want to start the download
+
+v1.02 (08-04-2011)
+-10starmovies now supports videos from loomba.com: no premium account needed (thanks to Mezzo)
+-updated versions of kino.to and hdbox scrapers (thanks to Mezzo)
+
+v1.01 (13-02-2011)
+-Download feature added to:
+10starmovies
+cinetube
+hdbox (scraper done by Mezzo)
+maroc
+megavideolink
+watchnewfilms
+
+
+
+
+
+
+-COULDN'T ADD DOWNLOAD FEATURE TO:
+anime44
+anivide
+kino.to
+
+Didn't even try because they are not working scrappers:
+kinostreaming, megastreaming y supertelafilmes no existen.
+

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scrapers>
+
+    <scraper id="1" language="en" type="serie" image="logo/10starmovies.jpg">
+        <name><![CDATA[10StarMovies]]></name>
+        <description><![CDATA[Watch tv show online free and stream full length episode online. Download and Watch all popular TV Shows including action, adventure, animation and many more. 10STARMOVIES.COM]]></description>
+        <link>/10starmovies/index.php</link>
+    </scraper>
+
+    <scraper id="2" language="es" type="mixed" image="logo/adnstream.jpg">
+        <name><![CDATA[ADNstream.tv]]></name>
+        <description><![CDATA[ADNstream.com te permite disfrutar del cine y la television que te gusta gratis y en Internet. ADNSTREAM.TV]]></description>
+        <link>/adnstream/AdnStream.php</link>
+    </scraper>
+
+    <scraper id="3" language="es" type="movie" image="logo/cinetube.jpg">
+        <name><![CDATA[Cinetube]]></name>
+        <description><![CDATA[Peliculas y estrenos de cine online, entra en CINETUBE.ES]]></description>
+        <link>/cinetube/index.php?type=mov</link>
+    </scraper>
+    <scraper id="4" language="es" type="documentary" image="logo/cinetube.jpg">
+        <name><![CDATA[Cinetube]]></name>
+        <description><![CDATA[Documentales online y en descarga directa, entra en CINETUBE.ES]]></description>
+        <link>/cinetube/index.php?type=doc</link>
+    </scraper>
+    <scraper id="5" language="es" type="serie" image="logo/cinetube.jpg">
+        <name><![CDATA[Cinetube]]></name>
+        <description><![CDATA[Series online con descargas directas, entra en CINETUBE.ES]]></description>
+        <link>/cinetube/index.php?type=ser</link>
+    </scraper>
+
+    <scraper id="6" language="he" type="movie" image="logo/myvodtv.jpg">
+        <name><![CDATA[My VoD TV]]></name>
+        <description><![CDATA[אתר סרטים לצפייה ישירה,צפייה ישירה בסרטים ובסדרות,צפייה ישירה באיכות מעולה,מאות סרטים לצפייה ישירה בחינם רק באתר MYVOD צפייה ישירה בחינם.]]></description>
+        <link>/myvodtv/index.php?type=doc</link>
+    </scraper>
+    
+    <scraper id="7" language="en" type="movie" image="logo/watchnewfilms.jpg">
+        <name><![CDATA[WachNewFilms]]></name>
+        <description><![CDATA[Watch new movies for Free online. WATCHNEWFILMS.COM]]></description>
+        <link>/watchnewfilms/index.php</link>
+    </scraper>
+
+    <scraper id="8" language="fr" type="movie" image="logo/megastreaming.jpg">
+        <name><![CDATA[Megastreaming]]></name>
+        <description><![CDATA[Regarder tous vos films streaming megavideo sur Megastreaming. MEGASTREAMING.COM]]></description>
+        <link>/megastreaming/index.php?type=mov</link>
+    </scraper>
+
+    <scraper id="9" language="fr" type="serie" image="logo/megastreaming.jpg">
+        <name><![CDATA[Megavideolink]]></name>
+        <description><![CDATA[Regarder tous vos series streaming megavideo sur Megastreaming. MEGASTREAMING.COM]]></description>
+        <link>/megastreaming/index.php?type=ser</link>
+    </scraper>
+
+    <scraper id="10" language="de" type="movie" image="logo/kinoto.jpg">
+        <name><![CDATA[Kino.to]]></name>
+        <description><![CDATA[Kino.to Dein Onlinekino. Auf Kino.to bekommst Filme online. Immer die neusten Streams in verschiedenen Formaten DivX, Flash und MP4. T�glich werden neue Filme eingepflegt. KINO.TO]]></description>
+        <link>/kinoto/movies.php</link>
+    </scraper>
+    
+    <scraper id="11" language="de" type="serie" image="logo/kinoto.jpg">
+        <name><![CDATA[Kino.to]]></name>
+        <description><![CDATA[Kino.to Dein Onlinekino. Auf Kino.to bekommst Serien online. Immer die neusten Streams in verschiedenen Formaten DivX, Flash und MP4. T�glich werden neue Serienstreams eingepflegt. KINO.TO]]></description>
+        <link>/kinoto/series.php</link>
+    </scraper>    
+
+    <scraper id="12" language="es" type="anime" image="logo/cinetube.jpg">
+        <name><![CDATA[Cinetube]]></name>
+        <description><![CDATA[Peliculas y Series Anime online con descargas directas, entra en CINETUBE.ES]]></description>
+        <link>/cinetube/anime.php</link>
+    </scraper>
+
+    <scraper id="13" language="en" type="anime" image="logo/anivide.jpg">
+        <name><![CDATA[Anivide]]></name>
+        <description><![CDATA[Watch anime series online on ANIVIDE.COM]]></description>
+        <link>/anivide/series.php</link>
+    </scraper>
+
+    <scraper id="14" language="en" type="anime" image="logo/anime44.jpg">
+        <name><![CDATA[Anime44]]></name>
+        <description><![CDATA[Anime Movie list from ANIME44.COM]]></description>
+        <link>/anime44/movies.php</link>
+    </scraper>
+    
+</scrapers>
