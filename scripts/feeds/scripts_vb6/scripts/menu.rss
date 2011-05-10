@@ -1,8 +1,6 @@
 <?xml version='1.0' encoding='utf-8' ?>
 <rss version="2.0">
 <onEnter>
-	SwitchViewer(0);
-	SwitchViewer(7);
   startitem = "middle";
   setRefreshTime(1);
 columnCount=3
@@ -11,12 +9,6 @@ columnCount=3
 <onRefresh>
   setRefreshTime(-1);
   itemCount = getPageInfo("itemCount");
-  middleItem = Integer(itemCount / 2);
-  if(startitem == "middle")
-    setFocusItemIndex(1);
-  else
-  if(startitem == "right")
-    setFocusItemIndex(middleItem);
   redrawDisplay();
 </onRefresh>
 
@@ -130,10 +122,112 @@ columnCount=3
       ret = "false";
       userInput = currentUserInput();
       majorContext = getPageInfo("majorContext");
-      
+
       print("*** majorContext=",majorContext);
       print("*** userInput=",userInput);
-      
+
+      if(userInput == "one" || userInput == "1")
+      {
+        if(itemCount &gt;= 1)
+        {
+          setFocusItemIndex(0);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "two" || userInput == "2")
+      {
+        if(itemCount &gt;= 2)
+        {
+          setFocusItemIndex(1);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "three" || userInput == "3")
+      {
+        if(itemCount &gt;= 3)
+        {
+          setFocusItemIndex(2);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "four" || userInput == "4")
+      {
+        if(itemCount &gt;= 4)
+        {
+          setFocusItemIndex(3);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "five" || userInput == "5")
+      {
+        if(itemCount &gt;= 5)
+        {
+          setFocusItemIndex(4);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "six" || userInput == "6")
+      {
+        if(itemCount &gt;= 6)
+        {
+          setFocusItemIndex(5);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "seven" || userInput == "7")
+      {
+        if(itemCount &gt;= 7)
+        {
+          setFocusItemIndex(6);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "eight" || userInput == "8")
+      {
+        if(itemCount &gt;= 8)
+        {
+          setFocusItemIndex(7);
+          redrawDisplay();
+        }
+      }
+      else if(userInput == "eight" || userInput == "8")
+      {
+        if(itemCount &gt;= 8)
+        {
+          setFocusItemIndex(7);
+          redrawDisplay();
+        }
+      }
+      if(userInput == "zero" || userInput == "0")
+      {
+        if(itemCount &gt;= 10)
+        {
+          setFocusItemIndex(8);
+          redrawDisplay();
+        }
+      }
+      else if (userInput == "pagedown" || userInput == "pageup" || userInput == "PD" || userInput == "PG")
+      {
+        itemSize = getPageInfo("itemCount");
+        idx = Integer(getFocusItemIndex());
+        if (userInput == "pagedown")
+        {
+          idx -= -10;
+          if(idx &gt;= itemSize)
+            idx = itemSize-1;
+        }
+        else
+        {
+          idx -= 10;
+          if(idx &lt; 0)
+            idx = 0;
+        }
+        setFocusItemIndex(idx);
+        setItemFocus(idx);
+        redrawDisplay();
+        ret = "true";
+      }
+
       ret;
     </script>
   </onUserInput>
@@ -163,7 +257,7 @@ columnCount=3
     <title>Trailere filme şi jocuri</title>
     <annotation>Vedeţi aici ultimele trailere pentru filme sau jocuri...</annotation>
     <image>/scripts/image/trailerb.png</image>
-    <mediaDisplay name="threePartsView"/>
+    <mediaDisplay name="photoView"/>
   </item>
   <item>
     <link>http://127.0.0.1:82/scripts/filme/filme.php</link>
@@ -176,14 +270,14 @@ columnCount=3
     <link>http://127.0.0.1:82/scripts/filme/seriale.php</link>
     <title>Seriale TV subtitrate</title>
     <annotation>Vedeţi aici seriale TV cu subtitrare...</annotation>
-    <image>http://127.0.0.1:82/scripts/filme/image/series.png</image>
+    <image>/scripts/filme/image/series.png</image>
     <mediaDisplay name="threePartsView"/>
   </item>
   <item>
     <link>http://127.0.0.1:82/scripts/filme/desene.php</link>
     <title>Pentru copii...</title>
     <annotation>Pentru copii avem desene animate, povesti...</annotation>
-    <image>http://127.0.0.1:82/scripts/filme/image/desene.png</image>
+    <image>/scripts/filme/image/desene.png</image>
     <mediaDisplay name="threePartsView"/>
   </item>
   <item>
@@ -198,14 +292,14 @@ columnCount=3
     <title>Ştiri şi alte informaţii</title>
     <annotation>Vezi orarul serialelor, cursul valutar sau alte informaţii utile</annotation>
     <image>/scripts/image/blog.png</image>
-    <mediaDisplay name="threePartsView"/>
+    <mediaDisplay name="photoView"/>
   </item>
   <item>
     <link>http://127.0.0.1:82/scripts/tv/tv_radio.php</link>
     <title>TV, Radio şi emisiuni Inregistrate</title>
     <annotation>Ascultă sau vezi postul tău de radio sau TV favorit. Ai ratat o emisiune? Aici poţi s-o găseşti!</annotation>
     <image>/scripts/image/tv_radio.png</image>
-    <mediaDisplay name="threePartsView"/>
+    <mediaDisplay name="photoView"/>
   </item>
   <item>
     <link>http://127.0.0.1:82/scripts/user/users.php</link>
@@ -214,7 +308,23 @@ columnCount=3
     <image>/scripts/image/users.png</image>
     <mediaDisplay name="threePartsView"/>
   </item>
-  
+<!--
+  <item>
+		<link>rss_command://search</link>
+		<search url="http://127.0.0.1:82/scripts/adult/adult%s.php" />
+    <title>Canal adulţi</title>
+    <annotation>Numai pentru 18++! Necesită parolă. Intră pe http://forum.softpedia.com/index.php?showforum=14 pentru mai multe informaţii</annotation>
+    <image>/scripts/image/adult.png</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+    <link>http://127.0.0.1:82/scripts/util/system.php</link>
+    <title>Utilitare player</title>
+    <annotation>Pornire-Oprire sever FTP, redenumire fişiere si alte unelte utile.</annotation>
+    <image>/scripts/image/system.png</image>
+    <mediaDisplay name="threePartsView"/>
+  </item>
+-->
 </channel>
 
 </rss>
