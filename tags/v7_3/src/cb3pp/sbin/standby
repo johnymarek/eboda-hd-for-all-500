@@ -1,0 +1,4 @@
+#!/bin/sh
+
+
+cd /usr/local/bin/ && stopall && echo "O" | RootApp ./DvdPlayer

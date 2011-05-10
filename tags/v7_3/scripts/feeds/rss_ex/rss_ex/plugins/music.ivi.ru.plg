@@ -1,0 +1,142 @@
+#!/bin/sh
+#
+#   http://code.google.com/media-translate/
+#   Copyright (C) 2010  Serge A. Timchenko
+#
+#   This program is free software: you can redistribute it and/or modify
+#   it under the terms of the GNU General Public License as published by
+#   the Free Software Foundation, either version 3 of the License, or
+#   (at your option) any later version.
+#
+#   This program is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#   along with this program. If not, see <http://www.gnu.org/licenses/>.
+#
+
+# Translate CGI module
+# 'music.ivi.ru' plug-in
+#
+# version: 1.2 02.03.2011 13:54:25
+#
+# http://music.ivi.ru/watch/Enya-Only-Time-18248
+# http://music.ivi.ru/watch/YOlka-Provans-yt22
+# http://music.ivi.ru/playlist/jlLEapZuqdMn00gl
+#
+# options:
+#   HD:[0|1]
+#
+# required CURL
+
+if echo "${arg_url}" | grep -q -s 'music\.ivi\.ru/watch/.*$'; then 
+
+  get_opt "HD"
+  [ -z "$opt" ] && opt=`sed -n '7p' $RSSCONF 2>/dev/null`
+  [ -z "$opt" ] && opt=$IVI_HD
+  case $opt in
+    yes|Yes|YES|1)
+      hdc='hi'
+    ;;
+    *)
+      hdc='lo'
+    ;;
+  esac
+  
+  host_response=`$MSDL -q -o ${TMPFILE} -p http --useragent "${USERAGENT}" "${arg_url}" 2>&1`
+  if [ -f ${TMPFILE} ]; then
+  	if grep -qs "ytvideo-id" $TMPFILE; then
+  		local ytvideo_id=`grep -i "ytvideo-id" ${TMPFILE} | awk '{match($0, /value="([^"]+)".+id="ytvideo-id"/, arr);print arr[1];}'`
+  		arg_url="http://youtube.com/v/$ytvideo_id"
+  		check_stream
+  	else
+	    local video_id=`grep -i "video_src" ${TMPFILE} | awk '{match($0, /videoId=([0-9]+)/, arr);print arr[1];}' | urldecode`
+	    rm -f $TMPFILE
+	    host_response=`$CURL -s -o "${TMPFILE}" --user-agent "${USERAGENT}" --data-ascii "{\"method\":\"da.content.get\",\"params\":[\"${video_id}\",{\"site\":50}]}" --referer " http://player.digitalaccess.ru/player1.79.swf?" --header "FlashAuth: Basic Zmxhc2hfcGxheWVyOmZsYXNoX3BsYXllcg=="  http://api.digitalaccess.ru/api/json/ 2>&1`
+	    
+	    if [ -f ${TMPFILE} ]; then
+	      stream_type='video/x-flv'
+	      server_type='ivi'
+	      stream_url=`sed "s/.*files\": \[//;s/\].*//;s/}, *{/}\n{/g" ${TMPFILE} | awk "/FLV-${hdc}/"' {match($2, /\"(.*)\".*$/, arr); print arr[1];}'`
+	      protocol=`echo "$stream_url" | sed -e 's/:\/\/.*$//'`
+	      icy_name=`sed 's/.*"title": "//;s/".*//g' ${TMPFILE} | unitohtml | $XCODE -s -l | $TOUTF8`
+	      rm -f $TMPFILE
+	    fi
+	  fi
+  fi  
+  return $RC_OK
+elif echo "${arg_url}" | grep -q -s 'music\.ivi\.ru/playlist/.*$'; then 
+	local PLAYLISTFILE=$CACHEPATH/temp.xspf
+	rm -f $PLAYLISTFILE
+	$MSDL -q -o - -p http --useragent "${USERAGENT}" "http://music.ivi.ru/playlists/list?url=${arg_url}" 2>/dev/null | sed 's/,/,\n/g;s/\\\//\//g;s/{/{\n/g;s/\[/\[\n/g;s/}/\n}/g;s/\]/\n\]/g' > ${TMPFILE}
+  if [ -f ${TMPFILE} ]; then
+  	awk '
+  		BEGIN {
+				print "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+				print "<playlist version=\"1\" xmlns=\"http://xspf.org/ns/0/\">"
+				active = 0;
+				title = "";
+				artist = "";
+				link = "";
+				preview = "";
+  		}
+  		/"current":\{/ {
+  			active = 1;
+  			next;
+  		}
+  		/^\]/ {
+  			active = 0;
+  			next;
+  		}
+  		/"videos":\[/ {
+  			print "<title>" title "</title>";
+				print "<trackList>"
+  			active = 2;
+  			next;
+  		}
+  		/"title":/ {
+  			match($0, /"title":"([^"]*)"/, arr);
+  			title = arr[1];
+  		}
+  		/"artist":/ {
+  			match($0, /"artist":"([^"]*)"/, arr);
+  			artist = arr[1];
+  		}
+  		/"link":/ {
+  			match($0, /"link":"([^"]*)"/, arr);
+  			link = arr[1];
+  		}
+  		/"preview":/ {
+  			match($0, /"preview":"([^"]*)"/, arr);
+  			preview = arr[1];
+  		}
+  		/^\{$/ {
+  			if(active == 2)
+  			{
+  				print "<track>"
+  			}
+  		}
+  		/^\}/ {
+  			if(active == 2)
+  			{
+		  		print "<title>" artist " - " title "</title>"
+		  		print "<location>http://music.ivi.ru" link "</location>"
+		  		print "<image>" preview "</image>"
+  				print "</track>"
+  			}
+  		}
+  		END {
+				print "</trackList>"
+				print "</playlist>"
+  		}
+  	' ${TMPFILE} | unitohtml | $XCODE -s -l +w | $TOUTF8 > $PLAYLISTFILE
+    stream_type='application/xspf+xml'
+    stream_url=$PLAYLISTFILE
+    protocol='file'
+  fi  
+  return $RC_OK
+fi
+
+return $RC_FAIL

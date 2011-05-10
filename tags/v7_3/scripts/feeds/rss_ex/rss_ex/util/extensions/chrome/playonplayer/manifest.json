@@ -1,0 +1,20 @@
+{
+  "name": "__MSG_playOnPlayer__",
+  "version": "1.0",
+  "description": "__MSG_extensionDescripion__",
+  "browser_action": {
+    "default_icon": "mediarenderer.ico",
+    "default_title": "__MSG_playOnPlayer__"
+  },
+  "icons": {
+    "16": "mediarenderer.ico"
+  },
+  "permissions": [
+    "http://*/",
+    "contextMenus",
+    "notifications"
+   ],
+  "options_page": "options.htm",
+  "background_page": "playonplayer.htm",
+  "default_locale": "en"
+}

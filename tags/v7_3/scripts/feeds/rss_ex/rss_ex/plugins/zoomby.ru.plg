@@ -1,0 +1,190 @@
+#!/bin/sh
+#
+#   http://code.google.com/media-translate/
+#   Copyright (C) 2010  Serge A. Timchenko
+#
+#   This program is free software: you can redistribute it and/or modify
+#   it under the terms of the GNU General Public License as published by
+#   the Free Software Foundation, either version 3 of the License, or
+#   (at your option) any later version.
+#
+#   This program is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#   along with this program. If not, see <http://www.gnu.org/licenses/>.
+#
+
+# Translate CGI module
+# 'zoomby.ru' plug-in
+#
+# version: 2.0 03.03.2011 15:27:14
+#
+# http://www.zoomby.ru/watch/4396-kamenskaya-3
+#
+# options:
+#   HD:[0|1]
+
+
+local SMILINFO=$TMPFILE.smilinfo
+local PLAYLISTFILE=$CACHEPATH/temp.xspf
+rm -f $PLAYLISTFILE
+
+if echo "${arg_url}" | grep -qs '\(www\.\)*zoomby\.ru/.*$'; then 
+
+  get_opt "HD"
+  [ -z "$opt" ] && opt=`sed -n '8p' $RSSCONF 2>/dev/null`
+  [ -z "$opt" ] && opt=$ZOOMBY_HD
+  case $opt in
+    yes|Yes|YES|1)
+      hdc=4
+    ;;
+    no|No|NO|0)
+      hdc=2
+    ;;
+    *)
+      hdc=3
+    ;;
+  esac
+
+  $MSDL -q -o ${TMPFILE} -p http --useragent "${USERAGENT}" "${arg_url}" 2>/dev/null
+
+  if [ -f ${TMPFILE} ]; then
+  	local smil_path="`grep -i "video *=" ${TMPFILE} | sed -n '1p' | awk '{match($0,/video *=[ "]*([^&"]+)[&"]/,arr);print arr[1];}'`"
+    $MSDL -q -o ${TMPFILE} -p http --useragent "${USERAGENT}" "http://www.zoomby.ru${smil_path}" 2>/dev/null
+    if [ -f ${TMPFILE} ]; then
+    	if grep -qs "<smil" ${TMPFILE}; then
+    		:
+    	else
+    		awk -v key="${smil_path}" '
+					function charCodeAt(s,n)
+					{
+					  return chmap[substr(s, n+1, 1)];
+					}
+					
+					function join(array, start, end, sep,    			result,i)
+					{
+					   if (sep == "")
+					      sep = " ";
+					   else if (sep == SUBSEP) # magic value
+					      sep = "";
+					   result = array[start];
+					   for (i = start + 1; i <= end; i++)
+					       result = result sep array[i];
+					   return result;
+					}
+					
+					function binstrtonum(s,				n,ret,i,c)
+					{
+						n = length(s);
+						ret = 0;
+						for (i=1; i<=n; i++) 
+						{
+							c = chmap[substr(s, i, 1)] - 48;
+							ret = ret * 2 + c;
+						}
+						return ret;
+					}
+					
+					function unpack_B8(bits, 				data, mask)
+					{
+						if (bits == 0)
+						   return "00000000";
+						mask = 1
+						for (; bits != 0; bits = rshift(bits, 1))
+						   data = (and(bits, mask) ? "1" : "0") data
+						while ((length(data) % 8) != 0)
+						   data = "0" data
+						return data
+					}
+					
+					function atob(s,				res,i,n)
+					{
+						res = "";
+						n = length(s);
+						for(i=0; i<n; i++)
+							res = res unpack_B8(charCodeAt(s, i));
+						return res;
+					}
+					
+					function htob(s,					res,i,n)
+					{
+						res = "";
+						n = length(s);
+						for(i=1; i<=n; i+=2)
+							res = res unpack_B8(strtonum("0x" substr(s, i, 2)));
+						return res;
+					}
+					
+					function bin_add(s1,s2,n,						res,i,j,loc4,loc5,loc4_len,loc5_len,XOR,n1)
+					{
+						XOR["00"] = 0;
+						XOR["01"] = 1;
+						XOR["10"] = 1;
+						XOR["11"] = 0;
+						j = 1;
+						loc4_len = split(s1, loc4, "");
+						loc5_len = split(s2, loc5, "");
+						n1 = n + 1;
+						for(i=1; i<=loc4_len; i++)
+						{
+							loc4[i] = XOR[loc4[i] loc5[j]];
+							if(++j > n1)
+								j = 1;
+						}
+						return join(loc4, 1, loc4_len, SUBSEP);
+					}
+					
+					BEGIN {
+					  for(i=0; i < 256; i++) 
+					    chmap[sprintf("%c", i)] = i
+					}
+					
+					{
+						param1 = $0;
+						split(key, arr, "/");
+						param2 = arr[4];
+						s = "";
+						res = bin_add(htob(param1), atob(param2), length(param2));
+						n = length(res);
+						for(i=1; i<=n; i+=8)
+							s = s sprintf("%c", binstrtonum(substr(res, i, 8)));
+						a_len = split(s, a, "\t");
+						print join(a, 2, a_len-1, "\t");
+					}    		
+				' $TMPFILE > $TMPFILE.smil
+				mv -f $TMPFILE.smil $TMPFILE
+  	fi
+    	local swcount=`grep "</switch>" $TMPFILE | wc -l`
+    	if [ $swcount -eq 1 ]; then
+	      stream_type='video/mp4'
+	      server_type='zoomby'
+	      awk -f getxml.awk -f ${PLUGINS_DIR}zoomby.ru.smil.awk "$TMPFILE" > $SMILINFO
+	      stream_url=`sed -n "${hdc}p" $SMILINFO | awk '{print $2;}'`
+	      protocol=`echo "$stream_url" | sed -e 's/:\/\/.*$//'`
+	      icy_name=`sed -n '1p' $SMILINFO`
+	      if [ "$protocol" == "rtmp" ]; then
+		      if echo "$RTMPDUMP" | grep -qs flvstreamer; then
+		        stream_url="${stream_url}.f4v"
+		      fi
+		    fi
+	      rm -f $SMILINFO
+		  elif [ $swcount -gt 1 ]; then
+		    local f4v=
+	      if echo "$RTMPDUMP" | grep -qs flvstreamer; then
+	        f4v=".f4v"
+	      fi
+	      awk -f getxml.awk -v QUALITY="$hdc" -v EXT="$f4v" -f ${PLUGINS_DIR}zoomby.ru.xspf.awk "$TMPFILE" > $PLAYLISTFILE
+		    stream_type='application/xspf+xml'
+		    stream_url=$PLAYLISTFILE
+		    protocol='file'
+		  fi
+      rm -f $TMPFILE
+    fi
+  fi  
+  return $RC_OK
+fi
+
+return $RC_FAIL

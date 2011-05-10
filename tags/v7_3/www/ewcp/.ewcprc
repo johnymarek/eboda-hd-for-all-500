@@ -1,0 +1,6 @@
+
+masterhost_url=http://eboda-hd-for-all-500.googlecode.com/files/
+wget="/cb3pp/bin/wget --progress=dot:mega "
+quietwget="/cb3pp/bin/wget -q "
+sync="/bin/sync"
+

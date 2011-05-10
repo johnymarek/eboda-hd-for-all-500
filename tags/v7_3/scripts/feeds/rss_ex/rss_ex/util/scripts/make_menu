@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# menu generator
+#
+
+BASEPATH=/usr/local/etc/translate
+. $BASEPATH/etc/translate.conf
+
+$BASEPATH/util/scripts/build_menu.sh ${TRANSLATE_CGI}app,,collection/menuex $BASEPATH/rss/menuEx.rss
+
+
+

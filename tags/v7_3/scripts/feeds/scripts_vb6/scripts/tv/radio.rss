@@ -1,0 +1,265 @@
+﻿<?xml version='1.0' encoding="UTF8" ?>
+<rss version="2.0">
+
+<!--
+#
+#   http://code.google.com/media-translate/
+#   Copyright (C) 2010  Serge A. Timchenko
+#
+#   This program is free software: you can redistribute it and/or modify
+#   it under the terms of the GNU General Public License as published by
+#   the Free Software Foundation, either version 3 of the License, or
+#   (at your option) any later version.
+#
+#   This program is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#   along with this program. If not, see <http://www.gnu.org/licenses/>.
+#
+-->
+
+<script>
+  translate_base_url  = "http://127.0.0.1:83/cgi-bin/translate?";
+  cgiconf = readStringFromFile("/scripts/etc/cgi.conf");
+  if(cgiconf != null)
+  {
+    value = getStringArrayAt(cgiconf, 0);
+    if(value != null &amp;&amp; value != "")
+    {
+      translate_base_url = value;
+      print("cgi.conf=",value);
+    }
+  }
+</script>
+
+<onEnter>
+    startitem = "middle";
+		
+  setRefreshTime(1);
+  columnCount=3;
+</onEnter>
+
+<onRefresh>
+  setRefreshTime(-1);
+  itemCount = getPageInfo("itemCount");
+  middleItem = Integer(itemCount / 2);
+  if(startitem == "middle")
+    setFocusItemIndex(middleItem);
+  else
+  if(startitem == "right")
+    setFocusItemIndex(middleItem);
+  redrawDisplay();
+</onRefresh>
+
+	<mediaDisplay name=photoView 
+	  centerXPC=7 
+		centerYPC=30
+		centerHeightPC=50
+    columnCount=3
+		
+	  rowCount=1
+		menuBorderColor="55:55:55"
+		sideColorBottom="0:0:0"
+		sideColorTop="0:0:0"
+	  backgroundColor="0:0:0"
+		imageBorderColor="0:0:0"
+		itemBackgroundColor="0:0:0"
+		itemGapXPC=0
+		itemGapYPC=1
+		sideTopHeightPC=22
+		bottomYPC=85
+		sliding=yes
+		showHeader=no
+		showDefaultInfo=no
+		idleImageWidthPC=10
+		idleImageHeightPC=10
+		>
+		
+  	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
+		  <script>getPageInfo("pageTitle");</script>
+		</text>
+
+		<image offsetXPC=5 offsetYPC=2 widthPC=20 heightPC=16>
+		  <script>channelImage;</script>
+		</image>
+
+  	<text redraw="yes" offsetXPC="82" offsetYPC="12" widthPC="13" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
+		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
+		</text>
+
+		<text align="center" redraw="yes" lines="4" offsetXPC=10 offsetYPC=80 widthPC=75 heightPC=15 fontSize=15 backgroundColor=0:0:0 foregroundColor=120:120:120>
+			<script>print(annotation); annotation;</script>
+		</text>
+		
+        <idleImage>image/POPUP_LOADING_01.png</idleImage>
+        <idleImage>image/POPUP_LOADING_02.png</idleImage>
+        <idleImage>image/POPUP_LOADING_03.png</idleImage>
+        <idleImage>image/POPUP_LOADING_04.png</idleImage>
+        <idleImage>image/POPUP_LOADING_05.png</idleImage>
+        <idleImage>image/POPUP_LOADING_06.png</idleImage>
+        <idleImage>image/POPUP_LOADING_07.png</idleImage>
+        <idleImage>image/POPUP_LOADING_08.png</idleImage>
+
+		<itemDisplay>
+			<image>
+				<script>
+					idx = getQueryItemIndex();
+					focus = getFocusItemIndex();
+					if(focus==idx) 
+					{
+					  annotation = getItemInfo(idx, "annotation");
+					}
+					getItemInfo(idx, "image");
+				</script>
+			 <offsetXPC>
+			   <script>
+					idx = getQueryItemIndex();
+					focus = getFocusItemIndex();
+			    if(focus==idx) 50 * (1 - columnCount/3); else 12 + 37 * (1 - columnCount/3);
+			   </script>
+			 </offsetXPC>
+			 <offsetYPC>
+			   <script>
+					idx = getQueryItemIndex();
+					focus = getFocusItemIndex();
+			    if(focus==idx) 0; else 6;
+			   </script>
+			 </offsetYPC>
+			 <widthPC>
+			   <script>
+					idx = getQueryItemIndex();
+					focus = getFocusItemIndex();
+			    if(focus==idx) 100 * columnCount/3; else 75 * columnCount/3;
+			   </script>
+			 </widthPC>
+			 <heightPC>
+			   <script>
+					idx = getQueryItemIndex();
+					focus = getFocusItemIndex();
+			    if(focus==idx) 50; else 37;
+			   </script>
+			 </heightPC>
+			</image>
+			
+			<text align="center" lines="3" offsetXPC=0 offsetYPC=55 widthPC=100 heightPC=45 backgroundColor=-1:-1:-1>
+				<script>
+					idx = getQueryItemIndex();
+					getItemInfo(idx, "title");
+				</script>
+				<fontSize>
+  				<script>
+  					idx = getQueryItemIndex();
+  					focus = getFocusItemIndex();
+  			    if(focus==idx) "22"; else "18";
+  				</script>
+				</fontSize>
+			  <foregroundColor>
+  				<script>
+  					idx = getQueryItemIndex();
+  					focus = getFocusItemIndex();
+  			    if(focus==idx) "255:255:255"; else "75:75:75";
+  				</script>
+			  </foregroundColor>
+			</text>
+
+		</itemDisplay>
+		
+  <onUserInput>
+    <script>
+      ret = "false";
+      userInput = currentUserInput();
+      majorContext = getPageInfo("majorContext");
+      
+      print("*** majorContext=",majorContext);
+      print("*** userInput=",userInput);
+      
+      ret;
+    </script>
+  </onUserInput>
+		
+	</mediaDisplay>
+	
+	<item_template>
+		<mediaDisplay  name="threePartsView">
+			<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_01.png </idleImage>
+			<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_02.png </idleImage>
+			<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_03.png </idleImage>
+			<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_04.png </idleImage>
+			<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_05.png </idleImage>
+			<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_06.png </idleImage>
+			<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_07.png </idleImage>
+			<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_08.png </idleImage>
+		</mediaDisplay>
+		<link>
+		  <script>getItemInfo(getQueryItemIndex(), "location");</script>
+		</link>
+	</item_template>
+
+
+<script>
+    channelImage = "";
+  </script><channel>
+  <title>Internet Radio</title>
+  <item>
+		<link>rss_file://../etc/translate/rss/radio-profm.rss</link>
+    <title>ProFM</title>
+    <annotation>ProFM Radio Online</annotation>
+    <image>../etc/translate/rss/image/profm.jpg</image>
+    <mediaDisplay name="threePartsView"/>
+  </item>
+  <item>
+		<link>rss_file:///scripts/tv/nrj.rss</link>
+    <title>Nrj Music</title>
+    <annotation>Écoute NRJ en direct. Une radio qui fait vibrer chaque jour avec une programmation qui conforte sa légitimité : Hit Music Only !</annotation>
+    <image>http://www.nrj.fr/images/header/logo.jpg</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+		<link>rss_file://../etc/translate/rss/etc-playlists-radio-bluemars.rss</link>
+    <title>Bluemars</title>
+		<annotation>Welcome to Bluemars, we will shortly transition into synchronous orbit around Phobos where you will be able to board a shuttle down the inertial tether.</annotation>
+    <image>../etc/translate/rss/image/menu/bluemars.jpg</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+		<link>rss_file://../etc/translate/rss/etc-playlists-radio-di.rss</link>
+    <title>Digitally Imported</title>
+    <annotation>Electronic &amp; Dance Music Radio 24/7</annotation>
+    <image>../etc/translate/rss/image/menu/di.png</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+		<link>rss_file://../etc/translate/rss/etc-playlists-radio-skyfm.rss</link>
+    <title>SKY.fm</title>
+    <annotation>Now Serving the Best Free Internet Radio to 33,823 Fans</annotation>
+    <image>../etc/translate/rss/image/menu/skyfm.png</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+		<link>rss_file://../etc/translate/rss/etc-playlists-radio-somafm.rss</link>
+    <title>SomaFM</title>
+    <annotation>SomaFM is 20 unique channels of listener-supported, commercial-free, underground/alternative radio broadcasting from San Francisco. All music hand-picked by SomaFM's award-winning DJs and music directors.</annotation>
+    <image>../etc/translate/rss/image/menu/somafm.gif</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+<link>rss_file://../etc/translate/rss/etc-playlists-radio-radioio.rss</link>
+    <title>RadioIO</title>
+    <annotation>It's all about the music</annotation>
+    <image>../etc/translate/rss/image/menu/radioio.jpg</image>
+    <mediaDisplay name="photoView"/>
+  </item>
+  <item>
+		<link><script>translate_base_url+"app,,radiotime/index";</script></link>
+    <title>RadioTime</title>
+    <annotation>RadioTime, a privately held Dallas-based company, focuses on providing complete radio content and tools to help listeners quickly and easily find their favorite radio stations and personalities plus discover new ones.</annotation>
+    <image>../etc/translate/rss/image/menu/radiotime.png</image>
+    <mediaDisplay name="threePartsView"/>
+  </item>
+</channel>
+
+
+</rss>

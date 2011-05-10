@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<playlist name="Xtreamer" description="Xtreamer playlist demo">
+    <xfile key="4d443d8027ab6" type="MV" thumbnail="http://xtreamer.net/dynamics/uf/images/the-new-XtreamerPro-picture.jpg">
+    <title><![CDATA[Xtreamer Pro promo]]></title>
+    <description><![CDATA[Stream HD movies, listen to high quality digital music and show high-resolution slideshows on your TV.
+    ]]></description>
+    <format><![CDATA[HD 720p]]></format>
+    <language><![CDATA[en]]></language>
+    <part>
+        <id order="0">6EFNNYI5</id>
+    </part>
+</xfile>
+</playlist>

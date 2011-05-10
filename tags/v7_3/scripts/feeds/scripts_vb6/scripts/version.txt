@@ -1,0 +1,5 @@
+parent: 79:0d6543bfa32a tip
+ mici fixuri
+branch: default
+commit: (clean)
+update: (current)
