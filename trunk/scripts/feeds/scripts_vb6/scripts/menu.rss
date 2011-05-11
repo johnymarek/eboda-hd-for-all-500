@@ -308,6 +308,13 @@ columnCount=3
     <image>/scripts/image/users.png</image>
     <mediaDisplay name="threePartsView"/>
   </item>
+  <item>
+    <link>http://127.0.0.1:82/scripts/php1/ucb-webcast-main.php</link>
+    <title>UCB webcast</title>
+    <annotation>Educational movies</annotation>
+    <image>/scripts/filme/image/series.png</image>
+    <mediaDisplay name="photoView"/>
+  </item>
 <!--
   <item>
 		<link>rss_command://search</link>
