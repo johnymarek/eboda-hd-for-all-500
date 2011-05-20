@@ -172,7 +172,7 @@ ret;
 
 <item>
 <title>Most recent videos</title>
-<link><?php echo $host; ?>/scripts/clip/php/dm.php?query=,http://www.dailymotion.com/en,Most+recent+videos</link>
+<link><?php echo $host; ?>/scripts/clip/php/dm.php?query=,http://www.dailymotion.com/ro,Most+recent+videos</link>
 </item>
 
 <item>

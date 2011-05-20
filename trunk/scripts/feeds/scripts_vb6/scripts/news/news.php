@@ -271,10 +271,10 @@ columnCount=4
 
 <item>
 <title>Vremea in Romania</title>
-<link>/scripts/news/Romania.rss</link>
+<link><?php echo $host; ?>/scripts/news/php/weather.php</link>
 <media:thumbnail url="image/mele/weather.png" />
 <image>image/mele/weather.png</image>
-<location>intern</location>
+<location>http://vremea.meteoromania.ro/</location>
 <annotation>Vezi care e starea vremii in localitatea ta.</annotation>
 </item>
 

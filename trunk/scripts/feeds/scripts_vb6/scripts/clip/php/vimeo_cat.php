@@ -149,6 +149,11 @@ ret;
 	    <script>"<?php echo $host."/scripts/clip/php/vimeo_tag.php?query=,"; ?>" + urlEncode(keyword) + ",Video%20Tag:" + urlEncode(keyword);</script>
 	  </link>
 	</searchLink2>
+	<searchLink3>
+	  <link>
+	    <script>"<?php echo $host."/scripts/clip/php/vimeo2.php?query=,"; ?>" + urlEncode(keyword) + ",User:" + urlEncode(keyword);</script>
+	  </link>
+	</searchLink3>
 	<item_template>
 		<mediaDisplay  name="threePartsView" idleImageWidthPC="10" idleImageHeightPC="10">
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
@@ -168,6 +173,7 @@ ret;
 	<menu>main menu</menu>
 		<item>
 			<title>Cautare dupa video tag</title>
+			<annotation>ex:http://vimeo.com/tag:lost/page:1/sort:newest</annotation>
 			<onClick>
 				keyword = getInput();
 				if (keyword != null)
@@ -177,7 +183,19 @@ ret;
 			</onClick>
 		</item>
 		<item>
+			<title>Afisare video user (indice numeric, ex. 4936621)</title>
+			<annotation>ex:http://vimeo.com/user4936621/videos/page:1/sort:newest</annotation>
+			<onClick>
+				keyword = getInput();
+				if (keyword != null)
+				{
+	       jumpToLink("searchLink3");
+				}
+			</onClick>
+		</item>
+		<item>
 			<title>Afisare canal... (nume exact)</title>
+			<annotation>ex:http://vimeo.com/channels/idealist/page:1</annotation>
 			<onClick>
 				keyword = getInput();
 				if (keyword != null)
@@ -187,7 +205,8 @@ ret;
 			</onClick>
 		</item>
 		<item>
-			<title>User video... (nume exact)</title>
+			<title>Afisare grup... (nume exact)</title>
+			<annotation>ex:http://vimeo.com/groups/redusers/videos/page:1/sort:newest</annotation>
 			<onClick>
 				keyword = getInput();
 				if (keyword != null)

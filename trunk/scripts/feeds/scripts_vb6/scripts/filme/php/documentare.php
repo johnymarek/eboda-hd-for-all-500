@@ -197,8 +197,8 @@ function str_between($string, $start, $end){
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini;
 	return substr($string,$ini,$len);
 }
-
-$videos = explode('id="post-', $html);
+$html = str_between($html,'<ul class="posts">','</ul');
+$videos = explode('<li', $html);
 unset($videos[0]);
 $videos = array_values($videos);
 foreach($videos as $video) {
@@ -206,13 +206,13 @@ foreach($videos as $video) {
   $t2 = explode('"', $t1[1]);
   $link = $t2[0];
   
-  $t3 = explode(">",$t1[2]);
+  $t3 = explode(">",$t1[1]);
   $t4 = explode("<",$t3[1]);
   $title = $t4[0];
   
   $data=str_between($video,"<p>","</p>");
   $data = preg_replace("/(<\/?)([^>]*>)/e","",$data);
-  
+  $data=trim($data);
   $t1=explode('src=',$video);
   $t2=explode('&',$t1[2]);
   $image=$t2[0];

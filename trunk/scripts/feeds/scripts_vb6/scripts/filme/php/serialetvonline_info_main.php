@@ -160,8 +160,9 @@ function str_between($string, $start, $end){
 	return substr($string,$ini,$len); 
 }
 $host = "http://127.0.0.1:82";
+//http://www.serialetvonline.info/tv-shows
 $html = file_get_contents("http://www.serialetvonline.info/tv-shows");
-$videos = explode('<div class="box">', $html);
+$videos = explode('li class="post', $html);
 
 unset($videos[0]);
 $videos = array_values($videos);
@@ -171,15 +172,16 @@ foreach($videos as $video) {
     $t2=explode('"',$t1[1]);
     $link=$t2[0];
 
-    $t3 = explode('>', $t1[1]);
-    $t4 = explode('<', $t3[1]);
+    $t3 = explode('title="', $video);
+    $t4 = explode('"', $t3[1]);
     $title = trim($t4[0]);
     
     $t1 = explode('src="', $video);
     $t2 = explode('"', $t1[1]);
     $image = $t2[0];
 
-    $data = trim(str_between($video,'<p>','</p>'));
+    $data=trim(str_between($video,'<div class="entry-summary" style="height:150px;">','</div>'));
+
     $data = preg_replace("/(<\/?)([^>]*>)/e","",$data);
     $data = str_replace("&nbsp;","",$data);
     $data = str_replace(">","",$data);

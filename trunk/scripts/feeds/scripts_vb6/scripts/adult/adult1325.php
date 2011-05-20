@@ -17,26 +17,26 @@ $host = "http://127.0.0.1:82";
 
 	<mediaDisplay name=photoView 
 	  centerXPC=7 
-		centerYPC=23
-		centerHeightPC=68
+		centerYPC=7
+		centerHeightPC=85
 		columnCount="6"
 		rowCount="4"
-imageBorderPC="1.5"
+        imageBorderPC="1.5"
 		menuBorderColor="55:55:55"
 		sideColorBottom="0:0:0"
 		sideColorTop="0:0:0"
-	  backgroundColor="0:0:0"
+	    backgroundColor="0:0:0"
 		imageBorderColor="10:105:150"
 		itemBackgroundColor="0:0:0"
 		itemGapXPC=1
-		itemGapYPC=1
-		sideTopHeightPC=22
-		bottomYPC=85
+		itemGapYPC=4
+		sideTopHeightPC=0
+		bottomYPC=0
 		sliding=yes
 		showHeader=no
 		showDefaultInfo=no
 		idleImageWidthPC="10" idleImageHeightPC="10">
-		
+<!--
   	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		  <script>getPageInfo("pageTitle");</script>
 		</text>
@@ -46,7 +46,7 @@ imageBorderPC="1.5"
 		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
 		</text>
 
-
+-->
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
         <idleImage>image/POPUP_LOADING_02.png</idleImage>
         <idleImage>image/POPUP_LOADING_03.png</idleImage>
@@ -103,28 +103,28 @@ imageBorderPC="1.5"
 			   <script>
 					idx = getQueryItemIndex();
 					focus = getFocusItemIndex();
-			    if(focus==idx) imageW; else imageW * 3 / 4;
+			    if(focus==idx) 90; else 75;
 			   </script>
 			 </widthPC>
 			 <heightPC>
 			   <script>
 					idx = getQueryItemIndex();
 					focus = getFocusItemIndex();
-			    if(focus==idx) imageH; else imageH * 3 / 4;
+			    if(focus==idx) 40; else 30;
 			   </script>
 			 </heightPC>
 			 <offsetXPC>
 			   <script>
 					idx = getQueryItemIndex();
 					focus = getFocusItemIndex();
-			    if(focus==idx) 50 - imageW/2; else 50 - imageW * 3 / 8;
+			    if(focus==idx) 5; else 12;
 			   </script>
 			 </offsetXPC>
 			 <offsetYPC>
 			   <script>
 					idx = getQueryItemIndex();
 					focus = getFocusItemIndex();
-			    if(focus==idx) 0; else imageH / 8;
+			    if(focus==idx) 2; else 4;
 			   </script>
 			 </offsetYPC>
 			</image>

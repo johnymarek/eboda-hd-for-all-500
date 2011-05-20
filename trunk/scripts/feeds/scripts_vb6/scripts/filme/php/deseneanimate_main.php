@@ -159,6 +159,7 @@ if($query) {
 }
 //http://deseneanimate.tv/category.php?c=desene-in-limba-romana#main_navigation
 //http://deseneanimate.tv/category.php?c=desene-in-limba-romana&p=2#main_navigation
+//http://deseneanimate.tv/category.php?c=desene-in-limba-romana&p=2#main_navigation
 if ($page==1) {
   $html = file_get_contents("http://deseneanimate.tv/category.php?c=desene-in-limba-romana#main_navigation");
 } else {
@@ -190,7 +191,7 @@ function str_between($string, $start, $end){
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
 	return substr($string,$ini,$len); 
 }
-$html = str_between($html,'<div class="categorybigtitle">','<p');
+$html = str_between($html,'<div class="categorybigtitle">','<div id="butoane">');
 $videos = explode('href="', $html);
 
 unset($videos[0]);
@@ -207,7 +208,7 @@ foreach($videos as $video) {
 
     $title = str_between($video,'<span class="categorytitle">','</span>');
     $link = 'http://127.0.0.1:82/scripts/filme/php/deseneanimate.php?query=1,'.$link.','.urlencode($title).",".$image;
-
+    if ($title <> "") {
     echo '
     <item>
     <title>'.$title.'</title>
@@ -218,6 +219,7 @@ foreach($videos as $video) {
     <mediaDisplay name="threePartsView"/>
     </item>
     ';
+    }
 }
 
 ?>

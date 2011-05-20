@@ -351,55 +351,7 @@ ret;
 <channel>
 	<title>TV Live - Canale sport</title>
 	<menu>main menu</menu>
-<!--
-	<item>
-	<title>Sky Sports 1(en)</title>
-	<stream_url>rtmp://46.19.141.238/live/13.sdp</stream_url>
-	<annotation>Sky Sports 1(en)</annotation>
-	<stream_class>video</stream_class>
-	</item>
-	
-	<item>
-	<title>Sky Sports 2(en)</title>
-	<stream_url>rtmp://46.19.141.238/live/31.sdp</stream_url>
-	<annotation>Sky Sports 2(en)</annotation>
-	<stream_class>video</stream_class>
-	</item>
-	
-	<item>
-	<title>Sky Sports 3(en)</title>
-	<stream_url>rtmp://46.19.141.238/live/12.sdp</stream_url>
-	<annotation>Sky Sports 3(en)</annotation>
-	<stream_class>video</stream_class>
-	</item>
-	
-	<item>
-	<title>EuroSport(en)</title>
-	<stream_url>rtmp://46.19.141.238/live/21.sdp</stream_url>
-	<annotation>EuroSport(en)</annotation>
-	<stream_class>video</stream_class>
-	</item>
-	
-	<item>
-	<title>EuroSport 2(en)</title>
-	<stream_url>rtmp://46.19.141.238/live/11.sdp</stream_url>
-	<annotation>EuroSport 2(en)</annotation>
-	<stream_class>video</stream_class>
-	</item>
--->
-	<item>
-	<title>EuroSport(de)</title>
-	<stream_url>rtmp://cp108478.live.edgefcs.net/live/eurosport_1_800@45515</stream_url>
-	<annotation>EuroSport(de)</annotation>
-	<stream_class>video</stream_class>
-	</item>
-	
-	<item>
-	<title>SPORT 1(de)</title>
-	<stream_url>rtmp://cp108478.live.edgefcs.net/live/sport1_1_800@45517</stream_url>
-	<annotation>SPORT 1(de)</annotation>
-	<stream_class>video</stream_class>
-	</item>
+
 	<item>
 	<title>Dolce Sport(ro)</title>
 	<stream_url>rtmpe://fms-de01.mediadirect.ro:80/live/dolcesport?id=14703526/dolcesport</stream_url>
@@ -411,13 +363,6 @@ ret;
 	<title>Dolce Sport 2(ro)</title>
 	<stream_url>rtmpe://fms-de01.mediadirect.ro:80/live/dolcesport2?id=14703526/dolcesport2</stream_url>
 	<annotation>Dolce Sport 2(ro)</annotation>
-	<stream_class>video</stream_class>
-	</item>
-
-	<item>
-	<title>RAI SPORT 2</title>
-	<stream_url>mms://wms.3BA6.edgecastcdn.net/203BA6/RAI?e=1300996339&h=97c1e4a8ae7329df1b92814a02a62e02&startTime=1300996329&userId=13057&portalId=5&portal=5&channelId=2892&ppvId=24260&mark=9517&source=box&tvRandom=47686498&epgType=live</stream_url>
-	<annotation>RAI SPORT 2</annotation>
 	<stream_class>video</stream_class>
 	</item>
 

@@ -198,8 +198,8 @@ foreach($videos as $video) {
     $t2 = explode('"', $t1[1]);
     $link = 'http://www.dailymotion.com/user'.$t2[0];
 
-    $t1 = explode(' src="', $video);
-    $t2 = explode('"', $t1[1]);
+    $t1 = explode('data-src="', $video);
+    $t2 = explode('?', $t1[1]);
     $image = $t2[0];
 
     $t1 = explode(' title="', $video);

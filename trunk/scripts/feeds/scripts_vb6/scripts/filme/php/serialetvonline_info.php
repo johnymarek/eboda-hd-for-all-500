@@ -170,11 +170,11 @@ function str_between($string, $start, $end){
 	return substr($string,$ini,$len); 
 }
 $host = "http://127.0.0.1:82";
-$videos = explode('<div class="box">', $html);
+$videos = explode('li class="post-', $html);
 
 unset($videos[0]);
-$videos = array_values($videos);
-
+//$videos = array_values($videos);
+$videos = array_reverse($videos);
 foreach($videos as $video) {
     $t1=explode('href="',$video);
     $t2=explode('"',$t1[1]);
@@ -184,11 +184,11 @@ foreach($videos as $video) {
     $t2 = explode('"', $t1[1]);
     $image = $t2[0];
 
-    $t1=explode('href="',$video);
-    $t2=explode('>',$t1[2]);
-    $t3=explode('<',$t2[1]);
+    $t1=explode('rel="bookmark">',$video);
+    $t3=explode('<',$t1[1]);
     $title=$t3[0];
-    
+    $data = $title;
+/**
     $data = trim(str_between($video,'<p>','</p>'));
     $data = preg_replace("/(<\/?)([^>]*>)/e","",$data);
     $data = str_replace("&#351;","s",$data);
@@ -209,6 +209,7 @@ foreach($videos as $video) {
     if (($data == "") || (strpos($data,"Vizionare") !== false)) {
        $data = $title;
     }
+**/
     if (($link <> "") && (strpos($link,"serialetvonline.info/register") ===false)) {
        $link = 'http://127.0.0.1:82/scripts/filme/php/filme_link.php?'.$link.','.urlencode($title);
 

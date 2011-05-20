@@ -218,8 +218,8 @@ if($search) {
 
 <?php } ?>
 <?php
-if (strpos($html,'<div class="item">') !== false) {
-$videos = explode('<div class="item">', $html);
+if (strpos($html,'<div class="item') !== false) {
+$videos = explode('<div class="item', $html);
 unset($videos[0]);
 $videos = array_values($videos);
 

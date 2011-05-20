@@ -139,42 +139,42 @@ $host = "http://127.0.0.1:82";
 <item>
 <title>OneHD - Live! Concert</title>
 <location>http://live.1hd.ro/displaygrila2.php</location>
-<onClick>playItemURL("http://127.0.0.1:83/cgi-bin/translate?stream,Content-type:video/mp4,rtmp://93.114.43.3:1935/live/onehd", 10);</onClick>
+<onClick>playItemURL("http://127.0.0.1:82/scripts/util/swiss.cgi?rtmp://93.114.43.3:1935/live/onehd", 10);</onClick>
 <media:thumbnail url="/scripts/tv/image/onehd.png" />
 </item>
 
 <item>
 <title>OneHD - Live! Jazz</title>
 <location>http://live.1hd.ro/displaygrila2j.php</location>
-<onClick>playItemURL("http://127.0.0.1:83/cgi-bin/translate?stream,Content-type:video/mp4,rtmp://93.114.43.3:1935/live/jazz", 10);</onClick>
+<onClick>playItemURL("http://127.0.0.1:82/scripts/util/swiss.cgi?rtmp://93.114.43.3:1935/live/jazz", 10);</onClick>
 <media:thumbnail url="/scripts/tv/image/onehd.png" />
 </item>
 
 <item>
 <title>OneHD - Live! Classics</title>
 <location>http://live.1hd.ro/displaygrila2c.php</location>
-<onClick>playItemURL("http://127.0.0.1:83/cgi-bin/translate?stream,Content-type:video/mp4,rtmp://93.114.43.3:1935/live/classics", 10);</onClick>
+<onClick>playItemURL("http://127.0.0.1:82/scripts/util/swiss.cgi?rtmp://93.114.43.3:1935/live/classics", 10);</onClick>
 <media:thumbnail url="/scripts/tv/image/onehd.png" />
 </item>
 
 <item>
 <title>OneHD - Live! Dance</title>
 <location>http://live.1hd.ro/displaygrila2d.php</location>
-<onClick>playItemURL("http://127.0.0.1:83/cgi-bin/translate?stream,Content-type:video/mp4,rtmp://93.114.43.3:1935/live/dance", 10);</onClick>
+<onClick>playItemURL("http://127.0.0.1:82/scripts/util/swiss.cgi?rtmp://93.114.43.3:1935/live/dance", 10);</onClick>
 <media:thumbnail url="/scripts/tv/image/onehd.png" />
 </item>
 
 <item>
 <title>OneHD - Live! Rock</title>
 <location>http://live.1hd.ro/displaygrila2r.php</location>
-<onClick>playItemURL("http://127.0.0.1:83/cgi-bin/translate?stream,Content-type:video/mp4,rtmp://93.114.43.3:1935/live/rock", 10);</onClick>
+<onClick>playItemURL("http://127.0.0.1:82/scripts/util/swiss.cgi?rtmp://93.114.43.3:1935/live/rock", 10);</onClick>
 <media:thumbnail url="/scripts/tv/image/onehd.png" />
 </item>
 
 <item>
 <title>OneHD - Live! Pop</title>
 <location>http://live.1hd.ro/displaygrila2p.php</location>
-<onClick>playItemURL("http://127.0.0.1:83/cgi-bin/translate?stream,Content-type:video/mp4,rtmp://93.114.43.3:1935/live/pop", 10);</onClick>
+<onClick>playItemURL("http://127.0.0.1:82/scripts/util/swiss.cgi?rtmp://93.114.43.3:1935/live/pop", 10);</onClick>
 <media:thumbnail url="/scripts/tv/image/onehd.png" />
 </item>
 

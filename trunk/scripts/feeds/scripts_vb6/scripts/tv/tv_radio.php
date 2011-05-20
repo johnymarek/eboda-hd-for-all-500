@@ -14,26 +14,27 @@ $host = "http://127.0.0.1:82";
 </onRefresh>
 
 	<mediaDisplay name=photoView
-	  centerXPC=7
-		centerYPC=25
-		centerHeightPC=40
-columnCount=4
-	  rowCount=1
+	  centerXPC=5
+		centerYPC=5
+		centerHeightPC=75
+columnCount=6
+	  rowCount=3
 		menuBorderColor="55:55:55"
 		sideColorBottom="0:0:0"
 		sideColorTop="0:0:0"
 	  backgroundColor="0:0:0"
-		imageBorderColor="0:0:0"
+		imageBorderColor="10:105:150"
+		imageBorderPC="1.5"
 		itemBackgroundColor="0:0:0"
-		itemGapXPC=0
-		itemGapYPC=1
-		sideTopHeightPC=22
-		bottomYPC=85
+		itemGapXPC=1
+		itemGapYPC=4
+		sideTopHeightPC=0
+		bottomYPC=80
 		sliding=yes
 		showHeader=no
 		showDefaultInfo=no
 		idleImageWidthPC="10" idleImageHeightPC="10">
-
+<!--
   	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		  <script>getPageInfo("pageTitle");</script>
 		</text>
@@ -41,18 +42,19 @@ columnCount=4
   	<text redraw="yes" offsetXPC="85" offsetYPC="12" widthPC="10" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
 		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
 		</text>
-
+-->
 		<!--  lines="5" fontSize=15 -->
 		<text align="center" redraw="yes"
   lines=3 fontSize=17
-		      offsetXPC=5 offsetYPC=65 widthPC=90 heightPC=20
+		      offsetXPC=5 offsetYPC=80 widthPC=90 heightPC=15
 		      backgroundColor=0:0:0 foregroundColor=120:120:120>
 			<script>print(annotation); annotation;</script>
 		</text>
-
+<!--
 		<text align="center" redraw="yes" offsetXPC=10 offsetYPC=85 widthPC=80 heightPC=10 fontSize=15 backgroundColor=0:0:0 foregroundColor=75:75:75>
 			<script>print(location); location;</script>
 		</text>
+-->
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
         <idleImage>image/POPUP_LOADING_02.png</idleImage>
         <idleImage>image/POPUP_LOADING_03.png</idleImage>
@@ -77,21 +79,21 @@ columnCount=4
 			   <script>
 					idx = getQueryItemIndex();
 					focus = getFocusItemIndex();
-			    if(focus==idx) 0; else 12;
+			    if(focus==idx) 5; else 12;
 			   </script>
 			 </offsetXPC>
 			 <offsetYPC>
 			   <script>
 					idx = getQueryItemIndex();
 					focus = getFocusItemIndex();
-			    if(focus==idx) 0; else 6;
+			    if(focus==idx) 4; else 6;
 			   </script>
 			 </offsetYPC>
 			 <widthPC>
 			   <script>
 					idx = getQueryItemIndex();
 					focus = getFocusItemIndex();
-			    if(focus==idx) 100; else 75;
+			    if(focus==idx) 90; else 75;
 			   </script>
 			 </widthPC>
 			 <heightPC>
@@ -103,7 +105,7 @@ columnCount=4
 			 </heightPC>
 			</image>
 
-			<text align="center" lines="4" offsetXPC=0 offsetYPC=55 widthPC=100 heightPC=45 backgroundColor=-1:-1:-1>
+			<text align="center" lines="2" offsetXPC=0 offsetYPC=55 widthPC=100 heightPC=45 backgroundColor=-1:-1:-1>
 				<script>
 					idx = getQueryItemIndex();
 					getItemInfo(idx, "title");
@@ -112,7 +114,7 @@ columnCount=4
   				<script>
   					idx = getQueryItemIndex();
   					focus = getFocusItemIndex();
-  			    if(focus==idx) "18"; else "14";
+  			    if(focus==idx) "16"; else "14";
   				</script>
 				</fontSize>
 			  <foregroundColor>
@@ -221,13 +223,13 @@ columnCount=4
         idx = Integer(getFocusItemIndex());
         if (userInput == "pagedown")
         {
-          idx -= -4;
+          idx -= -5;
           if(idx &gt;= itemSize)
             idx = itemSize-1;
         }
         else
         {
-          idx -= 4;
+          idx -= 5;
           if(idx &lt; 0)
             idx = 0;
         }
@@ -279,7 +281,7 @@ columnCount=4
 </item>
 
 <item>
-<title>Emisiuni Antena 1</title>
+<title>Antena 1</title>
 <link><?php echo $host; ?>/scripts/tv/php/antena1_main.php</link>
 <media:thumbnail url="/scripts/tv/image/antena1.jpg" />
 <image>/scripts/tv/image/antena1.jpg</image>
@@ -289,7 +291,7 @@ columnCount=4
 </item>
 
 <item>
-<title>Emisiuni Antena2</title>
+<title>Antena2</title>
 <link><?php echo $host; ?>/scripts/tv/php/antena2_main.php</link>
 <media:thumbnail url="/scripts/tv/image/antena2.jpg" />
 <image>/scripts/tv/image/antena2.jpg</image>
@@ -298,7 +300,7 @@ columnCount=4
 </item>
 
 <item>
-<title>Emisiuni Antena3</title>
+<title>Antena3</title>
 <link><?php echo $host; ?>/scripts/tv/php/ant3_main.php</link>
 <media:thumbnail url="/scripts/tv/image/antena3.jpg" />
 <image>/scripts/tv/image/antena3.jpg</image>
@@ -307,7 +309,7 @@ columnCount=4
 </item>
 
 <item>
-<title>Emisiuni ProTV</title>
+<title>ProTV</title>
 <link><?php echo $host; ?>/scripts/tv/php/protv_main.php</link>
 <media:thumbnail url="/scripts/tv/image/protv.jpg" />
 <image>/scripts/tv/image/protv.jpg</image>
@@ -316,7 +318,7 @@ columnCount=4
 </item>
 
 <item>
-<title>Emisiuni AcasaTV</title>
+<title>AcasaTV</title>
 <link><?php echo $host; ?>/scripts/tv/acasatv.php</link>
 <media:thumbnail url="/scripts/tv/image/acasatv.jpg" />
 <image>/scripts/tv/image/acasatv.jpg</image>
@@ -325,7 +327,7 @@ columnCount=4
 </item>
 
 <item>
-<title>Emisiuni EuforiaTV</title>
+<title>EuforiaTV</title>
 <link><?php echo $host; ?>/scripts/tv/php/euforiatv.php</link>
 <media:thumbnail url="/scripts/tv/image/euforiatv.gif" />
 <image>/scripts/tv/image/euforiatv.gif</image>
@@ -334,7 +336,7 @@ columnCount=4
 </item>
 
 <item>
-<title>Emisiuni RealitateaTV</title>
+<title>RealitateaTV</title>
 <link><?php echo $host; ?>/scripts/tv/php/realitateatv_main.php</link>
 <media:thumbnail url="/scripts/tv/image/realitateatv.gif" />
 <image>/scripts/tv/image/realitateatv.gif</image>
@@ -343,7 +345,7 @@ columnCount=4
 </item>
 
 <item>
-<title>Emisiuni Money.ro WebTV</title>
+<title>Money.ro WebTV</title>
 <link><?php echo $host; ?>/scripts/tv/php/money.php</link>
 <media:thumbnail url="/scripts/tv/image/money.gif" />
 <image>/scripts/tv/image/money.gif</image>
@@ -352,7 +354,7 @@ columnCount=4
 </item>
 
 <item>
-<title>Emisiuni SensoTV</title>
+<title>SensoTV</title>
 <link><?php echo $host; ?>/scripts/tv/sensotv.php</link>
 <media:thumbnail url="/scripts/tv/image/sensotv.png" />
 <image>/scripts/tv/image/sensotv.png</image>
@@ -361,7 +363,7 @@ columnCount=4
 </item>
 
 <item>
-<title>Emisiuni Publika.Md (Rep. Moldova)</title>
+<title>Publika.Md</title>
 <link><?php echo $host; ?>/scripts/tv/php/publika.php</link>
 <media:thumbnail url="/scripts/tv/image/publika.jpg" />
 <image>/scripts/tv/image/publika.jpg</image>
@@ -370,7 +372,7 @@ columnCount=4
 </item>
 
 <item>
-<title>JurnalTV (Rep. Moldova)</title>
+<title>JurnalTV</title>
 <link><?php echo $host; ?>/scripts/tv/php/jurnaltv_main.php</link>
 <media:thumbnail url="/scripts/tv/image/jurnaltv.jpg" />
 <image>/scripts/tv/image/jurnaltv.jpg</image>
@@ -398,7 +400,7 @@ columnCount=4
 </item>
 
 <item>
-<title>Emisiuni TV posturi locale</title>
+<title>Posturi locale</title>
 <link><?php echo $host; ?>/scripts/tv/locale.php</link>
 <media:thumbnail url="image/tv_radio.png" />
 <image>/scripts/image/tv_radio.png</image>
@@ -426,7 +428,7 @@ columnCount=4
 </item>
 -->
 <item>
-<title>Cronica Carcotasilor KissFM</title>
+<title>Cronica Carcotasilor</title>
 <link>http://cronica.primatv.ro/podcast/podcast.xml</link>
 <media:thumbnail url="image/tv_radio.png" />
 <image>/scripts/image/tv_radio.png</image>

@@ -16,7 +16,7 @@ $host = "http://127.0.0.1:82";
 
 	<mediaDisplay name=photoView
 	  centerXPC=7
-		centerYPC=25
+		centerYPC=30
 		centerHeightPC=40
 columnCount=5
 	  rowCount=1
@@ -326,13 +326,30 @@ columnCount=5
 </item>
 
 <item>
-<title>TV Bacau</title>
-<link><?php echo $host; ?>/scripts/php1/youtube_user.php?query=1,TPDesteptarea</link>
-<media:thumbnail url="/scripts/tv/image/tvbacau.gif" />
-<image>/scripts/tv/image/tvbacau.gif</image>
-<location>http://tvbacau.desteptarea.ro/</location>
-<annotation>Stiri locale din Bacau</annotation>
+<title>BaricadaTV</title>
+<link><?php echo $host; ?>/scripts/clip/php/vimeo2.php?query=,4936621,BaricadaTV</link>
+<media:thumbnail url="/scripts/tv/image/baricadatv.jpg" />
+<image>/scripts/tv/image/baricadatv.jpg</image>
+<location>http://vimeo.com/user4936621/videos</location>
+<annotation>BaricadaTV. – revolutie in televiziune!</annotation>
 </item>
 
+<item>
+<title>eMaramures</title>
+<link><?php echo $host; ?>/scripts/tv/locale/emaramures.php</link>
+<media:thumbnail url="/scripts/tv/image/emaramures.jpg" />
+<image>/scripts/tv/image/emaramures.jpg</image>
+<location>http://www.emaramures.ro</location>
+<annotation>STIRI MARAMURES – ziar electronic actualizat non-stop cu stiri din Baia Mare, Sighet, Borsa, Targu Lapus...</annotation>
+</item>
+
+<item>
+<title>CNS Roman</title>
+<link><?php echo $host; ?>/scripts/php1/youtube_user.php?query=1,tvcns</link>
+<media:thumbnail url="/scripts/tv/image/cns.jpg" />
+<image>/scripts/tv/image/cns.jpg</image>
+<location>http://www.cnstv.ro/</location>
+<annotation>Televiziunea Roman CNS</annotation>
+</item>
 </channel>
 </rss>

@@ -4,6 +4,11 @@ function str_between($string, $start, $end){
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
 	return substr($string,$ini,$len); 
 }
+function r() {
+$i=mt_rand(4096,0xffff);
+$j=mt_rand(4096,0xffff);
+return  dechex($i).dechex($j);
+}
 function zeroFill($a,$b) {
     if ($a >= 0) {
         return bindec(decbin($a>>$b)); //simply right shift for positive number
@@ -31,11 +36,12 @@ function peteava($movie) {
   if ($seed == "") {
      return "";
   }
+  $r=r();
   $s = hexdec($seed);
   $local3 = crunch($s,$movie);
   $local3 = crunch($local3,"0");
-  $local3 = crunch($local3,"1fe71d22");
-  return strtolower(dechex($local3));
+  $local3 = crunch($local3,$r);
+  return strtolower(dechex($local3)).$r;
 }
 $baseurl = "http://127.0.0.1:83/cgi-bin/translate?stream,Content-type:video/x-flv,";
 $link = $_GET["file"];
@@ -49,7 +55,7 @@ $html = file_get_contents($link);
 $id = str_between($html,"stream.php&file=","&");
 $token = peteava($id);
 if ($token <> "") {
-  $link =  "http://content.peteava.ro/video/".$id."?start=0&token=".$token."1fe71d22";
+  $link =  "http://content.peteava.ro/video/".$id."?start=0&token=".$token;
 } else {
   $link = "http://content.peteava.ro/video/".$id;
 }

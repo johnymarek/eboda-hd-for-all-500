@@ -48,7 +48,7 @@ $host = "http://127.0.0.1:82";
   	<text redraw="yes" offsetXPC="85" offsetYPC="12" widthPC="10" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
 		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
 		</text>
-		<text align="left" redraw="yes"
+		<text align="center" redraw="yes"
           lines="8" fontSize=17
 		      offsetXPC=55 offsetYPC=58 widthPC=40 heightPC=38
 		      backgroundColor=0:0:0 foregroundColor=200:200:200>
@@ -189,7 +189,7 @@ if($search) {
 </item>
 <?php } ?>
 <?php
-$videos = explode('<div class="container_film">', $html);
+$videos = explode('<div class="tabel_show">', $html);
 
 unset($videos[0]);
 $videos = array_values($videos);
@@ -207,7 +207,7 @@ foreach($videos as $video) {
     $t2 = explode('"', $t1[1]);
     $title = $t2[0];
     
-    $t1=explode('"descriere_show">',$video);
+    $t1=explode('<p>',$video);
     $t2=explode('<',$t1[1]);
     $descriere=$t2[0];
 

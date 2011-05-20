@@ -10,7 +10,7 @@
 <mediaDisplay name="photoView" 
 	fontSize="16" 
 	rowCount="7"
-	columnCount="2"
+	columnCount="3"
 	sideColorBottom="10:105:150"
 	sideColorTop="10:105:150"
 	itemYPC="25"
@@ -40,7 +40,7 @@
   	<text redraw="yes" offsetXPC="85" offsetYPC="12" widthPC="10" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
 		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
 		</text>
-  	<text  redraw="yes" align="center" offsetXPC="0" offsetYPC="80" widthPC="100" heightPC="15" fontSize="25" backgroundColor="10:105:150" foregroundColor="100:200:255">
+  	<text  redraw="yes" align="center" offsetXPC="0" offsetYPC="80" widthPC="100" heightPC="15" fontSize="22" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		  <script>print(annotation); annotation;</script>
 		</text>
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
@@ -57,7 +57,7 @@
 					focus = getFocusItemIndex();
 					if(focus==idx) 
 					{
-					  annotation = getItemInfo(idx, "title");
+					  annotation = getItemInfo(idx, "annotation");
 					}
 				</script>
 		</itemDisplay>
