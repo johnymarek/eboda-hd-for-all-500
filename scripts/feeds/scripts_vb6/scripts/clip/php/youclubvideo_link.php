@@ -22,6 +22,9 @@ if ($link == "") {
 if ($link == "") {
    $link = str_between($html,'skewd.xml&file=','&');
 }
+if ($link == "") {
+   $link = str_between($html,"'file': '","'");
+}
 if ($link <> "") {
 print $link;
 }

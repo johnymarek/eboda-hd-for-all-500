@@ -65,7 +65,7 @@ if($query) {
   	<text  redraw="yes" align="left" offsetXPC="55" offsetYPC="52" widthPC="15" heightPC="5" fontSize="17" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		  <script>print(durata); durata;</script>
 		</text>
-  	<text  redraw="yes" align="left" offsetXPC="72" offsetYPC="52" widthPC="30" heightPC="5" fontSize="17" backgroundColor="10:105:150" foregroundColor="100:200:255">
+  	<text  redraw="yes" align="left" offsetXPC="72" offsetYPC="52" widthPC="23" heightPC="5" fontSize="17" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		  <script>print(pub); pub;</script>
 		</text>
   	<text  redraw="yes" align="center" offsetXPC="0" offsetYPC="90" widthPC="100" heightPC="8" fontSize="17" backgroundColor="10:105:150" foregroundColor="100:200:255">
@@ -240,8 +240,8 @@ foreach($videos as $video) {
     $t2 = explode('"', $t1[1]);
     $link = 'http://www.dailymotion.com'.$t2[0];
 
-    $t1 = explode('src="', $video);
-    $t2 = explode('"', $t1[1]);
+    $t1 = explode('data-src="', $video);
+    $t2 = explode('?', $t1[1]);
     $image = $t2[0];
 
     $t1 = explode('title="', $video);
@@ -263,7 +263,12 @@ foreach($videos as $video) {
      $title = str_replace("&acirc;","a",$title);
      $title = str_replace("&Acirc;","A",$title);
      $title = str_replace("&nbsp;","",$title);
-    
+     $title = str_replace("&Auml;","a",$title);
+     $title = str_replace("&amp;icirc;","a",$title);
+     $title = str_replace("&amp;atilde;","a",$title);
+     $title = str_replace("&amp;Icirc;","I",$title);
+     $title = str_replace("&amp;acirc;","a",$title);
+
     $t1=explode('class="duration">',$video);
     $t2=explode('<',$t1[1]);
     $durata = "Durata:".$t2[0];

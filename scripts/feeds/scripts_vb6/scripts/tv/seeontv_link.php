@@ -141,12 +141,15 @@ $t2=explode('"',$t1[1]);
 $link=urldecode($t2[0]);
 $link=str_replace("redirect&file=","edge/",$link);
 $link1=str_replace(".flv&autostart=true","",$link);
+$l=explode("&",$link1);
+$link1=$l[0];
 
 //rtmp://live00.seeon.tv/redirect&file=0domjbxgqkk6r6a.flv&autostart=true
 //rtmp://live4.seeon.tv/edge/bzhw62kbfg0lsqe
+//rtmp://live.seeon.tv/edge/2gsa35ckq9v8y0c
 $host = "http://127.0.0.1:82";
 for ($i = 1; $i <= 10; $i++) {
-  $link=str_replace("rtmp://live00","rtmp://live".$i,$link1);
+  $link=str_replace("rtmp://live","rtmp://live".$i,$link1);
   echo '
   <item>
   <title>'.$tit.'('.$i.')</title>

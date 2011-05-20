@@ -1,5 +1,5 @@
-parent: 79:0d6543bfa32a tip
- mici fixuri
+parent: 91:b855386e98f4 tip
+ fix uk tv
 branch: default
 commit: (clean)
 update: (current)

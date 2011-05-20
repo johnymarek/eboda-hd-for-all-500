@@ -174,26 +174,28 @@ function str_between($string, $start, $end){
 	return substr($string,$ini,$len); 
 }
 $host = "http://127.0.0.1:82";
-$html = file_get_contents("http://seriale.subtitrate.info/index.php?menu=tv-shows");
-$videos = explode('<li class="post-', $html);
+//http://seriale.subtitrate.info/index.php?menu=tv-shows
+//http://seriale.subtitrate.info/tv-shows
+$html = file_get_contents("http://seriale.subtitrate.info/tv-shows");
+$videos = explode('<div class="box">', $html);
 
 unset($videos[0]);
 $videos = array_values($videos);
 
 foreach($videos as $video) {
     $t1=explode('href="',$video);
-    $t2=explode('"',$t1[2]);
+    $t2=explode('"',$t1[1]);
     $link=$t2[0];
+    $t3=explode(">",$t1[1]);
+    $t4=explode("<",$t3[1]);
+    $title=$t4[0];
 
     $t1 = explode('src="', $video);
     $t2 = explode('"', $t1[1]);
     $image = $t2[0];
 
-    $t1 = explode('title="', $video);
-    $t2 = explode('"', $t1[1]);
-    $title = trim($t2[0]);
 
-    $data = trim(str_between($video,'<div class="entry-summary" style="height:150px;">','</div>'));
+    $data = trim(str_between($video,'<p>','</p>'));
     $data = preg_replace("/(<\/?)([^>]*>)/e","",$data);
     $data = str_replace("&#351;","s",$data);
     $data = str_replace("&#259;","a",$data);

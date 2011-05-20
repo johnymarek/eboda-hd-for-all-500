@@ -204,17 +204,22 @@ foreach($videos as $video) {
   $v2 = explode('"', $v1[1]);
   $link = $v2[0];
 //  titlu
-  $v3 = explode('>',$v1[1]);
+  $v1=explode('title="',$video);
+  $v3 = explode('>',$v1[2]);
   $v4 = explode('<',$v3[1]);
   $titlu = $v4[0];
 //  imagine  
   $v1 = explode('src="', $video);
   $v2 = explode('"', $v1[1]);
-  $image = $v2[0];  
-//  descriere  
-  $v1 = explode('<p>', $v1[1]);
-  $v2 = explode('</p>', $v1[1]);
-  $descriere = $v2[0];  
+  if (strpos($v2[0],"default-thumb.png") !==false){
+     $image = $v2[0];
+  } else {
+     $v1=explode('src=',$video);
+     $v2=explode("&",$v1[2]);
+     $image="http://themoviesbest.com".$v2[0];
+  }
+//  descriere
+  $descriere=str_between($video,'</h3>','</div>');
   $descriere = preg_replace("/(<\/?)(\w+)([^>]*>)/e","",$descriere);
   $descriere = str_replace("&nbsp;","",$descriere);
   $descriere = str_replace("<!--more-->","",$descriere);

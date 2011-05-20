@@ -16,8 +16,8 @@ columnCount=3
 
 	<mediaDisplay name=photoView 
 	  centerXPC=7 
-		centerYPC=30
-		centerHeightPC=50
+		centerYPC=25
+		centerHeightPC=60
 columnCount=3
 	  rowCount=1
 		menuBorderColor="55:55:55"
@@ -35,7 +35,7 @@ columnCount=3
 		showDefaultInfo=no
 		idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
 		>
-		
+<!--
   	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		  <script>getPageInfo("pageTitle");</script>
 		</text>
@@ -43,8 +43,11 @@ columnCount=3
   	<text redraw="yes" offsetXPC="85" offsetYPC="12" widthPC="10" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
 		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
 		</text>
-
-		<text align="center" redraw="yes" lines="4" offsetXPC=10 offsetYPC=80 widthPC=75 heightPC=15 fontSize=15 backgroundColor=0:0:0 foregroundColor=120:120:120>
+-->
+		<text align="left" offsetXPC=5 offsetYPC=5 widthPC=75 heightPC=5 fontSize=15 backgroundColor=0:0:0 foregroundColor=120:120:120>
+   Tips: Folositi tastele 1-9, Prev si Next pentru o navigare mai usoara!
+		</text>
+		<text align="center" redraw="yes" lines="4" offsetXPC=10 offsetYPC=85 widthPC=75 heightPC=15 fontSize=15 backgroundColor=0:0:0 foregroundColor=120:120:120>
 			<script>print(annotation); annotation;</script>
 		</text>		
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
@@ -70,33 +73,33 @@ columnCount=3
 			   <script>
 					idx = getQueryItemIndex();
 					focus = getFocusItemIndex();
-			    if(focus==idx) 50 * (1 - columnCount/3); else 12 + 37 * (1 - columnCount/3);
+			    if(focus==idx) 0; else 15;
 			   </script>
 			 </offsetXPC>
 			 <offsetYPC>
 			   <script>
 					idx = getQueryItemIndex();
 					focus = getFocusItemIndex();
-			    if(focus==idx) 0; else 6;
+			    if(focus==idx) 0; else 8;
 			   </script>
 			 </offsetYPC>
 			 <widthPC>
 			   <script>
 					idx = getQueryItemIndex();
 					focus = getFocusItemIndex();
-			    if(focus==idx) 100 * columnCount/3; else 75 * columnCount/3;
+			    if(focus==idx) 100; else 70;
 			   </script>
 			 </widthPC>
 			 <heightPC>
 			   <script>
 					idx = getQueryItemIndex();
 					focus = getFocusItemIndex();
-			    if(focus==idx) 50; else 37;
+			    if(focus==idx) 60; else 42;
 			   </script>
 			 </heightPC>
 			</image>
 			
-			<text align="center" lines="3" offsetXPC=0 offsetYPC=55 widthPC=100 heightPC=45 backgroundColor=-1:-1:-1>
+			<text align="center" lines="3" offsetXPC=0 offsetYPC=65 widthPC=100 heightPC=35 backgroundColor=-1:-1:-1>
 				<script>
 					idx = getQueryItemIndex();
 					getItemInfo(idx, "title");
@@ -265,7 +268,7 @@ columnCount=3
     <link><?php echo $host; ?>/scripts/filme/filme.php</link>
     <title>Filme online subtitrate</title>
     <annotation>Vedeţi aici filme online cu subtitrare...</annotation>
-    <image>/scripts/image/movies.png</image>
+    <image>/scripts/filme/image/movies.png</image>
     <mediaDisplay name="threePartsView"/>
   </item>
   <item>
@@ -293,7 +296,7 @@ columnCount=3
     <link><?php echo $host; ?>/scripts/news/news.php</link>
     <title>Ştiri şi alte informaţii</title>
     <annotation>Vezi orarul serialelor, cursul valutar sau alte informaţii utile</annotation>
-    <image>/scripts/image/blog.png</image>
+    <image>/scripts/news/image/news.png</image>
     <mediaDisplay name="photoView"/>
   </item>
   <item>

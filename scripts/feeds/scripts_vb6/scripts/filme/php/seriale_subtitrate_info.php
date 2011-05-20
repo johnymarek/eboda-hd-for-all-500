@@ -91,7 +91,7 @@ $img=$t3[0];
   				<script>
   					idx = getQueryItemIndex();
   					focus = getFocusItemIndex();
-  			    if(focus==idx) "16"; else "14";
+  			    if(focus==idx) "14"; else "14";
   				</script>
 				</fontSize>
 			  <backgroundColor>
@@ -169,22 +169,25 @@ function str_between($string, $start, $end){
 	return substr($string,$ini,$len); 
 }
 $host = "http://127.0.0.1:82";
-$videos = explode('<li class="post-', $html);
+$videos = explode('div class="box"', $html);
 
 unset($videos[0]);
-$videos = array_values($videos);
-
+//$videos = array_values($videos);
+$videos = array_reverse($videos);
 foreach($videos as $video) {
     $t1=explode('href="',$video);
     $t2=explode('"',$t1[1]);
     $link=$t2[0];
     $link = str_replace("&","@",$link);
+    $t3=explode(">",$t1[2]);
+    $t4=explode("<",$t3[1]);
+    $title=$t4[0];
 
     $t1 = explode('src="', $video);
     $t2 = explode('"', $t1[1]);
     $image = $t2[0];
 
-    $title = trim(str_between($video,'rel="bookmark">','</a>'));
+    //$title = trim(str_between($video,'rel="bookmark">','</a>'));
     $data = $title;
     if ($link <> "") {
        $down = $tit." ".$title;

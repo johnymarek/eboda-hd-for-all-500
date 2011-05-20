@@ -202,10 +202,15 @@ foreach($videos as $video) {
     $link = $t2[0];
 
     $t1 = explode(' src="', $video);
+    $t2 = explode('"', $t1[2]);
+    $image = $t2[0];
+    if ($image=="") {
+    $t1 = explode(' src="', $video);
     $t2 = explode('"', $t1[1]);
     $image = $t2[0];
+    }
 
-    $t1=explode('title="',$video);
+    $t1=explode('Permanent Link:',$video);
     $t2=explode(">",$t1[1]);
     $t3=explode("<",$t2[1]);
     $title = $t3[0];

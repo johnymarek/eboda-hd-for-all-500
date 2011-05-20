@@ -190,7 +190,7 @@ ret;
 
 $html = file_get_contents($link);
 
-$videos = explode('<div class="pre_eps container_filme">', $html);
+$videos = explode('<div class="lista_640', $html);
 
 unset($videos[0]);
 $videos = array_values($videos);

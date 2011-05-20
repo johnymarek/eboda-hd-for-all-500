@@ -64,7 +64,7 @@ $host = "http://127.0.0.1:82";
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_08.png </idleImage>
 
 		<itemDisplay>
-			<text align="left" lines="1" offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			<text align="left" lines="1" cornerRounding=5 offsetXPC=0 offsetYPC=2 widthPC=100 heightPC=96>
 				<script>
 					idx = getQueryItemIndex();
 					focus = getFocusItemIndex();
@@ -186,7 +186,7 @@ ret;
 
 <item>
 <title>filmeonlinenoi.com</title>
-<link><?php echo $host; ?>/scripts/filme/php/filmeonlinenoi_main.php</link>
+<link><?php echo $host; ?>/scripts/filme/php/filmeonlinenoi.php?query=,http://filmeonlinenoi.com/</link>
 <annotation>http://filmeonlinenoi.com/</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
@@ -208,7 +208,7 @@ ret;
 <item>
 <title>themoviesbest.com</title>
 <link><?php echo $host; ?>/scripts/filme/php/themoviesbest_main.php</link>
-<annotation>http://www.onlythefilm.com</annotation>
+<annotation>http://themoviesbest.com/</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
 
@@ -233,51 +233,14 @@ ret;
 <mediaDisplay name="threePartsView"/>
 </item>
 -->
+<!--
 <item>
 <title>Filme Romanesti - filmele-copilariei.blogspot.com</title>
 <link><?php echo $host; ?>/scripts/filme/php/filmele-copilariei_main.php</link>
 <annotation>http://filmele-copilariei.blogspot.com/</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
-<!--
-<item>
-<title>Filme Romanesti - blip.tv</title>
-<link>http://filmeromanesti.blip.tv/rss</link>
-<annotation>http://filmeromanesti.blip.tv/rss</annotation>
-<mediaDisplay name="threePartsView" 
-	itemBackgroundColor="0:0:0" 
-	backgroundColor="0:0:0" 
-	sideLeftWidthPC="0" 
-	itemImageXPC="5" 
-	itemXPC="20" 
-	itemYPC="20" 
-	itemWidthPC="65" 
-	capWidthPC="70" 
-	unFocusFontColor="101:101:101" 
-	focusFontColor="255:255:255" 
-	idleImageWidthPC="10" 
-	idleImageHeightPC="10">
-        <idleImage>image/POPUP_LOADING_01.png</idleImage>
-        <idleImage>image/POPUP_LOADING_02.png</idleImage>
-        <idleImage>image/POPUP_LOADING_03.png</idleImage>
-        <idleImage>image/POPUP_LOADING_04.png</idleImage>
-        <idleImage>image/POPUP_LOADING_05.png</idleImage>
-        <idleImage>image/POPUP_LOADING_06.png</idleImage>
-        <idleImage>image/POPUP_LOADING_07.png</idleImage>
-        <idleImage>image/POPUP_LOADING_08.png</idleImage>
-		<backgroundDisplay>
-			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
-			image/mele/backgd.jpg
-			</image>  
-		</backgroundDisplay>
-		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
-		image/mele/rss_title.jpg
-		</image>
-		<text  offsetXPC=40 offsetYPC=8 widthPC=35 heightPC=10 fontSize=20 backgroundColor=-1:-1:-1 foregroundColor=255:255:255>
-		Filme Romanesti - blip.tv
-		</text>			
-</mediaDisplay>
-</item>
+-->
 
 <item>
 <title>vezifilme.ro</title>

@@ -39,4 +39,4 @@ patch:
 
 sync:
 
-	rsync -a --exclude '.svn' scripts_hg/* scripts/
+	rsync -a --exclude '.hg' --exclude '.svn' scripts_hg/* scripts/

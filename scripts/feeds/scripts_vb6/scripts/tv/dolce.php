@@ -2,35 +2,6 @@
 $host = "http://127.0.0.1:82";
 ?>
 <rss version="2.0">
-
-<!--
-#
-#   http://code.google.com/media-translate/
-#   Copyright (C) 2010  Serge A. Timchenko
-#
-#   This program is free software: you can redistribute it and/or modify
-#   it under the terms of the GNU General Public License as published by
-#   the Free Software Foundation, either version 3 of the License, or
-#   (at your option) any later version.
-#
-#   This program is distributed in the hope that it will be useful,
-#   but WITHOUT ANY WARRANTY; without even the implied warranty of
-#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#   GNU General Public License for more details.
-#
-#   You should have received a copy of the GNU General Public License
-#   along with this program. If not, see <http://www.gnu.org/licenses/>.
-#
--->
-
-<script>
-  translate_base_url  = "http://127.0.0.1:83/cgi-bin/translate?";
-
-  storagePath             = getStoragePath("tmp");
-  storagePath_stream      = storagePath + "stream.dat";
-  
-  error_info          = "";
-</script>
 <onEnter>
   startitem = "middle";
   setRefreshTime(1);
@@ -40,6 +11,7 @@ $host = "http://127.0.0.1:82";
   setRefreshTime(-1);
   itemCount = getPageInfo("itemCount");
 </onRefresh>
+
 <mediaDisplay name="threePartsView"
 	sideLeftWidthPC="0"
 	sideRightWidthPC="0"
@@ -109,8 +81,6 @@ $host = "http://127.0.0.1:82";
 					if(focus==idx) 
 					{
                       img = getItemInfo(idx,"image");
-
-					  streamurl = getItemInfo(idx, "stream_url");
 					}
 					getItemInfo(idx, "title");
 				</script>
@@ -176,59 +146,6 @@ annotation = getURL(url_canal);
 cancelIdle();
 "true";
 }
-else if(userInput == "enter")
-      {
-        showIdle();
-        focus = getFocusItemIndex();
-        request_title = getItemInfo(focus, "title");
-        request_url = getItemInfo(focus, "location");
-        request_options = getItemInfo(focus, "options");
-
-        stream_url = getItemInfo(focus, "stream_url");
-        stream_title = getItemInfo(focus, "stream_title");
-        stream_type = getItemInfo(focus, "stream_type");
-        stream_protocol = getItemInfo(focus, "stream_protocol");
-        stream_soft = getItemInfo(focus, "stream_soft");
-        stream_class = getItemInfo(focus, "stream_class");
-        stream_server = getItemInfo(focus, "stream_server");
-        stream_status_url = "";
-        stream_current_song = "";
-        stream_genre = getItemInfo(focus, "stream_genre");
-        stream_bitrate = getItemInfo(focus, "stream_bitrate");
-        
-        if(stream_class == "" || stream_class == null)
-          stream_class = "unknown";
-
-        if(stream_url == "" || stream_url == null)
-          stream_url = request_url;
-
-        if(stream_server != "" &amp;&amp; stream_server != null)
-          stream_status_url = translate_base_url + "status," + urlEncode(stream_server) + "," + urlEncode(stream_url);
-
-        if(stream_title == "" || stream_title == null)
-          stream_title = request_title;
-
-        if(stream_url != "" &amp;&amp; stream_url != null)
-        {
-          if(stream_protocol == "file" || (stream_protocol == "http" &amp;&amp; stream_soft != "shoutcast"))
-          {
-            url = stream_url;
-          }
-          else
-          {
-            if(stream_type != null &amp;&amp; stream_type != "")
-            {
-              request_options = "Content-type:"+stream_type+";"+request_options;
-            }
-            url = translate_base_url + "stream," + request_options + "," + urlEncode(stream_url);
-          }
-        
-          executeScript(stream_class+"Dispatcher");
-        }
-        
-        cancelIdle();
-        ret = "true";
-}
 else
 {
 annotation = " ";
@@ -254,177 +171,6 @@ annotation = " ";
 		</mediaDisplay>
 	</item_template>
 
-  <videoDispatcher>
-    streamArray = null;
-    streamArray = pushBackStringArray(streamArray, request_url);
-    streamArray = pushBackStringArray(streamArray, request_options);
-    streamArray = pushBackStringArray(streamArray, stream_url);
-    streamArray = pushBackStringArray(streamArray, url);
-    streamArray = pushBackStringArray(streamArray, stream_type);
-    streamArray = pushBackStringArray(streamArray, stream_title);
-    streamArray = pushBackStringArray(streamArray, "1");
-    writeStringToFile(storagePath_stream, streamArray);
-    doModalRss("rss_file://../etc/translate/rss/xspf/videoRenderer.rss");
-  </videoDispatcher>
-  
-  <audioDispatcher>
-    streamArray = null;
-    streamArray = pushBackStringArray(streamArray, request_url);
-    streamArray = pushBackStringArray(streamArray, request_options);
-    streamArray = pushBackStringArray(streamArray, stream_url);
-    streamArray = pushBackStringArray(streamArray, url);
-    streamArray = pushBackStringArray(streamArray, stream_type);
-    streamArray = pushBackStringArray(streamArray, stream_status_url);
-    streamArray = pushBackStringArray(streamArray, stream_current_song);
-    streamArray = pushBackStringArray(streamArray, stream_genre);
-    streamArray = pushBackStringArray(streamArray, stream_bitrate);
-    streamArray = pushBackStringArray(streamArray, stream_title);
-    streamArray = pushBackStringArray(streamArray, "1");
-    writeStringToFile(storagePath_stream, streamArray);
-    doModalRss("rss_file://./rss/xspf/audioRenderer.rss");
-  </audioDispatcher>
-  
-  <playlistDispatcher>
-    streamArray = null;
-    streamArray = pushBackStringArray(streamArray, stream_url);
-    streamArray = pushBackStringArray(streamArray, stream_url);
-    streamArray = pushBackStringArray(streamArray, "");
-    streamArray = pushBackStringArray(streamArray, "");
-    streamArray = pushBackStringArray(streamArray, "playlist");
-    streamArray = pushBackStringArray(streamArray, "1");
-    writeStringToFile(storagePath_playlist, streamArray);
-    doModalRss("rss_file://./rss/xspf/xspfBrowser.rss");
-  </playlistDispatcher>
-  
-  <rssDispatcher>
-    streamArray = null;
-    streamArray = pushBackStringArray(streamArray, stream_url);
-    streamArray = pushBackStringArray(streamArray, stream_url);
-    streamArray = pushBackStringArray(streamArray, "");
-    streamArray = pushBackStringArray(streamArray, "");
-    writeStringToFile(storagePath_stream, streamArray);
-    doModalRss("rss_file://./rss/xspf/rss_mediaFeed.rss");
-  </rssDispatcher>
-
-  <unknownDispatcher>
-    info_url    = translate_base_url + "info," + request_options + "," + urlEncode(request_url);
-    error_info  = "";
-
-    res = loadXMLFile(info_url);
-    
-    if (res != null)
-    {
-      error = getXMLElementCount("info","error");
-      
-      if(error != 0)
-      {
-  	    value = getXMLText("info","error");
-  	    if(value != null)
-  	    {
-  	     error_info = value;
-  	    }
-      }
-      else
-      {
-  	    value = getXMLAttribute("info","stream","url");
-  	    if(value != null)
-  	     stream_url = value;
-  
-  	    value = getXMLAttribute("info","stream","type");
-  	    if(value != null)
-  	     stream_type = value;
-  	    
-  	    value = getXMLAttribute("info","stream","class");
-  	    if(value != null)
-  	     stream_class = value;
-  
-  	    value = getXMLAttribute("info","stream","protocol");
-  	    if(value != null)
-  	     stream_protocol = value;
-  
-  	    value = getXMLAttribute("info","stream","server");
-  	    if(value != null)
-  	     stream_soft = value;
-  
-        stream_status_url = "";
-        
-  	    value = getXMLAttribute("info","stream","server_url");
-  	    if(value != null)
-  	    {
-  	     stream_server_url = value;
-  	     if((stream_soft == "icecast" || stream_soft == "shoutcast") &amp;&amp; stream_server_url!="")
-  	     {
-    	      stream_status_url = translate_base_url+"status,"+urlEncode(stream_server_url)+","+urlEncode(stream_url);
-    	   }
-  	    }
-  	     
-        value = getXMLText("info","status","stream-title");
-  	    if(value != null)
-  	     stream_title = value;
-  
-        stream_current_song = "";
-  	    value = getXMLText("info","status","current-song");
-  	    if(value != null)
-    		  stream_current_song = value;
-    		  
-  	    value = getXMLText("info","status","stream-genre");
-  	    if(value != null)
-  	      stream_genre = value;
-        
-  	    value = getXMLText("info","status","stream-bitrate");
-  	    if(value != null)
-  	      stream_bitrate = value;
-  
-        options = "";
-        
-        if(stream_type != "")
-          options = "Content-type:"+stream_type;
-        
-        if(options == "")
-          options = stream_options;
-        else
-          options = options + ";" + stream_options;
-  
-  	    stream_translate_url = translate_base_url + "stream," + options + "," + urlEncode(stream_url);
-  	    
-  	    url = null;
-  	    
-  	    if(stream_class == "video" || stream_class == "audio")
-    	  {
-          if(stream_protocol == "file" || (stream_protocol == "http" &amp;&amp; stream_soft != "shoutcast"))
-    	      url = stream_url;
-    	    else
-    	      url = stream_translate_url;
-    	  }
-    	  else
-    	  {
-  	      url = stream_url;
-    	  }
-    	     
-    	  if(url != null)
-    	  {
-          if(stream_class == "audio" || stream_class == "video" || stream_class == "playlist" || stream_class == "rss")
-          {
-            executeScript(stream_class+"Dispatcher");
-          }
-          else
-          {
-            error_info = "Unsupported media type: " + stream_type;
-          }
-  	    }
-  	    else
-  	    {
-          error_info = "Empty stream url!";
-  	    }
-      }
-    }
-    else
-    {
-      error_info = "CGI translate module failed!";
-    }
-    print("error_info=",error_info);
-  </unknownDispatcher>
-
 <channel>
   <title>Dolce TV</title>
 <!-- Dolce TV -->
@@ -437,10 +183,10 @@ function str_between($string, $start, $end){
 $link="http://www.dolcetv.ro/tv-live";
 $html = file_get_contents($link);
 $links=array (
-             "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/dolcesport",
+             "rtmpe://fms2.mediadirect.ro:80/live3?id=10668839&publisher=2/dolcesport",
              "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/dolcesport2",
-             "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/antena2",
              "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/antena_3",
+             "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/antena2",
              "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/realitatea",
              "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/b1",
              "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvr1",
@@ -461,13 +207,14 @@ $links=array (
              "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/taraf",
              "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tv5",
              "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/party",
+             "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/babytv",
              "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/dw"
              );
 $canals=array (
 "10212",
 "10225",
-"10119",
 "10055",
+"10119",
 "10019",
 "10022",
 "10001",
@@ -488,6 +235,7 @@ $canals=array (
 "10101",
 "10041",
 "10164",
+"0",
 "10131"
 );
 $videos = explode('<div class="station_program_cell', $html);
@@ -499,13 +247,13 @@ foreach($videos as $video) {
   $acum=str_between($video,'class="acum">','<');
   $next=str_between($video,'class="next">','<');
   $image="http://www.dolcetv.ro/".str_between($video,'background-image:url(',')');
+  $link="http://127.0.0.1:83/cgi-bin/translate?stream,,".$links[$n];
   print '
   <item>
   <title>'.$title.'</title>
-  <stream_url>'.$links[$n].'</stream_url>
+  <onClick>playItemURL("'.$link.'",10);</onClick>
   <image>'.$image.'</image>
   <canal>'.$canals[$n].'</canal>
-  <stream_class>video</stream_class>
   </item>
   ';
   $n++;

@@ -83,7 +83,7 @@ if (file_exists("/tmp/usbmounts/sda1/download")) {
 	if( userInput == "two")
 	{
 		topUrl = "http://127.0.0.1:82/scripts/util/download.cgi?link=" + getItemInfo(getFocusItemIndex(),"download") + ";name=" + getItemInfo(getFocusItemIndex(),"name");
-		dlok = loadXMLFile(topUrl);
+		dummy = getUrl(topUrl);
 	}
 	else
     if (userInput == "three")
@@ -116,6 +116,97 @@ function str_prep($string){
   $string = str_replace('#038;','',$string);
   $string = str_replace('&amp;','&',$string);
   return $string;
+}
+function vk($string) {
+	$h = file_get_contents($string);
+	$t1=explode("nvar vars",$h);
+	$l=$t1[1];
+	$uid=str_between($l,'\"uid\":\"','\"');
+	$host=str_between($l,'"host\":\"','\"');
+	$host=str_replace("\\/","/",$host);
+	$host=str_replace("\\/","/",$host);
+	$host=str_replace("\/","/",$host);
+	$vtag=str_between($l,'"vtag\":\"','\"');
+	$r=$host."u".$uid."/video/".$vtag.".360.mp4";
+	return $r;
+}
+function main_file($string) {
+$ch = curl_init($string);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION  ,1);
+curl_setopt($ch, CURLOPT_REFERER, $string);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER  ,1);  // RETURN THE CONTENTS OF THE CALL
+$h = curl_exec($ch);
+
+$usr_login=str_between($h,'"usr_login" value="','"');
+$id=str_between($h,'"id" value="','"');
+$fname=str_between($h,'"fname" value="','"');
+$post="op=download1&usr_login=".$usr_login."&id=".$id."&fname=".$fname."&method_free=Free+Download";
+sleep(2);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION  ,1);
+curl_setopt($ch, CURLOPT_REFERER, $string);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER  ,1);  // RETURN THE CONTENTS OF THE CALL
+curl_setopt ($ch, CURLOPT_POST, 1);
+curl_setopt ($ch, CURLOPT_POSTFIELDS, $post);
+$h = curl_exec($ch);
+
+$t1=explode('Enter code below:',$h);
+$t2=explode('</table>',$t1[1]);
+$p=$t2[0];
+$t1=explode('position:absolute',$p);
+$a1=explode('padding-left:',$t1[1]);
+$p1=explode('px',$a1[1]);
+$pos1=trim($p1[0]);
+$v1=explode('>',$a1[1]);
+$v2=explode('<',$v1[1]);
+$val1=$v2[0];
+//
+   $a1=explode('padding-left:',$t1[2]);
+   $p1=explode('px',$a1[1]);
+   $pos2=trim($p1[0]);
+   $v1=explode('>',$a1[1]);
+   $v2=explode('<',$v1[1]);
+   $val2=$v2[0];
+//
+   $a1=explode('padding-left:',$t1[3]);
+   $p1=explode('px',$a1[1]);
+   $pos3=trim($p1[0]);
+   $v1=explode('>',$a1[1]);
+   $v2=explode('<',$v1[1]);
+   $val3=$v2[0];
+//
+   $a1=explode('padding-left:',$t1[4]);
+   $p1=explode('px',$a1[1]);
+   $pos4=trim($p1[0]);
+   $v1=explode('>',$a1[1]);
+   $v2=explode('<',$v1[1]);
+   $val4=$v2[0];
+//
+   $my = array(
+   $pos1 => $val1,
+   $pos2 => $val2,
+   $pos3 => $val3,
+   $pos4 => $val4);
+   ksort($my);
+   $v = array_values($my);
+   $p=$v[0].$v[1].$v[2].$v[3];
+//
+   $id=str_between($h,'name="id" value="','"');
+   $rand=str_between($h,'name="rand" value="','"');
+   sleep(25);
+   $post="op=download2&id=".$id."&rand=".$rand."&method_free=Free+Download&method_premium=&code=".$p."&down_script=1";
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION  ,0);
+curl_setopt($ch, CURLOPT_REFERER, $string);
+curl_setopt($ch, CURLOPT_HEADER, true);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER  ,1);  // RETURN THE CONTENTS OF THE CALL
+curl_setopt ($ch, CURLOPT_POST, 1);
+curl_setopt ($ch, CURLOPT_POSTFIELDS, $post);
+$h = curl_exec($ch);
+curl_close ($ch);
+$t1=explode('Location: ',$h);
+$t2=explode('Content-Length',$t1[1]);
+$url=trim($t2[0]);
+//$url=str_replace("?","%3F",$url);
+return $url;
 }
 /** divxden.com,vidxden.com,vidbux.com**/
 function vix($string) {
@@ -150,7 +241,11 @@ if (strpos($string,"wootly") === false) {
 
 $g=ord("g");
 $f=explode("return p}",$h);
-$e=explode("'.split",$f[1]);
+if (strpos($string,"wootly") !== false) {
+	$e=explode("'.split",$f[2]);
+} else {
+	$e=explode("'.split",$f[1]);
+}
 $t=$e[0];
 $a=explode(";",$t);
 if (strpos($string,"vidbux") !== false) {
@@ -197,6 +292,8 @@ if ($key < 58) {
 if ($key=="") return "";
 if (strpos($string,"vidbux") !== false) {
    $a1=explode("'",$a[8]);
+} elseif (strpos($string,"wootly") !== false) {
+	$a1=explode("'",$a[9]);
 } else {
   $a1=explode("'",$a[11]);
 }
@@ -299,6 +396,12 @@ function divxden($string) {
   }
   return $link;
 }
+//peteava
+function r() {
+$i=mt_rand(4096,0xffff);
+$j=mt_rand(4096,0xffff);
+return  dechex($i).dechex($j);
+}
 function zeroFill($a,$b) {
     if ($a >= 0) {
         return bindec(decbin($a>>$b)); //simply right shift for positive number
@@ -326,13 +429,14 @@ function peteava($movie) {
   if ($seed == "") {
      return "";
   }
+  $r=r();
   $s = hexdec($seed);
   $local3 = crunch($s,$movie);
   $local3 = crunch($local3,"0");
-  $local3 = crunch($local3,"1fe71d22");
-  return strtolower(dechex($local3));
+  $local3 = crunch($local3,$r);
+  return strtolower(dechex($local3)).$r;
 }
-/** end divxden function **/
+/** end peteava **/
 /**####################################**/
 /** Here we start.......**/
 $lastlink = "abc";
@@ -404,135 +508,6 @@ foreach($videos as $video) {
   }
 }
 }
-/**#######################onlythefilm##############################**/
-//http://www.onlythefilm.com/filmeonline.png
-if (strpos($filelink, 'onlythefilm') !== false) {
-$videos = explode("file: '",$html);
-unset($videos[0]);
-$videos = array_values($videos);
-foreach($videos as $video) {
-  $t1 = explode("'",$video);
-  $link = $t1[0];
-  $link = str_prep($link);
-  $h1=  file_get_contents($link);
-  $link1 = trim(str_between($h1,"<location>","</location>"));
-  $server = str_between($link1,"http://","/");
-  $title = $server." - ".substr(strrchr($link1,"/"),1);
-	if (($link1 <> "") && strcmp($link1,$lastlink) && (strpos($link1,"http") !== false) && (!preg_match("/<|>/",$title))) {
-		$link2 = $baseurl.$link1;
- 		$titledownload = substr(strrchr($link1,"/"),1);
-		$pct = substr($titledownload, -4, 1);
-		if ($pct == ".") {
-           $ext = substr($titledownload, -3);
-           $titledownload = substr($titledownload, 0, -4);
-        } else {
-          $ext = "flv";
-        }
-		if ($pg <> "") {
-           $titledownload = $pg;
-        }
-    	echo '
-        <item>
-    	<title>'.$title.'</title>
-    	<name>'.$titledownload.'.'.$ext.'</name>
-    	<download>'.$link1.'</download>
-    	<link>'.$link2.'</link>
-    	<enclosure type="video/flv" url="'.$link2.'"/>
-    	</item>
-        ';
-		$lastlink = $link1;
-    }   //lastlink
-}
-$videos = explode('a href="',$html);
-unset($videos[0]);
-$videos = array_values($videos);
-foreach($videos as $video) {
-  if (strpos($video,'http://www.onlythefilm.com/filmeonline.png') !== false) {
-    $t1 = explode("?",$video);
-    $t2 = explode('"',$t1[1]);
-    $link = trim($t2[0]);
-	$server = str_between($link,"http://","/");
-	$title = $server;
-	$link = str_prep($link);
-	if (strpos($link, 'videoweed') !== false) {
-		$h1 = file_get_contents($link);
-		$link1 = str_between($h1,'file="','"');
-		$title = $server." - ".substr(strrchr($link1,"/"),1);
-	} elseif (strpos($link, 'novamov') !== false) {
-		$h1 = file_get_contents($link);
-		$link1 = str_between($h1,'file="','"');
-		$title = $server." - ".substr(strrchr($link1,"/"),1);
-	} elseif (strpos($link, 'flvz') !== false) {
-		$h1 = file_get_contents($link);
-		$t1 = explode('<iframe',$h1);
-		$t2 = explode('src="',$t1[1]);
-		$t3 = explode('"',$t2[1]);
-		$h1 = file_get_contents($t3[0]);
-		$link1 = str_between($h1,'"url": "','"');
-		$title = $server." - ".substr(strrchr($link1,"/"),1);
-	} elseif (strpos($link, 'movshare') !== false){
-      $link = "http://www.movshare.net/embed/".substr(strrchr($link,"/"),1);
-	  $baza = file_get_contents($link);
-	  $link1 = str_between($baza,'addVariable("file","','"');
-	  if ($link1 == "") {
-	     $link1 = str_between($baza,'param name="src" value="','"');
-      }
-      if ($link1 == "") {
-         $link1=str_between($baza,'flashvars.file="','"');
-      }
-      $title = $server." - ".substr(strrchr($link1,"/"),1);
-    } elseif (strpos($link,'stickonline') !== false) {
-      $baza = file_get_contents($link);
-      $link1 = str_between($baza,"file=","&");
-      $title = $server." - ".substr(strrchr($link1,"/"),1);
-    } elseif ((strpos($link, 'divxden.com') !== false) ||(strpos($link, 'vidxden.com') !== false) ||(strpos($link, 'vidbux.com') !== false) ||(strpos($link, 'wootly.com') !== false)) {
-      $link1 = vix($link);
-      $server = str_between($link1,"http://","/");
-      $title = $server." - ".substr(strrchr($link1,"/"),1);
-    } elseif (strpos($link,'movreel') !==false) {
-      $link = "http://movreel.com/embed/".substr(strrchr($link,"/"),1);
-      $baza = file_get_contents($link);
-      $link1=str_between($baza,'<param name="src" value="','"');
-      $title = $server." - ".substr(strrchr($link1,"/"),1);
-    } elseif (strpos($link, 'loombo.com') !== false) {
-      $l1=substr(strrchr($link,"/"),1);
-      //http://loombo.com/embed-nztor3f4stri-640x318.html
-      $link = "http://loombo.com/embed-".$l1."-640x318.html";
-      $baza = file_get_contents($link);
-      $link1 = str_between($baza,"addParam('flashvars','file=","'");
-      $server = str_between($link,"http://","/");
-      $title = $server." - ".substr(strrchr($link1,"/"),1);
-    } else {
-      $link1 = "";
-    }
-	if (($link1 <> "") && strcmp($link1,$lastlink) && (strpos($link1,"http") !== false) && (!preg_match("/<|>/",$title))) {
-		$link2 = $baseurl.$link1;
- 		$titledownload = substr(strrchr($link1,"/"),1);
-		$pct = substr($titledownload, -4, 1);
-		if ($pct == ".") {
-           $ext = substr($titledownload, -3);
-           $titledownload = substr($titledownload, 0, -4);
-        } else {
-          $ext = "flv";
-        }
-		if ($pg <> "") {
-           $titledownload = $pg;
-        }
-    	echo '
-        <item>
-    	<title>'.$title.'</title>
-    	<name>'.$titledownload.'.'.$ext.'</name>
-    	<download>'.$link1.'</download>
-    	<link>'.$link2.'</link>
-    	<enclosure type="video/flv" url="'.$link2.'"/>
-    	</item>
-        ';
-		$lastlink = $link1;
-    }   //lastlink
-}  //foreach
-}
-}
-/** END onlythefilm **/
 /**####################################onlinemoca###############**/
 //Prea multe link-uri, trimit doar un link!
 if (strpos($filelink, 'onlinemoca') !== false) {
@@ -597,25 +572,9 @@ if (strpos($filelink, 'onlinemoca') !== false) {
       $title = $server." - ".substr(strrchr($link1,"/"),1);
     } elseif (strpos($link, 'mainfile.net') !== false) {
       //http://mainfile.net/40pvl60th70s/cowry-mami.flv.htm
-      $baza = file_get_contents($link);
-      $oid=str_between($baza,'name="id" value="','"');
-      $orand=str_between($baza,'name="rand" value="','"');
-      //op=download2&id=40pvl60th70s&rand=1xctoajg&method_free=&method_premium=&down_direct=1
-      $post="op=download2&id=".$oid."&rand=".$orand."&method_free=&method_premium=&down_direct=1";
-      if (function_exists('curl_init')) {
-         $ch = curl_init($link);
-         sleep(10);
-         curl_setopt ($ch, CURLOPT_POST, 1);
-         curl_setopt ($ch, CURLOPT_POSTFIELDS, $post);
-         curl_setopt($ch, CURLOPT_FOLLOWLOCATION  ,1);
-         curl_setopt($ch, CURLOPT_REFERER, $link);
-         curl_setopt($ch, CURLOPT_RETURNTRANSFER  ,1);  // RETURN THE CONTENTS OF THE CALL
-         $h = curl_exec($ch);
-         curl_close ($ch);
-      }
-      $link1=str_between($h,'flashvars="file=','"');
+      $link1=main_file($link);
       $server = str_between($link,"http://","/");
-      $title = $server." - ".substr(strrchr($link1,"/"),1);
+      $title = $server." - ".substr(strrchr($link,"/"),1);;
     } elseif (strpos($link, 'rapidfiles.ws') !== false) {
       //http://www.rapidfiles.ws/evsza53dh7sv/X-Men_20United_20CD2.flv.htm
       $baza = file_get_contents($link);
@@ -641,11 +600,20 @@ if (strpos($filelink, 'onlinemoca') !== false) {
       $link1=str_between($h,'flashvars="file=','"');
       $server = str_between($link,"http://","/");
       $title = $server." - ".substr(strrchr($link1,"/"),1);
+    } elseif (strpos($link, 'vk.com') !== false) {
+      //http://vk.com/video100253340_159988773
+      $link1=vk($link);
+      $server = str_between($link,"http://","/");
+      $title = $server." - ".substr(strrchr($link,"/"),1);;
     } else {
 		$link1="";
 	}
 	if (($link1 <> "") && strcmp($link1,$lastlink) && (strpos($link1,"http") !== false) && (!preg_match("/<|>/",$title))) {
-		$link2 = $baseurl.$link1;
+        if (strpos($link1, 'mainfile.net') === false) {
+        $link2 = $baseurl.$link1;
+        } else {
+        $link2=$link1;
+        }
  		$titledownload = substr(strrchr($link1,"/"),1);
 		$pct = substr($titledownload, -4, 1);
 		if ($pct == ".") {
@@ -694,7 +662,7 @@ foreach($videos as $video) {
         $title = $link;
         $token = peteava($link);
         if ($token <> "") {
-          $link =  "http://content.peteava.ro/video/".$link."?start=0&token=".$token."1fe71d22";
+          $link =  "http://content.peteava.ro/video/".$link."?start=0&token=".$token;
         } else {
 		  $link = "http://content.peteava.ro/video/".$link;
         }
@@ -969,10 +937,14 @@ foreach($videos as $video) {
      $b=explode("&",$a[1]);
      $v=$b[0];
      $url="http://www.zshare.net/video/".$v."/";
-     $h = file_get_contents($url);
-     $link=str_between($h,'<iframe src="','"');
-     $baza = file_get_contents($link);
-     $link=str_between($baza,'file: "','"');
+     $ch = curl_init();
+     curl_setopt($ch, CURLOPT_URL, $link);
+     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+     curl_setopt($ch, CURLOPT_COOKIEJAR, '/tmp/cookies.txt');
+     curl_setopt($ch, CURLOPT_COOKIEFILE, '/tmp/cookies.txt');
+     $h = curl_exec($ch);
+     curl_close($ch);
+     $link=str_between($h,'file: "','"');
      $server = str_between($link,"http://","/");
      $f=explode("//",$link);
      $f=$f[1];
@@ -983,20 +955,35 @@ foreach($videos as $video) {
      $title = $server." - ".substr(strrchr($link,"/"),1);
    } elseif (strpos($link,"putlocker.com") !==false) {
      //http://www.putlocker.com/embed/E6324D1B82F7A46D
-     //nu merge, ramane in studiu!!!!!
      $id=substr(strrchr($link,"/"),1);
-     $h = file_get_contents($link);
+     $ch = curl_init();
+     curl_setopt($ch, CURLOPT_URL, $link);
+     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+     curl_setopt($ch, CURLOPT_COOKIEJAR, '/tmp/cookies.txt');
+     curl_setopt($ch, CURLOPT_COOKIEFILE, '/tmp/cookies.txt');
+     $h = curl_exec($ch);
+     curl_close($ch);
+     $t1=explode('form method="post"',$h);
+     $t2=explode('value="',$t1[1]);
+     $t3=explode('"',$t2[1]);
+     $hash=$t3[0];
      $post="hash=".$hash."&confirm=Close+Ad+and+Watch+as+Free+User";
-     $hash=str_between($h,'<input type="hidden" value="','"');
-         $ch = curl_init($link);
-         curl_setopt ($ch, CURLOPT_POST, 1);
-         curl_setopt ($ch, CURLOPT_POSTFIELDS, $post);
-         curl_setopt($ch, CURLOPT_FOLLOWLOCATION  ,1);
-         curl_setopt($ch, CURLOPT_RETURNTRANSFER  ,1);  // RETURN THE CONTENTS OF THE CALL
-         $h = curl_exec($ch);
-         curl_close ($ch);
+     $ch = curl_init();
+     curl_setopt($ch, CURLOPT_URL, $link);
+     curl_setopt($ch, CURLOPT_COOKIEFILE, '/tmp/cookies.txt');
+     curl_setopt ($ch, CURLOPT_POST, 1);
+     curl_setopt ($ch, CURLOPT_POSTFIELDS, $post);
+     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+     curl_setopt($ch, CURLOPT_FOLLOWLOCATION  ,1);
+     $h = curl_exec($ch);
+     curl_close($ch);
      $url="http://www.putlocker.com/get_file.php?embed_stream=".$id;
-     $h = file_get_contents($url);
+     $ch = curl_init();
+     curl_setopt($ch, CURLOPT_URL, $url);
+     curl_setopt($ch, CURLOPT_COOKIEFILE, '/tmp/cookies.txt');
+     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+     $h = curl_exec($ch);
+     curl_close($ch);
      $t1=explode('media:content url="',$h);
      $t2=explode('"',$t1[2]);
      $link = $t2[0];
@@ -1271,7 +1258,7 @@ if (strpos($html, 'peteava.ro/embed') !== false) {
 		$id = str_between($h,"stream.php&file=","&");
         $token = peteava($id);
         if ($token <> "") {
-          $link =  "http://content.peteava.ro/video/".$id."?start=0&token=".$token."1fe71d22";
+          $link =  "http://content.peteava.ro/video/".$id."?start=0&token=".$token;
         } else {
 		  $link = "http://content.peteava.ro/video/".$id;
         }

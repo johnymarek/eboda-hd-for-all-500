@@ -11,7 +11,6 @@ $host = "http://127.0.0.1:82";
   setRefreshTime(-1);
   itemCount = getPageInfo("itemCount");
 </onRefresh>
-
 <mediaDisplay name="threePartsView"
 	sideLeftWidthPC="0"
 	sideRightWidthPC="0"
@@ -49,15 +48,13 @@ $host = "http://127.0.0.1:82";
   	<text redraw="yes" offsetXPC="85" offsetYPC="12" widthPC="10" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
 		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
 		</text>
-		<text align="center" redraw="yes"
+		<text align="left" redraw="yes"
           lines="8" fontSize=17
-		      offsetXPC=55 offsetYPC=58 widthPC=40 heightPC=38
+		      offsetXPC=55 offsetYPC=52 widthPC=40 heightPC=38
 		      backgroundColor=0:0:0 foregroundColor=200:200:200>
 			<script>print(annotation); annotation;</script>
 		</text>
-  	<text  redraw="yes" align="center" offsetXPC="60" offsetYPC="52" widthPC="30" heightPC="5" fontSize="17" backgroundColor="10:105:150" foregroundColor="100:200:255">
-		  <script>print(durata); durata;</script>
-		</text>
+
   	<text  redraw="yes" align="center" offsetXPC="0" offsetYPC="90" widthPC="100" heightPC="8" fontSize="17" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		  <script>print(titlu); titlu;</script>
 		</text>

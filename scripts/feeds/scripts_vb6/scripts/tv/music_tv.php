@@ -368,34 +368,7 @@ ret;
 	<title>TV Live - Muzica</title>
 	<menu>main menu</menu>
 
-	<item>
-	<title>NRJ Pure</title>
-	<stream_url>rtmp://nrjlivefs.fplive.net/nrjlive-live/nrjpure</stream_url>
-	<annotation>NRJ Pure</annotation>
-	<stream_class>video</stream_class>
-	</item>
-	
-	<item>
-	<title>NRJ Dance</title>
-	<stream_url>rtmp://nrjlivefs.fplive.net/nrjlive-live/nrjdance</stream_url>
-	<annotation>NRJ Dance</annotation>
-	<stream_class>video</stream_class>
-	</item>
-
-	<item>
-	<title>NRJ Urban</title>
-	<stream_url>rtmp://nrjlivefs.fplive.net/nrjlive-live/nrjurban</stream_url>
-	<annotation>NRJ Urban</annotation>
-	<stream_class>video</stream_class>
-	</item>
-
-	<item>
-	<title>NRJ Pop Rock</title>
-	<stream_url>rtmp://nrjlivefs.fplive.net/nrjlive-live/nrjpop</stream_url>
-	<annotation>NRJ Pop Rock</annotation>
-	<stream_class>video</stream_class>
-	</item>
-	
+<!-- fms.xxx.net -->	
 	<item>
 	<title>Virgin TV</title>
 	<stream_url>rtmp://fms.105.net:1935/live/virgin1</stream_url>
@@ -437,7 +410,23 @@ ret;
 	<annotation>Radio Monte Carlo</annotation>
 	<stream_class>video</stream_class>
 	</item>
-		
+
+<!-- end fms.xxx.net -->
+<!--  -->
+	<item>
+	<title>VIVA</title>
+	<stream_url>rtmp://80.94.85.180/live/stream22</stream_url>
+	<annotation>VIVA</annotation>
+	<stream_class>video</stream_class>
+	</item>
+
+	<item>
+	<title>Music 1</title>
+	<stream_url>rtmp://80.94.85.180/live/stream21</stream_url>
+	<annotation>Music 1</annotation>
+	<stream_class>video</stream_class>
+	</item>
+<!-- -->			
 	<item>
 	<title>DeeJay TV</title>
 	<stream_url>http://wm.streaming.kataweb.it/reflector:40004</stream_url>
@@ -453,20 +442,6 @@ ret;
 	</item>
 	
 	<item>
-	<title>RTL102.5 TV</title>
-	<stream_url>mms://151.1.245.36/rtl102.5vs</stream_url>
-	<annotation>RTL102.5 TV</annotation>
-	<stream_class>video</stream_class>
-	</item>
-
-	<item>
-	<title>RMC TV</title>
-	<stream_url>rtmp://fms.105.net:1935/live/rmc1</stream_url>
-	<annotation>RMC TV</annotation>
-	<stream_class>video</stream_class>
-	</item>
-
-	<item>
 	<title>Rock One TV</title>
 	<stream_url>http://mediatv2.topix.it/24RockOne66</stream_url>
 	<annotation>Rock One TV</annotation>
@@ -474,16 +449,9 @@ ret;
 	</item>
 
 	<item>
-	<title>The Vault Music</title>
-	<stream_url>mms://verytangy-699-1055655.wm.llnwd.net/verytangy_699-1055655</stream_url>
-	<annotation>The Vault Music</annotation>
-	<stream_class>video</stream_class>
-	</item>
-
-	<item>
 	<title>Clap Tv</title>
 	<stream_url>mms://rr93.diffusepro.com/rr93</stream_url>
-	<annotation>The Vault Music</annotation>
+	<annotation>Clap TV</annotation>
 	<stream_class>video</stream_class>
 	</item>
 
@@ -530,13 +498,6 @@ ret;
 	</item>
 
 	<item>
-	<title>The Voice</title>
-	<stream_url>http://62.41.56.32/PUBLIC_votv_fi</stream_url>
-	<annotation>The Voice</annotation>
-	<stream_class>video</stream_class>
-	</item>
-
-	<item>
 	<title>Labelle TV</title>
 	<stream_url>rtsp://www.labelletv.com/labelletv</stream_url>
 	<annotation>Labelle TV</annotation>
@@ -551,13 +512,6 @@ ret;
 	</item>
 
 	<item>
-	<title>Dance TV Live TV from Hungary</title>
-	<stream_url>http://stream02.gtk.hu/dance_tvd</stream_url>
-	<annotation>Dance TV Live TV from Hungary</annotation>
-	<stream_class>video</stream_class>
-	</item>
-	
-	<item>
 	<title>Ibiza on TV Live TV from Italy</title>
 	<stream_url>rtsp://81.174.67.45/ibizaontv</stream_url>
 	<annotation>Ibiza on TV Live TV from Italy</annotation>
@@ -571,11 +525,27 @@ ret;
 	<stream_class>video</stream_class>
 	</item>
 
+<!-- 08.05.2011 -->
 	<item>
-	<title>Directstar</title>
-	<stream_url>rtmp://85.17.84.196:80/rtpdirectstarlive/directstar-flash-750.sdp</stream_url>
-	<annotation>Directstar</annotation>
+	<title>La Locale</title>
+	<stream_url>rtsp://stream.lalocale.com/lalocale</stream_url>
+	<annotation>La Locale</annotation>
 	<stream_class>video</stream_class>
 	</item>
+
+	<item>
+	<title>Bridge TV</title>
+	<stream_url>http://89.232.125.188:3532/stream.flv</stream_url>
+	<annotation>Bridge TV</annotation>
+	<stream_class>video</stream_class>
+	</item>
+
+	<item>
+	<title>Play TV</title>
+	<stream_url>rtsp://93.103.4.16/playtv</stream_url>
+	<annotation>Play TV</annotation>
+	<stream_class>video</stream_class>
+	</item>
+			
 </channel>
 </rss>

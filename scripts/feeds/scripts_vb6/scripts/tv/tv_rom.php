@@ -398,33 +398,14 @@ ret;
 
 <channel>
   <title>TV Romania</title>
-<!--
-  <item>
-    <title>TVR International</title>
-    <location>rtmpe://fms8.mediadirect.ro:80/live/tvr?id=10668839/tvr</location>
-    <stream_url>rtmpe://fms8.mediadirect.ro:80/live/tvr?id=10668839/tvr</stream_url>
-    <stream_class>video</stream_class>
-  </item>
 
-  <item>
-    <title>TVR Info</title>
-    <location>rtmpe://fms8.mediadirect.ro:80/live/tvrinfo?id=10668839/tvrinfo</location>
-    <stream_url>rtmpe://fms8.mediadirect.ro:80/live/tvrinfo?id=10668839/tvrinfo</stream_url>
-    <stream_class>video</stream_class>
-  </item>
--->
   <item>
     <title>Antena 2</title>
     <location>mms://86.55.8.134/ant2</location>
     <stream_url>mms://86.55.8.134/ant2</stream_url>
     <stream_class>video</stream_class>
   </item>
-  <item>
-    <title>Alfa Omega Tv</title>
-    <location>rtmp://91.216.75.210/alfa-live-source/live</location>
-    <stream_url>rtmp://91.216.75.210/alfa-live-source/live</stream_url>
-    <stream_class>video</stream_class>
-  </item>
+
   <item>
     <title>Tele M</title>
     <location>http://telem.telem.ro:8780/telem_live.flv</location>
@@ -450,12 +431,7 @@ ret;
     <stream_class>video</stream_class>
   </item>
 <!-- New -->
-   <item>
-    <title>Arges TV</title>
-    <location>rtmp://flash61.ustream.tv:1935/ustreamVideo/5306442/streams/live</location>
-    <stream_url>rtmp://flash61.ustream.tv:1935/ustreamVideo/5306442/streams/live</stream_url>
-    <stream_class>video</stream_class>
-  </item>
+
    <item>
     <title>Light Channel</title>
     <location>rtmp://fms.0x47.de/live/romanian</location>
@@ -484,6 +460,39 @@ ret;
     <title>TV PLUS Suceava</title>
     <location>http://85.186.146.34:8080</location>
     <stream_url>http://85.186.146.34:8080</stream_url>
+    <stream_class>video</stream_class>
+  </item>
+   <item>
+    <title>ACCES TV Targiu Jiu</title>
+    <location>http://82.77.72.47:8050/live.flv</location>
+    <stream_url>http://82.77.72.47:8050/live.flv</stream_url>
+    <stream_class>video</stream_class>
+  </item>
+  <item>
+    <title>TV eMARAMURES</title>
+    <location>http://195.28.2.42:8083/stream.flv</location>
+    <stream_url>http://195.28.2.42:8083/stream.flv</stream_url>
+    <stream_class>video</stream_class>
+  </item>
+
+  <item>
+    <title>TTM - Televiziunea Tirgu Mures</title>
+    <location>http://89.121.214.123:8080/stream.flv</location>
+    <stream_url>http://89.121.214.123:8080/stream.flv</stream_url>
+    <stream_class>video</stream_class>
+  </item>
+  
+  <item>
+    <title>RTV Online - Televiziunea pentru toti gorjenii!</title>
+    <location>http://www.rtvonline.ro:8080/online.flv</location>
+    <stream_url>http://www.rtvonline.ro:8080/online.flv</stream_url>
+    <stream_class>video</stream_class>
+  </item>
+
+  <item>
+    <title>Speranta Tv</title>
+    <location>rtmp://robuc140.crestin.tv:80/live/sperantatv_500</location>
+    <stream_url>rtmp://robuc140.crestin.tv:80/live/sperantatv_500</stream_url>
     <stream_class>video</stream_class>
   </item>
 </channel>

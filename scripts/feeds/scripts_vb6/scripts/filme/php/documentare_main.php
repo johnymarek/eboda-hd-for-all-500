@@ -160,24 +160,11 @@ function str_between($string, $start, $end){
 	return substr($string,$ini,$len); 
 }
 $host = "http://127.0.0.1:82";
-
-$html = file_get_contents("http://documentare.org/");
-$videos = explode('<li class="cat-item', $html);
-
-unset($videos[0]);
-$videos = array_values($videos);
-
-foreach($videos as $video) {
-    $t1=explode('href="',$video);
-    $t2=explode('"',$t1[1]);
-    $link=$t2[0];
-
-    $t3 = explode('>', $t1[1]);
-    $t4 = explode('<', $t3[1]);
-    $title = $t4[0];
-
-    if ($link <> "") {
-		$link = $host.'/scripts/filme/php/documentare.php?query=1,'.$link.",".urlencode($title);
+//http://documentare.org/categorie/documentare
+//http://documentare.org/categorie/seriale
+  $link="http://documentare.org/categorie/documentare";
+  $title="Documentare";
+  $link = $host.'/scripts/filme/php/documentare.php?query=1,'.$link.",".urlencode($title);
 
   echo '
   <item>
@@ -187,8 +174,18 @@ foreach($videos as $video) {
   <mediaDisplay name="threePartsView"/>
   </item>
   ';
-}
-}
+  $link="http://documentare.org/categorie/seriale";
+  $title="Seriale";
+  $link = $host.'/scripts/filme/php/documentare.php?query=1,'.$link.",".urlencode($title);
+
+  echo '
+  <item>
+  <title>'.$title.'</title>
+  <link>'.$link.'</link>
+  <annotation>'.$title.'</annotation>
+  <mediaDisplay name="threePartsView"/>
+  </item>
+  ';
 
 ?>
 

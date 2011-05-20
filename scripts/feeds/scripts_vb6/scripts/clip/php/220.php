@@ -214,7 +214,12 @@ if($search) {
 </item>
 <?php } ?>
 <?php
-$videos = explode('<div class="container_film', $html);
+//<div class="tabel
+if (strpos($html,'<div class="tabel') !==false) {
+   $videos = explode('<div class="tabel', $html);
+} else {
+   $videos = explode('<div class="lista', $html);
+}
 
 unset($videos[0]);
 $videos = array_values($videos);
@@ -236,9 +241,9 @@ foreach($videos as $video) {
     $t2=explode("</p>",$t1[1]);
     $descriere=$t2[0];
     
-    $t1=explode('<p class="film_durata">',$video);
+    $t1=explode('<span class="th_durata">',$video);
     $t2=explode('<',$t1[1]);
-    $durata="Durata:".$t2[0];
+    $durata="Durata:".trim($t2[0]);
     $name = preg_replace('/[^A-Za-z0-9_]/','_',$title).".flv";
 
     echo '
