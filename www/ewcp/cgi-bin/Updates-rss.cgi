@@ -18,6 +18,7 @@ name_ewcp="WWW: Eboda Web Control Panel"
 name_vb6="RSS: vb6rocod php scripts"
 name_rssEx="RSS: rssEx (aka media translate)"
 name_xLive="RSS: Xtreamer Live"
+name_xVoD="RSS: Xtreamer Video on Demand"
 name_apps="APPS: extra apps"
 
 component_ewcp="ewcp4"
@@ -25,8 +26,9 @@ component_apps="cb3pp4"
 component_vb6="scripts4"
 component_rssEx="rss_ex4"
 component_xLive="xLive4"
+component_xVoD="xVoD4"
 
-for i in ewcp apps vb6 rssEx xLive
+for i in ewcp apps vb6 rssEx xLive xVoD
 do
     script=util_${i}-update-rss.cgi
     full_name=`eval echo \\$name_${i}`
