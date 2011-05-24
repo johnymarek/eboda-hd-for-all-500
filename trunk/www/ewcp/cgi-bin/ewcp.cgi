@@ -49,6 +49,7 @@ EOF
 
 name_thttpd="HTTP: thttpd webserver"
 name_apache="HTTP: Apache webserver"
+name_ushare="UPNP/DLNA: Ushare"
 name_transmission="TORRENT: Transmission"
 name_rtorrent="TORRENT: rtorrent"
 name_btpd="TORRENT: btpd"
@@ -57,7 +58,7 @@ name_smbd="NAS: Samba"
 name_bftpd="NAS: bftpd"
 name_DvdPlayer="CORE: DvdPlayer"
 
-for i in  btpd15 transmission rtorrent bftpd btpd smbd DvdPlayer 
+for i in  ushare btpd15 transmission rtorrent bftpd btpd smbd DvdPlayer 
 do
     pic=/eb_imgs/cp_on.gif
     script=util_${i}-stop.cgi
@@ -175,9 +176,10 @@ name_ewcp="WWW: Eboda Web Control Panel"
 name_vb6="RSS: vb6rocod php scripts"
 name_rssEx="RSS: rssEx (aka media translate)"
 name_xLive="RSS: Xtreamer Live"
+name_xVoD="RSS: Xtreamer Video on Demand"
 name_apps="APPS: extra apps"
 
-for i in ewcp apps vb6 rssEx xLive
+for i in ewcp apps vb6 rssEx xLive xVoD
 do
     script=util_${i}-update.cgi
     full_name=`eval echo \\$name_${i}`
@@ -192,6 +194,7 @@ done
 startfile_dir="/cb3pp/etc/init.d/"
 startfile_thttpd="S80thttpd"
 startfile_apache="S08apache"
+startfile_ushare="S95ushare"
 startfile_transmission="S90transmission-daemon"
 startfile_rtorrent="S90rtorrent"
 startfile_btpd15="S90btpd15"
@@ -201,7 +204,7 @@ startfile_btpd="/tmp/package/script/btpd"
 startfile_smbd="/tmp/package/script/samba"
 
 
-for i in btpd15 transmission rtorrent bftpd
+for i in ushare btpd15 transmission rtorrent bftpd
 do
     full_name=`eval echo \\$name_${i}`
     script="#"
@@ -366,7 +369,15 @@ cat <<EOF
                 </tr>
                 <tr>
                   <td><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>
+                  <td><a href="http://$LOCALIP:82/phpFM/index.php">File Manager</a></td>
+                </tr>
+                <tr>
+                  <td><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>
                   <td><a href="http://$LOCALIP:9091">Transmission web interface</a></td>
+                </tr>
+                <tr>
+                  <td><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>
+                  <td><a href="http://$LOCALIP:9091/phpFM/index.php?action=7&dir_atual=/&filename=/cb3pp/etc/transmission/settings.json ">Transmission config file</a></td>
                 </tr>
                 <tr>
                   <td><img src="/eb_imgs/cp_arr.gif" width="21" height="17" border="0"></td>

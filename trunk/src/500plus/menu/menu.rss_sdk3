@@ -344,18 +344,18 @@ rowCount=3 columnCount=7 viewAreaXPC = 2 sideColorBottom=0:0:0 sideColorTop=0:0:
 
 
 <item>
-<title>Flickr</title>
-<link>rss_file://./IMS_Modules/Flickr/flickr.rss</link>
+<title>xVoD</title>
+<link>http://localhost:82/xVoD/php/index.php</link>
 <media:thumbnail  width="120" height="90" >
     <script>
      if (getQueryItemIndex() == FlickrIndex) 
      {
           state=getDrawingItemState();
           if( state == "focus" ){
-            img = "./IMS_Modules/Flickr/flickr_focus.jpg";
+            img = "./scripts/image/xvod_focus.jpg";
           }
           else{
-            img = "./IMS_Modules/Flickr/flickr_unfocus.jpg";
+            img = "./scripts/image/xvod_unfocus.jpg";
             }
       }
       img;

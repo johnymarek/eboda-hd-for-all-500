@@ -104,6 +104,7 @@ EOF
 
 name_thttpd="HTTP: thttpd webserver"
 name_apache="HTTP: Apache webserver"
+name_ushare="UPNP/DLNA: Ushare"
 name_transmission="TORRENT: Transmission"
 name_rtorrent="TORRENT: rtorrent"
 name_btpd="TORRENT: btpd"
@@ -112,7 +113,7 @@ name_smbd="NAS: Samba"
 name_bftpd="NAS: bftpd"
 name_DvdPlayer="CORE: DvdPlayer"
 
-for i in btpd15 transmission rtorrent bftpd btpd smbd
+for i in ushare btpd15 transmission rtorrent bftpd btpd smbd
 do
     script=util_${i}-stop-rss.cgi
     state=Started

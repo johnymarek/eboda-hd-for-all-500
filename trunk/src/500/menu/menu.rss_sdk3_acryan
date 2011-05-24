@@ -240,24 +240,27 @@
             </item>
 
 <item>
-<title>YouTube</title>
-<link>rss_file://./IMS_Modules/Youtube/youtube.rss</link>
+<title>$[IMS_NEWS]</title>
+<link>rss_file://./IMS_Modules/News/scripts/news.rss</link>
 <media:thumbnail  width="120" height="90" >
     <script>
      if (getQueryItemIndex() == YoutubeIndex) 
      {
           state=getDrawingItemState();
           if( state == "focus" ){
-            img = "./IMS_Modules/Youtube/youtube_focus.jpg";
+            img = "./IMS_Modules/News/image/news_focus.jpg";
           }
           else{
-            img = "./IMS_Modules/Youtube/youtube_unfocus.jpg";
+            img = "./IMS_Modules/News/image/news_unfocus.jpg";
             }
       }
       img;
     </script>
  </media:thumbnail>
+
 </item>
+
+
 
 <item>
 <title>Picasa</title>

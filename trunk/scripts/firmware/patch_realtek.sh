@@ -7,7 +7,7 @@ function patch_firmware()
 
 if [ $# -ne 4 ]
 then
-    echo "4 arguments expected by function patch_firmware IMAGE_FILE, svn-repo absolute path, \[500|500a|500i|500mini|500minia|500plus\], SDK version \[2|3\]"
+    echo "4 arguments expected by function patch_firmware IMAGE_FILE, svn-repo absolute path, \[500|500a|500i|500mini|500minia|500plus\], SDK version \[3|4\]"
     exit 1
 fi
 
@@ -18,12 +18,14 @@ SDK=$4
 TEA="no"
 SIMPLE_VERSION=${VERSION}
 USE_EBODA_INSTALL="no"
+ACRYAN_MENU="no" #contains news instead youtube, keep original font
 
 if [ ${VERSION} = "500a" ]
 then
     USE_EBODA_INSTALL="yes";
     TEA="YES";
     SIMPLE_VERSION="500"
+    ACRYAN_MENU="YES"
 fi
 
 if [ ${VERSION} = "500i" ]
@@ -38,6 +40,7 @@ then
     USE_EBODA_INSTALL="yes";
     SIMPLE_VERSION="500mini"
     TEA="YES";
+    ACRYAN_MENU="YES"
 fi
 
 
@@ -46,6 +49,7 @@ then
     USE_EBODA_INSTALL="no";
     SIMPLE_VERSION="500mini"
     TEA="YES";
+    ACRYAN_MENU="YES"
 fi
 
 if [ ${VERSION} = "PV73100" ]
@@ -53,6 +57,7 @@ then
     USE_EBODA_INSTALL="no";
     SIMPLE_VERSION="500"
     TEA="YES";
+    ACRYAN_MENU="YES"
 fi
 
 if [ ${VERSION} = "MP3011" ]
@@ -94,7 +99,7 @@ fi
 #checking original firmware presence
 
 [ -f ${IMAGE_FILE} ] || ( echo "Original install.img not found" &&  exit 3 )
-echo Original install.img not found, continuing
+echo Original install.img found, continuing
 
 
 if [ -d ${SVN_REPO}/.svn ]
@@ -139,7 +144,7 @@ then
     echo 'required tool unyaffs not in PATH, please update PATH or copy mkyaffs2image binary in "/usr/bin"'
     exit
 fi
-echo unyaffs tools apre present
+echo unyaffs tools are present
 
 #
 # CHECKING prequisites
@@ -155,7 +160,9 @@ mkdir unpacked_install
 [ $? -eq 0 ] || exit 'cannot create "unpacked_install" dir please start from a clean directory'
 
 cd unpacked_install/
-tar xvf ../${IMAGE_FILE}
+tar xf ../${IMAGE_FILE}
+
+echo install.img inpacked
 
 #
 # go to package 2
@@ -165,6 +172,7 @@ cd package2/
 # unpack root
 mkdir unpacked_root
 [ $? -eq 0 ] || exit cannot create dir please start from a clean directory
+echo "Unpacking root image"
 
 cd unpacked_root/
 
@@ -187,6 +195,7 @@ fi
 #modify root
 
 # in last version e-boda makes /opt symlink to /usr/local/etc and mess-up my optware !!!
+echo "removing optdir if present"
 rm -f opt
 
 # cb3pp directory for apps
@@ -201,6 +210,9 @@ mkdir opt
 # and rss_ex requirements
 mkdir rss_ex
 ln -s ../etc/translate/rss usr/local/bin/rss
+
+mkdir xVoD
+
 
 # and scripts for me to play
 mkdir scripts
@@ -251,7 +263,18 @@ fi
 
 # traducere + font
 #cp  ${SVN_REPO}/src/${SIMPLE_VERSION}/Resource/*.str usr/local/bin/Resource 
-cp  ${SVN_REPO}/src/${SIMPLE_VERSION}/Resource/*.TTF usr/local/bin/Resource 
+
+
+if [ $ACRYAN_MENU = "YES" ]
+then
+    echo "Keeping original fon, needed for acryan news menu"
+else
+    echo "Replacing font to save some space"
+    #not sure is we still need this
+    cp  ${SVN_REPO}/src/${SIMPLE_VERSION}/Resource/*.TTF usr/local/bin/Resource 
+fi
+
+
 
 # screensaver + skinpack
 # keeping original files
@@ -270,9 +293,18 @@ else
 fi
 
 #use my init
+
 rm sbin/init
-cp ${SVN_REPO}/src/bin/busybox sbin/init
-chmod +x sbin/init
+
+cp ${SVN_REPO}/src/bin/busybox.1.18.4 sbin/
+ln -s /sbin/busybox.1.18.4 sbin/init
+chmod +x sbin/busybox.1.18.4
+
+
+[ -f sbin/httpd ] && rm sbin/httpd
+ln -s /sbin/busybox.1.18.4 sbin/httpd
+
+[ -f etc/httpd.conf ] && rm etc/httpd.conf
 
 # eboda web control panel
 dir=`pwd`
@@ -292,7 +324,12 @@ cd $dir
 if [ ${SDK} -ne 4 ]
 then
     echo overwriting IMS menu
-    cp ${SVN_REPO}/src/${SIMPLE_VERSION}/menu/menu.rss_sdk${SDK} usr/local/bin/scripts/menu.rss
+    if [ $ACRYAN_MENU = "YES" ]
+        then
+        cp ${SVN_REPO}/src/${SIMPLE_VERSION}/menu/menu.rss_sdk${SDK}_acryan usr/local/bin/scripts/menu.rss
+    else
+        cp ${SVN_REPO}/src/${SIMPLE_VERSION}/menu/menu.rss_sdk${SDK} usr/local/bin/scripts/menu.rss
+    fi
 else
     cp usr/local/bin/scripts/menu.rss usr/local/bin/scripts/menu_orig.rss
     cp ${SVN_REPO}/src/${SIMPLE_VERSION}/menu/menu.rss_sdk${SDK} usr/local/bin/scripts/menu.rss
@@ -334,8 +371,14 @@ fi
 # no space in firmware, latest version will be downloaded from internet
 # dir=`pwd`
 cd ${SVN_REPO}/scripts/feeds/zero_version/rss_ex/
-find rss_ex/ | grep -v .svn | grep -v '~' | zip -9 ${dir}/rss_ex.zip -@
+find rss_ex/ | grep -v .svn | grep -v '~' | zip -9 ${dir}/rss_ex4.zip -@
 cp rss_ex-version.txt ${dir}/rss_ex4-version.txt
+cd ${dir}
+
+
+cd ${SVN_REPO}/scripts/feeds/zero_version/xVoD/
+find xVoD/ | grep -v .svn | grep -v '~' | zip -9 ${dir}/xVoD4.zip -@
+cp xVoD-version.txt ${dir}/xVoD4-version.txt
 cd ${dir}
 
 
@@ -386,10 +429,12 @@ then
 fi
 
 #inetd.conf
-sed -i -e '$a\
-www3    stream  tcp     nowait  www-data        /usr/sbin/httpd httpd -i -h /scripts\
-www4    stream  tcp     nowait  www-data        /usr/sbin/httpd httpd -i -h /rss_ex/www\
-www5    stream  tcp     nowait  www-data        /usr/sbin/httpd httpd -i -h /xLive' etc/inetd.conf
+    sed -i -e '$a\
+www3    stream  tcp     nowait  www-data        /sbin/httpd httpd -i -h /scripts\
+www4    stream  tcp     nowait  www-data        /sbin/httpd httpd -i -h /rss_ex/www\
+www5    stream  tcp     nowait  www-data        /sbin/httpd httpd -i -h /xLive' etc/inetd.conf
+
+
 
 #services.conf
 sed -i -e '$a\
@@ -497,6 +542,7 @@ echo "storage=$storage" > /usr/local/etc/storage
 [ -d ${storage}/cb3pp ] || mkdir ${storage}/cb3pp
 [ -d ${storage}/scripts ] || mkdir ${storage}/scripts
 [ -d ${storage}/rss_ex ] || mkdir ${storage}/rss_ex
+[ -d ${storage}/xVoD ] || mkdir ${storage}/xVoD
 [ -d ${storage}/ewcp ] || mkdir ${storage}/ewcp
 [ -d ${storage}/xLive ] || mkdir ${storage}/xLive
 
@@ -521,6 +567,14 @@ if [ ! -f /rss_ex/.overmounted ];then
     touch /rss_ex/.overmounted
     echo overmount end
 fi
+
+if [ ! -f /xVoD/.overmounted ];then
+    echo overmount start
+    mount -o bind ${storage}/xVoD /xVoD
+    touch /xVoD/.overmounted
+    echo overmount end
+fi
+
 
 if [ ! -f /scripts/.overmounted ];then
     echo overmount start
@@ -565,6 +619,20 @@ then
         cd ${storage}
         unzip -o /rss_ex4.zip
 	cp /rss_ex4-version.txt ${storage}/rss_ex4-version.txt
+fi
+
+# check if .../xVoD from us, if not, unpack
+SERIAL=0
+ [ -f ${storage}/xVoD4-version.txt ] && . ${storage}/xVoD4-version.txt
+DISK_SERIAL=${SERIAL}
+[ -f /xVoD4-version.txt ] && . /xVoD4-version.txt
+
+if [ ${SERIAL} -gt ${DISK_SERIAL} -o ! -f /xVoD/php/index.php ]
+then
+        rm -rf ${storage}/xVoD/*
+        cd ${storage}
+        unzip -o /xVoD4.zip
+	cp /xVoD4-version.txt ${storage}/xVoD4-version.txt
 fi
 
 

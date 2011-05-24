@@ -429,6 +429,12 @@ function peteava($movie) {
   if ($seed == "") {
      return "";
   }
+  
+  $out=`/scripts/bin/t 0x$seed $movie`;
+  $out=rtrim($out);
+  return $out;
+  
+
   $r=r();
   $s = hexdec($seed);
   $local3 = crunch($s,$movie);
