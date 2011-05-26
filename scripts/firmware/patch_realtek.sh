@@ -275,6 +275,14 @@ else
 fi
 
 
+sed -i -e '/export TZ=CST+0:00:00/a\
+if [ -f /usr/local/etc/TZ ]\
+then\
+. /usr/local/etc/TZ\
+fi' etc/profile
+
+
+
 
 # screensaver + skinpack
 # keeping original files
@@ -528,6 +536,11 @@ then
 else
 #storage online !! go go go
 
+if [ ! -e /tmp/package ]
+then
+ ln -s /usr/local/etc/package /tmp/package
+fi
+
 storage=`mount | grep ${mount_pattern} | tr -s " " | cut -d " " -f 3 | head -n 1`
 echo "storage=$storage" > /usr/local/etc/storage
 
@@ -712,6 +725,11 @@ cat > rccb3ppK <<EOF
 EOF
 
 chmod +x rccb3ppK
+
+cat > TZ <<EOF
+export TZ=GMT-3
+EOF
+
 
 #packing back /usr/local/etc
 rm ../usr.local.etc.tar.bz2

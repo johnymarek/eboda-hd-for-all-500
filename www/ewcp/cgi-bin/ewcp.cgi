@@ -49,6 +49,7 @@ EOF
 
 name_thttpd="HTTP: thttpd webserver"
 name_apache="HTTP: Apache webserver"
+name_mediatomb="UPNP/DLNA: Mediatomb"
 name_ushare="UPNP/DLNA: Ushare"
 name_transmission="TORRENT: Transmission"
 name_rtorrent="TORRENT: rtorrent"
@@ -58,7 +59,7 @@ name_smbd="NAS: Samba"
 name_bftpd="NAS: bftpd"
 name_DvdPlayer="CORE: DvdPlayer"
 
-for i in  ushare btpd15 transmission rtorrent bftpd btpd smbd DvdPlayer 
+for i in  mediatomb ushare btpd15 transmission rtorrent bftpd btpd smbd DvdPlayer 
 do
     pic=/eb_imgs/cp_on.gif
     script=util_${i}-stop.cgi
@@ -194,6 +195,7 @@ done
 startfile_dir="/cb3pp/etc/init.d/"
 startfile_thttpd="S80thttpd"
 startfile_apache="S08apache"
+startfile_mediatomb="S95mediatomb"
 startfile_ushare="S95ushare"
 startfile_transmission="S90transmission-daemon"
 startfile_rtorrent="S90rtorrent"
@@ -204,7 +206,7 @@ startfile_btpd="/tmp/package/script/btpd"
 startfile_smbd="/tmp/package/script/samba"
 
 
-for i in ushare btpd15 transmission rtorrent bftpd
+for i in mediatomb ushare btpd15 transmission rtorrent bftpd
 do
     full_name=`eval echo \\$name_${i}`
     script="#"
