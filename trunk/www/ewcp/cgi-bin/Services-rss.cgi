@@ -15,6 +15,7 @@ EOF
 
 name_thttpd="HTTP: thttpd webserver"
 name_apache="HTTP: Apache webserver"
+name_mediatomb="UPNP/DLNA: Mediatomb"
 name_ushare="UPNP/DLNA: Ushare"
 name_transmission="TORRENT: Transmission"
 name_rtorrent="TORRENT: rtorrent"
@@ -29,6 +30,7 @@ startfile_dir="/cb3pp/etc/init.d/"
 startfile_thttpd="S80thttpd"
 startfile_apache="S08apache"
 startfile_transmission="S90transmission-daemon"
+startfile_mediatomb="S95mediatomb"
 startfile_ushare="S95ushare"
 startfile_rtorrent="S90rtorrent"
 startfile_btpd15="S90btpd15"
@@ -37,7 +39,7 @@ startfile_bftpd="S70bftpd"
 startfile_btpd="/tmp/package/script/btpd"
 startfile_smbd="/tmp/package/script/samba"
 
-for i in ushare btpd15 transmission rtorrent bftpd
+for i in mediatomb ushare btpd15 transmission rtorrent bftpd
 do
     full_name=`eval echo \\$name_${i}`
     script="#"

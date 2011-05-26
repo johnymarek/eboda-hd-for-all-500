@@ -7,7 +7,7 @@ is_rss=$?
 
 nice_start "Stopping samba" ${is_rss}
 
-sh /tmp/package/script/*samba stop
+sh /tmp/package/script/samba stop
 
 nice_exit 0 ${is_rss}
 

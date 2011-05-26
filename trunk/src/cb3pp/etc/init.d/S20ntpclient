@@ -1,0 +1,34 @@
+#!/bin/sh
+
+prefix="/cb3pp"
+
+PATH=${prefix}/bin:${prefix}/sbin:/sbin:/bin:/usr/sbin:/usr/bin
+NAME=ntpclient
+DAEMON=${prefix}/sbin/${NAME}
+DAEMON_OPTS="-s -h pool.ntp.org"
+
+
+
+test -x $DAEMON || exit 0
+
+if [ -z "$1" ] ; then
+    case `echo "$0" | sed 's:^.*/\(.*\):\1:g'` in
+        S??*) rc="start" ;;
+        K??*) rc="stop" ;;
+        *) rc="usage" ;;
+    esac
+else
+    rc="$1"
+fi
+
+case "$rc" in
+    start)
+	echo "Starting ftp server: $NAME"
+	nice -n 30 $DAEMON $DAEMON_OPTS
+        ;;
+    *)  
+        echo "Usage: $0 (start}"
+        ;;
+esac
+
+exit 0

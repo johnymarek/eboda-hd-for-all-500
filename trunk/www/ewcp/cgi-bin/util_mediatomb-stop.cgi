@@ -5,10 +5,9 @@ is_rss=$?
 
 . ./common.sh
 
-nice_start "Starting samba" ${is_rss}
+nice_start "Stopping mediatomb" ${is_rss}
 
-sh /tmp/package/script/samba stop
-sh /tmp/package/script/samba start
+/cb3pp/etc/init.d/*S95mediatomb stop
 
 nice_exit 0 ${is_rss}
 
