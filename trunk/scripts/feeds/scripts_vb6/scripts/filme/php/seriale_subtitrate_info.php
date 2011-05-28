@@ -5,9 +5,9 @@ $queryArr = explode(',', $query);
 $link = $queryArr[0];
 $tit = urldecode($queryArr[1]);
 $html = file_get_contents($link);
-$t1=explode('<div class="featured">',$html);
-$t2=explode('src="',$t1[1]);
-$t3=explode('"',$t2[1]);
+$t1=explode('<div id="video">',$html);
+$t2=explode('src=',$t1[1]);
+$t3=explode('&',$t2[2]);
 $img=$t3[0];
 ?>
 <rss version="2.0">
@@ -169,7 +169,7 @@ function str_between($string, $start, $end){
 	return substr($string,$ini,$len); 
 }
 $host = "http://127.0.0.1:82";
-$videos = explode('div class="box"', $html);
+$videos = explode('<div class="video archive">', $html);
 
 unset($videos[0]);
 //$videos = array_values($videos);

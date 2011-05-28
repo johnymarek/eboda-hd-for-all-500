@@ -186,8 +186,8 @@ ret;
 
 <item>
 <title>seriale.subtitrate.info</title>
-<link><?php echo $host; ?>/scripts/filme/php/seriale_subtitrate_info_main.php</link>
-<annotation>http://seriale.subtitrate.info/index.php?menu=tv-shows</annotation>
+<link><?php echo $host; ?>/scripts/filme/php/seriale_subtitrate_info_l.php</link>
+<annotation>http://seriale.subtitrate.info/tv-shows</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
 

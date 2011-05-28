@@ -182,62 +182,39 @@ function str_between($string, $start, $end){
 }
 $link="http://www.dolcetv.ro/tv-live";
 $html = file_get_contents($link);
-$links=array (
-             "rtmpe://fms2.mediadirect.ro:80/live3?id=10668839&publisher=2/dolcesport",
-             "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/dolcesport2",
-             "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/antena_3",
-             "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/antena2",
-             "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/realitatea",
-             "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/b1",
-             "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvr1",
-             "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvr2",
-             "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvr3",
-             "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvrcultural",
-             "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvr",
-             "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvrinfo",
-             "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvrhd",
-             "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/otv",
-             "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/utv",
-             "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/mynele",
-             "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/etno",
-             "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/money",
-             "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/euronews",
-             "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/kiss",
-             "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/somes",
-             "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/taraf",
-             "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tv5",
-             "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/party",
-             "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/babytv",
-             "rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/dw"
-             );
-$canals=array (
-"10212",
-"10225",
-"10055",
-"10119",
-"10019",
-"10022",
-"10001",
-"10002",
-"10208",
-"10025",
-"10015",
-"10174",
-"10190",
-"10046",
-"10096",
-"10206",
-"10037",
-"10076",
-"10113",
-"10008",
-"0",
-"10101",
-"10041",
-"10164",
-"0",
-"10131"
+$l=array (
+"Dolce Sport" => "10212,rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/dolcesport",
+"Dolce Sport 2" => "10225,rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/dolcesport2",
+"Antena 3" => "10055,rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/antena_3",
+"Antena 2" => "10119,rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/antena2",
+"Realitatea TV" => "10019,rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/realitatea",
+"B1 TV" => "10022,rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/b1",
+"TVR 1" => "10001,rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvr1",
+"TVR 2" => "10002,rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvr2",
+"TVR 3" => "10208,rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvr3",
+"TVR Cultural" => "10025,rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvrcultural",
+"TVR International" => "10015,rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvr",
+"TVR Info" => "10174,rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvrinfo",
+"TVR HD" => "10190,rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tvrhd",
+"OTV" => "10046,rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/otv",
+"UTV" => "10096,rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/utv",
+"Mynele TV" => "10206,rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/mynele",
+"Etno TV" => "10037,rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/etno",
+"The Money Channel" => "10076,rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/money",
+"Euronews" => "10113,rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/euronews",
+"Kiss TV" => "10008,rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/kiss",
+"Transilvania Channel" => "0,rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/somes",
+"Taraf TV" => "10101,rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/taraf",
+"TV5 Monde" => "10041,rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/tv5",
+"Party TV" => "10164,rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/party",
+"Baby TV" => "0,rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/babytv",
+"Deutsche Welle" => "10131,rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/dw",
+"Dolce Sport HD" => "0,rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/dolcesporthd",
+"Mooz HD" => "0,rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/moozhd",
+"Mooz hits" => "0,rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/moozhits",
+"Mooz RO" => "0,rtmpe://fms1.mediadirect.ro:80/live3?id=10668839&publisher=2/moozro"
 );
+
 $videos = explode('<div class="station_program_cell', $html);
 unset($videos[0]);
 $videos = array_values($videos);
@@ -247,17 +224,23 @@ foreach($videos as $video) {
   $acum=str_between($video,'class="acum">','<');
   $next=str_between($video,'class="next">','<');
   $image="http://www.dolcetv.ro/".str_between($video,'background-image:url(',')');
-  $link="http://127.0.0.1:83/cgi-bin/translate?stream,,".$links[$n];
+  $t=explode(",",$l[$title]);
+  $link=$t[1];
+  $link="http://127.0.0.1:83/cgi-bin/translate?stream,,".$link;
+  $canal=$t[0];
+  if ($link=="") {
+  $title=$title." ***";
+  }
   print '
   <item>
   <title>'.$title.'</title>
   <onClick>playItemURL("'.$link.'",10);</onClick>
   <image>'.$image.'</image>
-  <canal>'.$canals[$n].'</canal>
+  <canal>'.$canal.'</canal>
   </item>
   ';
-  $n++;
 }
+
 ?>
 <!-- end Dolce TV -->
 </channel>

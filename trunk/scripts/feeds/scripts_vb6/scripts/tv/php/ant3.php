@@ -232,13 +232,13 @@ if (strpos($link, "Stiri_ora_18:00_cu_Mihaela_Birzila") !== false) {
 	$ora = "19-00";
 	$emisiune = "Punctul_de_intalnire";
 } elseif(strpos($link, "na_financiar") !== false) {
-	$ora = "19-30";
+	$ora = "23-00";
 	$emisiune = "saptamana_financiara";
 } elseif(strpos($link, "Vorbe_grele_cu_Victor_Ciutacu") !== false) {
 	$ora = "22-00";
 	$emisiune = "Vorbe_grele_cu_Victor_Ciutacu";
 } elseif(strpos($link, "In_Premiera_cu_Carmen_Avram") !== false) {
-	$ora = "20-59";
+	$ora = "21-00";
 	$emisiune = "In_Premiera";
 } elseif(strpos($link, "Esential") !== false) {
 	$ora = "15-00";
@@ -255,6 +255,7 @@ if (strpos($link, "Stiri_ora_18:00_cu_Mihaela_Birzila") !== false) {
 } elseif(strpos($link, "Editie_de_weekend") !== false) {
 	$ora = "13-04";
 	$emisiune = "editie_de_weekend3";
+	$tip = "Editie_de_weekend";
 } elseif(strpos($link, "Se_intampla_in_Romania") !== false) {
 	$ora = "11-00";
 	$emisiune = "Se_intampla_acum_I";
@@ -284,10 +285,13 @@ if (strpos($link, "Stiri_ora_18:00_cu_Mihaela_Birzila") !== false) {
 	$emisiune = "Editie_speciala_ora_18";
 } elseif(strpos($link, "Stiri_ora_14") !== false) {
 	$ora = "14-00";
-	$emisiune = "Stiri_ora_14";
+	$emisiune = "Stiri_ora_14_00";
 } elseif(strpos($link, "Stiri_ora_24") !== false) {
 	$ora = "23-59";
-	$emisiune = "Stiri_ora_24";
+	$emisiune = "Stiri_ora_24_00";
+} elseif(strpos($link, "Exces_de_putere") !== false) {
+	$ora = "18-49";
+	$emisiune = "Exces_de_putere";
 } else {
 	$ora = "00-00";
 	$emisiune = "necunoscuta";
@@ -332,13 +336,15 @@ foreach($videos as $video) {
 		$m = "00";
 	}
 	$d = $y."-".$m."-".$d; // data difuzarii
-	// Bizbazar	
-	if (($tip == "bizbazar") && ($day == "Sambata")) {
-		$emisiune = "Bizbazar_cu_Moise_Guran";
-		$ora = "23-05";
-	}elseif (($tip == "bizbazar") && ($day <> "Sambata")) {
-		$ora = "16-05";
-		$emisiune = "Bizbazar_cu_Moise_Guran_L-J";
+	// Bizbazar
+    //echo $day;
+    //echo $tip;
+	if (($tip == "Editie_de_weekend") && ($day == "Sambata")) {
+		$emisiune = "editie_de_weekend_I";
+		$ora = "13-04";
+	}elseif (($tip == "Editie_de_weekend") && ($day <> "Sambata")) {
+		$ora = "13-04";
+		$emisiune = "editie_de_weekend3";
 	}
 	// Subiectiv	
 	if (($tip == "subiectiv") && ($day == "Vineri")) {

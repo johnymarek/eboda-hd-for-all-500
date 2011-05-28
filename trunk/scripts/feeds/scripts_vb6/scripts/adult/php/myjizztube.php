@@ -213,7 +213,7 @@ function str_between($string, $start, $end){
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
 	return substr($string,$ini,$len); 
 }
-$videos = explode('<div class="video-thumb-image">', $html);
+$videos = explode('<div class="content">', $html);
 
 unset($videos[0]);
 $videos = array_values($videos);
@@ -229,9 +229,10 @@ foreach($videos as $video) {
     $t2 = explode('"', $t1[1]);
     $image = $t2[0];
 
-    $t1 = explode('title="', $video);
-    $t2 = explode('"', $t1[1]);
-    $title = $t2[0];
+    $t1 = explode('href="', $video);
+    $t2 = explode('>', $t1[2]);
+    $t3 = explode('<',$t2[1]);
+    $title = $t3[0];
     if ($title=="") {
       $t1=explode('class="title blue"',$video);
       $t2=explode('>',$t1[1]);

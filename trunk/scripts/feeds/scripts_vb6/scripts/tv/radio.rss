@@ -257,10 +257,10 @@ columnCount=5
 <channel>
   <title>Internet Radio</title>
   <item>
-		<link>rss_file://../etc/translate/rss/radio-profm.rss</link>
+		<link>rss_file:///scripts/tv/radio-profm.rss</link>
     <title>ProFM</title>
     <annotation>ProFM Radio Online</annotation>
-    <image>../etc/translate/rss/image/profm.jpg</image>
+    <image>/scripts/tv/image/profm.jpg</image>
     <mediaDisplay name="threePartsView"/>
   </item>
   <item>
@@ -289,6 +289,20 @@ columnCount=5
     <title>Posturi romaneşti</title>
     <annotation>Selecţie posturi radio din Romania.</annotation>
     <image>../etc/translate/rss/image/radio_online.jpg</image>
+    <mediaDisplay name="threePartsView"/>
+  </item>
+  <item>
+		<link>rss_file:///scripts/tv/radio-romania.rss</link>
+    <title>Radio România</title>
+    <annotation>Radio România.</annotation>
+    <image>/scripts/tv/image/srr.png</image>
+    <mediaDisplay name="threePartsView"/>
+  </item>
+  <item>
+		<link>rss_file:///scripts/tv/radio-prahova.rss</link>
+    <title>Radio Prahova</title>
+    <annotation>Radio Prahova - Suna bine, bine!</annotation>
+    <image>/scripts/tv/image/radio_prahova.png</image>
     <mediaDisplay name="threePartsView"/>
   </item>
 </channel>

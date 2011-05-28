@@ -208,6 +208,38 @@ $url=trim($t2[0]);
 //$url=str_replace("?","%3F",$url);
 return $url;
 }
+//**rapidmov**/
+function cv($s) {
+$g=ord("g");
+$c=ord($s);
+if ($c < 58) {
+  $c=$s;
+} else {
+  $c=$c-$g + 16;
+}
+return $c;
+}
+function rapidmov($string) {
+  $h = file_get_contents($string);
+  $g=ord("g");
+  $f=explode("return p}",$h);
+  $e=explode("'.split",$f[1]);
+  $t=$e[0];
+  $a=explode(";",$t);
+  $w=explode("|",$a[9]);
+  $t1=explode("'",$a[4]);
+  $link= $t1[3];
+  $s1=explode("/",$link);
+  $r="";
+  for ($i=0;$i<strlen($link)-1;$i++) {
+      if (preg_match("/[A-Za-z0-9_]/",$link[$i])) {
+         $r=$r.$w[cv($link[$i])];
+      } else {
+        $r=$r.$link[$i];
+      }
+  }
+return $r;
+}
 /** divxden.com,vidxden.com,vidbux.com**/
 function vix($string) {
 $server = str_between($string,"http://","/");
@@ -429,12 +461,6 @@ function peteava($movie) {
   if ($seed == "") {
      return "";
   }
-  
-  $out=`/scripts/bin/t 0x$seed $movie`;
-  $out=rtrim($out);
-  return $out;
-  
-
   $r=r();
   $s = hexdec($seed);
   $local3 = crunch($s,$movie);
@@ -569,11 +595,16 @@ if (strpos($filelink, 'onlinemoca') !== false) {
       $link1=vix($link);
       $title = $server." - ".substr(strrchr($link1,"/"),1);
     } elseif (strpos($link, 'loombo.com') !== false) {
+      if (strpos($link,'embed') ===false) {
       $l1=substr(strrchr($link,"/"),1);
       //http://loombo.com/embed-nztor3f4stri-640x318.html
       $link = "http://loombo.com/embed-".$l1."-640x318.html";
+      }
       $baza = file_get_contents($link);
       $link1 = str_between($baza,"addParam('flashvars','file=","'");
+      if ($link1=="") {
+        $link1=str_between($baza,"addVariable('file','","'");
+      }
       $server = str_between($link,"http://","/");
       $title = $server." - ".substr(strrchr($link1,"/"),1);
     } elseif (strpos($link, 'mainfile.net') !== false) {
@@ -610,7 +641,12 @@ if (strpos($filelink, 'onlinemoca') !== false) {
       //http://vk.com/video100253340_159988773
       $link1=vk($link);
       $server = str_between($link,"http://","/");
-      $title = $server." - ".substr(strrchr($link,"/"),1);;
+      $title = $server." - ".substr(strrchr($link,"/"),1);
+    } elseif (strpos($link, 'rapidmov.net') !== false) {
+      //http://rapidmov.net/embed-t9cpcdh8f83v-900x600.html
+      $link1=rapidmov($link);
+      $server = str_between($link,"http://","/");
+      $title = $server." - ".substr(strrchr($link,"/"),1);
     } else {
 		$link1="";
 	}
@@ -844,6 +880,9 @@ foreach($videos as $video) {
    } elseif (strpos($link, 'loombo.com') !== false) {
      $baza = file_get_contents($link);
      $link = str_between($baza,"addParam('flashvars','file=","'");
+     if ($link=="") {
+       $link = str_between($baza,"addVariable('file','","'");
+     }
      $server = str_between($link,"http://","/");
      $title = $server." - ".substr(strrchr($link,"/"),1);
    } elseif (strpos($link, 'movshare') !== false){
@@ -881,6 +920,11 @@ foreach($videos as $video) {
      }
      $server = str_between($link,"http://","/");
      $title = $server." - ".substr(strrchr($link,"/"),1);
+    } elseif (strpos($link, 'rapidmov.net') !== false) {
+      //http://rapidmov.net/embed-t9cpcdh8f83v-900x600.html
+      $link=rapidmov($link);
+      $server = str_between($link,"http://","/");
+      $title = $server." - ".substr(strrchr($link,"/"),1);
    } elseif (strpos($link, 'stagevu') !== false){
      $baza = file_get_contents($link);
      $link = str_between($baza,'param name="src" value="','"');
@@ -1110,6 +1154,45 @@ if (strpos($html, '4shared.com') !== false) {
   	 $lastlink = $link;
      }
     }
+}
+//src="http://dl.fisier.ro/fisier.js?ver=giebdjndkp5j1i1
+if (strpos($html, 'dl.fisier.ro/fisier.js') !== false) {
+$videos = explode('dl.fisier.ro/fisier.js', $html);
+unset($videos[0]);
+$videos = array_values($videos);
+foreach($videos as $video) {
+  $t1=explode("ver=",$video);
+  $t2=explode('"',$t1[1]);
+  $l="http://dl.fisier.ro/fisier.js?ver=".$t2[0];
+  $h=file_get_contents($l);
+  $link=str_between($h,'file: "','"');
+    $server = str_between($link,"http://","/");
+    $title = $server." - ".substr(strrchr($link,"/"),1);
+    if (($link <> "") && strcmp($link,$lastlink) && (strpos($link,"http") !== false) && (!preg_match("/<|>/",$title))) {
+      $link1 = $baseurl.$link;
+		$titledownload = substr(strrchr($link,"/"),1);
+		$pct = substr($titledownload, -4, 1);
+		if ($pct == ".") {
+           $ext = substr($titledownload, -3);
+           $titledownload = substr($titledownload, 0, -4);
+        } else {
+          $ext = "flv";
+        }
+		if ($pg <> "") {
+           $titledownload = $pg;
+        }
+    	echo '
+        <item>
+    	<title>'.$title.'</title>
+    	<link>'.$link1.'</link>
+    	<name>'.$titledownload.'.'.$ext.'</name>
+    	<download>'.$link.'</download>
+    	<enclosure type="video/flv" url="'.$link1.'"/>
+    	</item>
+    	';
+  	 $lastlink = $link;
+     }
+}
 }
 //megavideo
 if (strpos($html, 'megavideo') !== false) {
