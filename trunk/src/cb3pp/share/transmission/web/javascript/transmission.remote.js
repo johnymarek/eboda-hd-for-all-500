@@ -1,5 +1,5 @@
 /*
- * Copyright © Dave Perrett and Malcolm Jarvis
+ * Copyright © Dave Perrett, Malcolm Jarvis and Bruno Bierbaumer
  * This code is licensed under the GPL version 2.
  * For details, see http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  *
@@ -10,7 +10,7 @@ function RPC() { }
 //Prefs.prototype = { }
 
 // Constants
-RPC._Root                   = '/transmission/rpc';
+RPC._Root                   = '../rpc';
 RPC._DaemonVersion          = 'version';
 RPC._Encryption             = 'encryption';
 RPC._EncryptionPreferred    = 'preferred';
@@ -28,6 +28,17 @@ RPC._TurtleTimeEnabled      = 'alt-speed-time-enabled';
 RPC._TurtleTimeBegin        = 'alt-speed-time-begin';
 RPC._TurtleTimeEnd          = 'alt-speed-time-end';
 RPC._TurtleTimeDay          = 'alt-speed-time-day';
+RPC._PeerLimitGlobal		= 'peer-limit-global';
+RPC._PeerLimitPerTorrent	= 'peer-limit-per-torrent';
+RPC._PexEnabled				= 'pex-enabled';
+RPC._DhtEnabled				= 'dht-enabled';
+RPC._LpdEnabled				= 'lpd-enabled';
+RPC._BlocklistEnabled		= 'blocklist-enabled';
+RPC._BlocklistURL			= 'blocklist-url';
+RPC._BlocklistSize			= 'blocklist-size';
+RPC._UtpEnabled				= 'utp-enabled';
+RPC._PeerPortRandom			= 'peer-port-random-on-start';
+RPC._PortForwardingEnabled	= 'port-forwarding-enabled';
 RPC._StartAddedTorrent      = 'start-added-torrents';
 
 function TransmissionRemote( controller )
@@ -67,7 +78,7 @@ TransmissionRemote.prototype =
 					: "";
 		if( !remote._error.length )
 			remote._error = 'Server not responding';
-		
+
 		dialog.confirm('Connection Failed',
 			'Could not connect to the server. You may need to reload the page to reconnect.',
 			'Details',
@@ -85,7 +96,7 @@ TransmissionRemote.prototype =
 	sendRequest: function( data, success, async ) {
 		remote = this;
 		if( typeof async != 'boolean' )
-		  async = true;
+			async = true;
 
 		var ajaxSettings = {
 			url: RPC._Root,
@@ -108,7 +119,13 @@ TransmissionRemote.prototype =
 		var o = { method: 'session-get' };
 		this.sendRequest( o, callback, async );
 	},
-
+	
+	checkPort: function( callback, async ) {
+		var tr = this._controller;
+		var o = { method: 'port-test' };
+		this.sendRequest( o, callback, async );
+	},
+	
 	loadDaemonStats: function( callback, async ) {
 		var tr = this._controller;
 		var o = { method: 'session-stats' };
@@ -120,8 +137,8 @@ TransmissionRemote.prototype =
 			method: 'torrent-get',
 			arguments: {
 			fields: Torrent._StaticFields.concat( Torrent._MetaDataFields,
-                                                              Torrent._DynamicFields,
-                                                              [ 'files', 'fileStats' ] )
+			                                      Torrent._DynamicFields,
+			                                      [ 'files', 'fileStats' ] )
 			}
 		};
 
@@ -136,7 +153,7 @@ TransmissionRemote.prototype =
 			method: 'torrent-get',
 			arguments: {
 			fields: Torrent._StaticFields.concat( Torrent._MetaDataFields,
-                                                              [ 'files', 'fileStats' ] )
+			                                      [ 'files', 'fileStats' ] )
 			}
 		};
 
@@ -167,7 +184,7 @@ TransmissionRemote.prototype =
 			tr.updateTorrentsFileData( data.arguments.torrents );
 		} );
 	},
-	
+
 	changeFileCommand: function( command, torrent, file ) {
 		var remote = this;
 		var torrent_ids = [ torrent.id() ];
@@ -180,7 +197,7 @@ TransmissionRemote.prototype =
 			remote._controller.refreshTorrents( torrent_ids );
 		} );
 	},
-	
+
 	sendTorrentSetRequests: function( method, torrent_ids, args, callback ) {
 		if (!args) args = { };
 		args['ids'] = torrent_ids;
@@ -193,7 +210,7 @@ TransmissionRemote.prototype =
 			callback();
 		});
 	},
-	
+
 	sendTorrentActionRequests: function( method, torrent_ids, callback ) {
 		this.sendTorrentSetRequests( method, torrent_ids, null, callback );
 	},
@@ -227,6 +244,9 @@ TransmissionRemote.prototype =
 	verifyTorrents: function( torrent_ids, callback ) {
 		this.sendTorrentActionRequests( 'torrent-verify', torrent_ids, callback );
 	},
+	reannounceTorrents: function( torrent_ids, callback ) {
+		this.sendTorrentActionRequests( 'torrent-reannounce', torrent_ids, callback );
+	},
 	addTorrentByUrl: function( url, options ) {
 		var remote = this;
 		var o = {
@@ -236,7 +256,6 @@ TransmissionRemote.prototype =
 				filename: url
 			}
 		};
-		
 		this.sendRequest(o, function() {
 			remote._controller.refreshTorrents();
 		} );
@@ -246,6 +265,15 @@ TransmissionRemote.prototype =
 		var o = {
 			method: 'session-set',
 			arguments: args
+		};
+		this.sendRequest( o, function() {
+			remote._controller.loadDaemonPrefs();
+		} );
+	},
+	updateBlocklist: function() {
+		var remote = this;
+		var o = {
+			method: 'blocklist-update',
 		};
 		this.sendRequest( o, function() {
 			remote._controller.loadDaemonPrefs();
