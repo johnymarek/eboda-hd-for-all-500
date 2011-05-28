@@ -204,14 +204,14 @@ ret;
 <annotation>http://www.filmeonlinesubtitrate.ro</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
-
+<!--
 <item>
 <title>themoviesbest.com</title>
 <link><?php echo $host; ?>/scripts/filme/php/themoviesbest_main.php</link>
 <annotation>http://themoviesbest.com/</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
-
+-->
 <item>
 <title>filme-online-gratis.com</title>
 <link><?php echo $host; ?>/scripts/filme/php/filme-online-gratis_main.php</link>
@@ -227,22 +227,6 @@ ret;
 </item>
 <!--
 <item>
-<title>www.filme-online.ucoz.com</title>
-<link><?php echo $host; ?>/scripts/filme/php/ucoz_main.php</link>
-<annotation>http://www.filme-online.ucoz.com/</annotation>
-<mediaDisplay name="threePartsView"/>
-</item>
--->
-<!--
-<item>
-<title>Filme Romanesti - filmele-copilariei.blogspot.com</title>
-<link><?php echo $host; ?>/scripts/filme/php/filmele-copilariei_main.php</link>
-<annotation>http://filmele-copilariei.blogspot.com/</annotation>
-<mediaDisplay name="threePartsView"/>
-</item>
--->
-
-<item>
 <title>vezifilme.ro</title>
 <link><?php echo $host; ?>/scripts/filme/php/vezifilme_main.php</link>
 <annotation>http://www.vezifilme.ro/</annotation>
@@ -255,18 +239,11 @@ ret;
 <annotation>http://www.filmeonline24.com/</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
--->
+
 <item>
 <title>www.crutu-razvan.ro</title>
 <link><?php echo $host; ?>/scripts/filme/php/crutu-razvan.php?query=1,</link>
 <annotation>http://www.crutu-razvan.ro</annotation>
-<mediaDisplay name="threePartsView"/>
-</item>
-<!--
-<item>
-<title>DolceTv - Filme Gratis (fara subtitrare)</title>
-<link><?php echo $host; ?>/scripts/filme/php/dolce.php</link>
-<annotation>http://www.dolcetv.ro</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
 -->

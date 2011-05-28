@@ -15,15 +15,15 @@ columnCount=3
 </onRefresh>
 
 	<mediaDisplay name=photoView 
-	  centerXPC=7 
+	    centerXPC=7
 		centerYPC=25
 		centerHeightPC=60
-columnCount=3
-	  rowCount=1
+        columnCount=3
+	    rowCount=1
 		menuBorderColor="55:55:55"
 		sideColorBottom="0:0:0"
 		sideColorTop="0:0:0"
-	  backgroundColor="0:0:0"
+	    backgroundColor="0:0:0"
 		imageBorderColor="0:0:0"
 		itemBackgroundColor="0:0:0"
 		itemGapXPC=0
@@ -33,8 +33,7 @@ columnCount=3
 		sliding=yes
 		showHeader=no
 		showDefaultInfo=no
-		idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
-		>
+		idleImageWidthPC="8" idleImageHeightPC="10" idleImageXPC="80" idleImageYPC="10">
 <!--
   	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		  <script>getPageInfo("pageTitle");</script>
@@ -240,7 +239,7 @@ columnCount=3
 	</mediaDisplay>
 	
 	<item_template>
-		<mediaDisplay  name="threePartsView" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
+		<mediaDisplay  name="threePartsView" idleImageXPC="45" idleImageYPC="45" idleImageWidthPC="10" idleImageHeightPC="10">
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
         <idleImage>image/POPUP_LOADING_02.png</idleImage>
         <idleImage>image/POPUP_LOADING_03.png</idleImage>

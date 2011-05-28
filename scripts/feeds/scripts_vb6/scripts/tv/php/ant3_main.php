@@ -179,7 +179,7 @@ foreach($videos as $video) {
     $link = urlencode($link);
     $t = urlencode($t);
     $link = $host."/scripts/tv/php/ant3.php?file=".$link."&amp;title=".$t;
-
+    if (!preg_match("/speciala|teledon/i",$link)) {
     echo '
     <item>
     <title>'.$title.'</title>
@@ -190,6 +190,7 @@ foreach($videos as $video) {
     <mediaDisplay name="threePartsView"/>
     </item>
     ';
+    }
     
   }
 ?>

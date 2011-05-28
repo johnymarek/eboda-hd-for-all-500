@@ -434,7 +434,14 @@ columnCount=5
 		</text>
     </mediaDisplay>
 </item>
-
+<item>
+<title>Revision3</title>
+<link><?php echo $host; ?>/scripts/tv/rev3.php</link>
+<media:thumbnail url="/scripts/tv/image/revision3.gif" />
+<image>/scripts/tv/image/revision3.gif</image>
+<location>http://revision3.com/</location>
+<annotation>Revision3 is the leading independent free online video service that offers hit TV shows including Diggnation with Kevin Rose, Scam School, Film Riot, etc.</annotation>
+</item>
 <item>
 <title>Video Podcast Directory</title>
 	<link><?php echo $host; ?>/scripts/clip/php/videopodcasts_main.php</link>
@@ -453,14 +460,5 @@ columnCount=5
 	<annotation>Podcast Alley is the podcast lovers portal. Featuring the best Podcast Directory and the Top 10 podcasts, as voted on by the listeners.</annotation>
 </item>
 
-  <item>
-    <title>Tvigle</title>
-    <link>rss_file://../etc/translate/rss/etc-menu-tvigle-index.rss</link>
-    <location>http://www.tvigle.ru</location>
-    <annotation>Tvigle Media — медиакомпания нового поколения, производитель и дистрибьютор профессионального развлекательного видеоконтента для New Media: интернета, мобильных сетей, цифровых телеканалов.</annotation>
-    <image>/scripts/image/tvigle.png</image>
-    <media:thumbnail url="/scripts/image/tvigle.png" />
-    <mediaDisplay name="onePartView"/>
-  </item>
 </channel>
 </rss>
