@@ -28,8 +28,8 @@
 
   <onEnter>
     auto = 0;
-    translateBaseURL    = "http://127.0.0.1:84/cgi-bin/translate";
-    cgiconf = readStringFromFile("/usr/local/etc/translate/etc/cgi.conf");
+    translateBaseURL    = "http://127.0.0.1:83/cgi-bin/translate";
+    cgiconf = readStringFromFile("/scripts/etc/cgi.conf");
     if(cgiconf != null)
     {
       value = getStringArrayAt(cgiconf, 0);
@@ -221,17 +221,17 @@
     <script>playlistTitle;</script>
   </text>
   <image offsetXPC=0 offsetYPC=12 widthPC=100 heightPC=1>
-		../etc/translate/rss/image/gradient_line.bmp
+		/scripts/image/gradient_line.bmp
 	</image>
 
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_01.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_02.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_03.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_04.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_05.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_06.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_07.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_08.png </idleImage>
+		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_01.png </idleImage>
+		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_02.png </idleImage>
+		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_03.png </idleImage>
+		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_04.png </idleImage>
+		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_05.png </idleImage>
+		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_06.png </idleImage>
+		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_07.png </idleImage>
+		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_08.png </idleImage>
 
 		<itemDisplay>
 			<image offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
@@ -240,7 +240,7 @@
 					idx2 = getQueryItemIndex();
 					if (idx1 == idx2)
 					{
-						"../etc/translate/rss/image/IMAGE_NEWRSS_MENU_BTFOC.bmp";
+						"/scripts/image/IMAGE_NEWRSS_MENU_BTFOC.bmp";
 					}
 					else
 					{
@@ -373,16 +373,16 @@
 		    sideLeftWidthPC = 0
 		    sideRightWidthPC = 0
         backgroundColor="0:0:0">
-			<idleImage idleImageXPC=80 idleImageYPC=80 idleImageWidthPC=5 idleImageHeightPC=5> ../etc/translate/rss/image/POPUP_LOADING_01.png </idleImage>
-			<idleImage idleImageXPC=80 idleImageYPC=80 idleImageWidthPC=5 idleImageHeightPC=5> ../etc/translate/rss/image/POPUP_LOADING_02.png </idleImage>
-			<idleImage idleImageXPC=80 idleImageYPC=80 idleImageWidthPC=5 idleImageHeightPC=5> ../etc/translate/rss/image/POPUP_LOADING_03.png </idleImage>
-			<idleImage idleImageXPC=80 idleImageYPC=80 idleImageWidthPC=5 idleImageHeightPC=5> ../etc/translate/rss/image/POPUP_LOADING_04.png </idleImage>
-			<idleImage idleImageXPC=80 idleImageYPC=80 idleImageWidthPC=5 idleImageHeightPC=5> ../etc/translate/rss/image/POPUP_LOADING_05.png </idleImage>
-			<idleImage idleImageXPC=80 idleImageYPC=80 idleImageWidthPC=5 idleImageHeightPC=5> ../etc/translate/rss/image/POPUP_LOADING_06.png </idleImage>
-			<idleImage idleImageXPC=80 idleImageYPC=80 idleImageWidthPC=5 idleImageHeightPC=5> ../etc/translate/rss/image/POPUP_LOADING_07.png </idleImage>
-			<idleImage idleImageXPC=80 idleImageYPC=80 idleImageWidthPC=5 idleImageHeightPC=5> ../etc/translate/rss/image/POPUP_LOADING_08.png </idleImage>
+			<idleImage idleImageXPC=80 idleImageYPC=80 idleImageWidthPC=5 idleImageHeightPC=5> /scripts/image/POPUP_LOADING_01.png </idleImage>
+			<idleImage idleImageXPC=80 idleImageYPC=80 idleImageWidthPC=5 idleImageHeightPC=5> /scripts/image/POPUP_LOADING_02.png </idleImage>
+			<idleImage idleImageXPC=80 idleImageYPC=80 idleImageWidthPC=5 idleImageHeightPC=5> /scripts/image/POPUP_LOADING_03.png </idleImage>
+			<idleImage idleImageXPC=80 idleImageYPC=80 idleImageWidthPC=5 idleImageHeightPC=5> /scripts/image/POPUP_LOADING_04.png </idleImage>
+			<idleImage idleImageXPC=80 idleImageYPC=80 idleImageWidthPC=5 idleImageHeightPC=5> /scripts/image/POPUP_LOADING_05.png </idleImage>
+			<idleImage idleImageXPC=80 idleImageYPC=80 idleImageWidthPC=5 idleImageHeightPC=5> /scripts/image/POPUP_LOADING_06.png </idleImage>
+			<idleImage idleImageXPC=80 idleImageYPC=80 idleImageWidthPC=5 idleImageHeightPC=5> /scripts/image/POPUP_LOADING_07.png </idleImage>
+			<idleImage idleImageXPC=80 idleImageYPC=80 idleImageWidthPC=5 idleImageHeightPC=5> /scripts/image/POPUP_LOADING_08.png </idleImage>
 		</mediaDisplay>
-		<link>rss_file://../etc/translate/rss/xspf/streamPlayer.rss</link>
+		<link>rss_file:///scripts/rss/xspf/streamPlayer.rss</link>
 		<title><script>getStringArrayAt(contentArray , -1);</script></title>
 	</item_template>
 

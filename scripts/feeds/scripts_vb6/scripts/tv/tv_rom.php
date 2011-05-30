@@ -235,7 +235,7 @@ ret;
     streamArray = pushBackStringArray(streamArray, stream_title);
     streamArray = pushBackStringArray(streamArray, "1");
     writeStringToFile(storagePath_stream, streamArray);
-    doModalRss("rss_file://../etc/translate/rss/xspf/videoRenderer.rss");
+    doModalRss("rss_file:///scripts/rss/xspf/videoRenderer.rss");
   </videoDispatcher>
   
   <audioDispatcher>

@@ -22,7 +22,7 @@
 -->
 
 <onEnter>
-  translate_base_url  = "http://127.0.0.1:84/cgi-bin/translate?";
+  translate_base_url  = "http://127.0.0.1:83/cgi-bin/translate?";
   screenXp = 4;
   screenYp = 3;
   rssconf = readStringFromFile(getStoragePath("key")+"translate.dat");
@@ -274,7 +274,7 @@
   streamArray = pushBackStringArray(streamArray, "playlist");
   streamArray = pushBackStringArray(streamArray, "1");
   writeStringToFile(storagePath_playlist, streamArray);
-  doModalRss("rss_file://../etc/translate/rss/xspf/xspfBrowser.rss");
+  doModalRss("rss_file:///scripts/rss/xspf/xspfBrowser.rss");
 </sub_Load_playlist>
 
 <sub_Load_rss>
@@ -284,7 +284,7 @@
   streamArray = pushBackStringArray(streamArray, "");
   streamArray = pushBackStringArray(streamArray, "");
   writeStringToFile(storagePath_stream, streamArray);
-  doModalRss("rss_file://../etc/translate/rss/xspf/rss_mediaFeed.rss");
+  doModalRss("rss_file:///scripts/rss/xspf/rss_mediaFeed.rss");
 </sub_Load_rss>
 
 <sub_Load_video>
@@ -296,7 +296,7 @@
   streamArray = pushBackStringArray(streamArray, stream_type);
   streamArray = pushBackStringArray(streamArray, stream_title);
   writeStringToFile(storagePath_stream, streamArray);
-  doModalRss("rss_file://../etc/translate/rss/xspf/videoRenderer.rss");
+  doModalRss("rss_file:///scripts/rss/xspf/videoRenderer.rss");
 </sub_Load_video>
 
 <sub_Load_audio>
@@ -316,7 +316,7 @@
   streamArray = pushBackStringArray(streamArray, stream_title);
   streamArray = pushBackStringArray(streamArray, "../etc/translate/app/lastfm/empty.png");
   writeStringToFile(storagePath_stream, streamArray);
-  doModalRss("rss_file://../etc/translate/rss/xspf/audioRenderer.rss");
+  doModalRss("rss_file:///scripts/rss/xspf/audioRenderer.rss");
 </sub_Load_audio>
 
 <mediaDisplay name="onePartView" 
@@ -328,14 +328,14 @@
 	bottomYPC="65"
   >
 
-	<idleImage idleImageWidthPC="10" idleImageHeightPC="10"> ../etc/translate/rss/image/POPUP_LOADING_01.png </idleImage>
-	<idleImage idleImageWidthPC="10" idleImageHeightPC="10"> ../etc/translate/rss/image/POPUP_LOADING_02.png </idleImage>
-	<idleImage idleImageWidthPC="10" idleImageHeightPC="10"> ../etc/translate/rss/image/POPUP_LOADING_03.png </idleImage>
-	<idleImage idleImageWidthPC="10" idleImageHeightPC="10"> ../etc/translate/rss/image/POPUP_LOADING_04.png </idleImage>
-	<idleImage idleImageWidthPC="10" idleImageHeightPC="10"> ../etc/translate/rss/image/POPUP_LOADING_05.png </idleImage>
-	<idleImage idleImageWidthPC="10" idleImageHeightPC="10"> ../etc/translate/rss/image/POPUP_LOADING_06.png </idleImage>
-	<idleImage idleImageWidthPC="10" idleImageHeightPC="10"> ../etc/translate/rss/image/POPUP_LOADING_07.png </idleImage>
-	<idleImage idleImageWidthPC="10" idleImageHeightPC="10"> ../etc/translate/rss/image/POPUP_LOADING_08.png </idleImage>
+	<idleImage idleImageWidthPC="10" idleImageHeightPC="10"> /scripts/image/POPUP_LOADING_01.png </idleImage>
+	<idleImage idleImageWidthPC="10" idleImageHeightPC="10"> /scripts/image/POPUP_LOADING_02.png </idleImage>
+	<idleImage idleImageWidthPC="10" idleImageHeightPC="10"> /scripts/image/POPUP_LOADING_03.png </idleImage>
+	<idleImage idleImageWidthPC="10" idleImageHeightPC="10"> /scripts/image/POPUP_LOADING_04.png </idleImage>
+	<idleImage idleImageWidthPC="10" idleImageHeightPC="10"> /scripts/image/POPUP_LOADING_05.png </idleImage>
+	<idleImage idleImageWidthPC="10" idleImageHeightPC="10"> /scripts/image/POPUP_LOADING_06.png </idleImage>
+	<idleImage idleImageWidthPC="10" idleImageHeightPC="10"> /scripts/image/POPUP_LOADING_07.png </idleImage>
+	<idleImage idleImageWidthPC="10" idleImageHeightPC="10"> /scripts/image/POPUP_LOADING_08.png </idleImage>
 
 	<text align="center" redraw="no" offsetXPC="0" offsetYPC="2" widthPC="100" heightPC="15" fontSize="34" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		Media Stream Renderer
@@ -350,7 +350,7 @@
 	</text>
 
   <image redraw="yes" offsetXPC="35" offsetYPC="37" widthPC="30" heightPC="26">
-    ../etc/translate/rss/image/msr.png
+    /scripts/image/msr.png
     <widthPC>
       <script>
         181 / 114 * 26 * screenYp / screenXp;

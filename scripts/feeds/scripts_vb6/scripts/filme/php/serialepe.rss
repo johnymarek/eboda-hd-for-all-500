@@ -47,20 +47,20 @@
   forceFocusOnMenu=no
 	showDefaultInfo=no
 >
-	<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_01.png </idleImage>
-	<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_02.png </idleImage>
-	<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_03.png </idleImage>
-	<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_04.png </idleImage>
-	<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_05.png </idleImage>
-	<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_06.png </idleImage>
-	<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_07.png </idleImage>
-	<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_08.png </idleImage>
+	<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_01.png </idleImage>
+	<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_02.png </idleImage>
+	<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_03.png </idleImage>
+	<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_04.png </idleImage>
+	<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_05.png </idleImage>
+	<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_06.png </idleImage>
+	<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_07.png </idleImage>
+	<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_08.png </idleImage>
 
   <text offsetXPC=5 offsetYPC=0 widthPC=100 heightPC=15 fontSize=20 backgroundColor=8:8:16 foregroundColor=200:200:200>
     <script>pageTitle;</script>
   </text>
   <image offsetXPC=0 offsetYPC=12 widthPC=100 heightPC=1>
-		../etc/translate/rss/image/gradient_line.bmp
+		/scripts/image/gradient_line.bmp
 	</image>
 	
 	<text redraw="yes" offsetXPC=50 offsetYPC=20 widthPC=30 heightPC=8 fontSize=17 backgroundColor=8:8:8 foregroundColor=150:150:150>
@@ -79,7 +79,7 @@
 				idx2 = getQueryItemIndex();
 				if (idx1 == idx2)
 				{
-					"../etc/translate/rss/image/IMAGE_NEWRSS_MENU_BTFOC.bmp";
+					"/scripts/image/IMAGE_NEWRSS_MENU_BTFOC.bmp";
 				}
 				else
 				{

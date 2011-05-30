@@ -91,7 +91,7 @@
 		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
 		</text>
 		<image  redraw="yes" offsetXPC=60 offsetYPC=35 widthPC=30 heightPC=30>
-  ../etc/translate/rss/image/radio_online.jpg
+  /scripts/image/radio_online.png
 		</image>
 <!--
 		<text align="justify" redraw="yes" 
@@ -109,14 +109,14 @@
 			<script>if(streamurl==""||streamurl==null) "WARNING! No stream url."; else "";</script>
 		</text>
 -->
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_01.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_02.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_03.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_04.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_05.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_06.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_07.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_08.png </idleImage>
+		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_01.png </idleImage>
+		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_02.png </idleImage>
+		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_03.png </idleImage>
+		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_04.png </idleImage>
+		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_05.png </idleImage>
+		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_06.png </idleImage>
+		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_07.png </idleImage>
+		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_08.png </idleImage>
 
 		<itemDisplay>
 			<text align="left" lines="1" offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
@@ -235,14 +235,14 @@
 	
 	<item_template>
 		<mediaDisplay  name="threePartsView">
-			<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_01.png </idleImage>
-			<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_02.png </idleImage>
-			<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_03.png </idleImage>
-			<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_04.png </idleImage>
-			<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_05.png </idleImage>
-			<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_06.png </idleImage>
-			<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_07.png </idleImage>
-			<idleImage idleImageWidthPC=10 idleImageHeightPC=10> ../etc/translate/rss/image/POPUP_LOADING_08.png </idleImage>
+			<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_01.png </idleImage>
+			<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_02.png </idleImage>
+			<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_03.png </idleImage>
+			<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_04.png </idleImage>
+			<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_05.png </idleImage>
+			<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_06.png </idleImage>
+			<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_07.png </idleImage>
+			<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_08.png </idleImage>
 		</mediaDisplay>
 	</item_template>
 
@@ -256,7 +256,7 @@
     streamArray = pushBackStringArray(streamArray, stream_title);
     streamArray = pushBackStringArray(streamArray, "1");
     writeStringToFile(storagePath_stream, streamArray);
-    doModalRss("rss_file://../etc/translate/rss/xspf/videoRenderer.rss");
+    doModalRss("rss_file:///scripts/rss/xspf/videoRenderer.rss");
   </videoDispatcher>
   
   <audioDispatcher>
@@ -274,7 +274,7 @@
     streamArray = pushBackStringArray(streamArray, request_image);
     streamArray = pushBackStringArray(streamArray, "1");
     writeStringToFile(storagePath_stream, streamArray);
-    doModalRss("rss_file://../etc/translate/rss/xspf/audioRenderer.rss");
+    doModalRss("rss_file:///scripts/rss/xspf/audioRenderer.rss");
   </audioDispatcher>
   
   <playlistDispatcher>
@@ -286,7 +286,7 @@
     streamArray = pushBackStringArray(streamArray, "playlist");
     streamArray = pushBackStringArray(streamArray, playlist_autoplay);
     writeStringToFile(storagePath_playlist, streamArray);
-    doModalRss("rss_file://../etc/translate/rss/xspf/xspfBrowser.rss");
+    doModalRss("rss_file:///scripts/rss/xspf/xspfBrowser.rss");
   </playlistDispatcher>
   
   <rssDispatcher>
@@ -296,7 +296,7 @@
     streamArray = pushBackStringArray(streamArray, "");
     streamArray = pushBackStringArray(streamArray, "");
     writeStringToFile(storagePath_stream, streamArray);
-    doModalRss("rss_file://../etc/translate/rss/xspf/rss_mediaFeed.rss");
+    doModalRss("rss_file:///scripts/rss/xspf/rss_mediaFeed.rss");
   </rssDispatcher>
 
   <unknownDispatcher>
@@ -426,7 +426,7 @@
 <item>
 <location>http://www.profm.ro/radio</location>
 <title>ProFM</title>
-<image>../etc/translate/rss/image/profm.jpg</image>
+<image>/scripts/image/profm.jpg</image>
 <stream_url>http://stream.profm.ro:8012/profm.mp3</stream_url>
 <stream_class>audio</stream_class>
 <stream_soft>icecast</stream_soft>
@@ -442,7 +442,7 @@
 <item>
 <location>http://www.profm.ro/radio</location>
 <title>ProFM Dance</title>
-<image>../etc/translate/rss/image/profm.jpg</image>
+<image>/scripts/image/profm.jpg</image>
 <stream_url>http://stream.profm.ro:8032/dancefm.mp3</stream_url>
 <stream_class>audio</stream_class>
 
@@ -459,7 +459,7 @@
 
 <location>http://www.profm.ro/radio</location>
 <title>ProFM Guns'n'Roses</title>
-<image>../etc/translate/rss/image/profm.jpg</image>
+<image>/scripts/image/profm.jpg</image>
 <stream_url>http://stream.profm.ro:8349/profmdiverse.mp3</stream_url>
 <stream_class>audio</stream_class>
 <stream_soft>icecast</stream_soft>
@@ -474,7 +474,7 @@
 <item>
 <location>http://www.profm.ro/radio</location>
 <title>ProFM Romania, Gen</title>
-<image>../etc/translate/rss/image/profm.jpg</image>
+<image>/scripts/image/profm.jpg</image>
 <stream_url>http://stream.profm.ro:8332/profmrogen.mp3</stream_url>
 <stream_class>audio</stream_class>
 <stream_soft>icecast</stream_soft>
@@ -489,7 +489,7 @@
 <item>
 <location>http://www.profm.ro/radio</location>
 <title>ProFM Michael Jackson</title>
-<image>../etc/translate/rss/image/profm.jpg</image>
+<image>/scripts/image/profm.jpg</image>
 <stream_url>http://stream.profm.ro:8360/profmmichaeljackson.mp3</stream_url>
 <stream_class>audio</stream_class>
 <stream_soft>icecast</stream_soft>
@@ -504,7 +504,7 @@
 <item>
 <location>http://www.profm.ro/radio</location>
 <title>ProFM Alternative</title>
-<image>../etc/translate/rss/image/profm.jpg</image>
+<image>/scripts/image/profm.jpg</image>
 <stream_url>http://stream.profm.ro:8042/alternativ.mp3</stream_url>
 <stream_class>audio</stream_class>
 <stream_soft>icecast</stream_soft>
@@ -519,7 +519,7 @@
 <item>
 <location>http://www.profm.ro/radio</location>
 <title>ProFM Black</title>
-<image>../etc/translate/rss/image/profm.jpg</image>
+<image>/scripts/image/profm.jpg</image>
 <stream_url>http://stream.profm.ro:8052/black.mp3</stream_url>
 <stream_class>audio</stream_class>
 <stream_soft>icecast</stream_soft>
@@ -535,7 +535,7 @@
 <item>
 <location>http://www.profm.ro/radio</location>
 <title>ProFM Classic</title>
-<image>../etc/translate/rss/image/profm.jpg</image>
+<image>/scripts/image/profm.jpg</image>
 <stream_url>http://stream.profm.ro:8082/clasic.mp3</stream_url>
 <stream_class>audio</stream_class>
 <stream_soft>icecast</stream_soft>
@@ -550,7 +550,7 @@
 <item>
 <location>http://www.profm.ro/radio</location>
 <title>ProFM Gold</title>
-<image>../etc/translate/rss/image/profm.jpg</image>
+<image>/scripts/image/profm.jpg</image>
 <stream_url>http://stream.profm.ro:8112/gold.mp3</stream_url>
 <stream_class>audio</stream_class>
 <stream_soft>icecast</stream_soft>
@@ -565,7 +565,7 @@
 <item>
 <location>http://www.profm.ro/radio</location>
 <title>ProFM Reggae</title>
-<image>../etc/translate/rss/image/profm.jpg</image>
+<image>/scripts/image/profm.jpg</image>
 <stream_url>http://stream.profm.ro:8062/reggae.mp3</stream_url>
 <stream_class>audio</stream_class>
 <stream_soft>icecast</stream_soft>
@@ -580,7 +580,7 @@
 <item>
 <location>http://www.profm.ro/radio</location>
 <title>ProFM `80s</title>
-<image>../etc/translate/rss/image/profm.jpg</image>
+<image>/scripts/image/profm.jpg</image>
 <stream_url>http://stream.profm.ro:8122/80s.mp3</stream_url>
 <stream_class>audio</stream_class>
 <stream_soft>icecast</stream_soft>
@@ -596,7 +596,7 @@
 
 <location>http://www.profm.ro/radio</location>
 <title>ProFM `90s</title>
-<image>../etc/translate/rss/image/profm.jpg</image>
+<image>/scripts/image/profm.jpg</image>
 <stream_url>http://stream.profm.ro:8092/90s.mp3</stream_url>
 <stream_class>audio</stream_class>
 <stream_soft>icecast</stream_soft>
@@ -611,7 +611,7 @@
 <item>
 <location>http://www.profm.ro/radio</location>
 <title>ProFM Love</title>
-<image>../etc/translate/rss/image/profm.jpg</image>
+<image>/scripts/image/profm.jpg</image>
 <stream_url>http://stream.profm.ro:8072/love.mp3</stream_url>
 <stream_class>audio</stream_class>
 <stream_soft>icecast</stream_soft>
@@ -626,7 +626,7 @@
 <item>
 <location>http://www.profm.ro/radio</location>
 <title>ProFM Sofa</title>
-<image>../etc/translate/rss/image/profm.jpg</image>
+<image>/scripts/image/profm.jpg</image>
 <stream_url>http://stream.profm.ro:8132/sofa.mp3</stream_url>
 <stream_class>audio</stream_class>
 <stream_soft>icecast</stream_soft>
@@ -641,7 +641,7 @@
 <item>
 <location>http://www.profm.ro/radio</location>
 <title>ProFM Rock</title>
-<image>../etc/translate/rss/image/profm.jpg</image>
+<image>/scripts/image/profm.jpg</image>
 <stream_url>http://stream.profm.ro:8142/rock.mp3</stream_url>
 <stream_class>audio</stream_class>
 <stream_soft>icecast</stream_soft>
@@ -656,7 +656,7 @@
 <item>
 <location>http://www.profm.ro/radio</location>
 <title>ProFM Rhythm&Blues</title>
-<image>../etc/translate/rss/image/profm.jpg</image>
+<image>/scripts/image/profm.jpg</image>
 <stream_url>http://stream.profm.ro:8152/blues.mp3</stream_url>
 <stream_class>audio</stream_class>
 <stream_soft>icecast</stream_soft>
@@ -672,7 +672,7 @@
 <item>
 <location>http://www.profm.ro/radio</location>
 <title>ProFM Latino</title>
-<image>../etc/translate/rss/image/profm.jpg</image>
+<image>/scripts/image/profm.jpg</image>
 <stream_url>http://stream.profm.ro:8162/latino.mp3</stream_url>
 <stream_class>audio</stream_class>
 <stream_soft>icecast</stream_soft>
@@ -687,7 +687,7 @@
 <item>
 <location>http://www.profm.ro/radio</location>
 <title>ProFM Jazz</title>
-<image>../etc/translate/rss/image/profm.jpg</image>
+<image>/scripts/image/profm.jpg</image>
 <stream_url>http://stream.profm.ro:8212/jazz.mp3</stream_url>
 <stream_class>audio</stream_class>
 <stream_soft>icecast</stream_soft>
@@ -702,7 +702,7 @@
 <item>
 <location>http://www.profm.ro/radio</location>
 <title>ProFM Oldies</title>
-<image>../etc/translate/rss/image/profm.jpg</image>
+<image>/scripts/image/profm.jpg</image>
 <stream_url>http://stream.profm.ro:8222/oldies.mp3</stream_url>
 <stream_class>audio</stream_class>
 <stream_soft>icecast</stream_soft>
@@ -717,7 +717,7 @@
 <item>
 <location>http://www.profm.ro/radio</location>
 <title>ProFM ChillOut</title>
-<image>../etc/translate/rss/image/profm.jpg</image>
+<image>/scripts/image/profm.jpg</image>
 <stream_url>http://stream.profm.ro:8232/chillout.mp3</stream_url>
 <stream_class>audio</stream_class>
 <stream_soft>icecast</stream_soft>
@@ -733,7 +733,7 @@
 
 <location>http://www.profm.ro/radio</location>
 <title>ProFM RO</title>
-<image>../etc/translate/rss/image/profm.jpg</image>
+<image>/scripts/image/profm.jpg</image>
 <stream_url>http://stream.profm.ro:8242/profmro.mp3</stream_url>
 <stream_class>audio</stream_class>
 <stream_soft>icecast</stream_soft>
@@ -748,7 +748,7 @@
 <item>
 <location>http://www.profm.ro/radio</location>
 <title>ProFM HOT</title>
-<image>../etc/translate/rss/image/profm.jpg</image>
+<image>/scripts/image/profm.jpg</image>
 <stream_url>http://stream.profm.ro:8252/hot.mp3</stream_url>
 <stream_class>audio</stream_class>
 <stream_soft>icecast</stream_soft>
@@ -763,7 +763,7 @@
 <item>
 <location>http://www.profm.ro/radio</location>
 <title>ProFM HOUSE</title>
-<image>../etc/translate/rss/image/profm.jpg</image>
+<image>/scripts/image/profm.jpg</image>
 <stream_url>http://stream.profm.ro:8312/house.mp3</stream_url>
 <stream_class>audio</stream_class>
 <stream_soft>icecast</stream_soft>
@@ -778,7 +778,7 @@
 <item>
 <location>http://www.profm.ro/radio</location>
 <title>ProFM Classic Rock</title>
-<image>../etc/translate/rss/image/profm.jpg</image>
+<image>/scripts/image/profm.jpg</image>
 <stream_url>http://stream.profm.ro:8322/classicrock.mp3</stream_url>
 <stream_class>audio</stream_class>
 <stream_soft>icecast</stream_soft>
@@ -793,7 +793,7 @@
 <item>
 <location>http://www.profm.ro/radio</location>
 <title>ProFM Campus Bucuresti</title>
-<image>../etc/translate/rss/image/profm.jpg</image>
+<image>/scripts/image/profm.jpg</image>
 <stream_url>http://stream.profm.ro:8410/campus.mp3</stream_url>
 <stream_class>audio</stream_class>
 <stream_soft>icecast</stream_soft>
@@ -809,7 +809,7 @@
 <item>
 <location>http://www.profm.ro/radio</location>
 <title>ProFM Campus Cluj</title>
-<image>../etc/translate/rss/image/profm.jpg</image>
+<image>/scripts/image/profm.jpg</image>
 <stream_url>http://82.77.127.233:80/campus.mp3</stream_url>
 <stream_class>audio</stream_class>
 <stream_soft>icecast</stream_soft>
@@ -824,7 +824,7 @@
 <item>
 <location>http://www.profm.ro/radio</location>
 <title>ProFM Campus Tg. Mures</title>
-<image>../etc/translate/rss/image/profm.jpg</image>
+<image>/scripts/image/profm.jpg</image>
 <stream_url>http://193.226.19.85:80/campus.mp3</stream_url>
 <stream_class>audio</stream_class>
 <stream_soft>icecast</stream_soft>
@@ -839,7 +839,7 @@
 <item>
 <location>http://www.profm.ro/radio</location>
 <title>ProFM Kids</title>
-<image>../etc/translate/rss/image/profm.jpg</image>
+<image>/scripts/image/profm.jpg</image>
 <stream_url>http://stream.profm.ro:8262/kids.mp3</stream_url>
 <stream_class>audio</stream_class>
 <stream_soft>icecast</stream_soft>
