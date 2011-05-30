@@ -273,8 +273,8 @@ $host = "http://127.0.0.1:82";
 <item>
 <title>Radio On Line</title>
 <link>/scripts/tv/radio.rss</link>
-<media:thumbnail url="../etc/translate/rss/image/radio_online.jpg" />
-<image>../etc/translate/rss/image/radio_online.jpg</image>
+<media:thumbnail url="/scripts/image/radio_online.png" />
+<image>/scripts/image/radio_online.png</image>
 <location></location>
 <annotation>Posturi de radio pe alese....</annotation>
 <mediaDisplay name="photoView" />

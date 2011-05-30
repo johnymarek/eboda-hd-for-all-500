@@ -1,5 +1,5 @@
-parent: 91:b855386e98f4 tip
- fix uk tv
+parent: 97:7a218aabbc52 tip
+ fara busy.png... + mici fix-uri
 branch: default
-commit: (clean)
+commit: 1 unknown (clean)
 update: (current)

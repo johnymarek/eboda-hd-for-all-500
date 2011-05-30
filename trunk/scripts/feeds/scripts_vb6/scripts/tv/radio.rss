@@ -277,18 +277,20 @@ columnCount=5
     <image>/scripts/tv/image/nrj.jpg</image>
     <mediaDisplay name="photoView"/>
   </item>
+  <!--
   <item>
 		<link>rss_file://../etc/translate/rss/etc-playlists-radio-skyfm.rss</link>
     <title>SKY.fm</title>
     <annotation>Now Serving the Best Free Internet Radio to 33,823 Fans</annotation>
-    <image>../etc/translate/rss/image/menu/skyfm.png</image>
+    <image>/scripts/image/menu/skyfm.png</image>
     <mediaDisplay name="photoView"/>
   </item>
+  -->
   <item>
 		<link>rss_file:///scripts/tv/rom.rss</link>
     <title>Posturi romaneşti</title>
     <annotation>Selecţie posturi radio din Romania.</annotation>
-    <image>../etc/translate/rss/image/radio_online.jpg</image>
+    <image>/scripts/image/radio_online.png</image>
     <mediaDisplay name="threePartsView"/>
   </item>
   <item>

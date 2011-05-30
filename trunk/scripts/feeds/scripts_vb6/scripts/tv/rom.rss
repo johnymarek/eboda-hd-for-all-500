@@ -55,7 +55,7 @@
 		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
 		</text>
 		<image  redraw="yes" offsetXPC=60 offsetYPC=35 widthPC=30 heightPC=30>
-  ../etc/translate/rss/image/radio_online.jpg
+  /scripts/image/radio_online.png
 		</image>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_01.png </idleImage>
 		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_02.png </idleImage>
@@ -226,7 +226,7 @@ ret;
     streamArray = pushBackStringArray(streamArray, stream_title);
     streamArray = pushBackStringArray(streamArray, "1");
     writeStringToFile(storagePath_stream, streamArray);
-    doModalRss("rss_file://../etc/translate/rss/xspf/videoRenderer.rss");
+    doModalRss("rss_file:///scripts/rss/xspf/videoRenderer.rss");
   </videoDispatcher>
   <audioDispatcher>
     streamArray = null;
@@ -242,7 +242,7 @@ ret;
     streamArray = pushBackStringArray(streamArray, stream_title);
     streamArray = pushBackStringArray(streamArray, "1");
     writeStringToFile(storagePath_stream, streamArray);
-    doModalRss("rss_file://../etc/translate/rss/xspf/audioRenderer.rss");
+    doModalRss("rss_file:///scripts/rss/xspf/audioRenderer.rss");
   </audioDispatcher>
   <unknownDispatcher>
     info_url    = translate_base_url + "info," + request_options + "," + urlEncode(request_url);

@@ -1,6 +1,7 @@
 s#/usr/local/etc/translate#/scripts#g
 s#image/busy#image/POPUP_LOADING_0#g
 s#/usr/local/etc/www/cgi-bin/scripts/#/scripts/#g
+s#../etc/translate/rss/image/radio_online.jpg#/scripts/image/radio_online.png#g
 s#../etc/translate/rss/image/tvigle.png#/scripts/image/tvigle.png#g
 s#rss/image/menu/internetradio.png#/scripts/image/internetradio.png#
 s#>image/blog.png#>/scripts/image/blog.png#g
@@ -17,6 +18,6 @@ s#>image/tvigle.png#>/scripts/image/tvigle.png#g
 s#>image/tv_radio.png#>/scripts/image/tv_radio.png#g
 s#>image/videoclip.png#>/scripts/image/videoclip.png#g
 s#>image/youtube.gif#>/scripts/image/youtube.gif#g
-
-
+s#../etc/translate/rss/image#/scripts/image#g
+s#../etc/translate/rss/xspf#/scripts/rss/xspf#g
 
