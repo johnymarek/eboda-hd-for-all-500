@@ -143,8 +143,11 @@ perform_update()
     $sync
     [ $? == 0 ] || nice_exit 2 $2
     
-    rm -rf ${component}/*
+   
+    [ -d "Trash" ] || mkdir "Trash"
+    mv ${component}/* "Trash"
     
+ 
     unzip -q -o ${component}-latest.zip
     rm ${component}-latest.zip
     
