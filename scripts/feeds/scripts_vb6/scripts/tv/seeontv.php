@@ -208,12 +208,20 @@ foreach($videos as $video) {
     $t2=explode(':',$t1[1]);
     $title = $t2[0];
 
-    $link = 'http://127.0.0.1:82/scripts/tv/seeontv_link.php?file='.$link.','.urlencode($title);
+    //$link = 'http://127.0.0.1:82/scripts/tv/seeontv_link.php?file='.$link.','.urlencode($title);
     if ($image <> "") {
     echo '
     <item>
     <title>'.$title.'</title>
-    <link>'.$link.'</link>	
+    <onClick>
+    <script>
+    showIdle();
+    url=geturl("http://127.0.0.1:82/scripts/tv/seeontv_link.php?file='.$link.'");
+    movie="http://127.0.0.1:82/scripts/util/seeon.cgi?" + url;
+    cancelIdle();
+    playItemURL(movie, 10);
+    </script>
+    </onClick>
     <annotation>'.$title.'</annotation>
     <image>'.$image.'</image>
     <media:thumbnail url="'.$image.'" />

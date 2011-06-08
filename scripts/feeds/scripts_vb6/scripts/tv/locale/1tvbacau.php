@@ -197,7 +197,18 @@ function c($title) {
      $title = str_replace("&ordf;","S",$title);
      $title = str_replace("&acirc;","a",$title);
      $title = str_replace("&Acirc;","A",$title);
+
      return $title;
+}
+function getRewriteString($string) {
+    $string    = htmlentities($string);
+    $string    = preg_replace("/&amp;(.)(acute|cedil|circ|ring|tilde|uml|horn);/", "$1", $string);
+    return $string;
+}
+function getRewriteString1($string) {
+    $string    = htmlentities($string);
+    $string    = preg_replace("/&(.)(acute|cedil|circ|ring|tilde|uml|horn|);/", "$1", $string);
+    return $string;
 }
 $videos = explode('<div class="my_wideo_other_link">', $html);
 
@@ -216,7 +227,16 @@ foreach($videos as $video) {
     $t4=explode("<",$t3[1]);
     $descriere=c(htmlentities($t4[0]));
     $descriere=trim($descriere);
-    $title = htmlentities(trim(str_between($video,'">','</a>')));
+    $title = trim(str_between($video,'">','</a>'));
+
+    $title = str_replace("&amp;","&",$title);
+
+    $title = str_replace("&nbsp;","",$title);
+    $title = str_replace('"',"",$title);
+
+    $title = getRewriteString1($title);
+    $title = getRewriteString($title);
+    $title = str_replace("&amp;","&",$title);
     $title=c($title);
     $durata="";
 

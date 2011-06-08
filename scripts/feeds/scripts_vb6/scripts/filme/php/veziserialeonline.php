@@ -201,7 +201,7 @@ foreach($videos as $video) {
      $data = str_replace("&Atilde;","I",$data);
      $data = str_replace("&acirc;","a",$data);
      $data = str_replace("&Acirc;","A",$data);
-    if ($data == "") {
+    if (($data == "") || ($data == "Vizionare Placuta")) {
        $data = $title;
     }
     if ($link <> "") {

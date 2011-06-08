@@ -204,5 +204,12 @@ ret;
 <media:thumbnail url="image/tv_radio.png" />
 <mediaDisplay name="threePartsView"/>
 </item>
+
+<item>
+<title>TV Live by vetem.shqiptv-ks.net</title>
+<link><?php echo $host; ?>/scripts/tv/vetem.php</link>
+<media:thumbnail url="image/tv_radio.png" />
+<mediaDisplay name="threePartsView"/>
+</item>
 </channel>
 </rss>                                                                                                                             

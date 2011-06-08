@@ -15,10 +15,10 @@ $host = "http://127.0.0.1:82";
 
 	<mediaDisplay name=photoView
 	  centerXPC=5
-		centerYPC=20
-		centerHeightPC=55
-      columnCount=4
-	  rowCount=1
+		centerYPC=5
+		centerHeightPC=70
+      columnCount=3
+	  rowCount=2
 		menuBorderColor="55:55:55"
 		sideColorBottom="0:0:0"
 		sideColorTop="0:0:0"
@@ -26,15 +26,15 @@ $host = "http://127.0.0.1:82";
 		imageBorderColor="10:105:150"
 		imageBorderPC="0"
 		itemBackgroundColor="0:0:0"
-		itemGapXPC=1
-		itemGapYPC=4
+		itemGapXPC=5
+		itemGapYPC=0
 		sideTopHeightPC=0
-		bottomYPC=80
+		bottomYPC=100
 		sliding=yes
 		showHeader=no
 		showDefaultInfo=no
-		idleImageWidthPC="10" idleImageHeightPC="10">
-
+		idleImageWidthPC="8" idleImageHeightPC="10" idleImageXPC="5" idleImageYPC="5">
+<!--
   	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		  <script>getPageInfo("pageTitle");</script>
 		</text>
@@ -42,11 +42,11 @@ $host = "http://127.0.0.1:82";
   	<text redraw="yes" offsetXPC="85" offsetYPC="12" widthPC="10" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
 		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
 		</text>
-
+-->
 		<!--  lines="5" fontSize=15 -->
 		<text align="center" redraw="yes"
   lines=3 fontSize=17
-		      offsetXPC=5 offsetYPC=70 widthPC=90 heightPC=15
+		      offsetXPC=5 offsetYPC=80 widthPC=90 heightPC=15
 		      backgroundColor=0:0:0 foregroundColor=120:120:120>
 			<script>print(annotation); annotation;</script>
 		</text>
@@ -100,12 +100,12 @@ $host = "http://127.0.0.1:82";
 			   <script>
 					idx = getQueryItemIndex();
 					focus = getFocusItemIndex();
-			    if(focus==idx) 50; else 37;
+			    if(focus==idx) 70; else 60;
 			   </script>
 			 </heightPC>
 			</image>
 
-			<text align="center" lines="2" offsetXPC=0 offsetYPC=60 widthPC=100 heightPC=40 backgroundColor=-1:-1:-1>
+			<text align="center" lines="1" offsetXPC=0 offsetYPC=82 widthPC=100 heightPC=12 useBackgroundSurface=yes>
 				<script>
 					idx = getQueryItemIndex();
 					getItemInfo(idx, "title");
@@ -246,7 +246,7 @@ $host = "http://127.0.0.1:82";
 	</mediaDisplay>
 
 	<item_template>
-		<mediaDisplay  name="threePartsView" idleImageWidthPC="10" idleImageHeightPC="10">
+		<mediaDisplay  name="threePartsView" idleImageWidthPC="8" idleImageHeightPC="10" idleImageXPC="45" idleImageYPC="45">
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
         <idleImage>image/POPUP_LOADING_02.png</idleImage>
         <idleImage>image/POPUP_LOADING_03.png</idleImage>
@@ -264,8 +264,8 @@ $host = "http://127.0.0.1:82";
 <item>
 <title>TV Live</title>
 <link><?php echo $host; ?>/scripts/tv/tv_live.php</link>
-<media:thumbnail url="image/tv_radio.png" />
-<image>/scripts/image/tv_radio.png</image>
+<media:thumbnail url="/scripts/tv/image/tvlive.png" />
+<image>/scripts/tv/image/tvlive.png</image>
 <location></location>
 <annotation>Posturi TV din Romania sau din alte tari. Canale de stiri, muzica sau sport.</annotation>
 </item>

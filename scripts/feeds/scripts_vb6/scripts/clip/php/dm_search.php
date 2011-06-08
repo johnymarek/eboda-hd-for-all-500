@@ -229,6 +229,11 @@ function str_between($string, $start, $end){
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini;
 	return substr($string,$ini,$len);
 }
+function getRewriteString($string) {
+    $string    = htmlentities($string);
+    $string    = preg_replace("/&amp;(.)(acute|cedil|circ|ring|tilde|uml|horn);/", "$1", $string);
+    return $string;
+}
 $videos = explode('<div class="dmpi_video_preview', $html);
 
 unset($videos[0]);
@@ -247,7 +252,9 @@ foreach($videos as $video) {
     $t2 = explode('"', $t1[1]);
     $title = $t2[0];
     if ($title == "") $title="Video...";
-
+    $title = str_replace("&nbsp;","",$title);
+    $title = str_replace("&amp;","&",$title);
+    $title = getRewriteString($title);
     $t1=explode('class="duration">',$video);
     $t2=explode('<',$t1[1]);
     $durata = "Durata:".$t2[0];
