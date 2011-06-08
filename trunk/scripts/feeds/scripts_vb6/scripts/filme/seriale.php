@@ -39,6 +39,7 @@ $host = "http://127.0.0.1:82";
 	showDefaultInfo="no"
 	imageFocus=""
 	sliding="no"
+	idleImageXPC="5" idleImageYPC="5" idleImageWidthPC="8" idleImageHeightPC="10"
 >
 		
   	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
@@ -54,14 +55,14 @@ $host = "http://127.0.0.1:82";
 		<image  redraw="yes" offsetXPC=60 offsetYPC=35 widthPC=30 heightPC=30>
         /scripts/filme/image/series.png
 		</image>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_01.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_02.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_03.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_04.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_05.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_06.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_07.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_08.png </idleImage>
+        <idleImage>image/POPUP_LOADING_01.png</idleImage>
+        <idleImage>image/POPUP_LOADING_02.png</idleImage>
+        <idleImage>image/POPUP_LOADING_03.png</idleImage>
+        <idleImage>image/POPUP_LOADING_04.png</idleImage>
+        <idleImage>image/POPUP_LOADING_05.png</idleImage>
+        <idleImage>image/POPUP_LOADING_06.png</idleImage>
+        <idleImage>image/POPUP_LOADING_07.png</idleImage>
+        <idleImage>image/POPUP_LOADING_08.png</idleImage>
 
 		<itemDisplay>
 			<text align="left" lines="1" offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
@@ -134,7 +135,7 @@ ret;
 	</mediaDisplay>
 	
 	<item_template>
-		<mediaDisplay  name="threePartsView" idleImageWidthPC="10" idleImageHeightPC="10">
+		<mediaDisplay  name="threePartsView" idleImageXPC="5" idleImageYPC="5" idleImageWidthPC="8" idleImageHeightPC="10">
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
         <idleImage>image/POPUP_LOADING_02.png</idleImage>
         <idleImage>image/POPUP_LOADING_03.png</idleImage>
@@ -144,7 +145,6 @@ ret;
         <idleImage>image/POPUP_LOADING_07.png</idleImage>
         <idleImage>image/POPUP_LOADING_08.png</idleImage>
 		</mediaDisplay>
-
 	</item_template>
 <channel>
 	<title>Seriale TV</title>
@@ -211,14 +211,14 @@ ret;
 <annotation>http://www.990.ro</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
-<!--
+
 <item>
-<title>serialeonline.biz</title>
-<link><?php echo $host; ?>/scripts/filme/php/serialeonline_biz.php?query=1,</link>
-<annotation>http://serialeonline.biz/seriale-online</annotation>
+<title>filmeonline.org - seriale</title>
+<link><?php echo $host; ?>/scripts/filme/php/filmeonlines_main.php</link>
+<annotation>http://www.filmeonline.org/seriale-online-subtitrate-in-romana/</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
--->
+
 <item>
 <title>seriale.doi10.com</title>
 <link><?php echo $host; ?>/scripts/filme/php/seriale_doi10_main.php</link>
@@ -228,8 +228,15 @@ ret;
 
 <item>
 <title>www.serialetvonline.info</title>
-<link><?php echo $host; ?>/scripts/filme/php/serialetvonline_info_main.php</link>
+<link><?php echo $host; ?>/scripts/filme/php/serialetvonline_main.php</link>
 <annotation>http://www.serialetvonline.info/tv-shows</annotation>
+<mediaDisplay name="threePartsView"/>
+</item>
+
+<item>
+<title>serialeonline.ro</title>
+<link><?php echo $host; ?>/scripts/filme/php/serialeonlinero_main.php</link>
+<annotation>http://serialeonline.ro/index.php/tv-shows</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
 

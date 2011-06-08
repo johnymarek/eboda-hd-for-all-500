@@ -1,5 +1,16 @@
 <?php echo "<?xml version='1.0' encoding='UTF8' ?>";
 $host = "http://127.0.0.1:82";
+$query = $_GET["query"];
+if($query) {
+   $queryArr = explode(',', $query);
+   $link = $queryArr[0];
+   $tit = urldecode($queryArr[1]);
+}
+$html = file_get_contents($link);
+$t1=explode('img class="border"',$html);
+$t2=explode('src="',$t1[1]);
+$t3=explode('"',$t2[1]);
+$image="http://serialeonline.ro".$t3[0];
 ?>
 <rss version="2.0">
 <onEnter>
@@ -11,10 +22,11 @@ $host = "http://127.0.0.1:82";
   setRefreshTime(-1);
   itemCount = getPageInfo("itemCount");
 </onRefresh>
+
 <mediaDisplay name="threePartsView"
 	sideLeftWidthPC="0"
 	sideRightWidthPC="0"
-
+	
 	headerImageWidthPC="0"
 	selectMenuOnRight="no"
 	autoSelectMenu="no"
@@ -40,7 +52,7 @@ $host = "http://127.0.0.1:82";
 	sliding="no"
 	idleImageWidthPC="8" idleImageHeightPC="10"
 >
-
+		
   	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		  <script>getPageInfo("pageTitle");</script>
 		</text>
@@ -48,8 +60,11 @@ $host = "http://127.0.0.1:82";
   	<text redraw="yes" offsetXPC="85" offsetYPC="12" widthPC="10" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
 		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
 		</text>
-		<image  redraw="yes" offsetXPC=60 offsetYPC=35 widthPC=30 heightPC=30>
-  image/tv_radio.png
+  	<text  redraw="yes" align="center" offsetXPC="0" offsetYPC="90" widthPC="100" heightPC="8" fontSize="17" backgroundColor="10:105:150" foregroundColor="100:200:255">
+		  <script>print(annotation); annotation;</script>
+		</text>
+		<image  redraw="yes" offsetXPC=60 offsetYPC=35 widthPC=30 heightPC=20>
+  <?php echo $image; ?>
 		</image>
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
         <idleImage>image/POPUP_LOADING_02.png</idleImage>
@@ -65,7 +80,7 @@ $host = "http://127.0.0.1:82";
 				<script>
 					idx = getQueryItemIndex();
 					focus = getFocusItemIndex();
-					if(focus==idx)
+					if(focus==idx) 
 					{
 					  location = getItemInfo(idx, "location");
 					  annotation = getItemInfo(idx, "annotation");
@@ -96,7 +111,7 @@ $host = "http://127.0.0.1:82";
 			</text>
 
 		</itemDisplay>
-
+		
 <onUserInput>
 <script>
 ret = "false";
@@ -141,85 +156,46 @@ ret;
         <idleImage>image/POPUP_LOADING_07.png</idleImage>
         <idleImage>image/POPUP_LOADING_08.png</idleImage>
 		</mediaDisplay>
+
 	</item_template>
-
 <channel>
-  <title>TV Live Romania</title>
+	<title><?php echo $tit; ?></title>
+	<menu>main menu</menu>
 
-   <item>
-    <title>Antena 2</title>
-    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,mms://86.55.8.134/ant2",10);</onClick>
-  </item>
 
-   <item>
-    <title>Tele M</title>
-    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,http://telem.telem.ro:8780/telem_live.flv",10);</onClick>
-  </item>
+<?php
+function str_between($string, $start, $end){ 
+	$string = " ".$string; $ini = strpos($string,$start); 
+	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
+	return substr($string,$ini,$len); 
+}
+$videos = explode('href="', $html);
+unset($videos[0]);
+$videos = array_values($videos);
 
-   <item>
-    <title>Prahova TV</title>
-    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,http://89.45.181.51:5000/test.flv",10);</onClick>
-  </item>
+foreach($videos as $video) {		
+    $t1 = explode('"', $video);
+    $link="http://serialeonline.ro".$t1[0];
+    if (strpos($link,"/index.php/suport-online/mai-multe/lista-seriale") !==false) {
+    $t2 = explode('>', $video);
+    $t3 = explode('<',$t2[1]);
+    $title = $t3[0];
+    $link = $host."/scripts/filme/php/filme_link.php?".$link.",".urlencode($tit);
+    if ($title <> "") {
+    	echo '
+    	<item>
+    		<title>'.$title.'</title>
+    		<link>'.$link.'</link>
+    		<media:thumbnail url="'.$image.'" />
+			<annotation>'.$title.'</annotation>
+			<mediaDisplay name="threePartsView"/>
+    	</item>
+    	';
+  	}
+}
+}
 
-   <item>
-    <title>Publika TV</title>
-    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,mmsh://77.36.61.36:8081/Publika%20TV",10);</onClick>
-  </item>
-
-   <item>
-    <title>Jurnal TV - Rep. Moldova</title>
-    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,http://ch0.jurnaltv.md/channel0.flv",10);</onClick>
-  </item>
-
-   <item>
-    <title>Light Channel</title>
-    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,rtmp://streamer1.adventhost.de/salive/romanian",10);</onClick>
-  </item>
-
-   <item>
-    <title>MegaTV - Braila</title>
-    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,http://89.36.72.7:8080/",10);</onClick>
-  </item>
-
-   <item>
-    <title>Muscel TV</title>
-    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,http://musceltvlive.muscel.ro:8080/",10);</onClick>
-  </item>
-
-   <item>
-    <title>NCN - Cluj</title>
-    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,http://ncn.simpliq.net:8090/ncn.flv",10);</onClick>
-  </item>
-
-   <item>
-    <title>TV PLUS Suceava</title>
-    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,http://85.186.146.34:8080",10);</onClick>
-  </item>
-
-   <item>
-    <title>ACCES TV Targiu Jiu</title>
-    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,http://82.77.72.47:8050/live.flv",10);</onClick>
-  </item>
-
-   <item>
-    <title>TV eMARAMURES</title>
-    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,http://195.28.2.42:8083/stream.flv",10);</onClick>
-  </item>
-
-   <item>
-    <title>TTM - Televiziunea Tirgu Mures</title>
-    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,http://89.121.214.123:8080/stream.flv",10);</onClick>
-  </item>
-
-   <item>
-    <title>RTV Online - Televiziunea pentru toti gorjenii!</title>
-    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,http://www.rtvonline.ro:8080/online.flv",10);</onClick>
-  </item>
-
-   <item>
-    <title>Speranta Tv</title>
-    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,rtmp://robuc140.crestin.tv:80/live/sperantatv_500",10);</onClick>
-  </item>
+?>
 
 </channel>
 </rss>

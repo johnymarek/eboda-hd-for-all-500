@@ -35,6 +35,11 @@ if (file_exists("/tmp/usbmounts/sda1/download")) {
 ?>
 <?php echo "<?xml version='1.0' ?>"; ?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<onEnter>
+    storagePath             = getStoragePath("tmp");
+    storagePath_stream      = storagePath + "stream.dat";
+    storagePath_playlist    = storagePath + "playlist.dat";
+</onEnter>
 <mediaDisplay name="threePartsView"
 	itemBackgroundColor="0:0:0"
 	backgroundColor="0:0:0"
@@ -56,7 +61,7 @@ if (file_exists("/tmp/usbmounts/sda1/download")) {
 	popupBorderColor="28:35:51"
 	popupForegroundColor="255:255:255"
  	popupBackgroundColor="28:35:51"
-	idleImageWidthPC="10"
+	idleImageWidthPC="8"
 	idleImageHeightPC="10">
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
         <idleImage>image/POPUP_LOADING_02.png</idleImage>
@@ -82,8 +87,10 @@ if (file_exists("/tmp/usbmounts/sda1/download")) {
 
 	if( userInput == "two")
 	{
+        showIdle();
 		topUrl = "http://127.0.0.1:82/scripts/util/download.cgi?link=" + getItemInfo(getFocusItemIndex(),"download") + ";name=" + getItemInfo(getFocusItemIndex(),"name");
 		dummy = getUrl(topUrl);
+		cancelIdle();
 	}
 	else
     if (userInput == "three")
@@ -499,6 +506,15 @@ $opts = array(
 );
   $context = stream_context_create($opts);
   $html = file_get_contents($filelink, false, $context);
+} else if (strpos($filelink,"filmeonlinesubtitrate.ro") !== false) {
+  $post="pageviewnr=1";
+  $ch = curl_init($filelink);
+  curl_setopt ($ch, CURLOPT_POST, 1);
+  curl_setopt ($ch, CURLOPT_POSTFIELDS, $post);
+  curl_setopt($ch, CURLOPT_FOLLOWLOCATION  ,1);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER  ,1);  // RETURN THE CONTENTS OF THE CALL
+  $html = curl_exec($ch);
+  curl_close ($ch);
 } else {
   $html = file_get_contents($filelink);
 }
@@ -643,7 +659,20 @@ if (strpos($filelink, 'onlinemoca') !== false) {
       $title = $server." - ".substr(strrchr($link1,"/"),1);
     } elseif (strpos($link, 'vk.com') !== false) {
       //http://vk.com/video100253340_159988773
-      $link1=vk($link);
+      //http://vk.com/video_ext.php?oid=100253340&id=160049967&hash=9670d6cb67f54975&hd=1
+      if (strpos($link,"video_ext.php") === false) {
+        $link1=vk($link);
+      } else {
+       $baza = file_get_contents($link);
+       $host = str_between($baza,"var video_host = '","'");
+       $uid = str_between($baza,"var video_uid = '","'");
+       $vtag = str_between($baza,"var video_vtag = '","'");
+       $hd = str_between($baza,"var video_max_hd = '","'");
+       $link1 = $host."u".$uid."/video/".$vtag.".360.mp4";
+       if ($hd == "0") {
+        $link1 = $host."u".$uid."/video/".$vtag.".240.mp4";
+        }
+      }
       $server = str_between($link,"http://","/");
       $title = $server." - ".substr(strrchr($link,"/"),1);
     } elseif (strpos($link, 'rapidmov.net') !== false) {
@@ -681,7 +710,33 @@ if (strpos($filelink, 'onlinemoca') !== false) {
     	</item>
         ';
 		$lastlink = $link1;
-    }   //lastlink
+		// for sdk4.... with seek
+		$title=str_between($link1,"http://","/"). " - With seek - SDK4";
+	echo'
+	<item>
+	<title>'.$title.'</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="'.$link1.'";
+    cancelIdle();
+    streamArray = null;
+    streamArray = pushBackStringArray(streamArray, "");
+    streamArray = pushBackStringArray(streamArray, "");
+    streamArray = pushBackStringArray(streamArray, url);
+    streamArray = pushBackStringArray(streamArray, url);
+    streamArray = pushBackStringArray(streamArray, video/x-flv);
+    streamArray = pushBackStringArray(streamArray, "'.$pg_title.'");
+    streamArray = pushBackStringArray(streamArray, "1");
+    writeStringToFile(storagePath_stream, streamArray);
+    doModalRss("rss_file:///scripts/util/videoRenderer.rss");
+    </script>
+    </onClick>
+    <download>'.$link1.'</download>
+    <name>'.$titledownload.'.'.$ext.'</name>
+  </item>
+  ';
+    }
 }
 /** END onlinemoca **/
 /**################ flash... mediafile,file.....############**/
@@ -736,6 +791,32 @@ foreach($videos as $video) {
     	</item>
     	';
     	$lastlink = $link;
+		// for sdk4.... with seek
+		$title=str_between($link,"http://","/"). " - With seek - SDK4";
+	echo'
+	<item>
+	<title>'.$title.'</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="'.$link.'";
+    cancelIdle();
+    streamArray = null;
+    streamArray = pushBackStringArray(streamArray, "");
+    streamArray = pushBackStringArray(streamArray, "");
+    streamArray = pushBackStringArray(streamArray, url);
+    streamArray = pushBackStringArray(streamArray, url);
+    streamArray = pushBackStringArray(streamArray, video/x-flv);
+    streamArray = pushBackStringArray(streamArray, "'.$pg_title.'");
+    streamArray = pushBackStringArray(streamArray, "1");
+    writeStringToFile(storagePath_stream, streamArray);
+    doModalRss("rss_file:///scripts/util/videoRenderer.rss");
+    </script>
+    </onClick>
+    <download>'.$link.'</download>
+    <name>'.$titledownload.'.'.$ext.'</name>
+  </item>
+  ';
     	$link2 = str_replace("s2.serialepe.net","s3.serialepe.net",$link);
     	if ($link2 <> $link) {
           $titledownload1 = str_replace("s2.serialepe","s3.serialepe",$titledownload);
@@ -751,6 +832,32 @@ foreach($videos as $video) {
     	<enclosure type="video/flv" url="'.$link1.'"/>
     	</item>
     	';
+		// for sdk4.... with seek
+		$title=str_between($link2,"http://","/"). " - With seek - SDK4";
+	echo'
+	<item>
+	<title>'.$title.'</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="'.$link2.'";
+    cancelIdle();
+    streamArray = null;
+    streamArray = pushBackStringArray(streamArray, "");
+    streamArray = pushBackStringArray(streamArray, "");
+    streamArray = pushBackStringArray(streamArray, url);
+    streamArray = pushBackStringArray(streamArray, url);
+    streamArray = pushBackStringArray(streamArray, video/x-flv);
+    streamArray = pushBackStringArray(streamArray, "'.$pg_title.'");
+    streamArray = pushBackStringArray(streamArray, "1");
+    writeStringToFile(storagePath_stream, streamArray);
+    doModalRss("rss_file:///scripts/util/videoRenderer.rss");
+    </script>
+    </onClick>
+    <download>'.$link2.'</download>
+    <name>'.$titledownload.'.'.$ext.'</name>
+  </item>
+  ';
     	}
     	$srt1 = str_between($video,'captions.file=','&');
     	$t1=explode('"',$srt1);
@@ -788,6 +895,7 @@ foreach($videos as $video) {
 $videos = explode('lash', $html);
 unset($videos[0]);
 $videos = array_values($videos);
+$lastlink="";
 foreach($videos as $video) {
   $t1 = explode('flv=', $video);
   $t2 = explode('&', $t1[1]);
@@ -1070,6 +1178,32 @@ foreach($videos as $video) {
   	  </item>
         ';
   	$lastlink = $link;
+		// for sdk4.... with seek
+		$title=str_between($link,"http://","/"). " - With seek - SDK4";
+	echo'
+	<item>
+	<title>'.$title.'</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="'.$link.'";
+    cancelIdle();
+    streamArray = null;
+    streamArray = pushBackStringArray(streamArray, "");
+    streamArray = pushBackStringArray(streamArray, "");
+    streamArray = pushBackStringArray(streamArray, url);
+    streamArray = pushBackStringArray(streamArray, url);
+    streamArray = pushBackStringArray(streamArray, video/x-flv);
+    streamArray = pushBackStringArray(streamArray, "'.$pg_title.'");
+    streamArray = pushBackStringArray(streamArray, "1");
+    writeStringToFile(storagePath_stream, streamArray);
+    doModalRss("rss_file:///scripts/util/videoRenderer.rss");
+    </script>
+    </onClick>
+    <download>'.$link.'</download>
+    <name>'.$titledownload.'.'.$ext.'</name>
+  </item>
+  ';
    }
   	if (($srt <> "") && (strpos($srt,".srt") !==false)) {
     	echo '
@@ -1380,6 +1514,32 @@ if (strpos($html, 'peteava.ro/embed') !== false) {
     	</item>
     	';
     	  $lastlink = $link;
+		// for sdk4.... with seek
+		$title=str_between($link,"http://","/"). " - With seek - SDK4";
+	echo'
+	<item>
+	<title>'.$title.'</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="'.$link.'";
+    cancelIdle();
+    streamArray = null;
+    streamArray = pushBackStringArray(streamArray, "");
+    streamArray = pushBackStringArray(streamArray, "");
+    streamArray = pushBackStringArray(streamArray, url);
+    streamArray = pushBackStringArray(streamArray, url);
+    streamArray = pushBackStringArray(streamArray, video/x-flv);
+    streamArray = pushBackStringArray(streamArray, "'.$pg_title.'");
+    streamArray = pushBackStringArray(streamArray, "1");
+    writeStringToFile(storagePath_stream, streamArray);
+    doModalRss("rss_file:///scripts/util/videoRenderer.rss");
+    </script>
+    </onClick>
+    <download>'.$link.'</download>
+    <name>'.$titledownload.'.'.$ext.'</name>
+  </item>
+  ';
        }
   }
 }

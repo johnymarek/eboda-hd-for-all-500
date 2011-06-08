@@ -32,7 +32,7 @@ columnCount=4
 		sliding=yes
 		showHeader=no
 		showDefaultInfo=no
-		idleImageWidthPC="10" idleImageHeightPC="10">
+		idleImageXPC="5" idleImageYPC="5" idleImageWidthPC="8" idleImageHeightPC="10">
 
   	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		  <script>getPageInfo("pageTitle");</script>
@@ -244,7 +244,7 @@ columnCount=4
 	</mediaDisplay>
 
 	<item_template>
-		<mediaDisplay  name="threePartsView" idleImageWidthPC="10" idleImageHeightPC="10">
+		<mediaDisplay  name="threePartsView" idleImageWidthPC="8" idleImageHeightPC="10">
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
         <idleImage>image/POPUP_LOADING_02.png</idleImage>
         <idleImage>image/POPUP_LOADING_03.png</idleImage>
@@ -290,14 +290,14 @@ columnCount=4
 
 <item>
 <title>Program TV - port.ro</title>
-<link><?php echo $host; ?>/scripts/news/php/program_tv.php</link>
+<link><?php echo $host; ?>/scripts/news/php/port.php</link>
 <media:thumbnail url="/scripts/news/image/program_tv.png" />
 <image>/scripts/news/image/program_tv.png</image>
 <location>http://port.ro</location>
 <annotation>Programul tv curent pentru mai mult de 100 de statii.</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
-
+<!--
 <item>
 <title>Program-Tv.ro :: Acum la televizor</title>
 <link>http://www.program-tv.ro/acum-la-tv.rss</link>
@@ -385,5 +385,6 @@ columnCount=4
 		</text>			
 </mediaDisplay>
 </item>
+-->
 </channel>
 </rss>

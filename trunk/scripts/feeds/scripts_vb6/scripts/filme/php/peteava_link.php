@@ -66,6 +66,6 @@ if ($token <> "") {
 }
 $server = str_between($link,"http://","/");
 $title = $server." - ".$id; 
-$link = $baseurl.$link;
+//$link = $baseurl.$link;
 print $link;
 ?>

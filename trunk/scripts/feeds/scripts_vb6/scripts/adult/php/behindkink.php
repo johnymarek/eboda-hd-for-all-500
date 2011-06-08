@@ -235,7 +235,25 @@ foreach($videos as $video) {
 	echo'
 	<item>
 	<title>'.$title.'</title>
-    <onClick>playItemURL("'.$link.'", 10);</onClick>
+    <onClick>
+    <script>
+    showIdle();
+    url="'.$link.'";
+    cancelIdle();
+    storagePath = getStoragePath("tmp");
+    storagePath_stream = storagePath + "stream.dat";
+    streamArray = null;
+    streamArray = pushBackStringArray(streamArray, "");
+    streamArray = pushBackStringArray(streamArray, "");
+    streamArray = pushBackStringArray(streamArray, url);
+    streamArray = pushBackStringArray(streamArray, url);
+    streamArray = pushBackStringArray(streamArray, video/x-flv);
+    streamArray = pushBackStringArray(streamArray, "'.$title.'");
+    streamArray = pushBackStringArray(streamArray, "1");
+    writeStringToFile(storagePath_stream, streamArray);
+    doModalRss("rss_file:///scripts/util/videoRenderer.rss");
+    </script>
+    </onClick>
     <download>'.$link.'</download>
     <name>'.$name.'</name>
   <image>'.$image.'</image>
