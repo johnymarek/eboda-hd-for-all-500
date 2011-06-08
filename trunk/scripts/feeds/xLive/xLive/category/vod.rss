@@ -41,7 +41,7 @@
 
     <item>
       <title>Welph TV Shows</title>
-      <link>http://www.metafeeds.com/channel/tv-shows/rss</link>
+      <link>http://127.0.0.1:82/xLive/php/mfproxy.php?http://www.metafeeds.com/channel/tv-shows/rss</link>
       <media:thumbnail url="/xLive/image/tvandm-tv.jpg" />
 <mediaDisplay name="threePartsView" showDefaultInfo="no" bottomYPC="0" itemGap="0" itemPerPage="10" showHeader="no" sideLeftWidthPC="0" itemImageXPC="0" itemImageHeightPC="0" itemImageWidthPC="0" itemXPC="5" itemYPC="10" itemWidthPC="50" itemHeightPC="8" capWidthPC="55" unFocusFontColor="101:101:101" focusFontColor="255:255:255" 
 idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
@@ -61,7 +61,7 @@ idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26"
 
     <item>
       <title>Welph Full Movies</title>
-      <link>http://www.metafeeds.com/channel/fullmovies/rss</link>
+      <link>http://127.0.0.1:82/xLive/php/mfproxy.php?http://www.metafeeds.com/channel/fullmovies/rss</link>
       <media:thumbnail url="/xLive/image/tvandm-movies.jpg" />
 <mediaDisplay name="threePartsView" showDefaultInfo="no" bottomYPC="0" itemGap="0" itemPerPage="10" showHeader="no" sideLeftWidthPC="0" itemImageXPC="0" itemImageHeightPC="0" itemImageWidthPC="0" itemXPC="5" itemYPC="10" itemWidthPC="55" itemHeightPC="8" capWidthPC="60" unFocusFontColor="101:101:101" focusFontColor="255:255:255" 
 idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">

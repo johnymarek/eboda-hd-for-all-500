@@ -43,7 +43,7 @@
 
 <item>
 <title>New Channels</title>
-<link>http://www.metafeeds.com/api/channels/new</link>
+<link>http://127.0.0.1:82/xLive/php/mfproxy.php?http://www.metafeeds.com/api/channels/new</link>
 <media:thumbnail url="http://www.metafeeds.com/static/images/feed_metafeeds_api.png" />
 </item>
 
@@ -63,13 +63,13 @@
 
 <item>
 <title>Recently Watched</title>
-<link>http://www.metafeeds.com/api/channels/modified</link>
+<link>http://127.0.0.1:82/xLive/php/mfproxy.php?http://www.metafeeds.com/api/channels/modified</link>
 <media:thumbnail url="http://www.metafeeds.com/static/images/feed_metafeeds_api.png" />
 </item>
 
 <item>
 <title>All feeds</title>
-<link>http://www.metafeeds.com/api/channels/all</link>
+<link>http://127.0.0.1:82/xLive/php/mfproxy.php?http://www.metafeeds.com/api/channels/all</link>
 <media:thumbnail url="http://www.metafeeds.com/static/images/feed_metafeeds_api.png" />
 </item>
 

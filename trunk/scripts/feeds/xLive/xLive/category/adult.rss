@@ -8,13 +8,13 @@
 
     <item>
       <title>Xtreamer XXX Surprise</title>
-	      <link>http://www.metafeeds.com/channel/xtreamer-porn-pipes/rss</link>
+	      <link>http://127.0.0.1:82/xLive/php/mfproxy.php?http://www.metafeeds.com/channel/xtreamer-porn-pipes/rss</link>
 	<media:thumbnail url="/xLive/image/xpp.jpg"/>
   </item>
 
     <item>
       <title>XXX - Live TV</title>
-	      <link>http://www.metafeeds.com/channel/xxxlivetv/rss</link>
+	      <link>http://127.0.0.1:82/xLive/php/mfproxy.php?http://www.metafeeds.com/channel/xxxlivetv/rss</link>
 	<media:thumbnail url="/xLive/image/XLiveTV.jpg"/>
   </item>
 
