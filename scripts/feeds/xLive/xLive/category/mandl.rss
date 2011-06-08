@@ -7,7 +7,7 @@
 
 <item>
 <title>Xtreamer Music Videos (XMV)</title>
-<link>http://www.metafeeds.com/channel/xmv/rss</link>
+<link>http://127.0.0.1:82/xLive/php/mfproxy.php?http://www.metafeeds.com/channel/xmv/rss</link>
 <media:thumbnail url="/xLive/image/mandl-xmv.jpg"/>
 	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
         <idleImage>/xLive/image/busy1.png</idleImage>
@@ -23,7 +23,7 @@
 
 <item>
 <title>Shoutcast - Top 10 (April 2010)</title>
-<link>http://www.metafeeds.com/channel/shoutcast/rss</link>
+<link>http://127.0.0.1:82/xLive/php/mfproxy.php?http://www.metafeeds.com/channel/shoutcast/rss</link>
 <media:thumbnail url="/xLive/image/mandl-sc.jpg"/>
 <mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
         <idleImage>/xLive/image/busy1.png</idleImage>

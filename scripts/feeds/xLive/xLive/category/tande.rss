@@ -183,7 +183,7 @@
 
     <item>
       <title>Nasa TV</title>
-      <link>http://www.metafeeds.com/channel/nasa/rss</link>
+      <link>http://127.0.0.1:82/xLive/php/mfproxy.php?http://www.metafeeds.com/channel/nasa/rss</link>
       <media:thumbnail url="/xLive/image/tande-ntv.jpg" />
 	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
         <idleImage>/xLive/image/busy1.png</idleImage>
@@ -247,7 +247,7 @@
 
     <item>
       <title>UC Berkeley - Webcasts</title>
-      <link>http://www.metafeeds.com/channel/uc-berkeley-webcasts/rss</link>
+      <link>http://127.0.0.1:82/xLive/php/mfproxy.php?http://www.metafeeds.com/channel/uc-berkeley-webcasts/rss</link>
       <media:thumbnail url="/xLive/image/tande-ucb.gif" />
 	<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
         <idleImage>/xLive/image/busy1.png</idleImage>

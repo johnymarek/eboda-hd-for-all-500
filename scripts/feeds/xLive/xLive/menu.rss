@@ -101,7 +101,7 @@
 
 <LiveButton>
 <title>Live TV</title>
-<link>http://www.metafeeds.com/channel/livetv/rss</link>
+<link>http://127.0.0.1:82/xLive/php/mfproxy.php?http://www.metafeeds.com/channel/livetv/rss</link>
 <media:thumbnail url="/xLive/image/livetv.jpg" />
 <mediaDisplay name="threePartsView" showDefaultInfo="no" bottomYPC="0" itemGap="0" itemPerPage="10" showHeader="no" sideLeftWidthPC="0" itemImageXPC="0" itemImageHeightPC="0" itemImageWidthPC="0" itemXPC="5" itemYPC="10" itemWidthPC="50" itemHeightPC="8" capWidthPC="55" unFocusFontColor="101:101:101" focusFontColor="255:255:255" 
 idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
@@ -301,7 +301,7 @@ idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26"
 
 <FoodButton>
 <title>Food and Drinks</title>
-<link>http://www.metafeeds.com/channel/food/rss</link>
+<link>http://127.0.0.1:82/xLive/php/mfproxy.php?http://www.metafeeds.com/channel/food/rss</link>
 <media:thumbnail url="/xLive/image/fandd.jpg"/>
 <mediaDisplay name="threePartsView" sliding="yes" showDefaultInfo="no" bottomYPC="0" itemGap="0" itemPerPage="13" showHeader="no" sideLeftWidthPC="0" itemImageXPC="0" itemImageHeightPC="0" itemImageWidthPC="0" itemXPC="5" itemYPC="10" itemWidthPC="45" itemHeightPC="6.5" capWidthPC="50" unFocusFontColor="101:101:101" focusFontColor="255:255:255" 
 idleImageXPC="40" idleImageYPC="40" idleImageWidthPC="20" idleImageHeightPC="26">
