@@ -314,6 +314,20 @@ $host = "http://127.0.0.1:82";
 </item>
 
 <item>
+<title>xhamster</title>
+  <link><?php echo $host; ?>/scripts/adult/php/xhamster_main.php</link>
+<image>/usr/local/etc/www/cgi-bin/scripts/adult/image/xhamster.jpg</image>
+<mediaDisplay name="threePartsView"/>
+</item>
+
+<item>
+<title>redtube</title>
+  <link><?php echo $host; ?>/scripts/adult/php/redtube_main.php</link>
+<image>/usr/local/etc/www/cgi-bin/scripts/adult/image/redtube.png</image>
+<mediaDisplay name="threePartsView"/>
+</item>
+
+<item>
 <title>XXX4PODS</title>
 <link>http://xxx4pods.com/podcasts/podcast.xml</link>
 <image>/scripts/adult/image/xxx4pods.png</image>
