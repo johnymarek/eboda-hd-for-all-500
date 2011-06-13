@@ -44,15 +44,20 @@ if (file_exists("/tmp/usbmounts/sda1/download")) {
 	itemBackgroundColor="0:0:0"
 	backgroundColor="0:0:0"
 	sideLeftWidthPC="0"
+	sideRightWidthPC="0"
+	sideColorRight="0:0:0"
 	itemImageXPC="5"
 	itemXPC="20"
 	itemYPC="20"
-	itemWidthPC="65"
+	itemWidthPC="70"
 	capWidthPC="70"
 	unFocusFontColor="101:101:101"
 	focusFontColor="255:255:255"
 	showHeader="no"
-	showDefaultInfo="no"
+	showDefaultInfo="yes"
+	bottomYPC="90"
+	infoYPC="100"
+	infoXPC="0"
 	popupXPC = "40"
   popupYPC = "55"
   popupWidthPC = "22.3"
@@ -61,8 +66,8 @@ if (file_exists("/tmp/usbmounts/sda1/download")) {
 	popupBorderColor="28:35:51"
 	popupForegroundColor="255:255:255"
  	popupBackgroundColor="28:35:51"
-	idleImageWidthPC="8"
-	idleImageHeightPC="10">
+  idleImageXPC="5" idleImageYPC="5" idleImageWidthPC="8" idleImageHeightPC="10"
+>
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
         <idleImage>image/POPUP_LOADING_02.png</idleImage>
         <idleImage>image/POPUP_LOADING_03.png</idleImage>
@@ -71,11 +76,6 @@ if (file_exists("/tmp/usbmounts/sda1/download")) {
         <idleImage>image/POPUP_LOADING_06.png</idleImage>
         <idleImage>image/POPUP_LOADING_07.png</idleImage>
         <idleImage>image/POPUP_LOADING_08.png</idleImage>
- 		<backgroundDisplay>
-			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
-			image/mele/backgd.jpg
-			</image>
-		</backgroundDisplay>
   	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="18" fontSize="24" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		  <script>getPageInfo("pageTitle");</script>
 		</text>
@@ -1619,7 +1619,9 @@ if (strpos($html, 'www.youtube.com/v/') !== false) {
 	  $server = str_between($link,"http://","/");
 	  $title = $server." - ".substr(strrchr($link,"/"),1);
 	  if (($link <> "") && strcmp($link,$lastlink)) {
-       $link1 = "http://127.0.0.1:83/cgi-bin/translate?stream,HD:1,http://www.youtube.com/watch?v=".$v_id;
+       $link1 = "http://www.youtube.com/watch?v=".$v_id;
+       $link1=file_get_contents("http://127.0.0.1:82/scripts/util/yt.php?file=".$link1);
+       $link1=str_replace("&","&amp;",$link1);
        $ext=".flv";
    		if ($pg <> "") {
            $titledownload = $pg;
@@ -1654,7 +1656,10 @@ if (strpos($html, 'www.youtube.com/embed/') !== false) {
 	  $server = str_between($link,"http://","/");
 	  $title = $server." - ".substr(strrchr($link,"/"),1);
 	  if (($link <> "") && strcmp($link,$lastlink)) {
-       $link1 = "http://127.0.0.1:83/cgi-bin/translate?stream,HD:1,http://www.youtube.com/watch?v=".$v_id;
+       $link1 = "http://www.youtube.com/watch?v=".$v_id;
+       $link1=file_get_contents("http://127.0.0.1:82/scripts/util/yt.php?file=".$link1);
+       $link1=str_replace("&","&amp;",$link1);
+       
        $ext=".flv";
    		if ($pg <> "") {
            $titledownload = $pg;

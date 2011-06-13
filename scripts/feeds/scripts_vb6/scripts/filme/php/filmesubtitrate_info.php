@@ -32,13 +32,12 @@ if($query) {
 	imageBorderPC="1.5"        
 	forceFocusOnItem="yes"
 	itemCornerRounding="yes"
-	idleImageWidthPC="10"
-	idleImageHeightPC="10"
 	sideTopHeightPC=20
 	bottomYPC=80
 	sliding=yes
 	showHeader=no
 	showDefaultInfo=no
+	idleImageXPC="5" idleImageYPC="5" idleImageWidthPC="8" idleImageHeightPC="10"
 	>
   	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		  <script>getPageInfo("pageTitle");</script>
@@ -133,12 +132,15 @@ $videos=explode('<li',$html);
 unset($videos[0]);
 $videos=array_values($videos);
 foreach($videos as $video) {
+    $video=str_replace('<span class="Apple-style-span" style="font-size: large;">','',$video);
 	$t1=explode('href="',$video);
 	$t2=explode('"',$t1[1]);
 	$link=trim($t2[0]);
 	$t3=explode(">",$t1[1]);
 	$t4=explode("<",$t3[1]);
-	$title=trim($t4[0]);
+	$title=$t4[0];
+	$title=preg_replace("/onlin(.*)|sub(.*)|seri(.*)|film(.*)/si","",$title);
+	$title=trim(str_replace("&nbsp;","",$title));
 	//case 24 s6 ep 2
 	if ($title == "") {
 		$t1=explode('href="',$video);
@@ -149,7 +151,8 @@ foreach($videos as $video) {
 		$title=trim($t4[0]);
 		$title=str_replace("&nbsp;","",$title);
 	}
-    $title=str_replace("&nbsp;","",$title);
+	$title=preg_replace("/onlin(.*)|sub(.*)|seri(.*)|film(.*)/si","",$title);
+	$title=trim(str_replace("&nbsp;","",$title));
 	if ((strpos($link, $serial) !== false) && ($link <> $queryArr[0]) && ($title <> "")){
 		$link="http://127.0.0.1:82/scripts/filme/php/filme_link.php?".$link.",".urlencode($title);
     echo '

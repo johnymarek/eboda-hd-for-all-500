@@ -25,13 +25,12 @@
 	imageBorderPC="1.5"        
 	forceFocusOnItem="yes"
 	itemCornerRounding="yes"
-	idleImageWidthPC="10"
-	idleImageHeightPC="10"
 	sideTopHeightPC=20
 	bottomYPC=80
 	sliding=yes
 	showHeader=no
 	showDefaultInfo=no
+	idleImageXPC="5" idleImageYPC="5" idleImageWidthPC="8" idleImageHeightPC="10"
 	>
   	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		  <script>getPageInfo("pageTitle");</script>
@@ -121,13 +120,8 @@ $host = "http://127.0.0.1:82";
 //http://www.seriale.filmesubtitrate.info/p/seriale-online-subtitrate-in-romana.html
 //
 $html = file_get_contents("http://www.seriale.filmesubtitrate.info/p/seriale-online-subtitrate-in-romana.html");
-$html = str_between($html,'<table border="0" cellpadding="2" cellspacing="0" style="width: 370px;">','</table');
-$cats = explode('<td valign="top" width="370">', $html);
-unset($cats[0]);
-$cats = array_values($cats);
-
-foreach($cats as $cat) {
-	$videos=explode('href="',$cat);
+$html = str_between($html,'<tbody>','</tbody>');
+	$videos=explode('href="',$html);
 	unset($videos[0]);
 	$videos=array_values($videos);
 	foreach($videos as $video) {
@@ -135,7 +129,9 @@ foreach($cats as $cat) {
 		$link=trim($t1[0]);
 		$t3=explode(">",$video);
 		$t4=explode("<",$t3[1]);
-		$title=str_title($t4[0]);
+		$title=$t4[0];
+		$title=preg_replace("/onlin(.*)|sub(.*)|seri(.*)|film(.*)/si","",$title);
+		$title=trim(str_replace("&nbsp;","",$title));
 		$link = $host."/scripts/filme/php/filmesubtitrate_info.php?query=".$link.",".urlencode($title);
         if (($title <> "") && (strpos($link,"html") !==false)) {
         echo '
@@ -146,7 +142,6 @@ foreach($cats as $cat) {
 		';
 		}
 	}
-}	
 ?>
 </channel>
 </rss>

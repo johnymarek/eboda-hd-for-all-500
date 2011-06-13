@@ -53,6 +53,7 @@ $html = str_between($html,"<table border='0' cellpadding='0' cellspacing='0' wid
 	showDefaultInfo="no"
 	imageFocus=""
 	sliding="no"
+	idleImageXPC="5" idleImageYPC="5" idleImageWidthPC="8" idleImageHeightPC="10"
 >
 		
   	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
@@ -66,15 +67,14 @@ $html = str_between($html,"<table border='0' cellpadding='0' cellspacing='0' wid
 		  Folosiţi PREV şi NEXT ca PageUp şi PageDown
 		</text>
 		<image offsetXPC=71 offsetYPC=30 widthPC=20 heightPC=40><?php echo $image; ?></image>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_01.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_02.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_03.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_04.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_05.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_06.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_07.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_08.png </idleImage>
-
+        <idleImage>image/POPUP_LOADING_01.png</idleImage>
+        <idleImage>image/POPUP_LOADING_02.png</idleImage>
+        <idleImage>image/POPUP_LOADING_03.png</idleImage>
+        <idleImage>image/POPUP_LOADING_04.png</idleImage>
+        <idleImage>image/POPUP_LOADING_05.png</idleImage>
+        <idleImage>image/POPUP_LOADING_06.png</idleImage>
+        <idleImage>image/POPUP_LOADING_07.png</idleImage>
+        <idleImage>image/POPUP_LOADING_08.png</idleImage>
 		<itemDisplay>
 			<text align="left" lines="1" offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
 				<script>
@@ -144,7 +144,7 @@ $html = str_between($html,"<table border='0' cellpadding='0' cellspacing='0' wid
 	</mediaDisplay>
 	
 	<item_template>
-		<mediaDisplay  name="threePartsView" idleImageWidthPC="10" idleImageHeightPC="10">
+		<mediaDisplay  name="threePartsView" idleImageXPC="5" idleImageYPC="5" idleImageWidthPC="8" idleImageHeightPC="10">
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
         <idleImage>image/POPUP_LOADING_02.png</idleImage>
         <idleImage>image/POPUP_LOADING_03.png</idleImage>

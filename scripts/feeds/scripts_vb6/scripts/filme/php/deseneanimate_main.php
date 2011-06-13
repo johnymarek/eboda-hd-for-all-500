@@ -203,7 +203,8 @@ foreach($videos as $video) {
 
     $t1 = explode(' src="', $video);
     $t2 = explode('"', $t1[1]);
-    $image = $t2[0];
+    $t3=explode("./thumbs_category",$t2[0]);
+    $image = "http://deseneanimate.tv/thumbs_category/".$t3[1];
     $image = str_replace(" ","%20",$image);
 
     $title = str_between($video,'<span class="categorytitle">','</span>');

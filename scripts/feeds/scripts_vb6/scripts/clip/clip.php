@@ -279,6 +279,16 @@ columnCount=5
 </item>
 
 <item>
+<title>Youtube</title>
+	<link>rss_file:///usr/local/etc/www/cgi-bin/scripts/clip/youtube/yt_index.rss</link>
+	<location>http://youtube.com</location>
+	<image>image/youtube.gif</image>
+	<media:thumbnail url="image/youtube.gif" />
+	<annotation>YouTube este un loc în care puteti descoperi, urmãri, încãrca si distribui videoclipuri.</annotation>
+	<mediaDisplay name="onePartView" />
+</item>
+<!--
+<item>
 <title>Youtube user uploads</title>
 	<link>rss_command://search</link>
 	<location>http://youtube.com</location>
@@ -287,7 +297,7 @@ columnCount=5
 	<media:thumbnail url="image/youtube.gif" />
 	<annotation>CÄƒutare videoclipuri postate pe youtube de cÄƒtre....</annotation>
 </item>
-
+-->
 <item>
 <title>220.ro</title>
 	<link><?php echo $host; ?>/scripts/clip/220.php</link>

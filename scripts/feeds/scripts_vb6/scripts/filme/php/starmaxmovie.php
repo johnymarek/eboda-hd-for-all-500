@@ -54,6 +54,7 @@ if($query) {
 	popupBorderColor="28:35:51"
 	popupForegroundColor="255:255:255"
  	popupBackgroundColor="28:35:51"
+ 	idleImageXPC="5" idleImageYPC="5" idleImageWidthPC="8" idleImageHeightPC="10"
 >
 		
   	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
@@ -69,15 +70,14 @@ if($query) {
 		<image  redraw="yes" offsetXPC=66 offsetYPC=22.5 widthPC=25 heightPC=20>
 		<script>print(img); img;</script>
 		</image>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_01.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_02.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_03.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_04.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_05.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_06.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_07.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_08.png </idleImage>
-
+        <idleImage>image/POPUP_LOADING_01.png</idleImage>
+        <idleImage>image/POPUP_LOADING_02.png</idleImage>
+        <idleImage>image/POPUP_LOADING_03.png</idleImage>
+        <idleImage>image/POPUP_LOADING_04.png</idleImage>
+        <idleImage>image/POPUP_LOADING_05.png</idleImage>
+        <idleImage>image/POPUP_LOADING_06.png</idleImage>
+        <idleImage>image/POPUP_LOADING_07.png</idleImage>
+        <idleImage>image/POPUP_LOADING_08.png</idleImage>
 		<itemDisplay>
 			<text align="left" lines="1" offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
 				<script>
@@ -134,7 +134,7 @@ if($query) {
 	</mediaDisplay>
 	
 	<item_template>
-		<mediaDisplay  name="threePartsView" idleImageWidthPC="10" idleImageHeightPC="10">
+		<mediaDisplay  name="threePartsView" idleImageXPC="5" idleImageYPC="5" idleImageWidthPC="8" idleImageHeightPC="10">
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
         <idleImage>image/POPUP_LOADING_02.png</idleImage>
         <idleImage>image/POPUP_LOADING_03.png</idleImage>
@@ -210,10 +210,27 @@ foreach($videos as $video) {
      <title>'.$title.'</title>
      <name>'.$titledownload.'.'.$ext.'</name>
      <download>'.$link.'</download>
-	 <link>'.$link1.'</link>
+    <onClick>
+    <script>
+    showIdle();
+    movie="'.$link.'";
+    cancelIdle();
+    storagePath = getStoragePath("tmp");
+    storagePath_stream = storagePath + "stream.dat";
+    streamArray = null;
+    streamArray = pushBackStringArray(streamArray, "");
+    streamArray = pushBackStringArray(streamArray, "");
+    streamArray = pushBackStringArray(streamArray, movie);
+    streamArray = pushBackStringArray(streamArray, movie);
+    streamArray = pushBackStringArray(streamArray, video/x-flv);
+    streamArray = pushBackStringArray(streamArray, "'.$title.'");
+    streamArray = pushBackStringArray(streamArray, "1");
+    writeStringToFile(storagePath_stream, streamArray);
+    doModalRss("rss_file:///usr/local/etc/www/cgi-bin/scripts/util/videoRenderer.rss");
+    </script>
+    </onClick>
 	 <image>'.$image.'</image>
 	 <annotation>'.$title.'</annotation>
-     <enclosure type="video/flv" url="'.$link1.'"/>
      </item>
      ';
    }
