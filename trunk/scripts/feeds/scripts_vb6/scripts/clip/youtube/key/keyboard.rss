@@ -36,7 +36,7 @@
 		<script>getPageInfo("pageTitle");</script>
 	</text>
   <image offsetXPC=82 offsetYPC=3 widthPC=15 heightPC=10>
-    ../etc/translate/rss/image/YouTubeLogo.jpg
+    /scripts/image/YouTubeLogo.jpg
     <widthPC>
       <script>
         300 / 152 * 10 * screenYp / screenXp;
@@ -132,7 +132,7 @@
 					itemLocale = "en";
 				else
 					itemLocale = lr;
-				itemTitleArray = readStringFromFile("/usr/local/etc/www/cgi-bin/scripts/clip/youtube/key/dictionary_"+itemLocale+".str");
+				itemTitleArray = readStringFromFile("/scripts/clip/youtube/key/dictionary_"+itemLocale+".str");
 				itemSize = getStringArrayAt(itemTitleArray, 0);
 				setFocusItemIndex(0);
 				redrawDisplay("item");
@@ -169,7 +169,7 @@
 </mediaDisplay>
 
 <onEnter>
-  translate_base_url  = "http://127.0.0.1/cgi-bin/translate?";
+  translate_base_url  = "http://127.0.0.1:83/cgi-bin/translate?";
   screenXp = 4;
   screenYp = 3;
   rssconf = readStringFromFile(getStoragePath("key")+"translate.dat");
@@ -220,11 +220,11 @@
     lr="en";
 
 	itemLocale = lr;
-	itemTitleArray = readStringFromFile("/usr/local/etc/www/cgi-bin/scripts/clip/youtube/key/dictionary_"+itemLocale+".str");
+	itemTitleArray = readStringFromFile("/scripts/clip/youtube/key/dictionary_"+itemLocale+".str");
 	if(itemTitleArray == null)
 	{
 	 itemLocale = "en";
-	 itemTitleArray = readStringFromFile("/usr/local/etc/www/cgi-bin/scripts/clip/youtube/key/dictionary_"+itemLocale+".str");
+	 itemTitleArray = readStringFromFile("/scripts/clip/youtube/key/dictionary_"+itemLocale+".str");
 	}
   itemSize = getStringArrayAt(itemTitleArray, 0);
 	inputTextCount = 0;

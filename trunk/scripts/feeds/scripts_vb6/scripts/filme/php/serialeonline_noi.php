@@ -150,7 +150,7 @@ ret;
 
 	</item_template>
 <script>
-    channelImage = "/usr/local/etc/www/cgi-bin/scripts/filme/image/series.png";
+    channelImage = "/scripts/filme/image/series.png";
   </script>
 
 <channel>
@@ -180,7 +180,7 @@ foreach($videos as $video) {
     <item>
     <title>'.$title.'</title>
     <link>'.$link.'</link>
-    <media:thumbnail url="/usr/local/etc/www/cgi-bin/scripts/filme/image/series.png" />
+    <media:thumbnail url="/scripts/filme/image/series.png" />
     </item>
     ';
 }

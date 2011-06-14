@@ -1,6 +1,5 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php echo "<?xml version='1.0' encoding='UTF8' ?>";
-$host = "http://127.0.0.1/cgi-bin";
+$host = "http://127.0.0.1:82";
 ?>
 <rss version="2.0">
 <onEnter>
@@ -145,7 +144,7 @@ if (userInput == "two" || userInput == "2")
      url=getItemInfo(getFocusItemIndex(),"download");
      movie=getUrl(url);
      cancelIdle();
-	 topUrl = "http://127.0.0.1/cgi-bin/scripts/util/download.cgi?link=" + movie + ";name=" + getItemInfo(getFocusItemIndex(),"name");
+	 topUrl = "http://127.0.0.1:82/scripts/util/download.cgi?link=" + movie + ";name=" + getItemInfo(getFocusItemIndex(),"name");
 	 dlok = loadXMLFile(topUrl);
 	 "true";
 }
@@ -174,7 +173,7 @@ ret;
 
 	</item_template>
 <destination>
-	<link>http://127.0.0.1/cgi-bin/scripts/util/level.php
+	<link>http://127.0.0.1:82/scripts/util/level.php
 	</link>
 </destination>
 <channel>
@@ -195,7 +194,7 @@ if($page > 1) { ?>
 
 <item>
 <?php
-$sThisFile = 'http://127.0.0.1'.$_SERVER['SCRIPT_NAME'];
+$sThisFile = 'http://127.0.0.1:82'.$_SERVER['SCRIPT_NAME'];
 $url = $sThisFile."?query=".($page-1).",";
 if($search) { 
   $url = $url.$search; 
@@ -204,7 +203,7 @@ if($search) {
 <title>Previous Page</title>
 <link><?php echo $url;?></link>
 <annotation>Pagina anterioara</annotation>
-<image>image/left.jpg</image>
+<image>/scripts/image/left.jpg</image>
 <mediaDisplay name="threePartsView"/>
 </item>
 
@@ -257,7 +256,7 @@ foreach($videos as $video) {
     streamArray = pushBackStringArray(streamArray, "'.$title.'");
     streamArray = pushBackStringArray(streamArray, "1");
     writeStringToFile(storagePath_stream, streamArray);
-    doModalRss("rss_file:///usr/local/etc/www/cgi-bin/scripts/util/videoRenderer.rss");
+    doModalRss("rss_file:///scripts/util/videoRenderer.rss");
     </script>
     </onClick>
     <download>'.$link.'</download>
@@ -275,7 +274,7 @@ foreach($videos as $video) {
 
 <item>
 <?php
-$sThisFile = 'http://127.0.0.1'.$_SERVER['SCRIPT_NAME'];
+$sThisFile = 'http://127.0.0.1:82'.$_SERVER['SCRIPT_NAME'];
 $url = $sThisFile."?query=".($page+1).",";
 if($search) { 
   $url = $url.$search; 
@@ -284,7 +283,7 @@ if($search) {
 <title>Next Page</title>
 <link><?php echo $url;?></link>
 <annotation>Pagina urmatoare</annotation>
-<image>image/right.jpg</image>
+<image>/scripts/image/right.jpg</image>
 <mediaDisplay name="threePartsView"/>
 </item>
 

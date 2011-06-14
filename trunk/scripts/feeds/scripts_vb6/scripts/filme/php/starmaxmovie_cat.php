@@ -59,7 +59,7 @@ if($query) {
 		  <script>print(annotation); annotation;</script>
 		</text>
 		<image  redraw="yes" offsetXPC=60 offsetYPC=35 widthPC=30 heightPC=30>
-  /usr/local/etc/www/cgi-bin/scripts/filme/image/series.png
+  /scripts/filme/image/series.png
 		</image>
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
         <idleImage>image/POPUP_LOADING_02.png</idleImage>

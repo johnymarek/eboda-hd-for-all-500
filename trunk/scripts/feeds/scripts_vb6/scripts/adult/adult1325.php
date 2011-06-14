@@ -316,14 +316,14 @@ $host = "http://127.0.0.1:82";
 <item>
 <title>xhamster</title>
   <link><?php echo $host; ?>/scripts/adult/php/xhamster_main.php</link>
-<image>/usr/local/etc/www/cgi-bin/scripts/adult/image/xhamster.jpg</image>
+<image>/scripts/adult/image/xhamster.jpg</image>
 <mediaDisplay name="threePartsView"/>
 </item>
 
 <item>
 <title>redtube</title>
   <link><?php echo $host; ?>/scripts/adult/php/redtube_main.php</link>
-<image>/usr/local/etc/www/cgi-bin/scripts/adult/image/redtube.png</image>
+<image>/scripts/adult/image/redtube.png</image>
 <mediaDisplay name="threePartsView"/>
 </item>
 

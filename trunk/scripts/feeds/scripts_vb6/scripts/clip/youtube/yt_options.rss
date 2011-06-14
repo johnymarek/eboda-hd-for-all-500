@@ -59,10 +59,10 @@
     <script>pageTitle;</script>
   </text>
   <image offsetXPC=0 offsetYPC=12 widthPC=100 heightPC=1>
-		../etc/translate/rss/image/gradient_line.bmp
+		/scripts/image/gradient_line.bmp
 	</image>
   <image offsetXPC=80 offsetYPC=1 widthPC=15 heightPC=10>
-    ../etc/translate/rss/image/YouTubeLogo.jpg
+    /scripts/image/YouTubeLogo.jpg
     <widthPC>
       <script>
         300 / 152 * 10 * screenYp / screenXp;
@@ -108,7 +108,7 @@
 				idx2 = getQueryItemIndex();
 				if (idx1 == idx2)
 				{
-					"../etc/translate/rss/image/IMAGE_NEWRSS_MENU_BTFOC.bmp";
+					"/scripts/image/IMAGE_NEWRSS_MENU_BTFOC.bmp";
 				}
 				else
 				{
@@ -220,7 +220,7 @@
 </onExit>
 
 <onEnter>
-  translate_base_url  = "http://127.0.0.1/cgi-bin/translate?";
+  translate_base_url  = "http://127.0.0.1:83/cgi-bin/translate?";
   screenXp = 4;
   screenYp = 3;
   rssconf = readStringFromFile(getStoragePath("key")+"translate.dat");
@@ -326,7 +326,7 @@
   }
   
 	itemTitleArray = null;
-	topUrl="/usr/local/etc/www/cgi-bin/scripts/clip/youtube/yt_options.rss";
+	topUrl="/scripts/clip/youtube/yt_options.rss";
 	dlok = loadXMLFile(topUrl);
 	if (dlok != null)
 	{
@@ -359,7 +359,7 @@
 
 <channel>
   <title>Youtube: Options</title>
-  <link>/usr/local/etc/www/cgi-bin/scripts/clip/youtube/yt_options.rss</link>
+  <link>/scripts/clip/youtube/yt_options.rss</link>
   
   <item>
     <title>Region:</title>

@@ -58,10 +58,10 @@
     <script>pageTitle;</script>
   </text>
   <image offsetXPC=0 offsetYPC=12 widthPC=100 heightPC=1>
-		../etc/translate/rss/image/gradient_line.bmp
+		/scripts/image/gradient_line.bmp
 	</image>
   <image offsetXPC=80 offsetYPC=1 widthPC=15 heightPC=10>
-    ../etc/translate/rss/image/YouTubeLogo.jpg
+    /scripts/image/YouTubeLogo.jpg
     <widthPC>
       <script>
         300 / 152 * 10 * screenYp / screenXp;
@@ -88,7 +88,7 @@
 				idx2 = getQueryItemIndex();
 				if (idx1 == idx2)
 				{
-					"../etc/translate/rss/image/IMAGE_NEWRSS_MENU_BTFOC.bmp";
+					"/scripts/image/IMAGE_NEWRSS_MENU_BTFOC.bmp";
 				}
 				else
 				{
@@ -163,7 +163,7 @@
 <!--
 !-->
 	<onEnter>
-  translate_base_url  = "http://127.0.0.1/cgi-bin/translate?";
+  translate_base_url  = "http://127.0.0.1:83/cgi-bin/translate?";
   screenXp = 4;
   screenYp = 3;
   rssconf = readStringFromFile(getStoragePath("key")+"translate.dat");

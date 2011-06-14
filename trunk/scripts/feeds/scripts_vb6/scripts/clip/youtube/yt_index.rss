@@ -58,10 +58,10 @@
     <script>pageTitle;</script>
   </text>
   <image offsetXPC=0 offsetYPC=12 widthPC=100 heightPC=1>
-		../etc/translate/rss/image/gradient_line.bmp
+		/scripts/image/gradient_line.bmp
 	</image>
   <image offsetXPC=80 offsetYPC=1 widthPC=15 heightPC=10>
-    ../etc/translate/rss/image/YouTubeLogo.jpg
+    /scripts/image/YouTubeLogo.jpg
     <widthPC>
       <script>
         300 / 152 * 10 * screenYp / screenXp;
@@ -90,7 +90,7 @@
 				idx2 = getQueryItemIndex();
 				if (idx1 == idx2)
 				{
-					"../etc/translate/rss/image/IMAGE_NEWRSS_MENU_BTFOC.bmp";
+					"/scripts/image/IMAGE_NEWRSS_MENU_BTFOC.bmp";
 				}
 				else
 				{
@@ -110,7 +110,7 @@
 
 <onEnter>
 	showIdle();
-  translate_base_url  = "http://127.0.0.1/cgi-bin/translate?";
+  translate_base_url  = "http://127.0.0.1:83/cgi-bin/translate?";
   screenXp = 4;
   screenYp = 3;
   rssconf = readStringFromFile(getStoragePath("key")+"translate.dat");
@@ -135,7 +135,7 @@
 		titleArray  = null;
 		itemTitleArray = null;
 
-		topUrl="/usr/local/etc/www/cgi-bin/scripts/clip/youtube/yt_index.rss";
+		topUrl="/scripts/clip/youtube/yt_index.rss";
 		dlok = loadXMLFile(topUrl);
 		if (dlok != null)
 		{
@@ -176,13 +176,13 @@
         <idleImage>image/POPUP_LOADING_07.png</idleImage>
         <idleImage>image/POPUP_LOADING_08.png</idleImage>
   	</mediaDisplay>
-    <link>rss_file:///usr/local/etc/www/cgi-bin/scripts/clip/youtube/yt_search_feed.rss</link>
+    <link>rss_file:///scripts/clip/youtube/yt_search_feed.rss</link>
 	</searchLink>
 
 	<channel>
 		<title>YouTube video</title>
-		<link>/usr/local/etc/www/cgi-bin/scripts/clip/youtube/yt_index.rss</link>
-		<media:thumbnail url="../etc/translate/rss/image/youtube.gif" width="120" height="90" />
+		<link>/scripts/clip/youtube/yt_index.rss</link>
+		<media:thumbnail url="/scripts/image/youtube.gif" width="120" height="90" />
 
 		<item>
 			<title>Recently Featured</title>
@@ -216,13 +216,13 @@
 		
 		<item>
 			<title>Standard feeds</title>
-			<link>rss_file:///usr/local/etc/www/cgi-bin/scripts/clip/youtube/yt_standard_feeds.rss</link>
+			<link>rss_file:///scripts/clip/youtube/yt_standard_feeds.rss</link>
 		</item>
 
 		<item>
 			<title>Categories</title>
 			<url>http://gdata.youtube.com/schemas/2007/categories.cat</url>
-			<link>rss_file:///usr/local/etc/www/cgi-bin/scripts/clip/youtube/yt_categories.rss</link>
+			<link>rss_file:///scripts/clip/youtube/yt_categories.rss</link>
 		</item>
 
 		<item>
@@ -345,7 +345,7 @@
 		<item>
 			<title>Videoclipuri incărcate de alt user</title>
 			<onClick>
-				username = doModalRss("rss_file:///usr/local/etc/www/cgi-bin/scripts/clip/youtube/key/keyboard.rss");
+				username = doModalRss("rss_file:///scripts/clip/youtube/key/keyboard.rss");
 			  /* username= getInput(); */
         optionsPath = getStoragePath("key") + "youtubeOptions.dat";
         optionsArray = readStringFromFile(optionsPath);
@@ -384,7 +384,7 @@
 		<item>
 			<title>Search</title>
 			<onClick>
-				keyword = doModalRss("rss_file:///usr/local/etc/www/cgi-bin/scripts/clip/youtube/key/keyboard.rss");
+				keyword = doModalRss("rss_file:///scripts/clip/youtube/key/keyboard.rss");
 			  /* keyword= getInput(); */
 				if (keyword!=null &amp;&amp; keyword!="")
 				{
@@ -453,7 +453,7 @@
 
 		<item>
 			<title>Options</title>
-			<link>rss_file:///usr/local/etc/www/cgi-bin/scripts/clip/youtube/yt_options.rss</link>
+			<link>rss_file:///scripts/clip/youtube/yt_options.rss</link>
 			<mediaDisplay name="onePartView"/>
 		</item>
 
