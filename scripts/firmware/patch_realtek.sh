@@ -7,7 +7,7 @@ function patch_firmware()
 
 if [ $# -ne 4 ]
 then
-    echo "4 arguments expected by function patch_firmware IMAGE_FILE, svn-repo absolute path, \[500|500a|500i|500mini|500minia|500plus\], SDK version \[3|4\]"
+    echo "4 arguments expected by function patch_firmware IMAGE_FILE, svn-repo absolute path, \[500|500a|500i|500m|500mini|500minia|500plus\], SDK version \[3|4\]"
     exit 1
 fi
 
@@ -18,6 +18,7 @@ SDK=$4
 TEA="no"
 SIMPLE_VERSION=${VERSION}
 USE_EBODA_INSTALL="no"
+USE_M8_INSTALL="no";
 ACRYAN_MENU="no" #contains news instead youtube, keep original font
 
 if [ ${VERSION} = "500a" ]
@@ -33,6 +34,14 @@ then
     USE_EBODA_INSTALL="yes";
     TEA="NO";
     SIMPLE_VERSION="500"
+fi
+
+if [ ${VERSION} = "500m" ]
+then
+    USE_M8_INSTALL="yes";
+    TEA="YES";
+    SIMPLE_VERSION="500"
+    ACRYAN_MENU="YES"
 fi
 
 if [ ${VERSION} = "500minia" ]
@@ -75,7 +84,7 @@ then
 fi
 
 
-if [ ${VERSION} = "500i" -o ${VERSION} = "500a" -o ${VERSION} = "500minia" -o ${VERSION} = "500" -o ${VERSION} = "500mini" -o ${VERSION} = "500plus" -o ${VERSION} = "PV73200" -o ${VERSION} = "PV73100"  -o ${VERSION} = "MP3011" -o ${VERSION} = "MP3012" ]
+if [ ${VERSION} = "500m" -o ${VERSION} = "500i" -o ${VERSION} = "500a" -o ${VERSION} = "500minia" -o ${VERSION} = "500" -o ${VERSION} = "500mini" -o ${VERSION} = "500plus" -o ${VERSION} = "PV73200" -o ${VERSION} = "PV73100"  -o ${VERSION} = "MP3011" -o ${VERSION} = "MP3012" ]
 then
     echo Patching firmware variant ${VERSION}
 else
@@ -253,8 +262,7 @@ if [ ${SDK} -ne 4 ]
 then
 
 sed -i -e '/\/tmp\/package\/script\/samba-security/i\
-addmountpointtosambaconf movie /tmp/hdd/root/movie/\
-addmountpointtosambaconf music /tmp/hdd/root/music/' usr/local/bin/package/script/configsamba
+addmountpointtosambaconf ext3 /tmp/hdd/root/' usr/local/bin/package/script/configsamba
 
 sed -i -e '/mountpoint=$(cat \/proc\/mounts|grep $l |cut -d" " -f 2)/c\
 mountpoint=$(cat /proc/mounts|grep $l | head -n 1 | cut -d" " -f 2)' usr/local/bin/package/script/configsamba
@@ -436,6 +444,16 @@ then
     chmod +x usr/local/bin/DvdPlayer
 fi
 
+
+#bspatch oldfile newfile patchfile
+if [ ${VERSION} = "500m" ]
+then
+    echo patching DvdPlayer
+    bspatch usr/local/bin/DvdPlayer usr/local/bin/DvdPlayer.patched ${SVN_REPO}/src/${SIMPLE_VERSION}/DvdPlayer.bspatch_m_sdk${SDK}
+    mv usr/local/bin/DvdPlayer.patched usr/local/bin/DvdPlayer 
+    chmod +x usr/local/bin/DvdPlayer
+fi
+
 #inetd.conf
     sed -i -e '$a\
 www3    stream  tcp     nowait  www-data        /sbin/httpd httpd -i -h /scripts\
@@ -469,7 +487,7 @@ then
     rm ../../squashfs1.img
     mksquashfs3 * ../../squashfs1.img -b 65536
     cd  ..
-    if [ $TEA = "YES" -a $USE_EBODA_INSTALL = "no" ]
+    if [ $TEA = "YES" -a $USE_EBODA_INSTALL = "no" -a $USE_M8_INSTALL = "no" ]
     then
     	tea -e -i ../squashfs1.img -o ../squashfs1.upg -k 12345678195454322338264935438139
     	rm ../squashfs1.img
@@ -749,6 +767,14 @@ then
     rm install_a
     cp ${SVN_REPO}/src/${SIMPLE_VERSION}/install/install_a_sdk3 install_a
 fi
+
+if [ $USE_M8_INSTALL = "yes" ]
+then
+#copy eboda installer
+    rm install_a
+    cp ${SVN_REPO}/src/${SIMPLE_VERSION}/install/install_a_sdk3_m install_a
+fi
+
 
 #patch size
 sed -i -e 's#<sizeBytesMin>0x3000000</sizeBytesMin>#<sizeBytesMin>0x0800000</sizeBytesMin>#g' configuration.xml
