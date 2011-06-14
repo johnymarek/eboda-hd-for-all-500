@@ -200,7 +200,7 @@ function str_between($string, $start, $end){
 	return substr($string,$ini,$len);
 }
 
-$image = "/usr/local/etc/www/cgi-bin/scripts/filme/image/series.png";
+$image = "/scripts/filme/image/series.png";
 $videos = explode('<div class="post-', $html);
 unset($videos[0]);
 $videos = array_values($videos);

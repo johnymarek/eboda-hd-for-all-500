@@ -58,10 +58,10 @@
     <script>pageTitle;</script>
   </text>
   <image offsetXPC=0 offsetYPC=12 widthPC=100 heightPC=1>
-		../etc/translate/rss/image/gradient_line.bmp
+		/scripts/image/gradient_line.bmp
 	</image>
   <image offsetXPC=80 offsetYPC=1 widthPC=15 heightPC=10>
-    ../etc/translate/rss/image/YouTubeLogo.jpg
+    /scripts/image/YouTubeLogo.jpg
     <widthPC>
       <script>
         300 / 152 * 10 * screenYp / screenXp;
@@ -95,7 +95,7 @@
 				idx2 = getQueryItemIndex();
 				if (idx1 == idx2)
 				{
-					"../etc/translate/rss/image/IMAGE_NEWRSS_MENU_BTFOC.bmp";
+					"/scripts/image/IMAGE_NEWRSS_MENU_BTFOC.bmp";
 				}
 				else
 				{
@@ -139,12 +139,12 @@
 	       writeStringToFile(storagePath, arr);
   	  </script>
   	</onClick> 
-		<link>rss_file:///usr/local/etc/www/cgi-bin/scripts/clip/youtube/yt_feed.rss</link>
+		<link>rss_file:///scripts/clip/youtube/yt_feed.rss</link>
 	</item_template>
 <!--
 !-->
 	<onEnter>
-  translate_base_url  = "http://127.0.0.1/cgi-bin/translate?";
+  translate_base_url  = "http://127.0.0.1:83/cgi-bin/translate?";
   screenXp = 4;
   screenYp = 3;
   rssconf = readStringFromFile(getStoragePath("key")+"translate.dat");
@@ -193,7 +193,7 @@
 
 		itemTitleArray = null;
 
-		topUrl="/usr/local/etc/www/cgi-bin/scripts/clip/youtube/yt_standard_feeds.rss";
+		topUrl="/scripts/clip/youtube/yt_standard_feeds.rss";
 		dlok = loadXMLFile(topUrl);
 		if (dlok != null)
 		{
@@ -225,49 +225,49 @@
 
 	<channel>
 		<title>YouTube: Standard channels</title>
-		<link>/usr/local/etc/www/cgi-bin/scripts/clip/youtube/yt_standrd_feeds.rss</link>
-		<media:thumbnail url="../etc/translate/rss/image/youtube.gif" width="120" height="90" />
+		<link>/scripts/clip/youtube/yt_standrd_feeds.rss</link>
+		<media:thumbnail url="/scripts/image/youtube.gif" width="120" height="90" />
 
 		<item>
 			<title>Most popular</title>
 			<feed_name>most_popular</feed_name>
-			<media:thumbnail url="../etc/translate/rss/image/youtube.gif" width="120" height="90" />
+			<media:thumbnail url="/scripts/image/youtube.gif" width="120" height="90" />
 		</item>
 
 		<item>
 			<title>Most viewed</title>
 			<feed_name>most_viewed</feed_name>
-			<media:thumbnail url="../etc/translate/rss/image/youtube.gif" width="120" height="90" />
+			<media:thumbnail url="/scripts/image/youtube.gif" width="120" height="90" />
 		</item>
 
 		<item>
 			<title>Most Discussed</title>
 			<feed_name>most_discussed</feed_name>
-			<media:thumbnail url="../etc/translate/rss/image/youtube.gif" width="120" height="90" />
+			<media:thumbnail url="/scripts/image/youtube.gif" width="120" height="90" />
 		</item>
 		
 		<item>
 			<title>Top Rated</title>
 			<feed_name>top_rated</feed_name>
-			<media:thumbnail url="../etc/translate/rss/image/youtube.gif" width="120" height="90" />
+			<media:thumbnail url="/scripts/image/youtube.gif" width="120" height="90" />
 		</item>
 
 		<item>
 			<title>Top favorites</title>
 			<feed_name>top_favorites</feed_name>
-			<media:thumbnail url="../etc/translate/rss/image/youtube.gif" width="120" height="90" />
+			<media:thumbnail url="/scripts/image/youtube.gif" width="120" height="90" />
 		</item>
 
 		<item>
 			<title>Most responded</title>
 			<feed_name>most_responded</feed_name>
-			<media:thumbnail url="../etc/translate/rss/image/youtube.gif" width="120" height="90" />
+			<media:thumbnail url="/scripts/image/youtube.gif" width="120" height="90" />
 		</item>
 <!--
 		<item>
 			<title>Recently featured</title>
 			<feed_name>recently_featured</feed_name>
-			<media:thumbnail url="../etc/translate/rss/image/youtube.gif" width="120" height="90" />
+			<media:thumbnail url="/scripts/image/youtube.gif" width="120" height="90" />
 		</item>
 -->
 	</channel>

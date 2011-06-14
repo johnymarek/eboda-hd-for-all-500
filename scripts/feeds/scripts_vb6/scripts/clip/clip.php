@@ -280,9 +280,9 @@ columnCount=5
 
 <item>
 <title>Youtube</title>
-	<link>rss_file:///usr/local/etc/www/cgi-bin/scripts/clip/youtube/yt_index.rss</link>
+	<link>rss_file:///scripts/clip/youtube/yt_index.rss</link>
 	<location>http://youtube.com</location>
-	<image>image/youtube.gif</image>
+	<image>/scripts/image/youtube.gif</image>
 	<media:thumbnail url="image/youtube.gif" />
 	<annotation>YouTube este un loc în care puteti descoperi, urmãri, încãrca si distribui videoclipuri.</annotation>
 	<mediaDisplay name="onePartView" />

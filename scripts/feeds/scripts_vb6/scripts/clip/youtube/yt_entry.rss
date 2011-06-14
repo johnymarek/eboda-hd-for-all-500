@@ -67,10 +67,10 @@
     <script>pageTitle;</script>
   </text>
   <image offsetXPC=0 offsetYPC=12 widthPC=100 heightPC=1>
-		../etc/translate/rss/image/gradient_line.bmp
+		/scripts/image/gradient_line.bmp
 	</image>
   <image offsetXPC=80 offsetYPC=1 widthPC=15 heightPC=10>
-    ../etc/translate/rss/image/YouTubeLogo.jpg
+    /scripts/image/YouTubeLogo.jpg
     <widthPC>
       <script>
         300 / 152 * 10 * screenYp / screenXp;
@@ -261,7 +261,7 @@
 </onRefresh>
 
 <onEnter>
-  translate_base_url  = "http://127.0.0.1/cgi-bin/translate?";
+  translate_base_url  = "http://127.0.0.1:83/cgi-bin/translate?";
   screenXp = 4;
   screenYp = 3;
   rssconf = readStringFromFile(getStoragePath("key")+"translate.dat");
@@ -347,9 +347,14 @@
       historydat = pushBackStringArray(historydat, url);
       writeStringToFile(historyPath, historydat);
 
-	    type="video/mp4"; 
-      movie = "http://127.0.0.1/cgi-bin/scripts/util/yt.php?file=" + url;
-      urlToPlay=getUrl(movie);
+           value = getXMLAttribute("info","stream","type");
+           if(value != null)
+            type = value;
+           
+           value = getXMLAttribute("info","stream","url");
+           if(value != null)
+            url = value;
+      urlToPlay = url;
       showIdle();
       setRefreshTime(100);
       playItemURL(urlToPlay, 0);
@@ -410,7 +415,7 @@
 	if (relatedUrl != "")
 	{
    writeStringToFile(storagePath, tagsArray);
-   tag = doModalRss("rss_file:///usr/local/etc/www/cgi-bin/scripts/clip/youtube/yt_tags.rss");
+   tag = doModalRss("rss_file:///scripts/clip/youtube/yt_tags.rss");
    if(tag != null)
    {
      title = "Tag: "+tag;

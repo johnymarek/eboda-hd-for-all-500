@@ -150,7 +150,7 @@ ret;
 
 	</item_template>
 <script>
-    channelImage = "/usr/local/etc/www/cgi-bin/scripts/filme/image/series.png";
+    channelImage = "/scripts/filme/image/series.png";
   </script>
 
 <channel>

@@ -63,10 +63,10 @@
     <script>pageTitle;</script>
   </text>
   <image offsetXPC=0 offsetYPC=12 widthPC=100 heightPC=1>
-		../etc/translate/rss/image/gradient_line.bmp
+		/scripts/image/gradient_line.bmp
 	</image>
   <image offsetXPC=80 offsetYPC=1 widthPC=15 heightPC=10>
-    ../etc/translate/rss/image/YouTubeLogo.jpg
+    /scripts/image/YouTubeLogo.jpg
     <widthPC>
       <script>
         300 / 152 * 10 * screenYp / screenXp;
@@ -145,7 +145,7 @@
         print("storagePath=",storagePath);
         
         writeStringToFile(storagePath, arr);
-        act = doModalRss("rss_file:///usr/local/etc/www/cgi-bin/scripts/clip/youtube/yt_entry.rss");
+        act = doModalRss("rss_file:///scripts/clip/youtube/yt_entry.rss");
         if(act != null)
         {
           history += 1;
@@ -180,7 +180,7 @@
 </mediaDisplay>
 
 <onEnter>
-  translate_base_url  = "http://127.0.0.1/cgi-bin/translate?";
+  translate_base_url  = "http://127.0.0.1:83/cgi-bin/translate?";
   screenXp = 4;
   screenYp = 3;
   rssconf = readStringFromFile(getStoragePath("key")+"translate.dat");
@@ -356,7 +356,7 @@
 <submenu>
   <title>Search</title>
   <onClick>
-		keyword = doModalRss("rss_file:///usr/local/etc/www/cgi-bin/scripts/clip/youtube/key/keyboard.rss","mediaDisplay","search",0);
+		keyword = doModalRss("rss_file:///scripts/clip/youtube/key/keyboard.rss","mediaDisplay","search",0);
 	  /* keyword= getInput(); */
 		if (keyword!=null &amp;&amp; keyword!="")
 		{
@@ -429,7 +429,7 @@
         <idleImage>image/POPUP_LOADING_08.png</idleImage>
 		</mediaDisplay>
 		<!--
-		<link>rss_file://../etc/translate/rss/xspf/streamPlayer.rss</link>
+		<link>rss_file:///scripts/rss/xspf/streamPlayer.rss</link>
 		 -->
 		<onClick>
       idx = getFocusItemIndex();
@@ -448,9 +448,15 @@
         historydat = pushBackStringArray(historydat, url);
         writeStringToFile(historyPath, historydat);
 
-	    type="video/mp4"; 
-      movie = "http://127.0.0.1/cgi-bin/scripts/util/yt.php?file=" + url;
-      urlToPlay=getUrl(movie);
+           value = getXMLAttribute("info","stream","type");
+           if(value != null)
+            type = value;
+           
+           value = getXMLAttribute("info","stream","url");
+           if(value != null)
+            url = value;
+            
+      urlToPlay = url;
         showIdle();
         mode = 0;
         setRefreshTime(100);
