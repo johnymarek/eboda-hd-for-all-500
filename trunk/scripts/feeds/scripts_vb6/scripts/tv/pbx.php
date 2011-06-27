@@ -1,10 +1,9 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php echo "<?xml version='1.0' encoding='UTF8' ?>";
-$host = "http://127.0.0.1/cgi-bin";
+$host = "http://127.0.0.1:82";
 ?>
 <rss version="2.0">
 <script>
-  translate_base_url  = "http://127.0.0.1/cgi-bin/translate?";
+  translate_base_url  = "http://127.0.0.1:83/cgi-bin/translate?";
 
   storagePath             = getStoragePath("tmp");
   storagePath_stream      = storagePath + "stream.dat";
@@ -188,10 +187,10 @@ echo '
 <onClick>
 <script>
     showIdle();
-    topUrl = "http://127.0.0.1/cgi-bin/scripts/tv/pbx_curl.php?file='.$tit.'";
+    topUrl = "http://127.0.0.1:82/scripts/tv/pbx_curl.php?file='.$tit.'";
     url1= getUrl(topUrl);
     annotation=url1;
-    url="http://127.0.0.1/cgi-bin/translate?stream,," + url1;
+    url="http://127.0.0.1:83/cgi-bin/translate?stream,," + url1;
     cancelIdle();
     redrawDisplay();
     playItemUrl(url,10);
@@ -204,7 +203,7 @@ if ($i < 2) {
 echo '
 	  <item>
 	  <title>Logon</title>
-	  <link>/usr/local/etc/www/cgi-bin/scripts/tv/pbx.rss</link>
+	  <link>/scripts/tv/pbx.rss</link>
 	  <mediaDisplay name="onePartView" />
 	  </item>
 ';

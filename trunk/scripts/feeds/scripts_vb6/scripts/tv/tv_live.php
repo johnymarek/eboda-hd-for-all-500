@@ -221,7 +221,7 @@ ret;
 
 <item>
 <title>TV Live from veetle.com (only LQ)</title>
-<link>/usr/local/etc/www/cgi-bin/scripts/tv/veetle_main.rss</link>
+<link>/scripts/tv/veetle_main.rss</link>
 <media:thumbnail url="image/tv_radio.png" />
 <mediaDisplay name="threePartsView"/>
 </item>

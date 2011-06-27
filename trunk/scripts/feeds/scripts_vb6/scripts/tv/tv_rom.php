@@ -148,7 +148,7 @@ ret;
 
    <item>
     <title>Showtime International</title>
-    <onClick>playItemUrl("http://127.0.0.1/cgi-bin/translate?stream,,http://86.104.190.92:10/",10);</onClick>
+    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,http://86.104.190.92:10/",10);</onClick>
   </item>
   
    <item>

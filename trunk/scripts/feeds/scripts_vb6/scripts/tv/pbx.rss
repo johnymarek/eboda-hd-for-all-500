@@ -60,7 +60,7 @@
     <script>pageTitle;</script>
   </text>
   <image offsetXPC=0 offsetYPC=12 widthPC=100 heightPC=1>
-		../etc/translate/rss/image/gradient_line.bmp
+		/scripts/image/gradient_line.bmp
 	</image>
 	
 	<text redraw="yes" offsetXPC=50 offsetYPC=20 widthPC=30 heightPC=8 fontSize=17 backgroundColor=8:8:8 foregroundColor=150:150:150>
@@ -157,7 +157,7 @@
   pageTitle = "Setari user si parola pentru pbx telecom";
   setari = readStringFromFile(optionsPath);
 	itemTitleArray = null;
-	topUrl="/usr/local/etc/www/cgi-bin/scripts/tv/pbx.rss";
+	topUrl="/scripts/tv/pbx.rss";
 	dlok = loadXMLFile(topUrl);
 	if (dlok != null)
 	{

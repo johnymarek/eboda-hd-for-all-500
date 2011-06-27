@@ -1213,7 +1213,7 @@ foreach($videos as $video) {
    } elseif (strpos($link,'vimeo.com') !==false){
      //http://player.vimeo.com/video/16275866
      $id=substr(strrchr($link,"/"),1);
-     $link="http://127.0.0.1/cgi-bin/translate?info,,http://vimeo.com/".$id;
+     $link="http://127.0.0.1:83/cgi-bin/translate?info,,http://vimeo.com/".$id;
      $baza = file_get_contents($link);
      $link=str_between($baza,'stream url="','"');
      $server = str_between($link,"http://","/");
