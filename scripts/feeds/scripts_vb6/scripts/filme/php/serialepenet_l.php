@@ -1,11 +1,10 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php echo "<?xml version='1.0' encoding='UTF8' ?>";
 function str_between($string, $start, $end){
 	$string = " ".$string; $ini = strpos($string,$start);
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini;
 	return substr($string,$ini,$len);
 }
-$host = "http://127.0.0.1/cgi-bin";
+$host = "http://127.0.0.1:82";
 $query = $_GET["file"];
 if($query) {
    $queryArr = explode(',', $query);
@@ -61,12 +60,12 @@ if (file_exists("/tmp/usbmounts/sda1/download")) {
 if (file_name == "Subtitrare")
    {
     setRefreshTime(-1);
-    topUrl = "http://127.0.0.1/cgi-bin/scripts/util/info_down.php?file=" + log_file + ",s";
+    topUrl = "http://127.0.0.1:82/scripts/util/info_down.php?file=" + log_file + ",s";
     info_s = getUrl(topUrl);
     if (info_s == "Ready")
     {
     showIdle();
-    topUrl = "http://127.0.0.1/cgi-bin/scripts/util/xml_srt1.php?file=" + url_xml;
+    topUrl = "http://127.0.0.1:82/scripts/util/xml_srt1.php?file=" + url_xml;
     dummy = getUrl(topUrl);
     cancelIdle();
     info_serial="Ready";
@@ -79,7 +78,7 @@ if (file_name == "Subtitrare")
    }
    else
    {
-    topUrl = "http://127.0.0.1/cgi-bin/scripts/util/info_down.php?file=" + log_file + ",f";
+    topUrl = "http://127.0.0.1:82/scripts/util/info_down.php?file=" + log_file + ",f";
     info_serial = getUrl(topUrl);
    }
   }
@@ -153,7 +152,7 @@ if( userInput == "one" || userInput == "1")
 else if(userInput == "two" || userInput == "2")
 {
 showIdle();
-topUrl = "http://127.0.0.1/cgi-bin/scripts/util/download.cgi?link=" + getItemInfo(getFocusItemIndex(),"download") + ";name=" + getItemInfo(getFocusItemIndex(),"name");
+topUrl = "http://127.0.0.1:82/scripts/util/download.cgi?link=" + getItemInfo(getFocusItemIndex(),"download") + ";name=" + getItemInfo(getFocusItemIndex(),"name");
 dummy = getUrl(topUrl);
 cancelIdle();
 do_down=1;
@@ -186,7 +185,7 @@ ret;
 </onUserInput>
 </mediaDisplay>
 <destination>
-	<link>http://127.0.0.1/cgi-bin/scripts/util/level.php
+	<link>http://127.0.0.1:82/scripts/util/level.php
 	</link>
 </destination>
 
@@ -274,7 +273,7 @@ $ext="mp4";
     streamArray = pushBackStringArray(streamArray, "'.$pg_tit.'");
     streamArray = pushBackStringArray(streamArray, "1");
     writeStringToFile(storagePath_stream, streamArray);
-    doModalRss("rss_file:///usr/local/etc/www/cgi-bin/scripts/util/videoRenderer.rss");
+    doModalRss("rss_file:///scripts/util/videoRenderer.rss");
     </script>
     </onClick>
     <download>'.$link.'</download>
@@ -320,7 +319,7 @@ if (($srt <> "") && ($pct == ".") && (strpos($srt,".xml") !==false)) {
    <onClick>
    <script>
         showIdle();
-		topUrl = "http://127.0.0.1/cgi-bin/scripts/util/xml_srt.php";
+		topUrl = "http://127.0.0.1:82/scripts/util/xml_srt.php";
 		dummy = getUrl(topUrl);
 		cancelIdle();
    </script>
@@ -328,7 +327,7 @@ if (($srt <> "") && ($pct == ".") && (strpos($srt,".xml") !==false)) {
    <info_serial>Conversie la toate subtitrarile din format xml in format srt</info_serial>
    </item>
    ';
-    $link = "http://127.0.0.1/cgi-bin/scripts/util/util1.cgi";
+    $link = "http://127.0.0.1:82/scripts/util/util1.cgi";
   	echo '
     <item>
   	<title>Stop download (numai pentru metoda sageata dreapta-download)</title>

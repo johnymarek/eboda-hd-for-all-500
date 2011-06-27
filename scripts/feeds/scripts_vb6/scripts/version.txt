@@ -1,5 +1,5 @@
-parent: 97:7a218aabbc52 tip
- fara busy.png... + mici fix-uri
+parent: 116:24d366ddcecd tip
+ add veetle.com (tv live), numai LQ - experimental.
 branch: default
-commit: 1 unknown (clean)
+commit: 2 modified, 1 unknown
 update: (current)

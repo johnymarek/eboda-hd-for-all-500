@@ -1,10 +1,9 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php echo "<?xml version='1.0' encoding='UTF8' ?>";
-$host = "http://127.0.0.1/cgi-bin";
+$host = "http://127.0.0.1:82";
 ?>
 <rss version="2.0">
 <script>
-  translate_base_url  = "http://127.0.0.1/cgi-bin/translate?";
+  translate_base_url  = "http://127.0.0.1:83/cgi-bin/translate?";
 
   storagePath             = getStoragePath("tmp");
   storagePath_stream      = storagePath + "stream.dat";
@@ -160,37 +159,37 @@ ret;
 
    <item>
     <title>PopSugar Rush</title>
-    <onClick>playItemUrl("http://127.0.0.1/cgi-bin/translate?stream,Rtmp-options:-W%20http://cdn2.ustream.tv/swf/expressInstall.swf%20-p%20http://www.ustream.tv/popsugar,rtmp://flash75.ustream.tv:1935/ustreamVideo/7262640/streams/live_1",10);</onClick>
+    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,Rtmp-options:-W%20http://cdn2.ustream.tv/swf/expressInstall.swf%20-p%20http://www.ustream.tv/popsugar,rtmp://flash75.ustream.tv:1935/ustreamVideo/7262640/streams/live_1",10);</onClick>
   </item>
   
    <item>
     <title>Flightglobal</title>
-    <onClick>playItemUrl("http://127.0.0.1/cgi-bin/translate?stream,Rtmp-options:-W%20http://cdn2.ustream.tv/swf/expressInstall.swf%20-p%20http://www.ustream.tv/channel/flightglobal,rtmp://ustream.fc.llnwd.net:1935/ustream/test/ustream@llnw_1_4904908_live_1",10);</onClick>
+    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,Rtmp-options:-W%20http://cdn2.ustream.tv/swf/expressInstall.swf%20-p%20http://www.ustream.tv/channel/flightglobal,rtmp://ustream.fc.llnwd.net:1935/ustream/test/ustream@llnw_1_4904908_live_1",10);</onClick>
   </item>
 
    <item>
     <title>Eurosport</title>
-    <onClick>playItemUrl("http://127.0.0.1/cgi-bin/translate?stream,Rtmp-options:-W%20http://cdn2.ustream.tv/swf/expressInstall.swf%20-p%20http://www.ustream.tv/channel/ksdjkyf-rewrewkyf-sldrewsd-sf,rtmp://flash65.ustream.tv:1935/ustreamVideo/8190233/streams/live_1",10);</onClick>
+    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,Rtmp-options:-W%20http://cdn2.ustream.tv/swf/expressInstall.swf%20-p%20http://www.ustream.tv/channel/ksdjkyf-rewrewkyf-sldrewsd-sf,rtmp://flash65.ustream.tv:1935/ustreamVideo/8190233/streams/live_1",10);</onClick>
   </item>
   
    <item>
     <title>Wimbledon2011</title>
-    <onClick>playItemUrl("http://127.0.0.1/cgi-bin/translate?stream,Rtmp-options:-W%20http://cdn2.ustream.tv/swf/expressInstall.swf%20-p%20http://www.ustream.tv/channel/chico-sexy,rtmp://flash62.ustream.tv:1935/ustreamVideo/8547564/streams/live_1",10);</onClick>
+    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,Rtmp-options:-W%20http://cdn2.ustream.tv/swf/expressInstall.swf%20-p%20http://www.ustream.tv/channel/chico-sexy,rtmp://flash62.ustream.tv:1935/ustreamVideo/8547564/streams/live_1",10);</onClick>
   </item>
 
    <item>
     <title>TMZ Live!</title>
-    <onClick>playItemUrl("http://127.0.0.1/cgi-bin/translate?stream,Rtmp-options:-W%20http://cdn2.ustream.tv/swf/expressInstall.swf%20-p%20http://www.ustream.tv/tmz,rtmp://flash80.ustream.tv:1935/ustreamVideo/2822920/streams/live_1",10);</onClick>
+    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,Rtmp-options:-W%20http://cdn2.ustream.tv/swf/expressInstall.swf%20-p%20http://www.ustream.tv/tmz,rtmp://flash80.ustream.tv:1935/ustreamVideo/2822920/streams/live_1",10);</onClick>
   </item>
 
    <item>
     <title>WhoWhatWear Live Chat</title>
-    <onClick>playItemUrl("http://127.0.0.1/cgi-bin/translate?stream,Rtmp-options:-W%20http://cdn2.ustream.tv/swf/expressInstall.swf%20-p%20http://www.ustream.tv/whowhatwearloft,rtmp://cp39920.live.edgefcs.net:1935/live/ustream-sj@23793",10);</onClick>
+    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,Rtmp-options:-W%20http://cdn2.ustream.tv/swf/expressInstall.swf%20-p%20http://www.ustream.tv/whowhatwearloft,rtmp://cp39920.live.edgefcs.net:1935/live/ustream-sj@23793",10);</onClick>
   </item>
 
    <item>
     <title>NASA HD-TV</title>
-    <onClick>playItemUrl("http://127.0.0.1/cgi-bin/translate?stream,,rtmp://cp39920.live.edgefcs.net:1935/live/nasahd@55196",10);</onClick>
+    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,rtmp://cp39920.live.edgefcs.net:1935/live/nasahd@55196",10);</onClick>
   </item>
 </channel>
 </rss>

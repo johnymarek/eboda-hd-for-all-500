@@ -1,11 +1,10 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php echo "<?xml version='1.0' encoding='UTF8' ?>";
 function str_between($string, $start, $end){
 	$string = " ".$string; $ini = strpos($string,$start);
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini;
 	return substr($string,$ini,$len);
 }
-$host = "http://127.0.0.1/cgi-bin";
+$host = "http://127.0.0.1:82";
 $query = $_GET["file"];
 if($query) {
    $queryArr = explode(',', $query);
@@ -167,7 +166,7 @@ ret;
 
 	</item_template>
 <script>
-    channelImage = "/usr/local/etc/www/cgi-bin/scripts/filme/image/series.png";
+    channelImage = "/scripts/filme/image/series.png";
   </script>
 
 <channel>

@@ -154,84 +154,84 @@ ret;
 
 	<item>
 	<title>all</title>
-	<link>http://127.0.0.1/cgi-bin/scripts/tv/php/veetle.php?query=1,all</link>
+	<link>http://127.0.0.1:82/scripts/tv/php/veetle.php?query=1,all</link>
 	<annotation>all</annotation>
 	<mediaDisplay name="threePartsView"/>
 	</item>
 	
 	<item>
 	<title>animation</title>
-	<link>http://127.0.0.1/cgi-bin/scripts/tv/php/veetle.php?query=1,animation</link>
+	<link>http://127.0.0.1:82/scripts/tv/php/veetle.php?query=1,animation</link>
 	<annotation>animation</annotation>
 	<mediaDisplay name="threePartsView"/>
 	</item>
 	
 	<item>
 	<title>comedy</title>
-	<link>http://127.0.0.1/cgi-bin/scripts/tv/php/veetle.php?query=1,comedy</link>
+	<link>http://127.0.0.1:82/scripts/tv/php/veetle.php?query=1,comedy</link>
 	<annotation>comedy</annotation>
 	<mediaDisplay name="threePartsView"/>
 	</item>
 	
 	<item>
 	<title>education</title>
-	<link>http://127.0.0.1/cgi-bin/scripts/tv/php/veetle.php?query=1,education</link>
+	<link>http://127.0.0.1:82/scripts/tv/php/veetle.php?query=1,education</link>
 	<annotation>education</annotation>
 	<mediaDisplay name="threePartsView"/>
 	</item>
 	
 	<item>
 	<title>events</title>
-	<link>http://127.0.0.1/cgi-bin/scripts/tv/php/veetle.php?query=1,events</link>
+	<link>http://127.0.0.1:82/scripts/tv/php/veetle.php?query=1,events</link>
 	<annotation>events</annotation>
 	<mediaDisplay name="threePartsView"/>
 	</item>
 	
 	<item>
 	<title>gaming</title>
-	<link>http://127.0.0.1/cgi-bin/scripts/tv/php/veetle.php?query=1,gaming</link>
+	<link>http://127.0.0.1:82/scripts/tv/php/veetle.php?query=1,gaming</link>
 	<annotation>gaming</annotation>
 	<mediaDisplay name="threePartsView"/>
 	</item>
 	
 	<item>
 	<title>movies</title>
-	<link>http://127.0.0.1/cgi-bin/scripts/tv/php/veetle.php?query=1,movies</link>
+	<link>http://127.0.0.1:82/scripts/tv/php/veetle.php?query=1,movies</link>
 	<annotation>movies</annotation>
 	<mediaDisplay name="threePartsView"/>
 	</item>
 	
 	<item>
 	<title>music</title>
-	<link>http://127.0.0.1/cgi-bin/scripts/tv/php/veetle.php?query=1,music</link>
+	<link>http://127.0.0.1:82/scripts/tv/php/veetle.php?query=1,music</link>
 	<annotation>music</annotation>
 	<mediaDisplay name="threePartsView"/>
 	</item>
 	
 	<item>
 	<title>news</title>
-	<link>http://127.0.0.1/cgi-bin/scripts/tv/php/veetle.php?query=1,news</link>
+	<link>http://127.0.0.1:82/scripts/tv/php/veetle.php?query=1,news</link>
 	<annotation>news</annotation>
 	<mediaDisplay name="threePartsView"/>
 	</item>
 	
 	<item>
 	<title>religion</title>
-	<link>http://127.0.0.1/cgi-bin/scripts/tv/php/veetle.php?query=1,religion</link>
+	<link>http://127.0.0.1:82/scripts/tv/php/veetle.php?query=1,religion</link>
 	<annotation>religion</annotation>
 	<mediaDisplay name="threePartsView"/>
 	</item>
 	
 	<item>
 	<title>sports</title>
-	<link>http://127.0.0.1/cgi-bin/scripts/tv/php/veetle.php?query=1,sports</link>
+	<link>http://127.0.0.1:82/scripts/tv/php/veetle.php?query=1,sports</link>
 	<annotation>sports</annotation>
 	<mediaDisplay name="threePartsView"/>
 	</item>
 	
 	<item>
 	<title>TV</title>
-	<link>http://127.0.0.1/cgi-bin/scripts/tv/php/veetle.php?query=1,TV</link>
+	<link>http://127.0.0.1:82/scripts/tv/php/veetle.php?query=1,TV</link>
 	<annotation>TV</annotation>
 	<mediaDisplay name="threePartsView"/>
 	</item>

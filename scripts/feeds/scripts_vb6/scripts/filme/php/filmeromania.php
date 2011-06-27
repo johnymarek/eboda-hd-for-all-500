@@ -1,4 +1,3 @@
-#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php echo "<?xml version='1.0' encoding='UTF8' ?>"; ?>
 <rss version="2.0">
 <onEnter>
@@ -177,7 +176,7 @@ foreach($videos as $video) {
     $t3 = explode('<',$t2[1]);
     $title = $t3[0];
 		if ($link <> "") {
-			$link = "http://127.0.0.1/cgi-bin/scripts/filme/php/filme_link.php?".$link.",".urlencode($title);
+			$link = "http://127.0.0.1:82/scripts/filme/php/filme_link.php?".$link.",".urlencode($title);
     echo '
     <item>
     <title>'.$title.'</title>

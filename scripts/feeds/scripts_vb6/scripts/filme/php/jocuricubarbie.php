@@ -136,7 +136,7 @@ if( userInput == "one" || userInput == "1")
 else if(userInput == "two" || userInput == "2")
 {
         showIdle();
-		topUrl = "http://127.0.0.1/cgi-bin/scripts/util/download.cgi?link=" + getItemInfo(getFocusItemIndex(),"download") + ";name=" + getItemInfo(getFocusItemIndex(),"name");
+		topUrl = "http://127.0.0.1:82/scripts/util/download.cgi?link=" + getItemInfo(getFocusItemIndex(),"download") + ";name=" + getItemInfo(getFocusItemIndex(),"name");
 		dummy = getUrl(topUrl);
 		cancelIdle();
 }
@@ -187,7 +187,7 @@ ret;
 	</item_template>
 
 <destination>
-	<link>http://127.0.0.1/cgi-bin/scripts/util/level.php
+	<link>http://127.0.0.1:82/scripts/util/level.php
 	</link>
 </destination>
 <channel>
@@ -287,7 +287,7 @@ foreach($videos as $video) {
     streamArray = pushBackStringArray(streamArray, "'.$title.'");
     streamArray = pushBackStringArray(streamArray, "1");
     writeStringToFile(storagePath_stream, streamArray);
-    doModalRss("rss_file:///usr/local/etc/www/cgi-bin/scripts/util/videoRenderer.rss");
+    doModalRss("rss_file:///scripts/util/videoRenderer.rss");
     </script>
     </onClick>
     <download>'.$link.'</download>

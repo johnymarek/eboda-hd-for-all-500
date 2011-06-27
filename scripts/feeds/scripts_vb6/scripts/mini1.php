@@ -203,7 +203,7 @@ columnCount=3
       }
       if(userInput == "zero" || userInput == "0")
       {
-      doModalRss("/usr/local/etc/www/cgi-bin/scripts/util/help.rss");
+      doModalRss("/scripts/util/help.rss");
       ret="true";
       }
       else if (userInput == "pagedown" || userInput == "pageup" || userInput == "PD" || userInput == "PG")
