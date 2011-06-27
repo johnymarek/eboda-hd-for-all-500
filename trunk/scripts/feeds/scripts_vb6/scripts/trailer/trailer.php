@@ -211,7 +211,7 @@ ret;
 	capWidthPC="70" 
 	unFocusFontColor="101:101:101" 
 	focusFontColor="255:255:255" 
-	idleImageWidthPC="10"
+	idleImageWidthPC="8"
 	idleImageHeightPC="10">
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
         <idleImage>image/POPUP_LOADING_02.png</idleImage>

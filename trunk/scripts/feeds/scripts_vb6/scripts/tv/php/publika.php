@@ -68,14 +68,14 @@ $host = "http://127.0.0.1:82";
 		<image  redraw="yes" offsetXPC=60 offsetYPC=22.5 widthPC=30 heightPC=25>
 		<script>print(img); img;</script>
 		</image>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_01.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_02.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_03.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_04.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_05.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_06.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_07.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_08.png </idleImage>
+		<idleImage> image/POPUP_LOADING_01.png </idleImage>
+		<idleImage> image/POPUP_LOADING_02.png </idleImage>
+		<idleImage> image/POPUP_LOADING_03.png </idleImage>
+		<idleImage> image/POPUP_LOADING_04.png </idleImage>
+		<idleImage> image/POPUP_LOADING_05.png </idleImage>
+		<idleImage> image/POPUP_LOADING_06.png </idleImage>
+		<idleImage> image/POPUP_LOADING_07.png </idleImage>
+		<idleImage> image/POPUP_LOADING_08.png </idleImage>
 
 		<itemDisplay>
 			<text align="left" lines="1" offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
@@ -164,7 +164,7 @@ ret;
 	</mediaDisplay>
 
 	<item_template>
-		<mediaDisplay  name="threePartsView" idleImageWidthPC="10" idleImageHeightPC="10">
+		<mediaDisplay  name="threePartsView" idleImageXPC="5" idleImageYPC="5" idleImageWidthPC="8" idleImageHeightPC="10">
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
         <idleImage>image/POPUP_LOADING_02.png</idleImage>
         <idleImage>image/POPUP_LOADING_03.png</idleImage>

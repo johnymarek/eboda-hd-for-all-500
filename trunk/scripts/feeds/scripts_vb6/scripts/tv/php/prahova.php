@@ -28,8 +28,8 @@
 	popupBorderColor="28:35:51"
 	popupForegroundColor="255:255:255"
  	popupBackgroundColor="28:35:51"
-	idleImageWidthPC="10"
-	idleImageHeightPC="10">
+idleImageXPC="5" idleImageYPC="5" idleImageWidthPC="8" idleImageHeightPC="10"
+>
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
         <idleImage>image/POPUP_LOADING_02.png</idleImage>
         <idleImage>image/POPUP_LOADING_03.png</idleImage>

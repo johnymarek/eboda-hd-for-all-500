@@ -245,7 +245,7 @@ columnCount=5
 	</mediaDisplay>
 
 	<item_template>
-		<mediaDisplay  name="threePartsView" idleImageWidthPC="8" idleImageHeightPC="10">
+		<mediaDisplay  name="threePartsView" idleImageXPC="5" idleImageYPC="5" idleImageWidthPC="8" idleImageHeightPC="10">
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
         <idleImage>image/POPUP_LOADING_02.png</idleImage>
         <idleImage>image/POPUP_LOADING_03.png</idleImage>
@@ -279,7 +279,7 @@ columnCount=5
 <location>http://antena2.ro/</location>
 <annotation>Programe LIVE,  reactii, replici, emotii, nervii, toate autentice si necenzurate</annotation>
 </item>
-
+<!--
 <item>
 <title>Antena3</title>
 <link><?php echo $host; ?>/scripts/tv/php/ant3_main.php</link>
@@ -288,7 +288,7 @@ columnCount=5
 <location>http://www.antena3.ro/</location>
 <annotation>Specialisti in stiri, prima optiune pentru stiri online in timp real din Romania si din lume</annotation>
 </item>
-
+-->
 <item>
 <title>ProTV</title>
 <link><?php echo $host; ?>/scripts/tv/php/protv_main.php</link>
@@ -379,7 +379,7 @@ columnCount=5
 	capWidthPC="70"
 	unFocusFontColor="101:101:101"
 	focusFontColor="255:255:255"
-	idleImageWidthPC="10"
+	idleImageWidthPC="8"
 	idleImageHeightPC="10">
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
         <idleImage>image/POPUP_LOADING_02.png</idleImage>

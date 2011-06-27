@@ -245,7 +245,7 @@ columnCount=5
 	</mediaDisplay>
 
 	<item_template>
-		<mediaDisplay  name="threePartsView" idleImageWidthPC="8" idleImageHeightPC="10">
+		<mediaDisplay  name="threePartsView" idleImageXPC="5" idleImageYPC="5" idleImageWidthPC="8" idleImageHeightPC="10">
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
         <idleImage>image/POPUP_LOADING_02.png</idleImage>
         <idleImage>image/POPUP_LOADING_03.png</idleImage>
@@ -331,7 +331,7 @@ columnCount=5
 <media:thumbnail url="/scripts/tv/image/baricadatv.jpg" />
 <image>/scripts/tv/image/baricadatv.jpg</image>
 <location>http://vimeo.com/user4936621/videos</location>
-<annotation>BaricadaTV. – revolutie in televiziune!</annotation>
+<annotation>BaricadaTV. Â– revolutie in televiziune!</annotation>
 </item>
 
 <item>
@@ -340,7 +340,7 @@ columnCount=5
 <media:thumbnail url="/scripts/tv/image/emaramures.jpg" />
 <image>/scripts/tv/image/emaramures.jpg</image>
 <location>http://www.emaramures.ro</location>
-<annotation>STIRI MARAMURES – ziar electronic actualizat non-stop cu stiri din Baia Mare, Sighet, Borsa, Targu Lapus...</annotation>
+<annotation>STIRI MARAMURES Â– ziar electronic actualizat non-stop cu stiri din Baia Mare, Sighet, Borsa, Targu Lapus...</annotation>
 </item>
 
 <item>

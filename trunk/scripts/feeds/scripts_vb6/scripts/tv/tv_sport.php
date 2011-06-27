@@ -245,7 +245,7 @@ columnCount=5
 	</mediaDisplay>
 
 	<item_template>
-		<mediaDisplay  name="threePartsView" idleImageWidthPC="8" idleImageHeightPC="10">
+		<mediaDisplay  name="threePartsView" idleImageXPC="5" idleImageYPC="5" idleImageWidthPC="8" idleImageHeightPC="10">
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
         <idleImage>image/POPUP_LOADING_02.png</idleImage>
         <idleImage>image/POPUP_LOADING_03.png</idleImage>
@@ -321,7 +321,7 @@ columnCount=5
 <media:thumbnail url="/scripts/tv/image/cfr_cluj.png" />
 <image>/scripts/tv/image/cfr_cluj.png</image>
 <location>http://www.cfr1907.ro/ro/multimedia/video/</location>
-<annotation>CFR Cluj este un club de fotbal din România, înfiintat în anul 1907 în orasul Cluj</annotation>
+<annotation>CFR Cluj este un club de fotbal din Romá­©a, í­¦iintat í¬ anul 1907 í¬ orasul Cluj</annotation>
 </item>
 <!--
 <item>

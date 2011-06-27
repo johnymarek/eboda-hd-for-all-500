@@ -233,28 +233,28 @@ ret;
 <annotation>http://divxonline.biz</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
-<!--
+
 <item>
-<title>vezifilme.ro</title>
-<link><?php echo $host; ?>/scripts/filme/php/vezifilme_main.php</link>
-<annotation>http://www.vezifilme.ro/</annotation>
+<title>xvidonline.org</title>
+<link><?php echo $host; ?>/scripts/filme/php/xvidonline.php</link>
+<annotation>http://xvidonline.org/</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
 
 <item>
-<title>www.filmeonline24.com</title>
-<link><?php echo $host; ?>/scripts/filme/php/filmeonline24_main.php</link>
-<annotation>http://www.filmeonline24.com/</annotation>
+<title>moviesample.net - filme romanesti</title>
+<link><?php echo $host; ?>/scripts/filme/php/moviesample.php</link>
+<annotation>http://www.moviesample.net/category/filme-romanesti-online</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
 
 <item>
-<title>www.crutu-razvan.ro</title>
-<link><?php echo $host; ?>/scripts/filme/php/crutu-razvan.php?query=1,</link>
-<annotation>http://www.crutu-razvan.ro</annotation>
+<title>filmeromania - Filme Romanesti</title>
+<link><?php echo $host; ?>/scripts/filme/php/filmeromania.php</link>
+<annotation>http://filmeromania.blogspot.com/</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
--->
+
 <item>
 <title>documentare.org - filme si seriale documentare</title>
 <link><?php echo $host; ?>/scripts/filme/php/documentare_main.php</link>

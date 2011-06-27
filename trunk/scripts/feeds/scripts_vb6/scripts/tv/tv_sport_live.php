@@ -48,7 +48,7 @@ $host = "http://127.0.0.1:82";
 	showDefaultInfo="no"
 	imageFocus=""
 	sliding="no"
-	idleImageWidthPC="8" idleImageHeightPC="10"
+	idleImageXPC="5" idleImageYPC="5" idleImageWidthPC="8" idleImageHeightPC="10"
 >
 
   	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
@@ -141,7 +141,7 @@ ret;
 	</mediaDisplay>
 
 	<item_template>
-		<mediaDisplay  name="threePartsView" idleImageWidthPC="8" idleImageHeightPC="10">
+		<mediaDisplay  name="threePartsView" idleImageXPC="5" idleImageYPC="5" idleImageWidthPC="8" idleImageHeightPC="10">
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
         <idleImage>image/POPUP_LOADING_02.png</idleImage>
         <idleImage>image/POPUP_LOADING_03.png</idleImage>
@@ -157,7 +157,7 @@ ret;
 <channel>
 	<title>TV Live - Canale sport</title>
 	<menu>main menu</menu>
-
+<!--
 	<item>
 	<title>Dolce Sport(ro)</title>
 	<onClick>playItemURL("http://127.0.0.1:83/cgi-bin/translate?stream,,rtmpe://fms-de01.mediadirect.ro:80/live/dolcesport?id=14703526/dolcesport",10);</onClick>
@@ -167,17 +167,17 @@ ret;
 	<title>Dolce Sport 2(ro)</title>
 	<onClick>playItemURL("http://127.0.0.1:83/cgi-bin/translate?stream,,rtmpe://fms-de01.mediadirect.ro:80/live/dolcesport2?id=14703526/dolcesport2",10);</onClick>
 	</item>
-
+-->
 	<item>
 	<title>Orange sport info (fr)</title>
 	<onClick>playItemURL("http://127.0.0.1:83/cgi-bin/translate?stream,,mms://livewm.orange.fr/live-multicanaux",10);</onClick>
 	</item>
-
+<!--
 	<item>
 	<title>Sportitalia24</title>
 	<onClick>playItemURL("http://127.0.0.1:83/cgi-bin/translate?stream,,rtmp://fml.390B.edgecastcdn.net/20390B/live/livesportitalia",10);</onClick>
 	</item>
-
+-->
 	<item>
 	<title>Sport.ro</title>
 	<onClick>playItemURL("http://127.0.0.1:83/cgi-bin/translate?stream,Rtmp-options:-W%20http://assets.acasatv.ro/assets/flvplayer/player.swf%20-p%20http://www.sport.ro/live/show-player/id_stream/ibu1,rtmp://live.sport.ro/live1/mp4:live1.mp4",10);</onClick>

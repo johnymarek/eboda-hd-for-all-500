@@ -164,6 +164,13 @@ ret;
 </item>
 
 <item>
+<title>serialepenet.ro (cu abonament)</title>
+<link><?php echo $host; ?>/scripts/filme/php/serialepenet_main.php</link>
+<annotation>http://serialepenet.ro/</annotation>
+<mediaDisplay name="photoView"/>
+</item>
+
+<item>
 <title>serialeonline.tv</title>
 <link><?php echo $host; ?>/scripts/filme/php/serialeonline_main.php</link>
 <annotation>http://www.serialeonline.tv/</annotation>

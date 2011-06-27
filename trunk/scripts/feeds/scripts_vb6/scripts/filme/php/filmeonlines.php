@@ -1,4 +1,9 @@
 <?php echo "<?xml version='1.0' encoding='UTF8' ?>";
+function str_between($string, $start, $end){
+	$string = " ".$string; $ini = strpos($string,$start);
+	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini;
+	return substr($string,$ini,$len);
+}
 $host = "http://127.0.0.1:82";
 $query = $_GET["query"];
 if($query) {
@@ -11,6 +16,12 @@ $t1=explode('<div class="post_image">',$html);
 $t2=explode('src="',$t1[1]);
 $t3=explode('"',$t2[1]);
 $image=$t3[0];
+$t1=explode('<div class="the_content" align="justify">',$html);
+//$t2=str_between($t1[1],"<p>","</p>");
+$t2=explode("<p>",$t1[1]);
+$t3=explode("<",$t2[1]);
+$t2=$t3[0];
+$data = preg_replace("/(<\/?)([^>]*>)/e","",$t2);
 ?>
 <rss version="2.0">
 <onEnter>
@@ -35,11 +46,11 @@ $image=$t3[0];
 	itemImageWidthPC="0"
 	itemXPC="8"
 	itemYPC="25"
-	itemWidthPC="50"
+	itemWidthPC="45"
 	itemHeightPC="8"
 	capXPC="8"
 	capYPC="25"
-	capWidthPC="50"
+	capWidthPC="45"
 	capHeightPC="64"
 	itemBackgroundColor="0:0:0"
 	itemPerPage="8"
@@ -60,10 +71,13 @@ $image=$t3[0];
   	<text redraw="yes" offsetXPC="85" offsetYPC="12" widthPC="10" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
 		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
 		</text>
-  	<text  redraw="yes" align="center" offsetXPC="0" offsetYPC="90" widthPC="100" heightPC="8" fontSize="17" backgroundColor="10:105:150" foregroundColor="100:200:255">
-		  <script>print(annotation); annotation;</script>
+		<text align="justify" redraw="yes"
+          lines="12" fontSize=16
+		      offsetXPC=55 offsetYPC=45 widthPC=40 heightPC=52
+		      backgroundColor=0:0:0 foregroundColor=200:200:200>
+   <?php echo $data; ?>
 		</text>
-		<image  redraw="yes" offsetXPC=60 offsetYPC=35 widthPC=30 heightPC=20>
+		<image  redraw="yes" offsetXPC=60 offsetYPC=25 widthPC=30 heightPC=20>
   <?php echo $image; ?>
 		</image>
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
@@ -91,7 +105,7 @@ $image=$t3[0];
   				<script>
   					idx = getQueryItemIndex();
   					focus = getFocusItemIndex();
-  			    if(focus==idx) "16"; else "14";
+  			    if(focus==idx) "14"; else "14";
   				</script>
 				</fontSize>
 			  <backgroundColor>
@@ -164,15 +178,14 @@ ret;
 
 
 <?php
-function str_between($string, $start, $end){ 
-	$string = " ".$string; $ini = strpos($string,$start); 
-	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
-	return substr($string,$ini,$len); 
-}
-
-$n=1;
-$lastsever="";
-$videos=explode('<div class="hosts"',$html);
+preg_match_all('/S\d{2}E\d{2}(.*)/',$html,$r);
+$v=$r[0];
+for ($i=0;$i<count($v)-1;$i++) {
+//$vid=str_between($html,$v[$i],"</table>");
+$x=explode($v[$i],$html);
+$x1=explode($v[$i+1],$x[1]);
+$vid=$x1[0];
+$videos=explode('<div class="hosts"',$vid);
 unset($videos[0]);
 $videos = array_values($videos);
 foreach($videos as $video) {
@@ -183,7 +196,7 @@ foreach($videos as $video) {
   $t1=explode('td class="',$video);
   $t2=explode('"',$t1[1]);
   $server=$t2[0];
-  $title=$n." - server:".$server;
+  $title=str_replace("<br />","",$v[$i])." - Server - ".$server;
   $link = $host."/scripts/filme/php/filme_link.php?".$link.",".urlencode($tit." ".$title);
     	echo '
     	<item>
@@ -194,7 +207,33 @@ foreach($videos as $video) {
 			<mediaDisplay name="threePartsView"/>
     	</item>
     	';
-   $n++;
+}
+}
+//last
+$x=explode($v[count($v)-1],$html);
+$vid=$x[1];
+$videos=explode('<div class="hosts"',$vid);
+unset($videos[0]);
+$videos = array_values($videos);
+foreach($videos as $video) {
+  $t1=explode('href="',$video);
+  $t2=explode('"',$t1[1]);
+  $t3=explode("http",$t2[0]);
+  $link="http".$t3[2];
+  $t1=explode('td class="',$video);
+  $t2=explode('"',$t1[1]);
+  $server=$t2[0];
+  $title=str_replace("<br />","",$v[$i])." - Server - ".$server;
+  $link = $host."/scripts/filme/php/filme_link.php?".$link.",".urlencode($tit." ".$title);
+    	echo '
+    	<item>
+    		<title>'.$title.'</title>
+    		<link>'.$link.'</link>
+    		<media:thumbnail url="'.$image.'" />
+			<annotation>'.$title.'</annotation>
+			<mediaDisplay name="threePartsView"/>
+    	</item>
+    	';
 }
 
 ?>
