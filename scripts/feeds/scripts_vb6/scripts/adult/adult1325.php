@@ -35,7 +35,7 @@ $host = "http://127.0.0.1:82";
 		sliding=yes
 		showHeader=no
 		showDefaultInfo=no
-		idleImageWidthPC="8" idleImageHeightPC="10">
+		idleImageXPC="5" idleImageYPC="5" idleImageWidthPC="8" idleImageHeightPC="10">
 <!--
   	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		  <script>getPageInfo("pageTitle");</script>
@@ -357,7 +357,7 @@ XXX4PODS
 <item>
 <title>French Maid TV</title>
 <link>http://feeds.feedburner.com/FrenchMaidTV</link>
-<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="45" idleImageYPC="42" idleImageWidthPC="10" idleImageHeightPC="10">
+<mediaDisplay name="threePartsView" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="5" idleImageYPC="5" idleImageWidthPC="8" idleImageHeightPC="10">
 <backgroundDisplay>
 <image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
 image/mele/backgd.jpg

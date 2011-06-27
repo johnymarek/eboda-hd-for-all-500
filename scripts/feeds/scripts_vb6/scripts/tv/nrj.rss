@@ -1,4 +1,4 @@
-﻿<?xml version='1.0' encoding="UTF8" ?>
+﻿<?xml version='1.0' encoding="utf-8-with-signature" ?>
 <rss version="2.0">
 
 <!--
@@ -106,14 +106,14 @@
 			<script>print(location); location;</script>
 		</text>
 
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_01.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_02.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_03.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_04.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_05.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_06.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_07.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_08.png </idleImage>
+		<idleImage> /scripts/image/POPUP_LOADING_01.png </idleImage>
+		<idleImage> /scripts/image/POPUP_LOADING_02.png </idleImage>
+		<idleImage> /scripts/image/POPUP_LOADING_03.png </idleImage>
+		<idleImage> /scripts/image/POPUP_LOADING_04.png </idleImage>
+		<idleImage> /scripts/image/POPUP_LOADING_05.png </idleImage>
+		<idleImage> /scripts/image/POPUP_LOADING_06.png </idleImage>
+		<idleImage> /scripts/image/POPUP_LOADING_07.png </idleImage>
+		<idleImage> /scripts/image/POPUP_LOADING_08.png </idleImage>
 
 		<itemDisplay>
 			<image>
@@ -259,14 +259,14 @@
 	
 	<item_template>
 		<mediaDisplay  name="threePartsView">
-			<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_01.png </idleImage>
-			<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_02.png </idleImage>
-			<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_03.png </idleImage>
-			<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_04.png </idleImage>
-			<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_05.png </idleImage>
-			<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_06.png </idleImage>
-			<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_07.png </idleImage>
-			<idleImage idleImageWidthPC=10 idleImageHeightPC=10> /scripts/image/POPUP_LOADING_08.png </idleImage>
+			<idleImage> /scripts/image/POPUP_LOADING_01.png </idleImage>
+			<idleImage> /scripts/image/POPUP_LOADING_02.png </idleImage>
+			<idleImage> /scripts/image/POPUP_LOADING_03.png </idleImage>
+			<idleImage> /scripts/image/POPUP_LOADING_04.png </idleImage>
+			<idleImage> /scripts/image/POPUP_LOADING_05.png </idleImage>
+			<idleImage> /scripts/image/POPUP_LOADING_06.png </idleImage>
+			<idleImage> /scripts/image/POPUP_LOADING_07.png </idleImage>
+			<idleImage> /scripts/image/POPUP_LOADING_08.png </idleImage>
 		</mediaDisplay>
 	</item_template>
 

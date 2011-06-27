@@ -31,7 +31,7 @@ $html = file_get_contents($link);
 $p1=explode('http://media.port-network.com/page_elements/line.gif',$html);
 $p2=explode('check_page();',$p1[1]);
 $table_sus=$p2[1];
-$videos = explode('class="event_port.ro', $table_sus);
+$videos = explode('event_port.ro', $table_sus);
 unset($videos[0]);
 $videos = array_values($videos);
 foreach($videos as $video) {
@@ -62,7 +62,7 @@ print("Acum: ".$title."\n\r");
   	if ($n >= 12) break;
 }
 $table_jos=$p1[6];
-$videos = explode('class="event_port.ro', $table_jos);
+$videos = explode('event_port.ro', $table_jos);
 unset($videos[0]);
 $videos = array_values($videos);
 foreach($videos as $video) {
@@ -85,7 +85,7 @@ print("Acum: ".$title."\n\r");
   	if ($n >= 12) break;
 }
 $table_maine=$p1[2];
-$videos = explode('class="event_port.ro', $table_maine);
+$videos = explode('event_port.ro', $table_maine);
 unset($videos[0]);
 $videos = array_values($videos);
 foreach($videos as $video) {

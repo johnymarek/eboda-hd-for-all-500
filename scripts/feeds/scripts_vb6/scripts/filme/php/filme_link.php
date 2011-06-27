@@ -16,20 +16,28 @@ $onlinemoca=$t1[2];
 //play movie
 if (file_exists("/tmp/usbmounts/sda1/download")) {
    $dir = "/tmp/usbmounts/sda1/download/";
+   $dir_log = "/tmp/usbmounts/sda1/download/log/";
 } elseif (file_exists("/tmp/usbmounts/sdb1/download")) {
    $dir = "/tmp/usbmounts/sdb1/download/";
+   $dir_log = "/tmp/usbmounts/sdb1/download/log/";
 } elseif (file_exists("/tmp/usbmounts/sdc1/download")) {
    $dir = "/tmp/usbmounts/sdc1/download/";
+   $dir_log = "/tmp/usbmounts/sdc1/download/log/";
 } elseif (file_exists("/tmp/usbmounts/sda2/download")) {
    $dir = "/tmp/usbmounts/sda2/download/";
+   $dir_log = "/tmp/usbmounts/sda2/download/log/";
 } elseif (file_exists("/tmp/usbmounts/sdb2/download")) {
    $dir = "/tmp/usbmounts/sdb2/download/";
+   $dir_log = "/tmp/usbmounts/sdb2/download/log/";
 } elseif (file_exists("/tmp/usbmounts/sdc2/download")) {
    $dir = "/tmp/usbmounts/sdc2/download/";
+   $dir = "/tmp/usbmounts/sdc2/download/log/";
 } elseif (file_exists("/tmp/hdd/volumes/HDD1/download")) {
    $dir = "/tmp/hdd/volumes/HDD1/download/";
+   $dir_log = "/tmp/hdd/root/log/";
 } else {
      $dir = "";
+     $dir_log = "";
 }
 // end
 ?>
@@ -39,7 +47,25 @@ if (file_exists("/tmp/usbmounts/sda1/download")) {
     storagePath             = getStoragePath("tmp");
     storagePath_stream      = storagePath + "stream.dat";
     storagePath_playlist    = storagePath + "playlist.dat";
+  setRefreshTime(1);
+  first_time=1;
 </onEnter>
+ <onExit>
+ setRefreshTime(-1);
+ </onExit>
+<onRefresh>
+  if(first_time == 1)
+  {
+  setRefreshTime(-1);
+  itemCount = getPageInfo("itemCount");
+  first_time=0;
+  }
+  else if (do_down == 1)
+  {
+    topUrl = "http://127.0.0.1:82/scripts/util/info_down.php?file=" + log_file + ",f";
+    info_serial = getUrl(topUrl);
+  }
+</onRefresh>
 <mediaDisplay name="threePartsView"
 	itemBackgroundColor="0:0:0"
 	backgroundColor="0:0:0"
@@ -76,29 +102,44 @@ if (file_exists("/tmp/usbmounts/sda1/download")) {
         <idleImage>image/POPUP_LOADING_06.png</idleImage>
         <idleImage>image/POPUP_LOADING_07.png</idleImage>
         <idleImage>image/POPUP_LOADING_08.png</idleImage>
-  	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="18" fontSize="24" backgroundColor="10:105:150" foregroundColor="100:200:255">
+  	<text align="left" offsetXPC="6" offsetYPC="15" widthPC="100" heightPC="4" fontSize="16" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		  <script>getPageInfo("pageTitle");</script>
 		</text>
   	<text  redraw="yes" align="center" offsetXPC="0" offsetYPC="90" widthPC="100" heightPC="8" fontSize="17" backgroundColor="10:105:150" foregroundColor="100:200:255">
     Apasati 2 pentru download, 3 pentru vizionare download
 		</text>
+  	<text  redraw="yes" align="center" offsetXPC="0" offsetYPC="90" widthPC="100" heightPC="8" fontSize="17" backgroundColor="10:105:150" foregroundColor="100:200:255">
+    <script>print(info_serial); info_serial;</script>
+		</text>
 <onUserInput>
-	userInput = currentUserInput();
-
-	if( userInput == "two")
-	{
-        showIdle();
-		topUrl = "http://127.0.0.1:82/scripts/util/download.cgi?link=" + getItemInfo(getFocusItemIndex(),"download") + ";name=" + getItemInfo(getFocusItemIndex(),"name");
-		dummy = getUrl(topUrl);
-		cancelIdle();
-	}
-	else
-    if (userInput == "three")
-		{
-         url="<?php echo $dir; ?>" + getItemInfo(getFocusItemIndex(),"name");
-         playItemurl(url,10);
-		}
-
+userInput = currentUserInput();
+ret = "false";
+if(userInput == "two" || userInput == "2")
+{
+showIdle();
+topUrl = "http://127.0.0.1:82/scripts/util/download.cgi?link=" + getItemInfo(getFocusItemIndex(),"download") + ";name=" + getItemInfo(getFocusItemIndex(),"name");
+dummy = getUrl(topUrl);
+cancelIdle();
+do_down=1;
+file_name= getItemInfo(getFocusItemIndex(),"title");
+log_file="<?php echo $dir_log; ?>" + getItemInfo(getFocusItemIndex(),"name") + ".log";
+setRefreshTime(10000);
+ret="true";
+}
+else if (userInput == "three" || userInput == "3")
+{
+ url="<?php echo $dir; ?>" + getItemInfo(getFocusItemIndex(),"name");
+ playItemurl(url,10);
+ ret="true";
+}
+else
+{
+info_serial=" ";
+setRefreshTime(-1);
+do_down=0;
+ret="false";
+}
+ret;
 </onUserInput>
 </mediaDisplay>
 <destination>
@@ -483,6 +524,7 @@ function peteava($movie) {
 /**####################################**/
 /** Here we start.......**/
 $lastlink = "abc";
+$last_peteava="";
 $baseurl = "http://127.0.0.1:83/cgi-bin/translate?stream,Content-type:video/x-flv,";
 $filelink = str_prep($filelink);
 if (strpos($filelink,"onlinemoca") === false) {
@@ -761,11 +803,16 @@ foreach($videos as $video) {
      //_standard.mp4
      if (strpos($link, '_standard.') !== false) {
         $title = $link;
+        if ($link <> $last_peteava) {
+        $last_peteava=$link;
         $token = peteava($link);
         if ($token <> "") {
           $link =  "http://content.peteava.ro/video/".$link."?start=0&token=".$token;
         } else {
 		  $link = "http://content.peteava.ro/video/".$link;
+        }
+        } else {
+        $link="";
         }
      }
      if (strpos($link, 'http://') !== false){
@@ -1071,10 +1118,17 @@ foreach($videos as $video) {
      } // end foreach
    } elseif (strpos($link,"rofilm.info") !==false) {
      //http://rofilm.info/Media/kazzoskaku.php?link=2116&km=Grey/Greys S07E01.srt
+     //http://rofilm.info/Media/plmstar.php?lk=24/s1/24-1x01&km=24/24%20-%201x01a
+     //'flashvars' value='file=
      $baza = file_get_contents($link);
      $t1=explode('value="file=',$baza);
      $t2=explode("&",$t1[1]);
      $link = $t2[0];
+     if ($link=="") {
+       $t1=explode("value='file=",$baza);
+       $t2=explode("&",$t1[1]);
+       $link=$t2[0];
+     }
      $server = str_between($link,"http://","/");
      $title = $server." - ".substr(strrchr($link,"/"),1);
      $t1=explode('captions.file=',$baza);
@@ -1083,6 +1137,7 @@ foreach($videos as $video) {
      $srt = str_replace(" ","%20",$srt);
    } elseif (strpos($link,"serialetvonline.info") !==false) {
      //http://www.serialetvonline.info/Media/rrr.php?kl=NTMromania/NextTopModelRomaniaS01E01
+     if (strpos($link,"gettvguide2.php") === false) {
      $baza = file_get_contents($link);
      $link = str_between($baza,'"flashvars" value="file=','&');
      $server = str_between($link,"http://","/");
@@ -1091,6 +1146,10 @@ foreach($videos as $video) {
      $t2=explode("&",$t1[1]);
      $srt=$t2[0];
      $srt = str_replace(" ","%20",$srt);
+     } else {
+     $link="";
+     $srt="";
+     }
    } elseif (strpos($link,"zshare.net") !==false) {
      //http://www.zshare.net/videoplayer/player.php?SID=dl033&FID=75535391&FN=private.practice.s03e21.hdtv.xvid-2hd.flv&iframewidth=648&iframeheight=415&width=640&height=370&H=75535391bd51dec1
      //http://dl033.zshare.net/stream/815e798f1601021b3bef2faea7bf802a/75535391/1298517662/private.practice.s03e21.hdtv.xvid-2hd.flv//5194292060/?start=0
@@ -1151,6 +1210,14 @@ foreach($videos as $video) {
      $link = $t2[0];
      $server = str_between($link,"http://","/");
      $title = $server." - ".substr(strrchr($link,"/"),1);
+   } elseif (strpos($link,'vimeo.com') !==false){
+     //http://player.vimeo.com/video/16275866
+     $id=substr(strrchr($link,"/"),1);
+     $link="http://127.0.0.1/cgi-bin/translate?info,,http://vimeo.com/".$id;
+     $baza = file_get_contents($link);
+     $link=str_between($baza,'stream url="','"');
+     $server = str_between($link,"http://","/");
+     $title = $server." - ".$id;
    } else {
      $link = "";
    }
@@ -1179,7 +1246,7 @@ foreach($videos as $video) {
         ';
   	$lastlink = $link;
 		// for sdk4.... with seek
-		$title=str_between($link,"http://","/"). " - With seek - SDK4";
+    $title=str_between($link,"http://","/"). " - With seek - SDK4";
 	echo'
 	<item>
 	<title>'.$title.'</title>
@@ -1483,11 +1550,16 @@ if (strpos($html, 'peteava.ro/embed') !== false) {
 		$link = "http://www.peteava.ro/embed/".$t[0];
 		$h = file_get_contents($link);
 		$id = str_between($h,"stream.php&file=","&");
+		if ($id <> $last_peteava) {
+		$last_peteava=$id;
         $token = peteava($id);
         if ($token <> "") {
           $link =  "http://content.peteava.ro/video/".$id."?start=0&token=".$token;
         } else {
 		  $link = "http://content.peteava.ro/video/".$id;
+        }
+        } else {
+        $link="";
         }
 		$server = str_between($link,"http://","/");
 		$title = $server." - ".$id;

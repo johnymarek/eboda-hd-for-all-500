@@ -44,7 +44,7 @@ columnCount=3
 		</text>
 -->
 		<text align="left" offsetXPC=5 offsetYPC=5 widthPC=75 heightPC=5 fontSize=15 backgroundColor=0:0:0 foregroundColor=120:120:120>
-   Tips: Folositi tastele 1-9, Prev si Next pentru o navigare mai usoara!
+   Tips: Folositi tastele 1-9, Prev si Next pentru o navigare mai usoara! Apasati 0 pentru help.
 		</text>
 		<text align="center" redraw="yes" lines="4" offsetXPC=10 offsetYPC=85 widthPC=75 heightPC=15 fontSize=15 backgroundColor=0:0:0 foregroundColor=120:120:120>
 			<script>print(annotation); annotation;</script>
@@ -129,7 +129,6 @@ columnCount=3
 
       print("*** majorContext=",majorContext);
       print("*** userInput=",userInput);
-
       if(userInput == "one" || userInput == "1")
       {
         if(itemCount &gt;= 1)
@@ -204,11 +203,8 @@ columnCount=3
       }
       if(userInput == "zero" || userInput == "0")
       {
-        if(itemCount &gt;= 10)
-        {
-          setFocusItemIndex(9);
-          redrawDisplay();
-        }
+      doModalRss("/usr/local/etc/www/cgi-bin/scripts/util/help.rss");
+      ret="true";
       }
       else if (userInput == "pagedown" || userInput == "pageup" || userInput == "PD" || userInput == "PG")
       {

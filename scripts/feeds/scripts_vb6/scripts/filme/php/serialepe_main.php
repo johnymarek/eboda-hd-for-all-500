@@ -210,8 +210,11 @@ foreach($videos as $video) {
   $t1 = explode('title="',$video);
   $t2= explode('"',$t1[1]);
   $description = $t2[0];
+  if (strpos($description,"all posts filed") !== false) {
+  $description=$title;
+  }
   
-	if (($link <> "") && (strpos($description,"all posts filed") === false)) {
+	if ($link <> "") {
 		$link = $host."/scripts/filme/php/serialepe.php?file=".$link.",".urlencode($title);
 	  echo '
 	  <item>

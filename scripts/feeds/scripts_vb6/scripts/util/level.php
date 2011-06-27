@@ -2,6 +2,7 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
 <onEnter>
    showIdle();
+   last_idx=0;
    executeScript("updateItems");
    redrawDisplay();
    SetFocusItemIndex(0);
@@ -50,7 +51,7 @@
 <onRefresh>
    executeScript("updateItems");
    redrawDisplay();
-   SetFocusItemIndex(0);
+   SetFocusItemIndex(last_idx);
 </onRefresh>
 <mediaDisplay name="threePartsView"
 	sideLeftWidthPC="0"
@@ -133,11 +134,13 @@
 <onUserInput>
 	userInput = currentUserInput();
     focusIndex = getFocusItemIndex();
+    last_idx = focusIndex;
 	if( userInput == "two")
 	{
         setRefreshTime(-1);
 		d1= getStringArrayAt(downloadArray, focusIndex);
 		dlok = loadXMLFile(d1);
+		last_idx=0;
         executeScript("updateItems");
         setRefreshTime(10000);
         redrawDisplay();
@@ -149,6 +152,7 @@
 		setRefreshTime(-1);
 		d1= getStringArrayAt(download1Array, focusIndex);
 		dlok = loadXMLFile(d1);
+		last_idx=0;
         executeScript("updateItems");
         setRefreshTime(10000);
         redrawDisplay();
@@ -160,6 +164,7 @@
 		setRefreshTime(-1);
         d1="http://127.0.0.1:82/scripts/util/stop_exua.cgi";
 		dlok = loadXMLFile(d1);
+		last_idx=0;
         executeScript("updateItems");
         setRefreshTime(10000);
         redrawDisplay();

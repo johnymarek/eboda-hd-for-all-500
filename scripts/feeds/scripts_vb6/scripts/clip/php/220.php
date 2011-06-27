@@ -7,16 +7,56 @@ if($query) {
    $search = $queryArr[1];
    $tit = urldecode($queryArr[2]);
 }
+clearstatcache();
+if (file_exists("/tmp/usbmounts/sda1/download")) {
+   $dir = "/tmp/usbmounts/sda1/download/log/";
+} elseif (file_exists("/tmp/usbmounts/sdb1/download")) {
+   $dir = "/tmp/usbmounts/sdb1/download/log/";
+} elseif (file_exists("/tmp/usbmounts/sdc1/download")) {
+   $dir = "/tmp/usbmounts/sdc1/download/log/";
+} elseif (file_exists("/tmp/usbmounts/sda2/download")) {
+   $dir = "/tmp/usbmounts/sda2/download/log/";
+} elseif (file_exists("/tmp/usbmounts/sdb2/download")) {
+   $dir = "/tmp/usbmounts/sdb2/download/log/";
+} elseif (file_exists("/tmp/usbmounts/sdc2/download")) {
+   $dir = "/tmp/usbmounts/sdc1/download/log/";
+} elseif (file_exists("/tmp/hdd/volumes/HDD1/download")) {
+   $dir = "/tmp/hdd/root/log/";
+} else {
+     $dir = "";
+}
 ?>
 <rss version="2.0">
 <onEnter>
   startitem = "middle";
   setRefreshTime(1);
+  first_time=1;
 </onEnter>
-
+ <onExit>
+ setRefreshTime(-1);
+ </onExit>
 <onRefresh>
+  if(first_time == 1)
+  {
   setRefreshTime(-1);
   itemCount = getPageInfo("itemCount");
+  first_time=0;
+  }
+  else if (do_down == 1)
+  {
+  rss = readStringFromFile(log_file);
+  count = 0;
+  while(1)
+   {
+     l= getStringArrayAt(rss,count);
+     count += 1;
+     if(l == null)
+      {
+      titlu = getStringArrayAt(rss,count-3);
+       break;
+      }
+   }
+  }
 </onRefresh>
 
 <mediaDisplay name="threePartsView"
@@ -71,14 +111,14 @@ if($query) {
 		<image  redraw="yes" offsetXPC=60 offsetYPC=25 widthPC=30 heightPC=25>
   <script>print(img); img;</script>
 		</image>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_01.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_02.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_03.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_04.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_05.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_06.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_07.png </idleImage>
-		<idleImage idleImageWidthPC=10 idleImageHeightPC=10> image/POPUP_LOADING_08.png </idleImage>
+		<idleImage> image/POPUP_LOADING_01.png </idleImage>
+		<idleImage> image/POPUP_LOADING_02.png </idleImage>
+		<idleImage> image/POPUP_LOADING_03.png </idleImage>
+		<idleImage> image/POPUP_LOADING_04.png </idleImage>
+		<idleImage> image/POPUP_LOADING_05.png </idleImage>
+		<idleImage> image/POPUP_LOADING_06.png </idleImage>
+		<idleImage> image/POPUP_LOADING_07.png </idleImage>
+		<idleImage> image/POPUP_LOADING_08.png </idleImage>
 
 		<itemDisplay>
 			<text align="left" lines="1" offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
@@ -168,7 +208,7 @@ ret;
 
 	</mediaDisplay>
 	<item_template>
-		<mediaDisplay  name="threePartsView" idleImageWidthPC="10" idleImageHeightPC="10">
+		<mediaDisplay  name="threePartsView" idleImageXPC="5" idleImageYPC="5" idleImageWidthPC="8" idleImageHeightPC="10">
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
         <idleImage>image/POPUP_LOADING_02.png</idleImage>
         <idleImage>image/POPUP_LOADING_03.png</idleImage>
