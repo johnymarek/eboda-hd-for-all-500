@@ -249,7 +249,22 @@ columnCount=3
 		  <script>getItemInfo(getQueryItemIndex(), "location");</script>
 		</link>
 	</item_template>
-	
+<adultlink>
+<mediaDisplay name="photoView"/>
+<link>
+  <?php echo $host; ?>/scripts/adult/adult1325.php
+</link>
+</adultlink>
+<adultpass>
+<mediaDisplay name="onePartView" />
+<link>
+/usr/local/etc/www/cgi-bin/scripts/adult/adult.rss
+</link>
+</adultpass>
+<destination>
+<link>http://127.0.0.1/cgi-bin/scripts/mini1.php</link>
+<mediaDisplay name="photoView"/>
+</destination>
   <channel>
     <title>HDD Links</title>
   <item>

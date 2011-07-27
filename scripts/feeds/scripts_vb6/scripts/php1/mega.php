@@ -5,6 +5,7 @@ function str_between($string, $start, $end){
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini;
 	return substr($string,$ini,$len);
 }
+//http://213.152.174.187/mvmu.php?v=X31V0IE1&download=Download+Video+From+Server+1
 $id = $_GET["id"];
 $post ="url=http://www.megavideo.com/?v=".$id;
 if (function_exists('curl_init')) {

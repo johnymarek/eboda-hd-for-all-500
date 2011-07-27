@@ -175,8 +175,9 @@ function str_between($string, $start, $end){
 		<mediaDisplay name="threePartsView"/>
 	</item>
 	';
-$html=str_between($html,'Alege Una Din Variante','<script');
-$videos = explode('href="', $html);
+$html1=str_between($html,'Alege Una Din Variante','<script');
+
+$videos = explode('href="', $html1);
 unset($videos[0]);
 $videos = array_values($videos);
 
@@ -186,7 +187,7 @@ foreach($videos as $video) {
     $t1 = explode('alt="', $video);
     $t2 = explode('"',$t1[1]);
     $title = $t2[0];
-		if ($link <> "") {
+    if (($link <> "") && (strpos($link,"steapta.php") === false)) {
 			$link = $host."/scripts/filme/php/filme_link.php?onlinemoca,".urlencode($tit).",".$link;
     	echo '
     	<item>
@@ -199,7 +200,32 @@ foreach($videos as $video) {
     	';
     }
 }
+if ($html1 == "") {
+$html1=str_between($html,'ALEGE UNUL DIN','<script');
+$videos = explode("href='", $html1);
+unset($videos[0]);
+$videos = array_values($videos);
 
+foreach($videos as $video) {
+    $t1 = explode("'", $video);
+    $link = $t1[0];
+    $t1 = explode('alt="', $video);
+    $t2 = explode('"',$t1[1]);
+    $title = $t2[0];
+		if (($link <> "") && (strpos($link,"steapta.php") === false)) {
+			$link = $host."/scripts/filme/php/filme_link.php?onlinemoca,".urlencode($tit).",".$link;
+    	echo '
+    	<item>
+    		<title>'.$title.'</title>
+    		<link>'.$link.'</link>
+    		<media:thumbnail url="'.$image.'" />
+			<annotation>'.$title.'</annotation>
+			<mediaDisplay name="threePartsView"/>
+    	</item>
+    	';
+    }
+}
+}
 ?>
 
 </channel>

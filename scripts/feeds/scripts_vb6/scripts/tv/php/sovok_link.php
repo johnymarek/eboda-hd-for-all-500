@@ -7,9 +7,6 @@ function str_between($string, $start, $end){
 }
 $link = $_GET["file"];
 $html = file_get_contents($link);
-$link = str_between($html, 'file: "', '"');
-if ($link == "") {
-$link = str_between($html,'url": "','"');
-}
+$link = str_between($html, 'url":"', '"');
 print $link;
 ?>

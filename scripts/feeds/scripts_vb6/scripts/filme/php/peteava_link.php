@@ -57,7 +57,10 @@ if ($pg == "") {
    $pg = "peteava.ro - link";
 }
 $html = file_get_contents($link);
-$id = str_between($html,"stream.php&file=","&");
+  $id = str_between($html,"hd_file=","&");
+  if ($id == "") {
+    $id = str_between($html,"stream.php&file=","&");
+  }
 $token = peteava($id);
 if ($token <> "") {
   $link =  "http://content.peteava.ro/video/".$id."?start=0&token=".$token;

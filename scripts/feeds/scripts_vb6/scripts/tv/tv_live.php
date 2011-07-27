@@ -211,17 +211,80 @@ ret;
 <media:thumbnail url="image/tv_radio.png" />
 <mediaDisplay name="threePartsView"/>
 </item>
-
+<!--
 <item>
 <title>TV Live by vetem.shqiptv-ks.net</title>
 <link><?php echo $host; ?>/scripts/tv/vetem.php</link>
 <media:thumbnail url="image/tv_radio.png" />
 <mediaDisplay name="threePartsView"/>
 </item>
-
+-->
 <item>
 <title>TV Live from veetle.com (only LQ)</title>
 <link>/scripts/tv/veetle_main.rss</link>
+<media:thumbnail url="image/tv_radio.png" />
+<mediaDisplay name="threePartsView"/>
+</item>
+<!--
+<item>
+<title>TV Live from www.tvdez.com</title>
+<link>/scripts/tv/tvdez.rss</link>
+<media:thumbnail url="image/tv_radio.png" />
+<mediaDisplay name="threePartsView"/>
+</item>
+-->
+<item>
+<title>TV Live - Canale diverse (by Darby_Crash)</title>
+<link><?php echo $host; ?>/scripts/tv/tv_diverse_live.php</link>
+<media:thumbnail url="image/tv_radio.png" />
+<mediaDisplay name="threePartsView"/>
+</item>
+
+<item>
+<title>TV Live from www.wii-cast.tv</title>
+<link><?php echo $host; ?>/scripts/tv/wii-cast.php?query=1</link>
+<media:thumbnail url="image/tv_radio.png" />
+<mediaDisplay name="threePartsView"/>
+</item>
+
+<item>
+<title>TV Live from sovok.tv</title>
+<link>/scripts/tv/sovok.rss</link>
+<media:thumbnail url="image/tv_radio.png" />
+<mediaDisplay name="threePartsView"/>
+</item>
+
+<item>
+<title>TV Live from weeb.tv (Polski)</title>
+<link><?php echo $host; ?>/scripts/tv/php/weeb.php</link>
+<media:thumbnail url="image/tv_radio.png" />
+<mediaDisplay name="threePartsView"/>
+</item>
+
+<item>
+<title>TV Live - Deutschland</title>
+<link><?php echo $host; ?>/scripts/tv/german_tv.php</link>
+<media:thumbnail url="image/tv_radio.png" />
+<mediaDisplay name="threePartsView"/>
+</item>
+
+<item>
+<title>TV Live - ohlulz.com</title>
+<link><?php echo $host; ?>/scripts/tv/ohlulz.php</link>
+<media:thumbnail url="image/tv_radio.png" />
+<mediaDisplay name="threePartsView"/>
+</item>
+
+<item>
+<title>Russian TV 1</title>
+<link>/scripts/tv/rus.rss</link>
+<media:thumbnail url="image/tv_radio.png" />
+<mediaDisplay name="threePartsView"/>
+</item>
+
+<item>
+<title>Russian TV 2</title>
+<link>/scripts/tv/rus2.rss</link>
 <media:thumbnail url="image/tv_radio.png" />
 <mediaDisplay name="threePartsView"/>
 </item>

@@ -34,6 +34,7 @@ if (strpos($image,"web3.protv.ro") !== false) {
 print $video;
 } elseif (strpos($image,"assets.sport.ro") !== false) {
   	$link1 = str_replace("thumb2_","",$image);
+  	$link1 = str_replace("thumb1_","",$image);
   	$link1 = str_replace(".jpg",".flv",$link1);
   	$link1 = str_replace("-","_",$link1);
   	$AgetHeaders = @get_headers($link1);

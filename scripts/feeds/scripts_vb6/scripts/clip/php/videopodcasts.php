@@ -155,6 +155,9 @@ foreach($videos as $video) {
     $t1 = explode("Subscribe to Podcast menu','", $video);
     $t2 = explode("'", $t1[1]);
     $link = $t2[0];
+    if (strpos($link,"format=xml") === false) {
+      $link=$link."?format=xml";
+    }
 
     $t1 = explode('img src="', $video);
     $t2 = explode('f=', $t1[1]);

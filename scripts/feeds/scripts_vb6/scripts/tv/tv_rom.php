@@ -145,10 +145,33 @@ ret;
 
 <channel>
   <title>TV Live Romania</title>
+	<item>
+	<title>InfoPescar TV Live</title>
+	<onClick>playItemURL("http://127.0.0.1:83/cgi-bin/translate?stream,Rtmp-options:-W%20http://www.infopescar.tv/yyy/player.swf%20-p%20http://www.infopescar.tv/pvtv.htm,rtmp://ak.neoflux.co.uk:1935/infopescar/rtmp",10);</onClick>
+	</item>
 
+	<item>
+	<title>InfoPescar PVTV Live</title>
+	<onClick>playItemURL("http://127.0.0.1:83/cgi-bin/translate?stream,Rtmp-options:-W%20http://www.infopescar.tv/yyy/player.swf%20-p%20http://www.infopescar.tv/pvtv.htm,rtmp://ak.neoflux.co.uk:1935/pvtv/rtmp",10);</onClick>
+	</item>
+  <item>
+    <title>TVR International</title>
+    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,http://177.tv.mozhay.net",10);</onClick>
+  </item>
+
+  <item>
+    <title>Alpha T.V. Ploiesti</title>
+    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,http://193.238.57.69:8080/",10);</onClick>
+  </item>
+  
    <item>
     <title>Showtime International</title>
-    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,http://86.104.190.92:10/",10);</onClick>
+    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,mms://86.104.190.92:10",10);</onClick>
+  </item>
+
+   <item>
+    <title>Showtime International (LQ)</title>
+    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,mms://mediafilmcenter.ro:10",10);</onClick>
   </item>
   
    <item>
@@ -225,6 +248,6 @@ ret;
     <title>Speranta Tv</title>
     <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,rtmp://robuc140.crestin.tv:80/live/sperantatv_500",10);</onClick>
   </item>
-
+  
 </channel>
 </rss>

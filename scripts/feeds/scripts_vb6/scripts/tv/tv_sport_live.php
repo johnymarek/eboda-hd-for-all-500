@@ -182,5 +182,10 @@ ret;
 	<title>Sport.ro</title>
 	<onClick>playItemURL("http://127.0.0.1:83/cgi-bin/translate?stream,Rtmp-options:-W%20http://assets.acasatv.ro/assets/flvplayer/player.swf%20-p%20http://www.sport.ro/live/show-player/id_stream/ibu1,rtmp://live.sport.ro/live1/mp4:live1.mp4",10);</onClick>
 	</item>
+
+   <item>
+    <title>Nova Sport</title>
+    <onClick>playItemUrl("http://127.0.0.1/cgi-bin/translate?stream,Rtmp-options:-W%20http://cdn2.ustream.tv/swf/expressInstall.swf%20-p%20http://www.ustream.tv/channel-popup/lsh2105,rtmp://ustream.fc.llnwd.net:1935/ustream/test/ustream@llnw_1_8333569_live_1",10);</onClick>
+  </item>
 </channel>
 </rss>

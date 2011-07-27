@@ -1,0 +1,1175 @@
+<?xml version='1.0' encoding='UTF8' ?>
+<rss version="2.0">
+<script>
+  translate_base_url  = "http://127.0.0.1/cgi-bin/translate?";
+
+  storagePath             = getStoragePath("tmp");
+  storagePath_stream      = storagePath + "stream.dat";
+  storagePath_playlist    = storagePath + "playlist.dat";
+
+  error_info          = "";
+</script>
+<onEnter>
+  startitem = "middle";
+  setRefreshTime(1);
+</onEnter>
+
+<onRefresh>
+  setRefreshTime(-1);
+  itemCount = getPageInfo("itemCount");
+</onRefresh>
+
+<mediaDisplay name="threePartsView"
+	sideLeftWidthPC="0"
+	sideRightWidthPC="0"
+
+	headerImageWidthPC="0"
+	selectMenuOnRight="no"
+	autoSelectMenu="no"
+	autoSelectItem="no"
+	itemImageHeightPC="0"
+	itemImageWidthPC="0"
+	itemXPC="8"
+	itemYPC="25"
+	itemWidthPC="50"
+	itemHeightPC="8"
+	capXPC="8"
+	capYPC="25"
+	capWidthPC="50"
+	capHeightPC="64"
+	itemBackgroundColor="0:0:0"
+	itemPerPage="8"
+  itemGap="0"
+	bottomYPC="90"
+	backgroundColor="0:0:0"
+	showHeader="no"
+	showDefaultInfo="no"
+	imageFocus=""
+	sliding="no"
+	idleImageXPC="5" idleImageYPC="5" idleImageWidthPC="8" idleImageHeightPC="10"
+>
+
+  	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
+		  <script>getPageInfo("pageTitle");</script>
+		</text>
+
+  	<text redraw="yes" offsetXPC="85" offsetYPC="12" widthPC="10" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
+		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
+		</text>
+  	<text  redraw="yes" align="center" offsetXPC="0" offsetYPC="90" widthPC="100" heightPC="8" fontSize="17" backgroundColor="10:105:150" foregroundColor="100:200:255">
+		  <script>print(titlu); titlu;</script>
+		</text>
+		<image  redraw="yes" offsetXPC=60 offsetYPC=35 widthPC=30 heightPC=30>
+  image/tv_radio.png
+		</image>
+        <idleImage>image/POPUP_LOADING_01.png</idleImage>
+        <idleImage>image/POPUP_LOADING_02.png</idleImage>
+        <idleImage>image/POPUP_LOADING_03.png</idleImage>
+        <idleImage>image/POPUP_LOADING_04.png</idleImage>
+        <idleImage>image/POPUP_LOADING_05.png</idleImage>
+        <idleImage>image/POPUP_LOADING_06.png</idleImage>
+        <idleImage>image/POPUP_LOADING_07.png</idleImage>
+        <idleImage>image/POPUP_LOADING_08.png</idleImage>
+
+		<itemDisplay>
+			<text align="left" lines="1" offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+				<script>
+					idx = getQueryItemIndex();
+					focus = getFocusItemIndex();
+					if(focus==idx)
+					{
+					  location = getItemInfo(idx, "location");
+					  annotation = getItemInfo(idx, "annotation");
+					}
+					getItemInfo(idx, "title");
+				</script>
+				<fontSize>
+  				<script>
+  					idx = getQueryItemIndex();
+  					focus = getFocusItemIndex();
+  			    if(focus==idx) "16"; else "14";
+  				</script>
+				</fontSize>
+			  <backgroundColor>
+  				<script>
+  					idx = getQueryItemIndex();
+  					focus = getFocusItemIndex();
+  			    if(focus==idx) "10:80:120"; else "-1:-1:-1";
+  				</script>
+			  </backgroundColor>
+			  <foregroundColor>
+  				<script>
+  					idx = getQueryItemIndex();
+  					focus = getFocusItemIndex();
+  			    if(focus==idx) "255:255:255"; else "140:140:140";
+  				</script>
+			  </foregroundColor>
+			</text>
+
+		</itemDisplay>
+
+<onUserInput>
+<script>
+ret = "false";
+userInput = currentUserInput();
+titlu="";
+if (userInput == "pagedown" || userInput == "pageup")
+{
+  idx = Integer(getFocusItemIndex());
+  if (userInput == "pagedown")
+  {
+    idx -= -8;
+    if(idx &gt;= itemCount)
+      idx = itemCount-1;
+  }
+  else
+  {
+    idx -= 8;
+    if(idx &lt; 0)
+      idx = 0;
+  }
+
+  print("new idx: "+idx);
+  setFocusItemIndex(idx);
+	setItemFocus(0);
+  redrawDisplay();
+  "true";
+}
+ret;
+</script>
+</onUserInput>
+
+	</mediaDisplay>
+
+	<item_template>
+		<mediaDisplay  name="threePartsView" idleImageXPC="5" idleImageYPC="5" idleImageWidthPC="8" idleImageHeightPC="10">
+        <idleImage>image/POPUP_LOADING_01.png</idleImage>
+        <idleImage>image/POPUP_LOADING_02.png</idleImage>
+        <idleImage>image/POPUP_LOADING_03.png</idleImage>
+        <idleImage>image/POPUP_LOADING_04.png</idleImage>
+        <idleImage>image/POPUP_LOADING_05.png</idleImage>
+        <idleImage>image/POPUP_LOADING_06.png</idleImage>
+        <idleImage>image/POPUP_LOADING_07.png</idleImage>
+        <idleImage>image/POPUP_LOADING_08.png</idleImage>
+		</mediaDisplay>
+
+	</item_template>
+<channel>
+	<title>Russian TV</title>
+	<menu>main menu</menu>
+
+    <item>
+    <title>1 Kanal</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://001.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>Rossiya 1</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://002.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>TVC</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://003.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>NTV</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://004.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>Kultura</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://005.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>Rossiya 2</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://006.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>STS</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://010.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>REN</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://011.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>TNT</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://012.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>Domashniy</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://013.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>DTV</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://014.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>TV3</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://015.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>Zvezda</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://016.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>5 kanal</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://017.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>2x2</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://020.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>Mir</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://021.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>Channel 24</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://024.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>Russsia today</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://025.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>RTR Planeta</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://027.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>Rossia 24</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://030.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>RT Arab</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://031.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>BBC World</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://033.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>Euro News</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://034.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>NHK World</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://035.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>KHL</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://036.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>Channel 37</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://037.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>Viasat Sport</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://040.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>Sport 1</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://041.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>EuroSport</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://042.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>EuroSport 2</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://043.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>Arab Sport</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://044.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>RTD</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://045.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>Universal Russia</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://050.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>SET</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://051.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>AXN SCiFi</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://052.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>Fenix+Kino</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://053.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>TV 1000</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://054.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>Channel 55</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://055.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>Channel 56</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://056.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>Channel 57 21</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://057.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>Channel 60</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://060.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>Channel 61</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://061.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>FOX Crime</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://064.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>FOX Life</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://065.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>Karusel</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://074.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>Disney Channel Russia</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://075.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>Channel 76</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://076.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>Discovery</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://100.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>Viasat Nature</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://101.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>Channel 102</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://102.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>Channel 103</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://103.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>Da vinci learning</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://104.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>24 TexHo</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://105.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>Domashnie zhivotnie</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://107.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>Jivotnye</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://110.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>ARABbl</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://113.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>ARABbl 2</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://114.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>Myzhskoy</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://120.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>TVSALE</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://121.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>Moya Planeta</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://126.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>DTV +4</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://140.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>MIR</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://142.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>REN _+4</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://143.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>THB</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://160.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>TRO</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://161.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>1 ARAB</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://163.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>Belarus TV</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://168.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>TVCI</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://169.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>C1</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://172.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>NTK ORBITA</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://174.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>qqwdghr</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://175.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>MSAT</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://176.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>zasda</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://177.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>K+</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://178.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>arirang</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://179.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>GIK</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://180.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>PRess TV</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://181.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    
+    <item>
+    <title>TBN</title>
+    <onClick>
+    <script>
+    showIdle();
+    url="http://182.tv.mozhay.net";
+    titlu=url;
+    cancelIdle();
+    playItemUrl(url,10);
+    </script>
+    </onClick>
+    </item>
+    </channel>
+</rss>

@@ -187,9 +187,11 @@ foreach($videos as $video) {
     $link="player-seriale-redirect-serial.php?id=".$id."@idul=".$idul."@v=1";
     //echo $link;
     if ($id <> "") {
-	    $link = "http://www.990.ro/".$link;        
-			$title = str_between($video,"<td>","</td>")." - ".$title1;
-	    $link = 'http://127.0.0.1:82/scripts/filme/php/filme_link.php?'.$link;
+      $link = "http://www.990.ro/".$link;
+      $title = str_between($video,"<td>","</td>")." - ".$title1;
+      $titdown=$tit."-".$title;
+      $titdown=str_replace(",","-",$titdown);
+      $link = 'http://127.0.0.1:82/scripts/filme/php/filme_link.php?'.$link.",".urlencode($titdown);
     echo '
     <item>
     <title>'.$title.'</title>

@@ -1,4 +1,7 @@
-<?php echo "<?xml version='1.0' encoding='UTF8' ?>"; ?>
+#!/usr/local/bin/Resource/www/cgi-bin/php
+<?php echo "<?xml version='1.0' encoding='UTF8' ?>";
+$host = "http://127.0.0.1/cgi-bin";
+?>
 <rss version="2.0">
 <onEnter>
   startitem = "middle";
@@ -22,11 +25,11 @@
 	itemImageWidthPC="0"
 	itemXPC="8"
 	itemYPC="25"
-	itemWidthPC="45"
+	itemWidthPC="50"
 	itemHeightPC="8"
 	capXPC="8"
 	capYPC="25"
-	capWidthPC="45"
+	capWidthPC="50"
 	capHeightPC="64"
 	itemBackgroundColor="0:0:0"
 	itemPerPage="8"
@@ -47,14 +50,11 @@
   	<text redraw="yes" offsetXPC="85" offsetYPC="12" widthPC="10" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
 		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
 		</text>
-		<text align="center" redraw="yes"
-          lines="10" fontSize=17
-		      offsetXPC=55 offsetYPC=55 widthPC=40 heightPC=42
-		      backgroundColor=0:0:0 foregroundColor=200:200:200>
-			<script>print(annotation); annotation;</script>
+  	<text  redraw="yes" align="center" offsetXPC="0" offsetYPC="90" widthPC="100" heightPC="8" fontSize="17" backgroundColor="10:105:150" foregroundColor="100:200:255">
+		  <script>print(annotation); annotation;</script>
 		</text>
-		<image  redraw="yes" offsetXPC=66 offsetYPC=30 widthPC=20 heightPC=20>
-		<script>print(img); img;</script>
+		<image  redraw="yes" offsetXPC=60 offsetYPC=35 widthPC=30 heightPC=30>
+		image/movies.png
 		</image>
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
         <idleImage>image/POPUP_LOADING_02.png</idleImage>
@@ -74,7 +74,6 @@
 					{
 					  location = getItemInfo(idx, "location");
 					  annotation = getItemInfo(idx, "annotation");
-					  img = getItemInfo(idx,"image");
 					}
 					getItemInfo(idx, "title");
 				</script>
@@ -149,40 +148,11 @@ ret;
 		</mediaDisplay>
 
 	</item_template>
+
 <channel>
-<?php
-$query = $_GET["query"];
-if($query) {
-   $queryArr = explode(',', $query);
-   $page = $queryArr[0];
-   $search = $queryArr[1];
-}
-echo "<title>".$search."</title>";
-//http://veetle.com/index.php/listing/index/movies/popular/18
-//http://veetle.com/index.php/listing/index/sports/newest/0
-$host = "http://127.0.0.1:82";
-$page1=($page-1)*9;
-$link="http://veetle.com/index.php/listing/index/".$search."/popular/".$page1;
-$html = file_get_contents($link);
-if($page > 1) { ?>
+	<title>jurnaltv.ro - categorii</title>
+	<menu>main menu</menu>
 
-<item>
-<?php
-$sThisFile = 'http://127.0.0.1:82'.$_SERVER['SCRIPT_NAME'];
-$url = $sThisFile."?query=".($page-1).",";
-if($search) { 
-  $url = $url.$search; 
-}
-?>
-<title>Previous Page</title>
-<link><?php echo $url;?></link>
-<annotation>Pagina anterioara</annotation>
-<image>/scripts/image/left.jpg</image>
-<mediaDisplay name="threePartsView"/>
-</item>
-
-
-<?php } ?>
 
 <?php
 function str_between($string, $start, $end){ 
@@ -190,96 +160,78 @@ function str_between($string, $start, $end){
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
 	return substr($string,$ini,$len); 
 }
-function getRewriteString($string) {
-    $string    = htmlentities($string);
-    $string    = preg_replace("/&amp;(.)(acute|cedil|circ|ring|tilde|uml|horn);/", "$1", $string);
-    return $string;
+$img = "image/movies.png";
+$filename = "/usr/local/etc/dvdplayer/jurnaltv.txt";
+if (!file_exists($filename)) {
+  $link = "/usr/local/etc/www/cgi-bin/scripts/filme/php/jurnaltv.rss";
+  $description="Pentru a accesa acest site trebuie sa aveti un cont pe jurnaltv.ro (e gratis).";
+  echo '
+	  <item>
+	  <title>Logon</title>
+	  <link>'.$link.'</link>
+	  <annotation>'.$description.'</annotation>
+	  <media:thumbnail url="'.$img.'" />
+	  <mediaDisplay name="onePartView" />
+	  </item>
+	  ';
+} else {
+  $handle = fopen($filename, "r");
+  $c = fread($handle, filesize($filename));
+  fclose($handle);
+  $a=explode("@",$c);
+  $user=$a[0];
+  $pass=trim($a[1]);
+  $post="user=".$user."&pass=".$pass."&logged=logged";
+  $l="http://www.jurnaltv.ro/login";
+  $ch = curl_init();
+  curl_setopt($ch, CURLOPT_URL, $l);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+  curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2 GTB5');
+  curl_setopt($ch, CURLOPT_FOLLOWLOCATION  ,1);
+  curl_setopt ($ch, CURLOPT_POST, 1);
+  curl_setopt ($ch, CURLOPT_POSTFIELDS, $post);
+  curl_setopt($ch, CURLOPT_COOKIEJAR, '/tmp/cookies.txt');
+  curl_setopt($ch, CURLOPT_COOKIEFILE, '/tmp/cookies.txt');
+  curl_exec($ch);
+  curl_close($ch);
 }
-function getRewriteString1($string) {
-    $string    = htmlentities($string);
-    $string    = preg_replace("/&(.)(acute|cedil|circ|ring|tilde|uml|horn|);/", "$1", $string);
-    return $string;
-}
-function c($title) {
-     $title = str_replace("&ordm;","s",$title);
-     $title = str_replace("&Ordm;","S",$title);
-     $title = str_replace("&thorn;","t",$title);
-     $title = str_replace("&Thorn;","T",$title);
-     $title = str_replace("&icirc;","i",$title);
-     $title = str_replace("&Icirc;","I",$title);
-     $title = str_replace("&atilde;","a",$title);
-     $title = str_replace("&Atilde;","I",$title);
-     $title = str_replace("&ordf;","S",$title);
-     $title = str_replace("&acirc;","a",$title);
-     $title = str_replace("&Acirc;","A",$title);
+$html = file_get_contents("http://www.jurnaltv.ro/videos/recent/page1");
 
-     return $title;
-}
-$videos = explode('div class="grid', $html);
+$html = str_between($html,'<div id="mmenulist5"','</table>');
 
+$videos = explode('href="', $html);
 unset($videos[0]);
 $videos = array_values($videos);
-
 foreach($videos as $video) {
-    $t1 = explode("flatRedirect('", $video);
-    $t2 = explode("'", $t1[1]);
-    $link = $t2[0];
-
-    $t1 = explode('src="', $video);
-    $t2 = explode('"', $t1[1]);
-    $image = $t2[0];
-
-    $t1 = explode('title="', $video);
-    $t2 = explode('"', $t1[2]);
-    $title = str_replace("&nbsp;","",$t2[0]);
-    $title = str_replace("&amp;","&",$title);
-    $title = str_replace('"',"",$title);
-    $title = getRewriteString1($title);
-    $title = getRewriteString($title);
-    $title = str_replace("&amp;","&",$title);
-    $title=c($title);
+    $t1 = explode('"', $video);
+    $link = $t1[0];
     
-    $t1 = explode('title="', $video);
-    $t2 = explode('"', $t1[1]);
-    $description = str_replace("&nbsp;","",$t2[0]);
-    $description = str_replace("&amp;","&",$description);
-    $description = getRewriteString($description);
+    $title=trim(str_between($video,'<span class=""><span class="">','</span>'));
 
-    echo '
-    <item>
-    <title>'.$title.'</title>
-    <onClick>
-    <script>
-    showIdle();
-    url="'.$host.'/scripts/tv/php/veetle_link.php?file='.$link.'";
-    movie=getUrl(url);
-    cancelIdle();
-    playItemUrl(movie,10);
-    </script>
-    </onClick>
-    <annotation>'.$description.'</annotation>
-    <image>'.$image.'</image>
-    <media:thumbnail url="'.$image.'" />
-    </item>
-    ';
+    $link1 = $host."/scripts/filme/php/jurnaltv.php?query=1,".$link.",".urlencode($title);
+	echo '
+	<item>
+	<title>'.$title.'</title>
+	<link>'.$link1.'</link>
+	<annotation>'.$title.'</annotation>
+	<mediaDisplay name="threePartsView"/>
+	</item>
+	';
 }
-
-?>
-
-<item>
-<?php
-$sThisFile = 'http://127.0.0.1:82'.$_SERVER['SCRIPT_NAME'];
-$url = $sThisFile."?query=".($page+1).",";
-if($search) { 
-  $url = $url.$search; 
+if (file_exists($filename)) {
+  $link = "/usr/local/etc/www/cgi-bin/scripts/filme/php/jurnaltv.rss";
+  $description="Pentru a accesa acest site trebuie sa aveti un cont pe jurnaltv.ro (e gratis).";
+  echo '
+	  <item>
+	  <title>Schimbare date logare</title>
+	  <link>'.$link.'</link>
+	  <annotation>'.$description.'</annotation>
+	  <media:thumbnail url="'.$img.'" />
+	  <mediaDisplay name="onePartView" />
+	  </item>
+	  ';
 }
 ?>
-<title>Next Page</title>
-<link><?php echo $url;?></link>
-<annotation>Pagina urmatoare</annotation>
-<image>/scripts/image/right.jpg</image>
-<mediaDisplay name="threePartsView"/>
-</item>
 
 </channel>
 </rss>
