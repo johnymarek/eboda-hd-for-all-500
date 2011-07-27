@@ -159,6 +159,10 @@ ret;
 	<menu>main menu</menu>
 
    <item>
+    <title>Ojom Music TV</title>
+    <onClick>playItemUrl("http://127.0.0.1/cgi-bin/translate?stream,,rtmp://streaming002.htz.broadcast.tneg.de:80/jamba/jamba1",10);</onClick>
+  </item>
+   <item>
     <title>Virgin TV</title>
     <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,rtmp://fms.105.net:1935/live/virgin1",10);</onClick>
   </item>

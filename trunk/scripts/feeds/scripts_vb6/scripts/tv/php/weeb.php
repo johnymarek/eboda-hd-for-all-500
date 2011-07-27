@@ -1,3 +1,4 @@
+#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php echo "<?xml version='1.0' encoding='UTF8' ?>"; ?>
 <rss version="2.0">
 <onEnter>
@@ -47,13 +48,13 @@
   	<text redraw="yes" offsetXPC="85" offsetYPC="12" widthPC="10" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
 		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
 		</text>
-		<text align="center" redraw="yes"
+		<text align="left" redraw="yes"
           lines="10" fontSize=17
-		      offsetXPC=55 offsetYPC=55 widthPC=40 heightPC=42
+		      offsetXPC=55 offsetYPC=55 widthPC=40 heightPC=45
 		      backgroundColor=0:0:0 foregroundColor=200:200:200>
 			<script>print(annotation); annotation;</script>
 		</text>
-		<image  redraw="yes" offsetXPC=66 offsetYPC=30 widthPC=20 heightPC=20>
+		<image  redraw="yes" offsetXPC=62 offsetYPC=30 widthPC=20 heightPC=20>
 		<script>print(img); img;</script>
 		</image>
         <idleImage>image/POPUP_LOADING_01.png</idleImage>
@@ -150,42 +151,10 @@ ret;
 
 	</item_template>
 <channel>
+<title>TV Live from weeb.tv (Polski)</title>
 <?php
-$query = $_GET["query"];
-if($query) {
-   $queryArr = explode(',', $query);
-   $page = $queryArr[0];
-   $search = $queryArr[1];
-}
-echo "<title>".$search."</title>";
-//http://veetle.com/index.php/listing/index/movies/popular/18
-//http://veetle.com/index.php/listing/index/sports/newest/0
-$host = "http://127.0.0.1:82";
-$page1=($page-1)*9;
-$link="http://veetle.com/index.php/listing/index/".$search."/popular/".$page1;
-$html = file_get_contents($link);
-if($page > 1) { ?>
 
-<item>
-<?php
-$sThisFile = 'http://127.0.0.1:82'.$_SERVER['SCRIPT_NAME'];
-$url = $sThisFile."?query=".($page-1).",";
-if($search) { 
-  $url = $url.$search; 
-}
-?>
-<title>Previous Page</title>
-<link><?php echo $url;?></link>
-<annotation>Pagina anterioara</annotation>
-<image>/scripts/image/left.jpg</image>
-<mediaDisplay name="threePartsView"/>
-</item>
-
-
-<?php } ?>
-
-<?php
-function str_between($string, $start, $end){ 
+function str_between($string, $start, $end){
 	$string = " ".$string; $ini = strpos($string,$start); 
 	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
 	return substr($string,$ini,$len); 
@@ -215,44 +184,40 @@ function c($title) {
 
      return $title;
 }
-$videos = explode('div class="grid', $html);
-
+$link="http://weeb.tv/channels/live";
+$host = "http://127.0.0.1/cgi-bin";
+$html = file_get_contents($link);
+$videos = explode('fieldset onclick=', $html);
 unset($videos[0]);
 $videos = array_values($videos);
 
 foreach($videos as $video) {
-    $t1 = explode("flatRedirect('", $video);
+    $t1 = explode("href='", $video);
     $t2 = explode("'", $t1[1]);
-    $link = $t2[0];
+    $link = urlencode($t2[0]);
 
     $t1 = explode('src="', $video);
     $t2 = explode('"', $t1[1]);
     $image = $t2[0];
 
     $t1 = explode('title="', $video);
-    $t2 = explode('"', $t1[2]);
-    $title = str_replace("&nbsp;","",$t2[0]);
-    $title = str_replace("&amp;","&",$title);
-    $title = str_replace('"',"",$title);
-    $title = getRewriteString1($title);
-    $title = getRewriteString($title);
-    $title = str_replace("&amp;","&",$title);
-    $title=c($title);
-    
-    $t1 = explode('title="', $video);
     $t2 = explode('"', $t1[1]);
+    $t3=explode(">",$t1[1]);
+    $t4=explode("<",$t3[1]);
+    $title=$t4[0];
     $description = str_replace("&nbsp;","",$t2[0]);
-    $description = str_replace("&amp;","&",$description);
-    $description = getRewriteString($description);
-
+    //$description = str_replace("&amp;","&",$description);
+    //$description = getRewriteString($description);
+    //rtmp://46.105.110.156/live/2/live
     echo '
     <item>
     <title>'.$title.'</title>
     <onClick>
     <script>
     showIdle();
-    url="'.$host.'/scripts/tv/php/veetle_link.php?file='.$link.'";
-    movie=getUrl(url);
+    url="'.$host.'/scripts/tv/php/weeb_link.php?file='.$link.'";
+    id=getUrl(url);
+    movie="http://127.0.0.1/cgi-bin/translate?stream,Rtmp-options:-W%20http://static.weeb.tv/player.swf%20-p%20http://weeb.tv/online,rtmp://46.105.110.156/live/" + id + "/live";
     cancelIdle();
     playItemUrl(movie,10);
     </script>
@@ -265,21 +230,6 @@ foreach($videos as $video) {
 }
 
 ?>
-
-<item>
-<?php
-$sThisFile = 'http://127.0.0.1:82'.$_SERVER['SCRIPT_NAME'];
-$url = $sThisFile."?query=".($page+1).",";
-if($search) { 
-  $url = $url.$search; 
-}
-?>
-<title>Next Page</title>
-<link><?php echo $url;?></link>
-<annotation>Pagina urmatoare</annotation>
-<image>/scripts/image/right.jpg</image>
-<mediaDisplay name="threePartsView"/>
-</item>
 
 </channel>
 </rss>

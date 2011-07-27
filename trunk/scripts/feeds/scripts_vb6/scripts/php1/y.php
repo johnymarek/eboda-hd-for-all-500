@@ -1,5 +1,12 @@
+#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php echo "<?xml version='1.0' encoding='UTF8' ?>";
-$host = "http://127.0.0.1:82";
+$host = "http://127.0.0.1/cgi-bin";
+$query = $_GET["query"];
+if($query) {
+   $queryArr = explode(',', $query);
+   $page = $queryArr[0];
+   $search = $queryArr[1];
+}
 ?>
 <rss version="2.0">
 <onEnter>
@@ -37,14 +44,14 @@ $host = "http://127.0.0.1:82";
 	showHeader="no"
 	showDefaultInfo="no"
 	imageFocus=""
-	sliding="no"
+	sliding="no" idleImageXPC="5" idleImageYPC="5" idleImageWidthPC="8" idleImageHeightPC="10"
 >
 
   	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		  <script>getPageInfo("pageTitle");</script>
 		</text>
   	<text align="left" offsetXPC="6" offsetYPC="15" widthPC="100" heightPC="4" fontSize="16" backgroundColor="10:105:150" foregroundColor="100:200:255">
-    Apasati 2 pentru download, 3 pentru download manager
+    Press 2 for download, 3 for download manager
 		</text>
   	<text redraw="yes" offsetXPC="85" offsetYPC="12" widthPC="10" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
 		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
@@ -55,7 +62,10 @@ $host = "http://127.0.0.1:82";
 		      backgroundColor=0:0:0 foregroundColor=200:200:200>
 			<script>print(annotation); annotation;</script>
 		</text>
-  	<text  redraw="yes" align="center" offsetXPC="60" offsetYPC="52" widthPC="30" heightPC="5" fontSize="17" backgroundColor="10:105:150" foregroundColor="100:200:255">
+  	<text  redraw="yes" align="left" offsetXPC="55" offsetYPC="52" widthPC="15" heightPC="5" fontSize="17" backgroundColor="10:105:150" foregroundColor="100:200:255">
+		  <script>print(durata); durata;</script>
+		</text>
+  	<text  redraw="yes" align="left" offsetXPC="72" offsetYPC="52" widthPC="30" heightPC="5" fontSize="17" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		  <script>print(pub); pub;</script>
 		</text>
   	<text  redraw="yes" align="center" offsetXPC="0" offsetYPC="90" widthPC="100" heightPC="8" fontSize="17" backgroundColor="10:105:150" foregroundColor="100:200:255">
@@ -82,6 +92,7 @@ $host = "http://127.0.0.1:82";
 					{
                       img = getItemInfo(idx,"image");
 					  annotation = getItemInfo(idx, "annotation");
+					  durata = getItemInfo(idx, "durata");
 					  pub = getItemInfo(idx, "pub");
 					  titlu = getItemInfo(idx, "title");
 					}
@@ -139,16 +150,12 @@ if (userInput == "pagedown" || userInput == "pageup")
   redrawDisplay();
   "true";
 }
-if (userInput == "two" || userInput == "2")
+	if( userInput == "two")
 	{
-     showIdle();
-     url="<?php echo $host; ?>" + "/scripts/clip/php/videonews_link.php?file=" + getItemInfo(getFocusItemIndex(),"download");
-     movie=getUrl(url);
-     cancelIdle();
-	 topUrl = "http://127.0.0.1:82/scripts/util/download.cgi?link=" + movie + ";name=" + getItemInfo(getFocusItemIndex(),"name");
-	 dlok = loadXMLFile(topUrl);
-	 "true";
-}
+		topUrl = "http://127.0.0.1/cgi-bin/scripts/util/download.cgi?link=" + getItemInfo(getFocusItemIndex(),"download") + ";name=" + getItemInfo(getFocusItemIndex(),"name");
+		dlok = loadXMLFile(topUrl);
+		"true";
+	}
 if (userInput == "three" || userInput == "3")
    {
     jumpToLink("destination");
@@ -173,61 +180,63 @@ ret;
 
 	</item_template>
 <destination>
-	<link>http://127.0.0.1:82/scripts/util/level.php
+	<link>http://127.0.0.1/cgi-bin/scripts/util/level.php
 	</link>
 </destination>
-<channel>
-	<title>videonews.ro - tv</title>
-	<menu>main menu</menu>
-
-
 <?php
-$html = file_get_contents("http://videonews.ro/de-la-tv");
-$videos = explode('<div class="category_video_box">', $html);
-
+function str_between($string, $start, $end){ 
+	$string = " ".$string; $ini = strpos($string,$start); 
+	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
+	return substr($string,$ini,$len); 
+}
+$link = $_GET["file"];
+$link="http://gdata.youtube.com".$link;
+$link=str_replace("&","&amp;",$link);
+$html = file_get_contents($link);
+echo '
+	<channel>
+		<title>Youtube</title>
+		<menu>main menu</menu>
+		';
+$videos = explode('<entry>', $html);
 unset($videos[0]);
 $videos = array_values($videos);
-
 foreach($videos as $video) {
-    $t1 = explode('href="', $video);
-    $t2 = explode('"', $t1[1]);
-    $link = "http://videonews.ro".$t2[0];
-
-    $t3=explode('>',$t1[2]);
-    $t4=explode('<',$t3[1]);
-    $title= htmlspecialchars_decode(trim($t4[0]));
-
-    $t1 = explode('src="', $video);
-    $t2 = explode('"', $t1[1]);
-    $image = $t2[0];
-    
-    $t1=explode('Adaugat:',$video);
-    $t2=explode('</p>',$t1[1]);
-    $pub=preg_replace("/(<\/?)(\w+)([^>]*>)/e","",$t2[0]);
-    $name = preg_replace('/[^A-Za-z0-9_]/','_',$title).".flv";
-
+	$id = str_between($video,"<id>http://gdata.youtube.com/feeds/api/videos/","</id>");
+	$title = str_between($video,"<title type='text'>","</title>");
+	$descriere=str_between($video,"<content type='text'>","</content>");
+	$durata = "Durata:".str_between($video,"duration='","'");
+	$data = str_between($video,"<updated>","</updated>");
+	$data = str_replace("T"," ",$data);
+	$data = str_replace("Z","",$data);
+	$data=explode(" ",$data);
+	$data="Data:".$data[0];
+	$image = "http://i.ytimg.com/vi/".$id."/2.jpg";
+	$link = "http://www.youtube.com/watch?v=".$id;
+    $link="http://127.0.0.1/cgi-bin/scripts/util/yt.php?file=".$link;
+    //$link=str_replace("&","&amp;",$link);
+	$name = preg_replace('/[^A-Za-z0-9_]/','_',$title).".mp4";
     echo '
     <item>
     <title>'.$title.'</title>
     <onClick>
-    <script>
     showIdle();
-    url="'.$host.'/scripts/clip/php/videonews_link.php?file='.$link.'";
+    url="'.$link.'";
     movie=getUrl(url);
     cancelIdle();
     playItemUrl(movie,10);
-    </script>
     </onClick>
     <download>'.$link.'</download>
     <name>'.$name.'</name>
-    <annotation>'.$title.'</annotation>
+    <annotation>'.$descriere.'</annotation>
     <image>'.$image.'</image>
-    <pub>'.$pub.'</pub>
+    <durata>'.$durata.'</durata>
+    <pub>'.$data.'</pub>
     <media:thumbnail url="'.$image.'" />
     </item>
     ';
 }
-
 ?>
+
 </channel>
 </rss>

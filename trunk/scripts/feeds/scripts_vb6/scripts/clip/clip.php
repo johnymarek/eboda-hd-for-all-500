@@ -306,7 +306,7 @@ columnCount=5
 	<media:thumbnail url="/scripts/clip/image/220.jpg" />
 	<annotation>220.ro este una dintre cele mai interesante destinatii online pentru divertisment de calitate si noutati din toate domeniile, un site ce ofera materiale unice si nu numai. Totodata, 220.ro este si o comunitate de sharing video unde oricine poate uploada un material pentru a-l trimite mai apoi si prietenilor. In plus, Internetul naste din cand in cand si vedete. Tu poti fi una dintre ele.</annotation>
 </item>
-
+<!--
 <item>
 <title>videonews</title>
 	<link><?php echo $host; ?>/scripts/clip/php/videonews_tv.php</link>
@@ -315,7 +315,7 @@ columnCount=5
 	<media:thumbnail url="/scripts/clip/image/videonews.jpg" />
 	<annotation>Dacă aţi surprins un eveniment, ceva important sau neobişnuit, uploadaţi imaginile pe Videonews. Materialele voastre pot deveni ştiri pe Antena3.ro sau în jurnalele Antenei 3, iar cele mai bune materiale primite vor fi premiate.</annotation>
 </item>
-
+-->
 <item>
 <title>peteava.ro</title>
 	<link><?php echo $host; ?>/scripts/clip/peteava_main.php</link>
@@ -460,6 +460,15 @@ columnCount=5
 	<image>/scripts/user/image/metafeeds.jpg</image>
 	<media:thumbnail url="/scripts/user/image/metafeeds.jpg" />
 	<annotation>Video Podcast from SDK4</annotation>
+</item>
+
+<item>
+<title>HD Podcast</title>
+	<link><?php echo $host; ?>/scripts/clip/php/podcasthd.php</link>
+	<location>http://www.podcast.tv/high-definition-video-podcasts.html</location>
+	<image>/usr/local/etc/www/cgi-bin/scripts/clip/image/podcast.png</image>
+	<media:thumbnail url="/usr/local/etc/www/cgi-bin/scripts/clip/image/podcast.png" />
+	<annotation>HD-Podcasts (High Definition)  | podcast.tv is an international video podcast directory with podcast recommendations and useful podcasting functions for enjoying podcasts and learn how to podcast</annotation>
 </item>
 
 <item>

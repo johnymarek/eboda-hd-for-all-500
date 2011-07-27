@@ -254,13 +254,19 @@ ret;
 <annotation>http://filmeromania.blogspot.com/</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
-
+<!--
 <item>
 <title>documentare.org - filme si seriale documentare</title>
 <link><?php echo $host; ?>/scripts/filme/php/documentare_main.php</link>
 <annotation>http://documentare.org</annotation>
 <mediaDisplay name="threePartsView"/>
 </item>
-
+-->
+<item>
+<title>jurnaltv.ro - filme si seriale documentare</title>
+<link><?php echo $host; ?>/scripts/filme/php/jurnaltv_main.php</link>
+<annotation>http://www.jurnaltv.ro</annotation>
+<mediaDisplay name="threePartsView"/>
+</item>
 </channel>
 </rss>

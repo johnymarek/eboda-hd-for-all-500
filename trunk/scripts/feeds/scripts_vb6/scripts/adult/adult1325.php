@@ -167,6 +167,12 @@ $host = "http://127.0.0.1:82";
 </item>
 -->
 <item>
+<title>pornofanatic</title>
+  <link><?php echo $host; ?>/scripts/adult/php/pornofanatic.php</link>
+<image>/usr/local/etc/www/cgi-bin/scripts/adult/image/pornofanatic.jpg</image>
+<mediaDisplay name="threePartsView"/>
+</item>
+<item>
 <title>Tube8</title>
   <link><?php echo $host; ?>/scripts/adult/tube8.php</link>
 <image>/scripts/adult/image/tube8.png</image>
@@ -353,7 +359,7 @@ XXX4PODS
         <idleImage>image/POPUP_LOADING_08.png</idleImage>
 </mediaDisplay>
 </item>
-
+<!--
 <item>
 <title>French Maid TV</title>
 <link>http://feeds.feedburner.com/FrenchMaidTV</link>
@@ -380,7 +386,7 @@ French Maid TV
 </mediaDisplay>
 <image>/scripts/adult/image/french_maid_tv.png</image>
 </item>
-
+-->
   <item>
 <title>TnaFlix</title>
 <link><?php echo $host; ?>/scripts/adult/tna.php</link>

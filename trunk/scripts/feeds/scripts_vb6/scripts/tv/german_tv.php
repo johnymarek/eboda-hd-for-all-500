@@ -1,9 +1,10 @@
+#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php echo "<?xml version='1.0' encoding='UTF8' ?>";
-$host = "http://127.0.0.1:82";
+$host = "http://127.0.0.1/cgi-bin";
 ?>
 <rss version="2.0">
 <script>
-  translate_base_url  = "http://127.0.0.1:83/cgi-bin/translate?";
+  translate_base_url  = "http://127.0.0.1/cgi-bin/translate?";
 
   storagePath             = getStoragePath("tmp");
   storagePath_stream      = storagePath + "stream.dat";
@@ -153,70 +154,102 @@ ret;
 		</mediaDisplay>
 
 	</item_template>
+
 <channel>
-	<title>TV Live - Canale noi</title>
+	<title>TV Live - Deutschland</title>
 	<menu>main menu</menu>
 
-   <item>
-    <title>BBC1</title>
-    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,mms://195.90.118.88/BBC1_1?MSWMExt=.asf",10);</onClick>
-  </item>
+<item>
+<title>NDR Hamburg</title>
+<onClick>playItemUrl("http://127.0.0.1/cgi-bin/translate?stream,,mms://ndr-fs-hh-hi-wmv.wm.llnwd.net/ndr_fs_hh_hi_wmv",10);</onClick>
+</item>
+<item>
+<title>3Sat</title>
+<onClick>playItemUrl("http://127.0.0.1/cgi-bin/translate?stream,,mms://a62.l12560554061.c125605.g.lm.akamaistream.net/D/62/125605/v0001/reflector:54061",10);</onClick>
+</item>
+<item>
+<title>Rhein Main TV Livestream</title>
+<onClick>playItemUrl("http://127.0.0.1/cgi-bin/translate?stream,,mms://rheinmaintv-livestream.de/rmtv-livestream",10);</onClick>
+</item>
+<item>
+<title>Fashion-TV_deutsch_15</title>
+<onClick>playItemUrl("http://127.0.0.1/cgi-bin/translate?stream,,mms://213.155.73.87/Fashion-TV_deutsch_15",10);</onClick>
+</item>
+<item>
+<title>ARD Tagesschau</title>
+<onClick>playItemUrl("http://127.0.0.1/cgi-bin/translate?stream,,mms://tagesschau-live2-webm-wmv.wm.llnwd.net/tagesschau_live2_webm_wmv",10);</onClick>
+</item>
+<item>
+<title>AlexTV</title>
+<onClick>playItemUrl("http://127.0.0.1/cgi-bin/translate?stream,,rtmp://alex-stream.rosebud-media.de/live/flv:alexlivestream",10);</onClick>
+</item>
 
-   <item>
-    <title>BBC2</title>
-    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,mms://195.90.118.88/BBC2_1?MSWMExt=.asf",10);</onClick>
-  </item>
+<item>
+<title>NRW TV</title>
+<onClick>playItemUrl("http://127.0.0.1/cgi-bin/translate?stream,,rtmp://82.197.179.191:1935/nrwtv/nrwtv",10);</onClick>
+</item>
+<item>
+<title>NOA4 Hamburg</title>
+<onClick>playItemUrl("http://127.0.0.1/cgi-bin/translate?stream,,mms://wt-wm1.wtnet.de/noa4hh-stream-mid?.wma",10);</onClick>
+</item>
+<item>
+<title>VRF Vogtland </title>
+<onClick>playItemUrl("http://127.0.0.1/cgi-bin/translate?stream,,mms://stream.vrf.de/VRF",10);</onClick>
+</item>
+<item>
+<title>Center.tv Dusseldorf</title>
+<onClick>playItemUrl("http://127.0.0.1/cgi-bin/translate?stream,,mms://80.246.121.90/ctv",10);</onClick>
+</item>
+<item>
+<title>1-2-3 TV</title>
+<onClick>playItemUrl("http://127.0.0.1/cgi-bin/translate?stream,,rtmp://cp83240.live.edgefcs.net:80/live?ovpfv=1.1/123TV_Live_Flash@14882",10);</onClick>
+</item>
+<item>
+<title>Oberpfalz TV</title>
+<onClick>playItemUrl("http://127.0.0.1/cgi-bin/translate?stream,,rtmp://sv18.muc2.hofmeirmedia.net/otv/otv/otv",10);</onClick>
+</item>
+<item>
+<title>Feuer TV</title>
+<onClick>playItemUrl("http://127.0.0.1/cgi-bin/translate?stream,,mms://213.155.73.172/feuer-tv_standard_10",10);</onClick>
+</item>
+<item>
+<title>Franken TV</title>
+<onClick>playItemUrl("http://127.0.0.1/cgi-bin/translate?stream,,rtmp://flash1.stream24.net:80/frankentv/live",10);</onClick>
+</item>
+<item>
+<title>Worm TV</title>
+<onClick>playItemUrl("http://127.0.0.1/cgi-bin/translate?stream,,mms://wms.global-streaming.net/04988",10);</onClick>
+</item>
+<item>
+<title>Oeins TV</title>
+<onClick>playItemUrl("http://127.0.0.1/cgi-bin/translate?stream,,rtmp://streaming.orgatech.de/live/oeins",10);</onClick>
+</item>
+<item>
+<title>QVC Deutschland</title>
+<onClick>playItemUrl("http://127.0.0.1/cgi-bin/translate?stream,,rtmp://fml.0D89.edgecastcdn.net/200D89/qvc01-16_9_1",10);</onClick>
+</item>
+<item>
+<title>Sonnenklar TV</title>
+<onClick>playItemUrl("http://127.0.0.1/cgi-bin/translate?stream,,rtmp://c11010-l.f.core.cdn.streamfarm.net/11010euvia/live/3843sonnenklartv/live_de_550",10);</onClick>
+</item>
+<item>
+<title>Auto TV</title>
+<onClick>playItemUrl("http://127.0.0.1/cgi-bin/translate?stream,,mms://213.155.85.158/TuningWorld-TV_Auto-TV_15",10);</onClick>
+</item>
+<item>
+<title>DAF</title>
+<onClick>playItemUrl("http://127.0.0.1/cgi-bin/translate?stream,,rtmp://fms.daf.tmt.de:1935/live/dafstream",10);</onClick>
+</item>
 
-   <item>
-    <title>Cielo</title>
-    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,rtmp://cp86825.live.edgefcs.net/live/cielo_std@17630",10);</onClick>
-  </item>
+<item>
+<title>Thueringer Landtag</title>
+<onClick>playItemUrl("http://127.0.0.1/cgi-bin/translate?stream,,mms://streaming-internet2.fem.tu-ilmenau.de/landtag_dsl",10);</onClick>
+</item>
+<item>
+<title>Massive Mag TV</title>
+<onClick>playItemUrl("http://127.0.0.1/cgi-bin/translate?stream,,mms://stream01.massive-mag.tv/massivemag_mq",10);</onClick>
+</item>
 
-   <item>
-    <title>Sky Tg 24</title>
-    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,rtmp://cp49989.live.edgefcs.net:1935/live?videoId=53404915001&lineUpId=&pubId=1445083406&playerId=760707277001&affiliateId=/streamRM1@2564",10);</onClick>
-  </item>
-
-   <item>
-    <title>QVC</title>
-    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,rtmp://cp107861.live.edgefcs.net/live/QVC_Italy_Stream1200@34577",10);</onClick>
-  </item>
-
-   <item>
-    <title>Videolina</title>
-    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,rtmp://91.121.222.160/videolinalive/videolinalive.sdp",10);</onClick>
-  </item>
-
-   <item>
-    <title>Quararete TV</title>
-    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,rtmp://wowza1.top-ix.org/quartaretetv/quartareteweb",10);</onClick>
-  </item>
-
-   <item>
-    <title>NDR</title>
-    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,mms://ndr-fs-hh-hi-wmv.wm.llnwd.net/ndr_fs_hh_hi_wmv",10);</onClick>
-  </item>
-
-   <item>
-    <title>NASA Space Shuttle Launch</title>
-    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,http://playlist.yahoo.com/makeplaylist.dll?id=1368163",10);</onClick>
-  </item>
-
-   <item>
-    <title>hr fernsehen</title>
-    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,rtmp://gffstream.fc.llnwd.net/gffstream/005/hr-fernsehen-1",10);</onClick>
-  </item>
-
-
-   <item>
-    <title>Video  BR-Mediathek</title>
-    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,rtmp://cp121359.live.edgefcs.net:1935/live/b7_bfssued_m@49987",10);</onClick>
-  </item>
-
-   <item>
-    <title>LCP</title>
-    <onClick>playItemUrl("http://127.0.0.1:83/cgi-bin/translate?stream,,rtmp://stream2.lcp.yacast.net/lcp_live/lcptnt",10);</onClick>
-  </item>
 
 </channel>
 </rss>

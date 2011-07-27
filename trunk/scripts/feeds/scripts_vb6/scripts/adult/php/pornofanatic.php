@@ -1,5 +1,6 @@
+#!/usr/local/bin/Resource/www/cgi-bin/php
 <?php echo "<?xml version='1.0' encoding='UTF8' ?>";
-$host = "http://127.0.0.1:82";
+$host = "http://127.0.0.1/cgi-bin";
 ?>
 <rss version="2.0">
 <onEnter>
@@ -37,32 +38,21 @@ $host = "http://127.0.0.1:82";
 	showHeader="no"
 	showDefaultInfo="no"
 	imageFocus=""
-	sliding="no"
+	sliding="no" idleImageXPC="5" idleImageYPC="5" idleImageWidthPC="8" idleImageHeightPC="10"
 >
 
   	<text align="center" offsetXPC="0" offsetYPC="0" widthPC="100" heightPC="20" fontSize="30" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		  <script>getPageInfo("pageTitle");</script>
 		</text>
-  	<text align="left" offsetXPC="6" offsetYPC="15" widthPC="100" heightPC="4" fontSize="16" backgroundColor="10:105:150" foregroundColor="100:200:255">
-    Apasati 2 pentru download, 3 pentru download manager
-		</text>
   	<text redraw="yes" offsetXPC="85" offsetYPC="12" widthPC="10" heightPC="6" fontSize="20" backgroundColor="10:105:150" foregroundColor="60:160:205">
 		  <script>sprintf("%s / ", focus-(-1))+itemCount;</script>
 		</text>
-		<text align="justify" redraw="yes"
-          lines="8" fontSize=17
-		      offsetXPC=55 offsetYPC=58 widthPC=40 heightPC=38
-		      backgroundColor=0:0:0 foregroundColor=200:200:200>
-			<script>print(annotation); annotation;</script>
-		</text>
-  	<text  redraw="yes" align="center" offsetXPC="60" offsetYPC="52" widthPC="30" heightPC="5" fontSize="17" backgroundColor="10:105:150" foregroundColor="100:200:255">
-		  <script>print(pub); pub;</script>
-		</text>
+
   	<text  redraw="yes" align="center" offsetXPC="0" offsetYPC="90" widthPC="100" heightPC="8" fontSize="17" backgroundColor="10:105:150" foregroundColor="100:200:255">
 		  <script>print(titlu); titlu;</script>
 		</text>
-		<image  redraw="yes" offsetXPC=60 offsetYPC=25 widthPC=30 heightPC=25>
-  <script>print(img); img;</script>
+		<image  redraw="yes" offsetXPC=60 offsetYPC=25 widthPC=30 heightPC=30>
+  image/adult.png
 		</image>
 		<idleImage> image/POPUP_LOADING_01.png </idleImage>
 		<idleImage> image/POPUP_LOADING_02.png </idleImage>
@@ -82,8 +72,6 @@ $host = "http://127.0.0.1:82";
 					{
                       img = getItemInfo(idx,"image");
 					  annotation = getItemInfo(idx, "annotation");
-					  pub = getItemInfo(idx, "pub");
-					  titlu = getItemInfo(idx, "title");
 					}
 					getItemInfo(idx, "title");
 				</script>
@@ -116,7 +104,7 @@ $host = "http://127.0.0.1:82";
 <script>
 ret = "false";
 userInput = currentUserInput();
-
+titlu="";
 if (userInput == "pagedown" || userInput == "pageup")
 {
   idx = Integer(getFocusItemIndex());
@@ -137,22 +125,7 @@ if (userInput == "pagedown" || userInput == "pageup")
   setFocusItemIndex(idx);
 	setItemFocus(0);
   redrawDisplay();
-  "true";
-}
-if (userInput == "two" || userInput == "2")
-	{
-     showIdle();
-     url="<?php echo $host; ?>" + "/scripts/clip/php/videonews_link.php?file=" + getItemInfo(getFocusItemIndex(),"download");
-     movie=getUrl(url);
-     cancelIdle();
-	 topUrl = "http://127.0.0.1:82/scripts/util/download.cgi?link=" + movie + ";name=" + getItemInfo(getFocusItemIndex(),"name");
-	 dlok = loadXMLFile(topUrl);
-	 "true";
-}
-if (userInput == "three" || userInput == "3")
-   {
-    jumpToLink("destination");
-    "true";
+  ret="true";
 }
 ret;
 </script>
@@ -172,39 +145,31 @@ ret;
 		</mediaDisplay>
 
 	</item_template>
-<destination>
-	<link>http://127.0.0.1:82/scripts/util/level.php
-	</link>
-</destination>
 <channel>
-	<title>videonews.ro - tv</title>
+	<title>PornTV - pornofanatic.com</title>
 	<menu>main menu</menu>
 
 
 <?php
-$html = file_get_contents("http://videonews.ro/de-la-tv");
-$videos = explode('<div class="category_video_box">', $html);
+function str_between($string, $start, $end){
+	$string = " ".$string; $ini = strpos($string,$start); 
+	if ($ini == 0) return ""; $ini += strlen($start); $len = strpos($string,$end,$ini) - $ini; 
+	return substr($string,$ini,$len); 
+}
+$html = file_get_contents("http://www.pornofanatic.com/index.php");
+$videos = explode('porntv.php', $html);
 
 unset($videos[0]);
 $videos = array_values($videos);
 
 foreach($videos as $video) {
-    $t1 = explode('href="', $video);
-    $t2 = explode('"', $t1[1]);
-    $link = "http://videonews.ro".$t2[0];
-
-    $t3=explode('>',$t1[2]);
-    $t4=explode('<',$t3[1]);
-    $title= htmlspecialchars_decode(trim($t4[0]));
-
-    $t1 = explode('src="', $video);
-    $t2 = explode('"', $t1[1]);
-    $image = $t2[0];
+    $t1 = explode('"', $video);
+    $link = urlencode("http://www.pornofanatic.com/porntv.php".$t1[0]);
     
-    $t1=explode('Adaugat:',$video);
-    $t2=explode('</p>',$t1[1]);
-    $pub=preg_replace("/(<\/?)(\w+)([^>]*>)/e","",$t2[0]);
-    $name = preg_replace('/[^A-Za-z0-9_]/','_',$title).".flv";
+    $t2 = explode(">",$video);
+    $t3 = explode("<",$t2[1]);
+    $title=$t3[0];
+    if (strpos($title,"Adult TV") !==false) {
 
     echo '
     <item>
@@ -212,22 +177,20 @@ foreach($videos as $video) {
     <onClick>
     <script>
     showIdle();
-    url="'.$host.'/scripts/clip/php/videonews_link.php?file='.$link.'";
+    url="'.$host.'/scripts/adult/php/pornofanatic_link.php?file='.$link.'";
     movie=getUrl(url);
+    titlu=movie;
     cancelIdle();
     playItemUrl(movie,10);
     </script>
     </onClick>
-    <download>'.$link.'</download>
-    <name>'.$name.'</name>
-    <annotation>'.$title.'</annotation>
-    <image>'.$image.'</image>
-    <pub>'.$pub.'</pub>
-    <media:thumbnail url="'.$image.'" />
     </item>
     ';
+    }
 }
 
+
 ?>
+
 </channel>
 </rss>

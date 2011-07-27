@@ -289,6 +289,15 @@ columnCount=5
 </item>
 
 <item>
+<title>www.footytube.com</title>
+<link><?php echo $host; ?>/scripts/tv/sport/footytube.php?query=0</link>
+<media:thumbnail url="/usr/local/etc/www/cgi-bin/scripts/tv/image/sportgioco.jpg" />
+<image>/usr/local/etc/www/cgi-bin/scripts/tv/image/footytube.png</image>
+<location>http://www.footytube.com</location>
+<annotation>footytube.com. Latest football highlights, clips and videos.</annotation>
+</item>
+
+<item>
 <title>DigiSport - youtube</title>
 <link><?php echo $host; ?>/scripts/php1/youtube_user.php?query=1,DigiSportTV</link>
 <image>/scripts/image/youtube.gif</image>

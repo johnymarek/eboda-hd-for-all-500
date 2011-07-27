@@ -199,7 +199,9 @@ foreach($videos as $video) {
 
     $html = file_get_contents($link);
     $link = urldecode(str_between($html, 'class="form-input" value="', '"'));
-
+    if (strpos($link,"format=xml") === false) {
+      $link=$link."?format=xml";
+    }
     echo '
     <item>
     <title>'.$title.'</title>
