@@ -11,11 +11,13 @@ s#>image/adult.png#>/scripts/image/adult.png#g
 s#>image/internetradio.png#>/scripts/image/internetradio.png#g
 s#>image/left.jpg#>/scripts/image/left.jpg#g
 s#>image/movies.png#>/scripts/image/movies.png#g
+s#"image/movies.png"#"/scripts/image/movies.png"#g
 s#>image/right.jpg#>/scripts/image/right.jpg#g
 s#>image/search.png#>/scripts/image/search.png#g
 s#>image/system.png#>/scripts/image/system.png#g
 s#>image/tvigle.png#>/scripts/image/tvigle.png#g
 s#>image/tv_radio.png#>/scripts/image/tv_radio.png#g
+s#"image/tv_radio.png"#"/scripts/image/tv_radio.png"#g
 s#>image/videoclip.png#>/scripts/image/videoclip.png#g
 s#>image/youtube.gif#>/scripts/image/youtube.gif#g
 s#../etc/translate/rss/image#/scripts/image#g

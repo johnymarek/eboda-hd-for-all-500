@@ -1,0 +1,44 @@
+--- scripts_hg/filme/php/link.php	2011-09-23 20:16:51.742764644 +0300
++++ scripts_patch//filme/php/link.php	2011-09-24 09:36:41.953698054 +0300
+@@ -55,6 +54,13 @@
+   if ($seed == "") {
+      return "";
+   }
++
++  
++  $out=`/scripts/bin/t 0x$seed $movie`;
++  $out=rtrim($out);
++  return $out;
++
++  
+   $r=r();
+   $s = hexdec($seed);
+   $local3 = crunch($s,$movie);
++++ scripts_patch/filme/php/link1.php	2011-09-24 09:36:28.090269883 +0300
+@@ -385,6 +384,12 @@
+   if ($seed == "") {
+      return "";
+   }
++
++  $out=`/scripts/bin/t 0x$seed $movie`;
++  $out=rtrim($out);
++  return $out;
++
++  
+   $r=r();
+   $s = hexdec($seed);
+   $local3 = crunch($s,$movie);
+--- scripts_hg/filme/php/peteava_link.php	2011-07-27 23:30:26.381217233 +0300
++++ scripts_patch/filme/php/peteava_link.php	2011-09-24 09:36:12.549716380 +0300
+@@ -37,6 +36,11 @@
+   if ($seed == "") {
+      return "";
+   }
++
++  $out=`/scripts/bin/t 0x$seed $movie`;
++  $out=rtrim($out);
++  return $out;
++  
+   $r=r();
+   $s = hexdec($seed);
+   $local3 = crunch($s,$movie);
