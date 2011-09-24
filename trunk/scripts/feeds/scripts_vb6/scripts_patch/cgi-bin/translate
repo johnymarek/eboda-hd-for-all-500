@@ -1,0 +1,4 @@
+#!/bin/sh
+
+TRANSLATE=/scripts
+PATH=$TRANSLATE/bin:$PATH exec translate.cgi

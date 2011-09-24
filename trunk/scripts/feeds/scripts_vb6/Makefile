@@ -1,5 +1,9 @@
+default:
+	@echo "use make [clean|deliver|scripts4-latest.zip|patch|sync]"
+
+
 clean:
-	rm scripts4-latest.zip
+	rm -f scripts4-latest.zip
 deliver: scripts4-latest.zip
 
 
@@ -19,7 +23,12 @@ patch2:
 	done
 #		sed -i -e "s/#\/scripts\/\/scripts#>\/scripts#g//g" $$i;
 
-patch:
+files_copy:
+	rsync -a --exclude '.hg' --exclude '.svn' scripts_patch/* scripts/
+	cd scripts;patch -p1 < ../peteava.patch;cd ..
+
+patch:  files_copy
+
 	for i in ` find scripts -type f | grep -v .svn `; do \
 	echo $$i; \
 	grep 'http://127.0.0.1' $$i; \
