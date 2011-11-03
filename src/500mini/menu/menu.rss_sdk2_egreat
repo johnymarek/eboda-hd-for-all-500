@@ -1,0 +1,481 @@
+<?xml version='1.0' ?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<onEnter>
+	VooleDisable ="yes";
+	osdlang=getCurrentSetting("OSD_Language");
+		if(osdlang == "cn")
+			VooleDisable ="no";
+</onEnter>
+
+<mediaDisplay name=onePartView imageLeftSide="image/ims_left.jpg" 
+	backgroundColor=102:137:204 
+	sideColorRight=102:137:204 
+	showHeader="no"
+	showDefaultInfo="no"
+	/>
+<channel>
+	<title>Main Menu::Internet Video Download - Main Menu</title>
+	<link>./scripts/menu.rss</link>
+        <media:thumbnail url="image/rss1.png" width="120" height="90" />
+	<menu>main menu</menu>	
+
+
+<!--<item>
+<title>browser</title>
+<link>rss_file://./scripts/browser.rss</link>
+<media:thumbnail url="image/stock.jpg"  />
+<mediaDisplay name=threePartsView />
+</item>-->
+
+<!--
+<item>
+<title>
+Sina News
+</title>
+<link>
+rss_file://./IMS_Modules/SinaIMS/scripts/sina_news.rss
+</link>
+<media:thumbnail>
+<script>
+	state = getDrawingItemState();	
+	print("SSS", state);
+	if (state == "focus"){
+		"./IMS_Modules/SinaIMS/image/sinanews.png";
+	}
+	else {
+		"./IMS_Modules/SinaIMS/image/sinanews_unfocus.png";
+	}
+</script>
+</media:thumbnail>
+</item>
+-->
+<!--
+<item>
+<title>pandora</title>
+<image>pandora_logo.jpg</image>
+<onClick>
+             nexturl=null;
+             allowed = pandora_checkIP();
+             if( allowed == "true" )
+			 {
+                    if (pandora_partnerLogin() == "true")
+					{
+                             devl = pandora_deviceLogin();
+                             if (devl == "true")
+							 { 
+                                      nexturl = "rss_file://./IMS_Modules/Pandora/pandora_stationlist.rss";
+                              } 
+							  else if (devl == "false")
+							  { 
+                                       nexturl = "rss_file://./IMS_Modules/Pandora/pandora_welcome.rss";
+                              }
+							  else
+							  { 
+                                       popup_msg("an unexpected error happened, please try again later");
+                              }
+                     }
+					 else
+					 { 
+					 						
+                              popup_msg("an unexpected error happened, please try again later");
+                     }
+            }
+			else if (allowed == "false")
+			{ 
+                     popup_msg("pandora is not available in your region");
+             }
+			 else
+			 {
+                     popup_msg("an unexpected error happened, please try again later");
+             }
+             nexturl;
+</onClick> 
+</item>
+-->
+
+<item>
+  <title>vb6ro netMedia</title>^M
+  <link>http://localhost:82/scripts/menu.rss</link>^M
+  <media:thumbnail url="./scripts/image/hdd_unfocus.jpg" width="120" height="90" />
+  </item>^M
+
+<item>
+  <title>xLive</title>
+  <link>http://localhost:82/xLive/menu.rss</link>
+  <media:thumbnail url="./scripts/image/xlive_unfocus.jpg" width="120" height="90" />
+  </item>^M
+
+<item>
+  <title>Rss Ex</title>
+  <link>rss_file://./rss/menuEx.rss</link>
+  <media:thumbnail url="./scripts/image/rssex_unfocus.jpg" width="120" height="90" />
+  </item>^M
+
+<item>
+  <title>xVoD</title>
+  <link>http://localhost:82/xVoD/php/index.php</link>
+  <media:thumbnail url="./scripts/image/xvod_unfocus.jpg" width="120" height="90" />
+</item>^M
+
+
+<item>
+<title>Internet Channels </title>
+<link>rss_file://./scripts/video_guide.rss</link>
+<media:thumbnail url="image/internetvideo.jpg" width="120" height="90" />
+<mediaDisplay name=threePartsView showNestedHeader=no showDefaultInfo="no"/>
+</item>
+
+<!-- del by jesse
+<item>
+<title>Internet Radio</title>
+<link>rss_file://./scripts/radio.rss</link>
+<media:thumbnail url="image/internetvideo.jpg" width="120" height="90" />
+<mediaDisplay name=threePartsView />
+</item>
+-->
+
+<item>
+<title>$[SEARCH_VIDEO]</title>
+<link>rss_file://./scripts/searchVideo.rss</link>
+<media:thumbnail url="image/searchvideo.jpg" width="120" height="90" />
+<mediaDisplay name=threePartsView 
+showNestedHeader=no
+showDefaultInfo=no
+popupXPC = 9.7
+popupYPC = 24.5
+popupFontSize = 17
+popupWidthPC = 15
+popupBorderColor = 0:0:0/>
+</item>
+
+<!-- del by jesse
+<item>
+<title>Media Library</title>
+<link>sql://order by downloadDate</link>
+<media:thumbnail url="image/medialib.jpg" width="120" height="90" />
+<mediaDisplay name=threePartsView menuXPC=5 showNestedHeader=no showDefaultInfo=no menuWidthPC=22
+popupXPC = 5 
+popupYPC = 25
+popupFontSize = 12
+popupWidthPC = 15
+popupBorderColor = 0:0:0
+/>
+-->
+<!--
+<submenu name="Search Keyword" description="Search all the contents using keyword" sql_filter="title like '%%%s%%'" input1="Title Match" input2=input1 />
+<submenu name="Show All" sql_group="itemID" sql_order="ORDER BY downloadDate DESC"/>
+<!--<submenu name="Delete All" sql_command="DELETE FROM itemTable" />-->
+<submenu name="Group by Channel" sql_group="channelID" />
+<submenu name="Group by Author" sql_group="author" />
+<submenu name="Sort by Title" sql_order="ORDER BY title" />
+<submenu name="Sort by Channel" sql_order="ORDER BY channelID DESC" />
+<submenu name="Sort by Download date" sql_order="ORDER BY downloadDate DESC" />
+<submenu name="Sort by Publish date" sql_order="ORDER BY pubDate DESC" />
+-->
+<!--
+<submenu name="Show Channels"> 
+<title>Show Channels</title>
+<link>sql://</link>
+<media:thumbnail url="image/film.jpg" width="120" height="90" />
+<init sql_group="channelID" />
+<submenu name="Search Keyword"  description="Search all the contents using keyword" sql_filter="title like '%%%s%%'" input1="Title Match" input2=input1 />
+<submenu name="Sort by Title"  sql_order="ORDER BY title" />
+<submenu name="Sort by Channel"  sql_order="ORDER BY channelID DESC" />
+<submenu name="Sort by Download date"  sql_order="ORDER BY downloadDate DESC" />
+<submenu name="Sort by Publish date"  sql_order="ORDER BY pubDate DESC" />
+-->
+<!--
+</submenu>
+
+</item>
+-->
+
+
+<!--
+<item>
+<title>Sina</title>
+<link>rss_file://./IMS_Modules/SinaIMS/scripts/sina_service.rss</link>
+<media:thumbnail url="image/sinalogo.png" />
+</item>
+-->
+<!-- del by jesse
+<item>
+<title>BESTV</title>
+<link>rss_file://./IMS_Modules/BesTV/scripts/bestv_guide.rss</link>
+<media:thumbnail url="image/sinalogo.png" />
+</item>
+-->
+<item>
+<title>Voole</title>
+<disable>
+	<script>
+		VooleDisable;
+	</script>
+</disable>
+<link>rss_file://./IMS_Modules/Voole/scripts/voole_menu.rss</link>
+<media:thumbnail url="./IMS_Modules/Voole/image/voole_logo.jpg" />
+</item>
+
+
+<!--
+
+<item>
+<title>Sina Music</title>
+<link>rss_file://./scripts/mymusic.rss</link>
+<media:thumbnail url="image/film.jpg" width="120" height="90" />
+<mediaDisplay name=threePartsView autoSelectItem=no
+imageRightSide="image/sina_music.jpg"
+	menuXPC = 5 
+	menuYPC = 16
+	menuWidthPC = 15
+	menuHeightPC = 8	/>
+</item>
+-->
+
+
+<!--
+<item>
+<title>torrent</title>
+<link>btpd://list</link>
+<media:thumbnail url="image/weather.jpg" width="120" height="90" />
+<mediaDisplay name=threePartsView />
+</item>
+-->
+
+<item>
+<title>Weather</title>
+<link>rss_file://./scripts/map/myfavorites.rss</link>
+<media:thumbnail url="image/weather.jpg" width="120" height="90" />
+<mediaDisplay name=photoView rowCount=8 columnCount=4 drawItemText="yes" sliding="no" viewAreaXPC = 2/>
+</item>
+
+<!--<item>
+<title>BT</title>
+<link>rss_file://./scripts/torrent.rss</link>
+<media:thumbnail url="image/weather.jpg" width="120" height="90" />
+<mediaDisplay name=threePartsView />
+</item>-->
+
+<!--
+<item>
+<title>Stock</title>
+<link>rss_file://./scripts/stock/world.rss</link>
+<media:thumbnail url="image/stock.jpg"  />
+<mediaDisplay name=photoView
+ rowCount=10 columnCount=3
+drawItemText="yes"
+sliding="no"
+itemImageWidthPC=0
+itemImageHeightPC=0
+fontFactor = 0.75
+ /> 
+</item>
+-->
+
+
+<!--
+<item>
+<title>EPG</title>
+<link>epg://</link>
+<database rec="/usr/local/etc/dvdplayer/schedule_record.db"
+		  his="/usr/local/etc/dvdplayer/schedule_history.db" />
+<media:thumbnail url="image/logo_epg.gif" width="120" height="90" />
+<mediaDisplay name=2MenusNColumnsView />
+</item>-->
+
+
+<item>
+<title>Picasa</title>
+<link>picasa://</link>
+<media:thumbnail url="image/picasa.gif" width="120" height="90" />
+<mediaDisplay name=photoView backgroundImage="../HiMediaTheme13.jpg"
+rowCount=3 columnCount=7 viewAreaXPC = 2 menuOffsetYPC=6 itemOffsetYPC=24
+sideTopHeightPC=22 canAddToFavorit=no
+ />
+
+<submenu name="$[SEARCH_FOR_PHOTO]"  description="Search all the Photos using keyword">
+<url>http://picasaweb.google.com/data/feed/api/all?q=%s&amp;max-results=48&amp;thumbsize=288</url>
+<nextPageItemCount> 48 </nextPageItemCount>
+<input name="keyword"> keyword </input>
+</submenu>
+
+<submenu name="$[LOGIN]"  description="Login in Picasa using User Name">
+<url>http://picasaweb.google.com/data/feed/api/user/%s?kind=album </url>
+<input name="keyword"> keyword </input>
+</submenu>
+
+<!--
+<submenu name="YehMoMo"  description="Login in Picasa using User Name">
+<url>http://picasaweb.google.com/data/feed/api/user/yehmomo?kind=album </url>
+</submenu>
+-->
+
+</item>
+
+<!-- del by jesse
+<item>
+<title>Flickr</title>
+<link>./IMS_Modules/Flickr/flickr.rss</link>
+<media:thumbnail url="image/picasa.gif" width="120" height="90" />
+</item>
+-->
+
+<!-- del by jesse
+<item>
+<title>FrameChannel </title>
+<link>rss_file://./scripts/framechannel.rss</link>
+<media:thumbnail url="image/internetvideo.jpg" width="120" height="90" />
+</item>
+-->
+
+<!--
+<item>
+<title>DLNA/UPnP</title>
+<link>upnp://</link>
+<media:thumbnail url="image/picasa.gif" width="120" height="90" />
+<mediaDisplay name=threePartsView />
+</item>
+-->
+
+<item>
+<title>RSS News</title>
+<link>rss_file://./scripts/news.rss</link>
+<media:thumbnail url="image/rss247.jpg" width="120" height="90" />
+<mediaDisplay name=onePartView sideLeftWidthPC=24
+   headerImageXPC = 25  headerXPC = 34
+   itemImageXPC = 26 itemImageYPC = 18
+   itemImageHeightPC=7 itemImageWidthPC=7
+   itemXPC = 34  itemYPC = 17
+   itemHeightPC=8 itemWidthPC=60 
+   itemPerPage=9 imageLeftSide="image/ims_left.jpg"  
+   sideColorRight=28:21:51 backgroundColor=28:21:51
+   showDefaultInfo=no
+   />
+</item>
+
+<!--
+<item>
+<title>Demo Of the Views</title>
+<link>rss_file://./scripts/demoView.rss</link>
+<media:thumbnail url="image/microsoft.jpg" width="120" height="90" />
+<mediaDisplay name=onePartView imageLeftSide_tile="image/microsoft.jpg" 
+sideLeftWidthPC=20
+sideRightWidthPC=15
+itemImageXPC= 22
+itemXPC= 36
+imageRightSide_tile="image/leftSide1.jpg"/>
+</item>
+-->
+
+<!-- 
+del by jesse
+<item>
+<title>Main Menu New!</title>
+<link>rss_file://./scripts/menu1.rss</link>
+<media:thumbnail url="image/rss1.jpg" width="120" height="90" />
+<mediaDisplay name=photoView centerXPC=10 />
+</item>
+end jesse
+-->
+
+<!--
+<item>
+<title>LGE example</title>
+<link>rss_file://./scripts/menu_lge.rss</link>
+<media:thumbnail url="image/rss1.jpg"  />
+<mediaDisplay name=photoView 
+
+  sideTopHeightPC=13
+  centerYPC=35
+  centerHeightPC=20
+  bottomYPC=80
+
+  rowCount=1 
+  columnCount=2
+
+  imageTopSide="image/top_bg.jpg"
+  imageBottomSide="image/top_bg.jpg"
+
+  backgroundColor=10:10:10
+  sideColorTop=10:10:10
+  sideColorBottom=10:10:10
+
+  imageBorderColor=228:228:0
+  imageBorderPC=1
+
+  itemOffsetXPC=30
+  itemGapXPC=4
+  itemGapYPC=4
+
+  showDefaultInfo=no >
+
+</mediaDisplay>
+
+
+<showRootMenu>yes</showRootMenu>
+</item>
+-->
+<!--
+<item>
+<title>File Browser</title>
+<link>rss_file://./scripts/filebrowser.rss</link>
+<media:thumbnail url="image/rss1.jpg" width="120" height="90" />
+<mediaDisplay name=threePartsView />
+</item>
+-->
+
+<!--
+<item>
+<title> Setup Menu </title>
+<link>rss_file://./scripts/setupMenu.rss</link>
+<media:thumbnail url="image/internetvideo.jpg"/>
+<mediaDisplay name=threePartsView 
+
+
+	sideColorLeft=  17:17:17 
+	sideColorRight=102:137:204 
+	sideColorTop=102:137:204 
+	sideColorBottom=102:137:204 
+	backgroundColor=17:17:17 
+
+	sideLeftWidthPC= 42
+	sideRightWidthPC= 0
+	sideTopHeightPC= 9.9
+	sideBottomHeightPC= 7.5
+
+	menuXPC = 10
+	menuYPC = 20
+	menuHeightPC = 14
+	menuWidthPC = 30
+
+	itemXPC =  52
+	itemYPC = 20
+	itemWidthPC = 30
+	itemHeightPC = 14
+
+    itemImageXPC = 50
+    itemImageYPC = 20
+	itemImageWidthPC = 5
+	itemImageHeightPC = 5
+	capXPC = 90
+	capWidthPC = 0
+
+    infoYPC = 92
+
+
+	/>
+
+<autoSelect type="menu"> 0 </autoSelect>
+
+</item>
+-->
+
+<item>
+      <title>ControlPanel</title>
+      <link>http://localhost:82/cgi-bin/ewcp-rss.cgi</link>
+  <media:thumbnail url="./scripts/image/CP_unfocus.jpg" width="120" height="90" />
+</item>^M
+
+
+</channel>
+</rss>
