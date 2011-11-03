@@ -7,7 +7,7 @@ function patch_firmware()
 
 if [ $# -ne 4 ]
 then
-    echo "4 arguments expected by function patch_firmware IMAGE_FILE, svn-repo absolute path, \[500|500a|500i|500m|500mini|500minia|500plus\], SDK version \[3|4\]"
+    echo "4 arguments expected by function patch_firmware IMAGE_FILE, svn-repo absolute path, \[500|500a|500i|500m|500mini|500minia|500plus|r2a\], SDK version \[2|3|4\]"
     exit 1
 fi
 
@@ -20,6 +20,8 @@ SIMPLE_VERSION=${VERSION}
 USE_EBODA_INSTALL="no"
 USE_M8_INSTALL="no";
 ACRYAN_MENU="no" #contains news instead youtube, keep original font
+EGREAT_MENU="no"
+KEEP_ORIGINAL_BUSYBOX="NO"
 
 if [ ${VERSION} = "500a" ]
 then
@@ -76,6 +78,16 @@ then
     TEA="NO";
 fi
 
+if [ ${VERSION} = "R2A" ]
+then
+    USE_EBODA_INSTALL="no";
+    SIMPLE_VERSION="500mini"
+    TEA="NO";
+    KEEP_ORIGINAL_BUSYBOX="NO"
+    EGREAT_MENU="YES"
+fi
+
+
 if [ ${VERSION} = "MP3012" ]
 then
     USE_EBODA_INSTALL="no";
@@ -84,7 +96,7 @@ then
 fi
 
 
-if [ ${VERSION} = "500m" -o ${VERSION} = "500i" -o ${VERSION} = "500a" -o ${VERSION} = "500minia" -o ${VERSION} = "500" -o ${VERSION} = "500mini" -o ${VERSION} = "500plus" -o ${VERSION} = "PV73200" -o ${VERSION} = "PV73100"  -o ${VERSION} = "MP3011" -o ${VERSION} = "MP3012" ]
+if [ ${VERSION} = "500m" -o ${VERSION} = "500i" -o ${VERSION} = "500a" -o ${VERSION} = "500minia" -o ${VERSION} = "500" -o ${VERSION} = "500mini" -o ${VERSION} = "500plus" -o ${VERSION} = "PV73200" -o ${VERSION} = "PV73100"  -o ${VERSION} = "MP3011" -o ${VERSION} = "MP3012" -o ${VERSION} = "R2A" ]
 then
     echo Patching firmware variant ${VERSION}
 else
@@ -237,35 +249,18 @@ mkdir utilities
 #home dir for root part 1
 sed -i -e '/^root/c\
 root::0:0:root:/usr/local/etc/root:/bin/sh' etc/passwd
+echo passwd updated
 
-cat > etc/inittab <<EOF
-#If no inittab is found, it has the following default behavior
-::sysinit:/etc/init.d/rcS
-::askfirst:/bin/sh
-#If it detects that /dev/console is _not_ a serial console, it will also run
-# not needed
-# tty::askfirst:/bin/sh
-# Stuff to do before rebooting
-::shutdown:/etc/init.d/rcK
-::restart:/sbin/init
-EOF
-
-cat > etc/init.d/rcK <<EOF
-#!/bin/sh
-[ -f /usr/local/etc/rcK ] && /usr/local/etc/rcK>/dev/console
-/bin/umount -a -r
-/sbin/swapoff -a
-EOF
-
-chmod +x etc/init.d/rcK
 if [ ${SDK} -ne 4 ]
 then
 
 sed -i -e '/\/tmp\/package\/script\/samba-security/i\
 addmountpointtosambaconf ext3 /tmp/hdd/root/' usr/local/bin/package/script/configsamba
+echo configsamba 1
 
 sed -i -e '/mountpoint=$(cat \/proc\/mounts|grep $l |cut -d" " -f 2)/c\
 mountpoint=$(cat /proc/mounts|grep $l | head -n 1 | cut -d" " -f 2)' usr/local/bin/package/script/configsamba
+echo configsamba 2
 
 fi
 
@@ -277,9 +272,10 @@ if [ $ACRYAN_MENU = "YES" ]
 then
     echo "Keeping original fon, needed for acryan news menu"
 else
-    echo "Replacing font to save some space"
+    echo "No longer replacing font to save some space"
     #not sure is we still need this
-    cp  ${SVN_REPO}/src/${SIMPLE_VERSION}/Resource/*.TTF usr/local/bin/Resource 
+    # let's try without
+    #cp  ${SVN_REPO}/src/${SIMPLE_VERSION}/Resource/*.TTF usr/local/bin/Resource 
 fi
 
 
@@ -302,25 +298,58 @@ fi' etc/profile
 if [ $SDK -ne 4 ]
 then
     echo overwriting awk
+    rm usr/bin/awk
     cp  ${SVN_REPO}/src/bin/awk usr/bin
     chmod +x usr/bin/awk
 else
     echo NOT overwriting awk
 fi
 
-#use my init
+#use my init + startup
+if [ ${KEEP_ORIGINAL_BUSYBOX} = "YES" ]
+then
+    echo Not updating init + httpd busybox version
+    echo 'ifconfig eth0 192.168.0.2 netmask 255.255.0.0
+' >> etc/init.d/rcS
+else
+    echo Updating init + httpd busybox version
 
-rm sbin/init
+    rm sbin/init
+    
+    cp ${SVN_REPO}/src/bin/busybox.1.18.4 sbin/
+    ln -s ../sbin/busybox.1.18.4 sbin/init
+    chmod +x sbin/busybox.1.18.4
 
-cp ${SVN_REPO}/src/bin/busybox.1.18.4 sbin/
-ln -s /sbin/busybox.1.18.4 sbin/init
-chmod +x sbin/busybox.1.18.4
+
+    [ -f sbin/httpd ] && rm sbin/httpd
+    ln -s ../sbin/busybox.1.18.4 sbin/httpd
+    
+    [ -f etc/httpd.conf ] && rm etc/httpd.conf
+
+    cat > etc/inittab <<EOF
+#If no inittab is found, it has the following default behavior
+::sysinit:/etc/init.d/rcS
+::askfirst:/bin/sh
+#If it detects that /dev/console is _not_ a serial console, it will also run
+# not needed
+# tty::askfirst:/bin/sh
+# Stuff to do before rebooting
+::shutdown:/etc/init.d/rcK
+::restart:/sbin/init
+EOF
 
 
-[ -f sbin/httpd ] && rm sbin/httpd
-ln -s /sbin/busybox.1.18.4 sbin/httpd
+    cat > etc/init.d/rcK <<EOF
+#!/bin/sh
+[ -f /usr/local/etc/rcK ] && /usr/local/etc/rcK>/dev/console
+/bin/umount -a -r
+/sbin/swapoff -a
+EOF
 
-[ -f etc/httpd.conf ] && rm etc/httpd.conf
+    chmod +x etc/init.d/rcK
+
+
+fi
 
 # eboda web control panel
 dir=`pwd`
@@ -342,8 +371,14 @@ then
     echo overwriting IMS menu
     if [ $ACRYAN_MENU = "YES" ]
         then
+        echo ACRyan menu
         cp ${SVN_REPO}/src/${SIMPLE_VERSION}/menu/menu.rss_sdk${SDK}_acryan usr/local/bin/scripts/menu.rss
+    elif [ $EGREAT_MENU = "YES" ] 
+        then
+        echo EGreat menu
+        cp ${SVN_REPO}/src/${SIMPLE_VERSION}/menu/menu.rss_sdk${SDK}_egreat usr/local/bin/scripts/menu.rss
     else
+        echo Eboda menu
         cp ${SVN_REPO}/src/${SIMPLE_VERSION}/menu/menu.rss_sdk${SDK} usr/local/bin/scripts/menu.rss
     fi
 else
@@ -356,7 +391,7 @@ fi
 [ -d usr/local/bin/scripts/image ] || mkdir usr/local/bin/scripts/image
 cp ${SVN_REPO}/src/${SIMPLE_VERSION}/menu/image/* usr/local/bin/scripts/image/
 
-if [ ${SDK} -ne 4 ]
+if [ ${SDK} -eq 3 ]
 then
 #Repair some weather stuff
     cp ${SVN_REPO}/src/${SIMPLE_VERSION}/map/* usr/local/bin/IMS_Modules/Weather/scripts/map/
@@ -454,12 +489,21 @@ then
     chmod +x usr/local/bin/DvdPlayer
 fi
 
+# if [ ${SDK} = "2" ]
+# then
+#     ## egreat is this one
+#     sed -i -e '$a\
+# www3    stream  tcp     nowait  www-data        /usr/sbin/httpd httpd -h /scripts\
+# www4    stream  tcp     nowait  www-data        /usr/sbin/httpd httpd -h /rss_ex/www\
+# www5    stream  tcp     nowait  www-data        /usr/sbin/httpd httpd -h /xLive' etc/inetd.conf
+
+# else
 #inetd.conf
     sed -i -e '$a\
 www3    stream  tcp     nowait  www-data        /sbin/httpd httpd -i -h /scripts\
 www4    stream  tcp     nowait  www-data        /sbin/httpd httpd -i -h /rss_ex/www\
 www5    stream  tcp     nowait  www-data        /sbin/httpd httpd -i -h /xLive' etc/inetd.conf
-
+# fi
 
 
 #services.conf
@@ -728,6 +772,8 @@ chmod +x rccb3ppS
 echo '
 [ -f /usr/local/etc/rccb3ppS ] && sh /usr/local/etc/rccb3ppS start &' >> rcS
 
+
+
 cat > rcK <<EOF
 #!/bin/sh
 [ -f /usr/local/etc/rccb3ppK ] && sh /usr/local/etc/rccb3ppK 
@@ -779,6 +825,8 @@ fi
 #patch size
 sed -i -e 's#<sizeBytesMin>0x3000000</sizeBytesMin>#<sizeBytesMin>0x0800000</sizeBytesMin>#g' configuration.xml
 sed -i -e 's#<sizeBytesMin>4194304</sizeBytesMin>#<sizeBytesMin>0x0800000</sizeBytesMin>#g' configuration.xml
+sed -i -e 's#<sizeBytesMin>0x1000000</sizeBytesMin>#<sizeBytesMin>0x0800000</sizeBytesMin>#g' configuration.xml
+
 
 #patch img name
 sed -i -e 's#package2/squashfs1.upg#package2/squashfs1.img#g' configuration.xml  
