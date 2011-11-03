@@ -169,13 +169,103 @@ rss_start()
 {
 
     cat <<EOF
-<p> $1 </p>
-<p>
+Content-type: application/xhtml+xml
+
+<?xml version="1.0" ?>
+<rss version="2.0" xmlns:media="http://purl.org/dc/elements/1.1/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<mediaDisplay name="threePartsView" itemBackgroundColor="0:0:0" backgroundColor="0:0:0" sideLeftWidthPC="0" itemImageXPC="5" itemXPC="20" itemYPC="20" itemWidthPC="65" capWidthPC="70" unFocusFontColor="101:101:101" focusFontColor="255:255:255" idleImageXPC="5" idleImageYPC="5" idleImageWidthPC="8" idleImageHeightPC="10">
+        <idleImage>image/POPUP_LOADING_01.png</idleImage>
+        <idleImage>image/POPUP_LOADING_02.png</idleImage>
+        <idleImage>image/POPUP_LOADING_03.png</idleImage>
+        <idleImage>image/POPUP_LOADING_04.png</idleImage>
+        <idleImage>image/POPUP_LOADING_05.png</idleImage>
+        <idleImage>image/POPUP_LOADING_06.png</idleImage>
+        <idleImage>image/POPUP_LOADING_07.png</idleImage>
+        <idleImage>image/POPUP_LOADING_08.png</idleImage>
+		<backgroundDisplay>
+			<image  offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100>
+			image/mele/backgd.jpg
+			</image>  
+		</backgroundDisplay>
+		<image  offsetXPC=0 offsetYPC=2.8 widthPC=100 heightPC=15.6>
+		image/mele/rss_title.jpg
+		</image>
+		<text align="center" redraw="yes" lines="4" offsetXPC=10 offsetYPC=35 widthPC=75 heightPC=15 fontSize=15 backgroundColor=0:0:0 foregroundColor=120:120:120>
+			<script>print(annotation); annotation;</script>
+		</text>		
+
+		<itemDisplay>
+			<text align="left" lines="1" offsetXPC=0 offsetYPC=0 widthPC=100 heightPC=100 fontSize=15>
+				<script>
+					idx = getQueryItemIndex();
+					focus = getFocusItemIndex();
+					if(focus==idx) 
+					{
+					  location = getItemInfo(idx, "location");
+					  annotation = getItemInfo(idx, "annotation");
+					  img = getItemInfo(idx,"image");
+					}
+					getItemInfo(idx, "title");
+				</script>
+			</text>
+
+		</itemDisplay>
+		
+<onUserInput>
+<script>
+ret = "false";
+userInput = currentUserInput();
+
+if (userInput == "pagedown" || userInput == "pageup")
+{
+  idx = Integer(getFocusItemIndex());
+  if (userInput == "pagedown")
+  {
+    idx -= -8;
+    if(idx &gt;= itemCount)
+      idx = itemCount-1;
+  }
+  else
+  {
+    idx -= 8;
+    if(idx &lt; 0)
+      idx = 0;
+  }
+
+  print("new idx: "+idx);
+  setFocusItemIndex(idx);
+	setItemFocus(0);
+  redrawDisplay();
+  "true";
+}
+ret;
+</script>
+</onUserInput>
+
+
+
+</mediaDisplay>
+
+    <channel>
+        <title>Press back to return</title>
+        <link>http://localhost:82/cgi-bin/DaemonsStatus-rss.cgi</link>
+        <menu>control panel daemons status</menu>
+
+<item>
+
+<title>Action result bellow, go to Control Panel</title>
+<link>http://localhost:82/cgi-bin/ewcp-rss.cgi</link>
+<annotation>
 EOF
 }
 rss_exit()
 {
 cat <<EOF
-</p>
+... done
+</annotation>
+</item>
+
+</channel>
+</rss>
 EOF
 }
