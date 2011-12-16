@@ -554,6 +554,10 @@ tar jxvf ../usr.local.etc.tar.bz2
 #root home part 2
 mkdir root
 
+echo 'PATH=/cb3pp/bin:$PATH' >> root/.profile
+echo 'export PATH' >>  root/.profile
+
+
 #rss_ex
 ln -s  /rss_ex translate
 

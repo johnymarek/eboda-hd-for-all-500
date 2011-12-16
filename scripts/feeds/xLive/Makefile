@@ -4,24 +4,11 @@ nothing:
 
 patch:
 
-	for i in ` find xLive | grep -v .svn ` 
-	do echo $i; 
-	    grep sda $i 
-	    if [ $? -eq 0 ]
-	    then
-	        echo changing path
-		sed -i -e 's#http://127.0.0.1/media/sda1/scripts/xLive#http://127.0.0.1:82/xLive#g' $i
-		sed -i -e 's#/tmp/usbmounts/sda1/scripts/xLive#/xLive#g' $i
-		sed -i -e 's#/tmp/usbmounts/sda1/scripts/image/busy#/xLive/image/busy#g' $i
-	    fi
-	    sed -i -e 's#http://www.metafeeds.com#http://127.0.0.1/xLive/php/mfproxy.php?http://www.metafeeds.com#' $i
-	done
+	for i in ` find xLive -type f | grep -v .svn `; do \
+	echo $$i;\
+	sed -i -f paths.sed $$i;\
+	done 
 
-patch2:
-	for i in ` find xLive | grep -v .svn ` 
-	do echo $i; 
-	    sed -i -e 's#<link>http://www.metafeeds.com#<link>http://127.0.0.1:82/xLive/php/mfproxy.php?http://www.metafeeds.com#' $i
-	done
 
 update:
 
