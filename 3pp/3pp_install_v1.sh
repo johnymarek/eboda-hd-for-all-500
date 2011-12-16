@@ -366,7 +366,7 @@ then
 #ac_cv_func_getaddrinfo=yes
 #EOF
         #thttpdnolonger used    patch < ../../patches/php/thttpd_2.25b.patch
-    CROSS_COMPILE=1 CC=mipsel-linux-gcc CXX=mipsel-linux-g++ ./configure --prefix=${cipibad} --host=mipsel-linux --disable-all --disable-cli --enable-fastcgi --enable-discard-path --disable-ipv6  --enable-session --enable-simplexml --cache-file=`pwd`/config.cache --enable-sockets --with-pcre-regex=/cb3pp/ --enable-shared=false --enable-static=true --enable-libxml --with-libxml-dir=/cb3pp/ --with-sqlite3
+    CROSS_COMPILE=1 CC=mipsel-linux-gcc CXX=mipsel-linux-g++ ./configure  --prefix=/cb3pp --host=mipsel-linux --disable-all --disable-cli --enable-fastcgi --enable-discard-path --disable-ipv6 --enable-session --enable-simplexml --cache-file=/home/cbadescu/svn/eboda-hd-for-all-500/3pp/compile/php-5.2.13/config.cache --enable-sockets --with-pcre-regex=/cb3pp/ --enable-shared=false --enable-static=true --enable-libxml --with-libxml-dir=/cb3pp/ --with-sqlite3 --enable-xml
     $CLEAN && make clean
     make
 
@@ -592,7 +592,7 @@ then
     cd $compile
     tar jxf $downloads/transmission-2.22.tar.bz2
     cd transmission-*
-    LIBEVENT_CFLAGS="-I/cb3pp/include" LIBEVENT_LIBS="-L/cb3pp/lib -levent" CPPFLAGS="-DTR_EMBEDDED" PATH=$PATH:/cb3pp/bin/ OPENSSL_CFLAGS="-I/cb3pp/include" OPENSSL_LIBS="-L/cb3pp/lib -lssl -lcrypto" LIBCURL_CFLAGS="-I/cb3pp/lib" LIBCURL_LIBS="-L/cb3pp/lib -lcurl" ./configure --prefix=${cipibad} --host=mipsel-linux --disable-nls --disable-gtk --enable-daemon
+    LIBEVENT_CFLAGS="-I/cb3pp/include" LIBEVENT_LIBS="-L/cb3pp/lib -levent" CPPFLAGS="-DTR_EMBEDDED" PATH=$PATH:/cb3pp/bin/ OPENSSL_CFLAGS="-I/cb3pp/include" OPENSSL_LIBS="-L/cb3pp/lib -lssl -lcrypto" LIBCURL_CFLAGS="-I/cb3pp/lib" LIBCURL_LIBS="-L/cb3pp/lib -lcurl" ZLIB_CFLAGS="-I/cb3pp/lib" ZLIB_LIBS="-L/cb3pp/lib -lz"  ./configure --prefix=${cipibad} --host=mipsel-linux --disable-nls --disable-gtk --enable-daemon
     $CLEAN && make clean
     make
     make install
