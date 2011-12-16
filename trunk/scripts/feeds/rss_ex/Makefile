@@ -1,5 +1,5 @@
 clean:
-	rm rss_ex4-latest.zip
+	rm -f rss_ex4-latest.zip
 
 localdeliver: pack
 	rsync ....
